@@ -1,0 +1,2944 @@
+\chapter{Parametrizaciónes básicas}
+
+En este capítulo se presentan algunos ejemplos sencillos sobre la manera de representar curvas,
+superficies o sólidos cuyas generalidades se presentaron en la sección (\ref{regionesparametrizadas}). \index{Parametrización}
+Con las ecuaciones (\ref{param1}) y (\ref{param2}) que corresponden a ideas muy simples, se construirán otras parametrizaciones y luego, con ayuda de estas
+funciones, se parametrizarán regiones en el espacio. Se hacen énfasis en la construcción de este 
+tipo de funciones, pues en los capítulos posteriores se hará uso de ellas sin profundizar demasiado en su obtención. 
+
+\section{Curvas} \index{Parametrización!de curvas} \index{Curva} 
+De acuerdo con \cite{marsden_calculo_2013}, una curva $C$ en $\mathbb{R}^n$ es la imagen de una funci\'{o}n
+contínua a trozos, $\ve{r}:[a,b]\rightarrow \mathbb{R}^n$. 
+A la función $\ve{r}$ la denominaremos \emph{una parametrización} de la curva $C$. 
+\vskip0.3cm 
+Si $g:[c,d]\rightarrow \lbrack a,b]$ es una funci\'{o}n biyectiva y continua en $[c,d]$
+tal que $\alpha =r\circ g, \,$ a $\alpha,$ se le denomina una \emph{reparametrizaci\'{o}n} de $\ve{r}.$
+Si la funci\'{o}n $g$ es creciente $\left(g^{\prime }(t)>0\right), $
+entonces $\alpha $ preserva la orientaci\'{o}n, y si $g$ es decreciente
+$\left( g^{\prime }(t)<0\right), $ entonces $\alpha $ invierte la orientaci\'{o}n de la curva.
+\vskip0.1cm
+Dada una curva $C$ parametrizada por medio de la función $\ve{r}(t)$, con $t \in [a,b],$
+la sustitución 
+\begin{equation} \label{param3}
+\ve{v}(t)=\ve{r}(a+b-t)
+\end{equation}
+parametriza la misma curva con sentido contrario para $t \in [a,b].$ \index{Cambio de sentido!Curvas}
+%\vskip0.1cm
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf u}(t)=\langle t^3-3t, t \rangle$}
+	\begin{minipage}{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/20.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+ 
+ 
+ 
+La curva determinada por la ecuación $x=y^3-3y$, con  $y\in[-1,2]$
+se puede parametrizar mediante la función 
+$\ve{u}(t)=\langle t^3-3t, t \rangle$
+con $t \in [-1,2]$. El punto inicial 
+es  $(2,-1)$ y el punto final es $(2,2).$
+
+Al cambiar $t$ por $-1+2-t=1-t$ y utilizar la expresión (\ref{param3}), 
+se establece que la función $\ve{v}(t)= \la -t^3+3t^2-2,1-t\ra$
+con $t \in [-1,2]$, que representa la misma curva, recorrida en sentido contrario.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf u}(t)=\langle  t,t^4-3t^2 \rangle$}
+	\begin{minipage}{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/21.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+%\vskip0.1cm 
+La función $y= x^4-3x^2,$ con $x\in[-2,2]$
+se parametriza mediante la expresión 
+$\ve{r}(t)=\langle t,t^4-3t^2 \rangle$ con $t \in [-2,2]$; el punto inicial de la curva descrita 
+es  $(-2,4)$ y el punto final es $(2,4).$
+Esta representación no es única, pues $\ve{u}(t)=\langle 2t,16t^4-12t^2 \rangle$ 
+con $t \in [-1,1]$ representa la misma curva, con el mismo recorrido y los puntos terminales.
+
+\subsection*{Tres ideas elementales}
+Las siguientes tres parametrizaciones se usarán en gran parte de los problemas expuestos y servirán
+como insumo para construir o representar varias regiones en el espacio.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrización de un segmento]
+Para dos puntos $a$ y $b$ en $\mathbb{R}^{n},$  la funci\'{o}n 
+\begin{equation} \label{param1}
+\overrightarrow{r}(t)=(1-t) a+tb,\,\, t\in \lbrack 0,1]
+\end{equation}
+parametriza el segmento rectilíneo que une a $a$ con $b$. 
+\end{tcolorbox}
+Intercambiando $a$ y $b$ en la fórmula (\ref{param1}) se logra cambiar el punto inicial con el punto final.
+Una expresión como esta la denominaremos una 
+\emph{combinación convexa} entre los puntos $a$ y $b$. \index{Combinación convexa}
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrización de la circunferencia unitaria]
+La circunferencia unitaria cuya ecuación es $x^2+y^2=1,$
+puede parametrizarse en la forma 
+\begin{equation} \label{param2}
+\ve{r}(t)=\left\langle \cos(t), \sin(t)\right\rangle,\, t\in [0,2\pi].
+\end{equation}
+La identidad $\cos^2t + \sin^2 t =1$ motiva el uso de esta elección.
+\end{tcolorbox}
+En la expresión (\ref{param2}) también se puede asignar $x=\sin (t) $ y $y=\cos (t) $, de esta manera se describe la misma curva; la diferencia está en los puntos terminales o en la orientación.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Gráficos de ${\bf u}(t)=\langle\cos(t),\sin(t)\rangle$ y ${\bf u}(t)=\langle\sin(t),\cos(t)\rangle$}
+	\begin{minipage}{0.40\linewidth}
+		\centering
+		\vspace{-2mm}
+		\includegraphics[width=\linewidth]{Fig/22.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Para una misma curva, la parametrización presentada podría no ser única.
+Por ejemplo, en el caso de la circunferencia unitaria también se puede \mbox{representar} por medio de la función
+${\bf u}(t)=\langle \cos(3t), \sin(3t)\rangle$, $t \in [0,2\pi/3]$.
+
+%\vspace{-10mm}
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrización de la hipérbola unitaria]
+La ecuación $x^2-y^2=1$ representa una hipérbola cuyas ramas abren hacia el eje $x$.
+Una porción de esta curva se parametriza por medio de la función 
+$\ve{r}(t)=\la\cosh(t), \sinh(t)\ra,$ con $t\in [-1,1]$. La definición de esta función es motivada
+por la relación $\cosh^2 t - \sinh^2 t =1.$ 
+\end{tcolorbox}
+
+%\vspace{-2mm}
+
+La otra rama se representa por la función 
+{\small $\ve{r}(t)=\la -\cosh(t), \sinh(t)\ra.$}  
+Las siguientes parametrizaciones representan solo una rama de la hipérbola.
+\vskip0.2cm
+Con los elementos expuestos presentaremos otras curvas con su respectiva parametrización.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Gráficos de ${\bf r}(t)=\la \cosh(t),\sinh(t)\ra$ y ${\bf r}(t)=\la \sinh(t),\cosh(t)\ra$}
+	\begin{minipage}{0.40\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/23.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\subsection*{Ejemplos de parametrización de curvas}
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad El segmento de recta que une los puntos $A(1,1)$ y $B(3,2)$, iniciando en $A$ y terminando en $B$, se parametriza al simplificar la combinación convexa
+{\small
+	\setlength{\abovedisplayskip}{2pt}
+	\setlength{\belowdisplayskip}{2pt}
+	\[ (1-t)(1,1) + t(3,2), \]
+}
+la cual define la función
+{\small
+	\setlength{\abovedisplayskip}{2pt}
+	\[ \ve{r}(t) = \left\langle 1+2t,1+t\right\rangle, \quad t \in [0,1]. \]
+}
+	
+%\vskip0.1cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Segmento en el plano}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/24.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm		
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad El segmento rectilíneo con punto inicial {\small $(2,-1,0)$} y punto final {\small $(-1, 2, 2),$} se parametriza simplificando una combinación convexa de los puntos
+\[
+(1 - t)(2,-1,0) + t(-1,2,2),
+\]
+lo cual permite definir la función
+\[
+\ve{r}(t) = \left\langle 2 - 2t,\,-1 + 3t,\, 2t \right\rangle, \quad t \in [0,1].
+\]
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Segmento en el espacio}
+	\label{segmento_espacio}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/18.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+
+\textcolor{black}{\scriptsize\ding{110}}\quad La elipse centrada en el origen y alargada en el sentido de las $x$  
+con ecuación $\frac{x^2}{9} + \frac{y^2}{4}=1$ se parametriza al hacer $x=3 \cos(t)$ y $y=2 \sin(t)$.  
+Es decir, esta curva se representa por medio de la función  
+$$\ve{r}(t)=\left\langle 3 \cos(t), 2\sin(t)\right\rangle,\ t\in [0,2\pi].$$
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}(t)=\langle 3\cos(t),2\sin(t)\rangle$}
+	\begin{minipage}{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/25.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Con $t \in [0,\pi]$ se describe la mitad de la elipse. Utilizando la fórmula (\ref{param3}), se obtiene $x = -3\cos(t)$ y $y = 2\sin(t)$. De esta manera se describe la misma curva, variando sus puntos terminales y la orientación.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}(t) = \langle -3\cos(t),\, 2\sin(t) \rangle$}
+	\label{semielipse_izquierda}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/26.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad En el espacio, la circunferencia de radio $2$ centrada
+en el punto $(0, 2, 0)$ y paralela al plano $xz,$
+se puede parametrizar como 
+$\ve{r}(t) = \la 2\cos t, 2, 2\sin t\ra,$ $t\in[0,2\pi].$ 
+Obsérvese que esta curva se halla en el plano $y=2$.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Circunferencia en el espacio}
+	\label{Circunferencia_espacio}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/19.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Las ecuaciones $x-y+3z=3$ y $x^2+y^2=4$ representan un plano y un cilindro. En el plano $xy$ la ecuación del cilindro corresponde a una circunferencia de radio $2$ que se parametriza con $x=2 \cos t,$ $y=2 \sin t.$ De la ecuación del plano se obtiene $z$.
+Luego, la intersección de las superficies está dada por $\ve{r}(t)=\la 2\cos t, 2\sin t,1-\frac{2}{3}(\cos t+\sin t) \ra.$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Elipse en el espacio}
+	\label{Elipse_espacio}
+	\begin{minipage}{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/27.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\subsection*{Uniendo dos puntos con una curva}
+Para dos puntos $P$ y $Q$ en $\mathbb{R}^n$, si $f$ y $g$ son dos funciones cont\'{i}nuas en $[a,b]$ tales que 
+$f(a)=1,$ $g(a)=0$ y $f(b)=0,$ $g(b)=1,$ entonces la funci\'{o}n
+\begin{equation}
+\ve{r}(t)=f(t)P+g(t)Q,\,\, t \in[a,b].
+\end{equation}
+parametriza la curva que une a $P$ con $Q$. 
+%Además $\ve{r}(t)$ satisface que $\ve{r}(a)=P$ y $ \ve{r}(b)=Q;$
+La forma de la trayectoria depende de las funciones $f$ y $g.$
+Enseguida ilustraremos lo anterior. 
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Con las funciones $g(t)=\sqrt[4]{t}$ 
+y $f(t)=(1-t)^3$, uniremos los puntos $A(1,1)$ y $B(3,2)$ mediante la expresión 
+$(1-t)^3 A + \sqrt[4]{t} B.$ 
+\vskip0.05cm
+Esto permite definir la función 
+${\bf r}(t)=(1-t) ^{3}(1,1) +\sqrt[4]{t}(3,2),$
+con  $t\in[0,1].$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}(t)=(1-t) ^{3}(1,1) +\sqrt[4]{t}(3,2)$}
+	\begin{minipage}{0.26\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/28.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Con ayuda de las funciones $g(t) = t^6$ y $f(t) = (1 - t^2)^3$, se define la función
+\[
+\ve{r}(t) = (1 - t^2)^3(1,1) + t^6(3,2),
+\]
+que une los puntos $A(1,1)$ y $B(3,2)$ mediante la combinación
+\[
+(1 - t^2)^3 A + t^6 B, \quad t \in [0,1].
+\]
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}(t) = (1 - t^2)^3(1,1) + t^6(3,2)$}
+	\begin{minipage}{0.26\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/29.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Utilizando una interpolación cuadrática entre los puntos $(1,1),$ $(3,2)$ y un punto intermedio 
+entre ellos, se obtienen las siguientes funciones: \\[0.2cm]
+$y=\frac{51-61t+16t^2}{6}$, $y=\frac{27-29t+8t^2}{6}$, $y=\frac{22-27t+7t^2}{6}$, 
+$y=\frac{-16+33t-7t^2}{10},$ $y=\frac{-5+16t-3t^2}{8}$. \\[0.2cm]
+\\Se muestran estas curvas parametrizadas con
+$\la t, y(t)\ra $, $t\in[1,3].$
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Cinco polinomios que unen $A$ con $B$}
+	\begin{minipage}{0.29\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/30.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+Con la función \verb"InterpolatingPolynomial" se consiguen dos animaciones: una con el gráfico y la otra con 
+las expresiones que lo definen. \index{InterpolatingPolynomial}
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción Mathematica] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+Manipulate[Expand[InterpolatingPolynomial[{{1,1},
+{7/5,k*6/5},{3,2}},x]],{k,12/10,2,1/10}]
+Manipulate[Plot[Expand[InterpolatingPolynomial[{{1,1},
+{7/5,k*6/5},{3,2}},x]],{x,1,3}],{k,-2,2,0.1}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Utilizando las funciones $f(t)=\cos(\frac{\pi}{2}t)$ y $g(t)=\sin(\frac{\pi}{2}t)$, se define
+$$\ve{r}(t)=\cos\left( \frac{\pi t}{2}\right)\left(1,1\right) +\sin \left( \frac{\pi t}{2}\right) \left( 3,2\right),$$
+que permite unir los puntos $A(1,1)$ y $B(3,2).$
+Esta expresión se consigue, al simplificar la expresión
+$$\cos\left( \frac{\pi t}{2}\right)\left(1,1\right) +\sin \left( \frac{\pi t}{2}\right) \left( 3,2\right)$$
+para $\,\,0\leq t\leq 1$. 
+Por tanto, la parametrización escogida es $\ve{r}(t).$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}(t)=\cos\left( \frac{\pi t}{2}\right)A +\sin \left( \frac{\pi t}{2}\right)B$}
+	\begin{minipage}{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/31.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\section{Superficies} \index{Parametrización!de superficies} \label{superficies}
+En esta sección construiremos algunas parametrizaciones de superficies a partir 
+de los elementos usados en el tratamiento de curvas.
+\subsection*{Parametrización de regiones planas}
+
+Con las ideas elementales utilizadas para construir curvas, se pueden construir parametrizaciones de regiones en el plano.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf u}(r,\theta) =\la r \cos \theta, r \sin \theta \ra$}
+	\label{fig:32}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/32.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Con el propósito de \emph{rellenar} una circunferencia de radio $a$, se puede variar el radio y el arco en las expresiones
+$x= r \cos \theta$ y $y= r \sin \theta.$ Este círculo puede parametrizarse mediante la función $\ve{u}(r,\theta)= \la r \cos \theta, r \sin \theta \ra$,
+en donde $r \in [0,a],$ $\theta \in [0,2 \pi].$
+
+\vskip0.2cm
+
+La expresión $4x^2+9y^2=36$ representa una elipse, esta curva se puede parametrizar mediante 
+las ecuaciones $x=3\cos \theta,$ $y=2\sin \theta$.
+La región interior se puede describir
+mediante la función
+${\bf u}(r,\theta) = \la 3 r \cos \theta,2r \sin\theta \ra,$
+con $r\in [0,1],$ $\theta \in [0,2\pi].$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf u}(r,\theta) =\la 3r \cos \theta, 2r \sin \theta \ra$}
+	\label{fig:33}
+	\begin{minipage}{0.26\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/33.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+El triángulo con vértices $A$, $B$ y $C$, se parametriza a través de segmentos rectilíneos.
+Se construye una combinación convexa entre un punto del segmento $\overline{AB}$ con el punto $C$.
+Una función que describe esta región, con $u \in [0,1],$ $v \in [0,1],$ se obtiene simplificando la expresión
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Triángul parametrizado $(1-v)C+v\left((1-u)A+uB \right).$}
+	\label{fig:161}
+	\begin{minipage}{0.38\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/161.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+$$(1-v)C+v\left((1-u)A+uB \right).$$
+
+
+El cuadrilátero con vértices $A(-2,-1),$ $B(-1,4)$, $C(3,1),$ $D(4,3),$ 
+se parametriza formando dos combinaciones convexas adecuadamente elegidas (evitar crear un \emph{corbatín}) 
+con el mismo parámetro; con las expresiones obtenidas se forma otra combinación 
+convexa con un parámetro distinto. 
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Cuadrilátero parametrizado}
+	\label{fig:Cuadrilátero_parametrizado}
+	\begin{minipage}{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/35.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Combinando las expresiones $(1-t)A+tB$ y $(1-t)C+tD$,
+se obtiene la función $\ve{r}(t,u)= (1-u)\left ((1-t)A+tB\right )+u \left( (1-t)C+tD\right),$
+con $t\in [0,1]$, $u\in [0,1].$ En este caso, %La función obtenida es 
+$\ve{r}(t,u)=\la t+5u-2, 5t+2u-3tu -1\ra.$
+
+Con las siguientes instrucciones se consigue la figura \ref{fig:Cuadrilátero_parametrizado}:
+\par
+\vskip -12pt
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+ParametricPlot[(1-u)*((1-t)*{-2,-1}+t*{-1,4})
++u*((1-t)*{3,1}+t*{4,3}),{t,0,1},{u,0,1}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+\vspace{0pt}
+La región $R$ acotada por las figuras de las funciones $y=f(x)$ y $y=g(x)$,
+con $x\in [a,b];$ se parametriza formando una combinación convexa entre dos puntos
+$P(x,f(x))$ y $Q(x,g(x)).$ Por tanto, 
+una función que describe a $R$ es
+$\ve{r}(x,u)= (1-u)(x,f(x))+u(x,g(x)),$
+con $u \in [0,1]$, $x \in [a,b].$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Región parametrizada}
+	\label{fig:Región_parametrizada}
+	\begin{minipage}{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/36.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+De manera análoga al caso anterior, si la región está acotada por las figuras de las expresiones 
+$x=u(y)$ y $x=v(y)$, con $y\in [c,d];$ con lo cual, para
+$u \in [0,1]$, $y \in [c,d],$ 
+una función que describe la dicha región es %\\[0.1cm]
+\[
+\ve{r}(y,u)= (1-u)\la y,u(y)\ra + u\la y,v(y)\ra
+\]
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Región parametrizada}
+	\label{fig:Región_parametrizada_3}
+	\begin{minipage}{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/37.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+La región $R,$ acotada por las figuras de $y=4-x^2$ y $y=x^3-4x$ para $x\in[-1,2]$
+se parametriza simplificando la expresión 
+$(1-u)\la x, 4-x^2 \ra +u\la x, x^3-4x \ra $, es decir 
+$${\bf r}(x,u)=\la x, (x^2-4)(ux+u-1) \ra,$$ con $x\in[-1,2],$ $u\in[0,1],$
+representa a la mencionada región.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{$y=4-x^2$ y $y=x^3-4x$}
+	\label{fig:38}
+	\begin{minipage}{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/38.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\vspace{0pt}
+Con las ecuaciones $y=x+1$ y $y=x^2-1,$ para $x\in[-1,2],$
+se forma la combinación convexa $(1-u)\la x, 1+x \ra +u\la x, x^2-1 \ra;$
+simplificando se define la función ${\bf r}(x,u)=\la x, (x+1) (1-2u+ux) \ra,$ con $x\in[-1,2],$ $u\in[0,1],$
+que determina la región mostrada.
+	
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{$y=x+1$ y $y=x^2-1$}
+	\label{fig:39}
+	\begin{minipage}{0.33\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/39.png}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm	
+	
+
+\vspace{0pt}
+La región acotada por las graficas de las expresiones $y=x^4-x^2,$ $y=4-x^2$ y $x=1$, 
+se parametriza por medio de la expresión
+$(1-u)(x,x^4-x^2)+u(x,4-x^2),$
+que al simplificarse, con $x \in [-\sqrt{2},1]$, $u \in [0,1],$ permite definir la función \\
+$\ve{r}(x,u)=\la x, u(4-x^4)+x^2(x^2-1) \ra.$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{$\la x, u(4-x^4)+x^2(x^2-1) \ra$}
+	\label{fig:region_gris}
+	\begin{minipage}{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/40.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm	
+
+
+Con las siguientes instrucciones se obtiene la figura \ref{fig:region_gris} en \verb"Mathematica"
+
+
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]  
+\begin{Verbatim}[formatcom=\letraverbatim]
+B=ParametricPlot[{x,u*(4-x^4)+x^2*(x^2-1)},
+{x,-Sqrt[2],1},{u,0,1}]; 
+A=ContourPlot[{y==x^4-x^2,y==4-x^2},{x,-2,2},{y,-1,4}];
+Show[A,B]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+\vspace{0pt}
+Las parábolas $x=y^2-5y,$ $x=3y-y^2$ se cortan 
+en $(0,0)$ y $(-4,4).$ La región acotada por estas curvas se parametriza 
+simplificando la expresión
+$(1-v)\la u^2-5u,u\ra +v\la 3u-u^2,u\ra,$
+con $u \in [0,4]$, $v \in [0,1]$. Esta región se describe por medio de la función
+$\ve{r}(u,v) = \la u (u+8v-2uv-5),u \ra.$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{$ \la (8v-5)u+(1-2v)u^2,u \ra$}
+	\label{fig:41}
+	\begin{minipage}{0.27\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/41.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm	
+
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+A=ContourPlot[{x==y^2-5*y,x==3*y-y^2},{x,-7,4},
+{y,-1,5}];
+B=ParametricPlot[(1-v){u^2-5*u,u}+v*{3*u-u^2,u},
+{v,0,1},{u,0,4}];
+Show[A,B]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Superficies parametrizadas} \index{Superficies parametrizadas}
+Recordemos un concepto que permite hacer estas construcciones en el espacio.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Definición]
+Una parametrización de una superficie $\sigma $,
+es una aplicación $$\ve{r}:[a,b]\times \lbrack c,d]\rightarrow \mathbb{R}^{3},$$
+tal que al variar los parámetros $u\in \lbrack a,b]$ y $v\in \lbrack c,d]$
+su imagen $\ve{r}(u,v)$ va describiendo los puntos de la superficie $\sigma $.
+\end{tcolorbox}
+
+\textcolor{black}{\scriptsize\ding{110}}\quad Utilizando coordenadas esféricas, la superficie de la esfera unitaria se puede parametrizar 
+por medio de la función
+{\small
+\[{\bf r}(\theta, \phi)=\big \langle \cos \theta \sin \phi, \sin \theta \sin \phi, \cos \phi \big\rangle,\]
+}
+con $\theta \in [0,2\pi]$ y $ \phi \in [0,\pi]$.
+
+\vskip0.2cm
+
+El elipsoide con ecuación $\frac{x^2}{16}+\frac{y^2}{9}+\frac{z^2}{4}=1,$ 
+se parametriza con una sencilla variación de la función anterior
+${\bf r}(\theta, \phi)=\la 4\cos \theta \sin \phi,3\sin \theta \sin \phi, 2\cos \phi \ra.$ 
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small La esfera unitaria y el elipsoide parametrizado por ${\bf r}(\theta, \phi)$}
+	\begin{minipage}{0.20\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_53a.eps}
+	\end{minipage}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_53b.eps}
+	\end{minipage}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_53c.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Esta figura se obtiene al ejecutar las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]  
+\begin{Verbatim}[formatcom=\letraverbatim]
+ParametricPlot3D[{Cos[\[Theta]]*Sin[\[Phi]],
+Sin[\[Theta]]*Sin[\[Phi]],Cos[\[Phi]]},{\[Theta],0,
+2*Pi},{\[Phi],0,Pi},MeshStyle->Gray,PlotStyle->Orange]
+
+ParametricPlot3D[{4Cos[\[Theta]]*Sin[\[Phi]],3*
+Sin[\[Theta]]*Sin[\[Phi]],2*Cos[\[Phi]]},{\[Theta],0,
+2*Pi},{\[Phi],0,Pi},MeshStyle->Gray,PlotStyle->Orange]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+%\vspace{-5mm}
+\textcolor{black}{\scriptsize\ding{110}}\quad La superficie $\sigma$ sobre el paraboloide 
+$2z=9-x^2-y^2$ y dentro del cilindro $x^2+ \left(y -\frac{1}{3} \right)^2=4,$ se parametriza al asignar $x=u \cos v,$ 
+$y= \frac{1}{3}+u\sin v$, con $u \in [0,2]$, $v \in [0,2\pi].$ 
+Del paraboloide se obtiene $z = \frac{1}{18} (80-9u^2-6u\sin(t)).$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie $\sigma$}
+	\label{Superficie_sigma}
+	\begin{minipage}{0.38\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/42.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Entonces, para $u \in [0,2]$, $v \in [0,2\pi],$ la superficie $\sigma$ se parametriza por
+\[{\bf r}(u,v)= \langle u\cos v, \frac{1}{3} +u\sin v, \frac{1}{18}(80-9u^2-6u \sin(v)) \rangle.\]
+Si $u=2$ la expresión obtenida corresponde a la parametrización de la curva de intersección del paraboloide
+y el cilindro, es decir ${\bf r}(v)= \langle 2\cos v, \frac{1}{3} +2\sin v,\frac{1}{9}(22-6\sin(v))\rangle,$ $v \in [0,2\pi].$
+
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad La superficie del cilindro con ecuación $x^2+y^2=2x$, para $z \in [-1,2],$ se 
+parametriza en la forma 
+$${\bf r}(u,t)= \la 1+\cos(t),\sin(t), u \ra,$$ con $t \in [0,2\pi],$ $u\in [-1,2].$ 
+En el plano $xy$ el cilindro corresponde a la circunferencia $(x-1)^2+y^2=1.$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}(u,t)= \la 1+\cos t,\sin t, u \ra$}
+	\label{fig:43}
+	\begin{minipage}{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/43.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\textcolor{black}{\scriptsize\ding{110}}\quad Las expresiones $2z=x^{2}-y^{2}$ y $2x^{2}+y^{2}+2y=8$ representan un paraboloide hiperb\'{o}lico y un cilindro elíptico, respectivamente. La ecuaci\'{o}n
+del cilindro representa una elipse en el plano $xy$, el interior de esta región 
+se parametriza como $x=\frac{3}{\sqrt{2}}u\cos (t),$ $y=-1+3u\sin (t),$ con la ecuación del paraboloide hiperb\'{o}lico 
+se halla $z$, esto es 
+$z=\frac{1}{2}\left( x^{2}-y^{2}\right) =\frac{27}{4}u^{2}\cos^{2}(t) +3u\sin (t) -\frac{9}{2}u^{2}-\frac{1}{2}.$ 
+Entonces, la funci\'{o}n
+{\small
+$${\bf r}\left( t,u\right) =\left\langle \frac{3}{\sqrt{2}}u\cos (t),3u\sin (t)-1 ,\frac{27}{4}u^{2}\cos ^{2}(t)
++3u\sin (t) -\frac{9u^{2}+1}{2} \right\rangle,$$
+}
+
+con $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1],$  parametriza la región sobre el paraboloide 
+hiperb\'{o}lico acotada por el cilindro.
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficie sobre el paraboloide hiperbólico.}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/73a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/73b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Nota:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+La anterior figura se consigue con las siguientes instrucciones.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]  
+\begin{Verbatim}[formatcom=\letraverbatim]
+a=ContourPlot3D[{2*z==x^2-y^2,2*x^2+y^2+2*y==8},
+{x,-5,5},{y,-5,5},{z,-9,5},Mesh->False,ContourStyle
+->{Directive[Orange,Opacity[0.6]],Directive[Cyan,
+Opacity[0.2]]},PlotPoints->80,Ticks->{{-3,0,3},
+{-3,0,3},{-8,-4,-2,2,4}}];
+b=ParametricPlot3D[{3*u*Cos[t]/Sqrt[2],-1+3*u*Sin[t],
+27*u^2*Cos[t]^2/4+3*u*Sin[t]-9*u^2/2-1/2},{t,0,2*Pi},
+{u,0,1},PlotStyle->{Cyan},PlotPoints->80];
+Show[a,b]
+\end{Verbatim}
+\end{tcolorbox}
+
+\textcolor{black}{\scriptsize\ding{110}}\quad Las ecuaciones $x^{2}+\left( y-3\right) ^{2}=4$ y $4z=36-\left(x^{2}+y^{2}\right) $ 
+representan un cilindro y un paraboloide invertido con vértice en el punto $(0,0,9)$.
+Con el fin de parametrizar la superficie $\sigma$ sobre el paraboloide exterior al cilindro, con $z\geq 0,$
+analizaremos la base y luego proyectaremos esta región sobre el paraboloide.
+La figura \ref{Superficie_paraboloide_exterior_cilindro} del sólido en mención se obtiene con ayuda de las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+ContourPlot3D[{z==9-(x^2+y^2)/4,x^2+(y-3)^2==4},
+{x,-6,6},{y,-6,6},{z,0,9},Mesh->False,ContourStyle
+->{Orange,Cyan}]
+ParametricPlot3D[{2*(2*u+1)*Sin[t],2*(2*u+1)Cos[t]
+-3*u+3,(u-1)*(12*(1+2u)*Cos[t]-23-25u)/4},{u,0,1},
+{t,0,2*Pi}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie sobre el paraboloide exterior al cilindro}
+	\label{Superficie_paraboloide_exterior_cilindro}
+	\begin{minipage}{0.26\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/86a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.33\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/44.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+
+
+La base del cilindro se puede parametrizar como
+\begin{equation} \label{sup5a}
+x=2\sin (t), \,\, y=3+2\cos (t), \, t\in \lbrack 0,2\pi ].
+\end{equation}
+
+Mientras que la intersecci\'{o}n del paraboloide y el plano $z=0$ se parametriza como $x=6\sin (t) $, $y=6\cos (t) $, con $t\in \lbrack 0,2\pi ].$
+
+
+Con el fin de parametrizar la proyección de $\sigma$ sobre el plano $xy$, se puede formar 
+una combinación convexa entre dos puntos de la forma 
+$P = \left( 2\sin(t),\, 3 + 2\cos(t),\, 0 \right)$ y 
+$Q = \left( 6\sin(t),\, 6\cos(t),\, 0 \right)$. 
+La expresión que permite describir la región acotada por las dos circunferencias está dada por 
+\[
+(1 - u)\,P + u\,Q.
+\]
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Proyección de $\sigma$}
+	\label{fig:45}
+	\begin{minipage}{0.33\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/45.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Por tanto, la función que parametriza la región sobre el plano $xy$ acotada por las dos 
+circunferencias presentadas antes es
+\begin{equation}
+\ve{v}(u,t)=\left( 2\left( 2u+1\right) \sin t,2\left( 2u+1\right) \cos t-3u+3,0\right) \label{sup5}
+\end{equation}
+La coordenada $z$ sobre la superficie del paraboloide es
+\begin{eqnarray*}
+z &=&9-\frac{1}{4}\left( \left( 2\left( 2u+1\right) \sin t\right) ^{2}+\left(
+2\left( 2u+1\right) \cos t-3u+3\right) ^{2}\right) \\
+&=& \frac{1}{4}\left( 1-u\right) \left( 25u-12(2u+1) \cos t+23\right)
+\end{eqnarray*}
+Por lo anterior, la superficie $\sigma$ se parametriza mediante la función 
+\begin{multline*}
+{\bf r}(t,u) =\big\langle 2(2u+1) \sin t,2(2u+1)\cos t-3u+3, \\
+\frac{1}{4}( 1-u) ( 25u-12(2u+1)\cos t+23)  \big\rangle,
+\end{multline*}
+donde $t \in [0,2\pi],$ $u \in [0,1].$
+Sobre la intersección de las superficies se satisface que 
+$z=9-\frac{1}{4}\left( \left( 2\sin(t)\right)^{2}+\left(3+2\cos(t)\right)^{2}\right) = \frac{23}{4}-3\cos(t);$
+dicha curva se parametriza como 
+$$\ve{v}(t)= \langle 2\sin (t), 3+2\cos (t), \frac{23}{4}-3\cos(t) \rangle, \, t \in [0,2\pi].$$
+\vskip0.3cm
+\textcolor{black}{\scriptsize\ding{110}}\quad Con algunos de los elementos anteriores construiremos el siguiente ejemplo.
+Utilizando la ecuación (\ref{sup5}), se sigue que
+la coordenada $z$ de la curva de intersección del cilindro $x^2+(y-3)^2=4$ y el paraboloide hiperbólico 
+$5z=x^2-y^2$ está dado por
+{\small
+\[
+z=\frac{x^{2}-y^{2}}{5}=\frac{1}{5}\left((2\sin(t))^{2}-(3+2\cos(t))^{2}\right)=-1-\frac{12}{5}\cos t-\frac{8}{5}\cos ^{2}t.
+\]
+}
+
+La región determinada por la ecuación (\ref{sup5}), se proyecta sobre el paraboloide hiperbólico con ecuación
+$5z=x^2-y^2;$ la coordenada $z$ está dada por
+{\small
+\begin{eqnarray*}
+z &=& \frac{1}{5}\left( x^{2}-y^{2}\right) =\frac{1}{5}\left( \left( 2\left(1+2u\right) \sin t\right) ^{2}-\left( 3-3u+\left( 2+4u\right) \cos t\right)^{2}\right) \\
+&=& \frac{1}{5}\left( u+5\right) \left( 7u-1\right) -\frac{8}{5}\left( 1+2u\right) ^{2}\cos ^{2}t+\frac{12}{5}\left( 1+2u\right) \left(u-1\right) \cos t
+\end{eqnarray*}
+}
+
+Entonces, la función
+{\small
+\begin{multline*}
+{\bf r}(t,u) = \big \langle 2\left( 1+2u\right) \sin t,3-3u+\left( 2+4u\right) \cos t, \frac{1}{5} (u+5) (7u-1)\\
+-\frac{8}{5}\left( 1+2u\right) ^{2}\cos ^{2}t+\frac{12}{5}\left( 1+2u\right) \left( u-1\right) \cos t\big \rangle, 
+\end{multline*}
+}
+$u\in \lbrack 0,1],$ $t\in \lbrack 0,2\pi ],$ parametriza la superficie sobre
+la silla de montar con ecuaci\'{o}n  $5z=x^{2}-y^{2},$ exterior al cilindro con ecuación 
+$x^{2}+(y-3)^{2}=4,$ e interior al paraboloide con ecuación 
+$z=9-\left( x^{2}-y^{2}\right) /4.$
+La figura \ref{Superficie_paraboloide_hiper} ilustra dicha región.
+
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie sobre el paraboloide hiperbólico $5z=x^2-y^2$}
+	\label{Superficie_paraboloide_hiper}
+	\begin{minipage}{0.47\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/46.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+La figura de la superficie se obtiene ejecutando las siguientes instrucciones. Este es un ejemplo de parametrización en \verb"Mathematica".
+
+\begin{tcolorbox}[breakable, enhanced, title={Código en \verb"Mathematica"}]
+\begin{Verbatim}[formatcom=\letraverbatim]
+{x,y}=(1-u)*{2*Sin[t],3+2*Cos[t]}+u*{6*Sin[t],6*Cos[t]};
+r={x,y,(x^2-y^2)/5};
+ParametricPlot3D[r,{u,0,1},{t,0,2Pi},ViewPoint->{-3,6,2}]
+\end{Verbatim}
+\end{tcolorbox}
+
+Con los elementos anteriores es posible parametrizar otras superficies.
+\begin{tcolorbox}[breakable,enhanced,title=\bf Una manera de parametrizar una superficie]
+Para dos funciones vectoriales $\ve{\alpha}$ y $\ve{\beta}$ en $\mathbb{R}^n$, si $f$ y $g$ son
+funciones reales cont\'{i}nuas en el intervalo $[a,b]$, que satisfacen que 
+$f(a)=1,$ $g(a)=0$ y $f(b)=0,$ $g(b)=1,$ entonces la funci\'{o}n vectorial
+$$\ve{r}(u,t)=f(u)\ve{\alpha}(t)+g(u)\ve{\beta}$$
+es una parametrización de la superficie $\sigma$ acotada por las curvas determinadas por $\ve{\alpha}$ y $\ve{\beta}$.
+\end{tcolorbox}
+
+Veamos algunos ejemplos de la expresión anterior.
+
+\textcolor{black}{\scriptsize\ding{110}}\quad La cardioide $r=1-\cos(t),$ en el plano $z=2,$ se define por medio de la función vectorial 
+${\bf a}(t)= \la (1-\cos(t))\cos(t),(1-\cos(t))\cos(t),2  \ra,$  con $t \in [0,2\pi],$
+mientras que la función 
+${\bf b}(t)= \la 3\cos(t), 3\sin(t), 0\ra,$ con $t \in [0,2\pi],$ 
+determina una circunferencia en el plano $xy.$ 
+Una combinación convexa de estas dos funciones vectoriales determina, mediante segmentos rectilíneos,
+la superficie que se muestra a continuación. \index{Cardioide} 
+\index{Combinación convexa}
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie que conecta una cardioide y una circunferencia}
+	\label{Superficie_cardioide_circunferencia}
+	\begin{minipage}{0.21\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/47.pdf}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/42a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.25\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/42b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+%\vskip0.2cm
+%\clearpage
+
+Simplificando la expresión $(1-u){\bf a}(t)+u{\bf b}(t),$
+se obtiene la función que parametriza esta superficie
+{\small
+\[{\bf r}(u,t)= \langle \cos(t)((u-1)\cos(t)+1+2u), \sin(t)((u-1)\cos(t)+1+2u),2-2u\rangle,\]
+}
+con $t\in[0,2\pi],\, u\in[0,1],$ la figura anterior se obtiene al ejecutar las siguientes instrucciones:
+
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+q={(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t],2};
+r=(1-u)*q+u*{3*Cos[t],3*Sin[t],0};
+a=ParametricPlot3D[{q,{3*Cos[t],3*Sin[t],0}},{t,0,
+2*Pi},PlotStyle->{Directive[Black,Thickness->0.01],
+PlotPoints->90,Directive[Black,Thickness->0.01]}];
+b=ParametricPlot3D[r,{t,0,2*Pi},{u,0,1},
+PlotStyle->Orange,MeshStyle->Gray];
+Show[a,b]
+\end{Verbatim}
+\end{tcolorbox}
+
+\textcolor{black}{\scriptsize\ding{110}}\quad Con las funciones vectoriales
+$\overrightarrow{r}_1(t)=\la 3\cos(t),\sin (t),4+\sin ( t) \ra $ y
+$\overrightarrow{r}_2(t)=\la 2\cos(t),3\sin (t),-1+\cos ( t) \ra $ con $ t\in \lbrack 0,2\pi],$
+que representan dos elipses en el espacio, se forma una combinaci\'{o}n convexa de ellas con par\'{a}metro 
+$u\in \lbrack 0,1].$
+\\
+Simplificando la expresión $(1-u)\overrightarrow{r}_1(t)+u\overrightarrow{r}_2(t)$
+se obtiene la funci\'{o}n:
+$${\bf r}(u,t)=\la (3-u)\cos(t),(1+2u)\sin(t),4+(1-u)\sin(t)-5u+u\cos(t)\ra,$$
+para $u\in[0,1],\,\, t\in[0,2\pi],$ la cual representa la superficie que se obtiene de unir las dos elipses mediante segmentos rectilíneos. 
+
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficie que une dos elipses mediante segmentos}
+	\label{conos_67}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/33a.eps}
+	\end{minipage}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/33b.eps}
+	\end{minipage}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/33c.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+La figura \ref{conos_67} se consigue ejecutando las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]  
+\begin{Verbatim}[formatcom=\letraverbatim]
+ParametricPlot3D[(1-u)*{3*Cos[t],Sin[t],4+Sin[t]}+
+u*{2*Cos[t],3*Sin[t],-1+Cos[t]},{t,0,2*Pi},{u,0,1},
+MeshStyle->Blue,PlotStyle->{Opacity[0.9]}]
+\end{Verbatim}
+\end{tcolorbox}
+
+También se pueden generar dos figuras por separado llamadas \verb"a" y \verb"b", 
+luego, con ayuda de la función \verb"Show", se muestran en una sola.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]  
+\begin{Verbatim}[formatcom=\letraverbatim]
+a=ParametricPlot3D[{{3*Cos[t],Sin[t],4+Sin[t]},
+{2*Cos[t],3*Sin[t],-1+Cos[t]}},{t,0,2*Pi},
+PlotStyle->{Directive[RGBColor[0.2,0.1,1],
+Thickness->0.015],Directive[Black,Thickness->0.015]}];
+b=ParametricPlot3D[(1-u)*{3*Cos[t],Sin[t],4+Sin[t]}+
+u*{2*Cos[t],3*Sin[t],-1+Cos[t],{t,0,0,2*Pi},{u,0,1},
+MeshStyle->Gray,PlotStyle->{Orange,Opacity[0.9]}];
+Show[a,b]
+\end{Verbatim}
+\end{tcolorbox}
+
+%\fontsize{9.5}{12}\selectfont
+\textcolor{black}{\scriptsize\ding{110}}\quad Las dos circunferencias en el espacio, representadas por las funciones vectoriales 
+$\overrightarrow{\alpha}(t)=\langle 2\cos(t), 2\sin(t),0\rangle $ y $\overrightarrow{\beta}(t)=\langle \cos(t),\sin(t),2\rangle,$
+con $t \in [0,2\pi].$ 
+Con ellas se forma la siguiente combinación:
+$$\frac{2\sqrt[4]{1-u}}{e^u+1}\, \overrightarrow{\alpha}(t) + \sqrt[4]{u}\,\overrightarrow{\beta}(t).$$
+Con diferentes valores de $u= \frac{1}{4}, \,\frac{1}{2},\,2$, se logra la figura \ref{superficies_circunferencias68}
+
+
+\begin{figure}[H]
+	\begin{center}
+		\captionof{figure}{\small Superficies que conectan dos circunferencias.}
+		\label{superficies_circunferencias68}
+		\includegraphics[width=2.75cm,height=1.5cm]{Img/8c.eps}
+		\includegraphics[width=2.75cm,height=1.5cm]{Img/8b.eps}
+		\includegraphics[width=2.75cm,height=1.5cm]{Img/8a.eps}
+	\end{center}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+
+Con ayuda de la función \verb"Manipulate" se pueden generar varios elementos como los anteriores. 
+Los comandos necesarios son los siguientes:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+Manipulate[ParametricPlot3D[2*(1-u)^k/(Exp[u]+1)
+*{2*Cos[t],2*Sin[t],0}+u^k*{Cos[t],Sin[t],2},
+{t,0,2Pi},{u,0,1}],{k,0.5,2,0.1}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\textcolor{black}{\scriptsize\ding{110}}\quad Con las funciones $f(t)=te^{t-1}$ y $g(t)=(1-t)e^{t}$, 
+es sencillo ver que $f(0)=0=g(1)$ y $f(1)=1=g(0)$. Además, con las funciones vectoriales
+\vspace{-2mm}
+{\small
+\[
+\ve{\alpha}(t) = \left\langle 3\cos(t),2\sin(t),2-\frac{\sin(t)}{2}\right\rangle 
+\, \text{y} \, 
+\ve{\beta}(t) = \left\langle 2\cos(t),\sin(t),\frac{\sin (2t)}{2} \right\rangle
+\]
+}
+
+se define la función  
+${\bf r}(u,t)= f(u)\ve{\alpha}(t)+g(u)\ve{\beta}(t),$ $t\in [0,2\pi],$ $u\in [0,1],$ 
+cuya figura es la siguiente:
+
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie que conecta las curvas $\alpha$ y $\beta$}
+	\label{superficie_conecta_alfa_beta}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/48.pdf}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/49.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+
+\textcolor{black}{\scriptsize\ding{110}}\quad Las siguientes funciones vectoriales
+{\small
+$\ve{\alpha}(t)= \langle3\cos(t),2\sin(t),2-\frac{1}{2}\sin(t)\rangle$ y 
+$\ve{\beta}(t)= \langle 2\cos(t),\sin(t),\frac{1}{2}\sin ( 2t) \rangle,$ $t\in [0,2\pi]$
+} determinan dos curvas en el espacio. 
+Con ayuda de las funciones $f(t)=1-t^2$ y $g(t)=t^3$, se puede formar la combinación entre ellas y
+definir la función ${\bf r}(u,t)= f(u)\ve{\alpha}(t)+g(u)\ve{\beta}(t)$ con $t \in [0,2\pi],$ $u \in [0,1].$ 
+Esta une los puntos de las curvas determinadas por $\ve{\alpha}(t)$
+y $\ve{\beta}(t),$ a través de una superficie curva.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie determinada por ${\bf r}(u,t)$}
+	\label{Superficie_determinada}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/50.pdf}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/69a.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Esta figura se genera con ayuda de las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+a={3*Cos[t],2*Sin[t],2-Sin[t]/2};
+b={2*Cos[t],Sin[t],Sin[2*t]/2};
+p=ParametricPlot3D[(1-u^2)*a+u^3*b,{t,0,2*Pi},{u,0,1},
+PlotStyle->Orange,MeshStyle->Gray,PlotPoints->60];
+q=ParametricPlot3D[{a,b},{t,0,2*Pi},PlotPoints->
+60,PlotStyle->{Directive[Black,Thickness->0.012],
+Directive[Black,Thickness->0.012]}];
+Show[p,q]
+\end{Verbatim}
+\end{tcolorbox}
+
+\vskip0.2cm
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Las dos circunferencias unitarias ubicadas en el plano $z=2$ y $z=0$,
+se unen por medio de curvas y generan la siguiente superficie.
+La parametrizacion de esta región se consigue con la ayuda de las funciones 
+$f(t)=\frac{2t}{t^2+1}$ y $g(t)=\frac{1-t}{t^2+1}$.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Circunferencias conectadas}
+	\begin{minipage}{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/51.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Estas funciones se utilizan para formar la siguiente combinación.
+{\small
+\begin{equation*}
+f(u)\ve{\alpha}(t)+g(u)\ve{\beta}(t) 
+% \frac{2u}{u^2+1}\la \cos(t),\sin(t),2\ra + \frac{1-u}{u^2+1} \la\cos(t),\sin(t),0\ra\\
+= \la  \frac{u+1}{u^2+1}\cos t,\frac{u+1}{u^2+1} \sin t,\frac{4u}{u^2+1}\ra,u \in[0,1], t\in[0,2\pi].
+\end{equation*}
+}
+
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Las funciones {\small $\ve{\alpha}(t) = \langle(2-2\cos(t)) \cos(t), (2-2\cos(t))\sin(t),2\rangle$} y {\small $\ve{\beta}(t) = \langle ( 1-\cos(t)) \cos(t),( 1-\cos(t)) \sin(t),0\rangle$} 
+representan dos cardioides.
+
+Se forma la combinación {\small $${\bf r}(u,t)= (1-u^{4})\ve{\alpha}(t) +u^{3}\ve{\beta}(t),$$}
+con $u \in[0,1],$ $t \in[0,2\pi],$ que parametriza la superficie curva que las une y se muestra en la figura \ref{Dos_cardioides_conectadas}.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Dos cardioides conectadas}
+	\label{Dos_cardioides_conectadas}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/52.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\textcolor{black}{\scriptsize\ding{110}}\quad La figura \ref{Dos_cardioides_conectadas} de la función vectorial {\small ${\bf r}(t)= \langle 4 \cos(t)-\cos(4t),4\sin(t)-\sin(4t),0 \rangle,$} con
+$t\in [0,2\pi],$ se presenta a continuación.
+
+\vskip0.2cm
+\vspace{0pt}
+El interior se parametriza con
+$x(u,t) = (4 \cos(t)-\cos(4t))u,$
+$y(u,t) = (4\sin(t)-\sin(4t))u,$
+para $t\in [0,2\pi],$ $u\in [0,1].$
+Utilizando las funciones $f(u)= \sqrt[4]{(1-u)^3}$  y $g(u)=\sqrt[4]{u^3}$,
+se forma la combinación con el punto $(1,0,3),$
+$${\bf r}_2(u,t)=f(u) {\bf r}(t)+ g(u)(1,0,3).$$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}_1(u,t)=\la x(u,t),y(u,t),0 \ra$}
+	\label{fig:53}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/53.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Lo anterior permite definir la función
+{\small
+\[
+{\bf r}_2(t,u)= \sqrt[4]{(1-u)^3} \left( 4 \cos(t)-\cos(4t),4\sin(t)-\sin(4t),0\right)+ \sqrt[4]{u^3} \left(1,0,3\right).
+\]
+}
+
+Las figuras de las superficies generadas por las funciones 
+${\bf r}_1(t,u)$ y ${\bf r}_2(t,u)$ se muestran con diferentes colores en la siguiente figura. 
+
+\begin{figure}[H]
+	\begin{center}
+		\captionof{figure}{\small Superficies determinadas por ${\bf r}_1(u,t)$ y ${\bf r}_2(u,t)$.}
+		\includegraphics[scale=0.33]{Img/78c.eps}
+		\includegraphics[scale=0.33]{Img/78a.eps}
+		\includegraphics[scale=0.33]{Img/78b.eps}
+	\end{center}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont{\bf Fuente:} elaboración propia.}
+\end{figure}
+
+Las siguientes instrucciones permiten obtener estos gráficos.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]
+\begin{Verbatim}[formatcom=\letraverbatim]
+p={4*Cos[t]-Cos[4*t],4*Sin[t]-Sin[4*t],0};
+r=(1-u)^(3/4)*p+u^(2/4)*{1,1,3};
+ParametricPlot3D[{r,p*u},{u,0,1},{t,0,2Pi},
+PlotStyle->{Orange,Cyan}]
+\end{Verbatim}
+\end{tcolorbox}
+
+La función generada es ${\bf r}(u,t)= \langle(2\sqrt{u}+1-u^2)\cos t, (2\sqrt{u}+1-u^2) \sin t,\sqrt{u}\rangle,$
+$ t\in [0,2\pi],\, u\in[0,1].$ 
+
+\vskip0.2cm
+\vspace{0pt}
+\textcolor{black}{\scriptsize\ding{110}}\quad Las circunferencias parametrizadas por
+$\ve{\alpha}(t)= \langle \cos(t),\sin(t),0 \rangle $ y $\ve{\beta}(t)= \langle 2\cos(t),2\sin(t),1 \rangle $,
+se unen utilizando las funciones $g(u)= \sqrt{u}$ y $f(u)=1-u^2$; mediante la combinación
+${\bf r}(u,t)= f(u)\ve{\alpha}(t) +g(u)\ve{\beta}(t)= \langle (2-2u^2+\sqrt{u})\cos t,(2-2u^2+\sqrt{u})\sin t,1- u^2\rangle$
+con $t\in [0,2\pi],\,u\in[0,1].$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Circunferencias conectadas}
+	\label{Circunferencias_conectadas}
+	\begin{minipage}{0.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/54.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\textcolor{black}{\scriptsize\ding{110}}\quad La curva parametrizada por las ecuaciones $x(t)= 16\sin ^{3}(t),$ 
+$y(t)=13\cos (t) -5\cos \left( 2t\right) -2\cos \left( 3t\right) -\cos \left(4t\right),$
+con $t\in \lbrack 0,2\pi ]$, gira alrededor del eje vertical y genera una superficie.
+Al hacer coincidir el eje vertical con el eje $z,$ entonces la funci\'{o}n que describe la superficie en menci\'{o}n, para $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1],$ es
+\[
+\resizebox{\textwidth}{!}{$
+	\mathbf{r}(t,u) = \langle 16\sin^3(t)\cos u,\ 16\sin^3(t)\sin u,\ 13\cos(t) - 5\cos(2t) - 2\cos(3t) - \cos(4t) \rangle
+	$}
+\]
+
+\vspace{-4mm}
+\begin{figure}[H]
+	\centering
+	% 1. Reducimos el espacio que el caption deja debajo de sí mismo
+	\captionsetup{skip=2pt} 
+	\caption{Superficies parametrizadas por $a(t, u)$ y $b(t, u)$}
+	\label{fig:superficies}
+	
+	% 2. Eliminamos los vspace negativos entre imágenes si están en la misma línea
+	% y usamos un vspace positivo pequeño para separarlas del caption
+	\vspace{2pt} 
+	\includegraphics[width=0.21\linewidth]{Img/49a.eps} \hspace{1em}
+	\includegraphics[width=0.21\linewidth]{Img/49b.eps} \hspace{1em}
+	\includegraphics[width=0.21\linewidth]{Fig/55.pdf}
+	
+	% 3. Controlamos el espacio de la fuente de manera independiente
+	\vspace{0.2cm} 
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+
+Esta figura se genera ejecutando las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+ParametricPlot[{16*Sin[t]^3,13*Cos[t]-5*Cos[2*t]
+-2*Cos[3*t]-Cos[4*t]},{t,0,2Pi}];
+ParametricPlot3D[{16*Sin[t]^3*Sin[u],(16*Sin[t]^3)
+*Cos[u],13*Cos[t]-5*Cos[2*t]-2*Cos[3*t]-Cos[4*t]},
+{t,0,2Pi},{u,0,2*Pi},PlotPoints->80]
+\end{Verbatim}
+\end{tcolorbox}
+
+\vspace{-0.2em}
+Presentamos enseguida otros ejemplos de superficies parametrizadas bajo ciertas condiciones.
+\subsection*{Superficie acotada por dos paraboloides} \index{Paraboloide} 
+Las ecuaciones $8y=9-5x^{2}-6z^{2}$ y $16y=4z^{2}-x^{2},$
+representan gr\'{a}ficamente un paraboloide y un paraboloide hiperb\'{o}lico, al 
+eliminar $y$ de estas expresiones se obtiene la ecuaci\'{o}n $9x^{2}+16z^{2}=18,$ que corresponde a una elipse en el plano $xz.$ La regi\'{o}n interior a esta curva se parametriza como 
+$x=\sqrt{2}u\cos (t) ,$ $z=\frac{3\sqrt{2}}{4}u\sin (t) ,$ para $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1].$ Al reemplazar estas expresiones en las ecuaciones del paraboloide y del paraboloide hiperb\'{o}lico, se obtiene:
+\[
+8y=9-5x^{2}-6z^{2}= 9-\frac{13}{4}u^{2}\cos ^{2}(t) -\frac{27}{4}u^{2},
+\]
+entonces
+\[
+y= \frac{9}{8}-\frac{13}{32}u^{2}\cos ^{2}(t) -\frac{27}{32}u^{2}.
+\]
+Por otra parte,
+\[
+16y=4z^{2}-x^{2}= \frac{9}{2}u^{2}-\frac{13}{2}u^{2}\cos^{2}(t) ,
+\]
+luego
+\[
+y= \frac{9}{32}u^{2}-\frac{13}{32}u^{2}\cos ^{2}(t) .
+\]
+Las superficies señaladas y el sólido  en mención se muestran enseguida.
+
+\begin{figure}[H]
+	\centering
+	% 1. Centramos la leyenda respecto a todo el ancho de la página
+	\caption{Superficies parametrizadas por $a(t,u)$ y $b(t,u)$}
+	\label{fig:superficies_parametrizadas}
+	\vspace{2pt} % Espacio pequeño para acercar la leyenda a las figuras
+	
+	% 2. Reducimos el tamaño de las minipages (de 0.32 a 0.28) para disminuir las figuras
+	\begin{minipage}[b]{0.28\linewidth}
+		\centering
+		% Usamos scale o una altura menor (ej. 3.5cm) para homogeneizar
+		\includegraphics[width=\linewidth, height=3.0cm, keepaspectratio]{Img/71b.eps}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth, height=3.0cm, keepaspectratio]{Img/71d.eps}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth, height=3.5cm, keepaspectratio]{Fig/56.pdf}
+	\end{minipage}
+	
+	% 3. Espacio para la fuente
+	\vspace{0.4cm}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+\vskip0.3cm
+Con lo señalado antes, la superficie sobre el paraboloide acotada por el
+paraboloide hiperbólico se parametriza como
+{\small
+\[
+\mathbf{a}(t,u) = \left\langle \sqrt{2}u\cos(t),\,
+\frac{9}{8} - \frac{13}{32}u^{2}\cos^{2}(t) - \frac{27}{32}u^{2},\,
+\frac{3\sqrt{2}}{4}u\sin(t) \right\rangle,
+\]
+}
+mientras que la superficie sobre el paraboloide hiperbólico acotada por el paraboloide está dada por
+{\small
+\[
+\mathbf{b}(t,u) = \left\langle \sqrt{2}u\cos(t),\,
+\frac{9}{32}u^{2} - \frac{13}{32}u^{2}\cos^{2}(t),\,
+\frac{3\sqrt{2}}{4}u\sin(t) \right\rangle.
+\]
+}
+En ambos casos, $t \in [0, 2\pi]$ y $u \in [0, 1]$. 
+Los gráficos se obtienen al ejecutar las siguientes instrucciones. Al ingresar el código se usó la identidad $2\cos^2(t) = 1 + \cos(2t)$.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+ParametricPlot3D[{{Sqrt[2]*u*Cos[t],(72-67*u^2
+-13*u^2*Cos[2*t])/64,3*Sqrt[2]/4*u*Sin[t]},
+{Sqrt[2]*u*Cos[t],u^2*(5-13*Cos[2*t])/64,
+3*Sqrt[2]/4*u*Sin[t]}},{t,0,2*Pi},{u,0,1},
+PlotStyle->{Orange,Cyan},PlotPoints->80]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Superficies creadas por una cardioide y una elipse}
+La cardioide con ecuación $r=1-\cos(t)$, se puede parametrizar,  para $t\in [0,2\pi]$ como 
+$\langle(1-\cos(t))\cos(t),(1-\cos(t))\sin(t)\rangle$ y la elipse parametri- \\ zada en la forma $\langle 3\cos(t),2\sin(t)\rangle,$ $t\in [0,2\pi]$, determinan una región en el plano acotada por sus gráficos.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie sobre el cilindro parabólico $z=1+(1-y)^2/4$}
+	\label{Superficie_cilindro_parabólico}
+	\begin{minipage}{0.37\linewidth}
+		\centering
+		\vspace{-3mm}
+		\includegraphics[width=\linewidth]{Fig/57.pdf}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.37\linewidth}
+		\centering
+		\vspace{-3mm}
+		\includegraphics[width=\linewidth]{Fig/58.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Una parametrización de la región del plano entre la elipse y el cardioide, se determina
+formando una combinación convexa entre dos puntos, uno en cada curva, es decir
+$(1-u)\langle(1-\cos(t))\cos(t),(1-\cos(t))\sin(t)\rangle
++u\langle 3\cos(t),2\sin(t)\rangle,$
+esta expresión se simplifica en la forma 
+{\small $${\bf r}(u,t)=\big \langle((u-1)\cos(t)+1+2u)\cos(t), (1+u+(u-1)\cos(t))\sin(t)\big \rangle,$$}
+con $t\in [0,2\pi],\, u\in [0,1]$.
+Esta región la proyectaremos sobre diferentes superficies para obtener su respectiva
+parametrización. 
+\vskip0.3cm
+\subsubsection*{Superficie sobre el cilindro con ecuación \texorpdfstring{$z=1+(1-y)^2/4$}{z=1+(1-y)²/4}}
+
+\vskip0.3cm
+La ecuación $z=1+(1-y)^2/4$ nos permite llevar esta región del plano al espacio. 
+Con lo mostrado anteriormente, solo nos falta determinar la coordenada $z$, esto es
+$z=1+\frac{1}{4}(1-y)^2=1+\frac{1}{4}(1-((1+u+(u-1)\cos(t))\sin(t)))^2,$
+con lo cual, la función que representa la parte del cilindro sobre la región que se considera es:
+{\small
+\begin{multline*}
+{\bf r}(u,t)=\big \langle((u-1)\cos(t)+1+2u)\cos(t), (1+u+(u-1)\cos(t))\sin(t),\\
+1+\frac{1}{4}(1-((1+u+(u-1)\cos(t))\sin(t)))^2 \big \rangle, 
+\end{multline*}
+}
+con $t\in [0,2\pi],\, u\in [0,1].$ Una manera distinta de ver la misma superficie es considerarla como la parte del 
+cilindro con ecuación $z=1+(1-y)^2/4$, que se encuentra entre el cilindro cardioidico
+\index{Cilindro cardiodico}
+con ecuación polar $r=1-\cos(t)$ y el cilindro elíptico con ecuación 
+$\frac{x^2}{9}+\frac{y^2}{4}=1.$ La figura de esta situación se muestra a continuación.
+\vspace{-1mm}
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficie sobre el cilindro parabólico $z=1+(1-y)^2/4$}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/43b.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/43a.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+
+\vskip0.2cm
+Estos gráficos se elaboraron en \verb"Mathematica".
+En el plano $xy$ se forma una combinación convexa entre la función que determina la elipse y la cardioide.
+Esta región se proyecta sobre el paraboloide $z=1+(y-1)^2/4$, la cual se grafica en el espacio.
+Los cilindros se grafican por separado, definiendolos como \verb"a" y \verb"b",
+que se muestran en un solo gráfico.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+{x1,y1}={(1-Cos{t})},*Cos{t},(1-Cos{t})*Sin{t});
+{x2,y2}={3*Cos[t],2*Sin[t]};
+{x,y}={1-u}*{x1,y1}+u*{x2,y2};
+ParametricPlot[{x,y},{t,0,2*Pi},{u,0,1}]
+ParametricPlot3D[{x,y,1+(1-y)^2/4},{u,0,1}{t,0,2*Pi},
+PlotRange->{{-3, 3}, {-2, 2}},
+MeshStyle->Gray]
+a=ContourPlot3D[{z==1+(1-y)^2/4},
+{x,-4,4},{y,-4,4},{z,-1,5},
+ContourStyle->RGBColor[0.1,0.4,0.3], Mesh->False];
+b=ParametricPlot3D[{{x1,y1,u},{x2,y2, u}},{u,0,5},
+{t,0,2*Pi}, 
+Mesh->False];
+Show[a, b];
+	\end{Verbatim}
+\end{tcolorbox}
+
+\subsubsection*{Superficie sobre el cilindro \texorpdfstring{$z=\cos (2x)$}{z=cos(2x)}}
+En este caso, la parametrización de la superficie es
+{\small
+\begin{multline*}
+{\bf r}\left( u,t\right) = \big\langle \cos (t) \left( \cos (t)
+\left( u-1\right) +1+2u\right) ,\sin (t) ( 1+u+\\ 
+(u-1) \cos (t)) , \cos \big( 2\cos (t)\left( \cos (t) \left( u-1\right) +1+2u\right) \big) \big \rangle,
+\end{multline*}
+}
+con $t \in [0,2\pi]$, $u \in [0,1]$, dicha superficie se muestra a continuación.
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficie sobre el cilindro $z=\cos (2x)$}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/46a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/46b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Nota:} elaboración propia.}
+\end{minipage}
+
+\vspace{0.3cm}
+Las instrucciones para conseguirlo son las siguientes:
+primero, se define la función ${\bf r}$, que describe la región entre la elipse y la cardioide;
+luego, se define la función que parametriza la superficie y 
+se muestra su gráfico. 
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+r=(1-u)*{(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t]}+
+u*{3*Cos[t],2*Sin[t]};
+ParametricPlot3D[{r[[1]],r[[2]],Cos[2*r[[1]]]},
+{u,0,1},{t,0,2*Pi},PlotRange->{{-3,3},{-3,3},{-1,1}},
+PlotStyle->RGBColor[0.8,0.2,0.3],Mesh->False,
+PlotPoints->90,Ticks->{{-2,0,2},{-2,0,2},{-1,0,1}}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsubsection*{Superficie sobre el cilindro \texorpdfstring{$z=\sin (2x)$}{z=sin(2x)}}
+Sobre este cilindro la parametrización que se utiliza es:
+{\small
+\begin{multline*}
+{\bf r}(u,t) = \big\langle \cos (t) \left( \cos (t)\left( u-1\right) +1+2u\right),
+\sin(t)(1+u+\\ (u-1)\cos(t)), \sin \big( 2\cos (t)\left( \cos (t) \left( u-1\right) +1+2u\right)\big) \big\rangle,
+\end{multline*}
+}
+en donde $t \in [0,2\pi]$, $u \in [0,1]$.
+Se presenta ahora la figura y las instrucciones
+que se requieren para obtenerlo:
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficie sobre el cilindro $z=\sin(2x)$}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/47b.eps}
+	\end{minipage}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/47a.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]  
+\begin{Verbatim}[formatcom=\letraverbatim]
+r=(1-u)*{(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t]}+
+u*{3*Cos[t],2*Sin[t]};
+p={r[[1]],r[[2]],Sin[2*r[[1]]]};
+ParametricPlot3D[p,{u,0,1},{t,0,2*Pi},
+PlotRange->{{-3,3},{-3,3},{-1,1}},Mesh->False,
+PlotStyle->RGBColor[0.8,0.2,0.3],PlotPoints->80]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsubsection*{Superficie sobre el cilindro \texorpdfstring{$z=\frac{1}{5}y^{2}-\frac{1}{4}(x-1) ^{2}$}{z=(1/5)y²-(1/4)(x-1)²}}
+
+La superficie mencionada se presenta a continuación.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficie sobre el cilindro $z=\frac{1}{5}y^{2}-\frac{1}{4}(x-1) ^{2}$}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/45a.eps}
+	\end{minipage}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/45b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Como se señaló antes, nos falta determinar la coordenada $z$, esto es 
+{\footnotesize
+	\begin{align*}
+z&=\frac{1}{5}y^{2}-\frac{1}{4}\left( x-1\right) ^{2} \\	&=\frac{1}{5}\big( \sin(t) \left( 1+u+(u-1) \cos(t) \right) \big)^{2}-\frac{1}{4}\big(\cos(t)\left(\cos(t) \left( u-1\right) +1+2u\right)-1\big)^{2},
+	\end{align*}
+}
+entonces la parametrización de la superficie es
+{\small
+\begin{multline*}
+{\bf r}(u,t) = \bigg\langle \cos (t) \left( \cos (t)
+\left( u-1\right) +1+2u\right) ,\sin (t)(1+u
++(u-1) \cos (t)) , \\ \frac{1}{5}\big( \sin(t) \left( 1+u+(u-1) \cos(t) \right)\big) ^{2} \\
+-\frac{1}{4}\big( \cos (t) \left( \cos (t) \left( u-1\right) +1+2u\right) -1\big) ^{2} \bigg \rangle. 
+\end{multline*}
+}
+Para $t \in [0,2\pi]$, $u \in [0,1]$, las instrucciones 
+para conseguir el gráfico se muestran enseguida.
+
+%\vspace{-4mm}
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+r=(1-u)*{(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t]}+
+u*{3*Cos[t],2*Sin[t]};
+p={r[[1]],r[[2]],-1/4*(r[[1]]-1)^2+1/5*(r[[2]])^2};
+ParametricPlot3D[p,{u,0,1},{t,0,2*Pi},
+PlotRange->{{-3,3},{-2,2},{-4.2,1}},Mesh->False,
+PlotStyle->RGBColor[0.2,0.5,0.5],PlotPoints->80]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Superficies acotadas por cilindros elípticos}
+
+Las expresiones $4x^2 + y^2 = 36$ y $x^2 + 4y^2 = 4$ representan dos cilindros elípticos con eje $z$ como eje de simetría. Sin embargo, se puede dar una mejor idea de sus ecuaciones representando dos elipses que pueden parametrizarse respectivamente como $\vec{a}(t) = \langle 3\cos(t),\, 6\sin(t) \rangle$ y $\vec{b}(t) = \langle 2\cos(t),\, \sin(t) \rangle$.
+
+
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Región parametrizada por ${\bf r}(u,t)=\left\langle \cos(t)(3-u),\, \sin(t)(6-5u) \right\rangle$}
+	\label{fig:59}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/1a.eps}
+	\end{minipage}
+	\begin{minipage}{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/59.pdf}
+	\end{minipage}
+	\begin{minipage}{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/60.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Con dos puntos $P$ y $Q$, simplificando la expresión: 
+\begin{align}
+	(1 - u)P + uQ &= (1 - u)(3\cos(t),\, 6\sin(t)) + u(2\cos(t),\, \sin(t)) \notag \\
+	&= (\cos(t)(3 - u),\, \sin(t)(6 - 5u)). \tag{3.7} \label{1a}
+\end{align}
+Para $u \in [0,1]$, esta función parametriza la región que se halla entre estas dos curvas. La región en mención, que denominaremos $R$, se proyectará sobre un plano y posteriormente sobre un paraboloide; se presentará su construcción con sus respectivas parametrizaciones.
+
+\subsubsection*{Superficie sobre un plano}
+Se puede representar la porci\'{o}n del plano con ecuaci\'{o}n $6z=2x+y+12$ sobre la región acotada  por los dos cilindros. 
+
+\begin{figure}[H]
+	\centering
+	\captionof{figure}{\small Cilindros elípticos intersecados por el plano $6z=2x+y+12$}
+	\label{fig:cilindros_intersecados}
+	\vspace{2pt} % Acerca la leyenda a las imágenes
+	
+	% Reducción uniforme: width de 4cm a 3.5cm o 0.28\linewidth
+	\includegraphics[width=0.28\linewidth, height=3cm, keepaspectratio]{Img/1c.eps}
+	\hspace{1cm} % Espacio horizontal entre ambas
+	\includegraphics[width=0.28\linewidth, height=3cm, keepaspectratio]{Img/1d.eps}
+	
+	\vspace{0.4cm} % Separación con la fuente
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+Para determinar $z$ se puede proceder como sigue
+\vspace*{-4mm} 
+\[
+\begin{aligned}
+	z &= \frac{1}{6}\left( 2\cos (t) \left( 3-u\right) +\sin (t) \left( 6-5u\right) +12\right) \\ 
+	&= \left( 1-\frac{1}{3}u\right)\cos (t) +\left( 1-\frac{5}{6}u\right) \sin (t) +2
+\end{aligned}
+\]
+Por último, la región $R$ sobre el plano se parametriza mediante la función:
+\vspace*{-2mm} 
+{\footnotesize
+	\[
+	\overrightarrow{r}(u,t) =\big\langle \cos (t) \left( 3-u\right) ,\sin (t) \left( 6-5u\right) ,
+	\left( 1 - \! \frac{1}{3}u\right) \cos (t) + \left( 1 - \! \frac{5}{6}u\right) \sin (t) +2\big\rangle ,
+	\]
+}
+\vspace*{-1mm} 
+con $t\in \lbrack 0,2\pi ],\,\, u\in \lbrack 0,1].$
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Región sobre el plano $6z=2x+y+12$ acotada por los cilindros elípticos}
+	\label{Región_cilindros_elípticos}
+	\begin{minipage}{0.50\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/61.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+\subsubsection*{Superficie sobre un paraboloide} \index{Paraboloide} 
+Con ayuda de la expresi\'{o}n (\ref{1a}), se puede parametrizar la parte del
+parabo- \\ loide con ecuaci\'{o}n $z=6-\left( x-1\right) ^2-y^2,$ cuya proyecci\'{o}n 
+en el plano $xy$ es la regi\'{o}n $R,$ para este fin determinaremos $z$, esto es
+\begin{eqnarray*} z&=&  6-\left( \left( 3-u\right)\cos(t)-1\right)^2-\left(
+\left( 6-5u\right) \sin (t) \right) ^2 \\
+&=& -31+\left( 27-54u+24u^{2}\right) \cos ^{2}(t) +\left( 6-2u\right) \cos (t) +60u-25u^{2}
+\end{eqnarray*}
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie sobre el paraboloide acotada por los cilindros elípticos}
+	\label{Superficie_paraboloide_acotada_cilindros_elípticos}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/1e.eps}
+	\end{minipage}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/1f.eps}
+	\end{minipage}
+	\begin{minipage}{0.28\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/62.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Por lo tanto, la función 
+\vspace*{-4mm} % Ajuste vertical después del párrafo
+\begin{multline*}
+	\overrightarrow{r}(u,t) = \big\langle \cos(t)(3-u) ,\sin(t)( 6-5u) , \\
+	-31+\left( 27-54u+24u^{2}\right) \cos ^{2}(t) +\left( 6-2u\right) \cos (t) +60u-25u^{2} \big\rangle
+\end{multline*}
+
+\noindent con $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1],$
+con $ t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1],$  permite representar gráficamente la situación mencionada.
+% Las curvas de intersecci\'{o}n de los cilindros elípticos y el paraboloide se determinan reemplazando en el valor 
+% de $z,$ que para los dos casos es:
+% $$z=6-\left( 3\cos (t) -1\right) ^{2}-\left( 6\sin (t) \right) ^{2}= -31+27\cos ^{2}(t) +6\cos (t) $$
+% $$z=6-\left( 2\cos (t) -1\right) ^{2}-\left( \sin (t) \right) ^{2}= 4-3\cos ^{2}(t) +4\cos (t) $$
+Las figuras de esta sección pueden obtenerse ejecutando las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+ContourPlot3D[{4*x^2+y^2==36, x^2+4*y^2==4,6*z==-2*x+y+12},
+{x,-6,6},{y,-6,6},{z,0,4},PlotPoints->50]
+ContourPlot3D[{6*z==-2*x+y+12, 4*x^2+y^2==36,x^2+4*y^2==4},
+{x,-4,4},{y,-7,7},{z,-0.5,4.5},PlotPoints->80,
+ContourStyle->{Gray,Yellow,Red}]
+ContourPlot3D[{z==6-(x-1)^2-y^2,4*x^2+y^2==36,
+x^2+4*y^2==4},
+{x,-6,10},{y,-7,7},{z,-35,6},
+ContourStyle->{Red,Yellow,Green}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+ParametricPlot3D[{{1 + 3*Cos[t],2*Sin[t],Sqrt[5*(Sin[t])^2 
+-6*Cos[t]+6]},{1+3*Cos[t],2*Sin[t],-Sqrt[5*(Sin[t])^2
+-6*Cos[t]+6]}},{t,0,2*Pi}, PlotStyle->{Directive[Black,
+Thickness[0.015]],Directive[Black,Thickness[0.015]]}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Dos paraboloides} \index{Paraboloide!hiperbólico}
+Las ecuaciones $4y=z^{2}-x^{2}\,$ y $\, y=4-x^{2}-z^{2}$ 
+representan un paraboloide y un paraboloide hiperbólico. Estas figuras se muestran enseguida.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small $4y=z^{2}-x^{2}$ y $y=4-x^{2}-z^{2}$}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/4a.eps}
+	\end{minipage}
+	\hspace{1em} 
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/4b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Estas superficies se intersecan 
+en una curva con ecuaci\'{o}n cartesiana 
+$3x^{2}+5z^{2}=16,$ que equivale a 
+$\frac{x^{2}}{16/3}+\frac{z^{2}}{16/5}=1,$ la cual representa una elipse en
+el plano $xz.$ 
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{$3x^{2}+5z^{2}\leq 16$}
+	\label{fig:63}
+	\begin{minipage}{0.34\linewidth}
+		\centering
+		\vspace{-4mm}
+		\includegraphics[width=\linewidth]{Fig/63.pdf}
+	\end{minipage}
+	
+	\vspace{4mm}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+
+La frontera puede parametrizarse en la forma
+$x=\frac{4}{\sqrt{3}}\cos (t) ,\,\, z=\frac{4}{\sqrt{5}}\sin(t),$  $t\in \lbrack 0,2\pi ].$
+Mientras que el interior se parametriza en la forma  
+$x=\frac{4u}{\sqrt{3}}\cos (t) ,$ $z=\frac{4u}{\sqrt{5}}\sin(t),$ 
+$t\in \lbrack 0,2\pi ]$ y $u\in \lbrack 0,1].$ Reemplazando $x$ y $z$ en la ecuación del paraboloide se sigue que
+{\footnotesize
+	\[
+	y = 4-x^{2}-z^{2}= 4-\left( \frac{4}{\sqrt{3}}\cos \left( t\right) \right) ^{2}-\left( \frac{4}{\sqrt{5}}\sin \left( t\right) \right) ^{2} =  \frac{4}{5}-\frac{32}{15}\cos ^{2}\left( t\right)
+	\]
+}
+Con lo anterior, se establece que la función vectorial:
+$$
+\overrightarrow{r}(t)=\left\langle \frac{4}{\sqrt{3}}\cos (t) ,\frac{4}{5}-\frac{32}{15}\cos ^{2}(t) ,\frac{4}{\sqrt{5}}\sin (t) \right\rangle,
+$$
+\noindent con $t\in \lbrack 0,2\pi ],$ representa la curva $C$, que es la intersección.
+
+
+
+\noindent \textcolor{black}{\scriptsize\ding{110}}\quad La superficie sobre el paraboloide hiperbólico acotado por la curva $C$, se puede 
+parametrizar reemplazando $x$ y $z$, para obtener el valor de $y$, 
+$$
+\small
+y=\frac{1}{4}\left(\left(\frac{4u}{\sqrt{5}}\sin (t) \right) ^{2}-\left( \frac{4u}{\sqrt{3}}\cos (t) \right) ^{2}\right) = \frac{4}{5}u^{2}-\frac{32}{15}u^{2}\cos ^{2}(t),
+$$
+	
+por lo tanto, 
+$$
+\small 
+\overrightarrow{r}(t,u)=\left\langle \frac{4u}{\sqrt{3}}\cos (t) , \frac{4}{5}u^{2}-\frac{32}{15}u^{2}\cos ^{2}(t) , \frac{4u}{\sqrt{5}}\sin (t)  \right\rangle,
+$$
+con $t\in [0,2\pi ],$ $u\in [ 0,1 ], $ es una manera de parametrizar la mencionada superficie.
+	
+	
+%\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Superficie determinada por $\mathbf{r}(t,u)$}
+	\label{fig:64}
+	\begin{minipage}{0.32\linewidth}
+		\centering
+		\vspace{-3mm}
+		\includegraphics[width=\linewidth]{Fig/64.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+\noindent
+\textcolor{black}{\scriptsize\ding{110}}\quad Ahora se desea parametrizar la parte del paraboloide acotado por la curva $C$.
+Para este propósito, el valor de $y$ se consigue sustituyendo en la expresión adecuada:
+
+%\vspace*{2mm} 
+{\footnotesize
+	\[
+	y = 4-\left( \frac{4u}{\sqrt{3}}\cos(t)\right) ^{2}-\left(\frac{4u}{\sqrt{5}}\sin (t)\right)^{2} = 4-\frac{32}{15}u^{2}\cos ^{2}(t) -\frac{16}{5}u^{2},
+	\]
+}
+\vspace{2mm} 
+por lo tanto,
+{\footnotesize
+	\[
+	\overrightarrow{r}(t,u)=\left\langle \frac{4u}{\sqrt{3}}\cos (t) , 4-\frac{32}{15}u^{2}\cos ^{2}(t) -\frac{16}{5}u^{2} , \frac{4u}{\sqrt{5}}\sin (t) \right\rangle,
+	\]
+}
+con $t\in \lbrack 0,2\pi ],\, u\in \lbrack 0,1 ], $ representa la superficie deseada.
+
+\begin{figure}[h!]
+	\centering 
+	\captionof{figure}{\small Superficie acotada por los paraboloides $4y=z^{2}-x^{2}$ y $y=4-x^{2}-z^{2}$}
+	\includegraphics[scale=0.20]{Img/4c.eps} \hspace{0.5cm} 
+	\includegraphics[scale=0.35]{Img/4d.eps} 
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+\noindent{Esta figura se obtiene ejecutando las siguientes instrucciones:}
+\vspace{0.5em}
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]  
+\begin{Verbatim}[formatcom=\letraverbatim]
+a=Show[ContourPlot3D[{4*y==z^2-x^2,y==4-x^2-z^2},{x,-3,3},
+{y,-3,4},{z,-3,3},Mesh->None,PlotPoints->90,
+ContourStyle->{{Gray,Orange},Opacity[0.6]}],
+ParametricPlot3D[{4/Sqrt[3]*Cos[t],4-(4/Sqrt[5]*Sin[t])^2
++(4/Sqrt[3]*Cos[t])^2,4/Sqrt[5]*Sin[t]},{t,0,2*Pi},
+PlotPoints->80,PlotStyle->{Purple,Thickness->0.015}]];
+
+b=ParametricPlot3D[{4*u/Sqrt[3]*Cos[t],
+4-32/15*u^2*Cos[t]^2-
+16*u^2/5,4*u/Sqrt[5]*Sin[t]},{t,0,2*Pi},{u,0,1},
+PlotPoints->90,
+Ticks->{{-2,0,2},{0,2,4},{-1,0,1}},PlotStyle->RGBColor[0.9,
+0.1,0.1,1],MeshStyle->RGBColor[0.3,0.1,0.1,1]];
+
+Show[a,b]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Una esfera y un cilindro elíptico}
+
+Consideraremos la esfera 
+$x^2 + y^2 + z^2 = 16$ y el cilindro elíptico $\frac{(x - 1)^2}{9} +\frac{y^2}{4} = 1$. 
+La región interior al cilindro se parametriza en la forma $x-1=3u\cos(t)$, $y=2u\sin(t)$, 
+con $u \in[0,1]$ y $t \in [0,2\pi]$. Mientras que para la frontera usaremos $x=1+3\cos(t)$, $y=2\sin(t)$.
+\vskip0.3cm
+
+\begin{figure}[H]
+	\begin{center}
+		\centering
+		\captionof{figure}{\small Esfera y un cilindro elíptico}
+		\includegraphics[width=3.5cm,height=3.25cm]{Img/2a.eps}\hspace{0.5cm}
+		\includegraphics[width=3.5cm,height=3.25cm]{Img/2b.eps}
+		\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+	\end{center}
+\end{figure}
+
+Con lo anterior, se obtienen las ecuaciones de la curva de intersección del cilindro y la esfera que se determinan reemplazando el valor de $z$ en la ecuación, es decir
+$\left( 1+3\cos (t) \right) ^{2}+\left( 2\sin (t) \right) ^{2}+z^{2}=16$, de donde \linebreak
+\[
+z=\pm \sqrt{5\sin ^{2}(t) -6\cos (t) +6}.
+\]
+\vskip0.1cm 
+Por lo tanto, una parametrización para las curvas en mención está dada por
+{\small
+\[
+\vec{r}(t) = \left\langle 1 + 3\cos(t),\, 2\sin(t),\, \pm \sqrt{5\sin^2(t) - 6\cos(t) + 6} \right\rangle,
+\quad t \in [0, 2\pi].
+\]
+}
+
+Una parte de la curva determina la raíz positiva, mientras que la raíz negativa representa la otra parte de la curva. La figura de esta situación se muestra a continuación.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Esfera y un cilindro elíptico con su curva de intersección}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/2c.eps}
+	\end{minipage}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/2d.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+
+Para la superficie de la esfera que se halla dentro del cilindro, el valor de $z$ está dado por:
+\vspace*{-3mm} % Ajuste vertical para pegar la ecuación al párrafo
+\[
+\left( 1+3u\cos (t) \right) ^{2}+\left( 2u\sin (t) \right) ^{2}+z^{2}=16,
+\]
+\vspace{4mm} % Espacio vertical para separar la ecuación del texto siguiente
+\noindent de donde, \[z= \pm \sqrt{15-6u\cos (t) -9u^{2}+5u^{2}\sin ^{2}(t)}\] con esto se establece que
+$${\bf r}(u,t) =\left\langle 1+3u\cos(t),u\sin(t),\sqrt{15-6u\cos(t)-9u^{2}+5u^{2}\sin^{2}(t)}\right\rangle,$$
+
+con $ t \in [0, 2\pi], \,\, u\in [0,1]  $, es una parametrización de la parte de la esfera dentro del cilindro.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth} % <--- MINIPAGE: Fija la figura al flujo de texto
+	\centering % <--- \centering es más compacto que \begin{center}
+		\captionof{figure}{\small Superficie sobre la esfera acotada por el cilindro elíptico}
+		\includegraphics[width=2.8cm,height=2.90cm]{Img/2e.eps}\hspace{1cm}
+		\includegraphics[width=2.8cm,height=2.9cm]{Img/2f.eps}
+		\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+	\end{minipage}
+
+\vspace{0.3cm}
+\noindent 
+Para representar la parte del cilindro que está dentro de la esfera, podemos tomar dos puntos $P = \langle 1 + 3\cos(t),\, 2\sin(t),\, \sqrt{6 - 6\cos(t) + 5\sin^2(t)} \rangle$ y $Q = \langle 1 + 3\cos(t),\, 2\sin(t),\, -\sqrt{6 - 6\cos(t) + 5\sin^2(t)} \rangle$. Con ellos se parametriza el segmento rectilíneo que los une. Simplificando la expresión $(1 - u)P + uQ$, con $u \in [0, 1]$, se obtiene la función $\vec{r}(u, t)$ dada por:	
+	\[
+	\vec{r}(u, t) = \langle 1 + 3\cos(t),\, 2\sin(t),\, (1 - 2u)\sqrt{6 - 6\cos(t) + 5\sin^2(t)} \rangle
+	\]	
+Esta función, con $t \in [0, 2\pi]$ y $u \in [0, 1]$, representa una parametrización de la superficie sobre el cilindro que se encuentra dentro de la esfera.
+
+\begin{figure}[H]
+	\centering
+	\caption{Superficie sobre el cilindro elíptico acotada por la esfera}
+	\label{Superficie_cilindro_elíptico_acotada_esfera}
+	\begin{minipage}[b]{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/2g.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}[b]{0.25\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/2h.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}[b]{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/65.pdf}
+	\end{minipage}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{11pt}\selectfont{\bf Fuente:} elaboración propia.}
+\end{figure}
+
+
+Los gráficos se obtienen con ayuda de las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+Show[{ContourPlot3D[{x^2+y^2+z^2==1,(x-1)^2/9+y^2/4==1},
+{x,-4,4},{y,-4,4},{z,-4,4.0},ContourStyle->{Directive[Orange,
+Opacity[0.15]],Directive[Gray,Opacity[0.15]]},Mesh->False],
+ParametricPlot3D[{1+3*u*Cos[t],2*u*Sin[t],Sqrt[15-6*u*Cos[t]
+-9*u^2+2+5*u^2*(Sin[t])^2]},{u,0,1}{t,0,2Pi},PlotStyle->Red]}]
+
+Show[{ContourPlot3D[{x^2+y^2+z^2==1,(x-1)^2/9+y^2/4==1},
+{x,-4,4},{y,-4,4},{z,-4,4.0},ContourStyle->{Directive[Orange,
+Opacity[0.15]],Directive[Gray,Opacity[0.15]]},Mesh->False],
+ParametricPlot3D[{1+3*Cos[t], 2*Sin[t],(1-2*u)Sqrt[6
+-6*Cos[t]+5*(Sin[t])^2]},{u,0,1},{t,0,2Pi},PlotStyle->Red]}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+\section{Sólidos} \label{p1} \index{Parametrización!de sólidos}
+Con los elementos anteriores parametrizamos algunos sólidos.
+
+\subsection*{Sólido acotado por dos paraboloides}
+
+Los paraboloides elípticos con ecuaciones $z=3-2x^2-y^2$ y $z=x^2+2y^2,$ se intersectan en una región determinada por $x^2+y^2=1,$ cuyo interior se representa con $x=u \cos v,$ $y=u \sin v$ con $u\in [0,1]$ y $v\in [0,2\pi].$
+
+
+%\vspace*{-0.5\baselineskip} 
+La coordenada $z$ de dos puntos $P$ y $Q$ sobre los paraboloides, es
+\begin{align*}
+z_1 &= 3-2(u\cos v)^2-(u\sin v)^2 \\ &= \frac{1}{2}(6-3u^2-u^2 \cos(2v)) \\
+z_2 &= (u\cos v)^2+2(u\sin v)^2 \\ &= \frac{u^2}{2}(3-\cos(2v))
+\end{align*}
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Sólido acotado por paraboloides}
+	\label{fig:300}
+	\begin{minipage}{0.35\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/300.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\noindent
+La región se parametriza uniendo los puntos $P(u\cos v,u\sin v,\frac{u^2}{2}(3-\cos(2t)))$ y 
+$Q(u\cos v,u\sin v,\frac{1}{2} (6-3u^2-u^2 \cos(2t))),$
+mediante segmentos rectilíneos. Es decir, la expresión $(1-w)P+wQ$ se simplifica y permite definir la función
+$${\bf r}(u,v,w)= \langle u\cos v,u\sin v, 3(1-w)+u^2(6w-3-\cos(2t))/2 \rangle ,$$
+$u\in [0,1],$ $v\in [0,2\pi],$ $w\in [0,1].$  Una representación de estas superficies se obtiene con las siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+A=ContourPlot3D[{z==3-2*x^2-y^2,z==x^2+2*y^2},
+{x,-2,2},{y,-2,2},{z,0,3},Mesh->False,
+ContourStyle->{Directive[Orange,Opacity[0.8]],
+Directive[Cyan,Opacity[0.95]]},PlotPoints->80];
+B=ParametricPlot3D[{Cos[t],Sin[t],Cos[t]^2+
+2*Sin[t]^2},{t,0,2Pi},PlotStyle->Black];
+Show[A,B]
+RegionPlot3D[x^2+2*y^2<=z<=3-2*x^2-y^2&&x^2+y^2<=1,
+{x,-1,1},{y,-1,1},{z,0,3},PlotPoints->80,Mesh->False,
+PlotStyle->Orange]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Una cuña circular}
+Consideremos el sólido acotado por los gráficos de las ecuaciones
+$r=3 \cos\theta,$ $z=-y$ y $z=0.$ Esta región se muestra a continuación
+
+\begin{figure}[H]
+	\centering
+	\caption{Sólido determinado por $0\leq z \leq -y$, $r \leq 3 \cos \theta.$}
+	\label{Sólido_determinado}
+	\vspace{-4mm}
+	\includegraphics[width=0.27\linewidth]{Fig/66.pdf}\hspace{1mm}
+	% Eliminamos los vspace intermedios para evitar saltos de línea accidentales
+	\vspace{-4mm}
+	\includegraphics[width=0.27\linewidth]{Fig/67.pdf}\hspace{1mm}
+	\vspace{-4mm}
+	\includegraphics[width=0.27\linewidth]{Fig/68.pdf}
+	
+	\vspace{0.6cm} % <--- AJUSTA ESTE VALOR para bajar la fuente a tu gusto
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+
+La base del sólido es el semicírculo de radio $3$ que se parametriza en la forma $\textstyle\langle 3\cos\theta\cos\theta,\allowbreak\, 3\cos\theta\sin\theta \rangle$, y se simplifica como $\textstyle\langle 3\cos^2\theta,\allowbreak\, \tfrac{3}{2}\sin(2\theta) \rangle$, con $\theta \in [\pi, 2\pi]$. El interior de esta región se representa en el plano $xy$ como $\textstyle\langle 3u\cos^2\theta,\allowbreak\, \tfrac{3}{2}u\sin(2\theta) \rangle$, con $u \in [0,1]$ y $\theta \in [\pi, 2\pi]$. Un punto en la base del sólido tendrá la forma $\textstyle P = (3u\cos^2\theta,\allowbreak\, \tfrac{3}{2}u\sin(2\theta),\, 0)$, mientras que otro punto sobre el plano $z = -y$ tendrá la forma $\textstyle Q = (3u\cos^2\theta,\allowbreak\, \tfrac{3}{2}u\sin(2\theta),\allowbreak\, -\tfrac{3}{2}u\sin(2\theta))$. Formando una combinación convexa $\textstyle(1 - w)P + wQ$ entre estos dos puntos, se obtiene la función:
+\vspace{-0.70mm}
+{\small
+\begin{equation*}
+{\bf r}(\theta, u,w) = 
+\bigg\langle 3u \cos^2\theta, \frac{3}{2}u \sin(2 \theta) , -\frac{3}{2}uw \sin(2 \theta)\bigg \rangle,
+\end{equation*}
+}
+con $\theta \in  [\pi, 2\pi],$ $u\in [0,1]$ y $w\in [0,1],$ que parametriza el sólido.
+
+\subsection*{Un sólido acotado por un cono y una esfera}
+Las ecuaciones $z=\sqrt{x^2+y^2}$ y $x^2-4x+y^2+z^2=6$ 
+representan un semicono y una esfera.
+El eliminar $z$ de estas expresiones, se obtiene la ecuación
+$\left( x-1\right) ^2+y^2=4$ que representa la curva de intersección de las superficies en el plano $xy$.
+El interior de esta región se puede parametrizar en la forma
+$x-1=2u\cos(t)$, $y=2u\sin(t)$, con $t \in [0,2\pi]$ y $u \in [0,1].$ 
+
+\begin{figure}[H]
+	\centering
+	\caption{Semiesfera $z=\sqrt{6-x^2-y^2+4x}$ y semicono $z=\sqrt{x^2+y^2}$}
+	\label{Semiesfera_y_semicono}
+	\includegraphics[width=0.23\linewidth]{Img/74c.eps}\hspace{3mm}
+	\includegraphics[width=0.33\linewidth]{Fig/69.pdf} 
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{11pt}\selectfont{\bf Fuente:} elaboración propia.}
+\end{figure}
+\vskip0.2cm
+Determinaremos la forma de los puntos sobre el semicono y sobre la esfera, posteriormente se hará una combinación convexa entre estos puntos con el fin de describir completamente el sólido. Sobre el semicono, se satisface que
+
+\vspace{-7mm}
+{\small
+\[
+ z=\sqrt{x^{2}+y^{2}}=\sqrt{\left( 1+2u\cos \left( t\right) \right)^{2}+\left( 2u\sin \left( t\right) \right) ^{2}}= \sqrt{1+4u\cos\left( t\right) +4u^{2}}.
+\]
+}
+
+Entonces, los puntos sobre el cono (dentro del s\'{o}lido) se determinan por
+
+{\small
+$$P\left( 1+2u\cos (t)  ,2u\sin (t) ,\sqrt{1+4u\cos\left( t\right) +4u^{2}} \right). $$
+}
+
+Reemplazando $x$ e $y$ en la ecuación de la esfera {\footnotesize $z=\sqrt{6 - x^{2} + 4x - y^{2}}$,} se obtiene {\footnotesize $z=\sqrt{6 - (1{+}2u\cos t)^2 + 4(1{+}2u\cos t) - (2u\sin t)^2} = \sqrt{9{+}4u\cos t{-}4u^2}$,} entonces los puntos de la forma {\footnotesize $Q(1{+}2u\cos t,\, 2u\sin t,\, \sqrt{9{+}4u\cos t{-}4u^2})$} yacen sobre la esfera. Por lo tanto, el sólido se describe al simplificar la expresión $(1{-}w)P{+}wQ$, para $w\in[0,1]$, de modo que la siguiente función describe el sólido, para $t\in[0,2\pi]$, $u\in[0,1]$ y $w\in[0,1]$. La figura \ref{region_conos} muestra esta situación.
+\vspace{-04mm}
+\begin{align*}
+	\mathbf{r}(t,u,w) &= \left\langle 1{+}2u\cos t,\, 2u\sin t,\right. \\
+	&\quad \left.(1{-}w)\sqrt{1{+}4u\cos t{+}4u^2} + w\sqrt{9{+}4u\cos t{-}4u^2} \right\rangle
+\end{align*}
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering	
+	\captionof{figure}{\small Región determinada por $x^2+y^2 \leq z^2 \leq 6-x^2-y^2+4x$}
+	\label{region_conos}
+	\begin{minipage}{0.26\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/74a.eps}
+	\end{minipage}
+	\begin{minipage}{0.26\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/74b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+La figura se obtiene ejecutando las siguientes instrucciones:
+
+
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+ParametricPlot3D[{{1+2*u*Cos[t],2*u*Sin[t],
+Sqrt[9+4*u*Cos[t]-4*u^2]},{1+2*u*Cos[t],
+2*u*Sin[t],Sqrt[1+4*u*Cos[t]+4*u^2]}},
+{u,0,1},{t,0,2*Pi},
+PlotStyle->{RGBColor[0.8,0.3,0.3],Cyan},
+MeshStyle->Gray,PlotPoints->60]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Un sólido hueco}
+Las expresiones $2x\leq x^{2}+y^{2}$ y $0\leq z\leq 9-x^{2}-y^{2},$
+describen el s\'{o}lido que se muestra a continuaci\'{o}n.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Sólido interior al paraboloide y exterior al cilindro}
+	\label{conos_naranjas}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/79a.eps}
+	\end{minipage}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/79c.eps}
+	\end{minipage}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/79b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Este objeto consta de los puntos que yacen entre el plano $xy$ y el paraboloide $z=9-x^{2}-y^{2},$
+exteriores al cilindro circular recto $2x=x^{2}+y^{2}.$
+Esta última ecuación se reescribe como $\left( x-1\right) ^{2}+y^{2}=1$ y representa en el plano $xy$
+una circunferencia. La figura \ref{conos_naranjas} se consigue ejecutando las siguientes instrucciones.
+\vskip0.2cm
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]
+\begin{Verbatim}[formatcom=\letraverbatim]
+RegionPlot3D[x^2+y^2>2*x&&0<z<9-x^2-y^2,{x,-3,3},
+{y,-3,3},{z,0,9},PlotPoints->90,Mesh->False,
+PlotStyle->Orange]
+\end{Verbatim}
+\end{tcolorbox}
+ 
+
+El paraboloide se proyecta en el plano $xy$ como una circunferencia con ecuaci\'{o}n $x^{2}+y^{2}=9,$
+la proyecci\'{o}n del s\'{o}lido en plano $xy$ contiene a los puntos interiores a una circunferencia y exteriores a la otra.
+
+
+Para recorrer la circunferencia de radio $3$, usaremos {\small $2t$} como parámetro. La región entre las circunferencias en mención se parametriza
+usando una combinación convexa entre dos puntos {\footnotesize $\left( 1+\cos (2t) ,\sin (2t)\right)$} y {\footnotesize $\left(3\cos(2t),3\sin(2t)\right),$} la cual se simplifica como 
+\vspace{-3mm}
+{\small
+\begin{align*}
+	{\bf r}(u,t)&=\big\langle u+(3-2 u)\cos (2t),\, (3-2u)\sin(2t)\big\rangle.
+\end{align*}
+}
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{${\bf r}(u,t)$}
+	\label{fig:70}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/70.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Las siguientes instrucciones muestran una animación el recorrido de las curvas.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+Manipulate[ParametricPlot[{{3*Cos[2*t],3*Sin[2*t]},
+{1+Cos[2*t],Sin[2*t]}},{t,0,k},PlotRange->{-3,3}],
+{k,Pi/20,Pi}]
+\end{Verbatim}
+\end{tcolorbox}
+
+Con un punto $P(u+(3-2u)\cos(2t),(3-2u)\sin(2t),0)$ en la base del sólido 
+se obtiene la coordenada $z$ de un punto $Q$ sobre el paraboloide,
+\begin{eqnarray*}
+z &=& 9-(u+(3-2u)\cos(2t))^2-((3-2u)\sin(2t))^{2} \\
+&=& u (12-5 u+2(2u-3)\cos(2t)).
+\end{eqnarray*}
+El s\'{o}lido se parametriza formando segmentos rectilíneos que unen a $P$
+con $Q,$ esto se logra mediante la combinación convexa $(1-v)P+vQ,$
+en donde $Q$ tiene la forma
+$Q(u+(3-2u)\cos(2t),(3-2u)\sin(2t),u (12-5 u+2(2u-3)\cos(2t))).$ Esto nos lleva a definir la funci\'{o}n 
+\begin{multline} \label{solidohueco}
+{\bf r}(t,u,v) = \big \langle u+(3-2u)\cos(2t),(3-2u)\sin(2t), \\ uv(12-5 u+2(2u-3)\cos(2t)) \big \rangle
+\end{multline}
+En donde $t\in [0,\pi]$, $u\in [0,1]$ y $v \in [0,1]$.
+
+\subsection*{Un sólido hueco II} \label{solidohueco3}
+
+Las ecuaciones $z=4-y^{2},$ $z=4-x,$ $z=0,$ $x=0,$ representan un cilindro parabólico y 
+tres planos. Estas superficies acotan un s\'{o}lido $E,$
+que se perfora por el cilindro $\left( z-2\right) ^{2}+y^{2}=1,$ obteniendo la región 
+que se muestra en la figura.
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{$z=4-y^2$, $z=4-x$}
+	\label{fig:71}
+	\begin{minipage}{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/71.pdf}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+ 
+%\vspace{-4mm}
+La figura del sólido se obtiene ejecutando las siguientes instrucciones.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+RegionPlot3D[0<x<4-z&&(z-2)^2+y^2>1&&0<z<4-y^2&&
+-2<y<2,{x,0,4},{y,-2,2},{z,0,4},PlotPoints->90,
+PlotStyle->Orange,Mesh->False]
+\end{Verbatim}
+\end{tcolorbox}
+
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Región determinada por $0\leq z \leq 4-x$, $z\leq 4-y^2,$ $1\leq (z-2)^2+y^2.$}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/5a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/5c.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/5b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+
+
+La proyección del sólido en el plano $yz$ corresponde a una circunferencia y una porción de 
+parábola, que se representan en la forma $\ve{r}_1(t)=\la 0,\cos (t),2+\sin (t)\ra,$ con 
+$t\in [0,2\pi]$ y $\ve{r}_2(t)=\la 0,t,4-t^{2}\ra,$ con $t\in \lbrack -2,2],$ respectivamente.
+Inicialmente parametrizaremos la base del sólido en el plano $yz$. Esta región a su vez 
+la dividiremos en dos porciones.
+
+\begin{figure}[H] 
+	\centering
+	\caption{Región determinada por $0\leq z \leq 4-y^2$, $1\leq (z-2)^2+y^2.$}
+	\label{Región_determinada}
+	\begin{minipage}[t]{0.35\linewidth} 
+		\centering
+		\includegraphics[width=\linewidth]{Fig/72.pdf}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}[t]{0.35\linewidth} 
+		\centering
+		\includegraphics[width=\linewidth]{Fig/73.pdf}
+	\end{minipage}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{11pt}\selectfont{\bf Fuente:} elaboración propia.}
+\end{figure}
+%\vskip0.1cm
+Para describir las regiones anteriores unificaremos el dominio de las parametrizaciones dadas y luego construir segmentos rectilíneos entre las curvas.
+\vskip2cm
+\vspace{-10mm}
+
+\noindent
+\textcolor{black}{\scriptsize\ding{110}}\quad {\bf Región 1.} Para aplicar el intervalo $[-2,2]$ en $[0,\pi ],$ se utiliza la relación
+$v=\frac{\pi }{4}\left(u+2\right)$; además, con el intercambio de $t$ por $\pi -t$ se invierte el recorrido. 
+
+\vskip0.1cm
+El cambio de $t$ por $2-\frac{4t}{\pi}$ en la parametrización de la parábola,
+unifica el dominio de las funciones. Entonces, con una combinación convexa de los puntos 
+$P(0,\cos (t),2+\sin(t))$ y $Q(0,2-\frac{4t}{\pi},\frac{16t}{\pi}\left(1-\frac{t}{\pi}\right))$, se obtiene la función que parametriza la región en mención, esto es
+\begin{multline*}
+{\bf r}_1(t,u)  =\big \langle 0, (1-u)\cos (t) +u\left(2-\frac{4t}{\pi}\right),\\ \frac{16(\pi-t)tu}{\pi^2}-(u-1)(\sin(t)+2) \big\rangle, 
+\end{multline*} 
+para $t\in [0,\pi ]$ y $u\in [0,1]$.
+
+\vspace{2mm}
+
+\noindent
+\textcolor{black}{\scriptsize\ding{110}}\quad {\bf Región 2.} El segmento que une los puntos $\left(0,-2,0 \right) $ con $\left(0,2,0 \right),$
+se parametriza como $\langle 0,4(t-\pi)/\pi-2,0,0 \rangle $,
+con $t\in [\pi ,2\pi ].$ Trazando segmentos rectilíneos desde el segmento anterior 
+hasta la semicircunferencia, se consigue parametrizar el conjunto de interés; esto se logra 
+formando una combinación convexa entre los puntos
+$(0,\cos (t),2+\sin (t))$ y $(0,4(t-\pi)/\pi-2,0)$ por esta razón, la función 
+$${\bf r}_2\left( t,u\right)  = \left\langle 0,\left(
+1-u\right) \cos (t) +u\left( \frac{4\left( t-\pi \right) }{\pi }%
+-2\right) ,\left( 1-u\right) \left( 2+\sin (t) \right)
+\right\rangle ,$$ con $t\in \lbrack \pi ,2\pi ]$ y $u\in \lbrack 0,1],$ parametriza la región considerada.
+
+
+Con las funciones ${\bf r}_1$ y ${\bf r}_2$ se representará la región sobre el 
+plano $z=4-x,$ esto cambia solamente la primera función componente de estas funciones. 
+\begin{multline*}
+{\bf r}_3(u,t)=\bigg \langle 4-\frac{16 (\pi-t) t u}{\pi ^2}+(u-1) (\sin (t)+2),
+(1-u)\cos (t) \\ +u\left(2-\frac{4t}{\pi}\right), \frac{16 (\pi -t) t u}{\pi ^2}-(u-1) (\sin (t)+2) \bigg\rangle, t\in[0,\pi],\, u\in[0,1].
+\end{multline*}  \begin{multline*}
+{\bf r}_4(u,t)= \big \langle 4-(1-u)(\sin(t)+2),\left(\frac{4(t-\pi)}{\pi}-2\right)u+(1-u)\cos(t),\\
+(1-u)(\sin (t)+2)\big \rangle,\,t\in[\pi,2\pi],\, u\in[0,1].
+\end{multline*}
+
+Con las siguientes instrucciones se obtiene el gráfico de las superficies que acotan el sólido.
+
+
+%\fontsize{9.5}{10}\selectfont
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+y1=(1-u)*Cos[t]+u*(2-4*t/Pi);
+z1=16*(Pi-t)*u*t/Pi^2-(u-1)*(2+Sin[t]);
+{y2,z2}={(1-u)*Cos[t]+u*(4*(t-Pi)/Pi-2),
+(1-u)*(2+Sin[t])};
+A1=ParametricPlot3D[{{0,y1,z1},{4-z1,y1,z1}},{t,0,Pi},
+{u,0,1},Mesh->False,PlotStyle->Orange];
+A2=ParametricPlot3D[{{0,y2,z2},{4-z2,y2,z2}},
+{t,Pi,2*Pi},{u,0,1},Mesh->False,PlotStyle->Cyan];
+r5=(1-v)*{0,y1,z1}+v*{4-z1,y1,z1}/.u->1;
+A3=ParametricPlot3D[r5,{t,0,Pi},{v,0,1},
+PlotStyle->Orange,Mesh->False];
+Show[A1,A2,A3]
+\end{Verbatim}
+\end{tcolorbox}
+
+El sólido quedará parametrizado al hacer una combinación convexa entre dos puntos: 
+uno en la base del sólido (del plano $yz$) y otro punto sobre el plano $z=4-x$. 
+Es por lo expuesto antes, que una parametrización del sólido es:
+\begin{equation} \label{solidohueco2}
+{\bf r}(u,t,w) = \left \{ \begin{array}{cc}
+(1-w){\bf r}_1(u,t)+w {\bf r}_3(u,t) & t \in [0,\pi] \\[0.2cm]
+(1-w){\bf r}_2(u,t)+w {\bf r}_4(u,t) & t \in [\pi,2\pi] 
+\end{array}\right . 
+\end{equation}
+
+\subsection*{Sólidos con una cardioide en su base} \index{Cardioide}
+\noindent
+\textcolor{black}{\scriptsize\ding{110}}\quad La cardioide con ecuación $r=1+\cos (t) $
+se parametriza en el plano $xy$ como  $\left\langle (1+\cos(t)) \cos(t),(1+\cos (t))\sin (t) \right\rangle ,$ 
+$t\in [0,2\pi];$ para representar su interior se hace el siguiente cambio sutil
+$\big\langle u(1+\cos(t)) \cos(t),u(1+\cos (t))\sin (t) \big\rangle ,$  con $u\in[0,1].$
+Estos puntos se unen a $(1,0,1)$ utilizando el par de funciones inyectivas en 
+$[0,1],$ $f(v)=\sqrt[5]{(1-v) ^{2}}$ y $g(v) =v^{2},$ lo cual parametriza el sólido que se muestra a continuación.
+
+\begin{figure}[H]
+\begin{center}
+	\captionof{figure}{\small Gráfico de ${\bf r}\left(t,u,w\right)$}
+\includegraphics[scale=0.42]{Img/76b.eps} 
+\includegraphics[scale=0.38]{Img/76a.eps}
+\includegraphics[scale=0.42]{Img/76c.eps}
+\end{center}
+\parbox{0.95\linewidth}{\centering\fontsize{9pt}{11pt}\selectfont{\bf Fuente:} elaboración propia.}
+\end{figure}
+
+La combinación que genera el sólido es:
+$${\bf r}(t,u,w) =\sqrt[5]{(1-v)^2}\, u(1+\cos(t)) (\cos(t),\sin(t),0) +v^{2}(1,0,1),$$
+con $t \in [0,2\pi]$, $u \in [0,1]$ y $w \in [0,1].$ 
+Las siguientes instrucciones, con $u=1$, permiten obtener el gráfico anterior.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+r=(1-v)^(2/5)*{(1+Cos[t])*Cos[t],(1+Cos[t])*Sin[t],0}
++v^2*{1,0,1};
+p={r[[1]],r[[2]],0};
+ParametricPlot3D[{r,p},{v,0,1},{t,0,2Pi},PlotPoints
+->80,PlotStyle->{Orange,Cyan},MeshStyle->Gray]
+\end{Verbatim}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+\noindent
+\textcolor{black}{\scriptsize\ding{110}}\quad De manera similar al ejemplo anterior, se puede utilizar
+la función 
+$${\bf r}(t,u,v)=\sqrt[4]{(1-v)^3}\, u(1+\cos(t)) (\cos(t),\sin(t),0)+\sqrt[4]{v^3}(1,0,1),$$
+con $t \in [0,2\pi]$, $u \in [0,1]$ y $w \in [0,1].$ Para $u=1$ se genera la superficie cuyo gráfico se muestra
+a continuación.
+
+\begin{figure}[H]
+\begin{center}
+	\captionof{figure}{\small Gráfico de ${\bf r}\left(t,u,w\right)$}
+\includegraphics[scale=0.35]{Img/77a.eps} 
+\includegraphics[scale=0.37]{Img/77b.eps}
+\end{center}
+\parbox{0.95\linewidth}{\centering\fontsize{9pt}{11pt}\selectfont{\bf Fuente:} elaboración propia.}
+\end{figure}
+
+Con las siguientes instrucciones se puede obtener el gráfico.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]
+\begin{Verbatim}[formatcom=\letraverbatim]
+r=(1-v)^(3/4)*{(1+Cos[t])*Cos[t],(1+Cos[t])*Sin[t],0}
++v^(3/4)*{1,0,1};
+p={r[[1]],r[[2]],0};
+ParametricPlot3D[{r,p},{v,0,1},{t,0,2Pi},PlotPoints
+->80,PlotStyle->{Orange,Cyan},MeshStyle->Gray]
+\end{Verbatim}
+\end{tcolorbox}
+  
+\subsection*{Cono cardioidico} \index{Cono cardioidico}
+El interior de la cardioide con ecuación polar $r=1+\cos(t),$ \index{Cardioide}
+se puede parametrizar en el plano $xy$, como 
+$\left\langle u\left(1+\cos (t) \right) \cos (t) ,u\left( 1+\cos \left(
+t\right) \right) \sin (t) ,0\right\rangle $. El s\'{o}lido
+que se genera mediante una combinaci\'{o}n convexa de los puntos de esta regi\'{o}n 
+con el punto $\left( 1,0,1\right) $ es un \emph{cono cardioidico}\footnote{Este término fué acuñado por el profesor Juan Zambrano, de la Universidad Distrital Francisco José de Caldas.}.
+
+\begin{figure}[H]
+\begin{center}
+	\captionof{figure}{\small Cono cardioidico}
+\includegraphics[scale=0.4]{Img/75a.eps} 
+\includegraphics[scale=0.4]{Img/75b.eps}
+\includegraphics[scale=0.45]{Img/75c.eps}
+\end{center}
+\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+Es por esto que al simplificar la combinación 
+$$\left( 1-w\right) \left( u\left( 1+\cos (t) \right) \cos \left(
+t\right) ,u\left( 1+\cos (t) \right) \sin (t),0\right) +w\left( 1,0,1\right) $$
+se obtiene la funci\'{o}n 
+${\bf r}(t,u,w)=\big\langle u\cos (t) \left(
+1+\cos (t) \right) \left( 1-w\right) +w,\linebreak (1-w)u\left( 1+\cos (t) \right) \sin (t),w \big\rangle ,$
+que describe el mencionado sólido, para $t\in [0,2\pi]$, $u\in [0,1]$ y $w\in [0,1].$
+Los gráficos se obtienen con ayuda de las siguientes instrucciones.
+
+\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]
+\begin{Verbatim}[formatcom=\letraverbatim]
+p={(1+Cos[t])*Cos[t],(1+Cos[t])*Sin[t],0};
+r=(1-u)*p+u*{1,0,1};
+ParametricPlot3D[{r,p*u},{u,0,1},{t,0,2Pi},
+Ticks->{{0,1,2},{-1,0,1},{0,1}},PlotStyle
+->{Orange,Cyan},MeshStyle->Gray,PlotPoints->80]
+\end{Verbatim}
+\end{tcolorbox}
+
+%\clearpage
+\begin{ejer}
+Parametrice y grafique en \verb"Mathematica" las siguientes regiones.
+\end{ejer}
+
+\begin{enumerate}
+\item La región del plano comprendida entre las elipses $\frac{x^2}{16}+\frac{y^2}{9}=1$ y $(x-1)^2+\frac{y^2}{4}=1$.
+
+\vskip0.2cm
+\vspace{-6mm}
+\begin{figure}[H]
+	\centering
+	\caption{Región acotada por dos elipses}
+	\label{Región_acotada_dos_elipses}
+	\includegraphics[width=0.4\linewidth]{Fig/74.pdf}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+\item La región del plano acotada por las elipses $\frac{x^2}{16}+\frac{y^2}{9}=1$ y $(x-1)^2+\frac{y^2}{4}=1$,
+se proyecta sobre el paraboloide hiperbólico $3z=y^2-x^2-2y$.
+
+\begin{figure}[H]
+	\centering
+	\caption{Superficie sobre el paraboloide hiperbólico $3z = y^2 - x^2 - 2y$.}
+	\label{Superficie_paraboloide_hiperbólico}
+	\begin{minipage}[t]{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/75.pdf}
+	\end{minipage}%
+	\hspace{1em}
+	\begin{minipage}[t]{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Fig/76.pdf}
+	\end{minipage}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+\item Para $a_1=\cosh 2$, $b_1=\sinh(2)$, $a_2=\cos(1/2)$ y $b_2=\sin(1/2)$, la región del plano interior a la elipse
+$\frac{x^2}{a_1^2}+\frac{y^2}{b_1^2}= 1$ y a la hipérbola $\frac{x^2}{a_2^2}-\frac{y^2}{b_2^2}= 1.$
+\vspace{-1mm}
+\begin{figure}[H]
+	\centering
+	\caption{Región acotada por una elipse y una hipérbola}
+	\label{Región_acotada_elipse_hipérbola}
+	\includegraphics[width=0.3\linewidth]{Fig/77.pdf}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+\vspace{-2mm}
+{\bf Sugerencia:} Utilice coordenadas curvilíneas
+\vskip0.2cm
+\index{Coordenadas curvilíneas}
+\item Para $v=\pm \ln(5)$ parametrizar, con una sola función la región exterior a las dos circunferencias
+con ecuaciones $(x-\coth v)^2+y^2=\frac{24}{144}$.
+
+\begin{figure}[H]
+	\begin{center}
+		\captionof{figure}{\small Región exterior a dos circunferencias.}
+		\includegraphics[scale=0.44]{Img/T_71a.eps}
+	\end{center}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+\vspace{-5mm}
+{\bf Sugerencia:} Utilice coordenadas curvilíneas.
+
+\item Para $v=\pm \ln(5)$ parametrizar, con una sola función, la región sobre el paraboloide hiperbólico 
+$6z=x^2-y^2$, exterior a los cilindros con ecuaciones $(x-\coth v)^2+y^2=\frac{24}{144}$.
+\begin{figure}[H]
+\begin{center}
+	\captionof{figure}{\small Región sobre el paraboloide hiperbólico.}
+\includegraphics[scale=0.30]{Img/T_71b.eps} \hskip0.5cm
+\includegraphics[scale=0.30]{Img/T_71c.eps}
+\end{center}
+\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+
+\end{figure} {\bf Sugerencia:} Utilice coordenadas curvilíneas
+\begin{comment}
+Clear[x,y,z,u,v];
+x=Sinh[v]/(Cosh[v]-Cos[u]);
+y=Sin[u]/(Cosh[v]-Cos[u]);
+z=(y^2+6x-x^2)/6;
+ParametricPlot3D[{x,y,z},{u,0,2*Pi},{v,-Log[3],Log[3]},
+PlotStyle->Orange,Mesh->20,PlotPoints->95,
+MeshStyle->Gray,PlotRange->{{-4,10},{-4,4},{-4,4.2}},BoxRatios->{1,1,1/2}]
+\end{comment}
+
+\vskip0.2cm
+\item El sólido acotado por el cilindro elíptico $2x^2+y^2=16$ y los parabo- \\ loides hiperbólicos
+$x^2-y^2= 4z+12$ y $x^2-2y^2=4z-20$. 
+
+%\vspace{-4mm}
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small $2x^2+y^2\leq 16$, $ x^2-y^2-12 \leq 4z\leq 20 + x^2-2y^2.$}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_56a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_56b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+%RegionPlot3D[2*x^2+y^2<=16&&x^2-y^2-12<=4*z<=20+x^2-2*y^2,{x,-3,3},{y,-4,4},{z,-7,7},PlotPoints->90,Mesh->False]
+\item El sólido acotado por las figuras del plano $5z+x+y=20$ y el semicono 
+$z=\sqrt{x^2+y^2}.$ 
+
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small $\sqrt{x^2+y^2} \leq z \leq (20-x-y)/5$}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_39a.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+%\begin{comment}
+%RegionPlot3D[z>=Sqrt[x^2+y^2]&&5*z<20-y-x,{x,-6,4},{y,-6,4},{z,0,6},PlotPoints->90,Mesh->False]
+%\end{comment}
+
+\item La porción del cilindro elíptico con ecuación $4x^2+9y^2=36$ acotado por los planos 
+$3z+x=9$ y $3z-y=-9$.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small $4x^2+9y^2=36,$ $-9+y \leq 3z \leq 9-x.$}
+	\begin{minipage}{0.14\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_38a.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{8pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+
+%\begin{comment}
+%\begin{Verbatim}
+%a=ParametricPlot3D[{{3*Cos[t],2*Sin[t],3-Cos[t]},{3*Cos[t],2*Sin[t],-3+Sin[t]}},
+%{t,0,2*Pi},PlotStyle->{Directive[Black,Thickness->0.015],Directive[Black,Thickness->0.015]}];
+%b=ParametricPlot3D[(1-u)*{3*Cos[t],2*Sin[t],3-Cos[t]}+u{3*Cos[t],2*Sin[t],-3+Sin[t]},
+%{t,0,2*Pi},{u,0,1},MeshStyle->Gray];
+%Show[a,b]
+%\end{Verbatim}
+%\end{comment}
+\end{enumerate}

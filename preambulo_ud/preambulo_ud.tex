@@ -1,0 +1,120 @@
+% --- Language and Encoding ---
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% --- Mathematics and Physics ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{fontawesome}
+\usepackage{fp}
+\usepackage{calculus}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bi}{\int}
+\usepackage{calculator}
+\usepackage{fancyvrb}
+\usepackage{mathtools}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\ei}[1]{\mathbf{e}_{#1}}
+\usepackage{bigints}
+
+% --- Graphics and Images ---
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{auto-pst-pdf}
+\usepackage[export]{adjustbox}
+\graphicspath{{./Fig}{./Img}{./Imgn}} % Consolidado en un solo comando.
+
+% Paquetes de PSTricks (optimizados)
+\usepackage{pstricks}
+\usepackage{pstricks-add} % Este paquete carga muchos de los que tenías por separado.
+\usepackage{pst-node} % Mantenemos si no están en pstricks-add
+\usepackage{pst-3d}
+\usepackage{pst-math}
+\usepackage{pst-coil}
+\usepackage{pst-3dplot}
+\usepackage{pst-solides3d}
+
+% --- Color and Layout ---
+\usepackage{xcolor}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\usepackage{academicons}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{multicol}
+\usepackage{esvect}
+\usepackage{relsize}
+
+% --- Floats and Captions ---
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{listings}
+
+% INSERTAR FIGURAS
+\usepackage{needspace}
+
+% --- Bibliography and Indexing ---
+\usepackage[backend=biber, style=authoryear, hyperref=true]{biblatex}
+\usepackage{hyperref}
+\addbibresource{Referencias/references.bib}
+\usepackage{makeidx}
+\usepackage{subfiles}
+
+% REDEFINICION CITE/YEAR
+\DeclareCiteCommand{\citeyear}
+  {\usebibmacro{prenote}}
+  {\bibhyperref{\printfield{year}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+% --- Custom Commands for tcolorbox Styles ---
+\newcommand{\ptc}{\tcbset{colback=gray!10!white,colframe=black!85!blue}\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando el sólido]}
+\newcommand{\ptr}{\tcbset{colback=gray!10!white,colframe=black!85!blue}\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando la región de Integración]}
+\newcommand{\tc}{\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en {\tt Mathematica}]}
+\newcommand{\etc}{\end{tcolorbox}}
+\newcommand{\ve}[1]{\mathbf{#1}}
+
+% --- Custom Math Operators and Commands ---
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\rot}{rot}
+
+% Conflictos de paquetes
+\AtBeginDocument{\RenewCommandCopy\qty\qtySI}
+
+% Custom commands for drawing/formatting
+\newcommand{\cn}[3]{\pscircle(#1,#2){5pt}\rput(#1,#2){$#3$}}
+\newcommand{\fig}{\begin{figure}}
+\newcommand{\ef}[1]{\caption{#1}\end{figure}}
+
+% Vector notation
+\newcommand{\vi}{\mathbf{i}}
+\newcommand{\vj}{\mathbf{j}}
+\newcommand{\vk}{\mathbf{k}}
+
+% --- Theorem Environments ---
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{prop}{Proposición}[section]
+\newtheorem{defi}{Definición}[section]
+\newtheorem{ejer}{Ejercicio}[section]
+\newtheorem{ejemplo}{Ejemplo}[section]
+
+% --- Redefining Proof Name (for Spanish) ---
+\renewcommand{\proofname}{Demostración}
+
+\makeindex

@@ -1,0 +1,690 @@
+\subsection{Ejercicios propuestos para terminar}
+En esta sección se muestran varios sólidos con las instrucciones requeridas para obtener su gráfico y
+al menos una posibilidad de obtener su volumen mediante integrales múltiples.
+El lector deberá, como ejercicio, obtener el mismo valor a través del planteamiento de integrales triples en otros 
+ordenes de integración o planteando cambios de variables.
+
+\begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*)}}]
+\item En \cite{stewart_calculo_2018}, sección 12.1, se plantea el siguiente ejercicio:
+\emph{Describa y trace un sólido con las siguientes propiedades:
+cuando es iluminado por rayos paralelos al eje $z,$ su sombra es un disco circular. 
+Si los rayos son paralelos al eje $y,$ su sombra es un cuadrado. Si los rayos son paralelos al eje $x,$
+su sombra es un triángulo isósceles.}
+Presentamos un sólido con estas características.
+\vskip0.1cm
+La proyección en el plano $xy$ corresponde a una círculo, cuya frontera se parametriza en la forma
+$x= \cos(t)$, $y= \sin(t)$ para $t\in [0,2\pi].$ 
+El diametro en la base es $2,$ por tanto consideraremos un segmento paralelo al
+eje $y$ que sea perpendicular y simétrico al eje $z$.
+Un punto en la base tendrá la forma $P(\cos(t),\sin(t),0)$ mientras que un punto en la parte superior posee
+la forma $Q(0,\sin(t),2)$. Formando segmentos rectilíneos entre los puntos anteriores, es decir simplificando $(1-u)P+uQ,$
+se obtiene una función que parametriza dicha superficie, 
+\begin{eqnarray*}
+{\bf r}(t,u) &=& \langle (1-u)\cos(t),\sin(t),2u \rangle, \,\, t\in [0,2\pi],\, u\in [0,1].
+\end{eqnarray*}
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.32]{T_20a} 
+\includegraphics[scale=0.32]{T_20b} 
+\includegraphics[scale=0.32]{T_20c} 
+\captionof{figure}{\small Sólido cuyas proyecciones son un rectángulo, un círculo o un triángulo} \end{center} \end{Figure}
+Estos gráficos se consiguen con las siguientes instrucciones
+ \begin{Verbatim}
+R=(1-u)*{0,Sin[t],2}+u*{Cos[t],Sin[t],0};
+ParametricPlot3D[R,{t,0,2*Pi},{u,0,1},PlotPoints->80,
+Ticks->{{-1,0,1},{-1,0,1},{1,2}},MeshStyle->Black]
+\end{Verbatim}
+
+
+El sólido se parametriza rellenando la base de sólido que corresponde a un círculo
+y formando segmentos rectilíneos hasta el segmento superior.
+Es decir 
+\begin{eqnarray*}
+{\bf r}(t,u,w) &=&(1-w)(0,u\sin(t),2)+w(u\cos(t),u\sin(t),0) \\
+&=& \langle uw\cos(t),u\sin(t),2(1-w) \rangle, 
+\end{eqnarray*}
+con $t\in [0,2\pi],\, u\in [0,1],\, w\in [0,1].$
+El elemento diferencial de volumen está dado por $|{\bf r}_w \cdot ({\bf r}_t \times {\bf r}_u) |=2uw,$
+por lo tanto el volumen está dado por 
+$$\int_0^1 \int_0^1 \int_0^{2\pi} 2 uw dt du dw = \pi.$$
+Otro sólido con los requerimientos hechos es el que satisface las expresiones
+$0\leq z \leq 1-|x|$, $x^2+y^2\leq 1.$ Obviamente su volumen no es el mismo al obtenido anteriormente.
+
+\item El sólido acotado por
+las superficies de los los paraboloides con ecuaciones $2z=6-2x^2-y^2$ y $z+3=x^2+y^2,$
+se muestra a continuación.
+
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.3]{T_8a} 
+\includegraphics[scale=0.5]{T_8e} 
+\captionof{figure}{\small $2x^2+2y^2-6\leq 2z\leq 6-2x^2-y^2$ y $,$} \end{center} \end{Figure}
+Ahora presentamos las instrucciones necesarias para conseguir su gráfico.
+
+\begin{Verbatim}
+RegionPlot3D[z<(6-2*x^2-y^2)/2&&z>x^2+y^2-3,{x,-2,2},
+{y,-2,2},{z,-3,3},PlotPoints->90,Mesh->False];
+\end{Verbatim}
+
+Al despejar $z$ de las dos ecuaciones e igualar estas expresiones se obtiene
+$4x^{2}+3y^{2}=12$. 
+Esta expresión corresponde a la intersecci\'{o}n de las superficies consideradas y representa, en el plano
+$xy$, a una elipse alargada en sentido de las $y$ centrada en el origen. 
+Por tanto, el volumen del s\'{o}lido est\'{a} dado por
+
+\begin{equation} \label{ejercicio1} 
+\bigintss_{-\sqrt{3}}^{\sqrt{3}}\bigintss_{-\frac{2}{\sqrt{3}}\sqrt{3-x^{2}}}^{\frac{2}{\sqrt{3}}\sqrt{3-x^{2}}}\bigintss_{x^{2}+y^{2}-3}^{3-x^{2}-\frac{1}{2}y^{2}}dzdydx= 6\sqrt{3}\pi .
+\end{equation}
+
+Otra manera de hallar este valor es la siguiente. La elipse y su interior 
+se parametriza como $x=\sqrt{3}u\cos \theta$, $y=2u\sin \theta ,$ con $u \in [0,1]$, $\theta \in [0,2\pi].$ 
+Reemplazando estas expresiones en las ecuaciones de los paraboloides se sigue que
+\begin{eqnarray*}
+z &=& 3-x^{2}-\frac{1}{2}y^{2}= 3-\frac{5}{2}u^{2}-\frac{1}{2}u^{2}\cos 2\theta \\
+z&=&x^2+y^2-3= \frac{7}{2}u^{2}-\frac{1}{2}u^{2}\cos 2\theta -3.
+\end{eqnarray*}
+Sobre cada uno de los paraboloides consideremos dos puntos con coordenadas
+$Q(\sqrt{3}u\cos \theta ,2u\sin \theta ,\frac{7}{2}u^{2}-\frac{1}{2}u^{2}\cos 2\theta-3)$
+y $P(\sqrt{3}u\cos \theta,2u\sin \theta ,3-\frac{5}{2}u^{2}-\frac{1}{2}u^{2}\cos 2\theta).$  
+Una combinación convexa de estos puntos permite parametrizar el sólido, es decir, 
+simplificando la expresión $(1-w)P+wQ$ se define la función
+$$ {\bf r}(u,\theta ,w) =\left\langle\sqrt{3}u\cos\theta,2u\sin\theta,6u^{2}w-\frac{1}{2}u^{2}\cos2\theta -6w-\frac{5}{2}u^{2}+3 \right\rangle $$
+en donde $u \in [0,1]$, $\theta \in [0,2\pi] ,$ $w\in [0,1].$ 
+Con esta función hallamos los siguientes vectores
+\begin{eqnarray*}
+{\bf r}_{\theta}&=& \left\langle -\sqrt{3}u\sin \theta ,2u\cos \theta ,u^{2}\sin 2\theta \right\rangle\\
+{\bf r}_{u} &=& \left\langle \sqrt{3}\cos \theta ,2\sin \theta
+,12uw-u\cos 2\theta -5u\right\rangle \\
+{\bf r}_{w} &=& \left\langle 0,0,6u^{2}-6\right\rangle \\
+{\bf r}_{\theta }\times {\bf r}_{u}&=& \left\langle 12u^{2}\left( 2w-1\right)
+\cos \theta ,4\sqrt{3}u^{2}\left( 3w-1\right) \sin \theta ,-2\sqrt{3}u \right\rangle 
+\end{eqnarray*}
+El elemento diferencial de volumen es
+$\left\vert {\bf r}_{w}\cdot \left({\bf r}_{\theta}\times {\bf r}_{u}\right) \right\vert= 12\sqrt{3}u\left( 1-u^{2}\right) ,$
+cuya integración con los límites establecidos nos proporciona el volumen del sólido
+$$\int_{0}^{1}\int_{0}^{1}\int_{0}^{2\pi }12\sqrt{3}u\left( 1-u^{2}\right)
+d\theta dudw= 6\sqrt{3}\pi .$$
+
+\item Consideremos el sólido determinado por las expresiones $x^2+y^2+z^2\leq 9,$ $1+\cos\theta \leq r\leq 2+\cos\theta$. Esto es, la región del espacio acotada por dos cilindros cardioidicos e interior la esfera de radio $3$ centrada en el origen.
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.26]{T_7a} 
+\includegraphics[scale=0.26]{T_7b} 
+\includegraphics[scale=0.26]{T_7c} 
+\captionof{figure}{\small $x^2+y^2+z^2\leq 9$ \& $1+\cos\theta\leq r\leq 2+\cos\theta$} \end{center} \end{Figure}
+Esta figura y su proyección en el plano $xy$ se obtiene con estas instrucciones
+
+\begin{Verbatim}
+PolarPlot[{1+Cos[t],2+Cos[t]},{t,0,2Pi}]
+RegionPlot3D[x^2+y^2+z^2<9&&(x^2+y^2-x)^2>x^2+y^2&&
+(x^2+y^2-x)^2<3*(x^2+y^2),{x,-1.2,3.2},{y,-2.5,2.5},
+{z,-3,3},PlotPoints->90,Mesh->False]
+\end{Verbatim}
+
+La base del sólido se muestra a continuación. 
+\begin{Figure}  \begin{center}
+\begin{pspicture}(-2.5,-1.25)(3.5,2) %\psgrid
+\psset{linewidth=0.75pt,unit=0.65}
+\psaxes{->}(0,0)(-2.2,-2.3)(4,3)[$x$,-90][$y$,180]
+\psset{linewidth=1.5pt,plotstyle=curve,algebraic}
+\pscustom[fillstyle=vlines,hatchsep=0.8pt,hatchcolor=gray!70,linestyle=none]{%
+\psparametricplot{0}{\psPiTwo}{(1+cos(t))*cos(t)|(1+cos(t))*sin(t)}
+\psparametricplot{\psPiTwo}{0}{(2+cos(t))*cos(t)|(2+cos(t))*sin(t)}
+}
+\psparametricplot[linecolor=blue]{0}{\psPiTwo}{(1+cos(t))*cos(t)|(1+cos(t))*sin(t)}
+\psparametricplot[linecolor=black!60!blue]{0}{\psPiTwo}{(2+cos(t))*cos(t)|(2+cos(t))*sin(t)}
+\end{pspicture}
+\captionof{figure}{\small $1+\cos\theta\leq r\leq 2+\cos\theta$} \end{center} \end{Figure}
+Sobre la proyección del sólido en el plano $xy$ consideremos dos puntos,
+$P=((1+\cos(t))\cos(t),(1+\cos(t))\sin(t))$ y $Q=((2+\cos(t))\cos(t),(2+\cos(t))\sin(t)),$ 
+uno sobre cada curva.
+La región se parametriza al formar una combinación convexa de la forma $(1-u)P+uQ$ entre estos puntos, es decir
+$(\cos(t)(1+u+\cos(t)),(1+u+\cos(t))\sin(t)).$
+\vskip0.2cm 
+Las siguientes instrucciones muestran en \verb"Mathematica," como hacer el procedimiento completo 
+y además permiten hallar su área
+
+
+\begin{Verbatim}
+r={x,y}=Simplify[(1-u)*{(1+Cos[t])*Cos[t],
+(1+Cos[t])*Sin[t]}+u*{(2+Cos[t])*Cos[t],
+(2+Cos[t])*Sin[t]}];
+w=(1-v)*{x,y,-Sqrt[9-x^2-y^2]}+v*{x,y,
+Sqrt[9-x^2-y^2]};
+A=Abs[Simplify[Dot[D[w,t],Cross[D[w,u],D[w,v]]]]];
+NIntegrate[A,{t,0,2Pi},{u,0,1},{v,0,1}]
+\end{Verbatim}
+
+Utilizando cooordenas cilíndricas, el volumen del mencionado sólido está dado por la siguiente integral
+$$\int_0^{2\pi} \int_{1+\cos \theta}^{2+\cos \theta}\int_{-\sqrt{9-r^2}}^{\sqrt{9-r^2}}r dzdrd\theta \approx 40.7091$$
+La evaluación numérica de esta integral se consigue ejecutando la siguiente instrucción.
+
+\begin{Verbatim}
+NIntegrate[r,{t,0,2Pi},{r,1+Cos[t],2+Cos[t]},
+{z,-Sqrt[9-r^2],Sqrt[9-r^2]}]
+\end{Verbatim}
+
+
+\item El sólido acotado por las superficies del cilindro $x^2+y^2=4$ y la esfera $x^2+y^2+z^2=9$ se muestra a continuación.
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.3]{T_9a} 
+\includegraphics[scale=0.42]{T_9d} 
+\captionof{figure}{\small $x^2+y^2 \leq 4$ \& $6x^2+y^2+z^2\leq 9.$} \end{center} \end{Figure}
+Las siguientes instrucciones permiten obtenerlo.
+
+\begin{Verbatim}
+RegionPlot3D[x^2+y^2<4&&x^2+y^2+z^2<=9,{x,-2,2},
+{y,-2,2},{z,-3.5,3.5},PlotPoints->90,Mesh->False]
+\end{Verbatim}
+
+Usando coordenadas rectangulares, se plantea la integral que representa el volumen de dicha región.
+$$\bigintsss_{-2}^2 \bigintsss_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}}\bigintsss_{-\sqrt{9-x^{2}-y^{2}}}^{\sqrt{9-x^{2}-y^{2}}}dzdydx \approx 66.265 $$
+\vskip0.15cm
+En el plano $xy$ la proyección del cilindro y su interior se parametriza como $x=2u\cos \theta, $
+$y=2u\sin \theta $ con $u \in [0,1]$ y $\theta \in [0,2\pi];$ 
+sobre la esfera la expresión correspondiente es
+$z=\pm \sqrt{9-\left( 2u\cos \theta \right)^2 -\left( 2u\sin \theta \right) ^2 }= \pm \sqrt{9-4u^{2}}.$
+De modo que el s\'{o}lido se parametriza mediante una combinación convexa de dos puntos 
+sobre la esfera dentro del cilindro, esto es
+$\left( 1-w\right) \left( 2u\cos \theta ,2u\sin
+\theta ,\sqrt{9-4u^{2}}\right) +w\left( 2u\cos \theta ,2u\sin \theta ,-\sqrt{9-4u^{2}}\right).$
+Lo que nos lleva a presentar la función
+\begin{eqnarray*}
+{\bf r}\left( u,\theta ,w\right) &=& \left\langle 2u\cos \theta ,2u\sin \theta ,\left( 1-2w\right) \sqrt{9-4u^{2}}\right\rangle 
+\end{eqnarray*}
+con $u \in [0,1]$, $\theta \in [0,2\pi],$ $w \in [0,2\pi];$ 
+con esta se hallan los siguientes vectores
+\begin{eqnarray*}
+{\bf r}_{\theta } &=& \left\langle -2u\sin \theta ,2u\cos \theta ,0\right\rangle \\
+{\bf r}_{u} &=& \left\langle 2\cos \theta ,2\sin \theta ,\frac{4u\left( 2w-1\right) }{\sqrt{9-4u^{2}}}%
+\right\rangle \\
+{\bf r}_{w}&=& \left\langle 0,0,-2\sqrt{9-4u^{2}}\right\rangle 
+\end{eqnarray*}
+El elemento diferencial de volumen es
+%\begin{eqnarray*}
+$\left\vert {\bf r}_{w}\cdot \left({\bf r}_{u}\times {\bf r}_{\theta }\right) \right\vert 
+=  8u\sqrt{9-4u^{2}},$ 
+%\end{eqnarray*}
+por lo tanto el volumen es
+\begin{equation} \label{ejercicio2}
+\int_{0}^{1}\int_{0}^{1}\int_{0}^{2\pi }8u\sqrt{9-4u^{2}}d\theta dudw= \frac{4}{3}\pi \left( 27-5\sqrt{5}\right) 
+\end{equation} 
+
+\item El sólido que contiene a los puntos interiores tanto a la esfera con ecuación $x^2+y^2+z^2=9 $ como al cilindro cardioidico
+$r=1+\cos \theta,$ se muestra a continuación.
+
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.325]{T_12a} 
+\includegraphics[scale=0.325]{T_12b} 
+\captionof{figure}{\small $x^2+y^2+z^2\leq 9$ \& $r\leq 1+\cos \theta.$} \end{center} \end{Figure}
+Las instrucciones necesarias para conseguirlo son las siguientes.
+
+\begin{Verbatim}
+RegionPlot3D[(x^2+y^2-x)^2<x^2+y^2&&x^2+y^2+z^2<9,
+{x,-1/2,2},{y,-3/2,3/2},{z,-3,3},Mesh->False,
+PlotPoints->80]
+\end{Verbatim}
+
+Usando coordenadas cilíndricas se puede plantear la integral que determina el volumen de esta región.
+\begin{multline} \label{ejercicio3}
+\int_{0}^{2\pi }\int_{0}^{1+\cos \theta}\int_{-\sqrt{9-r^{2}}}^{\sqrt{9-r^{2}}}rdzdrd\theta \\ 
+= 2\int_{0}^{2\pi }\int_{0}^{1+\cos \theta }r\sqrt{9-r^{2}}\,drd\theta \approx 25.8179 
+\end{multline}
+
+\item El siguiente es el gráfico del sólido acotado por el paraboloide $x^2+y^2=3-z$ 
+y el paraboloide hiperbólico $x^2-y^2=3z+6.$
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.25]{T_10a} 
+\includegraphics[scale=0.34]{T_10b} 
+\captionof{figure}{\small $x^2+y^2\geq 3-z$ \& $x^2-y^2\leq 3z+6$} \end{center} \end{Figure} \label{ejercicio4a}
+Con las siguientes instrucciones se consigue esta figura.
+
+\begin{Verbatim}
+RegionPlot3D[x^2+y^2<3-z&&x^2-y^2<3*z+6,{x,-2,2},
+{y,-3,3},{z,-5,3},PlotPoints->90,Mesh->False]
+\end{Verbatim}
+
+
+La intersecci\'{o}n de estas dos superficies se obtiene al igualar las expresiones para $z$, esto es, 
+$$3-x^{2}-y^{2}=\frac{x^{2}-y^{2}-6}{3},$$
+la cual se simplifica como $4x^2+2y^2=15$, esta ecuación corresponde a una elipse en el plano $xy$ centrada en el origen y alargada en sentido de las $y.$
+Por tanto, el volumen del s\'{o}lido est\'{a} dado por
+\begin{equation} \label{ejercicio4}
+\bigintss_{-\frac{\sqrt{15}}{2}}^{\frac{\sqrt{15}}{2}}\bigintss_{-\frac{1}{2}\sqrt{2} \sqrt{15-4x^{2}}}^{\frac{1}{2}\sqrt{2}\sqrt{15-4x^{2}}}\bigintss_{\frac{x^{2}-y^{2}-6}{3}}^{3-x^{2}-y^{2}}dzdydx= \frac{75}{8}\sqrt{2}\pi
+\end{equation}
+Otra posibilidad para hallar este valor es parametrizar la elipse mediante las expresiones
+$x=\frac{\sqrt{15}}{2}u\cos \theta $, $y=\sqrt{\frac{15}{2}}u\sin \theta $ con $u \in [0,1]$ y $\theta \in [0,2\pi].$
+Luego, reemplazar en las ecuaciones del paraboloide y el paraboloide hiperbólico, lo cual produce, respectivamente
+\begin{multline*}
+z = 3-\left( \frac{\sqrt{15}}{2}u\cos \theta \right)
+^2 -\left( \sqrt{\frac{15}{2}}u\sin \theta \right) ^2  = \frac{15}{8}u^{2}(\cos 2\theta -3)+3 \\
+z =  \frac{1}{3}\left( \left( \frac{\sqrt{15}}{2}u\cos \theta \right)^2 
+-\left( \sqrt{\frac{15}{2}}u\sin \theta \right) ^2 -6\right) =  \frac{15}{8}u^{2}(\cos 2\theta -1)-2 
+\end{multline*}
+Con estas expresiones tendremos dos puntos de la forma 
+\begin{eqnarray*}
+P& =&\left( \frac{\sqrt{15}}{2}u\cos \theta,\sqrt{\frac{15}{2}}u\sin \theta , \frac{15}{8}u^{2}(\cos 2\theta -3)+3\right) \\
+Q&=&\left( \frac{\sqrt{15}}{2}u\cos \theta,\sqrt{\frac{15}{2}}u\sin \theta,\frac{15}{8}u^{2}\cos 2\theta-\frac{5}{8}u^{2}-2\right).
+\end{eqnarray*}
+Una combinación convexa de ellos, $(1-w)P+wQ,$ determina una parametrización del sólido
+$$ {\bf r}(u,\theta,w) = \left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,5w\left( u^{2}-1\right) +\frac{15}{8}u^{2}\left(
+\cos 2v-3\right) +3 \right\rangle $$
+De esta función se obtienen los siguientes vectores:
+\begin{eqnarray*}
+{\bf r}_{\theta } &=&\left\langle -\frac{1}{2}\sqrt{15}u\sin \theta ,\frac{1}{2}%
+\sqrt{2}\sqrt{15}u\cos \theta ,-\frac{15}{4}u^{2}\sin 2\theta \right\rangle \end{eqnarray*}
+
+\begin{eqnarray*}
+{\bf r}_{u} &=& \left\langle \frac{1}{2}\sqrt{15}\cos \theta ,\frac{1}{2}\sqrt{2} \sqrt{15}\sin \theta ,\frac{15}{4}u\left( \cos 2\theta -3\right) +10uw \right\rangle \\
+{\bf r}_{w} &=& \left\langle 0,0,5u^{2}-5\right\rangle \\
+{\bf r}_{\theta }\times {\bf r}_{u} &=& \left\langle \frac{5\sqrt{30}}{4} u^{2} (4w-3) \cos \theta ,\frac{5\sqrt{15}}{2}u^{2}(2w-3) \sin \theta ,-\frac{15\sqrt{2}}{4}u \right\rangle
+\end{eqnarray*}
+El elemento diferencial de volumen es
+$\left\vert {\bf r}_{w}\cdot \left({\bf r}_{\theta }\times {\bf r}_{u}\right) \right\vert
+=  \left\vert \frac{75}{4}\sqrt{2}\left( u-u^{3}\right) \right\vert ,$
+cuya integración nos proporciona el volumen deseado
+$$\int_{0}^{1}\int_{0}^{1}\int_{0}^{2\pi }\left\vert \frac{75}{4}\sqrt{2}\left( u-u^{3}\right) \right\vert d\theta dudw
+= \frac{75}{8}\sqrt{2}\pi .$$
+
+\item El sólido cuya región, descrita en coordenadas esféricas, comprende los puntos que satisfacen la expresión $\rho \leq 1+\cos \phi,$ se presenta a continuación.
+
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.3]{T_13a} \hskip 0.3cm
+\includegraphics[scale=0.3]{T_13d} 
+\captionof{figure}{\small Cardioide de revolución} \end{center} \end{Figure}
+Las siguientes instrucciones permiten obtener el gráfico.
+
+\begin{Verbatim}
+RegionPlot3D[(x^2+y^2+z^2-x)^2<x^2+y^2+z^2,{x,-1,2},
+{y,-2,2},{z,-3/2,3/2},PlotPoints->30,Mesh->False,
+BoxRatios->{1,1,1}]
+\end{Verbatim}
+
+
+En coordenadas esf\'{e}ricas el volumen del s\'{o}lido está dado por
+\begin{equation} \label{ejercicio5}
+\int_{0}^{\pi }\int_{0}^{2\pi }\int_{0}^{1+\cos \phi }\rho ^2 \sin \phi
+d\rho d\theta d\phi =\frac{8}{3}\pi .
+\end{equation}
+
+Sustituyendo $\rho =1+\cos \phi ,$ en las fórmulas que definen las coordenadas esf\'{e}ricas, se
+obtienen las siguientes expresiones: 
+$x=u\left( 1+\cos \phi \right) \sin \phi \sin \theta ,$
+$y=u\left( 1+\cos \phi \right) \sin \phi \cos \theta ,$  $z=u\left( 1+\cos \phi \right) \cos \phi .$
+Por tanto, se define la función
+$${\bf r}(u,\theta,\phi)=(1+\cos \phi) \left\langle u \sin
+\phi \cos \theta ,u\sin \phi \sin \theta ,u \cos \phi \right\rangle $$
+que parametriza el mencionado sólido con $u\in[0,1]$, $\phi \in[0,\pi]$, $\theta\in[0,2\pi]$. 
+Con la función ${\bf r}$ se hallan los siguientes vectores
+\begin{eqnarray*}
+{\bf r}_{u} &=& ( 1+\cos \phi)\left\langle  \cos \theta \sin \phi  , \sin \theta \sin \phi , \cos \phi  \right\rangle \\
+{\bf r}_{\phi } &=&  u\left\langle \left( \cos \phi +\cos (2\phi) \right)\cos \theta , \left( \cos \phi +\cos (2\phi) \right)\sin \theta  ,- \left( 2\cos \phi +1\right)\sin \phi  \right\rangle \\
+{\bf r}_{\theta } &=& \left\langle -u\left( \cos \phi +1\right)  \sin \theta \sin \phi,u\left( \cos \phi +1\right) \cos \theta \sin \phi ,0 \right\rangle 
+\end{eqnarray*}
+Además ${\bf r}_{u}\times {\bf r}_{\phi }= \left\langle  -u\left( \cos \phi +1\right) ^2 \sin \theta ,u\left( \cos \phi
++1\right) ^2 \cos \theta ,0 \right\rangle.$ \linebreak
+El elemento diferencial de volumen es
+$\left\vert {\bf r}_{\theta }\cdot \left({\bf r}_{u}\times {\bf r}_{\phi }\right)
+\right\vert =u^{2}\left( \cos \phi +1\right) ^{3}\sin \phi ;$ 
+Con lo anterior, se plantea la integral que determina el volumen del sólido
+$$\int_{0}^{1}\int_{0}^{2\pi }\int_{0}^{\pi }u^{2}\left( \cos \phi +1\right) ^{3}\sin \phi d\phi d\theta du= \frac{8}{3}\pi .$$
+
+\item El sólido acotado por la superficie del semicono $y=\sqrt{x^2+z^2}$ y la esfera $x^2+y^2+z^2=9,$
+se muestran enseguida. \label{ejercicio7a}
+
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.3]{T_14a} 
+\includegraphics[scale=0.3]{T_14b} 
+\captionof{figure}{\small $\sqrt{x^2+z^2}\leq y$ \& $x^2+y^2+z^2\leq 9$} \end{center} \end{Figure}
+
+Estos gráficos se obtienen con ayuda de las siguientes instrucciones.
+
+\begin{Verbatim}
+RegionPlot3D[y>Sqrt[x^2+z^2]&&x^2+y^2+z^2<9,
+{x,-2.5,2.5},{y,0,3.2},{z,-2.5,2.5},PlotPoints->90,
+Mesh->False,BoxRatios->{1,1,1}]
+\end{Verbatim}
+
+La intersecci\'{o}n de las dos superficies est\'{a} dada por la expresión $x^{2}+z^{2}=\frac{9}{2}.$ 
+Adem\'{a}s, sobre el s\'{o}lido $y$ recorre los puntos que van desde el semicono
+hasta la esfera.
+Por tanto, el volumen se determina evaluando la siguiente integral
+$$\bigintsss_{-\frac{3}{\sqrt{2}}}^{\frac{3}{\sqrt{2}}}\bigintsss_{-\sqrt{\frac{9}{2}-x^{2}}}^{\sqrt{\frac{9}{2}-x^{2}}}\bigintsss_{\sqrt{x^{2}+z^{2}}}^{\sqrt{9-x^{2}-z^{2}}}dydzdx = 9 (2-\sqrt{2}) \pi$$
+
+Utilizando coordenadas esféricas la integral correspondiente es
+\begin{equation} \label{ejercicio7}
+\int_{0}^{2\pi }\int_{0}^{\frac{3}{\sqrt{2}}}\int_{r}^{\sqrt{9-r^{2}}}rdydrd\theta = 9\pi \left( 2-\sqrt{2}\right) .
+\end{equation}
+También se puede calcular el volumen considerando un punto sobre el cono $P\left(u\cos v,u,u\sin v\right)$ 
+y otro punto $Q\left( u\cos v,\sqrt{9-u^{2}},u\sin v\right)$ sobre la esfera; formando una combinaci\'{o}n convexa entre estos puntos se parametriza el sólido. Esto es
+% ${\bf r}(u,v,w) =(1-w) P +wQ  = \left\langle u\cos v,u+w\sqrt{9-u^{2}}-uw,u\sin v\right\rangle $
+\begin{eqnarray*} {\bf r}(u,v,w) &=&(1-w) P +wQ  = \left\langle u\cos v,u+w\sqrt{9-u^{2}}-uw,u\sin v\right\rangle 
+\end{eqnarray*}
+con $u\in \lbrack 0,\frac{3}{\sqrt{2}}],$ $v\in \lbrack 0,2\pi ]$ y $w\in \lbrack 0,1].$
+De esta función se obtienen los siguientes vectores
+${\bf r}_{u} =\left\langle \cos v,1-w-\frac{uw}{\sqrt{9-u^{2}}},\sin v\right\rangle ,$
+${\bf r}_{v} = \left\langle -u\sin v,0,u\cos v\right\rangle $ y 
+${\bf r}_{w} = \left\langle 0,\sqrt{9-u^{2}}-u,0\right\rangle .$
+El elemento diferencial de volumen es
+$\left\vert {\bf r}_{u}\cdot \left({\bf r}_{v}\times {\bf r}_{w}\right) \right\vert
+=\left\vert u^{2}-u\sqrt{9-u^{2}}\right\vert .$
+Con lo anterior, el volumen est\'{a} dado por
+$$\int_{0}^{1}\int_{0}^{2\pi }\int_{0}^{\frac{3}{\sqrt{2}}}\left\vert u^{2}-u \sqrt{9-u^{2}}\right\vert 
+dudvdw= 9\pi \left( 2-\sqrt{2}\right) .$$
+
+\item El hiperboloide de un manto con ecuación $2x^2+3y^2=z^2+7$ y el
+elipsoide $2x^2+y^2+z^2=9$ acotan el sólido que se muestra a continuación. Esta región se presenta en detalle en la
+página \pageref{elipsoidehiperboloide}.
+
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.25]{T_11a}  \hskip 0.4cm
+\includegraphics[scale=0.25]{T_11b} 
+\captionof{figure}{\small $2x^2+3y^2\leq z^2+7$ \& $2x^2+y^2+z^2\leq 9$} \end{center} \end{Figure}
+Este gráfico se consigue ejecutando las siguientes instrucciones
+
+\begin{Verbatim}
+RegionPlot3D[2*x^2+3*y^2<z^2+7&&2*x^2+y^2+z^2<9,
+{x,-2,2},{y,-2,2},{z,-3,3.2},PlotPoints->90,
+Mesh->False];
+\end{Verbatim}
+
+En el plano $xy$, la proyección de la parte m\'{a}s \emph{delgada} del hiperboloide posee ecuaci\'{o}n $2x^{2}+3y^{2}=7.$ 
+Eliminando $z$ de las ecuaciones iniciales se obtiene $x^{2}+y^{2}=4,$ que corresponde a la proyecci\'{o}n 
+en el plano $xy$ de la intersecci\'{o}n de las superficies. 
+\vskip0.1cm
+Hay una regi\'{o}n en la cual los l\'{\i}mites de integración para $z$ van desde el elipsoide hasta el 
+mismo elipsoide, mientras que en la regi\'{o}n restante, los límites para $z$ van desde el
+hiperboloide hasta el elipsoide.
+Por la simetr\'{\i}a de la figura, se puede establecer que el volumen est\'{a} dado por
+\begin{multline}
+\bigintsss_{0}^{\sqrt{\frac{7}{2}}}\bigintsss_{0}^{\sqrt{\frac{7-2x^{2}}{3}}}\bigintsss_{0}^{\sqrt{9-2x^{2}-y^{2}}}8dzdydx \\ 
++ \bigintsss_{0}^{\sqrt{\frac{7}{2}}}\bigintsss_{\sqrt{\frac{7-2x^{2}}{3}}}^{\sqrt{4-x^{2}}}\bigintsss_{\sqrt{2x^{2}+3y^{2}-7}}^{\sqrt{9-2x^{2}-y^{2}}}8dzdydx \\
++\bigintsss_{\sqrt{\frac{7}{2}}}^2 \bigintsss_{0}^{\sqrt{4-x^{2}}}\bigintsss_{\sqrt{2x^{2}+3y^{2}-7}}^{\sqrt{9-2x^{2}-y^{2}}}8dzdydx \approx 51.8616 \label{ejercicio6}
+\end{multline}
+
+En el plano $xz$ la proyecci\'{o}n del s\'{o}lido genera una elipse
+y una hip\'{e}rbola; mientras que la curva de intersección proyectada en el plano $xz$ se obtiene eliminando $y$ de las ecuaciones iniciales, esto se reduce a la fórmula $x^2+z^2=5$.  
+El volumen del sólido se determina integrando primero con respecto a $y$ sobre dos regiones,
+en una de ellas $y$ recorre puntos que van desde el elipsoide hasta la misma superficie y en la otra regi\'{o}n $y$ se recorre
+los puntos desde el hiperboloide hasta el mismo. Con lo anterior, el planteamiento es el siguiente
+
+\begin{multline} 
+\hskip-0.4cm \bigintsss_{0}^2 \bigintsss_{\sqrt{5-x^{2}}}^{\sqrt{9-2x^{2}}}\bigintsss_{0}^{\sqrt{9-2x^{2}-z^{2}}}8dydzdx + 
+\bigintsss_{\sqrt{\frac{7}{2}}}^2 \bigintsss_{\sqrt{2x^{2}-7}}^{\sqrt{5-x^{2}}}\bigintsss_{0}^{\sqrt{\frac{z^{2}-2x^{2}+7}{3}}}8dydzdx  \\
++\bigintsss_{0}^{\sqrt{\frac{7}{2}}}\bigintsss_{0}^{\sqrt{5-x^{2}}}\bigintsss_{0}^{\sqrt{\frac{z^{2}-2x^{2}+7}{3}}}8dydzdx
+\approx 51.8616
+\end{multline}
+
+La evaluación numérica de las anteriores integrales se obtuvo mediante la 
+ejecución de las siguientes instrucciones.
+
+\begin{Verbatim}
+NIntegrate[8,{x,0,Sqrt[7/2]},{y,0,Sqrt[(7-2*x^2)/3]},
+{z,0,Sqrt[9-2*x^2-y^2]}]+NIntegrate[8,{x,0,Sqrt[7/2]},
+{y,Sqrt[(7-2*x^2)/3],Sqrt[4-x^2]},{z,Sqrt[2*x^2
++3*y^2-7],Sqrt[9-2*x^2-y^2]}]+NIntegrate[8,
+{x,Sqrt[7/2],2},{y,0,Sqrt[4-x^2]},{z,Sqrt[2*x^2+
+3*y^2-7],Sqrt[9-2*x^2-y^2]}]
+\end{Verbatim}
+
+%NIntegrate[8,{x,0,2},{z,Sqrt[5-x^2],Sqrt[9-2*x^2]},
+%{y,0,Sqrt[9-2*x^2-z^2]}]+NIntegrate[8,{x,0,Sqrt[7/2]},
+%{z,0,Sqrt[5-x^2]},{y,0,Sqrt[(z^2-2*x^2+7)/3]}]+
+%NIntegrate[8,{x,Sqrt[7/2],2},{z,Sqrt[2*x^2-7],
+%Sqrt[5-x^2]},{y,0,Sqrt[(z^2-2*x^2+7)/3]}]
+
+\item El sólido acotado por las superficies del paraboloide $4y=x^2+z^2$ y la esfera $x^2+y^2+z^2=12$ 
+se muestra a continuación \label{ejercicio8a}
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.3]{T_15a} \hskip 0.4cm
+\includegraphics[scale=0.3]{T_15b} 
+\captionof{figure}{\small $4y\geq x^2+z^2$ \& $x^2+y^2+z^2\leq 12.$ } \end{center} \end{Figure}
+Este gráfico se consigue ejecutando las siguientes instrucciones
+
+\begin{Verbatim}
+RegionPlot3D[4*y>x^2+z^2&&x^2+y^2+z^2<12,{x,-3,3},
+{y,0,3.7},{z,-3,3},PlotPoints->90,Mesh->False,
+BoxRatios->{1,1,1}]
+\end{Verbatim}
+
+
+Eliminando $x^2+z^2$ de las dos ecuaciones, obtenemos que $y^{2}+4y=12$, cuya soluci\'{o}n
+es $y=2$ y $y=-6;$ por la ubicación de la región en el espacio consideramos el caso 
+$y=2.$ Lo cual implica que en el plano $xz,$ la proyecci\'{o}n del s\'{o}lido est\'{a} 
+determinada por la ecuaci\'{o}n $x^{2}+z^{2}=8,$ esto corresponde a un c\'{\i}rculo
+centrado en el origen de radio $4$. Por tanto, utilizando coordenadas
+rectangulares e integrando primero con respecto a $y,$
+la integral que determina el volumen es
+$$\int _{-\sqrt{8}}^{\sqrt{8}}\int _{-\sqrt{8-x^2}}^{\sqrt{8-x^2}}\int _{\frac{1}{4}
+\left(x^2+y^2\right)}^{\sqrt{12-x^2-y^2}}dzdydx= \frac{8}{3}\pi(6\sqrt{3}-5)$$
+Esta integral se puede evaluar al ejecutar la siguiente instrucción
+
+\begin{Verbatim}
+Integrate[1,{x,-Sqrt[8],Sqrt[8]},{y,-Sqrt[8-x^2],
+Sqrt[8-x^2]},{z,(x^2+y^2)/4,Sqrt[12-x^2-y^2]}]
+\end{Verbatim}
+
+Al hacer un cambio a coordenadas cilíndricas, el volumen está dado por
+\begin{equation} \label{ejercicio8}
+\int_0^{\sqrt{8}}\int_{0}^{2\pi}\int_{\frac{r^{2}}{4}}^{\sqrt{12-r^{2}}}rdyd\theta dr=\frac{8}{3}\pi\left(6\sqrt{3}-5\right). 
+\end{equation}
+Por otra parte, la ecuación $x^{2}+z^{2}=8$ sugiere usar la parametrización
+$x=\sqrt{8}u\cos v,$ $z=\sqrt{8}u\sin v$, en donde $u \in [0,1],$ $v \in [0,2\pi]$. 
+Reemplazando $x$ y $z$ en la expresión de la esfera y del paraboloide se obtienen expresiones correspondientes para $y$,
+es decir $y=\sqrt{12-x^{2}-z^{2}}= 2\sqrt{3-2u^{2}},$ $y=\frac{x^{2}+z^{2}}{4}= 2u^{2}.$ \vskip0.2cm
+De esta manera, tendremos dos puntos sobre las superficies mencionadas. Al hacer una combinación convexa de 
+estos puntos se parametriza el sólido
+$\left( 1-w\right) \left( \sqrt{8}u\cos v,2u^{2},\sqrt{8}u\sin v\right) \linebreak 
++w\left( \sqrt{8}u\cos v,2\sqrt{3-2u^{2}},\sqrt{8}u\sin v\right);$
+por esta razón se considera la función
+$$ {\bf r}(u,v,w)= \langle 2\sqrt{2}u\cos v,2w\sqrt{3-2u^{2}}-2u^{2}w+2u^{2},2\sqrt{2}u\sin v \rangle ,$$
+con $u \in [0,1],$ $v \in [0,2\pi],$ $w \in [0,1].$ De aquí se obtienen los siguientes vectores
+\begin{eqnarray*}
+{\bf r}_{u} &=& \left\langle 2\sqrt{2}\cos v,4u-4uw-\frac{4uw}{\sqrt{3-2u^{2}}},2\sqrt{2}\sin v \right\rangle  \\
+{\bf r}_{v} &=& \left\langle  -2\sqrt{2}u\sin v,0,2\sqrt{2}u\cos v\right\rangle  \\
+{\bf r}_{w} &=& \left\langle  0,2\sqrt{3-2u^{2}}-2u^{2},0\right\rangle 
+\end{eqnarray*}
+Por lo anteriormente descrito, el elemento diferencial de volumen está dado por
+$\left\vert {\bf r}_{w} \cdot({\bf r}_{u} \times {\bf r}_{v}) \right\vert = \left\vert 16u\left( u^{2}-\sqrt{3-2u^{2}}\right) \right\vert ,$
+que al integrarlo con los límites establecidos, produce el volumen del mencionado sólido
+$$\int_{0}^{1}\int_{0}^{1}\int_{0}^{2\pi }\left\vert 16u\left( u^{2}-\sqrt{3-2u^{2}}\right) \right\vert dvdudw= \frac{8}{3}\pi \left( 6\sqrt{3}-5\right).$$
+
+\item Hallar el volumen del sólido acotado por el semicono con ecuación 
+$x=\sqrt{y^2+z^2}$ y el paraboloide $y^2+z^2+4x=12.$
+
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.32]{T_17a} \hskip0.2cm
+\includegraphics[scale=0.32]{T_17b} 
+\captionof{figure}{\small $r\leq x \leq 3-r^2/4$} \end{center} \end{Figure}
+Las siguientes instrucciones producen el gráfico 
+
+\begin{Verbatim}
+RegionPlot3D[x>Sqrt[y^2+z^2]&&y^2+z^2+4*x<12,
+{x,0,3.25},{y,-2,2},{z,-2,2},PlotPoints->90,
+Mesh->False]
+\end{Verbatim}
+
+Estas superficies se intersecan en una regi\'{o}n del plano $yz$
+determinada por la ecuaci\'{o}n $y^{2}+z^{2}=4.$
+Se debe tener presente que $x$ recorre los puntos desde el semicono hasta el
+paraboloide. También se presenta la integral correspondiente al cambio a coordenadas cilíndricas; por tanto, 
+el volumen del sólido está dado por 
+\begin{multline} \label{ejercicio10}
+\int_{-2}^2 \int_{-\sqrt{4-y^2}}^{\sqrt{4-y^2}}\int_{\sqrt{y^2+z^{2}}}^{\frac{12-y^{2}-z^{2}}{4}}dxdzdy \\
+=\int_{0}^2 \int_{0}^{2\pi }\int_{r}^{3-\frac{r^{2}}{4}}rdxd\theta dr= \frac{14}{3}\pi .
+\end{multline}
+%$$\int_{0}^2 \int_{0}^{2\pi }\int_{r}^{3-\frac{r^{2}}{4}}rdxd\theta dr= \frac{14}{3}\pi .$$
+\item Presentamos ahora el sólido acotado por el paraboloide $x+3=y^2+z^2$ 
+y el paraboloide hiperbólico $y^2-z^2=9x-3.$
+
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.28]{T_16a} 
+\includegraphics[scale=0.28]{T_16b} 
+\includegraphics[scale=0.28]{T_16c} 
+\captionof{figure}{\small $3-y^2-z^2\leq x$ \& $y^2-z^2\leq 9x-3$} \end{center} \end{Figure}
+Ejecutando las siguientes instrucciones, se consigue el gráfico.
+
+
+\begin{Verbatim}
+RegionPlot3D[x+3>y^2+z^2&&y^2-z^2>9*x-3,{x,-3.5,1.5},
+{y,-2,2},{z,-2.2,2.2},PlotPoints->90,Mesh->False,
+BoxRatios->{1,1,1}]
+\end{Verbatim}
+
+
+Eliminando $x$ de las ecuaciones del paraboloide y del paraboloide
+hiperbólico se obtiene $4y^{2}+5z^{2}=15,$ que corresponde a una elipse
+en el plano $yz;$ esta ecuación define la regi\'{o}n de integraci\'{o}n en dicho plano.
+Con esta informaci\'{o}n se plantea la integral que representa el volumen del
+s\'{o}lido,
+$$\bigintss_{-\frac{\sqrt{15}}{2}}^{\frac{\sqrt{15}}{2}}\bigintss_{-\sqrt{3-\frac{4y^{2}}{5}}}^{\sqrt{3-\frac{4y^{2}}{5}}}\bigintss_{y^{2}+z^{2}-3}^{\frac{y^{2}-z^{2}+3}{9}}dxdzdy= \frac{5}{2}\sqrt{5}\pi .$$
+
+La región del plano $xz$ determinada por la ecuación $4y^{2}+5z^{2}=15,$ se puede representar
+mediante las expresiones $y=\frac{\sqrt{15}}{2}u\cos v,$ $z=\sqrt{3}u\sin v$, con $u \in [0,1]$ y $v \in [0,2\pi].$
+La expresión correspondiente para $x$ en las dos superfices que acotan el sólido son: 
+\begin{eqnarray*}
+x &=&y^{2}+z^{2}-3= \frac{3}{8}u^{2}\cos 2v+\frac{27}{8}u^{2}-3\\
+x&=&\frac{y^{2}-z^{2}+3}{9}= \frac{3}{8}u^{2}\cos 2v+\frac{1}{24}u^{2}+\frac{1}{3}
+\end{eqnarray*} 
+Con lo mencionado antes, 
+se pueden considerar dos puntos: uno sobre el paraboloide $Q\left( \frac{3}{8}u^{2}\cos 2v+\frac{27}{8}u^{2}-3,\frac{\sqrt{15}}{2}u\cos v,\sqrt{3}u\sin v\right)$ y otro sobre el parabolide hiperbólico
+$P\left(\frac{3}{8}u^{2}\cos 2v+\frac{1}{24}u^{2}+\frac{1}{3},\frac{\sqrt{15}}{2}u\cos v,\sqrt{3}u\sin v\right);$
+Con ellos se forma una combinación convexa $(1-w) P +wQ,$ con $w \in [0,1],$ que al simplificarse define la función que parametriza el sólido,  
+\begin{multline*} 
+{\bf r}(u,v,w)= \bigg\langle \frac{10}{3}w(u^{2}-1)+\frac{1}{8}u^{2}\left(3\cos 2v+\frac{1}{3}\right)+\frac{1}{3}, \\
+\frac{\sqrt{15}}{2}u\cos v,\sqrt{3}u\sin v \bigg \rangle.\end{multline*}
+Derivando parcialmente hallamos los siguientes vectores
+\begin{eqnarray*}
+{\bf r}_{u} &=&\left\langle \frac{1}{12}u+\frac{3}{4}u\cos 2v+\frac{20}{3}uw,\frac{1}{2}\sqrt{15}\cos v,\sqrt{3}\sin v\right\rangle\\
+{\bf r}_{v}&=&\left\langle -\frac{3}{4}u^{2}\sin 2v,-\frac{1}{2}\sqrt{15}u\sin v,\sqrt{3}u\cos v\right\rangle  \\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+{\bf r}_{w}&=&\left\langle \frac{10}{3}u^{2}-\frac{10}{3},0,0\right\rangle  \\
+{\bf r}_{w}\times {\bf r}_{u}&=& \frac{10}{3} \left\langle 0,-\sqrt{3}\left( u^{2}-1\right) \sin v,\frac{1}{2}\sqrt{15}\left( u^{2}-1\right) \cos v \right\rangle
+\end{eqnarray*}
+Por último, se evalua el producto vectorial triple, que determina el elemento diferencial de volumen
+$\left\vert {\bf r}_{v}\cdot \left({\bf r}_{w}\times {\bf r}_{u}\right) \right\vert= \left\vert 5\sqrt{5}u\left( u^{2}-1\right) \right\vert $, se integra con los límites establecidos y obtendremos el volumen deseado 
+\begin{equation}\label{ejercicio9}
+\int_{0}^{1}\int_{0}^{1}\int_{0}^{2\pi }\left\vert 5\sqrt{5}u\left(u^{2}-1\right) \right\vert dvdudw= \frac{5}{2}\sqrt{5}\pi.
+\end{equation}
+\item Hallar el volumen del sólido que se obtiene de perforar la esfera centrada en el origen de radio $3$
+con el cilindro con ecuación $x^2+y^2=2x+y.$
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.5]{T_19a} \hskip0.2cm
+\includegraphics[scale=0.4]{T_19b} 
+\captionof{figure}{\small $2x+y \leq x^2+y^2$ \& $x^2+y^2+z^2\leq 9.$} \end{center} \end{Figure}
+Ejecutando las siguientes instrucciones se consigue el gráfico.
+
+\begin{Verbatim}
+RegionPlot3D[2*x+y<x^2+y^2<9&&x^2+y^2+z^2<=9,{x,-3,3},
+{y,-3,3},{z,-3,3},PlotPoints->90,Mesh->False]
+\end{Verbatim}
+
+Al integrar en coordenadas rectangulares con el orden $dzdydx$ es necesario
+evaluar las cuatro integrales triples que a continuaci\'{o}n se presentan
+\begin{multline*} 
+\bigintss_{-3}^{1-\frac{\sqrt{5}}{2}}\bigintss_{-\sqrt{9-x^{2}}}^{\sqrt{9-x^{2}}}\bigintss_{-\sqrt{9-x^{2}-y^{2}}}^{\sqrt{9-x^{2}-y^{2}}}dzdydx+ \\
+\bigintsss_{1-\frac{\sqrt{5}}{2}}^{1+\frac{\sqrt{5}}{2}}\bigintsss_{-\sqrt{9-x^{2}}}^{\frac{1}{2}-\sqrt{\frac{5}{4}-\left( x-1\right) ^2 }}\bigintsss_{-\sqrt{9-x^{2}-y^{2}}}^{\sqrt{9-x^{2}-y^{2}}}dzdydx +\\
+\bigintsss_{1-\frac{\sqrt{5}}{2}}^{1+\frac{\sqrt{5}}{2}}\bigintsss_{\frac{1}{2}+\sqrt{\frac{5}{4}-\left( x-1\right) ^2 }}^{\sqrt{9-x^{2}}}\bigintsss_{-\sqrt{9-x^{2}-y^{2}}}^{\sqrt{9-x^{2}-y^{2}}}dzdydx\\
++\bigintsss_{1+\frac{\sqrt{5}}{2}}^{3}\bigintsss_{-\sqrt{9-x^{2}}}^{\sqrt{9-x^{2}}}\bigintsss_{-\sqrt{9-x^{2}-y^{2}}}^{\sqrt{9-x^{2}-y^{2}}}dzdydx \approx 92.2262
+\end{multline*}
+
+Estas integrales se evaluaron numéricamente en \verb"Mathematica" 
+
+\begin{Verbatim}
+Integrate[1,{x,-3,1-Sqrt[5]/2},{y,-Sqrt[9-x^2],
+Sqrt[9-x^2]},{z,-Sqrt[9-x^2-y^2],Sqrt[9-x^2-y^2]}]
++NIntegrate[1,{x,1-Sqrt[5]/2,1+Sqrt[5]/2},
+{y,-Sqrt[9-x^2],1/2-Sqrt[5/4-(x-1)^2]},{z,
+-Sqrt[9-x^2-y^2],Sqrt[9-x^2-y^2]}]+Integrate[1,
+{x,1+Sqrt[5]/2,3},{y,-Sqrt[9-x^2],Sqrt[9-x^2]},
+{z,-Sqrt[9-x^2-y^2],Sqrt[9-x^2-y^2]}]+NIntegrate[1,
+{x,1-Sqrt[5]/2,1+Sqrt[5]/2},{y,1/2+Sqrt[5/4-(x-1)^2],
+Sqrt[9-x^2]},{z,-Sqrt[9-x^2-y^2],Sqrt[9-x^2-y^2]}]
+\end{Verbatim}
+
+El volumen del s\'{o}lido también puede calcularse como la diferencia entre el volumen de la esfera y
+el volumen de la regi\'{o}n acotada por la esfera e interior al cilindro, esto es,
+$$36\pi -\bigintss_{1-\frac{\sqrt{5}}{2}}^{1+\frac{\sqrt{5}}{2}}\bigintss_{\frac{1}{2}- \sqrt{\frac{5}{4}-(x-1)^2 }}^{\frac{1}{2}+\sqrt{\frac{5}{4}-(x-1) ^2 }}\bigintss_{-\sqrt{9-x^{2}-y^{2}}}^{\sqrt{9-x^{2}-y^{2}}}dzdydx \approx 92.2262 $$
+
+\item El sólido acotado por las gráficas de las ecuaciones $z=4-y^{2},$ $z=4-x,$ $z=0,$ $x=0,$ 
+se perfora por el cilindro $\left( z-2\right) ^{2}+y^{2}=1.$ Esta región se presentó en la sección (\ref{solidohueco3}) de la página \pageref{solidohueco3}, la región se muestra en las siguientes figuras. 
+\begin{Figure}  \begin{center}
+\includegraphics[scale=0.18]{5b} \hskip0.5cm
+\includegraphics[scale=0.18]{5a}\hskip0.5cm
+\includegraphics[scale=0.18]{5c}
+\captionof{figure}{\small $1\leq (z-2)^{2}+y^{2}$ \& $0\leq z\leq 4-y^2$} \end{center} \end{Figure}
+El volumen puede obtenerse como la diferencia entre el volumen 
+del sólido si perforar y el volumen de la parte cilíndrica. Esto es, 
+$$ \int _{-2}^2\int _0^{4-y^2}\int _0^{4-z}dxdzdy-\int _{-1}^1\int _{2-\sqrt{1-y^2}}^{2+\sqrt{1-y^2}}\int _0^{4-z}dxdzdy = \frac{128}{5}-2\pi.$$
+ \begin{Verbatim}
+Integrate[1,{y,-2,2},{z,0,4-y^2},{x,0,4-z}]
+-Integrate[1,{y,-1,1},{z,2-Sqrt[1-y^2],2+
+Sqrt[1-y^2]},{x,0,4-z}]
+\end{Verbatim}
+
+El mencionado sólido se parametrizó mediante la expresión (\ref{solidohueco2}).
+Con las siguientes instrucciones se define la parametrización, se halla el elemento diferencial de 
+volumen y se evaluan las integrales con los límites establecidos
+ 
+\begin{Verbatim}
+r1={0,(1-u)*Cos[t]+u*(2-4*t/Pi),(1-u)*(2+Sin[t])
++16*t*u/Pi*(1-t/Pi)};
+r2={0,(1-u)*Cos[t]+u*(4*(t-Pi)/Pi-2),(1-u)*(2+Sin[t])};
+r3={4-(1-u)*(2+Sin[t])-16*t*u/Pi*(1-t/Pi),(1-u)*Cos[t]
++u*(2-4*t/Pi),(1-u)*(2+Sin[t])+16*t*u/Pi*(1-t/Pi)};
+r4={4-((1-u)*(2+Sin[t])),(1-u)*Cos[t]
++u*(4*(t-Pi)/Pi-2),(1-u)*(2+Sin[t])};
+{R1,R2}={(1-w)*r1+w*r3,(1-w)*r2+w*r4};
+Integrate[Dot[D[R1,w],Cross[D[R1,u],D[R1,t]]],
+{t,0,Pi},{u,0,1},{w,0,1}]+Integrate[Dot[D[R2,w],
+Cross[D[R2,u],D[R2,t]]],{t,Pi,2*Pi},{u,0,1},{w,0,1}]
+\end{Verbatim}
+
+\end{enumerate}
+
+\begin{ejer}
+Determine el volumen del sólido acotado por las gráficas de las expresiones señaladas.
+Hágalo de diversas maneras, incluyendo parametrizando la región. Se agrega el gráfico y las instrucciones para conseguirlo.
+
+\begin{enumerate}
+\item $x^2+y^2=4+z,$ $4z=(4-x^2-y^2)e^{1-x^2-y^2}.$ 
+\normalfont
+\begin{Verbatim}
+RegionPlot3D[x^2+y^2-4<=z&&z<=(4-x^2-y^2)*Exp[1
+-x^2-y^2],{x,-2,2},{y,-2,2},{z,-4,12},
+PlotPoints->90,Mesh->False]
+\end{Verbatim}
+
+\begin{Figure}  \begin{center} 
+\includegraphics[scale=0.25]{T_42a}
+\includegraphics[scale=0.25]{T_42b}
+\includegraphics[scale=0.25]{T_42c}
+\captionof{figure}{\small $x^2+y^2-4\leq z \leq (4-x^2-y^2)e^{1-x^2-y^2}$} \end{center} \end{Figure}
+
+\item $z=x^2+y^2,$ $4-z=3(x^2+y^2)^3.$ 
+\normalfont
+\begin{Verbatim}
+RegionPlot3D[x^2+y^2<=z<=4-3*(x^2+y^2)^3&&x^2
++y^2<=1,{x,-1,1},{y,-1,1},{z,0,4},Mesh->False,
+PlotPoints->90,PlotStyle->RGBColor[0.3,0.6,0.3]]
+\end{Verbatim}
+
+\begin{Figure}  \begin{center} 
+\includegraphics[scale=0.2]{T_40a}
+\includegraphics[scale=0.2]{T_40b}
+\includegraphics[scale=0.2]{T_40c}
+\captionof{figure}{\small $x^2+y^2\leq z\leq 4-3(x^2+y^2)^3$} \end{center} \end{Figure} 
+
+\item $z=4-x^2-y^2,$ $z=3(x^2+y^2)^6.$ 
+\begin{Figure}  \begin{center} 
+\includegraphics[scale=0.2]{T_41a}
+\includegraphics[scale=0.2]{T_41b}
+\captionof{figure}{\small $3(x^2+y^2)^6 \leq z \leq 4-x^2-y^2$} \end{center} \end{Figure} 
+ \normalfont
+\begin{Verbatim}
+RegionPlot3D[3*(x^2+y^2)^6<=z<=4-x^2-y^2&&x^2
++y^2<=1,{x,-1,1},{y,-1,1},{z,0,4},PlotPoints->90,
+Mesh->False,PlotStyle->RGBColor[0.6,0.2,0.2]]
+\end{Verbatim}
+
+\end{enumerate}
+\end{ejer}

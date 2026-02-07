@@ -1,0 +1,316 @@
+\documentclass[12pt,twoside,spanish]{book}
+
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+
+\usepackage[backend=biber]{biblatex}
+%\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{bib_file.bib}
+\bibliography{bib_file}
+
+\usepackage{fontspec}
+\input{esConfigDir/esConfigFonts}
+\usepackage{authblk}
+\DefineBibliographyStrings{spanish}{andothers={\itshape{et~al}\adddot}}
+\makeatletter
+%\renewcommand*{\apablx@ifrevnameappcomma}[2]{#2}
+\makeatother
+\DefineBibliographyExtras{spanish}{\let\finalandcomma=\empty}
+\DeclareDelimFormat[bib,textcite]{finalnamedelim}{
+ \ifnumgreater{\value{liststop}}{2}{}{}\addspace\bibstring{and}\space}
+\DeclareDelimFormat[parencite]{finalnamedelim}{\addspace{y}\space}
+\usepackage[letterspace=5]{microtype}
+\usepackage{graphicx}
+\def\texttitulocorto{Problemas resueltos de Integración Múltiple}
+\def\loauthors{J. N. Zambrano, E. Baquero}
+
+\input{esConfigDir/esEstilo}
+\usepackage[paperheight=24.0cm,paperwidth=17.0cm,textwidth=12.5cm,tmargin=2.5cm,bmargin=2.5cm,left=2.5cm,right=2.0cm]{geometry}
+
+\decimalpoint
+\usepackage{lipsum}  
+\usepackage[pangram]{blindtext}
+
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{subcaption}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+%%% inicio paquetes
+%\usepackage[affil-it]{authblk}
+\usepackage{amsmath,amsthm,array,graphicx,comment,ifthen,amsfonts}
+\usepackage{graphicx,amsmath,multicol,pst-coil,bigints,caption}
+\usepackage{pstricks-add,pst-plot,pst-node,pst-3dplot,hyperref,appendix}
+\usepackage{enumitem,bm,calculus,calculator}
+\renewcommand{\proofname}{Demostración}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage{tcolorbox} % hacer cajas de color gris
+\usepackage{makeidx}
+buselibrary{breakable,skins}
+
+\newcommand{}{bset{colback=gray!10!white,colframe=black!85!blue}
+\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando el sólido]}
+\newcommand{\ptr}{bset{colback=gray!10!white,colframe=black!85!blue}
+\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando la región de Integración]}
+\newcommand{}{\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en {\tt Mathematica}]}
+\newcommand{}{\end{tcolorbox}}
+
+\author{\Large \textit{\textbf{Juan Nepomuceno Zambrano Caviedes}} \\ \textit{\textbf{Efrén Ricardo Baquero Torres}}}
+\date{}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead{} 
+\makeatletter
+
+%\renewcommand{\sectionmark}[1]{\markright{\thesection~~#1}}
+%\renewcommand{\chaptermark}[1]{\markboth{\if@mainmatter\chaptername\ \thechapter~~ - \fi#1}{}}
+\makeatother
+\fancyhead[LE]{\thepage}
+\fancyhead[RE]{\itshape\nouppercase  \leftmark}
+\fancyhead[LO]{\itshape\nouppercase  \rightmark}
+\fancyhead[RO]{\thepage}
+\fancyfoot[]{} % \fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt} % Default \headrulewidth is 0.4pt
+\renewcommand{\footrulewidth}{0.4pt}
+
+\addto{\captionsspanish}{\renewcommand{\contentsname}{Contenido}}
+\addto{\captionsspanish}{\renewcommand{\bibname}{Referencias}}
+\psset{showorigin=false}
+
+\usepackage[hyphenbreaks]{breakurl}
+%\usepackage[hyphens]{url}
+%\renewcommand{\footrulewidth}{1pt}
+%\fancyfoot[CE,CO]{Material en preparación - Efrén Ricardo Baquero}
+%\fancyfoot[LE,RO]{}
+
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{prop}{Proposición}[chapter]
+\newtheorem{defi}{Definición}[chapter]
+\newtheorem{ejer}{Ejercicio}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+\newcommand{\sech}{{\rm sech\,}}
+\newcommand{\csch}{{\rm csch\,}}
+\newcommand{\arcsinh}{{\rm arcsinh\,}}
+\newcommand{\arccosh}{{\rm arccosh\,}}
+\newcommand{\arctanh}{{\rm arctanh\,}}
+\newcommand{\arccoth}{{\rm arccoth\,}}
+\newcommand{\arcsech}{{\rm arcsech\,}}
+\newcommand{\arccsch}{{\rm arccsch\,}}
+\newcommand{\cn}[3]{\pscircle(#1,#2){5pt}\rput(#1,#2){$#3$}}
+\newcommand{\fig}{\begin{figure}}
+\newcommand{\ef}[1]{\caption{#1} \end{figure}}
+\newcommand{\rot}[1]{{\rm rot}\,{\bf #1}}
+\newcommand{\la}{\left \langle}
+\newcommand{\ra}{\right \rangle}
+\newcommand{\vi}{\boldsymbol{\hat{\imath}}}
+\newcommand{\vj}{\boldsymbol{\hat{\jmath}}}
+\newcommand{\vk}{\boldsymbol{\hat{k}}}
+\newcommand{\ei}[1]{{\bf e}_{#1}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\bi}{\bigintsss}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\mc}[1]{\begin{multicols}{#1}}
+\newcommand{\emc}{\end{multicols}}
+% \usepackage[Lenny]{fncychap}
+% \usepackage[Glenn]{fncychap}
+%\usepackage[Sonny]{fncychap}
+% \ChNameVar{\Large\rm} \ChNumVar{\Huge} \ChTitleVar{\Large\rm}
+% \ChRuleWidth{0.3pt} \ChNameUpperCase
+
+\setcounter{tocdepth}{1}
+\pagestyle{empty}
+\usepackage{fancyvrb}
+\newcommand{\letraverbatim}{\fontsize{9}{11.5}\selectfont}
+\newenvironment{Figure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+\hyphenation{car-dioi-di-co instrucciones}
+%%% fin paquetes
+
+\usepackage{shapepar}
+%\usepackage{tikz}
+%\usepackage{arydshln}
+\usepackage{colortbl}
+
+%\usepackage[usenames,dvipsnames]{color}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{xcolor}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+
+\usepackage{tabularray}
+%\usepackage{orcidlink}
+%\usepackage[toc,page]{appendix}
+\usepackage{nameref}
+\usepackage{fontawesome}
+\usepackage{academicons}
+
+\usepackage[axes,cam,width=190truemm,height=260truemm,pdftex,center]{crop}
+
+\setlength\parindent{0pt}
+
+\pagestyle{empty}
+
+% \hyphenation{este sencillo cualquiera segmento segmentos superficie siguientes mientras volumen formando obtiene derivando requiere integrando expresiones para menor considerar integrales iniciando sustituye donde paraboloide porciones simplifica simplificando parametrizada parametriza parametrizan como mismo cilindro cilindros planteamiento circunferencia circunferencias forma determinan recorre interior corresponde correspondientes presentan representan coordenada  coordenadas coordenados sobre determina puntos tanto sentencias ayuda anteriormente estos convexa funciones reescribe establecer naturaleza permite primer ejecutando completo corresponden elemento debe mediante proporciona adecuadamente respectivas punto desde positiva evaluando oeden parte radio resultado recorrer centrada advertir suponiendo vector hiperboloide desigualdades previamente dentro puede hacen diferencial sintaxis vectorial denominaremos denominada diferenciable primeros}
+	
+\begin{document}
+
+%%%%%%%% EDITAR INICIO PORTADILLA 1 %%%%%%%%%%%%%%%
+\portadillauno{Problemas resueltos de Integración Múltiple}{con aplicaciones en {\tt Wolfram Mathematica}}
+%%%%%%%% FIN PORTADILLA 1 %%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\newpage
+
+%%%%%%%% EDITAR INICIO PORTADILLA 2 %%%%%%%%%%%%%%%
+\portadillados{Problemas resueltos de Integración Múltiple}{con aplicaciones en {\tt Wolfram Mathematica}}
+\vspace*{5.5mm}
+\begin{flushleft}
+  \leftskip=2mm
+      {\color{MSBlack}\lsstyle \fontsize{12pt}{6.0mm} \exlseries Juan Nepomuceno Zambrano Caviedes \linebreak 
+      Efrén Ricardo Baquero Torres
+      }
+\end{flushleft}
+
+\begin{center}
+  \vspace{3.5cm}
+  \includegraphics[scale=0.06]{esIcons/logoES.png}
+\end{center}
+%%%%%%%% FIN PORTADILLA 2 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\newpage
+
+%%%%%%%% EDITAR INICIO RESUMENES EN ESPAÑOL E INGLÉS %%%%%%%%%%%%%%%
+\chapter*{{\medseries \large Resumen}}
+\thispagestyle{empty}
+\vspace*{-1.4cm}
+\noindent \input{resumen}
+\vskip1cm
+{\medseries Palabras clave:} Integración múltiple, Parametrización, campos escalares, campos vectoriales, Wolfram Mathematica.
+
+\vfill
+\begin{spacing}{1.4}
+  \begin{tabular}{p{0.26\textwidth}!{\vrule width 0.9pt}p{0.69\textwidth}}
+    & \hspace{2mm}{\medseries \large ¿Como citar este libro?} \\[3.5pt]
+    & \hangindent=2mm \hangafter=0
+    \fontsize{9pt}{9pt}\selectfont{Zambrano Caviedes, J.N. \& Baquero Torres, E. R. (2025).\linebreak \emph{Problemas resueltos de Integración Múltiple con aplicaciones en {\tt Wolfram Mathematica}}. Universidad Distrital Francisco José de Caldas-Editorial UD. \url{}}\\
+  \end{tabular}
+\end{spacing}
+
+\newpage
+
+\selectlanguage{english}
+\chapter*{{\medseries \large Abstract}}
+\thispagestyle{empty}
+\vspace*{-1.4cm}
+\noindent \input{resumen_english}
+\vskip1cm
+{\medseries Keywords:} Multiple integration, Parameterization, scalar fields, vector fields, Wolfram Mathematica.
+\selectlanguage{spanish}
+
+\vfill
+\begin{spacing}{1.4}
+  \begin{tabular}{p{0.26\textwidth}!{\vrule width 0.9pt}p{0.69\textwidth}}
+    & \hspace{2mm}{\medseries \large How to cite this book?} \\[3.5pt]
+    & \hangindent=2mm \hangafter=0
+    \fontsize{9pt}{9pt}\selectfont{Zambrano Caviedes, J.N. \& Baquero Torres, E. R. (2025). \linebreak \emph{Problemas resueltos de Integración Múltiple con aplicaciones en {\tt Wolfram Mathematica}}. Universidad Distrital Francisco José de Caldas-Editorial UD. \url{}}\\
+  \end{tabular}
+\end{spacing}
+%%%%%%%% FIN RESUMENES EN ESPAÑOL E INGLÉS %%%%%%%%%%%%%%%
+
+\newpage
+%%%%%%% EDITAR DEDICATORIA O FRASE CELEBRE %%%%%%%%%%%%%%%%%%%%%%
+\vspace*{0.0cm}
+\emph{
+\begin{flushright}
+Las matemáticas son la música de la razón.\vskip0.2cm 
+James Joseph Sylvester
+\end{flushright}
+}
+%%%%%%% FIN DEDICATORIA O FRASE CELEBRE %%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\renewcommand*\contentsname{\lhseries Contenido}
+\renewcommand{\cfttoctitlefont}{\hfill\Huge}
+\renewcommand{\cftdot}{}
+\renewcommand*{\tablename}{\bf Tabla} %"Cuadro" por "Tabla"
+\renewcommand*{\figurename}{\bf Figura} %"Cuadro" por "Tabla"
+\renewcommand*{\bibname}{\fontschap Referencias}
+
+%% Editar re-definiciones de comandos para el usuario%%
+%% panga aquí sus definiciones
+%%
+%%
+%%%%%%%%%%%%%%
+
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\newpage
+
+\pagestyle{esstyle}
+
+%%%%%%% EDITAR AGRADECIMIENTOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{\lhseries Agradecimientos}
+\addcontentsline{toc}{chapter}{Agradecimientos}
+\vspace*{-1.4cm}
+\input{agradecimiento}
+
+\begin{flushright}
+  {\bfseries  Juan N. Zambrano Caviedes \linebreak 
+  	Efrén Baquero T.}
+\end{flushright}
+%%%%%%% FIN AGRADECIMIENTOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+\input{introduccion}
+\chapter{Preliminares} \input{preliminares}
+\chapter{Elementos básicos en {\tt Mathematica}} \input{math} 
+\chapter{Parametrizaciones básicas}  \input{parametric} 
+\chapter{Superficies y sus curvas de intersección} \input{curvas}  
+\chapter{Integrales dobles y cálculo de áreas} \input{intdobles}  
+\chapter{Cálculo de volúmenes} \input{volumen2}   
+\chapter{Integración de campos vectoriales} \input{stokes} 
+
+\chapter{Anexos}
+ \section{Funciones hiperbólicas} \input{anexo1} 
+\section{Sumatorias} \input{anexo2} 
+\section{Sólidos de revolución en coordenadas paramétricas} \input{anexo4} 
+\section{Sistemas de coordenadas curvilíneas} \input{anexo3}
+%\addcontentsline{toc}{chapter}{Índice alfabético}
+\printindex
+
+\printbibliography[heading=bibintoc]
+\printbibliography
+
+
+\chapter*{\lhseries Sobre los autores}
+\addcontentsline{toc}{chapter}{Sobre los autores}
+
+{\large\medseries\noindent Juan Nepomuceno Zambrano Caviedes}
+\noindent
+Licenciado en Matemáticas y Física y Especialista en Educación Matemática de la Universidad Surcolombiana,  Magister en matemáticas Aplicadas de la Universidad EAFIT. Profesor Asociado de la Universidad Distrital con más de treinta años de experiencia docente universitaria.
+\faEnvelope~\url{jzambranoc@udistrital.edu.co}\\
+%\textcolor{orcidlogocol}{\aiOrcid}~\url{https://orcid.org/0000-0001-8378-4215}
+\\
+
+{\large\medseries\noindent Efrén Ricardo Baquero Torres}
+\noindent 
+Matemático con Magister en Ciencias Matemáticas de La Universidad Nacional de Colombia. En más de dos décadas ha orientado cursos universitarios de Matemáticas en la Universidad Escuela Colombiana de Ingeniría Julio Garavito y en La Universidad Distrital Francisco José de Caldas, tiene un especial 
+interés en el uso de nuevas tecnologías en su enseñanza.
+
+\faEnvelope~\url{efren.baquero@escuelaing.edu.co}\\
+%\textcolor{orcidlogocol}{\aiOrcid}~\url{https://orcid.org/0000-0001-8378-4215}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\escolofon{el mes}{año}
+%\escolofon{septiembre}{2024}
+%\tableofcontents \mainmatter	
+%\include{present2}  
+\end{document}

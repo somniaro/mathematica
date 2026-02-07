@@ -1,0 +1,301 @@
+% --- PREÁMBULO LIMPIO Y UNIFICADO DE LA EDITORIAL UD (preambulo_ud.tex) ---
+
+% 1. CLASE DEL DOCUMENTO Y OPCIONES GLOBALES
+% ¡Esta DEBE ser la primera línea de código no comentada!
+%\documentclass[12pt,twoside,spanish]{book}
+
+% 2. TIPOGRAFÍA Y ESTILOS DE LA EDITORIAL UD (REQUIERE LUALATEX)
+\usepackage{fontspec} % Necesario para LuaLaTeX y la tipografía UD
+\input{esConfigDir/esConfigFonts} % Definición de fuentes (lhseries, medseries, etc.)
+
+\usepackage{geometry}
+\geometry{
+	paperheight=24.0cm,
+	paperwidth=17.0cm,
+	textwidth=12.5cm,
+	tmargin=2.5cm,
+	bmargin=2.5cm,
+	left=2.5cm,
+	right=2.0cm
+	%   bindingoffset=1.1cm % Usar si se desea ajuste al encuadernar
+}
+
+% 3. ARCHIVOS DE ESTILO DE LA EDITORIAL UD
+% Contiene \portadillauno, \espart, \nota, \fuente, y el estilo de página 'esstyle'.
+\input{esConfigDir/esEstilo}
+%\usepackage{showframe}% Similar al calderon, apagar al terminar de maquetar.
+%\usepackage[axes,cam, width=190truemm, height=260truemm, pdftex,center]{crop}
+
+% 4. CONFIGURACIÓN DE IDIOMA, CODIFICACIÓN Y TIPOGRAFÍA
+% (Se mantienen tus paquetes, pero algunos se reordenan o eliminan si son redundantes)
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{microtype} % Microtipografía avanzada
+\usepackage{ragged2e} % Para control de alineación
+%\usepackage[T1]{fontenc} % Se mantiene para compatibilidad, aunque fontspec es el principal.
+%\usepackage{lmodern}
+\usepackage{authblk} % Añadido para manejo de múltiples autores, si es necesario.
+\decimalpoint % Para usar la coma como separador decimal.
+\setlength\parindent{0pt} % Sin sangría al inicio de párrafos, como pide la UD.
+\newcommand{\normalfonts}{\fontsize{12pt}{14.4pt}\selectfont} 
+\let\normalsize\normalfonts
+% 5. MATEMÁTICAS Y FÍSICA (TUS PAQUETES ORIGINALES)
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{fontawesome}
+\usepackage{fp}
+\usepackage{calculus}
+\usepackage{calculator}
+\usepackage{fancyvrb}
+\usepackage{mathtools}
+\usepackage{bigints}
+\usepackage{fontawesome}
+% 6. GRÁFICOS E IMÁGENES (TUS PAQUETES ORIGINALES)
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{auto-pst-pdf}
+\usepackage[export]{adjustbox}
+\graphicspath{{./Fig}{./Img}{./Imgn}}
+
+% Paquetes de PSTricks
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+\usepackage{pst-node}
+\usepackage{pst-3d}
+\usepackage{pst-math}
+\usepackage{pst-coil}
+\usepackage{pst-3dplot}
+\usepackage{pst-solides3d}
+
+% 7. COLOR Y LAYOUT
+\usepackage{xcolor}
+\definecolor{orcidlogocol}{HTML}{A6CE39}
+\usepackage{academicons}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{multicol}
+\usepackage{esvect}
+\usepackage{relsize}
+\usepackage{pifont}
+\usepackage{etoolbox}
+\newtcolorbox{graybox}{
+	enhanced,
+	boxrule=0pt, % Sin borde
+	colback=gray!60!white, % Fondo gris oscuro (ajuste el porcentaje si es necesario)
+	colupper=white, % Texto en blanco
+	sharp corners, % Esquinas cuadradas
+	boxsep=5pt, % Relleno interno
+	left=1em, right=0.5em, top=0.5em, bottom=0.5em, % Más relleno
+	nobeforeafter, % Asegura que no haya saltos de línea automáticos
+}
+
+% 8. FLOATS Y CAPTIONS
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{subcaption}
+% Configuración de Leyendas (Captions) de Figuras y Tablas
+\captionsetup[figure]{labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
+\captionsetup[table]{labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{needspace}
+
+% 9. BIBLIOGRAFÍA, HIPERVÍNCULOS E ÍNDICES
+% NOTA: La plantilla UD usa APA, se sobreescribe tu estilo `authoryear` para que use el estilo de la editorial.
+%\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+%\usepackage[
+%backend=biber,
+%style=apa, % Estilo de la Editorial UD (sobreescribe tu authoryear)
+%]{biblatex}
+\usepackage[
+backend=biber,
+style=ieee, % <-- CAMBIA DE APA A IEEE
+sorting=none % Opcional: para que las referencias aparezcan en orden de citación
+]{biblatex}
+\addbibresource{Referencias/references.bib}
+% *** INICIO DE LA CORRECCIÓN IEEE para idioma español (Solución para la "y") ***
+% *** SOLUCIÓN IEEE: FORZAR CONJUNCIÓN EN INGLÉS ***
+\DefineBibliographyStrings{spanish}{%
+	and = {and}%
+}
+\DefineBibliographyStrings{english}{%
+	andothers = {et\addabbrvspace al\adddot}
+}
+
+\DeclareDelimFormat{finalnamedelim}{%
+	\ifnumgreater{\value{liststop}}{2}{\finalandcomma\addspace}{}%
+	\bibstring{and}\addspace}
+% *** FIN DE LA SOLUCIÓN ***
+% *** FIN DE LA CORRECCIÓN IEEE ***
+\usepackage{makeidx}
+\usepackage{subfiles}
+
+% REDEFINICION CITE/YEAR (Tu comando original, mantenido)(Cuando necesite APA solo descomentar)
+%\DeclareCiteCommand{\citeyear}
+%{\usebibmacro{prenote}}
+%{\bibhyperref{\printfield{year}}}
+%{\multicitedelim}
+%{\usebibmacro{postnote}}
+
+% Ajustes de estilo APA de la plantilla UD (Necesario para el formato editorial)
+%\DefineBibliographyStrings{spanish}{andothers={\itshape{et~al}\adddot}}
+%\makeatletter
+%\renewcommand*{\apablx@ifrevnameappcomma}[2]{#2}
+%\makeatother
+%\DefineBibliographyExtras{spanish}{%	\let\finalandcomma=\empty}
+%\DeclareDelimFormat[bib,textcite]{finalnamedelim}{%
+	%\ifnumgreater{\value{liststop}}{2}{}{}%
+	%\addspace\bibstring{and}\space}
+%\DeclareDelimFormat[parencite]{finalnamedelim}{\addspace{y}\space}
+%\setcounter{biburlbreakpenalty}{20}
+
+% 10. COMANDOS PERSONALIZADOS Y ENTORNOS (TUS DEFINICIONES ORIGINALES)
+\newcommand{\ds}{\displaystyle}
+\newcommand{\bi}{\int}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\ei}[1]{\mathbf{e}_{#1}}
+\newcommand{\ptc}{\tcbset{colback=gray!10!white,colframe=black!85!blue}\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando el sólido]}
+\newcommand{\ptr}{\tcbset{colback=gray!10!white,colframe=black!85!blue}\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando la región de Integración]}
+\newcommand{\tc}{\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en {\tt Mathematica}]}
+\newcommand{\etc}{\end{tcolorbox}}
+\newcommand{\ve}[1]{\mathbf{#1}}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\rot}{rot}
+\newcommand{\cn}[3]{\pscircle(#1,#2){5pt}\rput(#1,#2){$#3$}}
+\newcommand{\fig}{\begin{figure}}
+\newcommand{\ef}[1]{\caption{#1}\end{figure}}
+\newcommand{\vi}{\mathbf{i}}
+\newcommand{\vj}{\mathbf{j}}
+\newcommand{\vk}{\mathbf{k}}
+\newcommand{\brake}{\\[4pt]} % Comando auxiliar para saltos
+		
+% 11. ENTORNOS DE TEOREMA Y REDEFINICIONES
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{prop}{Proposición}[section]
+\newtheorem{defi}{Definición}[section]
+\newtheorem{ejer}{Ejercicio}[section]
+\newtheorem{ejemplo}{Ejemplo}[section]
+\renewcommand{\proofname}{Demostración} % Redefinición para Español
+\renewcommand*{\tablename}{\bf Tabla} % Estilo UD para nombres de tablas
+\renewcommand*{\figurename}{\bf Figura} % Estilo UD para nombres de figuras
+%\renewcommand*\contentsname{\lhseries Contenido} % Estilo UD para Tabla de Contenido
+\counterwithout{footnote}{chapter}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\renewcommand{\cfttoctitlefont}{\hfill\Huge}
+\renewcommand{\cftdot}{}
+		
+% 12. SOLUCIÓN DE CONFLICTOS
+\AtBeginDocument{\RenewCommandCopy\qty\qtySI} % Solución de conflicto physics
+\renewcommand*\contentsname{\lhseries Contenido}
+\makeindex
+% 1. Restaurar el formato de numeración de secciones (ej: 1.1)
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+% 2. Restaurar el formato de numeración de subsecciones (ej: 1.1.1)
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+% 3. Restaurar el formato de numeración de subsubsecciones (ej: 1.1.1.1)
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% (Bloque B: Restaura el FORMATO y añade el espacio)
+\usepackage{titlesec} % <--- Asegúrate de que esté cargado antes de usar \titleformat
+
+\titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{2.0mm} \fontssec}
+{\thesection.\quad}{0pt}{\raggedright}
+
+\titleformat{\subsection}{\color{MSBlack}\fontsize{13pt}{2.0mm}\fontssubsec}
+{\thesubsection.\quad}{12pt}{}
+
+\titleformat{\subsubsection}[block]{\normalfont\bfseries\fontsize{13pt}{2.0mm}}{}{0pt}{\thesubsubsection\quad}
+
+%\titleformat{\subsubsection}{\color{black}\bfseries\fontsize{13pt}{2.0mm}\fontssubsubsec}{\thesubsubsection.\quad}{12pt}{}
+
+% --- En preambulo_ud.tex, en la Sección 12 ---
+% SOLUCIÓN AL CONFLICTO DE COMANDO \fuente (Añadir si persiste el error)
+\renewcommand{\fuente}[1]{\parbox{12.5cm}{\centering\footnotesize\color{MSBlack} {\bf Fuente: }{#1}}}
+%REDEFINICIÓN DE NOTA: Usando tamaño absoluto (9pt)
+\renewcommand{\nota}[1]{\parbox{12.5cm}{\centering\color{MSBlack} \fontsize{9pt}{11pt}\selectfont {\bf Nota: }{#1}}}
+
+%***Corrección indice**
+\makeatletter
+% Restaura la numeración y el formato de los capítulos en el TOC
+\renewcommand\l@chapter[2]{%
+	\ifnum \c@tocdepth >\m@ne
+	\vspace{0.5\baselineskip}%
+	{\parindent \z@ \rightskip \@pnumwidth
+		\leavevmode
+		\bfseries
+		\if@mainmatter \hskip 1.5em\fi % Indentación para capítulos
+		\@tempdima \z@
+		\advance\@tempdima by \the\c@chapter \relax % Fuerza el número del capítulo
+		\hb@xt@\z@{\hfil#1}\hss\makebox[\@pnumwidth][r]{\makebox[1em][l]{#2}}\par}%
+	\fi}
+
+% Restaura la numeración y el formato de las secciones en el TOC
+\renewcommand\l@chapter{\@dottedtocline{0}{0em}{1.5em}} % Nivel 0: Capítulo\renewcommand\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+
+\renewcommand\l@section{\@dottedtocline{1}{1.5em}{2.3em}} % Nivel 1: Sección
+
+% 3. Restaura la numeración y el formato de las subsecciones en el TOC
+\renewcommand\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}} % Nivel 2: Subsección
+
+\renewcommand\l@subsubsection{\@dottedtocline{3}{5.8em}{4.1em}} % Nivel 3: Subsubsección
+
+\makeatother
+
+%***Cornizas personalizadas***
+
+% 1. Activar el paquete para la limpieza de páginas en blanco
+\usepackage{emptypage}
+
+% 2. Cargar el paquete avanzado para la redefinición de cabeceras
+\usepackage{fancyhdr}
+
+% 3. Crear el nuevo estilo 'mis_cornisas'
+\fancypagestyle{mis_cornisas}{
+% Limpiar cabeceras y pies de página antes de definir
+\fancyhf{} 
+	
+% Definir la línea negra inferior a la cabecera
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt} % Asegura que no haya línea en el pie
+	
+% Página Par (Izquierda): [Número de página] [Título del capítulo]
+% \rightmark contiene el título del capítulo
+\fancyhead[LE]{\thepage\hfill\nouppercase{\rightmark}} 
+	
+% Página Impar (Derecha): [Título del capítulo] [Número de página]
+\fancyhead[RO]{\nouppercase{\leftmark}\hfill\thepage}
+}
+
+% 4. Definición para páginas iniciales de capítulo (estilo 'plain')
+% Estas páginas no deben tener cornisa, solo el número centrado en el pie.
+\fancypagestyle{plain}{
+\fancyhf{} % Limpiar todo
+\renewcommand{\headrulewidth}{0pt} % Quitar la línea
+\fancyfoot[C]{\thepage} % Número de página centrado en el pie
+}
+
+% 5. Forzar la limpieza de página en blanco (para que no tengan nada)
+\renewcommand{\cleardoublepage}{%
+\clearpage\ifodd\value{page}\else\hbox{}\thispagestyle{empty}\newpage\fi%
+}
+
+% --- FIN DEL CÓDIGO DE CORNISA ---
+		
+% --- FIN DEL PREÁMBULO ---

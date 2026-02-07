@@ -1,0 +1,87 @@
+% --- ARCHIVO PRINCIPAL CORREGIDO (main.tex) ---
+
+% 1. CARGA LA CONFIGURACIÓN DE LA PLANTILLA
+% IMPORTANTE: El comando \documentclass fue movido al archivo preambulo_experimento.tex
+\documentclass[12pt,twoside,spanish]{book}
+\input{preambulo_experimento}	
+
+% 2. DEFINICIONES OBLIGATORIAS PARA CORNISAS Y PORTADAS (¡DESCOMENTADAS Y CORREGIDAS!)
+%Estos comandos DEBEN estar aquí, antes de \begin{document}.
+
+\def\texttitulo{Problemas resueltos de integración múltiple con aplicaciones en Wolfram Mathematica} 
+%\def\textsubtitulo{Con aplicaciones en Wolfram Mathematica}
+\def\loauthors{Juan Nepomuceno Zambrano Caviedes, Efrén Ricardo Baquero Torres}
+\def\texttitulocorto{Problemas resueltos de integración múltiple con aplicaciones en Wolfram Mathematica}	
+	
+% 3. COMIENZO DEL DOCUMENTO
+\begin{document}
+\cleardoublepage
+\input{portada.tex}
+\cleardoublepage
+\input{portada_dos}
+\cleardoublepage
+		
+% === 5. PÁGINAS PRELIMINARES ===
+\include{Originales/resumen_pauta}
+\cleardoublepage
+\include{Originales/Dedicatoria}
+		
+% Genera la tabla de contenido
+%\renewcommand*\contentsname{\lhseries Contenido}
+%\tableofcontents 
+
+%Tabla de contenido sin numeración
+% 1. Almacena la definición original de \thepage
+%\renewcommand*\contentsname{\lhseries Contenido}
+%\let\oldthepage\thepage
+
+% 2. Redefine \thepage para que no imprima nada (caja vacía)
+%\renewcommand{\thepage}{}
+%\pagestyle{plain}
+% Genera la tabla de contenido
+%\tableofcontents 
+
+% 3. Restaura la definición original y el estilo
+%\cleardoublepage
+%\let\thepage\oldthepage % <-- Restaura la numeración \thepage a su valor normal
+%\pagestyle{esstyle}	 % <-- Restaura las cornisas y el pie (con el número restaurado)
+
+\include{Originales/tabla_contenido.tex}
+
+		
+% 6. INCLUSIÓN DE LOS ARCHIVOS DE CONTENIDO (PÁGINAS QUE VAN ANTES DEL CAPÍTULO 1)
+\cleardoublepage
+\include{Originales/agradecimiento}
+\cleardoublepage
+		
+		
+% === 7. ESTILO DE PÁGINA: SE ACTIVA LA CORNISA CON LOGO ===
+% Este comando DEBE ir después de las páginas preliminares que no llevan cornisa.{Descomentar cuando se trate de otro texto que requiera numeracion en la tabla de contenido}
+%\pagestyle{esstyle}
+	
+% 5. INCLUSIÓN DE LOS ARCHIVOS DE CONTENIDO
+%\include{Originales/resumen}
+%\cleardoublepage
+%\include{Originales/agradecimiento}
+%\cleardoublepage
+\include{Originales/Dedicatoria}
+\cleardoublepage
+\include{Originales/introduccion}
+\include{Originales/preliminares}
+%\cleardoublepage
+\include{Originales/math}
+%\cleardoublepage
+\include{Originales/parametric}
+\include{Originales/curvas}
+\include{Originales/intdobles}
+\include{Originales/volumen2}
+\include{Originales/stokes}
+
+\clearpage
+\pagestyle{plain}
+\printbibliography[title={\normalfont\lhseries Referencias}]
+
+\include{Originales/Anexos}
+\include{Originales/sobre_autores_final}
+\include{colofon_wolfram}
+\end{document}

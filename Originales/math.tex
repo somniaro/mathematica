@@ -1,0 +1,1705 @@
+\chapter{Elementos básicos en {\tt Mathematica}}
+
+En este capítulo presentamos algunas de las funciones y comandos
+básicos que se utilizan en el programa \verb"Wolfram Mathematica", que denominaremos simplemente
+como \verb"Mathematica". Es de anotar que toda instrucción hecha en este programa se debe \emph{ejecutar} para obtener el producto señalado. En la versión \verb"13", bajo el sistema operativo \verb"Windows 10" esto se consigue con \verb"shift+enter" o \verb"enter" con el teclado numérico.
+\vskip0.1cm
+En general la sintaxis de las funciones inician con letra mayúscula
+y en algunos casos llevan otras letras intermedias también en mayúscula. Los argumentos de cada función se insertan entre
+corchetes \verb"[...]", los paréntesis \verb"(...)" se usan para agrupar y las llaves \verb"{...}" se utilizan para insertar \emph{listas}.
+
+\section{Funciones básicas}
+Las operaciones básicas: adición, sustracción, producto y cociente, entre dos cantidades $x$ e $y$ se denotan respectivamente como \verb"x+y", \verb"x-y", \verb"x*y" y \verb"x/y". \vskip0.1cm
+
+\begin{tcolorbox}[breakable,enhanced,title=Advertencia]
+Es importante aclarar que en general \verb"xy" no es igual a \verb"x*y".
+\end{tcolorbox}
+Algunas de las constante más utilizadas son: \verb"Pi", $\pi$; \verb"E", $e \approx 2.71828$;
+\verb"I", la unidad imaginaria $i$, $i^{2}= -1;$ \verb"Infinity", $\infty$.\vskip0.1cm
+
+\noindent Las funciones trigonométricas\footnote{Con argumento en radianes} se denotan como
+{\small
+\verb"Sin[x]," \verb"Cos[x]," \verb"Tan[x]," \verb"Cot[x]," 
+\verb"Sec[x]," \verb"Csc[x]"
+}
+y sus respectivas funciones inversas
+{\small
+\verb"ArcSin[x]," \verb"ArcCos[x]," \verb"ArcTan[x]", \verb"ArcCot[x]," \verb"ArcSec[x]," \verb"ArcCsc[x]".
+}
+\vskip0.1cm
+Para un punto $(x,y) \in \mathbb{R}^2$ se puede usar  \verb"ArcTan[x,y]", esta función posee como dominio a $[-\pi,\pi].$ 
+Análogamente se escriben las funciones hiperbólicas y sus inversas \verb"Sinh[y]",  \verb"Cosh[y]", \verb"Tanh[y]", \verb"ArcSinh[y]", \verb"ArcCosh[y]," \verb"ArcTanh[y]", etc.
+\vskip0.1cm
+Existen tres tipos de igualdad, para asignación: \verb"x=2";  
+prueba lógica: \verb"2+2==4", usada en ecuaciones y como una manera de probar dos expresiones son \emph{lo mismo}, 
+\verb"x*x === x^2".
+Otras funciones elementales son las siguientes.
+\begin{tcolorbox}[breakable,enhanced,title=Algunas funciones básicas en Wolfram]
+\begin{tabular}{rl}
+\verb"x^y"& Potencia $y$ de $x$, $x^y$\\
+\verb"Sqrt[x]"& Raíz cuadrada de $x$\\
+\verb"Exp[x]"& Exponencial de $x$, $e^{x}$\\
+\verb"Log[x]"& Logaritmo natural de $x$\\
+\verb"Log[b,x]"& Logaritmo en base $b$ de $x$\\
+\verb"n!"& Factorial de $n$\\
+\verb"Abs[x]"& Valor absoluto de $x$\\
+\verb"Max[x,y,...]", \verb"Min[x,y,...]"& Máximo o mínimo de $x, y,\cdots$\\
+\verb"FactorInteger[n]"& Factores primos de $n$
+\end{tabular}
+\end{tcolorbox}
+
+Para factorizar, simplificar, expandir, descomponer en fracciones parciales, operar fracciones o borrar una \verb"EXPRESIÓN"
+se usan respectivamente, las siguientes funciones. \index{Together} \index{Simplify} \index{Apart}\index{Expand}
+\begin{tcolorbox}[breakable, enhanced, title=Funciones básicas]
+\begin{multicols}{2} % Activa las dos columnas
+\begin{Verbatim}[formatcom=\letraverbatim]
+Factor[EXPRESION]
+Simplify[EXPRESION]
+Expand[EXPRESION]
+Apart[FRACCION]
+Together[FRACCIONES]
+Clear[VARIABLES]
+\end{Verbatim}
+\end{multicols}
+\end{tcolorbox}
+
+Por ejemplo, el usuario puede ejecutar las siguientes instrucciones:
+\begin{tcolorbox}[breakable, enhanced]
+\begin{multicols}{2}
+\begin{Verbatim}[formatcom=\letraverbatim] 
+Factor[x^16-y^16]
+Apart[4*y^3/(y^4-16)]
+Together[1/x+y/(y+1)]
+Simplify[(x^9-1)/(x^3-1)]
+Expand[(x^9-y^9)*(x^3-y^3)]
+\end{Verbatim}
+\end{multicols}
+\end{tcolorbox}
+
+Para extraer el numerador o el denominador de una expresión racional se pueden utilizar
+las funciones \verb"Numerator" o \verb"Denominator". 
+Utilizando las funciones \verb"ExpandDenominator" o \verb"ExpandNumerator"
+se puede hacer la expansión en una expresión de los términos respectivos.
+Las siguientes sentencias ilustran el uso de estos operadores.
+\index{Numerator} \index{Denominator} \index{ExpandDenominator} \index{ExpandNumerator}
+\begin{tcolorbox}[breakable,enhanced,title=Usos de \verb"ExpandDenominator" y \verb"ExpandNumerator"]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Numerator[Together[x/y+y/x]]
+Denominator[Together[x/y+y/x]]
+ExpandDenominator[Together[y/(x+y)+x/(x-y)]]
+ExpandNumerator[Together[y/(x+y)+x/(x-y)]]
+\end{Verbatim}
+\end{tcolorbox}
+
+\index{TrigExpand} \index{TrigFactor} \index{TrigReduce}
+Si una \verb"EXPRESIÓN" es una combinación de funciones trigonométricas, la instrucción
+\verb"TrigExpand[EXPRESION]" la reescribe en términos de las funciones $\sin(\cdot)$ y $\cos(\cdot)$. 
+La sentencia \verb"TrigFactor[EXPRESION]" factoriza usando funciones trigonométricas y
+\verb"TrigReduce[EXPRESION]" convierte producto de funciones trigonométricas en suma. 
+Por ejemplo:
+
+\begin{tcolorbox}[breakable,enhanced]
+\begin{multicols}{2}
+\begin{Verbatim}[formatcom=\letraverbatim]
+TrigExpand[Sin[5*x]-Cos[6*x]]
+TrigReduce[Sin[2*x]*Cos[3*x]]
+TrigFactor[Sin[5*x]-Cos[5*x]]
+TrigFactor[Sin[x-y]-Cos[x+y]]
+TrigExpand[Sin[x]^2*Cos[2*x]^3]
+TrigReduce[Sin[3x]^3+Cos[2*x]^3]
+\end{Verbatim}
+\end{multicols}
+\end{tcolorbox}
+
+\subsection*{Tablas}
+Para generar una lista con $n$ términos de la expresión $f(k)$ se usa la expresión \verb"Table[f[k],n]", además 
+con \verb"Table[f[k],{k,a,b}]" se consigue que la lista satisfaga que $a \leq k \leq b.$ \index{Table}
+Ilustremos esto con dos ejemplos sencillos.
+
+\begin{tcolorbox}[breakable,enhanced]
+\verb"Table[k^2,{k,2,20}"\\
+\verb"Table[Prime[k],{k,2,20}"
+\end{tcolorbox}
+
+\subsection*{Vectores y funciones vectoriales}
+El vector ${\bf u}= \langle a,b,c \rangle$ se define en \verb"Mathematica" como una lista \verb"u={a,b,c}".
+El producto punto, el producto cruz y la norma de los vectores ${\bf u}$ y ${\bf v}$ se determina como sigue
+\begin{tcolorbox}[breakable,enhanced,title=Vectores]
+\verb"Dot[u,v]" \hskip1.75cm \verb"Cross[u,v]" \hskip1.75cm \verb"Norm[u]"
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,enhanced,title=Funciones vectoriales]
+Una función vectorial ${\bf r}(t)= \la x(t), y(t), z(t)\ra$ se define como un vector
+\verb"r={x[t],y[t],z[t]}". 
+\end{tcolorbox}
+La instrucción  \verb"r={Cos[t],Sin[t],Cos[2*t]}" define una función vectorial que se denomina \verb"r".
+Para extraer cada una de las tres componentes, 
+se debe usar, según el caso, las siguientes instrucciones
+\vskip0.2cm
+%\verb"r[[1]]" \\ \verb"r[[2]]" \\ \verb"r[[3]]"
+\begin{center}
+\verb"r[[1]]" \hspace{3cm} \verb"r[[2]]" \hspace{3cm} \verb"r[[3]]"
+\end{center}
+\vskip0.2cm
+
+Se pueden hacer algunos procedimientos asumiendo ciertas condiciones. Las funciones
+\verb"Assuming" y \verb"Assumptions", permiten este tratamiento.
+\index{Assumptions} \index{Assuming}
+En los siguientes ejemplos se evidencia la diferencia de usar estas posibilidades.
+
+\begin{tcolorbox}[breakable,enhanced,title=Usos de \verb"Assuming" y \verb"Assumptions"]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Norm[{Cos[t],Sin[t],t}]
+Norm[{Cosh[t],Sinh[t],t}]
+Assuming[t>0,Simplify[Norm[{Cos[t],Sin[t],t}]]]
+Assuming[t>0,Simplify[Norm[{Cosh[t],Sinh[t],t}]]]
+Simplify[Norm[{Cosh[t],Sinh[t],t}],Assumptions->t>0]
+\end{Verbatim}
+\end{tcolorbox}
+
+El símbolo $\%$ recupera el cálculo inmediatamente anterior, por ejemplo: 
+
+\begin{tcolorbox}[breakable,enhanced]
+\begin{multicols}{2}
+\begin{Verbatim}[formatcom=\letraverbatim]
+u={Exp[t],Exp[t],t}
+v={-Exp[t],-Exp[t],t}
+Norm[u+v]
+Simplify[%,Assumptions->t>0]
+\end{Verbatim}
+\end{multicols}
+\end{tcolorbox}
+
+\subsection*{Sumas}
+El comando \verb"Sum[Expresión,{k,a,b}]" obtiene la suma de una \verb"Expresión"
+con variable de sumación $k$ la cual inicia en $a$ y termina en $b.$ 
+Ejemplo de lo anterior son las siguientes sumas.
+$$\sum_{k=1}^{10} k^2 \hskip1.5cm
+\sum_{k=1}^n k^3 \hskip1.5cm
+\sum_{k=1}^\infty \frac{1}{k^2} \hskip1.5cm
+\sum_{r=0}^\infty \frac{2^r}{r!}$$
+Para obtener su valor exacto se usan las siguientes instrucciones.
+
+\begin{tcolorbox}[breakable, enhanced, title=Funciones \verb"Mathematica"]
+\begin{multicols}{2} % Activa las dos columnas
+\begin{Verbatim}[formatcom=\letraverbatim]
+Sum[k^3,{k,1,n}]
+Sum[k^2,{k,1,10}]
+Sum[1/k^2,{k,1,Infinity}]
+Sum[2^r/r!,{r,0,Infinity}]
+\end{Verbatim}
+\end{multicols}
+\end{tcolorbox}
+ 
+ 
+\subsection*{Límites}
+Utilizando la sentencia \verb"Limit[F[x],x->a]" se evalúa en \verb"Mathematica" el $\lim_{x\to a} F(x)$.
+También es posible calcular límites en varias variables como se ilustra enseguida.
+
+{\small $$\lim_{x\to0}\frac{\sin(3x)}{\sin(2x)}\hskip1.5cm
+\lim_{(x,y)\to (0,0)}\frac{x^2y}{x^2+y^2} \hskip1.5cm
+\lim_{(x,y)\to(0,0)}\frac{\sin(x^2+y^2)}{x^2+y^2}$$}
+
+Los límites anteriores se evalúan con las siguientes instrucciones.
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Limit[Sin[3*x]/Sin[2x],x->0]
+Limit[x^2*y/(x^2+y^2),{x,y}->{0,0}]
+Limit[Sin[x^2+y^2]/(x^2+y^2),{x,y}->{0,0}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Precaución}
+Aunque es posible evaluar límites de manera iterada, es conveniente advertir que el uso 
+incorrecto de esta sintaxis puede llevar a conclusiones arroneas. 
+Por eso es importante usar la indicación adecuada. Ilustraremos esta situación.
+\begin{itemize}%[leftmargin=0in]
+\item Correcta \verb"Limit[n/(n+m),{n,m}->{Infinity,Infinity}]"
+\item Incorrecta \verb"Limit[Limit[n/(n+m),m->Infinity],n->Infinity]"
+\item Incorrecta \verb"Limit[Limit[n/(n+m),n->Infinity],m->Infinity]"
+\end{itemize}
+
+\subsection*{Operadores básicos}
+%\begin{tcolorbox}[breakable,enhanced,title=Operadores Básicos en \verb"Mathematica"]
+\index{Solve} \index{NSolve}
+\begin{itemize}
+\item Para resolver la ecuación $f(x)=0,$ en donde $x$ es la incognita, se usa la
+instrucción: \verb"Solve[f[x]==0,x]". La solución numérica de ecuaciones se resuelve utilizando \verb"NSolve".
+{\bf No olvidar $"=="$}.
+\item La derivada de $f(x)$ con respecto a $x$, se obtiene con \verb"D[f[x],x]", 
+la segunda derivada de $f(x)$ se consigue con \verb"D[f[x],x,x]".
+La $n-$ésima derivada de $f(x)$ con respecto a $x$, $\frac{\partial^n f}{\partial x^n}$, se obtiene con la instrucción
+\verb"D[f[x],{x,n}]". 
+\item La derivada parcial de $f(x,y,z)$ con respecto a $x$, se consigue ejecutando \verb"D[f[x,y,z],x]", mientras que 
+la diferencial total de $x^y,$ (suponiendo que $y$ depende de $x$) se obtiene mediante la expresión 
+\verb"Dt[x^y,x]". \index{Diferencial total}
+\item La integral indefinida de la función $f(t)$ con respecto a $t$, 
+se evalúa mediante la instrucción: \hskip0.1cm \verb"Integrate[f(t),t]".
+Con la instrucción \\\verb"Integrate[f(t),{t,a,b}]" se evalúa la integral definida $\ds \int_a^bf(t)dt$.
+  \index{Integrate}
+\end{itemize} 
+
+%\end{tcolorbox} 
+Ejemplo de lo anterior son las siguientes instrucciones:
+\begin{tcolorbox}[breakable,enhanced]
+\begin{multicols}{2}
+\begin{Verbatim}[formatcom=\letraverbatim]
+Solve[x^4==1,x]
+Solve[x^4y^2==1,y,Reals]
+D[ArcSin[x],x]
+D[Sqrt[1/(1+r)], r]
+D[Sqrt[x^3+x-2], x,x]
+Integrate[1/(1+r),{r,0,1}]
+\end{Verbatim}
+%\end{itemize}
+\end{multicols}
+\end{tcolorbox}
+
+\subsection*{Animación de objetos}
+Con los siguientes comandos se puede dar \emph{animación} a un \verb"TERMINO", la variable es $k$, con $n \leq k \leq m $
+e incrementos de $r$ unidades.
+\index{Manipulate}\index{Animate}
+\begin{tcolorbox}[breakable,enhanced,title=Las funciones {\tt Manipulate} y {\tt Animate} ]
+
+\begin{Verbatim}
+Manipulate[TERMINO,{k,n,m,r}]
+Animate[TERMINO,{k,n,m,r}]
+\end{Verbatim}
+
+\end{tcolorbox}
+La $r$ se puede omitir. % en el caso de la función \verb"Animate". 
+El lector puede ejecutar las siguientes instrucciones
+para evidenciar un poco mejor, el uso de las funciones mencionadas
+\begin{tcolorbox}[breakable,enhanced,title=Ejemplos con {\tt Manipulate} y {\tt Animate}]
+\begin{Verbatim}
+Manipulate[Expand[(a+b)^k],{k,1,20,1}]
+Animate[Expand[(a+b)^k],{k,1,20,1}]
+Manipulate[Integrate[x^k,x],{k,-5,5,1/2}]
+Manipulate[Integrate[(Sin[x])^k,x],{k,-2,10,1}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Transformación a coordenadas polares}
+La función \verb"ToPolarCoordinates" transforma el punto $(a,b)$ escrito en coordenadas cartesianas 
+al punto $(r, t)$ escrito en coordenadas polares. 
+Con la función \verb"FromPolarCoordinates" se realiza la transformación inversa.
+\index{ToPolarCoordinates}  \index{FromPolarCoordinates}
+
+\begin{tcolorbox}[breakable,enhanced]
+\verb"ToPolarCoordinates[{a,b}]"\\
+\verb"FromPolarCoordinates[{r,t}]"
+\end{tcolorbox}
+ 
+El argumento $t$ satisface que $-\pi \leq t \leq \pi$. Por ejemplo:
+\begin{tcolorbox}[breakable,enhanced]
+\verb"ToPolarCoordinates[{-1,-1}]"\\
+\verb"FromPolarCoordinates[{2,-3*Pi/4}]"
+\end{tcolorbox}
+
+\subsection*{Definición de funciones}
+Es posible definir una función y luego usarla para cálculos posteriores,
+esta puede depender de una o varias variables, la sintaxis básica es:
+
+\begin{tcolorbox}[breakable,enhanced,title=Definición de funciones]
+\verb"f[x_] := Expresión" para funciones de una variable $x.$ \\
+\verb"f[x_,y_] := Expresión" para funciones de dos variables $x,y.$
+\end{tcolorbox}
+% Al no definir la función en un conjunto el valor por defecto es $0.$ \vskip0.2cm
+Con la siguiente sentencia se define la función vectorial ${\bf r}(t,u)$, \\
+\verb"r[t_,u_]:={(1-u)*Cos[2t]+u*Sin[3t],u*Cos[3t],t(1-u)}" \\
+para evalúarla en $t=\pi/3$ y $u=1/2$, se utiliza \verb"r[Pi/3,1/2]".
+
+Se pueden definir funciones a trozos, con $k$ condiciones y $x \in [a,b]$, 
+\begin{tcolorbox}[breakable,enhanced,title=Definición de funciones a trozos]
+\verb"Piecewise[{{Expresión 1,condición 1},{Expresión 2,"
+\verb"condición 2},...,{Expresión k,condición k}},{x,a,b}]"
+\end{tcolorbox}  \index{Piecewise}
+
+Ahora se muestran algunos ejemplos:
+\begin{itemize}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+\item Para definir la función $f(x,y)=x^2-3y^4$ y evaluarla en el punto $(2,3)$ se ejecutan 
+las instrucciones \verb"f[x_,y_]:=x^2-3*y^4", \verb"f[2,3]".
+\item La función 
+$$ f(x,y) = \left \{ \begin{array}{cl} \frac{xy}{x^2-y^2} & \text{ si } x>y \\[0.2cm] \sin(x+y) & \text{en caso contrario} \end{array} \right.$$
+se define ejecutando la siguiente instrucción:\\
+\verb"f[x_,y_]:=Piecewise[{{x*y/(x^2-y^2),x>y}},Sin[x+y]]"
+\item Con la instrucción \verb"f[x_]:=Piecewise[{{4-x^2,x<=1}," \\
+\verb"{2-x^3,1<x<2},{2*Sin[x],x>=2}}]", se define la función 
+$$ f(x,y) = \left \{
+ \begin{array}{cl} 4-x^2 & \text{ si } x\leq 1 \\[0.2cm]
+2-x^3 & \text{ si } x\in(1,2)\\[0.2cm]
+2 \sin(x) & \text{ si } x\geq 2
+\end{array} \right.$$
+\end{itemize}
+
+\section{Gráficos}
+Presentamos las principales posibilidades que ofrece \verb"Mathematica" 
+para obtener la representación gráfica de objetos matemáticos.
+
+\subsection*{Gráficas de funciones en el plano}
+Se ofrece una manera de obtener la representación gráfica en el plano de objetos o funciones 
+escritas en forma explícita, implícita o paramétrica.
+
+\begin{itemize}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+\item \verb"Plot[f[x],{x,a,b}]" dibuja la función $y=f(x)$ con $x \in[a,b].$ \index{Plot}
+\item \verb"PolarPlot[r[t],{t,a,b}]" grafica la función $r(t)$ escrita en coordenadas polares, con $t \in[a,b].$
+\item \verb"ContourPlot[f[x,y]==0,{x,a,b},{y,c,d}]",\index{ContourPlot}
+dibuja la ecuación de dos variables $f(x,y)=0$, con $x \in[a,b]$ y $y \in[c,d],$
+se debe incluir el símbolo de igualdad y no olvidar $"=="$.
+\item \verb"ParametricPlot[{x[t],y[t]},{t,a,b}]", dibuja la curva parametri- \\ zada $\ve{r}(t)=\left\langle x(t),y(t)\right\rangle ,\,\, t\in \lbrack a,b].$
+\index{ParametricPlot}
+\end{itemize}
+% \end{tcolorbox}
+Si se desean incluir varias expresiones en las funciones anteriores,
+se puede hacer una lista con estas y encerrarlas en llaves (\verb"{...}").\vskip0.2cm
+Las siguientes instrucciones son ejemplos de las anteriores funciones:
+\vspace{-1.9mm}
+\begin{tcolorbox}[breakable,enhanced,title=Algunos gráficos en el plano]
+\begin{Verbatim}
+Plot[Exp[-10*t]*(2+20t)+1,{t,0,1}]
+PolarPlot[1-Cos[t],{t,0,2*Pi}] 
+PolarPlot[3/(6+Cos[10*u]),{u,0,2*Pi}]
+ContourPlot[{y^2+(1-x^2)^2==4,y^2+x^2==4},{x,-2,2},
+{y,-2,2}] 
+\end{Verbatim}
+\begin{Verbatim}
+ParametricPlot[{Cos[t],Sin[2*t]},{t,0,2Pi}]
+Manipulate[PolarPlot[t*Sin[k*t],{t,0,2Pi}],
+{k,1,5,0.5}]
+ParametricPlot[{{2*Cos[t],2*Sin[t]},{Cos[t],Sin[t]},
+{Cos[t]*(1-Cos[t]),Sin[t]*(1-Cos[t])}},{t,0,2*Pi}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Gráficos de funciones en el espacio}
+De manera análoga a las funciones descritas anteriormente para
+conseguir gráficos en el plano, se puede agregar la extensión \verb"3D" y unas opciones adicionales
+con el fin de obtener gráficos en el espacio.
+Presentamos unas de las funciones más utilizadas en  \verb"Mathematica".
+\\
+
+\begin{itemize}[leftmargin=*]
+\item \verb"Plot3D[f[x,y],{x,a,b},{y,c,d}]", permite obtener el gráfico de la función 
+$z=f(x,y)$, para $(x,y) \in [a,b] \times [c,d]$. 
+\\
+
+
+\item \texttt{Plot3D[\allowbreak\{f[x,y],\allowbreak g[x,y],\allowbreak ..., h[x,y]\},\allowbreak \{x,a,b\},\allowbreak \{y,c,d\}]} \\
+permite obtener el gráfico de varias funciones.
+\\
+%Mientras que con \verb"Plot3D[{f[x,y],g[x,y],...,h[x,y]},{x,a,b},{y,c,d}]", 
+%se obtiene el gráfico de varias funciones. \index{Plot3D}
+\item \Verb!ParametricPlot3D[{x[t],y[t],z[t]},{t,a,b}]!,
+dibuja la curva parametrizada $\ve{r}(t)=\langle x(t),y(t),z(t) \rangle $, 
+con $t\in[a,b].$  \index{ParametricPlot3D}
+\\
+
+\item \verb"ParametricPlot3D[{x[u,v],y[u,v],z[u,v]},{u,a,b},{v,c,d}]",
+se utiliza para graficar superficies parametrizadas por medio de una función
+$\ve{r}(u,v)=\langle x(u,v),y(u,v),z(u,v) \rangle $, con
+$u\in[a,b],$ $v\in[c,d].$
+\\
+\item \verb"ContourPlot3D[f[x,y,z]==0,{x,a,b},{y,c,d},{z,p,q}]", se usa
+para graficar conjuntos de nivel (contornos).
+Este comando presenta el gráfico de una ecuación de tres variables, con $x\in[a,b],$
+$y\in[c,d]$ y $z\in[p,q].$  \index{ContourPlot3D}
+\\
+\end{itemize}
+
+Los gráficos se pueden personalizar en sus atributos con el uso de algunas opciones, 
+presentamos las más utilizadas:
+
+\vspace{-2pt}
+
+\begin{tcolorbox}[breakable,enhanced,title=Opciones de los gráficos]
+\begin{tabular}{rl}
+\verb"Axes" & Muestra los ejes, \verb"True/False"\\
+\verb"AxesLabel->{u,v,w}" & Etiqueta los ejes como $u,$ $v$ y $w$ \\
+\verb"AxesOrigin->{a,b,c}" & Muestra los ejes con centro en $(a,b,c)$ \\
+\verb"Blend[{color1,...}]"& Permite combinar varios colores \\
+\verb"Boxed" & Muestra gráfico en caja, \verb"True/False"\\
+\verb"BoxRatios->{a,b,c}" & Proporciones de la caja en un gráfico\\
+\verb"ColorFunction" & Determina el color de la función\\
+\verb"ContourStyle" & Opciones en \verb"ContourPlot3D" \\
+\verb"Dashed" & Presenta líneas discontinuas\\
+\verb"Mesh->{n,m}" & Crea la malla, con $n$ y $m$ líneas \\
+\verb"Mesh" & Activa la malla, \verb"True/False" \\ 
+\verb"MeshStyle" & Estilo de la malla (color)\\
+\verb"Opacity[a]" &  Opacidad, se usa en plotStyle, $0 \leq a \leq 1$\\
+\verb"PlotStyle" &  Opciones del gráfico, color, líneas, etc.\\
+\verb"PlotRange" &  Rango de valores en el gráfico\\
+\verb"PlotPoints" & Número de puntos sobre el dibujo\\
+\verb"RGBColor[a,b,c]" & Crea un color con proporciones $a$, $b$, $c$\\
+\verb"Thick" & Crea una línea más gruesa \\
+\verb"Thickness" & Grosor de la línea \\
+\verb"Ticks" &  Indica las marcas deseadas en la caja\\
+\verb"Tube[a]" & Configura un tubo de radio $a$. \\
+\end{tabular}
+\end{tcolorbox}
+
+El lector puede además de ejecutar las instrucciones, modificarlas.
+{\small
+\begin{itemize}
+\item \verb"Plot3D[{5-y^2,x^2+y^2},{x,-4,4},{y,-4,4},PlotPoints->60,"\\
+\verb"PlotStyle->Opacity[0.6]]"
+\item \verb"ContourPlot3D[{z==6-(x-1)^2-y^2,4*x^2+y^2==36,"\\
+\verb"x^2+4*y^2==4},{x,-6,10},{y,-7,7},{z,-35,6},"\\
+\verb"ContourStyle->{Red,Yellow,Green}]"
+\item \verb"ParametricPlot3D[{Cos[u]*Cosh[v],Sin[u]*Cosh[v],Sinh[v]},"\\
+\verb"{u,0,2*Pi},{v,-2,2},PlotStyle->Orange,MeshStyle->Gray]"
+\item \verb"ContourPlot3D[z==3*x-x^3-2*y^2+y^4,{x,-3,3},{y,-2,3},"\\
+\verb"{z,-3,3},MeshStyle->Gray]"
+\item \begin{Verbatim} 
+ContourPlot3D[z==3*x-x^3-2*y^2+y^4,{x,-3,3},{y,-2,3},
+{z,-3,3},ColorFunction->Function[{x,y,z},
+ColorData["Rainbow"][z]],MeshStyle->Gray]
+\end{Verbatim}
+\end{itemize}
+}
+
+El siguiente gráfico se consigue utilizando las instrucciones señaladas.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Integración en el espacio}
+	\begin{minipage}{0.27\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_01a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.27\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_01b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\begin{tcolorbox}[breakable,enhanced, title=Instrucción en \verb"Mathematica"]
+\begin{Verbatim}[fontsize=\small]
+ContourPlot3D[z==(y^2-x)*Exp[1-x^2-y^2],{x,-2,2},
+{y,-2,2},{z,-1,2},Mesh->{6,8},Boxed->False,
+MeshStyle->RGBColor[0.5,0.5,0.5],AxesOrigin->{0,0,0},
+ContourStyle->Orange,Ticks->{{-1,1,2},{-1,1,2},
+{-1,1}},AxesStyle->Black,AxesLabel->{u,v,w}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+La composición de varias funciones puede hacer complicado
+el tratamiento, la función \verb"Show" permite ver, en un solo gráfico, varios objetos obtenidos con 
+diferentes funciones, por ejemplo: \index{Show}
+\begin{tcolorbox}[breakable,enhanced,title=Uso de la función \verb"Show"]
+\begin{Verbatim} 
+Show[ParametricPlot3D[{Cos[t],Sin[t],1},{t,0,2Pi},
+PlotStyle->Red],Graphics3D[{Blue,Arrowheads[0.05],
+Arrow[Tube[{{1,0,1},{1,1,1}},0.02]]}],
+AxesOrigin->{0,0,0},
+PlotRange->{{-2,2},{-2,2},{-1,2}}]
+\end{Verbatim}
+\end{tcolorbox}
+Otra posibilidad es ejecutar las instrucciones de manera separada y luego mostrarlos en un solo 
+gráfico con la función \verb"Show". En el siguiente ejemplo, las primeras dos instrucciones se ejecutan, 
+se nombran como \verb"A" y \verb"B", y luego con la función \verb"Show" se muestran ambas.%\\
+\begin{tcolorbox}[breakable,enhanced,title=Ejecución de gráficos por separado]
+\begin{Verbatim} 
+A=ContourPlot3D[{x==4-y-4z+2z^2,(1-z)^2+(2-y)^2==1}
+{x,-3,3},{y,-1,4},{z,-1/2,5/2},Mesh->False];
+B=ParametricPlot3D[{Sin[t]+2(Cos[t])^2,2-Sin[t],
+1-Cos[t]},{t,0,2Pi},
+PlotStyle->{Red,Thickness->0.02}];
+Show[A,B]
+\end{Verbatim}
+\end{tcolorbox}
+Otras posibilidades muy útiles para obtener gráficos son las siguientes.
+
+\subsection*{Gráfico de puntos, segmentos y vectores}
+\vskip0.2cm
+\begin{tcolorbox}[breakable,enhanced,title=Gráfico de puntos]
+La instrucci\'{o}n \verb"Graphics[Point[{a,b}]]" dibuja el punto de
+coordenadas $\left(a,b\right).$ Con \verb"Graphics3D[Point[{a,b,c}]]" se dibuja el 
+punto de coordenadas $\left(a,b,c\right) .$
+\end{tcolorbox}
+El tamaño de un punto se modifica con el comando \verb"PointSize". \index{PointSize}
+Para dibujar de color rojo los puntos $\left( 1,1,1\right) $ y $\left( 2,0,1\right)$
+se ejecuta la instrucción \verb"Graphics3D[{Red,PointSize[0.1],Point[{{1,1,1},{2,0,1}}]}]".
+\vskip0.2cm
+El segmento que une el punto $(a,b)$ con el punto $(p,q)$ se representa utilizando la siguiente instrucción:
+\begin{tcolorbox}[breakable,enhanced,title=Gráfico de segmentos]
+\begin{Verbatim}
+Graphics[Line[{{a,b},{p,q}}]]
+\end{Verbatim}
+\end{tcolorbox} \index{Line}
+\noindent
+Con la instrucción \texttt{Graphics3D[\allowbreak Line[\allowbreak\{\{a,b,c\},\allowbreak\{p,q,r\}\}]]}, se obtiene el gráfico de un segmento tridimensional. Por ejemplo, con la instrucción \texttt{Graphics3D[\allowbreak\{\allowbreak Dashed,\allowbreak Blue,\allowbreak Line[\allowbreak\{\{1,-1,1\},\allowbreak\{2,3,-1\}\}]\}]}, se obtiene el segmento de color azul en línea discontinua que une los puntos $(1,-1,1)$ y $(2,3,-1).$
+\vskip0.2cm
+También es posible dibujar el vector que va del punto $(a,b,c)$ al punto $(p,q,r).$
+\begin{tcolorbox}[breakable,enhanced,title=Gráfico de vectores en el espacio]
+\begin{Verbatim}
+Graphics3D[Arrow[{{a,b,c},{p,q,r}}]]
+\end{Verbatim}
+\end{tcolorbox}
+Si se desea agregar determinado grosor $u$ al vector, la instrucción que se debe ejecutar es 
+\verb"Graphics3D[Arrow[{{a,b,c},{p,q,r}},u]]". \index{Graphics3D}
+El vector que une el punto $(1,1,-1)$ con el punto $(2,2,0),$ y algunos atributos personalizados, 
+se dibuja en  utilizando las siguientes instrucciones:
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Graphics3D[{Black,Arrowheads[0.1],
+Arrow[Tube[{{1,1,-1},{2,2,0}},0.01]]}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{figure}[H]
+	\begin{center}
+		\captionof{figure}{\small El vector $\langle 1,1,1\rangle$ se dibuja en el punto $(1,1,-1)$.}
+		\includegraphics[scale=0.32]{Img/T_67a.eps} \hskip0.2cm
+		\includegraphics[scale=0.32]{Img/T_67b.eps}
+\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+	\end{center}  
+\end{figure}
+
+\subsection*{Regiones en el plano y el espacio}
+La función \verb"RegionPlot" muestra el gráfico de una región dimensional, la sintaxis puede incluir desigualdades 
+y los operadores lógicos: \emph{y} (\verb"&&"), \emph{o} (\verb"||"). En los siguientes ejemplos se incorpora el uso 
+de las opciones \verb"BoundaryStyle" y \verb"Thickness" que controla el grosor y color de la frontera.
+\index{Operadores lógicos} \index{BoundaryStyle} \index{Thickness} 
+%\vskip0.2cm
+
+\vspace{-5mm}
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Uso de la función {\tt RegionPlot}}
+	\begin{minipage}{0.12\linewidth}
+		\centering
+		\vspace{-2mm}
+		\includegraphics[width=\linewidth]{Img/T_49a.eps}
+	\end{minipage}
+	\begin{minipage}{0.12\linewidth}
+	\centering
+	\vspace{-2mm}
+	\includegraphics[width=\linewidth]{Img/T_49b.eps}
+	\end{minipage}
+	\begin{minipage}{0.12\linewidth}
+	\centering
+	\vspace{-2mm}
+	\includegraphics[width=\linewidth]{Img/T_49c.eps}
+	\end{minipage}
+	\begin{minipage}{0.12\linewidth}
+		\centering
+		\vspace{-2mm}
+		\includegraphics[width=\linewidth]{Img/T_49d.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+La versión tridimensional es \verb"RegionPlot3D".
+
+\vspace{-1mm}
+
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+RegionPlot[1<=x^2+2*y^2<=9&&y>=-x^2,{x,-3,3},
+{y,-2,5/2},PlotPoints->50,BoundaryStyle->{Black,
+Thickness->0.01},PlotStyle->Gray,Frame->False]
+RegionPlot[(x+1)^2+2*y^2<3||(x-1)^2+y^2<3,{x,-3,3},
+{y,-2,2},BoundaryStyle->{Black,Thickness->0.01},
+PlotStyle->Gray,Frame->False]
+RegionPlot[{(x+1)^2+2*y^2<3,(x-1)^2+y^2<3},{x,-3,3},
+{y,2,2},PlotStyle->Gray,BoundaryStyle->{Black,
+Thickness->0.01},Frame->False]
+RegionPlot[x^2+y^2<9&&Abs[x]+Abs[y]>2,{x,-3,3},
+{y,-3,3},Frame->False,PlotStyle->Gray,
+BoundaryStyle->{Black,Thickness->0.01}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\vspace{-1mm}
+
+Para representar un sólido se utiliza la función \verb"RegionPlot3D". \index{RegionPlot3D}
+Este comando dibuja la región a partir de ciertas \verb"DESIGUALADES", con $x\in[a,b]$, $y\in[c,d]$, $z\in[u,v].$ 
+Las inecuaciones se concatenan con los símbolos \verb"&&".
+La sintaxis básica es:
+
+
+
+\begin{tcolorbox}[breakable,enhanced,title=Gráfico de una región sólida]
+\begin{Verbatim}[formatcom=\letraverbatim]
+RegionPlot3D[DESIGUALDADES,{x,a,b},{y,c,d},{z,u,v}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+Presentamos ahora, algunas situaciones que ilustran el uso de esta función.
+
+(1) El sólido acotado por las figuras de $z=0,$ $z=1-y,$ $x^2=y,$ $y=1.$
+
+\vskip0.1cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{Cono truncado oblicuo determinado por ${\bf r}(u,t)$}
+	\begin{minipage}{0.14\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06c-eps-converted-to}
+	\end{minipage}
+	\hspace{1em} 
+	\begin{minipage}{0.14\linewidth}
+		\centering		
+		\includegraphics[width=\linewidth]{Img/math_06d-eps-converted-to}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Esta región se obtiene con las siguientes instrucciones:
+
+\begin{tcolorbox}
+\begin{Verbatim}[formatcom=\letraverbatim]
+RegionPlot3D[0<z<1-y&&x^2<y<1,{x,-1,1},{y,0,1},
+{z,0,1},PlotPoints->90,PlotStyle->Orange,
+Mesh->False,Ticks->{{-1,0,1},{-1,1},{0,1}}]
+\end{Verbatim}
+\end{tcolorbox}
+
+%\clearpage
+(2) El sólido acotado por las figuras de $(x-1)^2+y^2= 1,$ $(x-3/2)^2+y^2=4,$ $z=0,$ $2z+y=4.$
+
+\begin{center}
+	\captionof{figure}{\small Sólido acotado por $x^2+2x+y^2=0,$ $x^2+y^2-3x=\frac{7}{4},$ $2z+y=4.$}
+	\includegraphics[scale=0.17]{Img/math_06.eps} \hspace{0.2cm}  
+	\includegraphics[scale=0.17]{Img/math_06a.eps} \hspace{0.2cm}
+	\includegraphics[scale=0.17]{Img/math_06b.eps}
+	\vspace{0.5em}
+\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\vskip0.2cm
+\end{center}
+
+Para obtenerlo se ejecutó la siguiente instrucción:
+%\vskip0.2cm
+\begin{tcolorbox}
+\begin{Verbatim}[formatcom=\letraverbatim] 
+RegionPlot3D[z>0&&z<4-y/2&&(x-1)^2+y^2>1&&(x-1.5)^2
++y^2<4,{x,-1,4},{y,-2,2},{z,0,5},Mesh->False,
+PlotPoints->90]
+\end{Verbatim}
+\end{tcolorbox}
+%\vskip0.2cm
+(3) Las expresiones $(x^2+y^2)^2=z+1, \,\,\, z= 4(1-x^2-y^2), $ 
+acotan el sólido que se muestra enseguida. 
+
+\begin{figure}[H]
+	\begin{center}
+		\captionof{figure}{\small Superficie determinada por $(x^2+y^2)^2=z+1$ y $z= 4(1-x^2-y^2)$.}
+		\includegraphics[scale=0.17]{Img/math_06e.eps} \hspace{0.3cm}
+		\includegraphics[scale=0.17]{Img/math_06f.eps}
+\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\vskip0.2cm
+\end{center}
+\end{figure}
+
+Las siguientes instrucciones permiten obtenerlo:
+\begin{tcolorbox}
+\begin{Verbatim}[formatcom=\letraverbatim]
+RegionPlot3D[(x^2+y^2)^2-1<z<4*(1-x^2-y^2)^2&&
+-Sqrt[1-x^2]<y<Sqrt[1-x^2],{x,-1,1},{y,-1,1},
+{z,-1,4},PlotPoints->90,Mesh->False]
+\end{Verbatim}
+\end{tcolorbox}
+
+(4) La región del espacio interior a la esfera $x^2+y^2+z^2=4$ y al hiperboloide de dos mantos $x^2+y^2=2+z^2$, exterior al cilindro $x^2+y^2=\frac{2}{5}$ se muestra en el siguiente gráfico.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Sólido acotado por $x^2+y^2+z^2=4,$ $x^2+y^2=2+z^2,$ $x^2+y^2=\frac{2}{5}.$}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06n.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06p.eps}
+	\end{minipage}
+	
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Este se consigue con las siguientes instrucciones:
+
+\begin{tcolorbox}
+\begin{Verbatim}[formatcom=\letraverbatim]
+RegionPlot3D[x^2+y^2+z^2<4&&x^2+y^2<2+z^2&&
+x^2+y^2>0.4,{x,-2,2},{y,-2,2},{z,-2,2},PlotPoints->90]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+(5) En coordenadas cilíndricas, las desigualdades 
+$1 \leq r \leq 2,\,\, r \leq z \leq 2, $
+determinan la región acotada por un cilindro, un semicono y un plano.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Sólido acotado por $1 \leq r \leq 2,$ $r \leq z \leq 2.$}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06g.eps}
+	\end{minipage}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06h.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+
+Para obtener estas figuras se definen $r$ y $\theta$, 
+luego se escriben las desigualdades y se agregan otras opciones:
+\begin{tcolorbox} 
+\begin{Verbatim}[formatcom=\letraverbatim]
+{r,\[Theta]}={Sqrt[x^2+y^2],ArcTan[y/Abs[x]]};
+RegionPlot3D[1<=r<=2&&r<=z<=2,{x,-2,2},{y,-2,2},
+{z,1,2},PlotPoints->90,Mesh->True,AxesLabel->
+Automatic,PlotRange->{{-2,2},{-2,2},{1,2.2}}]
+\end{Verbatim}
+\end{tcolorbox}
+
+
+\subsection*{Gráficos en coordenadas esféricas}
+En coordenadas esféricas se puede utilizar la 
+función \verb"SphericalPlot3D", con una sintaxis genérica para graficar una función de la forma 
+$\rho = f(\theta,\phi)$, con  $\theta \in [a,b]$ y $\phi \in [c,d];$
+esto es: \index{SphericalPlot3D}
+
+\begin{tcolorbox}[breakable,enhanced,title=Gráficos en coordenadas esféricas]
+\begin{lstlisting}[language=Mathematica, basicstyle=\ttfamily]
+SphericalPlot3D$[f[\[Theta],\[Phi]], 
+{\[Theta],a,b}, {\[Phi],c,d}]
+\end{lstlisting}
+\end{tcolorbox}
+
+Así, se ejecutan las siguientes instrucciones:
+\vspace{-2mm}
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+SphericalPlot3D[1,{\[Theta],Pi/6,Pi},{\[Phi],
+Pi/6,5*Pi/3}]
+SphericalPlot3D[Cos[\[Phi]],{\[Theta],0,Pi},{\[Phi],
+0,Pi}]
+SphericalPlot3D[\[Theta],{\[Theta],0,Pi},{\[Phi],
+0,2*Pi}]
+\end{Verbatim}
+\end{tcolorbox}
+\vspace{-1mm}
+
+
+Es así como se obtienen, respectivamente, los resultados de la figura 21:
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Regiones en coordenadas esféricas.}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06aa.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.13\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06ab.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06ac.eps}
+		\label{regiones_esfe}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.3cm
+
+
+De manera alternativa, se pueden usar desigualdades definiendo previamente las variables $\rho$, $\theta$ y $\phi.$ 
+Por ejemplo, la región limitada por las siguientes expresiones
+$1 \leq \rho \leq 2,\,\, 0\leq \theta\leq \frac{3\pi}{4}, \,\,
+\frac{\pi}{6} \leq \phi \leq \frac{3\pi}{4}, $
+se muestra a continuación. Para conseguirlo, se pueden definir las variables $\rho,\,\, \theta,\,\, \phi$
+y luego establecer la región que se ilustra a continuación:
+
+\vskip0.2cm
+ \noindent
+ \begin{minipage}{\textwidth}
+ 	\centering
+ 	\captionof{figure}{\small Región determinada por $1\leq \rho \leq 2,$ $0\leq \theta\leq \frac{3\pi}{4}$ y $\frac{\pi}{6} \leq \phi \leq \frac{3\pi}{4}$}
+ 	\begin{minipage}{0.15\linewidth}
+ 		\centering
+ 		\includegraphics[width=\linewidth]{Img/math_06m.eps}
+ 	\end{minipage}
+ 	\hspace{1em}
+ 	\begin{minipage}{0.15\linewidth}
+ 		\centering
+ 		\includegraphics[width=\linewidth]{Img/math_06l.eps}
+ 	\end{minipage}
+ 	\hspace{1em}
+ 	\begin{minipage}{0.16\linewidth}
+ 		\centering
+ 		\includegraphics[width=\linewidth]{Img/math_06k.eps}
+ 	\end{minipage}
+ 	
+ 	\vspace{0.3em}
+ 	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+ \end{minipage}
+
+\vspace{1mm}
+Para conseguirlo, se pueden definir las variables $\rho$, $\theta$, $\phi$ y luego establecer la región que se ilustra a continuación:
+
+\begin{tcolorbox}[breakable,enhanced,title=Regiones en el espacio]
+\begin{Verbatim}[formatcom=\letraverbatim]
+{\[Rho],\[Theta]}={Sqrt[x^2+y^2+z^2],ArcTan[y/Abs[x]]}
+\[Phi]=ArcCos[z/\[Rho]];
+RegionPlot3D[1<\[Rho]<2&&0<\[Theta]<3Pi/4&&Pi/6<
+\[Phi]<3*Pi/4,{x,-2,2},{y,0,2},{z,-2,2},
+PlotPoints->90,Mesh->False]
+\end{Verbatim}
+\end{tcolorbox}
+
+Utilizando la función \verb"ArcTan[x,y]", se puede obtener la región del espacio determinada por 
+las expresiones $1\leq \rho  \leq 2,$ $0\leq \theta \leq 3\pi/2,$  $\pi/4\leq \phi \leq 5\pi/6.$
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Región determinada por $1\leq\rho\leq 2,$ $0\leq\theta\leq 3\pi/2,$ $\pi/4\leq\phi\leq 5\pi/6.$}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_50a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_50b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+La figura se consigue a partir de dos grupos 
+de desigualdades que se concatenan con el operador lógico \emph{o}, que se denota por \verb"||".
+Es decir, la desigualdad $0\leq \theta \leq 3\pi/2,$ se escribe en \verb"Mathamatica" como 
+$0\leq \theta \leq \pi/2 \, || \,-\pi \leq \theta \leq -\pi/2.$  
+ 
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+{\[Theta],\[Rho]}={ArcTan[x,y],Sqrt[x^2+y^2+z^2]}
+\[Phi]=ArcCos[z/\[Rho]]; 
+RegionPlot3D[1<\[Rho]<2&&0<\[Theta]<Pi&&Pi/4<
+\[Phi]<5*Pi/6||1<\[Rho]<2&&-Pi<\[Theta]<-Pi/2
+&&Pi/4<\[Phi]<5*Pi/6,{x,-2,2},{y,-2,2},{z,-2,2},
+PlotPoints->90,Mesh->False] 
+\end{Verbatim}
+\end{tcolorbox}
+ 
+La función \verb"ToSphericalCoordinates[{x,y,z}]" permite transformar coordenadas rectangulares en esféricas, mientras que la transformación inversa se logra con \Verb!FromSphericalCoordinates[{\[Rho],\[Theta],\[Phi]}]!.
+Ejemplo de lo anterior son la siguientes sentencias:
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+ToSphericalCoordinates[{1,-1,1}]
+FromSphericalCoordinates[{Sqrt[3],ArcTan[1],Pi/4}]
+\end{Verbatim}
+\end{tcolorbox}
+\index{ToSphericalCoordinates} \index{FromSphericalCoordinates} 
+
+\subsection*{Gráficos con restricciones}
+Agregando \verb"RegionFunction->Function[{x,y,z},DESIGULADADES]" \\
+dentro de las opciones
+de un gráfico se pueden agregar restricciones a este. \index{RegionFunction}
+Sobre la esfera $x^2+y^2+z^2=9$ se aplica la restricción $-2yz<x^2+z^2<9$
+y el paraboloide $z=5-x^2-y^2$ con la condición $2x<x^2+y^2<9$.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficies con restricciones en el espacio.}
+	\begin{minipage}{0.17\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_47a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.23\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_48a.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+%\vskip0.2cm
+Estas figuras se obtienen con las siguientes instrucciones:
+%\vskip0.2cm
+
+\begin{tcolorbox}[breakable,enhanced,title=Uso del comando {\tt RegionFunction} ]
+\begin{Verbatim}[formatcom=\letraverbatim]
+ContourPlot3D[x^2+y^2+z^2==9,{x,-3,3},{y,-3,3},
+{z,-3,3},RegionFunction->Function[{x,y,z},
+-2*y*z<x^2+z^2<9],Mesh->False]
+Plot3D[5-x^2-y^2,{x,-3,3},{y,-3,3},Mesh->False,
+RegionFunction->Function[{x,y,z},2*x<x^2+y^2<9]]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Gráficos discretos en el plano}
+Con la instrucción \Verb!DiscretePlot[f(x),{x,a,b,r},ExtentSize->Right]! se muestra el gráfico 
+discreto de $f(x)$ en $[a,b]$, con subintervalos de longitud $r.$ La disposición (o altura) de cada rectángulo
+se controla con \verb"ExtentSize" cuyas opciones son \Verb!Left/Right/None/Full/All/Scaled["$\Delta$\verb"]!; 
+también se puede incluir la opción \Verb!ExtentSize->{a,b}!, en donde \verb"a" y \verb"b" son la distancia del punto 
+y el ancho del rectángulo.
+
+\vskip0.2cm
+En la figura 25 algunos puntos sobre la función $y=4-x+3x^2-x^3$, $x\in [-1,3]$ e 
+incrementos de $0.2$ unidades. 
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Función $f(x)=4-x+3x^2-x^3$.}
+	\begin{minipage}{0.20\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_43b.eps}
+	\end{minipage}
+	\hspace{1em} 
+	\begin{minipage}{0.20\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_43a.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+Además de estas, las siguientes instrucciones muestran otras posibilidades.
+\vspace{-8mm}
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+DiscretePlot[4-x+3*x^2-x^3,{x,-1,3,0.2}]
+DiscretePlot[4-x+3*x^2-x^3,{x,-1,3,0.2},
+ExtentSize->All]
+Show[DiscretePlot[4-x+3*x^2-x^3,{x,-1,3,0.2},
+ExtentSize->All],Plot[4-x+3*x^2-x^3,{x,-1,3}]]
+Show[DiscretePlot[4-x+3*x^2-x^3,{x,-1,3,0.24},
+ExtentSize->{0.1,0.1}],Plot[4-x+3*x^2-x^3,
+{x,-1,3},PlotStyle->Black]]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Gráficos discretos en el espacio}
+La instrucción \verb"ListPoint" permite graficar una lista de puntos en el plano, mientras que \verb"ListPointPlot3D" permite hacerlo en el espacio.
+\vskip0.2cm 
+\index{ListPoint} \index{ListPointPlot3D}
+Las siguientes figuras corresponden a la función $f(x,y)= 2+xy-x^2-y^3.$ Para esto, se genera una tabla con puntos para 
+$x \in[-2,2],$ $y \in[-2,2]$ con incrementos en $x$ de $1/5$ e incrementos en $y$ de $1/4.$ 
+
+\begin{figure}[H]
+	\begin{center}
+		\captionof{figure}{\small Función $f(x,y)=2+xy-x^2-y^3$.}
+		\includegraphics[scale=0.25]{Img/T_44a.eps}
+		\includegraphics[scale=0.25]{Img/T_44b.eps}
+		\includegraphics[scale=0.25]{Img/T_44c.eps}
+	\end{center}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{figure}
+
+\vspace{-4mm}
+Las instrucciones necesarias para obtener la figura 26 son las siguientes: en ellas 
+se usó el comando \verb"InterpolationOrder" en dos posibilidades.
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+ListPointPlot3D[Table[2+i*j-i^2-j^3,{i,-2,2,1/5},
+{j,-2,2,1/4}]]
+ListPlot3D[Table[2+i*j-i^2-j^3,{i,-2,2,1/5},
+{j,-2,2,1/4}],
+Mesh->None,InterpolationOrder->0]
+ListPlot3D[Table[2+i*j-i^2-j^3,{i,-2,2,1/5},
+{j,-2,2,1/4}],Mesh->None,InterpolationOrder->2]
+\end{Verbatim}
+\end{tcolorbox}
+
+A partir de la función $z=f(x,y)$ con $x \in [a,b]$ e incrementos de $r_1$ unidades, $y \in [c,d]$ 
+e incrementos de $r_2$ unidades, se puede trazar la figura de la función discreta 
+obtenida mediante el uso de la instrucción 
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+DiscretePlot3D[f[x,y],{x,a,b,r1},{y,c,d,r2}]
+\end{Verbatim}
+\end{tcolorbox}
+\index{DiscretePlot3D}
+
+Considerando la función $f(x,y)=3+xy-x^2-y^3$ con $x \in [-1,1],$ $y \in [-1,1],$ e incrementos de $0.1$ y
+$0.2$ respectivamente, se obtiene los siguientes gráficos.
+
+\noindent % Asegura alineación con el margen izquierdo
+\begin{minipage}{\textwidth}
+	\centering
+	% Se usa \captionof porque minipage no es un entorno flotante
+	\captionof{figure}{\small Función $f(x,y)=3+xy-x^2-y^3$.}
+	\label{fig:funcion_T45}
+	
+	\vspace{0.3cm}
+	% Imágenes con escala homogénea (0.30) según tu solicitud
+	\includegraphics[scale=0.20]{Img/T_45a.eps} \hskip0.5cm
+	\includegraphics[scale=0.20]{Img/T_45b.eps}
+	
+	\vspace{0.2cm}
+	\fuente{elaboración propia.}
+\end{minipage}
+%\vskip0.2cm
+
+Los gráficos anteriores se obtienen al ejecutar las siguientes sentencias.
+
+\vspace{-4mm}
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+DiscretePlot3D[3+x*y-x^2-y^3,{x,-1,1,0.2},{y,-1,1,0.1},
+ExtentSize->Full]
+DiscretePlot3D[3+x*y-x^2-y^3,{x,-1,1,0.2},{y,-1,1,0.2},
+ExtentSize->{0.15,0.18},FillingStyle->Opacity[0.4]]
+\end{Verbatim}
+\end{tcolorbox}
+
+\index{FillingStyle}
+Los rectángulos se han separan un poco y con la instrucción \verb"FillingStyle" se hacen un poco traslúcidos.
+\vskip0.2cm
+Se presenta enseguida la grafica discreta de la función $f(x,y)=3+xy-x^2-y^3$ 
+con la restricción $\frac{1}{4} \leq x^2+y^2 \leq 2$;
+e incrementos en $x$ e $y$ de $0.1$ unidades en ambos casos.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Función $f(x,y)=3+xy-x^2-y^3$.}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_46a.eps}
+	\end{minipage}
+	\begin{minipage}{0.24\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_46b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Este gráfico se consigue al ejecutar las siguientes instrucciones. La condición se obtiene al usar la opción \verb"RegionFunction". \index{RegionFunction}
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+DiscretePlot3D[3+x*y-x^2-y^3,{x,-2,2,0.1},{y,-2,2,0.1},
+ExtentSize->{0.1,0.1},FillingStyle->Opacity[0.6],
+RegionFunction->Function[{x,y,z},1/4<=x^2+y^2<=2]]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Superficie de revolución}
+El gráfico de la región que se obtiene de girar la función 
+$y=f(x)$ alrededor del eje $y$, con $x\in[a,b]$, se obtiene con ayuda 
+de la siguiente instrucción:
+\begin{tcolorbox}[breakable,enhanced,title=Sólidos de revolución] 
+\verb"RevolutionPlot3D[f(x),{x,a,b}]"
+\end{tcolorbox}  
+\index{RevolutionPlot3D}
+Si la curva está parametrizada en la forma $\langle x(t),y(t),z(t) \rangle$ y esta gira alrededor del vector $\langle p,q,r \rangle,$ con  $t \in[a,b]$, la sintaxis que
+se usa es la siguiente:
+\begin{tcolorbox}[breakable,enhanced,title=Sólido de revolución con una curva parametrizada]
+\verb"RevolutionPlot3D[{x(t),y(t),z(t)},{t,a,b},"\\
+\verb"RevolutionAxis->{p,q,r}]"
+\end{tcolorbox}
+Por ejemplo, la función 
+${\bf r}(t)= \langle 1 - \cos(t), \sin(t), t - t^2\rangle $, con $t\in [0, 1]$, gira alrededor del vector 
+$\langle  1,1,0\rangle$.
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Superficie generada por ${\bf r}(t)= \langle 1 - \cos(t), \sin(t), t - t^2\rangle.$}
+	\begin{minipage}{0.21\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06ad.eps}
+	\end{minipage}
+	\begin{minipage}{0.20\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/math_06ae.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+Esta región se obtiene al ejecutar la siguiente instrucción:
+\begin{tcolorbox}[breakable,enhanced] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+RevolutionPlot3D[{1-Cos[t],Sin[t],t-t^2},
+{t,0,1},Ticks->{{0,0.5},{0,0.5},{-0.2,0.2}},
+RevolutionAxis->{1,1,0}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\section{Regresión e interpolación}
+A partir de un conjunto de puntos es posible obtener una función
+que los contenga o los aproxime, presentaremos algunas funciones que permiten hacerlo.
+\vskip0.2cm 
+Para obtener una combinaci\'{o}n lineal $f(x),$ de las funciones 
+$f_{1},f_{2},\cdots ,f_{k},$ que mejor ajusta a los puntos $\left( x_{1},y_{1}\right) ,\left(
+x_{2},y_{2}\right) ,\cdots ,\left( x_{n},y_{n}\right)$ se puede usar la función \verb"Fit".  \index{Fit}
+La función $f(x)$ minimiza la siguiente suma de los cuadrados  
+\begin{multline*}
+\left( a_{1}f_{1}\left( x_{1}\right) +a_{2}f_{2}\left( x_{1}\right) 
+ +\cdots +a_{n}f_{n}\left( x_{1}\right) -y_{1}\right) ^{2}+ \\ 
+ \cdots +\left(a_{1}f_{1}\left( x_{1}\right) +a_{2}f_{2}\left( x_{1}\right) +
+\cdots +a_{n}f_{n}\left( x_{1}\right) -y_{n}\right) ^{2}
+\end{multline*}
+En este caso se puede utilizar la siguiente instrucción genérica:
+\begin{tcolorbox}[breakable,enhanced,title=Ajuste de puntos]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Fit[{{x1,y1},{x2,y2},...,{xn,yn}},{f1,f2,...,fk},x].
+\end{Verbatim}
+\end{tcolorbox}
+Si el usuario establece la forma de la función que desea, los coeficientes de esta combinación 
+se consiguen con la función \verb"FindFit".  \index{FindFit}
+\vskip0.2cm 
+La combinación lineal de las funciones $1,$ $x^2,$ $\sin x,$
+que mejor ajusta los puntos  $(-1, 1),$ $(2,-1)$, $(1,3)$ y $(3,0)$,
+se obtiene al ejecutar:
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Fit[{{-1, 1},{2,-1},{1,3},{3,0}},{1,x^2,Sin[x]},x]
+\end{Verbatim}
+\end{tcolorbox}
+Si se desea obtener una expresión de la forma $f(x)=ax+bx^2+c \sin x$, 
+los coeficientes se determinan con la función \verb"FindFit," esto es:
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+FindFit[{{1,1},{2,2},{-1,2},{-2,2}},{a*x+b*x^2+c*Sin[x]},
+{a,b,c},x].
+\end{Verbatim}
+\end{tcolorbox}
+En las siguientes tres sentencias se define un conjunto de puntos, se halla la
+combinaci\'{o}n lineal de las funciones $1,x^{2},x^{3},x^{5}$ que mejor
+ajustan estos puntos y se presenta su gr\'{a}fico.
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+datos={{1,1},{2,2},{-1,2},{-2,2}};
+y1=Fit[datos,{1,x^2,x^3,x^5},x]
+Show[Graphics[{Red,Point[datos]}],Plot[y1,{x,-2,2}]]
+\end{Verbatim}
+\end{tcolorbox}
+Los siguientes tres ejemplos ilustran el uso de esta funci\'{o}n dos y tres
+variables independientes:
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Fit[{{-1,1,2},{2,2,0},{-1,3,3}},{x^2*y,x*y^2},{x,y}]
+Fit[{{0,Pi/2,2},{Pi/3,Pi/2,-1},{2*Pi/3,Pi,-2},
+{-Pi,2*Pi,1}},{Sin[x],Cos[y],Cos[x*y]},{x,y}]
+Fit[{{1,1,2,2},{1,2,2,0},{-1,-2,3,4},{-3,1,2,-1},
+{-2,4,0,1}},{x^2*y*z,x*y^2,y*z^2,Sin[x+y],Cos[y+z]},
+{x,y,z}]
+\end{Verbatim}
+\end{tcolorbox}
+
+Para los puntos $(x_1,y_1),$ $(x_2,y_2),\cdots$ $(x_n,y_n),$ existe un polinomio $p(x)$ 
+de grado $n-1$, tal que $p(x_i)=y_i$ para $i=1,2,\cdots,n$. 
+Este polinomio se denomina \emph{polinomio de interpolación} y se determina 
+de la siguiente manera:
+\begin{tcolorbox}[breakable,enhanced,title=Polinomio de interpolación]
+\begin{Verbatim}
+InterpolatingPolynomial[{{x1,y1},{x2,y2},...
+,{xn,yn}},x]
+\end{Verbatim}
+\end{tcolorbox}
+\index{InterpolatingPolynomial}
+
+Con las siguientes instrucciones se define un conjunto de puntos, se halla
+el polinomio de interpolación y se presenta su gr\'{a}fico
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+puntos={{-1,1},{0,-1},{2,1},{4,-2}};
+y=InterpolatingPolynomial[puntos,x];
+Show[Graphics[{Red,Point[puntos]}],Plot[y,{x,-1,4}]]
+\end{Verbatim}
+\end{tcolorbox}
+
+\section{Integración múltiple}
+Para evaluar integrales dobles o triples en \verb"Wolfram Mathematica", 
+se puede proceder como sigue.\\[0.2cm]
+Para una integral doble de la forma 
+$\ds \int_a^b \int_c^d f(x,y)dydx,$ la instrucción es 
+\begin{tcolorbox}[breakable,enhanced,title=Integrales dobles]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Integrate[f[x,y],{x,a,b},{y,c,d}]
+\end{Verbatim}
+\end{tcolorbox}
+De manera alternativa, se puede utilizar la siguiente notación:\\
+\verb"Integrate[Integrate[f[x,y,z],{x,a,b}],{y,c,d}]"; nótese en este caso el orden en la escritura. 
+El comando \verb"NIntegrate" pemite evaluar numéricamente una integral. \index{NIntegrate}
+Si se desea ver la integral sin evaluar se puede 
+agregar la sentencia \verb"//HoldForm" y si se desea evaluar numéricamente una expresión se debe agregar
+\verb"//N" al final de la instrucción. Presentamos algunas integrales y las instrucciones requeridas para su evaluación:
+%\clearpage
+\begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf(\arabic*)}}]
+\item %La integral 
+$$\ds\int_0^2 \int_{-x}^{x^2} xy^2 dxdy,$$ %se evalúa con la siguiente orden
+\begin{tcolorbox}[breakable,enhanced] 
+\begin{Verbatim}
+Integrate[x*y^2,{x,0,2},{y,-x,x^2}]
+\end{Verbatim}
+\end{tcolorbox}
+\item La siguiente integral se evalúa numéricamente 
+$$\ds \int_0^2 \int_{\sqrt{y}}^{2-y} 30x^2 dxdy,$$ %se puede usar la siguiente instrucción:
+\begin{tcolorbox}[breakable,enhanced] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+NIntegrate[30x^2,{y,0,1},{x,Sqrt[y],2-y}]
+\end{Verbatim}
+\end{tcolorbox}
+\item %La integral impropia 
+$$\int_{-\infty}^{\infty}\int_{0}^{\infty }e^{-x^{2}-y^{2}}dydx= \frac{\pi}{2} $$ % se evalúa como sigue
+\begin{tcolorbox}[breakable,enhanced] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+Integrate[Exp[-x^2-y^2],{x,-Infinity,Infinity},
+{y,0,Infinity}]
+\end{Verbatim}
+\end{tcolorbox}
+\end{enumerate}
+\vskip0.2cm
+
+La integral triple $$\int_a^b \int_c^d \int_e^s f(x,y,z)\, dzdydx,$$
+se puede evaluar mediante esta instrucción:
+\begin{tcolorbox}[breakable,enhanced,title=Integrales triples]
+\begin{Verbatim}[formatcom=\letraverbatim]
+Integrate[f[x,y,z],{z,r,s},{y,c,d},{x,a,b}]
+\end{Verbatim}
+\end{tcolorbox}
+Ahora ilustraremos el uso de esta función con unas integrales triples:
+\begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf(\arabic*)}}]
+\item % La integral, 
+$$\ds \int_{-3}^3 \int_0^2 \int_0^1  x^2 y^3 z^4 dzdy dx$$ % se evalúa como sigue 
+\begin{tcolorbox}[breakable,enhanced] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+Integrate[x^2y^3z^4,{x,-3,3},{y,0,2},{z,0,1}]
+\end{Verbatim}
+\end{tcolorbox}
+\item % La evaluación de la integral 
+$$\ds \int_{0}^{1}\int_{-\sqrt[2]{x}}^{\sqrt[2]{x}}\int_{0}^{x}x^{2}dzdydx$$ % se hace con la orden
+\begin{tcolorbox}[breakable,enhanced] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+Integrate[x^2,{x,0,1},{y,-Sqrt[x],Sqrt[x]},{z,0,x}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\item Agregando \verb"//HoldForm" al final de la siguiente sentencia, se puede ver la forma sin evaluar de la integral:
+$$\int_0^\pi\int_0^{\pi/6} \int_0^2 \rho^3 \cos(\theta)\sin^2(\phi)\, d\rho d \theta d\phi=4  $$
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+Integrate[\[Rho]^3*Cos[\[Theta]]*Sin[\[Phi]],
+{\[Rho],0,2},{\[Theta],0,Pi/6},{\[Phi],0,Pi}]
+\end{Verbatim}
+\end{tcolorbox}
+
+%\item La integral doble impropia, $$\int_{-\infty }^{\infty }\int_{-\infty }^{\infty }x^{2}e^{-x^{2}-y^{2}}dydx= \frac{\pi }{2} $$ se evalúa mediante la ejecución de la siguiente instrucción 
+%\begin{tcolorbox}[breakable,enhanced]  \begin{Verbatim}[fontsize=\letraverbatim]
+%Integrate[x^2*Exp[-x^2-y^2],{x,-Infinity,Infinity}, {y,-Infinity,Infinity}]\end{Verbatim}\end{tcolorbox}
+\item % La integral triple impropia
+$$\frac{1}{\sqrt{\pi }}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-x^{2}-y^{2}-z^{2}}dzdydx= \pi $$
+% se evalúa mediante la ejecución de la siguiente instrucción 
+\begin{tcolorbox}[breakable,enhanced] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+1/Sqrt[Pi]*Integrate[Exp[-x^2-y^2-z^2],
+{x,-Infinity,Infinity},{y,-Infinity,Infinity},
+{z,-Infinity,Infinity}]
+\end{Verbatim}
+\end{tcolorbox}
+\end{enumerate}
+
+Muchos de los cálculos y manipulaciones algebraicas de estas notas se hacen en \verb"Mathematica" 
+y se exportan a un documento \LaTeX.
+El código de una \verb"EXPRESION" se consigue mediante la instrucción
+\verb"TeXForm[EXPRESION]". \index{TeXForm}
+\section{Ecuaciones diferenciales con {\tt DSolve}}
+Se denomina \emph{ecuación diferencial} a toda ecuación que involucre
+una función desconocida y algunas de sus derivadas. La ecuación
+diferencial se llama ecuación diferencial ordinaria, si contiene
+derivadas ordinarias y se llama ecuación diferencial parcial, si en ella
+aparecen algunas derivadas parciales de una función que depende de más de una variable. \vskip0.2cm
+El \emph{orden} de la ecuación diferencial corresponde al orden de la mayor derivada involucrada.
+Una \emph{solución} de la ecuación diferencial es una función definida en un conjunto abierto $I$, tal que para todo $x\in I$ sus derivadas existen y al reemplazarse en la ecuación diferencial la expresión es una identidad.\vskip0.2cm
+Una introducción a las ecuaciones diferenciales puede consultarse en \textcite{apostol_calculus_1999}.
+\index{Ecuaciones diferenciales} \index{DSolve}
+ El comando \verb"DSolve" resuelve una o varias ecuaciones diferenciales ordinarias o parciales.
+La ecuación diferencial $y'(x)=f(x)$ se resuelve en \verb"Mathematica" mediante la ejecución de la siguiente instrucción
+\verb"DSolve[y'[x]==f[x],y[x],x]". \\ Según el caso, se debe usar agregar como una lista de ecuaciones o una ecuación con sus respectivas condiciones.
+\begin{tcolorbox}[breakable, enhanced, title={Uso del comando \texttt{DSolve}}, colback=gray!5, colframe=gray!80]
+El comando \texttt{DSolve} resuelve una o varias ecuaciones diferenciales ordinarias o parciales.
+La ecuación diferencial $y'(x) = f(x)$ se resuelve en \texttt{Mathematica} mediante la instrucción:
+\texttt{DSolve[y'[x] == f[x], y[x], x]}.
+Según el caso, se debe usar una lista de ecuaciones o una ecuación con sus respectivas condiciones.
+\end{tcolorbox}
+
+El comando \verb"NDSolve" permite resolver numéricamente una ecuación diferencial,
+una exposición más detallada de esta función puede conseguirse \textcite{sofroniou_advanced_2008}. Ilustraremos lo anterior con unos ejemplos.
+\begin{itemize}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+\item La ecuación diferencial ordinaria de segundo orden
+$$ y^{\prime \prime }\left( x\right) + y^{\prime }\left(x\right) =-e^{-x},$$ con las condiciones
+$y\left( 0\right) =1,$ $y^{\prime }\left( 0\right) =1,$ tiene por solución $y\left( x\right) =xe^{-x}+1.$
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+DSolve[{y''[t]+y'[t]==-Exp[-t],y[0]==1,y'[0]==1},
+y[t],t]
+\end{Verbatim}
+\end{tcolorbox}
+
+\item La ecuación diferencial parcial de primer orden
+$$\frac{\partial u}{\partial x}+\frac{\partial u}{\partial y}=e^{-y}\left(1-x\right) ,$$ con $u\left( 0,y\right) =0,$ $u\left( x,0\right) =x,$ posee a $u\left( x,y\right) =xe^{-y}$ como solución.
+
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+DSolve[{D[u[x,y],x]+D[u[x,y],y]==Exp[-y]*(1-x),
+u[0,y]==0,u[x,0]==x},u[x,y],{x,y}]
+\end{Verbatim}
+\end{tcolorbox}
+
+ 
+\item El sistema de ecuaciones diferenciales ordinarias de primer orden
+$$\left. \begin{array}{l}
+y'(t)-x'(t)+y(t)=-e^t(t+1)\\
+x'(t)+y'(t)-x(t)=e^t-e^{-t}
+\end{array}\right \}$$
+con las condiciones iniciales $x(0)=0$, $y(0)=1$ posee a $x(t)= te^t$ y $y(t)=e^{-t}$ como solución.
+ 
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+DSolve[{y'[t]-x'[t]+y[t]==-Exp[t]*(t+1),x'[t]
++y'[t]-x[t]==Exp[t]-Exp[-t],x[0]==0,y[0]==1},
+{x[t],y[t]},t]
+\end{Verbatim}
+\end{tcolorbox}
+
+  
+\end{itemize}
+
+\section{Campos vectoriales}
+Presentamos algunas funciones del programa \verb"Mathematica" útiles en el tratamiento de campos vectoriales.
+
+\subsection*{Divergencia y rotacional} \index{Curl} \index{Div}
+Con las funciones \verb"Curl" y \verb"Div" se obtiene el rotacional y la divergencia de un campo vectorial 
+${\bf F}.$ Se debe establecer un orden para las variables.
+\index{Divergencia} \index{Rotacional} 
+\vskip0.2cm
+En el siguiente ejemplo se calcula el rotacional y la divergencia de ${\bf F}$, \mbox{después} de definir 
+el campo vectorial ${\bf F}(x,y,z)= \la x^2+y^2,y^3+z^2,x e^z \ra.$
+\begin{tcolorbox}[breakable,enhanced]
+\begin{Verbatim}[formatcom=\letraverbatim]
+F[x_,y_,z_]:={x^2+y^2,y^3+z^2,x*Exp[z]}
+Curl[F[x,y,z],{x,y,z}]
+Div[F[x,y,z],{x,y,z}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Gráficos de campos vectoriales} \index{VectorPlot}
+Con la instrucción \verb"VectorPlot[F(x,y),{x,a,b},{y,c,d}]" se obtiene un gráfico del campo vectorial
+${\bf F}(x,y)$, para $x \in [a,b]$, $y\in [c,d]$. 
+La sintaxis que se debe usar para obtener una representación del campo vectorial ${\bf F}(x,y,z)$ es
+\verb"VectorPlot3D[F[x,y,z],{x,a,b},{y,c,d},{z,p,q}]". \index{VectorPlot3D}
+El campo vectorial ${\bf F}(x,y)= \la \frac{-x-y}{\sqrt{x^2+y^2}}, \frac{x-y}{\sqrt{x^2+y^2}} \ra$, 
+se representa para $x \in [-1,1],$ $y \in [-1,1].$ También se presentan algunas \emph{líneas de flujo}\footnote{Para un campo vectorial ${\bf F}$, una línea de flujo para ${\bf F}$ es una curva ${\bf r}(t)$ tal que
+${\bf r}^\prime(t) = {\bf F}({\bf r}(t)).$ Esto es,
+${\bf F}$ corresponde al campo de velocidades de la curva ${\bf r}(t)$}, esto se logra
+utilizando la función \verb"StreamPlot".  \index{StreamPlot} \index{StreamStyle}\index{StreamScale}
+
+\begin{figure}[H]
+	\begin{center}
+		\captionof{figure}{\small Campo vectorial $\la \frac{-x+y}{\sqrt{x^2+y^2}}, \frac{x-y}{\sqrt{x^2+y^2}} \ra$.}
+		\includegraphics[scale=0.45]{Img/T_55a.eps} \hspace{0.5cm}
+		\includegraphics[scale=0.45]{Img/T_55b.eps}
+		\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+	\end{center}
+\end{figure}
+
+Las instrucciones requeridas son, respectivamente las siguientes.
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+VectorPlot[{-(x+y)/Sqrt[x^2+y^2],(x-y)/
+Sqrt[x^2+y^2]},
+{x,-1,1},{y,-1,1},VectorStyle->Black]
+StreamPlot[{-(x+y)/Sqrt[x^2+y^2],(x-y)/
+Sqrt[x^2+y^2]},
+{x,-1,1},{y,-1,1},
+StreamStyle->Black,StreamScale->0.08]
+\end{Verbatim}
+\end{tcolorbox}
+
+En estas notas nos ocuparemos de obtener la representación gráfica de un campo vectorial ${\bf F}(x,y,z)$ sobre una superficie determinada por la expresión $g(x,y,z)=0$, para $x\in [a,b],$  $y\in [c,d]$, $z\in [e,f]$. Esto se 
+logra en \verb"Mathematica" utilizando la función \verb"SliceVectorPlot3D". La estructura general es la siguiente:
+\begin{tcolorbox}[breakable,enhanced,title=Campos vectoriales sobre superficies] 
+\begin{Verbatim}[formatcom=\letraverbatim]
+SliceVectorPlot3D[F[x,y,x],{g[x,y,z]=0},{x,a,b},
+{y,c,d},{z,e,f},Opciones]
+\end{Verbatim}
+\end{tcolorbox} \index{SliceVectorPlot3D}
+
+\vspace{-2mm}
+
+La figura del campo vectorial ${\bf F}(x,y,z)= \la y,-x,x+z \ra$, sobre la superficie del sólido 
+acotado por las figuras de las expresiones $z=2(1-x^2-y^2)$ y $z+1=(x^2+y^2)^2$ se obtiene ejecutando 
+las siguientes instrucciones. La intersección está determinada por la ecuación $x^2+y^2=1$,
+por este motivo se agregó la condición $x^2+y^2\leq 1$.
+
+\vspace{-3mm}
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+SliceVectorPlot3D[{y,-x,x+z},{(x^2+y^2)^2==z+1,
+z==2*(1-x^2-y^2)},{x,-1,1},{y,-1,1},{z,-1,2.2},
+RegionFunction->Function[{x,y,z},x^2+y^2<=1],
+VectorScale->{0.18,Scaled[0.3],Automatic},
+VectorStyle->Black,
+VectorPoints->16,PlotStyle->Orange]
+\end{Verbatim}
+\end{tcolorbox}
+
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Campo vectorial ${\bf F}(x,y,z)= \la y,-x,x+z \ra$.}
+	\begin{minipage}{0.18\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_28a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.18\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_28b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+La figura del campo vectorial ${\bf F}(x,y,z)= \la -y,x,z/2 \ra$ sobre la superficie del paraboloide $4z=4-x^2-y^2$ con la condición $x^2+y^2\leq 4$. 
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Campo vectorial ${\bf F}(x,y,z)= \la -y,x,z/2 \ra$.}
+	\begin{minipage}{0.19\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_27a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.19\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_27b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Esta figura se obtiene compilando la siguiente instrucción. En esta se usó el comando \verb"RegionFunction" que restringe el dominio en la figura de la superficie. \index{RegionFunction}
+
+\vspace{-2mm}
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+SliceVectorPlot3D[{-y,x,z/2},{4*z==4-x^2-y^2},
+{x,-2,2},
+{y,-2,2},{z,0,1.1},RegionFunction->Function[{x,y,z},
+x^2+y^2<=4],
+VectorScale->{0.15,Scaled[0.25],Automatic},
+VectorStyle->Black,VectorPoints->16,
+PlotStyle->Orange,
+Ticks->{{-2,-1,0,1,2},{-2,-1,0,1,2},{0,1}}]
+\end{Verbatim}
+\end{tcolorbox}
+
+También se puede obtener la representación gráfica de un campo vectorial con
+la opción \verb"ListSliceVectorPlot3D." Si se considera el campo vectorial ${\bf F}(x,y,z)$
+para $x\in[a,b],$ $y\in[c, d],$ $z\in[e,f]$, se crea una tabla que denominaremos datos,
+posteriormente se dibuja el campo vectorial sobre la superficie determinada por
+la expresión $g(x,y,z)=0$. En este caso la sintaxis básica es la siguiente:
+
+\enlargethispage{\baselineskip}
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+datos=Table[F[x,y,z],{x,a,b},{y,c,d},{z,e,f}];
+ListSliceVectorPlot3D[datos,
+ImplicitRegion[g[x,y,z]==0,{x,y,z}],
+DataRange->{{a,b},{c,d},{e,f}}]
+\end{Verbatim}
+\end{tcolorbox}
+
+El campo vectorial ${\bf F}(x,y,z) =\la x+z,y,2x-z \ra$ se representa 
+sobre la superficie $z= (y^2-x)e^{1-x^2-y^2}$. 
+
+\vskip0.2cm
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Campo vectorial ${\bf F}(x,y,z) =\la x+z,y,2x-z \ra$.}
+	\begin{minipage}{0.21\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_33a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.21\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_33b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+Las instrucciones requeridas para obtener esta figura son las siguientes:
+%ContourPlot3D[z==(y^2-x)*Exp[1-x^2-y^2],{x,-2,2},{y,-2,2},
+%{z,-2,2},MeshStyle->Gray,ContourStyle->Orange]
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+datos=Table[{x+z,y,2*x-z},{x,-2,2},{y,-2,2},
+{z,-1,1}];
+ListSliceVectorPlot3D[datos,
+ImplicitRegion[z==(y^2-x)*Exp[1-x^2-y^2],{x,y,z}],
+VectorPoints->12,DataRange->{{-2,2},{-2,2},{-2,2}},
+VectorStyle->{Thin,Black,Thick}]
+\end{Verbatim}
+\end{tcolorbox}
+
+La representación del campo vectorial ${\bf F}(x,y,z) =\la x-z,y,z+2 \ra$ sobre la superficie
+del paraboloide hiperbólico $4z=x^2-y^2$ con la condición $x^2+y^2 \leq 4$, se obtiene con las 
+siguientes instrucciones:
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim] 
+datos=Table[{x-z,y,z+2},{x,-2,2},{y,-2,2},{z,-1,1}];
+ListSliceVectorPlot3D[datos,
+ImplicitRegion[4*z==x^2-y^2&&x^2+y^2<=4,{x,y,z}],
+VectorPoints->12,DataRange->{{-2,2},{-2,2},
+{-5/4,5/4}},VectorStyle->{Thin,Black,Thick}]
+\end{Verbatim}
+\end{tcolorbox}
+
+\noindent
+\begin{minipage}{\textwidth}
+	\centering
+	\captionof{figure}{\small Campo vectorial ${\bf F}(x,y,z) =\la x-z,y,z+2 \ra$.}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_54a.eps}
+	\end{minipage}
+	\hspace{1em}
+	\begin{minipage}{0.22\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Img/T_54b.eps}
+	\end{minipage}
+	
+	\vspace{0.3em}
+	\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
+\end{minipage}
+\vskip0.2cm
+
+
+\subsection*{Campos conservativos y función potencial}
+Recordemos que si ${\bf F} = P(x, y,z)\vi +Q(x,y,z)\vj +P(x,y,z)\vk$ 
+es un campo vectorial conservativo existe un campo escalar $\phi $ tal que $\nabla \phi ={\bf F}.$ 
+
+%\clearpage
+\begin{ejemplo}
+El campo vectorial 
+{\small ${\bf F}(x,y,z) = \left\langle y^{3}e^{-z},3xy^{2}e^{-z},3z^{2}-xy^{3}e^{-z}\right\rangle,$}
+es conservativo. Las funciones $P$, $Q$ y $R$ son respectivamente las funciones componentes de ${\bf F}$. 
+Para hallar la función potencial \index{Función!potencial} proceder como sigue, 
+se integra $P$ con respecto a $x$, esto es 
+$$\phi (x,y,z) = \int \left( y^{3}e^{-z}\right)
+dx= xy^{3}e^{-z}+g\left( y,z\right) $$
+Ahora se compara $\frac{\partial \phi }{\partial y}$ con $Q\left(x,y,z\right) ,$ esto es
+$\frac{\partial \phi }{\partial y}= 3xy^{2}e^{-z}+\frac{\partial g}{\partial y}=3xy^{2}e^{-z},$ entonces 
+$\frac{\partial g}{\partial y}=0,$ es decir, $g$ no depende de $y,$ por lo tanto, 
+$$\phi (x,y,z) = xy^{3}e^{-z}+g\left(z\right) .$$
+Luego se compara $\frac{\partial \phi }{\partial z}$ con 
+$R(x,y,z),$ esto es $\frac{\partial \phi }{\partial z}= -xy^{3}e^{-z}+g^{\prime}(z) = 3z^{2}-xy^{3}e^{-z}$
+entonces $g^{\prime}\left( z\right) =3z^{2},$ de lo cual se sigue que $g\left( z\right) =z^{3}+c.$ Por lo tanto, 
+$$\phi (x,y,z) = xy^{3}e^{-z}+z^{3}+c.$$
+\end{ejemplo}
+
+En \verb"Wolfram Matematica" este campo escalar puede hallarse mediante la solución de
+un sistema de ecuaciones diferenciales parciales: 
+$$\left. \begin{array}{c}
+\frac{\partial \phi }{\partial x}(x,y,z)=P(x,y,z) \\[0.15cm] 
+\frac{\partial \phi }{\partial y}(x,y,z) =Q(x,y,z) \\[0.15cm] 
+\frac{\partial \phi }{\partial z}(x,y,z) =R(x,y,z) 
+\end{array}%
+\right\} $$
+
+
+Con las siguientes instrucciones además de determinar si el campo vectorial es conservativo, se halla la función potencial.
+Se utiliza la función \verb"If", la cual permite elegir entre dos resultado dependiendo si la prueba es verdadera o falsa. \index{If}
+
+\begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
+\begin{Verbatim}[formatcom=\letraverbatim]
+{P,Q}={y^3*Exp[-z],3x*y^2*Exp[-z]};
+R=3*z^2-x*y^3*Exp[-z];
+If[D[P,y]==D[Q,x]&&D[P,z]==D[R,x]&&D[Q,z]==D[R,y],
+"El Campo vectorial es conservativo",
+"El Campo Vectorial No es conservativo"]
+DSolve[{D[\[Phi][x,y,z],x]==P,D[\[Phi][x,y,z],y]==Q,
+D[\[Phi][x,y,z],z]==R},\[Phi][x,y,z],x,y,z]
+\end{Verbatim}
+\end{tcolorbox}
+\newpage
