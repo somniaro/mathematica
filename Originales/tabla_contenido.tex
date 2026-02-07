@@ -10,17 +10,17 @@
 {}
 {\hfill\small\lhseries\contentspage\vspace{1.0mm}}[]
 
-% CAPÍTULOS: Cambia {\thecontentslabel.\quad} por {} si quieres ocultar el número
+% CAPÍTULOS: formato "Capítulo 1. Título"
 \titlecontents{chapter}[0em]
-{\medseries\normalsize}
-{\thecontentslabel.\quad} % <--- Muestra "1. " o "2. "
+{\vspace{1.5mm}\medseries\normalsize}
+{Capítulo~\thecontentslabel.\enspace}
 {}
 {\hfill\small\lhseries\contentspage\vspace{2.5mm}}[]
 
 % SECCIONES: Cambia {\thecontentslabel\quad} por {} si quieres ocultar el número
 \titlecontents{section}[1.5em]
-{\lhseries}
-{\thecontentslabel\quad} % <--- Muestra "1.1 "
+{\lhseries}%{\thecontentslabel\quad} % <--- Muestra "1.1 "
+{} 
 {}
 {\hfill\small\lhseries\contentspage\vspace{0.5mm}}[]
 

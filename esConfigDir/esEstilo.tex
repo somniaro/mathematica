@@ -5,11 +5,9 @@
 \usepackage[spanish]{babel}
 \usepackage{csquotes}
 \usepackage{caption}
-\usepackage[titles]{tocloft}
-
 \usepackage{titlesec}
-\usepackage[titletoc]{appendix}
 \usepackage{titletoc}
+\usepackage[titles]{tocloft}
 
 %\setlength{\parindent}{1.25cm}
 %\setlength\parindent{0pt}
@@ -22,57 +20,66 @@
 \definecolor{MSCustomBlackT}{RGB}{20, 20, 20}
 \definecolor{MSCustomBlackST}{RGB}{58, 59, 66}
 
-
-
 \newcommand\fontstit{\medseries}
-\newcommand\fontschap{\medseries}
-\newcommand\fontssec{\medseries}
-\newcommand\fontssubsec{\medseries}
-\newcommand\fontssubsubsec{\lhseries}
-\newcommand\fontsparagraph{\lhseries\itshape}
+\newcommand\fontschap{\regseries}
+\newcommand\fontssec{\regseries}
+\newcommand\fontssubsec{\regseries}
+\newcommand\fontssubsubsec{\regseries}
+\newcommand\fontsparagraph{\regseries\itshape}
 
-%para no colocar numeros en partes, secciones y subsecciones.
-\renewcommand{\thepart}{}
-\renewcommand{\thesection}{}
-\renewcommand{\thesubsection}{}
-\renewcommand{\thesubsubsection}{}
+% Small caps
+\newcommand{\smallcaps}[1]{\textls[25]{\textsc{\MakeLowercase{#1}}}}
 
 %configuracion para titulos de partes, capitulos, secciones, subsecciones, subsubsecciones
+\newcommand{\chapterlabel}{\regseries Capítulo~\thechapter.}
 
-\titleformat{\part}{\color{MSBlack}\fontsize{25pt}{2.0mm} \fontstit }{\thesection}{12pt}{}
-\titleformat{\chapter}[block]{\color{MSBlack}\fontsize{25pt}{2.5mm} \fontschap}{Capítulo \thechapter.}{12pt}{\raggedright}
-\titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{2.0mm} \fontssec}{\thesection}{0pt}{\raggedright}
-\titleformat{\subsection}{\color{MSBlack}\fontsize{13pt}{2.0mm}\fontssubsec}{\thesubsection}{12pt}{}
-\titleformat{\subsubsection}{\color{black}\fontsize{13pt}{2.0mm}\fontssubsubsec}{\thesubsubsection}{12pt}{}
-\titleformat{\paragraph}{\color{black}\fontsize{13pt}{2.0mm}\fontsparagraph}{\theparagraph}{12pt}{}
+% \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
+
+\titleformat{\part}[display]{\color{MSBlack}\fontsize{25pt}{2.0mm}\selectfont\fontstit}{\thepart}{12pt}{\raggedright}
+\titleformat{\chapter}[block]{\color{MSBlack}\fontsize{25pt}{2.5mm}\selectfont\fontschap}{\chapterlabel}{0.3em}{\raggedright}
+\titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{2.0mm}\selectfont\fontssec}{\thesection}{0.5em}{\raggedright}
+\titleformat{\subsection}[block]{\color{MSBlack}\fontsize{13pt}{2.0mm}\selectfont\fontssubsec}{\thesubsection}{0.5em}{\raggedright}
+\titleformat{\subsubsection}[block]{\color{black}\fontsize{12pt}{2.0mm}\selectfont\fontssubsubsec}{\thesubsubsection}{0.5em}{\raggedright}
+\titleformat{\paragraph}[block]{\color{black}\fontsize{12pt}{2.0mm}\selectfont\fontsparagraph}{\theparagraph}{0.5em}{\raggedright}
 
 %Espacios para titulos
 \titlespacing{\part}{0cm}{10cm}{2.8cm}
 \titlespacing{\chapter}{0cm}{1cm}{2.8cm}
-\titlespacing{\section}{0cm}{5mm}{-0mm}
-\titlespacing{\subsection}{-0.45cm}{5mm}{0mm} %%parece que hay un error en la configuracion de latex en la identación de la subsection
+\titlespacing{\section}{0cm}{7mm}{2mm}
+\titlespacing{\subsection}{0cm}{5mm}{2mm} 
 \titlespacing{\subsubsection}{0cm}{5mm}{0mm}
 \titlespacing{\paragraph}{0cm}{5mm}{0mm}
 
+% Configuración para apéndices
+\makeatletter
+\g@addto@macro{\appendix}{%
+\titleformat{\chapter}[block]{\color{MSBlack}\fontsize{25pt}{2.5mm}\selectfont\fontschap}{Apéndice~\thechapter.}{0.3em}{\raggedright}
+  \titlecontents{chapter}[0em]
+    {\vspace{1.5mm}\medseries\normalsize}
+    {Apéndice~\thecontentslabel.\enspace}
+    {}
+    {\hfill\small\lhseries\contentspage\vspace{2.5mm}}[]
+}
+\makeatother
+
 %configuracion tabla de contenido
-%\titlecontents{part}[-1.1em]
-\titlecontents{part}[-1.1em]
+\titlecontents{part}[0em]
 {\bf \sbseries\normalsize}%
 {}% numbered sections formatting
 {}% unnumbered sections formatting
 {\titlerule*[1pc]{}\small\lhseries\contentspage \vspace{1.0mm}}[]%
 
 \titlecontents{chapter}[0em]
-{\medseries\normalsize}%
-{}% numbered sections formatting
+{\vspace{1.5mm}\medseries\normalsize}%
+{Capítulo~\thecontentslabel.\enspace}% numbered sections formatting
 {}% unnumbered sections formatting
-{\titlerule*[1pc]{}\small\lhseries\contentspage \vspace{2.5mm}}[]%
+{\titlerule*[1pc]{}\footnotesize\lhseries\contentspage \vspace{1mm}}[]%
 
 \titlecontents{section}[1.5em]
-{\lhseries}%
+{\small\lhseries}%
 {}% numbered sections formatting
 {}% unnumbered sections formatting
-{\titlerule*[1pc]{}\small\lhseries\contentspage \vspace{0.5mm}}[]%
+{\titlerule*[1pc]{}\footnotesize\lhseries\contentspage \vspace{0.5mm}}[]%
 
 \titlecontents{subsection}[3em]
 {\lhseries}%
