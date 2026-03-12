@@ -1,4 +1,5 @@
 {
+  "latex-workshop.latex.autoBuild.run": "never", // "onSave"
   "latex-workshop.formatting.latex": "tex-fmt",
   "latex-workshop.latex.tools": [
     {

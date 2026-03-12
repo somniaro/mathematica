@@ -8,6 +8,7 @@
 \usepackage{titlesec}
 \usepackage{titletoc}
 \usepackage[titles]{tocloft}
+\usepackage{xstring}
 
 %\setlength{\parindent}{1.25cm}
 %\setlength\parindent{0pt}
@@ -40,27 +41,17 @@
 \titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{2.0mm}\selectfont\fontssec}{\thesection}{0.5em}{\raggedright}
 \titleformat{\subsection}[block]{\color{MSBlack}\fontsize{13pt}{2.0mm}\selectfont\fontssubsec}{\thesubsection}{0.5em}{\raggedright}
 \titleformat{\subsubsection}[block]{\color{black}\fontsize{12pt}{2.0mm}\selectfont\fontssubsubsec}{\thesubsubsection}{0.5em}{\raggedright}
-\titleformat{\paragraph}[block]{\color{black}\fontsize{12pt}{2.0mm}\selectfont\fontsparagraph}{\theparagraph}{0.5em}{\raggedright}
+\titleformat{\paragraph}[block]{\color{black}\fontsize{11pt}{2.0mm}\selectfont\fontsparagraph}{\theparagraph}{0.5em}{\raggedright}
 
 %Espacios para titulos
+%\titlespacing{<command>}{<left>}{<before-sep>}{<after-sep>}[<right-sep>]
+
 \titlespacing{\part}{0cm}{10cm}{2.8cm}
 \titlespacing{\chapter}{0cm}{1cm}{2.8cm}
 \titlespacing{\section}{0cm}{7mm}{2mm}
 \titlespacing{\subsection}{0cm}{5mm}{2mm} 
 \titlespacing{\subsubsection}{0cm}{5mm}{0mm}
 \titlespacing{\paragraph}{0cm}{5mm}{0mm}
-
-% Configuración para apéndices
-\makeatletter
-\g@addto@macro{\appendix}{%
-\titleformat{\chapter}[block]{\color{MSBlack}\fontsize{25pt}{2.5mm}\selectfont\fontschap}{Anexo~\thechapter.}{0.3em}{\raggedright}
-  \titlecontents{chapter}[0em]
-    {\vspace{1.5mm}\medseries\normalsize}
-    {Anexo~\thecontentslabel.\enspace}
-    {}
-    {\hfill\small\lhseries\contentspage\vspace{2.5mm}}[]
-}
-\makeatother
 
 %configuracion tabla de contenido
 \titlecontents{part}[0em]
@@ -75,17 +66,29 @@
 {}% unnumbered sections formatting
 {\titlerule*[1pc]{}\footnotesize\lhseries\contentspage \vspace{1mm}}[]%
 
-\titlecontents{section}[1.5em]
+\titlecontents{section}[1em]
 {\small\lhseries}%
-{}% numbered sections formatting
+{\thecontentslabel\enspace}% numbered sections formatting
 {}% unnumbered sections formatting
 {\titlerule*[1pc]{}\footnotesize\lhseries\contentspage \vspace{0.5mm}}[]%
 
-\titlecontents{subsection}[3em]
+\titlecontents{subsection}[2em]
 {\lhseries}%
 {}% numbered sections formatting
 {}% unnumbered sections formatting
 {\titlerule*[1pc]{}\small\lhseries\contentspage \vspace{0.5mm}}[]%
+
+% Configuración para apéndices
+\makeatletter
+\g@addto@macro{\appendix}{%
+  \titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{2.0mm} \fontssec}{Anexo \arabic{section}.}{0.5em}{\raggedright}%
+  \titlecontents{section}[1em]
+  {\small\lhseries}%
+  {Anexo~\StrGobbleLeft{\thecontentslabel}{1}.\enspace}
+  {}
+  {\titlerule*[1pc]{}\footnotesize\lhseries\contentspage \vspace{0.5mm}}[]%
+}
+\makeatother
 
 \usepackage{setspace}
 \linespread{1.1}
@@ -183,28 +186,30 @@
 %%%%%%%%%% PORTADILLA 1 %%%%%%%%%%%%%%%
 \newcommand{\portadillauno}[2]{
 \vspace*{6.5cm}
-\begin{flushleft}
+\begin{raggedright}
   \linespread{3}
 %  \color{MSCustomBlackT}\lsstyle
   \color{MSBlack}\lsstyle
   \fontsize{22pt}{3.0mm} \lhseries
-
   \leftskip=2mm
-  #1   
+  \rightskip=40mm
+  #1  
   \vspace{2mm}
   \leftskip=-5mm
 
-  %{\color{white}\colorbox{MSCustomGray}
-    %{\parbox[][1.5cm][c]{15.2cm}{
-        %\parbox{12.5cm}{\leftskip=7mm \fontsize{17pt}{2.5mm} \lhseries \vspace{1.0mm}
-%          Consed ut escimos num sequid ut aut mos {\break} excerro et et, tempos quam, optat fuga.\vspace{0.5mm}
-          %#2 \vspace{0.5mm}
-        %}
-      %}
-    %}
-  %}
+  {\color{white}\colorbox{MSCustomGray}
+    {\parbox[][1.5cm][c]{15.2cm}{
+        \parbox{12.5cm}{
+          \leftskip=7mm 
+          \fontsize{17pt}{2mm}\selectfont \lhseries 
+          \vspace{1mm}
+          #2
+        }
+      }
+    }
+  }
 
-\end{flushleft}}
+\end{raggedright}}
 %%%%%%%%%% FIN PORTADILLA 1 %%%%%%%%%%%%%%%
 
 %%%%%%%%%% PORTADILLA 2 %%%%%%%%%%%%%%%

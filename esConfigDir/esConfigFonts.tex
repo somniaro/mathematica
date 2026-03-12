@@ -22,7 +22,11 @@
   FontFace = {sb}{n}{Kanit-SemiBold.ttf},
   FontFace = {sb}{it}{Kanit-SemiBoldItalic.ttf},
   FontFace = {th}{n}{Kanit-Thin.ttf},
-  FontFace = {th}{it}{Kanit-ThinItalic.ttf}
+  FontFace = {th}{it}{Kanit-ThinItalic.ttf},
+  FontFace = {op}{n}{OptimaLTStd.otf},
+  FontFace = {op}{it}{OptimaLTStd-Italic.otf},
+  FontFace = {opb}{n}{OptimaLTStd-Bold.otf},
+  FontFace = {opb}{it}{OptimaLTStd-BoldItalic.otf},
 ]
 
 \DeclareRobustCommand{\kseries}{\fontseries{k}\selectfont}
@@ -45,3 +49,7 @@
 \DeclareTextFontCommand{\textsb}{\sbseries}
 \DeclareRobustCommand{\thseries}{\fontseries{th}\selectfont}
 \DeclareTextFontCommand{\textth}{\thseries}
+\DeclareRobustCommand{\opseries}{\fontseries{op}\selectfont}
+\DeclareTextFontCommand{\textop}{\opseries}
+\DeclareRobustCommand{\opbseries}{\fontseries{opb}\selectfont}
+\DeclareTextFontCommand{\textopb}{\opbseries}

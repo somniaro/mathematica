@@ -1,5 +1,9 @@
+\chapter*{Anexos}
+\addcontentsline{toc}{chapter}{Anexos}
+
 \appendix
-\chapter{Funciones hiperbólicas}
+
+\section{Funciones hiperbólicas}
 
 Existe un tipo particular de funciones que poseen algunas similitudes con las funciones trigonométricas,
 las funciones hiperbólicas. Es posible que su nombre corresponda con esa semejanza o al siguiente hecho,
@@ -117,18 +121,18 @@ las siguientes funciones:}
 \item Muestre que las derivadas de las funciones hiperbólicas inversas son las siguientes, compruebe las siguientes igualdades
 \begin{itemize}
 \item $\frac{d}{dx}\left({\rm arcsinh}(x) \right) = \dfrac{1}{\sqrt{x^{2}+1}}$ 
-\item $\frac{d}{dx}\left({\rm arccosh}(x)\right ) =\dfrac{1}{\sqrt{x^{2}-1}}$
+\item $\frac{d}{dx}\left({\rm arccosh}(x)\right) =\dfrac{1}{\sqrt{x^{2}-1}}$
 \item $\frac{d}{dx}\left({\rm arctanh}(x)\right) =\dfrac{1}{1-x^{2}}$
-\item $\frac{d}{dx}\left({\rm arccoth}(x)\right ) =\dfrac{1}{1-x^{2}}$
-\item $\frac{d}{dx}\left({\rm arcsech}(x)\right ) =\dfrac{-1}{x\sqrt{1-x^{2}}}$
-\item $\frac{d}{dx}\left({\rm arccsch}(x)\right ) =\dfrac{-1}{x\sqrt{1+x^{2}}}$
+\item $\frac{d}{dx}\left({\rm arccoth}(x)\right) =\dfrac{1}{1-x^{2}}$
+\item $\frac{d}{dx}\left({\rm arcsech}(x)\right) =\dfrac{-1}{x\sqrt{1-x^{2}}}$
+\item $\frac{d}{dx}\left({\rm arccsch}(x)\right) =\dfrac{-1}{x\sqrt{1+x^{2}}}$
 \end{itemize}
 \end{enumerate}
 \end{ejer}
 
 
 
-\chapter{Sumatorias}
+\section{Sumatorias}
 
 Presentamos algunas fórmulas que se requieren para los elementos que se trabajarán de este apartado. La primera expresión corresponde a sumar $n$ veces una constante, esto es:
 \begin{equation} \label{sumas}
@@ -167,7 +171,7 @@ De donde se desprende la expresión
 De manera general, con la suma telescópica 
 \[\sum\limits _{k=1}^{n}\left( \left(k+1\right) ^{r}-k^{r}\right) = (n+1) ^{r}-1,\]
 es posible obtener la f\'{o}rmula para sumar las potencias $r-$ésimas de los primeros $n$ números naturales, 
-para todo $r\in \mathbb{N}.$ 
+para todo $r\in \mathbb{N}$.
 \end{tcolorbox}
 En particular,
 \begin{eqnarray} 
@@ -181,7 +185,7 @@ En particular,
 
 
 
-\chapter{Sólidos de revolución en \\ coordenadas paramétricas}
+\section[Sólidos de revolución en coordenadas paramétricas]{Sólidos de revolución en \texorpdfstring{\\ }{ } coordenadas paramétricas}
 
 Los resultados de esta sección han sido estudiados muy posiblemente como aplicaciones de la integración en una variable,
 algunos elementos como el concepto de \emph{momento} pueden consultarse particularmente en \cite{thomas_calculo_2015}. \index{Momento}
@@ -252,7 +256,7 @@ Si $r=\overline{y}-c$ es la distancia que recorre el centroide del eje de giro, 
 \end{itemize}
 \end{proof}
 
-\subsection*{Longitud de una curva en coordenadas paramétricas}
+\subsubsection*{Longitud de una curva en coordenadas paramétricas}
 
 Para la curva $C$ parametrizada en la forma ${\bf r}(t)=\langle f(t),g(t)\rangle$ con $t\in [a,b],$ 
 consideremos dos puntos sobre la curva 
@@ -273,7 +277,7 @@ f\left( t_{i}+\Delta t\right) -f\left( t_{i}\right) }{\Delta t}\right)
 &=& \int_{a}^{b}\sqrt{\left(f^{\prime}(t)\right)^{2}+\left(g^{\prime}(t)\right)^{2}}dt=\int_{a}^{b}\Vert{\bf r}^\prime(t)\Vert dt.
 \end{eqnarray*}
 Esta expresión es la misma ecuación \ref{curvas}.
-\subsection*{Volumen de sólidos de revolución en coordenadas \\ paramétricas}
+\subsubsection*{Volumen de sólidos de revolución en coordenadas \\ paramétricas}
 
 Si la curva $C$ parametrizada en la forma ${\bf r}(t)=\langle f(t),g(t)\rangle$ con $t\in [a,b],$ gira alrededor del eje $x$ 
 entonces el volumen del sólido obtenido se puede determinar de la siguiente forma.
@@ -475,7 +479,7 @@ el área y el volumen requeridos pueden hallarse con los métodos expuestos ante
 
 
 
-\chapter{Coordenadas curvilíneas \\ ortogonales}
+\section{Coordenadas curvilíneas \\ ortogonales}
 
 Un cambio de coordenadas cartesianas $(x,y,z)$ a otras diferentes $(u,v,w)$ es una transformación 
 \emph{uno a uno} que consta de tres funciones con derivadas parciales continuas 
@@ -538,8 +542,8 @@ u,v,w\right) \end{array} \right\vert\]
 Una exposición más profunda de estos temas puede consultarse en \\ \cite{poljanin_handbook_2007}
 \vskip0.2cm
 Presentamos algunos tipos de sistemas de coordenadas curvilíneas.
-\section*{Coordenadas curvilíneas en el plano} \index{Coordenadas curvilíneas}
-\subsection*{Coordenadas polares}
+\subsection*{Coordenadas curvilíneas en el plano} \index{Coordenadas curvilíneas}
+\subsubsection*{Coordenadas polares}
 Este sistema de coordenadas es posiblemente muy conocido por el lector, la relación con las coordenadas 
 cartesianas es 
 \[x = r \cos \theta, \hskip0.15cm y=r \sin \theta,\hskip0.15cm r\in [ 0,\infty),\,\theta \in [0 ,2\pi ).\]
@@ -569,7 +573,7 @@ y la semirrecta $\theta=0$ se denomina \emph{eje polar.}
 \vskip0.2cm
 
 
-\subsection*{Coordenadas bipolares} \index{Coordenadas!bipolares}
+\subsubsection*{Coordenadas bipolares} \index{Coordenadas!bipolares}
 Para este sistema de coordenadas en el plano se define
 \begin{equation}
 x =\frac{a\sinh v}{\cosh v-\cos u} ,\hskip0.5cm y=\frac{a\sin u}{\cosh v-\cos u}.
@@ -628,7 +632,7 @@ La otra igualdad se trabaja de manera similar
 % = a^2\left( \left( \frac{\sinh ^2v-\left( \cosh v-\cos u\right) \cosh v}{ \left( \cosh v-\cos u\right) \sinh v}\right) ^2+\left( \frac{\sin u}{\cosh v-\cos u}\right) ^2\right) = \frac{a^2\left( \left( \sinh ^2v-\left( \cosh v-\cos u\right) \cosh v\right) ^2+\sin ^2u\sinh^2v\right) }{\left( \cosh v-\cos u\right) ^2\sinh ^2v} = \frac{a^2\left( \left( \cos u\cosh v-1\right) ^2+\sin ^2u\sinh ^2v\right)}{\left( \cosh v-\cos u\right) ^2\sinh ^2v} 
 
 
-\subsection*{Coordenadas elípticas} \index{Coordenadas!elípticas}
+\subsubsection*{Coordenadas elípticas} \index{Coordenadas!elípticas}
 La relación entre coordenadas cartesianas y coordenadas elípticas es
 \begin{equation}
 x = a \cosh u\cos v,\hskip0.5cm y = a \sinh u \sin v.
@@ -666,11 +670,11 @@ las siguientes igualdades.
 
 
 
-\subsection*{Coordenadas curvilíneas en el espacio} \index{Coordenadas!curvilíneas en el espacio}
+\subsubsection*{Coordenadas curvilíneas en el espacio} \index{Coordenadas!curvilíneas en el espacio}
 Algunos ejemplos de los presentados en esta sección son una extensión de 
 las respectivas coordenadas en el plano.
 
-\subsubsection*{Coordenadas cilíndricas elípticas} 
+\paragraph*{Coordenadas cilíndricas elípticas} 
 \index{Coordenadas!cilíndricas elípticas}
 En este sistema de coodenadas $u$ y $v$ representan cilindros hiperbólicos confocales y cilindros elípticos confocales.
 La conversión de coordenadas cilíndricas elípticas a rectangulares es la siguiente.
@@ -723,7 +727,7 @@ Show[A2,A3,PlotRange->{{-4,4},{-4,4},{-3,3}}]
 \noindent
 
 
-\subsection*{Coordenadas cil\'{\i}ndricas parab\'{o}licas}  \index{Coordenadas!cilíndricas parab\'{o}licas}
+\subsubsection*{Coordenadas cil\'{\i}ndricas parab\'{o}licas}  \index{Coordenadas!cilíndricas parab\'{o}licas}
 La relación con las coordenadas cartesianas y el sistema de coordenadas cil\'{\i}ndricas parab\'{o}licas son las siguientes:
 \begin{equation}
 x = \frac{1}{2}\left( u^2-v^2\right),\, y = uv, \, z=z \
@@ -789,7 +793,7 @@ Show[A1,A2,A3,PlotRange->{{-4,4},{-5,5},{-2,2}}]
 
 
 
-\subsection*{Coordenadas parab\'{o}licas} \index{Coordenadas!parab\'{o}licas}
+\subsubsection*{Coordenadas parab\'{o}licas} \index{Coordenadas!parab\'{o}licas}
 Según \cite{hernandez_nolasco_familias_2012}, este sistema de coordenadas se genera por la rotación alrededor del $z$ de dos parábolas bidimensionales;
 la relación con las coordenadas cartesianas es la siguiente
 \begin{equation}
@@ -853,7 +857,7 @@ de la cual se sigue que
 \sqrt{x^2+y^2+z^2}-z &=& \frac{1}{2}\left( u^2+v^2\right) -\frac{1}{2}\left( u^2-v^2\right) = v^2
 \end{eqnarray*}
 
-\subsection*{Coordenadas cilíndricas bipolares} \index{Coordenadas!cilíndricas bipolares}
+\subsubsection*{Coordenadas cilíndricas bipolares} \index{Coordenadas!cilíndricas bipolares}
 Este sistema de coordenadas se relaciona con las coordenadas cartesianas de la siguiente manera.
 \vspace{-2mm}
 \begin{equation}
@@ -926,8 +930,8 @@ v=\frac{1}{2}\ln \left( \frac{\left(x+a\right)^{2}+y^{2}}{\left( x-a\right)^{2}+
 }
 \end{ejer}
 
-\subsection*{Coordenadas toroidales} \index{Coordenadas!toroidales}
-\subsubsection*{Construcción de un toro}
+\subsubsection*{Coordenadas toroidales} \index{Coordenadas!toroidales}
+\paragraph*{Construcción de un toro}
 
 En el plano $yz,$ la circunferencia de radio $r$ y centro en el punto $(a,0)$ 
 con $a>r$ posee ecuaci\'{o}n $\left( y-a\right) ^{2}+z^{2}=r^{2}.$
@@ -960,7 +964,7 @@ Por lo tanto,
 \begin{equation} \label{toroidales3}
 x^{2}+y^{2}+z^{2}+(a^{2}-r^{2})= 2a\sqrt{x^{2}+y^{2}}
 \end{equation}
-\subsubsection*{Coordenadas toroidales} \index{Coordenadas!toroidales}
+\paragraph*{Coordenadas toroidales} \index{Coordenadas!toroidales}
 Este sistema de coordenadas se obtiene cuando se hace girar alrededor del eje $z$ 
 las coordenadas bipolares en dos dimensiones.
 
@@ -1078,7 +1082,7 @@ Cuyo producto es el siguiente.
 \end{figure}
 
 
-\subsection*{Coordenadas esferoidales oblatas.} \index{Coordenadas!esferoidales oblatas}
+\subsubsection*{Coordenadas esferoidales oblatas.} \index{Coordenadas!esferoidales oblatas}
 
 Un esferoide oblato es el sólido que se obtiene al hacer una elipse sobre su eje menor.
 Las coordenadas esferoides oblatas (achatadas) se originan cuando una elipse rota alrededor de su eje menor,
@@ -1139,7 +1143,7 @@ Show[A3,A2,A1,BoxRatios->{1,1,1}]
 \noindent
 
 
-\subsection*{Coordenadas esferoides prolatas} \index{Coordenadas!esferoides prolatas}
+\subsubsection*{Coordenadas esferoides prolatas} \index{Coordenadas!esferoides prolatas}
 
 Al hacer girar una elipse sobre su eje mayor el sólido obtenido se denomina
 esferoide prolato.
@@ -1197,7 +1201,7 @@ Show[A1,A3]
 \noindent
 
 
-\subsection*{Coordenadas c\'{o}nicas} \index{Coordenadas!c\'{o}nicas}
+\subsubsection*{Coordenadas c\'{o}nicas} \index{Coordenadas!c\'{o}nicas}
 
 Las siguientes ecuaciones definen este sistema de coordenadas:
 {\small
@@ -1257,7 +1261,7 @@ describe un cono elíptico con $x$ como eje de simetr\'{\i}a y $w$ constante.
 Obtener algunas superficies constantes en coordenadas cónicas.
 \end{ejer}
 
-\subsection*{Coordenadas biesf\'{e}ricas} \index{Coordenadas!biesf\'{e}ricas}
+\subsubsection*{Coordenadas biesf\'{e}ricas} \index{Coordenadas!biesf\'{e}ricas}
 
 Las expresiones que definen este sistema de coordenadas son
 \begin{equation}
@@ -1347,7 +1351,7 @@ Show[A3,A1,A2,PlotRange->{-2,4}]
 \noindent
 
 
-\subsection*{Coordenadas cardioidicas} \index{Coordenadas!cardioidicas}
+\subsubsection*{Coordenadas cardioidicas} \index{Coordenadas!cardioidicas}
 
 En este sistema de coordenadas se generan, en algunos, casos cardioides de revolución.
 
@@ -1433,7 +1437,7 @@ De la expresión $\tan \theta =\frac{y}{x}$ se observa que valores constantes $\
 determinan semiplanos.
 \end{proof}
 
-\subsection*{Coordenadas elipsoidales.} \index{Coordenadas!elipsoidales}
+\subsubsection*{Coordenadas elipsoidales.} \index{Coordenadas!elipsoidales}
 Las coordenadas elipsoidales confocales $\left( u,v,w\right) $ o simplemente elipsoidales se relacionan con el sistema de coordenadas cartesianas como sigue
 \begin{eqnarray*}
  x^{2} &=&\frac{u^2 v^2 w^2}{b^2 c^2} \\
@@ -1453,7 +1457,7 @@ $w$ es constante entonces la ecuación \ref{elipsoidales3} determina un hiperbol
 Hallar algunas superficies constantes en coordenadas elipsoidales.
 \end{ejer}
 
-\subsection*{Coordenadas esf\'{e}ricas y cil\'{\i}ndricas} \index{Coordenadas!esféricas} \index{Coordenadas!cilíndricas}
+\subsubsection*{Coordenadas esf\'{e}ricas y cil\'{\i}ndricas} \index{Coordenadas!esféricas} \index{Coordenadas!cilíndricas}
 Estas coordenadas son quiz\'{a}s las m\'{a}s estudiadas en un curso de cálculo vectorial. En la página \pageref{esfericas} las consideramos, recordemos su definición
 \[x=\rho \cos \theta \sin \phi, \, y=\rho \sin \theta \sin \phi,\,z=\rho \cos \phi\]
 con $\rho \geq 0,$ $\theta \in \lbrack 0,2\pi ],$ $\phi \in \lbrack 0,\pi ],$ 
