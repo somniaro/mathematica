@@ -81,12 +81,13 @@
 % Configuración para apéndices
 \makeatletter
 \g@addto@macro{\appendix}{%
-  \titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{2.0mm} \fontssec}{Anexo \arabic{section}.}{0.5em}{\raggedright}%
+  \renewcommand{\thesection}{\Alph{section}}
+  \titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{2.0mm} \fontssec}{Anexo~\thesection.}{0.5em}{\raggedright}%
   \titlecontents{section}[1em]
-  {\small\lhseries}%
-  {Anexo~\StrGobbleLeft{\thecontentslabel}{1}.\enspace}
-  {}
-  {\titlerule*[1pc]{}\footnotesize\lhseries\contentspage \vspace{0.5mm}}[]%
+    {\small\lhseries}%
+    {Anexo~\thecontentslabel.\enspace}
+    {}
+    {\titlerule*[1pc]{}\footnotesize\lhseries\contentspage \vspace{0.5mm}}[]%
 }
 \makeatother
 

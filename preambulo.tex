@@ -38,7 +38,7 @@
 \usepackage[cam, width=215truemm, height=275truemm, lualatex, center]{crop} % Descomentar solo en producción final
 
 % 5. AJUSTES FINALES DE FORMATO DEL PÁRRAFO
-\usepackage{microtype} % Microtipografía avanzada
+\usepackage[final,nopatch=footnote]{microtype} % Microtipografía avanzada
 \usepackage{ragged2e} % Para control de alineación
 %\usepackage{authblk} % Manejo de autores (no se usa \author/\affil en el proyecto)
 \decimalpoint % Para usar la coma como separador decimal.
@@ -136,7 +136,6 @@ doi=true
 
 % PAQUETES DE GRÁFICOS E IMÁGENES (TUS PAQUETES ORIGINALES)
 \usepackage{graphicx}
-\usepackage{epstopdf}
 \usepackage[export]{adjustbox}
 \graphicspath{{./Fig}{./Img}{./Imgn}}
 
