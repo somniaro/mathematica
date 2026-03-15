@@ -2,7 +2,7 @@
 %% Autores: Editores UDFJC
 %% Versión:  v0.1 30MAR2024
 %% Compilar con LuaLaTeX, i.e: lualatex main.tex
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-noquoting,es-tabla,es-lcroman]{babel}
 \usepackage{csquotes}
 \usepackage{caption}
 \usepackage{titlesec}
@@ -21,7 +21,7 @@
 \definecolor{MSCustomBlackT}{RGB}{20, 20, 20}
 \definecolor{MSCustomBlackST}{RGB}{58, 59, 66}
 
-\newcommand\fontstit{\medseries}
+\newcommand\fontstit{\regseries}
 \newcommand\fontschap{\regseries}
 \newcommand\fontssec{\regseries}
 \newcommand\fontssubsec{\regseries}
@@ -102,13 +102,9 @@
 \fancyhead{}
   \fancyfoot{}
   \renewcommand{\headrulewidth}{0pt}
-%   \newcommand{\runningtitle}{\fontsparagraph \scriptsize \texttitulocorto}
-%  \fancyhf[HLE]{\lhseries\scriptsize Author's Name}
   \fancyhf[HLE]{\lhseries\scriptsize \loauthors}
-%  \fancyhf[HRO]{\runningtitle}
   \fancyhf[HRO]{\fontsparagraph \scriptsize \texttitulocorto}
   \fancyfoot[LE]{{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{}\selectfont{\reflectbox{S}}}{\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{\thinspace|\thinspace}}{\lhseries\scriptsize\thepage}}
-
   \fancyfoot[RO]{{\lhseries\scriptsize\thepage}{\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{\thinspace|\thinspace}}{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{}\selectfont{\reflectbox{S}}}}
   \fancyfoot[C]{}
 }

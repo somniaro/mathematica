@@ -1,10 +1,5 @@
 % --- PREÁMBULO FINAL OPTIMIZADO PARA LA EDITORIAL UD ---
 
-% 1. CLASE DEL DOCUMENTO Y OPCIONES GLOBALES (PRIORIDAD DE LA PLANTILLA)
-% NOTA: La clase "book" es la base, las opciones son las del formato UD.
-%\documentclass[12pt,twoside,spanish]{book}
-
-\usepackage[spanish]{babel}
 \usepackage{csquotes}
 
 % 2. CONFIGURACIÓN DEL LENGUAJE Y TIPOGRAFÍA UD (PRIORIDAD AL DISEÑO)
@@ -34,6 +29,13 @@
 % Estos son necesarios para las portadillas y las cornisas especiales.
 \input{esConfigDir/esEstilo}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 6. BIBLIOGRAFÍA (biblatex + biber, como Analisis-2-pautado: babel antes, opciones mínimas)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[backend=biber,style=ieee,sorting=none,isbn=false,doi=true]{biblatex}
+\addbibresource{Referencias/references.bib}
+\setlength{\bibitemsep}{1.5ex}
+
 %\usepackage{showframe}% Similar al calderon, apagar al terminar de maquetar.
 \usepackage[cam, width=215truemm, height=275truemm, lualatex, center]{crop} % Descomentar solo en producción final
 
@@ -43,42 +45,16 @@
 %\usepackage{authblk} % Manejo de autores (no se usa \author/\affil en el proyecto)
 \decimalpoint % Para usar la coma como separador decimal.
 \setlength\parindent{0pt} % Sin sangría al inicio de párrafos, como pide la UD.
-\newcommand{\normalfonts}{\fontsize{12pt}{14.4pt}\selectfont}
-\let\normalsize\normalfonts
+%\newcommand{\normalfonts}{\fontsize{12pt}{14.4pt}\selectfont}
+%\let\normalsize\normalfonts
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 6. BIBLIOGRAFÍA (NORMA IEEE - EDITORIAL UD)
+%%% 6. HYPERREF (después de biblatex para que los enlaces de citas funcionen)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[hidelinks, unicode]{hyperref}
-\urlstyle{same} 
-
-\usepackage[
-backend=biber,
-style=ieee,      
-sorting=none,    
-isbn=false,      
-doi=true         
-]{biblatex}
-
-\addbibresource{Referencias/references.bib}
-
-% AJUSTE DE ESPACIO (Lo que solicitaste)
-\setlength{\bibitemsep}{1.5ex} 
-
-% CORRECCIONES PARA IDIOMA ESPAÑOL
-\DefineBibliographyStrings{spanish}{
-	and = {y},              
-	bibliography = {Referencias},
-	references = {Referencias},
-	andothers = {et~al\adddot} 
-}
-
-\DeclareDelimFormat{finalnamedelim}{%
-	\ifnumgreater{\value{liststop}}{2}{\finalandcomma\addspace}{}%
-	\addspace\bibstring{y}\addspace}
-
-
+\usepackage[hidelinks,unicode,naturalnames,bookmarksopen,bookmarksdepth=2,breaklinks=true,hyperfootnotes=false]{hyperref}
+\urlstyle{same}
+\newcommand{\secref}[1]{``\nameref{#1}''}
 
 % ÍNDICES Y SUBARCHIVOS
 %\usepackage{makeidx}
