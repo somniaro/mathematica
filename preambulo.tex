@@ -64,6 +64,7 @@
 %%% 7. CORNISAS Y ESTILO DE PÁGINA (PRIORIDAD DE LA PLANTILLA Y TUS REQUERIMIENTOS)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage[bottom]{footmisc}
 \usepackage{emptypage}
 
 % Definición del estilo 'plain' para páginas de inicio de capítulo (sin cornisas)
@@ -102,13 +103,9 @@
 \usepackage{bm}
 \usepackage{physics}
 \usepackage{fontawesome}
-%\usepackage{fp} % no se usa en el proyecto
-%\usepackage{calculus} % no se usa \dint, \dsum, etc.
-%\usepackage{calculator} % no se usa \COPY, \ADD, etc.
 \usepackage{fancyvrb}
 \usepackage{mathtools}
 \usepackage{bigints}
-%\usepackage{fontawesome} % duplicado; ya cargado arriba
 
 % PAQUETES DE GRÁFICOS E IMÁGENES (TUS PAQUETES ORIGINALES)
 \usepackage{graphicx}
@@ -246,5 +243,9 @@
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% fuentes para figura
+\newcommand{\fuente}[1]{\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:}~{#1}}}
+\newcommand{\fuentepropia}{\fuente{elaboración propia.}}
 
 \raggedbottom

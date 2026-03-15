@@ -22,21 +22,21 @@ el \emph{producto punto} se denota por $\ve{u}\cdot \ve{v} = a_1b_1+a_2b_2+\cdot
 la \emph{norma} $\ve{u}$ se denota por $\Vert \ve{u} \Vert$ y se define
 por  $\Vert \ve{u}\Vert=\sqrt{a_1^2+a_2^2+\cdots+a_n^2};$ nótese que
 $\ve{u}\cdot \ve{u}=\Vert \ve{u}\Vert^2.$
-El \'{a}ngulo $\theta $ entre los vectores $\ve{u}$ y $\ve{v}$ satisface la relación
+El ángulo $\theta $ entre los vectores $\ve{u}$ y $\ve{v}$ satisface la relación
 $\ve{u} \cdot \ve{v}= \left\|\ve{u}\right\| \left\| \ve{v}\right\| \cos \theta .$
 \vskip0.2cm
 El \emph{producto cruz} entre dos vectores  $\ve{u}=\langle a_{1},a_{2},a_{3}\ra$ y 
 $\ve{v}=\langle b_{1},b_{2},b_{3}\ra$ en $\mathbb{R}^3$ es el vector 
 $$\ve{u}\times \ve{v}=\langle a_{2}b_{3}-a_{3}b_{2},a_{3}b_{1}-a_{1}b_{3},a_{1}b_{2}-a_{2}b_{1}\ra,$$
 que es ortogonal tanto a $\ve{u}$ como a $\ve{v}.$ 
-Adem\'{a}s $\left\Vert \ve{u}\times \ve{v}\right\Vert =\left\Vert \ve{u}\right\Vert\left\Vert \ve{v}\right\Vert\sin\theta;$ estos resultados se pueden consultar en detalle en \textcite{apostol_calculus_1999}.
+Además $\left\Vert \ve{u}\times \ve{v}\right\Vert =\left\Vert \ve{u}\right\Vert\left\Vert \ve{v}\right\Vert\sin\theta;$ estos resultados se pueden consultar en detalle en \textcite{apostol_calculus_1999}.
 
 La siguiente es una conocida forma de evaluar este producto,
 $$\ve{u}\times \ve{v}=\left| \begin{array}{ccc} \vi & \vj & \vk \\ a_1 &a_2&a_3 \\b_1 &b_2&b_3 \\ \end{array} \right|  $$
 El producto cruz es útil en el desarrollo de algunos de los siguientes resultados.
 \subsection*{Proyección ortogonal}
 %
-La proyecci\'{o}n ortogonal del vector $\ve{v}$ sobre el vector 
+La proyección ortogonal del vector $\ve{v}$ sobre el vector 
 $\ve{u},$ se denota por ${\rm Proy}_{\ve{u}}\ve{v}$
 y es un múltiplo escalar del vector $\ve{u}.$ Es decir 
 ${\rm Proy}_{\ve{u}}\ve{v}=k\ve{u}.$
@@ -45,13 +45,13 @@ $$\cos \theta =\frac{\left\| k\ve{u}\right\|}{\left\|
 \ve{v}\right\|}=\frac{\left| k\right| \left\| \ve{u} \right\|}{\left\|\ve{v}\right\|}.$$
 
 
-El valor $\left| k\right| $ ser\'{a} positivo si 
+El valor $\left| k\right| $ será positivo si 
 ${\rm Proy}_{\ve{u}}\ve{v}$ posee el mismo sentido de $\ve{u},$ de lo
-contrario, ser\'{a} negativo. Al igualar las expresiones para $\cos \theta $ y considerando el caso $k>0,$
+contrario, será negativo. Al igualar las expresiones para $\cos \theta $ y considerando el caso $k>0,$
 se concluye que $k=\frac{\ve{u}\cdot \ve{v}}{\left\| \ve{u}\right\| ^{2}},$ entonces 
 la proyección del vector $\ve{v}$ sobre $\ve{u}$ está dada por
 $${\rm Proy}_{\ve{u}}\ve{v}=\frac{\ve{u}\cdot\ve{v}}{\left\| \ve{u}\right\|^{2}}\ve{u}$$
-En el gr\'{a}fico la línea discontinua corresponde al vector 
+En el gráfico la línea discontinua corresponde al vector 
 $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$. Aunque nos apoyamos en un gráfico bidimensional, este resultado se puede presentar en espacios 
 de dimensión superior.
 
@@ -154,7 +154,7 @@ Por ejemplo:
 
 \begin{itemize}
 \item $\overrightarrow{r}(t) =\left\langle \ln t,\frac{1}{t},t^{2}\right\rangle ,$ es 
-una funci\'{o}n vectorial en $\mathbb{R}^{3}$ con dominio $(0,\infty ).$ 
+una función vectorial en $\mathbb{R}^{3}$ con dominio $(0,\infty ).$ 
 % El rango es el conjunto $B={\rm Rango}f=\{(x,y,z)\in\mathbb{R}^{3}/ y\neq 0, z \geq 0\}.$
 \item El campo escalar definido en $\mathbb{R}^{2}$ por $f(x,y) =\sqrt{9-x^{2}}+\sqrt{y^{2}-4}$ posee
 dominio, ${\rm dom}f=\{(x,y) \in \mathbb{R}^{2}/\left\vert x\right\vert \leq 3,\left\vert y\right\vert \geq 2\}$ y el rango de $f$ es el conjunto $[0,\infty).$
@@ -165,7 +165,7 @@ ${\rm dom}f=\{(x,y,z) \in \mathbb{R}^{3}/x\neq y\}.$
 Supondremos que el lector ha estudiado los conceptos de límite, continuidad, diferenciabilidad e integrabilidad
 en funciones reles, de tal manera que extenderemos estos elementos a los otros tipos de funciones. 
 \vskip0.2cm 
-En cuanto al dominio de la funci\'{o}n $f(x,y) =\frac{x^{4}-y^{4}}{x^{2}+y^{2}},$
+En cuanto al dominio de la función $f(x,y) =\frac{x^{4}-y^{4}}{x^{2}+y^{2}},$
 ${\rm Dom}f=\{(x,y) \in \mathbb{R}^{2}/(x,y) \neq \left( 0,0\right)\}$
 a pesar que $\left( 0,0\right) $ no es un punto del dominio de $f,$
 es natural preguntarnos: ¿qué sucede si nos acercamos al origen ? En la siguiente sección podremos 
@@ -194,13 +194,13 @@ entonces $\left\Vert \left( x^{2},x+y\right) -\left( 1,2\right) \right\Vert<\var
 \left\vert x-1\right\vert &=&\sqrt{(x-1) ^{2}}\leq \sqrt{\left(
 x-1\right) ^{2}+(y-1) ^{2}} \nonumber \\ &=&\left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
 \end{eqnarray}
-De esta relaci\'{o}n se obtiene
+De esta relación se obtiene
 \begin{multline}\label{preliminares1}
 |x-1|<\delta \rightarrow -\delta <x-1<\delta
 \rightarrow 2-\delta <x+1<\delta  \\
 \Rightarrow \left\vert x+1\right\vert<2-\delta 
 \end{multline}
-De manera an\'{a}loga,
+De manera análoga,
 \begin{eqnarray}\label{preliminares2}
 \left\vert y-1\right\vert &=& \sqrt{(y-1) ^{2}}\leq \sqrt{\left(x-1\right) ^{2}+(y-1)  ^{2}} \nonumber \\ &=& \left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta 
 \end{eqnarray}
@@ -213,7 +213,7 @@ Utilizando los resultados (\ref{preliminares}), (\ref{preliminares1}) y (\ref{pr
 &<& \delta (2-\delta) +2\delta = \delta (4-\delta). 
 \end{eqnarray*}
 Tomando $\varepsilon =\delta \left( 4-\delta \right) $, se obtiene que 
-$\delta =2-\sqrt{4-\varepsilon };$ con $0<\varepsilon < 4$ la definici\'{o}n se satisface.
+$\delta =2-\sqrt{4-\varepsilon };$ con $0<\varepsilon < 4$ la definición se satisface.
 
 \vskip0.3cm
 
@@ -232,7 +232,7 @@ De la relación
 
 si $\delta \left( \delta +\sqrt{2}\right) =\varepsilon $. Entonces 
 $\delta =\frac{\sqrt{2}}{2}\left( \sqrt{2\varepsilon +1}-1\right) ;$ lo cual hace que
-la definici\'{o}n se satisfaga.
+la definición se satisfaga.
 \end{itemize}
 Una consecuencia de la definición (\ref{preliminares5}) es la siguiente.
 \begin{teorema}\label{preliminares3}
@@ -306,7 +306,7 @@ x^{2}+xy+y^{2}\right) \right\rangle = \left\langle 2,3\right\rangle
 $$}
 \end{itemize}
 
-La imagen del conjunto $A$ por medio de la funci\'{o}n $\ve{F}$, se denota por $\ve{F}(A)$, es decir 
+La imagen del conjunto $A$ por medio de la función $\ve{F}$, se denota por $\ve{F}(A)$, es decir 
 $\ve{F}(A)=\{\ve{F}(\mathbf{x})/\mathbf{x}\in A\}.$
 Para funciones $\ve{F},\ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$
 y $h:\mathbb{R}^n \to \mathbb{R}$ usaremos las siguientes abreviaturas: 
@@ -357,7 +357,7 @@ Con la definición obtenemos las siguientes afirmaciones
 significa que para todo $\varepsilon >0$ existe $\delta >0,$ 
 es decir, si $\left\Vert \mathbf{x-x}_{0}\right\Vert <\delta $ entonces 
 $\left\Vert \ve{F}(\mathbf{x}) \mathbf{-a}\right\Vert <\frac{\varepsilon }{2}.$ 
-Por la misma raz\'{o}n 
+Por la misma razón 
 $\left\Vert \ve{G}(\mathbf{x}) \mathbf{-b}\right\Vert <\frac{\varepsilon }{2},$
 entonces
 \begin{multline*}
@@ -373,7 +373,7 @@ por lo tanto,
 \begin{multline*}
 \left\Vert h(\mathbf{x}) \ve{F}\left( \mathbf{x}\right) -k\mathbf{a}\right\Vert \mathbf{\leq }\left\vert h\left( \mathbf{x} \right) -k\right\vert \left\Vert \ve{F}(\mathbf{x}) - \mathbf{a}\right\Vert \\ +\left\vert h(\mathbf{x}) -k\right\vert \left\Vert \mathbf{a}\right\Vert +\left\vert k\right\vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert 
 \end{multline*}
-Los t\'{e}rminos de la derecha tienden a cero cuando $\mathbf{x}\to \mathbf{x}_{0}.$
+Los términos de la derecha tienden a cero cuando $\mathbf{x}\to \mathbf{x}_{0}.$
 
 \item Utilizando la desigualdad de Cauchy-Schwarz, 
 $0\leq \left\vert \ve{u}\cdot \ve{v}\right\vert \leq \left\Vert 
@@ -406,7 +406,7 @@ en estas notas.
 
 \subsection*{Funciones continuas}
 \begin{defi} \index{Función!continua}
-Se dice que una funci\'{o}n $\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ es continua en un punto 
+Se dice que una función $\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ es continua en un punto 
 $\mathbf{a}\in A$, si para todo $\varepsilon >0$ existe $\delta >0$ tal que si 
 $\left\Vert \mathbf{x}-\mathbf{a}\right\Vert <\delta, $ entonces 
 $\left\Vert \ve{F}(\mathbf{x}) -\ve{F}\left( \mathbf{a}\right) \right\Vert <\varepsilon .$
@@ -468,15 +468,15 @@ ${\bf u}, {\bf v}: \mathbb{R}\to \mathbb{R}^3.$
 
 \section{Diferenciabilidad} \label{diferencibilidad}
 Para funciones reales $f:\mathbb{R}\rightarrow \mathbb{R}$, el lector seguramente
-estar\'{a} familiarizado con la definici\'{o}n de la derivada en un punto $a$,
+estará familiarizado con la definición de la derivada en un punto $a$,
 $$f^{\prime}(a) =\lim_{h\rightarrow 0}\frac{f(a+h)-f(a) }{h}.$$
-Al considerar la transformaci\'{o}n lineal $A(h)=f^{\prime}(a)\cdot h.$
-Entonces, la expresi\'{o}n anterior se reescribe como 
+Al considerar la transformación lineal $A(h)=f^{\prime}(a)\cdot h.$
+Entonces, la expresión anterior se reescribe como 
 $$\lim_{h\rightarrow 0}\frac{f\left( a+h\right) -f\left( a\right) -A\left( h\right) }{h}=0.$$
 
-En el caso general una funci\'{o}n ${\bf F}:\mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$ se dice
+En el caso general una función ${\bf F}:\mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$ se dice
 diferenciable en $a\in \mathbb{R}^{n}$
-si existe una transformaci\'{o}n lineal $\lambda :\mathbb{R}^{n}\rightarrow \mathbb{R}^{m},$ tal que 
+si existe una transformación lineal $\lambda :\mathbb{R}^{n}\rightarrow \mathbb{R}^{m},$ tal que 
 $$\lim_{h\rightarrow 0}\frac{\left\Vert {\bf F}(a+h)-{\bf F}(a)-\lambda(h)\right\Vert }{\left\Vert h\right\Vert }=0.$$
 Es de anotar que $\left\Vert {\bf F}\left( a+h\right) -{\bf F}(a) -\lambda(h) \right\Vert$ representan la norma en 
 $\mathbb{R}^{m}$ y $\left\Vert h\right\Vert $ es la norma en $\mathbb{R}^{n}.$ \index{Función!diferenciable}
@@ -658,10 +658,10 @@ Cálculo Vectorial que serán usados en los capítulos posteriores. La exposici�
 por el lector con más detalle en \cite{apostol_alisis_1981}, \cite{marsden_calculo_2013}, \cite{stewart_calculo_2018} o \cite{thomas_calculo_2015}.
 \vskip0.2cm
 Posteriormente se utilizan estos elementos en algunas aplicaciones de la integración principalmente en 
-el c\'{a}lculo de longitud de curvas, \'{a}reas, volumenes y centros de masa. 
-Se estudiar\'{a} tambi\'{e}n el teorema de cambio de variables,
-particularmente cuando se utilizan coordenadas polares, cilindricas o esf\'{e}ricas, pero se har\'{a} enfasis en 
-parametrizar la regi\'{o}n de integraci\'{o}n.
+el cálculo de longitud de curvas, áreas, volumenes y centros de masa. 
+Se estudiará también el teorema de cambio de variables,
+particularmente cuando se utilizan coordenadas polares, cilindricas o esféricas, pero se hará enfasis en 
+parametrizar la región de integración.
 \vskip0.2cm
 Una función $g:\mathbb{R}\to\mathbb{R}$ se dice \emph{integrable} en $[a,b]$ en el sentido señalado en \textcite{apostol_calculus_1999};
 utilizaremos esta idea en los siguientes resultados. 
@@ -727,17 +727,17 @@ si y solo si cada una de las funciones componentes $f_i(t)$ es integrable en $[a
 Además $$\int_a^b{\bf f}(t)dt= \langle \int_a^b f_1(t)dt,\int_a^b f_2(t)dt,\cdots, \int_a^b f_n(t)dt\ra.$$
 
 \subsection*{Integrales dobles} \label{integralesdobles}  \index{Integrales!dobles}
-Presentaremos ahora la integral doble de una funci\'{o}n de
-dos variables $f(x,y)$ definida sobre una regi\'{o}n del plano como el 
-l\'{\i}mite de las aproximaciones a trav\'{e}s de sumas de Riemann, posteriormente
-se presentar\'{a}n de manera similar las integrales triples. 
-La evaluaci\'{o}n de las integrales dobles o triples se puede obtener
-utilizando el teorema fundamental de c\'{a}lculo; véase \cite{apostol_calculus_1999}.
+Presentaremos ahora la integral doble de una función de
+dos variables $f(x,y)$ definida sobre una región del plano como el 
+l\'{\i}mite de las aproximaciones a través de sumas de Riemann, posteriormente
+se presentarán de manera similar las integrales triples. 
+La evaluación de las integrales dobles o triples se puede obtener
+utilizando el teorema fundamental de cálculo; véase \cite{apostol_calculus_1999}.
 \vskip0.2cm
 En el plano $xy$ consideraremos un rectángulo $R=[a,b]\times \lbrack c,d],$ es decir
 $$R=\{(x,y) \in \mathbb{R}^{2}\, | \,a\leq x\leq b,c\leq y\leq d\}.$$
-Si $f(x,y)$ es una funci\'{o}n continua definida sobre el rect\'{a}ngulo $R,$ 
-subdividiremos a $R$ en $nm$ rect\'{a}ngulos m\'{a}s peque\~{n}os a partir
+Si $f(x,y)$ es una función continua definida sobre el rectángulo $R,$ 
+subdividiremos a $R$ en $nm$ rectángulos más peque\~{n}os a partir
 de rectas paralelas a los ejes coordenados. Esto es, para el intervalo $[a,b],$ consideremos
 $$a=x_{0}<x_{1}<x_{2}<\cdots <x_{i}<\cdots <x_{n-1}<x_{n}=b,$$ mientras que
 para el intervalo $[c,d],$ consideremos
@@ -745,36 +745,36 @@ $$c=y_{0}<y_{1}<y_{2}<\cdots <y_{k}<\cdots <y_{m-1}<y_{m}=d.$$ A esta división 
 \index{Partición}
 Si $n$ y $m$ crece entonces el ancho y el largo de estos subintervalos decrecen.
 \vskip0.2cm
-Denotaremos $\Delta x_{i}$ al ancho del $i-$\'{e}simo subintervalo
-sobre el eje $x,$ y $\Delta y_{k}$ es el alto $k-$\'{e}simo subintervalo sobre el eje $y$, 
+Denotaremos $\Delta x_{i}$ al ancho del $i-$ésimo subintervalo
+sobre el eje $x,$ y $\Delta y_{k}$ es el alto $k-$ésimo subintervalo sobre el eje $y$, 
 es decir $\Delta x_{i}=x_{i+1}-x_{i},$ de la misma forma $\Delta
-y_{k}=y_{k+1}-y_{k}.$ El \'{a}rea de uno de estos subintervalos de ancho $\Delta x_{i}$ y altura $\Delta y_{k}$ es
+y_{k}=y_{k+1}-y_{k}.$ El área de uno de estos subintervalos de ancho $\Delta x_{i}$ y altura $\Delta y_{k}$ es
 $\Delta A_{ik}=\Delta x_{i}\Delta y_{k}$.
-La norma de la partici\'{o}n se denota por $\left\Vert P\right\Vert$ y es el m\'{a}ximo sobre todos los valores 
-$i$ y $k$, de todas las dimensiones de los rect\'{a}ngulos en que se divide la regi\'{o}n $R.$
+La norma de la partición se denota por $\left\Vert P\right\Vert$ y es el máximo sobre todos los valores 
+$i$ y $k$, de todas las dimensiones de los rectángulos en que se divide la región $R.$
 \vskip0.2cm
 Cuando todos estos subintervalos son de igual longitud, los denotaremos por $\Delta x=\frac{b-a}{n}$ y $\Delta y=\frac{d-c}{m}.$
 \vskip0.2cm \index{Suma doble de Riemann}
-Una suma de Riemann de $f(x,y) $ sobre el rect\'{a}ngulo $R$ se obtiene al considerar un punto cualquiera 
-$\left( x_{i}^{\ast },y_{k}^{\ast}\right) ,$ en $ik$-\'{e}simo subrect\'{a}ngulo, esto 
+Una suma de Riemann de $f(x,y) $ sobre el rectángulo $R$ se obtiene al considerar un punto cualquiera 
+$\left( x_{i}^{\ast },y_{k}^{\ast}\right) ,$ en $ik$-ésimo subrectángulo, esto 
 $\left( x_{i}^{\ast},y_{k}^{\ast }\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{k-1},y_{k}],$ 
 o de manera similar $x_{i-1}<x_{i}^{\ast }<x_{i},$ y $y_{k-1}<y_{k}^{\ast }<y_{k};$  
-El valor de la funci\'{o}n es este punto es $f\left( x_{i}^{\ast},y_{k}^{\ast }\right) $ y este valor se 
-multiplica por el \'{a}rea del $ik$-\'{e}simo rect\'{a}ngulos; se suman todos estos productos para obtener una
-expresi\'{o}n de la forma
+El valor de la función es este punto es $f\left( x_{i}^{\ast},y_{k}^{\ast }\right) $ y este valor se 
+multiplica por el área del $ik$-ésimo rectángulos; se suman todos estos productos para obtener una
+expresión de la forma
 $$S_{nm}=\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \Delta x_{i}\Delta y_{k}.$$
 
-Dependiendo de la selecci\'{o}n $\left( x_{i}^{\ast },y_{k}^{\ast }\right) ,$
+Dependiendo de la selección $\left( x_{i}^{\ast },y_{k}^{\ast }\right) ,$
 es posible obtener diversos valores de $S_{nm}.$
 \vskip0.2cm
-Es de especial inter\'{e}s el conocer el comportamiento de las sumas de
-Riemann cuando la norma de la partici\'{o}n tiende a cero, que equivale a
-que el ancho y la altura de cada subrect\'{a}ngulo de $R$ tienden a cero.
-Si el l\'{\i}mite de las sumas $S_{nm}$ existe sin importar la selecci\'{o}n
+Es de especial interés el conocer el comportamiento de las sumas de
+Riemann cuando la norma de la partición tiende a cero, que equivale a
+que el ancho y la altura de cada subrectángulo de $R$ tienden a cero.
+Si el l\'{\i}mite de las sumas $S_{nm}$ existe sin importar la selección
 que se haga de $\left( x_{i}^{\ast },y_{k}^{\ast }\right) ,$ entonces
-diremos que la funci\'{o}n $f(x,y) $ es integrable sobre el rect\'{a}ngulo $R$ 
+diremos que la función $f(x,y) $ es integrable sobre el rectángulo $R$ 
 y este valor se denota por 
-$\ds \iint\limits_{R}f\left(x,y\right) dA$ o tambi\'{e}n $\ds \iint\limits_{R}f(x,y) dydx.$
+$\ds \iint\limits_{R}f\left(x,y\right) dA$ o también $\ds \iint\limits_{R}f(x,y) dydx.$
 Lo anterior nos motiva a precisar este concepto.
 
 \begin{defi}
@@ -787,13 +787,13 @@ cuando este límite existe.
 
 \subsection*{Aplicaciones de las integrales dobles}
 
-Si la funci\'{o}n $f(x,y)$ es positiva sobre el rect\'{a}ngulo $R$ del plano $xy$ la integral doble de $f$ sobre $R$ puede
-interpretarse como el volumen del s\'{o}lido $E$ acotado en la base por $R,$
+Si la función $f(x,y)$ es positiva sobre el rectángulo $R$ del plano $xy$ la integral doble de $f$ sobre $R$ puede
+interpretarse como el volumen del sólido $E$ acotado en la base por $R,$
 por la parte superior la superficie $z=f(x,y),$ y en los lados regiones contenidas en
-los planos $x=a,$ $x=b$, $y=c$, $y=d.$ N\'{o}tese que el t\'{e}rmino
+los planos $x=a,$ $x=b$, $y=c$, $y=d.$ Nótese que el término
 $f(x_{i}^{\ast },y_{k}^{\ast })\Delta x_{i}\Delta y_{k}$ corresponde al
-volumen del paralelep\'{\i}pedo con \'{a}rea de la base $\Delta x_{i}\Delta y_{k}$ y altura $f(x_{i}^{\ast },y_{k}^{\ast });$
-la suma $S_{nm}$ es una aproximaci\'{o}n al volumen del s\'{o}lido $E.$
+volumen del paralelep\'{\i}pedo con área de la base $\Delta x_{i}\Delta y_{k}$ y altura $f(x_{i}^{\ast },y_{k}^{\ast });$
+la suma $S_{nm}$ es una aproximación al volumen del sólido $E.$
 Es por lo anterior que el volumen de $E$ se define como 
 $$\text{volumen:}\lim _{n,m \to \infty}\left(\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \Delta x_{i}\Delta y_{k}\right)= \ds \iint\limits_{R}f(x,y) dA.$$ \index{Masa de una región}
 
@@ -869,9 +869,9 @@ con $x\in [0,2]$, $y \in [0,1].$
 	
 	\begin{tabular}{ccc}
 		% PRIMERA FILA: Las imágenes con escalas homogeneizadas
-		\includegraphics[scale=0.31]{Img/T_51a.pdf} & 
-		\includegraphics[scale=0.28]{Img/T_51b.pdf} &
-		\includegraphics[scale=0.28]{Img/T_51c.pdf} \\
+		\includegraphics[height=4.5cm]{Img/T_51a.pdf} & 
+		\includegraphics[height=4.5cm]{Img/T_51b.pdf} &
+		\includegraphics[height=4.5cm]{Img/T_51c.pdf} \\
 		\small $n=5, m=9$ & \small $n=6, m=11$ & \small $n=17, m=29$
 	\end{tabular}
 	
@@ -929,8 +929,8 @@ caras paralelas a los planos coordenados $E=[a,b]\times \lbrack c,d]\times
 E=\{(x,y,z) \in \mathbb{R}^{3}\,|\,a\leq x\leq b,c\leq y\leq
 d,r\leq z\leq s\}.
 \end{equation*}
-Si $f(x,y,z)$ es una funci\'{o}n continua definida sobre la caja rectangular $E,$
-subdividiremos a $E$ en $lnm$ cajas rectangulares m\'{a}s peque\~{n}as a
+Si $f(x,y,z)$ es una función continua definida sobre la caja rectangular $E,$
+subdividiremos a $E$ en $lnm$ cajas rectangulares más peque\~{n}as a
 partir de planos paralelos a los planos coordenados. Esto es, para el
 intervalo $[a,b],$ consideremos 
 \begin{equation*}
@@ -947,32 +947,32 @@ z_{0}=r<z_{1}<z_{2}<\cdots <z_{k}<\cdots <y_{l-1}<y_{l}=s.
 
 Si $n,$ $l$ y $m$ crecen entonces el ancho, el largo y el alto de estas
 cajas rectangulares decrecen.
-Denotaremos $\Delta x_{i}$ al ancho del $i$-\'{e}simo subintervalo sobre el
-eje $x,$ $\Delta y_{j}$ es el largo $j$-\'{e}simo subintervalo sobre el eje $y$, y $\Delta z_{k}$ es el alto $k$-\'{e}simo subintervalo sobre el eje $z$, es decir $\Delta x_{i}=x_{i+1}-x_{i},\Delta y_{j}=x_{j+1}-x_{j},$ $\Delta
+Denotaremos $\Delta x_{i}$ al ancho del $i$-ésimo subintervalo sobre el
+eje $x,$ $\Delta y_{j}$ es el largo $j$-ésimo subintervalo sobre el eje $y$, y $\Delta z_{k}$ es el alto $k$-ésimo subintervalo sobre el eje $z$, es decir $\Delta x_{i}=x_{i+1}-x_{i},\Delta y_{j}=x_{j+1}-x_{j},$ $\Delta
 z_{k}=z_{k+1}-z_{k}.$ 
 El volumen de cada una de estas cajas de ancho $\Delta x_{i}$, largo $\Delta y_{j}$ y alto $\Delta z_{k}$ es 
 $\Delta V_{ijk}=\Delta x_{i}\Delta y_{j}\Delta z_{k}$. 
-La norma de la partici\'{o}n se denota por $\left\Vert P\right\Vert $ y es
-el m\'{a}ximo sobre todos los valores $i,$ $j$ y $k$ de todas las
-dimensiones de las cajas en que se divide la regi\'{o}n $E.$ 
+La norma de la partición se denota por $\left\Vert P\right\Vert $ y es
+el máximo sobre todos los valores $i,$ $j$ y $k$ de todas las
+dimensiones de las cajas en que se divide la región $E.$ 
 \vskip0.2cm
 Una suma de Riemann de $f(x,y,z) $ sobre la caja rectangular $E$ se consigue al considerar un punto cualquiera 
-$\left( x_{i}^{\ast},y_{j}^{\ast },z_{k}^{\ast }\right) ,$ en la $ijk$-\'{e}sima caja
+$\left( x_{i}^{\ast},y_{j}^{\ast },z_{k}^{\ast }\right) ,$ en la $ijk$-ésima caja
 rectangular, esto es $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast}\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{j-1},y_{j}]\times \lbrack z_{k-1},z_{k}],$ lo cual equivale a que $x_{i-1}<x_{i}^{\ast }<x_{i},$ 
 $y_{j-1}<y_{j}^{\ast }<y_{j}$ y $z_{k-1}<z_{k}^{\ast }<z_{k}.$ El valor de la
-funci\'{o}n es este punto es $f\left( x_{i}^{\ast },y_{j}^{\ast},z_{k}^{\ast }\right) $ 
-y este valor se multiplica por el volumen de la $ijk$-\'{e}sima caja rectangular; se suman todos estos productos para obtener
-una expresi\'{o}n de la forma 
+función es este punto es $f\left( x_{i}^{\ast },y_{j}^{\ast},z_{k}^{\ast }\right) $ 
+y este valor se multiplica por el volumen de la $ijk$-ésima caja rectangular; se suman todos estos productos para obtener
+una expresión de la forma 
 \begin{equation*}
 S_{nml}=\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{k=1}^{l}f\left( x_{i}^{\ast},y_{j}^{\ast },z_{k}^{\ast }\right) \Delta x_{i}\Delta y_{j}\Delta z_{k}.
 \end{equation*}
-Dependiendo de la elecci\'{o}n de $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right)$
+Dependiendo de la elección de $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right)$
 es posible obtener diversos valores de $S_{nml}.$ 
-De manera similar a como se defini\'{o} la integral doble, si el l\'{\i}mite de
-las sumas $S_{nml}$ existe para toda elecci\'{o}n que se haga de 
+De manera similar a como se definió la integral doble, si el l\'{\i}mite de
+las sumas $S_{nml}$ existe para toda elección que se haga de 
 $\left(x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right),$ entonces se dice que la
-funci\'{o}n $f(x,y,z) $ es integrable sobre la caja rectangular $E,$ y este valor se denota por 
-$\ds\iiint\limits_{E}f(x,y,z) dV$ o tambi\'{e}n $\ds \iiint\limits_{E}f(x,y,z) dzdydx.$ Lo anterior nos
+función $f(x,y,z) $ es integrable sobre la caja rectangular $E,$ y este valor se denota por 
+$\ds\iiint\limits_{E}f(x,y,z) dV$ o también $\ds \iiint\limits_{E}f(x,y,z) dzdydx.$ Lo anterior nos
 motiva a precisar este concepto.
 
 \begin{defi}
@@ -1155,10 +1155,10 @@ $(\overline{x},\overline{y},\overline{z})= (\frac{\mu_{yz}}{M}, \frac{\mu_{xz}}{
 Una exposición más detalladas de estos elementos y otros usos de las integrales múltiples puede consultarse en \cite{thomas_calculo_2015}.
 \index{Centro de masa}
 \subsection*{Integrales de superficie}
-Una parametrizaci\'{o}n de una superficie es una funci\'{o}n 
+Una parametrización de una superficie es una función 
 $\phi:D\subseteq \mathbb{R}^{2}\rightarrow \mathbb{R}^{3}.$
 La superficie $S$ correspondiente a la
-funci\'{o}n $\phi $ es su imagen $\phi \left( D\right) =S$ se escribe 
+función $\phi $ es su imagen $\phi \left( D\right) =S$ se escribe 
 $\phi(u,v)=\left\langle x\left( u,v\right) ,y\left( u,v\right),z\left( u,v\right) \right\rangle .$
 La integral de un campo escalar $f$ sobre una superficie $S,$  está dada por
 
@@ -1171,7 +1171,7 @@ siendo
 $${\bf T}_{u}=\frac{\partial \phi }{\partial u}=\frac{\partial x}{\partial u}\vi+\frac{\partial x}{\partial u}\vj+\frac{\partial x}{\partial u}\vk$$
 y $${\bf T}_{v}=\frac{\partial \phi }{\partial v}=\frac{\partial x}{\partial v}\vi+\frac{\partial x}{\partial v}\vj+\frac{\partial x}{\partial v}\vk.$$
 
-La integraci\'{o}n de una campo vectorial ${\bf f}$ sobre $S,$ está dada por
+La integración de una campo vectorial ${\bf f}$ sobre $S,$ está dada por
 \begin{equation}
 \iint_{S} {\bf f}(x,y,z) \cdot dS=\iint_{D} {\bf f} \left( \phi \left(
 u,v\right) \right) \cdot \left( {\bf T}_{u}\times {\bf T}_{v}\right) dudv
@@ -1192,7 +1192,7 @@ se hace el cambio $(x,y) ={\bf r}(u,v)$ para transformar la región $R$ en el si
 $(x,y) $ en una región $R^{\ast }$ en el sistema coordenado  $(u,v).$
 Un rectángulo en el sistema $uv$ con lados de longitud $\Delta u$ de largo y $\Delta v$ de ancho se transforma mediante la función ${\bf r}.$
 \vskip0.2cm
-Asumiendo que ${\bf r}$ es diferenciable, si $(u,v) $ son las coordenadas del rectángulo, los v\'{e}rtices
+Asumiendo que ${\bf r}$ es diferenciable, si $(u,v) $ son las coordenadas del rectángulo, los vértices
 adyacentes son $( u+\Delta u,v) $ y $(u,v+\Delta v)$; mediante la aplicación ${\bf r},$ el rectángulo
 se transforma en una región cuya área se puede aproximar mediante el área de un paralelogramo. Además, 
 aplicando el teorema del valor medio, se sigue que
@@ -1204,7 +1204,7 @@ aplicando el teorema del valor medio, se sigue que
 \approx \frac{\partial{\bf r}}{\partial u}( u,v^{\ast})\Delta v.
 \end{eqnarray*}
 
-El área de esta pequeña región est\'{a} dada por 
+El área de esta pequeña región está dada por 
 \begin{equation}
 \Delta A=\left\Vert \frac{\partial {\bf r}}{\partial u}\Delta u\times 
 \frac{\partial {\bf r}}{\partial v}\Delta v\right\Vert =\left\Vert \frac{\partial {\bf r}}{\partial u}\times \frac{\partial {\bf r}}{\partial v}\right\Vert \Delta u\Delta v
@@ -1219,7 +1219,7 @@ Por simplicidad $x=x(u,v)$ y $y=y(u,v)$, entonces
 \end{array} \right\vert
 \end{equation}
 
-En algunos libros como \cite{stewart_calculo_2018}, el t\'{e}rmino $\left\vert \frac{\partial\left(x,y\right)}{\partial(u,v)}\right\vert$ 
+En algunos libros como \cite{stewart_calculo_2018}, el término $\left\vert \frac{\partial\left(x,y\right)}{\partial(u,v)}\right\vert$ 
 se denomina el jacobiano de la transformación ${\bf r}$. \index{Jacobiano}
 Con los elementos anteriores se establece la siguiente igualdad.
 \begin{equation}
@@ -1232,7 +1232,7 @@ se puede hacer el cambio $(x,y,z) ={\bf r}(u,v,w)$ para transformar la región $
 de coordenadas $(x,y,z) $ en una region $R^{\ast }$ en el sistema coordenado  $(u,v,w) .$
 Consideremos un cubo en el sistema $uvw,$ con aristas de longitud $\Delta u$ de largo, $\Delta v$ de ancho y $\Delta w$ de altura, que se transforma mediante la función ${\bf r}$. \vskip0.2cm 
 Asumiendo que ${\bf r}$ es diferenciable,
-si $(u,v,w) $ son las coordenadas de un vértice del cubo, entonces los v\'{e}rtices
+si $(u,v,w) $ son las coordenadas de un vértice del cubo, entonces los vértices
 adyacentes son $\left( u+\Delta u,v,w\right) ,$ $\left( u,v+\Delta v,w\right)$ y $\left( u,v,w+\Delta w\right) ;$ mediante la aplicación ${\bf r},$ el cubo se transforma en una región cuyo volumen se puede aproximar mediante un \mbox{paralelep\'{\i}pedo}.
 Aplicando el teorema del valor medio, se sigue que
 
@@ -1246,7 +1246,7 @@ u,v,w+\Delta w\right) -{\bf r}(u,v,w)}{\Delta w}\Delta w \\[0.1cm]
 &\approx & \frac{\partial {\bf r}}{\partial w}\left( u,v,w^{\ast}\right) \Delta w,
 \end{eqnarray*}
 
-El volumen de esta región, $\Delta V$, est\'{a} dada por 
+El volumen de esta región, $\Delta V$, está dada por 
 \begin{equation}
 \left\vert \left( \frac{\partial {\bf r}}{\partial u}\Delta u\times 
 \frac{\partial {\bf r}}{\partial v}\Delta v\right) \cdot \frac{\partial {\bf r}}{\partial w}\Delta w\right\vert =\left\vert \left( \frac{\partial {\bf r}}{\partial u}\times \frac{\partial {\bf r}}{\partial v}\right) \cdot \frac{\partial {\bf r}}{\partial w}\right\vert \Delta u\Delta v\Delta w
@@ -1263,7 +1263,7 @@ Por simplicidad, si $x=x(u,v,w) ,$ $y=y(u,v,w) $ y $z=z(u,v,w) $ entonces
 \frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}&\frac{\partial z}{\partial w}\end{array}\right\vert 
 \end{equation}
 
-En algunos libros el t\'{e}rmino $\left\vert \frac{\partial\left(x,y,z\right)}{\partial(u,v,w)}\right\vert$ 
+En algunos libros el término $\left\vert \frac{\partial\left(x,y,z\right)}{\partial(u,v,w)}\right\vert$ 
 se denomina el jacobiano de la transformación ${\bf r}$. \index{Jacobiano}
 Esto muestra la siguiente igualdad.
 \begin{equation}
@@ -1321,7 +1321,7 @@ Teniendo en cuenta las relaciones anteriores y el teorema de cambio de variables
 
 
 Utilizando el sistema de coordenadas cilíndricas $x=r\cos \theta ,$ 
-$y=r\sin \theta ,$ $z=z;$ o el sistema de coordenadas esf\'{e}ricas,
+$y=r\sin \theta ,$ $z=z;$ o el sistema de coordenadas esféricas,
 $x=\rho \cos \theta \sin \phi ,$ $y=\rho \sin \theta \sin \phi ,$ $z=\rho\cos \phi ,$ 
 con los siguientes gráficos se ilustra la obtención del elemento diferencial de volumen en estos casos.
 
@@ -1377,7 +1377,7 @@ $$\iiint_{E}f(x,y,z)dV=\iiint_{E^{\ast }}f(r\cos \theta ,r\sin \theta,z)r\, dzdr
 \vskip0.2cm
 
 
-El jacobiano en el caso de las coordenadas esf\'{e}ricas corresponde a 
+El jacobiano en el caso de las coordenadas esféricas corresponde a 
 $$\left\vert \begin{array}{ccc}
 \cos \theta \sin \phi  & \sin \theta \sin \phi  & \cos \phi  \\ 
 -\rho \sin \theta \sin \phi  & \rho \cos \theta \sin \phi  & 0 \\ 

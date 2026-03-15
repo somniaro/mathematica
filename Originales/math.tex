@@ -523,7 +523,7 @@ Otras posibilidades muy útiles para obtener gráficos son las siguientes.
 \subsection*{Gráfico de puntos, segmentos y vectores}
 \vskip0.2cm
 \begin{tcolorbox}[breakable,enhanced,title=Gráfico de puntos]
-La instrucci\'{o}n \verb"Graphics[Point[{a,b}]]" dibuja el punto de
+La instrucción \verb"Graphics[Point[{a,b}]]" dibuja el punto de
 coordenadas $\left(a,b\right).$ Con \verb"Graphics3D[Point[{a,b,c}]]" se dibuja el 
 punto de coordenadas $\left(a,b,c\right) .$
 \end{tcolorbox}
@@ -560,8 +560,8 @@ Arrow[Tube[{{1,1,-1},{2,2,0}},0.01]]}]
 \begin{figure}[H]
 	\begin{center}
 		\captionof{figure}{\small El vector $\langle 1,1,1\rangle$ se dibuja en el punto $(1,1,-1)$.}
-		\includegraphics[scale=0.32]{Img/T_67a.pdf} \hskip0.2cm
-		\includegraphics[scale=0.32]{Img/T_67b.pdf}
+		\includegraphics[height=4.5cm]{Img/T_67a.pdf} \hskip0.2cm
+		\includegraphics[height=4.5cm]{Img/T_67b.pdf}
 \parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
 	\end{center}  
 \end{figure}
@@ -680,9 +680,9 @@ Mesh->False,Ticks->{{-1,0,1},{-1,1},{0,1}}]
 
 \begin{center}
 	\captionof{figure}{\small Sólido acotado por $x^2+2x+y^2=0,$ $x^2+y^2-3x=\frac{7}{4},$ $2z+y=4.$}
-	\includegraphics[scale=0.17]{Img/math_06.pdf} \hspace{0.2cm}  
-	\includegraphics[scale=0.17]{Img/math_06a.pdf} \hspace{0.2cm}
-	\includegraphics[scale=0.17]{Img/math_06b.pdf}
+	\includegraphics[height=4.5cm]{Img/math_06.pdf} \hspace{0.2cm}  
+	\includegraphics[height=4.5cm]{Img/math_06a.pdf} \hspace{0.2cm}
+	\includegraphics[height=4.5cm]{Img/math_06b.pdf}
 	\vspace{0.5em}
 \parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
 \vskip0.2cm
@@ -704,8 +704,8 @@ acotan el sólido que se muestra enseguida.
 \begin{figure}[H]
 	\begin{center}
 		\captionof{figure}{\small Superficie determinada por $(x^2+y^2)^2=z+1$ y $z= 4(1-x^2-y^2)$.}
-		\includegraphics[scale=0.17]{Img/math_06e.pdf} \hspace{0.3cm}
-		\includegraphics[scale=0.17]{Img/math_06f.pdf}
+		\includegraphics[height=4.5cm]{Img/math_06e.pdf} \hspace{0.3cm}
+		\includegraphics[height=4.5cm]{Img/math_06f.pdf}
 \parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
 \vskip0.2cm
 \end{center}
@@ -1039,9 +1039,9 @@ $x \in[-2,2],$ $y \in[-2,2]$ con incrementos en $x$ de $1/5$ e incrementos en $y
 \begin{figure}[H]
 	\begin{center}
 		\captionof{figure}{\small Función $f(x,y)=2+xy-x^2-y^3$.}
-		\includegraphics[scale=0.25]{Img/T_44a.pdf}
-		\includegraphics[scale=0.25]{Img/T_44b.pdf}
-		\includegraphics[scale=0.25]{Img/T_44c.pdf}
+		\includegraphics[height=4.5cm]{Img/T_44a.pdf}
+		\includegraphics[height=4.5cm]{Img/T_44b.pdf}
+		\includegraphics[height=4.5cm]{Img/T_44c.pdf}
 	\end{center}
 	\parbox{0.95\linewidth}{\centering\fontsize{9pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
 \end{figure}
@@ -1084,8 +1084,8 @@ $0.2$ respectivamente, se obtiene los siguientes gráficos.
 	
 	\vspace{0.3cm}
 	% Imágenes con escala homogénea (0.30) según tu solicitud
-	\includegraphics[scale=0.20]{Img/T_45a.pdf} \hskip0.5cm
-	\includegraphics[scale=0.20]{Img/T_45b.pdf}
+	\includegraphics[height=4.5cm]{Img/T_45a.pdf} \hskip0.5cm
+	\includegraphics[height=4.5cm]{Img/T_45b.pdf}
 	
 	\vspace{0.2cm}
 	\fuente{elaboración propia.}
@@ -1191,7 +1191,7 @@ RevolutionAxis->{1,1,0}]
 A partir de un conjunto de puntos es posible obtener una función
 que los contenga o los aproxime, presentaremos algunas funciones que permiten hacerlo.
 \vskip0.2cm 
-\textls[-10]{Para obtener una combinaci\'{o}n lineal $f(x),$ de las funciones 
+\textls[-10]{Para obtener una combinación lineal $f(x),$ de las funciones 
 $f_{1},f_{2},\cdots ,f_{k},$ que mejor ajusta a los puntos $\left( x_{1},y_{1}\right) ,\left(
 x_{2},y_{2}\right) ,\cdots ,\left( x_{n},y_{n}\right)$ se puede usar la función \verb"Fit".  \index{Fit}
 La función $f(x)$ minimiza la siguiente suma de los cuadrados}  
@@ -1227,8 +1227,8 @@ FindFit[{{1,1},{2,2},{-1,2},{-2,2}},{a*x+b*x^2+c*Sin[x]},
 \end{Verbatim}
 \end{tcolorbox}
 En las siguientes tres sentencias se define un conjunto de puntos, se halla la
-combinaci\'{o}n lineal de las funciones $1,x^{2},x^{3},x^{5}$ que mejor
-ajustan estos puntos y se presenta su gr\'{a}fico.
+combinación lineal de las funciones $1,x^{2},x^{3},x^{5}$ que mejor
+ajustan estos puntos y se presenta su gráfico.
 \begin{tcolorbox}[breakable,enhanced]
 \begin{Verbatim}[formatcom=\letraverbatim]
 datos={{1,1},{2,2},{-1,2},{-2,2}};
@@ -1236,7 +1236,7 @@ y1=Fit[datos,{1,x^2,x^3,x^5},x]
 Show[Graphics[{Red,Point[datos]}],Plot[y1,{x,-2,2}]]
 \end{Verbatim}
 \end{tcolorbox}
-Los siguientes tres ejemplos ilustran el uso de esta funci\'{o}n dos y tres
+Los siguientes tres ejemplos ilustran el uso de esta función dos y tres
 variables independientes:
 
 \begin{tcolorbox}[breakable,enhanced,title=Instrucciones en Mathematica]
@@ -1263,7 +1263,7 @@ InterpolatingPolynomial[{{x1,y1},{x2,y2},...
 \index{InterpolatingPolynomial}
 
 Con las siguientes instrucciones se define un conjunto de puntos, se halla
-el polinomio de interpolación y se presenta su gr\'{a}fico
+el polinomio de interpolación y se presenta su gráfico
 \begin{tcolorbox}[breakable,enhanced]
 \begin{Verbatim}[formatcom=\letraverbatim]
 puntos={{-1,1},{0,-1},{2,1},{4,-2}};
@@ -1461,8 +1461,8 @@ utilizando la función \verb"StreamPlot".  \index{StreamPlot} \index{StreamStyle
 \begin{figure}[H]
 	\begin{center}
 		\captionof{figure}{\small Campo vectorial $\la \frac{-x+y}{\sqrt{x^2+y^2}}, \frac{x-y}{\sqrt{x^2+y^2}} \ra$.}
-		\includegraphics[scale=0.45]{Img/T_55a.pdf} \hspace{0.5cm}
-		\includegraphics[scale=0.45]{Img/T_55b.pdf}
+		\includegraphics[height=4.5cm]{Img/T_55a.pdf} \hspace{0.5cm}
+		\includegraphics[height=4.5cm]{Img/T_55b.pdf}
 		\parbox{0.95\linewidth}{\centering\fontsize{10pt}{10pt}\selectfont\textbf{Fuente:} elaboración propia.}
 	\end{center}
 \end{figure}
