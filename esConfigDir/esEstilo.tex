@@ -109,7 +109,7 @@
   \fancyfoot[C]{}
 }
 
-%https://www.latex-project.org/help/documentation/fntguide.pdf
+% https://www.latex-project.org/help/documentation/fntguide.pdf
 
 \fancypagestyle{plain}{%
   \fancyhead{}
@@ -146,18 +146,16 @@
 }
 \makeatother
 
-\newcommand{\nota}[1]{\parbox{10cm}{\centering\scriptsize\color{MSBlack} {\bf Nota: }{#1}}}
-\newcommand{\fuente}[1]{\parbox{10cm}{\centering\scriptsize\color{MSBlack} {\bf Fuente: }{#1}}}
+\newcommand{\pieimagen}[2]{\par\vspace{0.5em}\begin{minipage}{0.8\textwidth}\centering\color{MSBlack}\footnotesize\textbf{#1:}~{#2}\end{minipage}\par}
+\newcommand{\nota}[1]{\pieimagen{Nota}{#1}}
+\newcommand{\fuente}[1]{\pieimagen{Fuente}{#1}}
+\newcommand{\fuentepropia}{\fuente{elaboración propia.}}
 
 \usepackage{wrapfig}
 
 \newcommand{\espart}[6]{\part[Parte #1]{\protect\thispagestyle{empty}
-%{
-%\hspace{-2.75cm}\centering\includegraphics[width=17cm, height=8cm]{parte1_img}
-%\begin{figure}[!h] %this figure will be at the right
 \vspace{-14.0cm}
    \begin{figure}[ht!]\hspace{-2.9cm}\includegraphics[width=1.045\paperwidth, height=0.5\paperheight]{#2}\end{figure}
-%\end{figure}
 \flushleft
   \medseries{\Large\noindent Parte {#3}.}
   ~\\
@@ -176,9 +174,6 @@
   ~\\
   \lhseries{\normalsize #6}
 }}
-
-%%%%%%%%%%%%%%%%%%
-
 
 %%%%%%%%%% PORTADILLA 1 %%%%%%%%%%%%%%%
 \newcommand{\portadillauno}[2]{
