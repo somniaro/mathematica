@@ -12,7 +12,7 @@ de la curva. Si además $f'(t)$ y $g'(t)$ no son simultaneamente cero, la curva 
 Para la función  vectorial $\ve{r}(t)$ usaremos la notación 
 $\overrightarrow{r}(t)$ o ${\bf r}(t)$, indistintamente para referirnos a 
 este tipo de funciones.
-\vskip0.2cm
+
 De acuerdo con \cite{marsden_calculo_2013}, la longitud de arco $L$ de la curva $C$ en $\mathbb{R}^3$ determinada por la función vectorial 
 $\overrightarrow{r}(t)=\left\langle x(t) ,y(t),z(t) \right\rangle$ para $t\in \lbrack a,b],$ está dada por  
 \begin{equation} \label{curvas}
@@ -35,7 +35,7 @@ representa un paraboloide. \label{curvas1}
 
 \begin{figure}[H]
 \begin{center}
-	\captionof{figure}{\small Gráfico de $2z=x^{2}+y^{2}$ y $-x+y+z=1$.}
+	\caption{Gráfico de $2z=x^{2}+y^{2}$ y $-x+y+z=1$.}
 \includegraphics[height=6cm]{Img/72a.pdf} \hskip0.5cm
 \includegraphics[height=6cm]{Img/72b.pdf}
 \fuentepropia
@@ -44,7 +44,7 @@ representa un paraboloide. \label{curvas1}
 
 Con las siguientes instrucciones, se obtienen las figuras anteriores:
 
-\vskip0.2cm
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
 \begin{Verbatim}[formatcom=\letraverbatim]
 a=ContourPlot3D[{2*z==x^2+y^2,-x+y+z==1},{x,-5,4},
@@ -57,7 +57,7 @@ PlotStyle->{Black,Thickness->0.016}];
 Show[a,b]
 	\end{Verbatim}
 \end{tcolorbox}
-\vskip0.2cm
+
 
 Al remplazar $z$ de la ecuación del paraboloide en la ecuación del plano se obtiene: $\left(\frac{x^{2}+y^{2}}{2}\right)-x+y=1,$ que se reescribe como
 $\left( x-1\right) ^{2}+\left( y+1\right) ^{2}=4.$ Esta última expresión representa una circunferencia con centro en el punto $\left( 1,-1\right) $ y
@@ -77,7 +77,7 @@ la longitud de la curva está dada por
 $$\int_{0}^{2\pi }2\sqrt{2\sin (t) \cos (t) +2}dt\approx 17.475.$$
 El cálculo anterior se puede evaluar numéricamente como sigue:
 
-\vskip0.2cm
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
 \begin{Verbatim}[formatcom=\letraverbatim]
 r={1+2*Cos[t],-1+2*Sin[t],3+2*cos[t]-2Sin[t]}
@@ -85,7 +85,7 @@ A=Assuming[t>=0,Simplify[Norm[D[r,t]]]]
 NIntegrate[A,{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
-\vskip0.2cm
+
 
 \subsection*{Un paraboloide y un cilindro}
 Las ecuaciones $x-y^{2}+4y-z^{2}+2z=2 $ y $y^{2}-4y+4+z^{2}-4z=0,$ se reescriben como
@@ -96,27 +96,16 @@ con vértice en el punto $(-3,2,1)$, que abre hacia la parte positiva del eje $x
 radio $2$ cuyo eje de simetría es una recta paralela al eje $x.$ \label{curvas2}
 
 
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Gráfico de $x-y^{2}+4y-z^{2}+2z=2$ y $y^{2}-4y+4+z^{2}=4z.$}
-	\begin{minipage}{0.26\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/70a.pdf}
-	\end{minipage}
-	\hspace{1em}
-	\begin{minipage}{0.26\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/70b.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
+\begin{figure}[H]
+\centering
+\caption{\small Gráfico de $x-y^{2}+4y-z^{2}+2z=2$ y $y^{2}-4y+4+z^{2}=4z.$}
+\includegraphics[width=0.4\textwidth]{Img/70a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/70b.pdf}
+\fuentepropia
+\end{figure}
 
 Las instrucciones para conseguir el gráfico son las siguientes:
-\vskip0.2cm
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"] 
 \begin{Verbatim}[formatcom=\letraverbatim]
 a=ContourPlot3D[{x+3==(y-2)^2+(z-1)^2,(z-2)^2+(y-2)^2
@@ -130,7 +119,7 @@ PlotPoints->80];
 Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
-\vskip0.2cm
+
 
 Eliminando de las ecuaciones a $y,$ se obtiene que $x=2z-2,$ que corresponde a la ecuación 
 de un plano, la curva de intersección está contenida en este. A partir de la ecuación del cilindro, se puede establecer que $y=2+2\cos(t)$ y $z=2+2\sin(t)$
@@ -163,26 +152,14 @@ El cilindro con ecuación $x^{2}+y^{2}=4$ y el paraboloide hiperbólico con ecua
 $z=x^{2}-y^{2}$ se intersecan en una curva como lo muestra las siguientes figuras. 
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Gráfico de $x^{2}+y^{2}=4$ y $z=x^{2}-y^{2}$}
-	\label{fig:67}
-	\begin{minipage}{0.27\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/67a.pdf}
-	\end{minipage}
-	\begin{minipage}{0.35\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/301.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
+\begin{figure}[H]
+\centering
+\caption{Gráfico de $x^{2}+y^{2}=4$ y $z=x^{2}-y^{2}$}
+\label{fig:67}
+\includegraphics[width=0.4\textwidth]{Img/67a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Fig/301.pdf}
+\fuentepropia
+\end{figure}
 
 A partir de la ecuación del cilindro se puede definir $x=2\cos \left(t\right) $ y
 $\,y=2\sin (t) $ para reemplazar en la ecuación del
@@ -221,31 +198,19 @@ NIntegrate[A,{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 %\vspace*{-\baselineskip}
-%\vspace{4mm}
+%
 
 \subsection*{Un cilindro parabólico y un paraboloide}
 Las ecuaciones $z=x^2+y^2$ y $z=5-y^2$, que representan un paraboloide y un cilindro parabólico, respectivamente.
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Gráfico de $z=x^2+y^2$ y $z=5-y^2$}
-	\begin{minipage}{0.25\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/50a.pdf}
-	\end{minipage}
-	\begin{minipage}{0.25\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/50b.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
+\begin{figure}[H]
+\centering
+\caption{\small Gráfico de $z=x^2+y^2$ y $z=5-y^2$}
+\includegraphics[width=0.4\textwidth]{Img/50a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/50b.pdf}
+\fuentepropia
+\end{figure}
 
 Las figuras de estas superficies y su curva de intersección se consiguen con las siguientes instrucciones:
 
@@ -281,7 +246,7 @@ entonces la longitud de la curva está dada por
 $$L=\int_{0}^{2\pi}\frac{\sqrt{10}}{4}\sqrt{11-2\cos(2t)-5\cos(4t)} \,dt \approx 16.192.$$
 La integral anterior se evaluó numéricamente mediante las siguientes tres instrucciones:
 %\vspace*{-1.2\baselineskip}
-%\vspace{3mm}
+%
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]
 \begin{Verbatim}[formatcom=\letraverbatim]
 r={Sqrt[5]*Cos[t],Sqrt[5/2]*Sin[t],(5/2)*(1+Cos[t]^2)};
@@ -290,36 +255,23 @@ NIntegrate[A,{t,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 %\vspace*{-1.2\baselineskip}
-%\vspace{4mm}
+%
 \subsection*{Dos cilindros parabólicos}
 
 La región del espacio acotado por las figuras de las expresiones
 $x=z^{2}$ y $x=4y-y^{2}$ \label{curvas3} que corresponden a dos cilindros parabólicos, 
 junto con la curva de intersección se muestran a continuación.
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Gráfico de $x=z^{2}$ y $x=4y-y^{2}$}
-	\begin{minipage}{0.23\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/53a.pdf}
-	\end{minipage}
-	\begin{minipage}{0.23\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/53e.pdf}
-	\end{minipage}
-	\begin{minipage}{0.25\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/53f.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
 
+\begin{figure}[H]
+\centering
+\caption{\small Gráfico de $x=z^{2}$ y $x=4y-y^{2}$}
+\includegraphics[width=0.4\textwidth]{Img/53a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/53e.pdf}
+
+\includegraphics[width=0.4\textwidth]{Img/53f.pdf}
+\fuentepropia
+\end{figure}
 
 La figura se obtiene con ayuda de las siguientes instrucciones:
 
@@ -363,26 +315,13 @@ Las ecuaciones $8y=9-5x^{2}-6z^{2}$ y $16y=4z^{2}-x^{2}$
 representan gráficamente un paraboloide y un paraboloide hiperbólico, respectivamente.
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Gráfico de $8y=9-5x^{2}-6z^{2}$ y $16y=4z^{2}-x^{2}$}
-	\begin{minipage}{0.25\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/71c.pdf}
-	\end{minipage}
-	\begin{minipage}{0.25\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/71a.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
-
+\begin{figure}[H]
+\centering
+\caption{\small Gráfico de $8y=9-5x^{2}-6z^{2}$ y $16y=4z^{2}-x^{2}$}
+\includegraphics[width=0.4\textwidth]{Img/71c.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/71a.pdf}
+\fuentepropia
+\end{figure}
 
 Los gráficos se consiguen ejecutando las siguientes instrucciones:
 
@@ -434,7 +373,7 @@ Estos se pueden proyectar en el plano $xy,$ como dos elipses que se parametrizan
 $\overrightarrow{u}(t)=\left\langle 3\cos (t) ,6\sin (t) \right\rangle $ 
 y  $\overrightarrow{v}(t)=\left\langle 2\cos (t) ,\sin (t) \right\rangle ,$ 
 con  $t\in\lbrack 0,2\pi ].$ 
-\vskip 0.2cm
+
 Si estos cilindros los intersecan con el paraboloide determinado por la ecuación
 $z=6-\left(x-1\right)^2-y^2$,
 se obtienen dos curvas, cuya coordenada $z$ está dada, respectivamente por
@@ -446,7 +385,7 @@ z &=& 6-\left( 2\cos (t) -1\right) ^{2}-\left( \sin (t) \right) ^{2}= 4-3\cos ^{
 }
 
 \begin{figure}[H]
-	%\vspace{-4mm}
+	%
 	\centering
 	\caption{Gráfico de $4x^2+y^2=36$ y $x^2+4y^2=4$}
 	\begin{minipage}[t]{0.34\linewidth}
@@ -510,7 +449,7 @@ NIntegrate[Norm[D[r,t]],{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-\vskip0.3cm
+
 
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -528,14 +467,14 @@ Las ecuaciones $2x^2+y^2=z^2+12$ y $x^2+y^2+8z^2=30$ representan un hiperbólico
 
 \begin{figure}[H]
 \begin{center}
-	\captionof{figure}{\small Gráfico de $2x^2+y^2=z^2+12$ y $x^2+y^2+8z^2=30$.}
+	\caption{Gráfico de $2x^2+y^2=z^2+12$ y $x^2+y^2+8z^2=30$.}
 \includegraphics[height=4.5cm]{Img/87a.pdf}
 \includegraphics[height=4.5cm]{Img/87b.pdf}
 \fuentepropia
 \end{center}
 \end{figure}
  
-\vskip 0.2cm
+
 
 La figura anterior se obtiene con las siguientes instrucciones:
 
@@ -566,7 +505,7 @@ ecuaciones iniciales (la del elipsoide o la del hiperboloide). Lo cual implica q
 $y=\pm \sqrt{48-34\cosh ^{2}t}$.
 Para determinar el dominio, puede verse que si $48-34\cosh ^{2}t=0,$ entonces la solución está dada por
 $a={\rm arccosh}\left( \frac{2\sqrt{102}}{17}\right) \approx 0.7066.$
-\vskip0.2cm
+
 Por lo descrito anteriormente, la curva de intersección se parametriza por
 $$\overrightarrow{r}\left( t\right) =\left\langle 3\sqrt{2}\sinh \left(
 t\right) ,\sqrt{48-34\cosh ^{2}t},\sqrt{2}\cosh \left( t\right)
@@ -608,7 +547,7 @@ Hallaremos la curva de intersección y de esta calcularemos su longitud de arco.
 	\fuentepropia
 \end{figure}
 
-\vspace{-1mm}
+
 Ejecutando las siguientes instrucciones se obtiene la figura:
 
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica"]
@@ -623,7 +562,7 @@ Mesh->False,ContourStyle->{Orange,Yellow,Gray}]
 El cilindro $x^{2}+y^{2}=2x,$ se reescribe como $\left( x-1\right)^{2}+y^{2}=1,$ 
 la curva de intersección se parametriza al hacer $x=1+\cos (t),$ $y=\sin (t),$ y para hallar $z$
 es necesario reemplazar en la ecuación de la esfera, de donde se obtiene que
-%\vspace{-10pt}
+
 \[x^{2}+y^{2}+z^{2}= \left( 1+\cos (t) \right)
 ^{2}+\sin ^{2}(t) +z^{2}= 4,\]
 es decir, $2+2\cos(t) +z^{2}=4,$
@@ -633,7 +572,7 @@ entonces la función
 $${\bf r}_1(t) =\left\langle 1+\cos (t) ,\sin (t),\sqrt{2-2\cos (t) }\right\rangle ,\,\, t\in \lbrack 0,2\pi ],$$
 
 parametriza la curva de intersección. Es de anotar que son dos porciones que se obtienen por la raiz positiva y la raiz negativa.
-\vskip0.2cm
+
 Para la expresión  $x^{2}+z^{2}=2x$ (que representa el otro cilindro), el tratamiento es similar, obtiendose la función 
 $${\bf r}_2(t) =\left\langle 1+\cos (t),\sqrt{2-2\cos (t)},\sin (t)\right\rangle ,$$ 
 donde $t\in \lbrack 0,2\pi ].$
@@ -645,7 +584,7 @@ de donde
 $$L=4\int_{0}^{2\pi }\frac{1}{2}\sqrt{2}\sqrt{\cos t+3}\,dt \approx 30.562.$$
 
 Este valor se obtuvo en \verb"Mathematica" utilizando las siguientes instrucciones:
-\vspace{0.8em} 
+ 
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,
 before skip=2pt,after skip=0pt]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -654,8 +593,8 @@ A=Assuming[t>=0,Simplify[Norm[D[r,t]]]];
 NIntegrate[4*A,{t,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
-\vspace{0.6em}
-\noindent
+
+
 \subsection*{Un cilindro cardióidico y un paraboloide} \label{cilcardiopar}
 
 Consideremos el parabóloide con ecuación $3z=9-(x+2)^{2}-(y+1)^{2}$ y el cilindro cardióidico
@@ -664,28 +603,13 @@ $\overrightarrow{r}(t)=\left\langle (1-\cos (t))\cos (t),(1-\cos (t))\sin(t)\rig
 donde $t\in [0,2\pi].$ 
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small $r=1-\cos t,$ $3z=4-4x-x^2-2y-y^2$}
-	\begin{minipage}{0.27\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/58a.pdf}
-	\end{minipage}
-	\begin{minipage}{0.26\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/58b.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
-
-
-
+\begin{figure}[H]
+\centering
+\caption{\small $r=1-\cos t,$ $3z=4-4x-x^2-2y-y^2$}
+\includegraphics[width=0.4\textwidth]{Img/58a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/58b.pdf}
+\fuentepropia
+\end{figure}
 
 Sobre el paraboloide se cumple que 
 $z=\frac{9}{2}-2 \sin (t)+\sin (2 t)-2 \cos (t)+\frac{3}{2} \cos (2 t).$
@@ -705,7 +629,7 @@ $$\int_0^{2\pi}\left\Vert \overrightarrow{r}^\prime(t)\right\Vert dt \approx 10.
 
 Las figuras y los cálculos para determinar la longitud de la curva se obtienen ejecutando las siguientes instrucciones:
 
-\vskip0.2cm
+
 
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica",  top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -730,50 +654,36 @@ Show[a,b,c]
 Para las siguientes funciones vectoriales se construyen dos superficies cuya intersección corresponde
 a la curva determinada por la función $\overrightarrow{r}(t).$ Además se halla la longitud ($L$) de la curva para 
 un intervalo dado.
-\vspace{0.6em}
-%\noindent
-\vskip0.7cm
+
+%
+
 \begin{enumerate}[leftmargin=0.5cm, labelsep=0.2cm, labelwidth=0.3cm, align=left, label=\bfseries\arabic*., series=ejercicios]
 	\item \makebox[\linewidth][c]{$\overrightarrow{r}(t)=\la 3t^{3}+t,3t^{2},3t^{3}-t\ra, $ $t \in [-2,2].$}
 \end{enumerate}
-\vskip0.2cm
+
 De las ecuaciones paramétricas se sigue que 
 $x=3t^{3}+t,$ $y=3t^{2},$ $z=3t^{3}-t.$
 Entonces, $x-z=2t;$ por tanto, $\left( x-z\right) ^{2}=4t^{2}=\frac{4}{3}\left(
 3t^{2}\right) =\frac{4}{3}y.$ Además $x+z=6t^{3}=\left( 2t\right) \left( 3t^{2}\right) =\left(
 x-z\right) y.$
-\vskip0.2cm
+
 Por tal razón, utilizaremos las expresiones
 $x-z=\frac{4}{3}y$ y $x+z=y\left( x-z\right) ,$ cuyos gráficos se
 presentan a continuación y con éstos también se muestra la curva de intersección.
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Superficies con intersección ${\bf r}(t)=\la 3t^{3}+t,3t^{2},3t^{3}-t\ra$}
-	\begin{minipage}{0.27\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/94a.pdf}
-	\end{minipage}
-	\begin{minipage}{0.24\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/94b.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
-
-
+\begin{figure}[H]
+\centering
+\caption{\small Superficies con intersección ${\bf r}(t)=\la 3t^{3}+t,3t^{2},3t^{3}-t\ra$}
+\includegraphics[width=0.4\textwidth]{Img/94a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/94b.pdf}
+\fuentepropia
+\end{figure}
 
 Las indicaciones para conseguirlos son las siguientes:
 
-\vspace{0.6em}
-\noindent
+
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
 \begin{Verbatim}[formatcom=\letraverbatim]
 a=ParametricPlot3D[{3*t^3+t,3*t^2,3*t^3-t},{t,-1,1},
@@ -785,52 +695,39 @@ Opacity[0.95]],Directive[Orange,Opacity[0.8]]}];
 Show[b,a]
 \end{Verbatim}
 \end{tcolorbox}
-\vspace{0.7em}
-\noindent
+
+
 
 A partir de la relación
 $\left\| \frac{d}{dt}\la 3t^{3}+t,3t^{2},3t^{3}-t\ra\right\| = \sqrt{2}\left( 9t^{2}+1\right) ,$ es posible establecer que 
 la longitud de la arco está dada por
 $$L=\int_{-2}^{2}\sqrt{2}\left( 9t^{2}+1\right) dt= 52\sqrt{2}.$$
 
-\vskip0.7cm
+
 \begin{enumerate}[resume=ejercicios, leftmargin=0.5cm, labelsep=0.2cm, labelwidth=0.3cm, align=left, label=\bfseries\arabic*.]
 	\item \makebox[\linewidth][c]{$\overrightarrow{r}(t)=\la \sqrt{t^{3}},\frac{9}{16}t,t^{2}\ra ,$ $t \in [0,2].$}
 \end{enumerate}
- \vskip0.2cm
+ 
 A partir de las ecuaciones $x=\sqrt{t^{3}}$, $y=\frac{9}{16}t$, $z=t^{2},$ se sigue que $x^2=t^3$ y $t= \frac{16}{9}y;$
 entonces, dos posibles relaciones son $9x^2=16yz$ y $z= \left(\frac{16}{9}y\right)^2.$ 
 
-\vskip0.2cm
+
 
 Las figuras de estas ecuaciones y la curva de intersección se presentan enseguida:
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Superficies con intersección ${\bf r}(t)=\la \sqrt{t^{3}},\frac{9}{16}t,t^{2}\ra$}
-	\begin{minipage}{0.22\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/92a.pdf}
-	\end{minipage}
-	\hspace{1em}
-	\begin{minipage}{0.22\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/92b.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
+\begin{figure}[H]
+\centering
+\caption{\small Superficies con intersección ${\bf r}(t)=\la \sqrt{t^{3}},\frac{9}{16}t,t^{2}\ra$}
+\includegraphics[width=0.4\textwidth]{Img/92a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/92b.pdf}
+\fuentepropia
+\end{figure}
 
 Las instrucciones requeridas para obtener las figuras son las siguientes:
 
-\vspace{0.6em}
-\noindent
+
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
 \begin{Verbatim}[formatcom=\letraverbatim]
 a=ParametricPlot3D[{t^(3/2),9*t/16, t^2},{t,0,1},
@@ -842,29 +739,29 @@ Directive[RGBColor[0.5,0.8, 0.5],Opacity[0.85]]}];
 Show[b,a]
 \end{Verbatim}
 \end{tcolorbox}
-\vspace{0.7em}
-\noindent
+
+
 
 Además, $\left\| \frac{d}{dt}\la \sqrt{t^{3}},\frac{9}{16}t,t^{2}\ra\right\| = \frac{9}{16}+2t,$
 entonces la longitud de la curva está dada por
 $$L=\int_0^2 \left ( \frac{9}{16}+2t \right )dt = \frac{41}{8}. $$
 
-\vskip0.7cm
+
 \begin{enumerate}[resume=ejercicios, leftmargin=0.5cm, labelsep=0.2cm, labelwidth=0.3cm, align=left, label=\bfseries\arabic*.]
 	\item \makebox[\linewidth][c] {$\overrightarrow{r}(t)=\la 4t^{3}+2t^{2},\frac{4}{3\sqrt{2}}t,4t^{3}-2t^{2}\ra $, $t \in [-1,1].$}
 \end{enumerate}
-\vskip0.2cm
+
 A partir de las expresiones $x=4t^{3}+2t^{2},$ $y=\frac{4t}{3\sqrt{2}},$ $z=4t^{3}-2t^{2},$ se sigue que
 $t=\frac{3\sqrt{2}}{4}y,$ $x-z=4t^{2}=4\left( \frac{3y}{4}\sqrt{2}\right)
 ^{2}= \frac{9}{2}y^{2}.$\\
 Además $x+z=8t^{3}=8\left( \frac{3y}{4}\sqrt{2}\right) ^{3}= \frac{27}{4}\sqrt{2}y^{3}.$
-\vskip0.2cm 
+ 
 Por lo tanto, las figuras de las ecuaciones $x-z= \frac{9}{2}y^{2}$ y $x+z=\frac{27}{4}\sqrt{2}y^{3}$ 
 se muestras a continuación junto con la curva de intersección:
 
 \begin{figure}[H]
 \begin{center}
-	\captionof{figure}{\small Superficies con intersección ${\bf r}(t)=\la 4t^{3}+2t^{2},\frac{4}{3\sqrt{2}}t,4t^{3}-2t^{2}\ra$.}
+	\caption{Superficies con intersección ${\bf r}(t)=\la 4t^{3}+2t^{2},\frac{4}{3\sqrt{2}}t,4t^{3}-2t^{2}\ra$.}
 \includegraphics[height=4.5cm]{Img/93a.pdf} \hskip0.5cm
 \includegraphics[height=4.5cm]{Img/93b.pdf}
 \fuentepropia
@@ -873,8 +770,8 @@ se muestras a continuación junto con la curva de intersección:
 
 Estos figuras se obtienen ejecutando las siguientes instrucciones:
 
-\vspace{0.6em}
-\noindent
+
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
 \begin{Verbatim}[formatcom=\letraverbatim]
 a=ParametricPlot3D[{4*t^3+2*t^2,4*t/(3*Sqrt[2]),
@@ -888,8 +785,8 @@ Opacity[0.9]]}];
 Show[b,a]
 \end{Verbatim}
 \end{tcolorbox}
-\vspace{0.7em}
-\noindent
+
+
 
 Es sencillo ver que 
 $ \left\| \frac{d}{dt}\la 4t^{3}+2t^{2},\frac{4t}{3\sqrt{2}},4t^{3}-2t^{2}\ra \right\| = \frac{2}{3}\sqrt{2}\left(
@@ -897,44 +794,30 @@ $ \left\| \frac{d}{dt}\la 4t^{3}+2t^{2},\frac{4t}{3\sqrt{2}},4t^{3}-2t^{2}\ra \r
 por lo tanto, la longitud de la curva está dada por
 $$L=\int_{-1}^{1}\frac{2}{3}\sqrt{2}\left( 18t^{2}+1\right) dt= \frac{28}{3}\sqrt{2}$$
 
-\vskip0.3cm
+
 \begin{enumerate}[resume=ejercicios, leftmargin=0.5cm, labelsep=0.2cm, labelwidth=0.3cm, align=left, label=\bfseries\arabic*.]
 	\item \makebox[\linewidth][c]
 	{$\overrightarrow{r}(t) =\la 3t-t^{3},3t^2,3t+t^{3} \ra ,$ $t \in [-1,1].$}
 \end{enumerate} 
-\vskip0.3cm 
+ 
 Para esta función es claro que 
 $x= 3t-t^{3}$, $y=3t^2$, $z=3t+t^{3}$. De modo que
 $x+z=6t$ entonces $(x+z)^2=12y$. Por otro lado, $x^2-z^2=-12t^4,$ entonces, $x^2-z^2=-4y^2/3.$
 Las figuras de las dos superficies junto con la curva de intersección se muestra a continuación:
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Superficies con intersección ${\bf r}(t)=\la 3t-t^{3},3t^2,3t+t^{3} \ra$}
-	\begin{minipage}{0.22\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/91a.pdf}
-	\end{minipage}
-	\hskip0.5cm
-	\begin{minipage}{0.22\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/91b.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
+\begin{figure}[H]
+\centering
+\caption{\small Superficies con intersección ${\bf r}(t)=\la 3t-t^{3},3t^2,3t+t^{3} \ra$}
+\includegraphics[width=0.4\textwidth]{Img/91a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/91b.pdf}
+\fuentepropia
+\end{figure}
 
-
-%\vspace{-7.61mm}
 Las instrucciones para conseguir estas figuras son las siguientes:
 
-\vspace{0.6em}
-\noindent
+
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
 \begin{Verbatim}[formatcom=\letraverbatim]
 a=ParametricPlot3D[{3*t-t^3,3*t^2,3*t+t^3},
@@ -948,8 +831,8 @@ Mesh->False;
 Show[b,a]
 \end{Verbatim}
 \end{tcolorbox}
-\vspace{0.7em}
-\noindent
+
+
 
 Para hallar $L$ se determina el elemento diferencial de longitud
 $$\left\| \frac{d}{dt}\la 3t-t^{3},3t^2,3t+3t^{3} \ra \right\| = 3 \sqrt{2}(t^2+1),$$
@@ -957,45 +840,30 @@ $$\left\| \frac{d}{dt}\la 3t-t^{3},3t^2,3t+3t^{3} \ra \right\| = 3 \sqrt{2}(t^2+
 por lo tanto, $$L= \int_{-1}^1 3 \sqrt{2}(t^2+1) dt = 8\sqrt{2}.$$
 
 
-\vskip0.5cm
+
 \begin{enumerate}[resume=ejercicios, leftmargin=0.5cm, labelsep=0.2cm, labelwidth=0.3cm, align=left, label=\bfseries\arabic*.]
 	\item \makebox[\linewidth][c]
 	{$\overrightarrow{r}(t) =\la \sec t, \ln (\sec(t)+\tan(t)),\tan(t) \ra ,$ $t \in [-\frac{\pi}{3},\frac{\pi}{3}].$}
 \end{enumerate}
-\vskip0.2cm 
+ 
 A partir de las funciones componentes y de algunas identidades trigono\-métricas conocidas
 se pueden establecer relaciones entre ellas; 
 dos de éstas funciones son: $x^2=1+z^2$ y $y=\ln(x+z).$
 Los figuras de estas dos superficies junto con la curva de intersección se muestra a continuación:
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{\small Superficies con intersección ${\bf r}(t)=\la \sec t, \ln (\sec(t)+\tan(t)),\tan(t) \ra$}
-	\begin{minipage}{0.24\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/95a.pdf}
-	\end{minipage}
-	\begin{minipage}{0.24\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/95b.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
-
-
-
+\begin{figure}[H]
+\centering
+\caption{\small Superficies con intersección ${\bf r}(t)=\la \sec t, \ln (\sec(t)+\tan(t)),\tan(t) \ra$}
+\includegraphics[width=0.4\textwidth]{Img/95a.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Img/95b.pdf}
+\fuentepropia
+\end{figure}
 
 Las instrucciones para conseguir estas figuras son las siguientes:
 
-\vspace{0.6em}
-\noindent
+
+
 \begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
 \begin{Verbatim}[formatcom=\letraverbatim]
 a=ParametricPlot3D[{Sec[t],Log[Sec[t]+Tan[t]],Tan[t]},
@@ -1007,8 +875,8 @@ Directive[Cyan,Opacity[0.9]]}];
 Show[b,a]
 \end{Verbatim}
 \end{tcolorbox}
-\vspace{0.7em}
-\noindent
+
+
 
 Es claro que
 \[
@@ -1048,12 +916,12 @@ $t \in [1,e].$
 \item $\overrightarrow{r}(t) =\la e^t \cosh(t),e^t \sinh(t),e^t \ra ,$ $t\in [-1,1].$
 \item $\overrightarrow{r}(t) =\la -\frac{1}{t},\frac{2}{3}t^3,4t+5\ra ,$ $t\in [1,2].$
 \item $\overrightarrow{r}(t) =\la t,\ln (\cot (t)-\csc (t)),\ln(\sin (t)) \ra ,$ $t\in [\pi/6,5\pi/6].$
-\vspace{4mm}
+
 \end{enumerate}
 \end{ejer}
 
 \begin{ejer}\textit {Determine una expresión que defina la curva de intersección de las siguientes superficies y halle su longitud.}
-\vspace{4mm}
+
 
 \enlargethispage{\baselineskip}
 	
@@ -1062,7 +930,7 @@ $t \in [1,e].$
 
 \begin{figure}[H]
 \begin{center}
-\captionof{figure}{\small Gráfico de $x^2+z^2=4y^2+\frac{1}{2}$ y $x^2+z^2=1-y$.}
+\caption{Gráfico de $x^2+z^2=4y^2+\frac{1}{2}$ y $x^2+z^2=1-y$.}
 \includegraphics[height=4.5cm]{Img/T_23a.pdf}\hskip0.5cm
 \includegraphics[height=4.5cm]{Img/T_23b.pdf} 
 \fuentepropia
@@ -1073,7 +941,7 @@ $t \in [1,e].$
 
 \begin{figure}[H]
 \begin{center}
-\captionof{figure}{\small Gráfico de $x^2+z^2-2x=y^2-2$ y $3x^2+2z^2-4z=34$.}
+\caption{Gráfico de $x^2+z^2-2x=y^2-2$ y $3x^2+2z^2-4z=34$.}
 \includegraphics[height=4.5cm]{Img/T_24a.pdf}\hskip0.5cm
 \includegraphics[height=4.5cm]{Img/T_24b.pdf} 
 \fuentepropia
@@ -1084,7 +952,7 @@ $t \in [1,e].$
 
 \begin{figure}[H]
 \begin{center}
-\captionof{figure}{\small Gráfico de $x^2+y^2+z^2-2x=31$ y $x^2+y^2+2x=4z-1$.}
+\caption{Gráfico de $x^2+y^2+z^2-2x=31$ y $x^2+y^2+2x=4z-1$.}
 \includegraphics[height=4.5cm]{Img/T_25a.pdf}\hskip0.5cm
 \includegraphics[height=4.5cm]{Img/T_25b.pdf} 
 \fuentepropia
@@ -1096,7 +964,7 @@ $t \in [1,e].$
 \vspace*{-4mm}
 \begin{figure}[H]
 \begin{center}
-\captionof{figure}{\small Gráfico de $r=1+\cos(t)$ y $x+y+3z=1.$}
+\caption{Gráfico de $r=1+\cos(t)$ y $x+y+3z=1.$}
 \includegraphics[height=4.5cm]{Img/T_29a.pdf}\hskip0.25cm
 \includegraphics[height=4.5cm]{Img/T_29b.pdf} 
 \fuentepropia
@@ -1109,7 +977,7 @@ $x^2 + y^2 + z^2 - 2 x = 4$ y $x^2 + y^2 + z^2 - 2z = 4.$
 
 \begin{figure}[H]
 \begin{center}
-\captionof{figure}{\small Gráfico de $x^2 + y^2 + z^2 - 2 x = 4$ y $x^2 + y^2 + z^2 - 2z = 4.$}
+\caption{Gráfico de $x^2 + y^2 + z^2 - 2 x = 4$ y $x^2 + y^2 + z^2 - 2z = 4.$}
 \includegraphics[height=4.5cm]{Img/T_72a.pdf}\hskip0.5cm
 \includegraphics[height=4.5cm]{Img/T_72b.pdf} 
 \fuentepropia
@@ -1121,7 +989,7 @@ $x^2 + y^2 + z^2 - 2 x = 4$ y $x^2 + y^2 + z^2 - 2z = 4.$
 
 \begin{figure}[H]
 \begin{center}
-\captionof{figure}{\small Gráfico de $r=\sin(2\theta)$ y $x+y+3z=1$.}
+\caption{Gráfico de $r=\sin(2\theta)$ y $x+y+3z=1$.}
 \includegraphics[height=4.5cm]{Img/97a.pdf}\hskip0.5cm
 \includegraphics[height=4.5cm]{Img/97b.pdf} 
 \fuentepropia
@@ -1132,7 +1000,7 @@ $x^2 + y^2 + z^2 - 2 x = 4$ y $x^2 + y^2 + z^2 - 2z = 4.$
 
 \begin{figure}[H]
 \begin{center}
-\captionof{figure}{\small Gráfico de $r=\sin(2\theta)$ y $z=1-x^2-y^2$.}
+\caption{Gráfico de $r=\sin(2\theta)$ y $z=1-x^2-y^2$.}
 \includegraphics[height=4.5cm]{Img/98a.pdf}\hskip0.5cm
 \includegraphics[height=4.5cm]{Img/98b.pdf} 
 \fuentepropia

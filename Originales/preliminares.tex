@@ -2,7 +2,7 @@
 
 Presentamos en este capítulo algunos de los elementos teóricos básicos que se requieren para abordar 
 los problemas planteados en los capítulos posteriores.
-\vskip 0.1cm
+
 Usaremos el término \emph{conjunto} para referirnos a una colección bien definida de objetos. 
 Una \emph{función} $f$ de un conjunto $A$ 
 en un conjunto $B$, es una regla que asigna a cada elemento de $A$ un único elemento de $B.$
@@ -16,7 +16,7 @@ esto es, un segmento de recta con magnitud y dirección específicos con punto i
 Los puntos en $\mathbb{R}^n$ se presentan en la forma $P=(a_1,a_2,\cdots, a_n)$ 
 y el vector que va desde el origen hasta el punto $P$ se denotará por $\langle a_1,a_2,\cdots, a_n\rangle.$ 
 Particularmente a los vectores $\vi=\langle 1,0,0 \rangle,$ $\vj=\langle 0,1,0 \rangle,$ $\vk=\langle 0,0,1 \rangle$ los denominaremos \emph{vectores coordenados} en $\mathbb{R}^3.$ 
-\vskip0.2cm
+
 Para dos vectores $\ve{u}=\langle a_1,a_2,\cdots, a_n\ra$ y $\ve{v}=\langle b_1,b_2,\cdots, b_n\ra$
 el \emph{producto punto} se denota por $\ve{u}\cdot \ve{v} = a_1b_1+a_2b_2+\cdots+a_nb_n$; 
 la \emph{norma} $\ve{u}$ se denota por $\Vert \ve{u} \Vert$ y se define
@@ -24,7 +24,7 @@ por  $\Vert \ve{u}\Vert=\sqrt{a_1^2+a_2^2+\cdots+a_n^2};$ nótese que
 $\ve{u}\cdot \ve{u}=\Vert \ve{u}\Vert^2.$
 El ángulo $\theta $ entre los vectores $\ve{u}$ y $\ve{v}$ satisface la relación
 $\ve{u} \cdot \ve{v}= \left\|\ve{u}\right\| \left\| \ve{v}\right\| \cos \theta .$
-\vskip0.2cm
+
 El \emph{producto cruz} entre dos vectores  $\ve{u}=\langle a_{1},a_{2},a_{3}\ra$ y 
 $\ve{v}=\langle b_{1},b_{2},b_{3}\ra$ en $\mathbb{R}^3$ es el vector 
 $$\ve{u}\times \ve{v}=\langle a_{2}b_{3}-a_{3}b_{2},a_{3}b_{1}-a_{1}b_{3},a_{1}b_{2}-a_{2}b_{1}\ra,$$
@@ -55,22 +55,14 @@ En el gráfico la línea discontinua corresponde al vector
 $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$. Aunque nos apoyamos en un gráfico bidimensional, este resultado se puede presentar en espacios 
 de dimensión superior.
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Proyección ortogonal}
-	\label{fig:proy-ortogonal}
-	\begin{minipage}{0.30\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/1.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
 
+\begin{figure}[H]
+\centering
+\caption{Proyección ortogonal}
+\label{fig:proy-ortogonal}
+\includegraphics[width=0.5\textwidth]{Fig/1.pdf}
+\fuentepropia
+\end{figure}
 
 \begin{prop}
 Para todo $\ve{v}\in \mathbb{R}^n$, el vector $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$ es ortogonal
@@ -100,9 +92,8 @@ $A=\Vert \ve{u} \times \ve{v} \Vert.$
     \centering
     \caption{Área de un paralelogramo y volumen de un paralelepípedo}
     \label{paralelogramo_paralelipedo}
-    \includegraphics[width=0.38\linewidth]{Fig/2.pdf}
-    \hspace{1em}
-    \includegraphics[width=0.38\linewidth]{Fig/3.pdf}  
+    \includegraphics[width=0.3\linewidth]{Fig/2.pdf} \hspace{5mm}
+    \includegraphics[width=0.5\linewidth]{Fig/3.pdf}  
     \fuentepropia
 \end{figure}
 
@@ -134,7 +125,7 @@ La demostración de este resultado se encuentra en \textcite{marsden_calculo_201
 \begin{ejemplo}
 El conjunto $A=\{(x,y) \in \mathbb{R}^{2}|x>0\}$ es abierto pues
 para todo $a \in A$ se satisface la definición dada.
-\vskip0.2cm
+
 El conjunto $B=\{(x,y) \in \mathbb{R}^{2}|xy\geq 0\}$ no es abierto pues
 para $\left( 0,0\right) \in B$ no es posible determinar
 $r>0$ tal que $B_{r}\left( \left( 0,0\right) \right) \subset B.$
@@ -148,7 +139,7 @@ y el conjunto de puntos de $\mathbb{R}^m$ que son imagen de algún punto del dom
 de $f$. De acuerdo con \textcite{apostol_calculus_1999}, a las funciones definidas cuando $n=m=1,$ se denominan \emph{funciones reales,} las cuales se estudian en los cursos de \emph{cálculo diferencial} y \emph{cálculo integral.}
 Si $n>1$ y $m=1$ obtendremos \emph{campos escalares};  \index{Campos escalares} \index{Campos vectoriales}
 llamaremos \emph{funciones vectoriales} a las obtenidas cuando $n=1$ y $m>1$; mientras que los \emph{campos vectoriales} son funciones obtenidas cuando $n>1$ y $m>1.$ \index{Funciones vectoriales}
-\vskip0.2cm 
+ 
 Para presentar funciones vectoriales, campos vectoriales y en general para vectores, usaremos la notación $\ve{r}(t),$ ${\bf r}(t)$ o ${\bf F}(x,y,z)$ indistintamente y según el caso. 
 Por ejemplo:
 
@@ -164,7 +155,7 @@ ${\rm dom}f=\{(x,y,z) \in \mathbb{R}^{3}/x\neq y\}.$
 \end{itemize}
 Supondremos que el lector ha estudiado los conceptos de límite, continuidad, diferenciabilidad e integrabilidad
 en funciones reles, de tal manera que extenderemos estos elementos a los otros tipos de funciones. 
-\vskip0.2cm 
+ 
 En cuanto al dominio de la función $f(x,y) =\frac{x^{4}-y^{4}}{x^{2}+y^{2}},$
 ${\rm Dom}f=\{(x,y) \in \mathbb{R}^{2}/(x,y) \neq \left( 0,0\right)\}$
 a pesar que $\left( 0,0\right) $ no es un punto del dominio de $f,$
@@ -185,7 +176,7 @@ siempre que $\left\Vert {\bf x}- {\bf a} \right\Vert <\delta .$
 \begin{itemize}[leftmargin=0cm,itemindent=0.4cm,labelwidth=\itemindent,labelsep=0cm,align=left]
 \item Usando la definición, demostrar que $\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left\langle
 x^{2},x+y\right\rangle =\left\langle 1,2\right\rangle .$
-\vskip0.1cm
+
 
 Observemos que  para todo $\varepsilon >0$ existe $\delta >0$ tal que si 
 $\left\Vert(x,y) -\left( 1,1\right) \right\Vert <\delta $
@@ -215,7 +206,7 @@ Utilizando los resultados (\ref{preliminares}), (\ref{preliminares1}) y (\ref{pr
 Tomando $\varepsilon =\delta \left( 4-\delta \right) $, se obtiene que 
 $\delta =2-\sqrt{4-\varepsilon };$ con $0<\varepsilon < 4$ la definición se satisface.
 
-\vskip0.3cm
+
 
 \item Mostrar que $\lim\limits_{t\rightarrow 1}\left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle =\left\langle 2,2,1\right\rangle .$ Veamos que para todo $\varepsilon >0$ existe 
 $\delta >0$ tal que si $\left\vert t-1\right\vert <\delta, $ 
@@ -262,7 +253,7 @@ entonces $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right
 \end{eqnarray*}
 lo cual implica que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i, $
 para $i=1,2, \cdots, m. $
-\vskip0.2cm
+
 
 \item $(\leftarrow)$ Ahora supongamos que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i,$ 
 esto significa que para todo $\frac{\varepsilon}{m}>0$ existe $\delta>0$ tal que
@@ -282,9 +273,9 @@ es decir $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right
 lo cual implica que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})$ existe y es igual a $\ve{L}.$
 \end{itemize}
 
-\vskip0.2cm
+
 Este resultado permite hacer cálculos directos como se ilustra a continuación.
-\vskip0.2cm
+
 
 \begin{itemize}[leftmargin=*]
 \item {\small $\ds\lim_{t\rightarrow 0}\left\langle \frac{\sin t}{t},\sqrt{t},\frac{e^{t}-1}{t}\right\rangle= \langle \lim_{t\rightarrow 0}\frac{\sin t}{t} , \lim_{t\rightarrow 0}\sqrt{1+t} ,
@@ -410,7 +401,7 @@ Se dice que una función $\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ es con
 $\mathbf{a}\in A$, si para todo $\varepsilon >0$ existe $\delta >0$ tal que si 
 $\left\Vert \mathbf{x}-\mathbf{a}\right\Vert <\delta, $ entonces 
 $\left\Vert \ve{F}(\mathbf{x}) -\ve{F}\left( \mathbf{a}\right) \right\Vert <\varepsilon .$
-\vskip0.1cm
+
 Diremos que $\ve{F}$ es continua en $A$, cuando $\ve{F}$ es continua en todo punto de $A.$
 \end{defi}
 Los siguientes teoremas son consecuencias de los teoremas de límites y de la definición anterior.
@@ -439,7 +430,7 @@ entonces $\ve{G}\circ \ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^p$ es continu
 Por ser $\ve{G}$ continua en $\ve{F}\left( \mathbf{a}\right) \in B,$ dado $\varepsilon >0$ 
 existe $\lambda >0,$ para $\mathbf{y} \in B,$ si $\left\Vert \mathbf{y-}\ve{F}\left( \mathbf{a}\right)
 \right\Vert <\lambda $ entonces $\left\Vert \ve{G}(\mathbf{y})-\ve{G}\left( \ve{F}\left( \mathbf{a}\right) \right) \right\Vert <\varepsilon .$
-\vskip0.1cm 
+ 
 Como $\ve{F}$ continua en $\mathbf{a}\in A,$ esto implica que dado 
 $\delta >0,$ existe $\lambda >0,$  si $\left\Vert \mathbf{x-a}\right\Vert <\delta ,$ para $\mathbf{x}\in A,$
 entonces $\left\Vert \ve{F}(\mathbf{x}) -\ve{F}\left( \mathbf{a}\right) \right\Vert <\lambda ,$ 
@@ -503,7 +494,7 @@ $D({\bf G}\circ {\bf F})(a)=D({\bf G}( {\bf F}(a))\cdot D{\bf F}(a). $
 La prueba de este resultado puede consultarse en \textcite{spivak_calculus_2018}. 
 En el caso de campos escalares $f:\mathbb{R}^n \to \mathbb{R}$ a $Df(a)$ se denota también por 
 $\nabla f(a)$ y se denomina el \emph{vector gradiente} de $f$. \index{Gradiente}
-\vskip0.2cm
+
 Un campo vectorial ${\bf F}(x,y,z)$ con dominio $D \subseteq \mathbb{R}^3$ 
 se denomina \emph{conservativo} si existe un campo escalar
 $\phi(x,y,z)$ que se denomina \emph{función potencial} con dominio $D$ y satisface que $\nabla \phi ={\bf F}.$ \index{Campo vectorial!conservativo} \index{Función!potencial}
@@ -519,34 +510,23 @@ $$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x},\hspace{1.5cm}
 \section{Funciones vectoriales} \index{Funciones vectoriales}
 De manera general, una aplicación que asigna a cada número real un vector en $\mathbb{R}^n$
 se denomina función vectorial, esto es ${\bf r}(t)= \langle r_1(t),r_2(t),\cdots, r_n(t)\ra$.
-\vskip0.2cm
+
 Por ejemplo, la función ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$ está definida para $t\in [0,2\pi]$ su 
 gráfico en $\mathbb{R}^3$ se representa a continuación.
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Curva determinada por ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$}
-	\begin{minipage}{0.38\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/4.pdf}
-	\end{minipage}
-	\begin{minipage}{0.38\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/5.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
+\begin{figure}[H]
+\centering
+\caption{Curva determinada por ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$}
+\includegraphics[width=0.44\textwidth]{Fig/4.pdf} \hspace{5mm}
+\includegraphics[width=0.48\textwidth]{Fig/5.pdf}
+\fuentepropia
+\end{figure}
 
 Para una función vectorial ${\bf r}(t)=\langle r_1(t),r_2(t),\cdots, r_m(t) \rangle ,$
 los dos primeros de los siguientes resultados se obtienen 
-como caso particular de los teoremas (\ref{preliminares3}) y (\ref{preliminares6}), con $n=1.$ 
+como caso particular de los teoremas (\ref{preliminares3}) y 
+(\ref{preliminares6}), con $n=1.$ 
 
 \begin{itemize}
 \item $\lim_{t\to a}{\bf r}(t)$ existe si y solo si $\lim_{t\to a}r_i(t)$ para toda $i=1,2,\cdots ,m$.
@@ -615,7 +595,7 @@ En estas notas trabajaremos básicamente sobre tres tipos de objetos en el espac
 En esta sección presentaremos una manera de representar dichos objetos, la idea consiste en \emph{parametrizar} la región en mención. Para este propósito se utiliza, según el caso, uno, dos o tres parámetros, respectivamente.  
 \index{Parametrizar}
 
-\vspace{-1mm}
+
 
 \begin{tcolorbox}[breakable,enhanced,title=\bf Curva parametrizada]
 La funci\'on $\ve{r}(t)$ se denomina una \emph{parametrizaci\'on} de una curva $C$ si 
@@ -638,7 +618,7 @@ La superficie se denomina \emph{suave} si $\frac{\partial \ve{r}}{\partial u}$ y
 $\frac{\partial \ve{r}}{\partial v} $ son continuas y 
 $\frac{\partial \ve{r}}{\partial u} \times \frac{\partial \ve{r}}{\partial u} \neq \ve{0}.$ 
 \index{Superficie!suave}
-%\vskip0.2cm
+%
 Con los elementos anteriormente descritos es posible construir funciones
 que describan un sólido en el espacio tridimensional. 
 \begin{tcolorbox}[breakable,enhanced,title=\bf Parametrización de un sólido]
@@ -656,38 +636,32 @@ resulta, en algunos casos, bastante sencillo.
 Presentamos en esta sección algunos de los elementos teóricos propios de un curso de 
 Cálculo Vectorial que serán usados en los capítulos posteriores. La exposición teórica completa puede ser consultada 
 por el lector con más detalle en \cite{apostol_alisis_1981}, \cite{marsden_calculo_2013}, \cite{stewart_calculo_2018} o \cite{thomas_calculo_2015}.
-\vskip0.2cm
+
 Posteriormente se utilizan estos elementos en algunas aplicaciones de la integración principalmente en 
 el cálculo de longitud de curvas, áreas, volumenes y centros de masa. 
 Se estudiará también el teorema de cambio de variables,
 particularmente cuando se utilizan coordenadas polares, cilindricas o esféricas, pero se hará enfasis en 
 parametrizar la región de integración.
-\vskip0.2cm
+
 Una función $g:\mathbb{R}\to\mathbb{R}$ se dice \emph{integrable} en $[a,b]$ en el sentido señalado en \textcite{apostol_calculus_1999};
 utilizaremos esta idea en los siguientes resultados. 
 
 \subsection*{Integrales de línea en campos escalares}
 
+\enlargethispage{\baselineskip}
+
 Consideremos una curva $\alpha$ parametrizada por una función 
 ${\bf r}:\mathbb{R}\to\mathbb{R}^3$ continua, inyectiva y derivable en $(a,b)$, con ${\bf r}(t)=\langle x(t),y(t),z(t) \rangle .$ 
 % \index{Partición}
-\vskip0.2cm
 
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Curva en $\mathbb{R}^3$}
-	\label{Fig/6.png}
-	\begin{minipage}{0.32\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/6.png}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
+\begin{figure}[H]
+\centering
+\caption{Curva en $\mathbb{R}^3$}
+\label{Fig/6.png}
+\includegraphics[width=0.45\textwidth]{Fig/6.png}
+\fuentepropia
+\end{figure}
 
-\vskip0.2cm
 Una \emph{partición} $P$ del intervalo $[a,b]$ es un conjunto finito de puntos 
 $P=\{ t_0, t_1, t_2, \cdots , t_{n-1},t_n \}$ que satisface 
 $$a = t_0< t_1<  t_2< \cdots < t_{n-1}< t_n=b;$$
@@ -733,7 +707,7 @@ l\'{\i}mite de las aproximaciones a través de sumas de Riemann, posteriormente
 se presentarán de manera similar las integrales triples. 
 La evaluación de las integrales dobles o triples se puede obtener
 utilizando el teorema fundamental de cálculo; véase \cite{apostol_calculus_1999}.
-\vskip0.2cm
+
 En el plano $xy$ consideraremos un rectángulo $R=[a,b]\times \lbrack c,d],$ es decir
 $$R=\{(x,y) \in \mathbb{R}^{2}\, | \,a\leq x\leq b,c\leq y\leq d\}.$$
 Si $f(x,y)$ es una función continua definida sobre el rectángulo $R,$ 
@@ -744,7 +718,7 @@ para el intervalo $[c,d],$ consideremos
 $$c=y_{0}<y_{1}<y_{2}<\cdots <y_{k}<\cdots <y_{m-1}<y_{m}=d.$$ A esta división de $R$, lo denominaremos una partición de $R$.
 \index{Partición}
 Si $n$ y $m$ crece entonces el ancho y el largo de estos subintervalos decrecen.
-\vskip0.2cm
+
 Denotaremos $\Delta x_{i}$ al ancho del $i-$ésimo subintervalo
 sobre el eje $x,$ y $\Delta y_{k}$ es el alto $k-$ésimo subintervalo sobre el eje $y$, 
 es decir $\Delta x_{i}=x_{i+1}-x_{i},$ de la misma forma $\Delta
@@ -752,9 +726,9 @@ y_{k}=y_{k+1}-y_{k}.$ El área de uno de estos subintervalos de ancho $\Delta x_
 $\Delta A_{ik}=\Delta x_{i}\Delta y_{k}$.
 La norma de la partición se denota por $\left\Vert P\right\Vert$ y es el máximo sobre todos los valores 
 $i$ y $k$, de todas las dimensiones de los rectángulos en que se divide la región $R.$
-\vskip0.2cm
+
 Cuando todos estos subintervalos son de igual longitud, los denotaremos por $\Delta x=\frac{b-a}{n}$ y $\Delta y=\frac{d-c}{m}.$
-\vskip0.2cm \index{Suma doble de Riemann}
+ \index{Suma doble de Riemann}
 Una suma de Riemann de $f(x,y) $ sobre el rectángulo $R$ se obtiene al considerar un punto cualquiera 
 $\left( x_{i}^{\ast },y_{k}^{\ast}\right) ,$ en $ik$-ésimo subrectángulo, esto 
 $\left( x_{i}^{\ast},y_{k}^{\ast }\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{k-1},y_{k}],$ 
@@ -766,7 +740,7 @@ $$S_{nm}=\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \
 
 Dependiendo de la selección $\left( x_{i}^{\ast },y_{k}^{\ast }\right) ,$
 es posible obtener diversos valores de $S_{nm}.$
-\vskip0.2cm
+
 Es de especial interés el conocer el comportamiento de las sumas de
 Riemann cuando la norma de la partición tiende a cero, que equivale a
 que el ancho y la altura de cada subrectángulo de $R$ tienden a cero.
@@ -805,94 +779,67 @@ centro de masa de la región $R$, esto es $$(\overline{x},\overline{y})= \left(\
 
 Si la región de integración en la fórmula (\ref{integralesdobles1}) es un rectángulo está se evalúa
 $$\ds \iint\limits_{R}f(x,y) dA= \int_c^d \left (\int_a^b f(x,y) dx \right )dy.$$
-\vskip0.2cm
+
 El teorema de Fubini, cuya demostración puede consultarse en \cite{marsden_calculo_2013} o \cite{apostol_alisis_1981},
 es el resultado que permite intercambiar el orden de integración incluso en regiones más generales. 
-\vskip0.2cm
+
 Si la región de integración no es un rectángulo, 
 la integral doble de una función $f(x,y)$ sobre una región $R$ puede evaluarse mediante la aplicación del Teorema de 
 Fubini por alguna de las siguientes expresiones, dependiendo de la forma de la región $R$.
-\vskip0.2cm
+
 Si la región del plano en mención, se describe en la forma $\phi_{1}(x) \leq y \leq \phi_{2}(x)$ con $a \leq x \leq b$, 
 diremos que la región es de tipo I; mientras que la región del tipo II es aquella que puede ser descrita como
 $\varphi_{1}(y) \leq x \leq \varphi_{2}(y)$ con $c \leq y \leq d.$ 
 
-\vskip0.2cm
+
 
 De acuerdo con lo anterior, el planteamiento de la integral doble es, según el caso, el siguiente:
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Regiones de integración en el plano}
-	\label{Regiones_integracion_plano}
-	\begin{minipage}{0.35\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/7.pdf}
-	\end{minipage}
-	\begin{minipage}{0.35\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/8.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
 
+\begin{figure}[H]
+\centering
+\caption{Regiones de integración en el plano}
+\label{Regiones_integracion_plano}
+\includegraphics[width=0.55\textwidth]{Fig/7.pdf} \\
+\includegraphics[width=0.55\textwidth]{Fig/8.pdf}
+\fuentepropia
+\end{figure}
 
-
-$$ \iint_{R}f(x,y) dA=\int_{a}^{b}\int_{\phi _{1}(y) }^{\phi_{2}(y)}f(x,y)dydx,$$
-
+\[ \iint_{R}f(x,y) dA=\int_{a}^{b}\int_{\phi _{1}(y) }^{\phi_{2}(y)}f(x,y)dydx,\]
 o también
-\vskip0.2cm
-$$ \iint_{R}f(x,y)dA=\int_{c}^{d}\int_{\varphi _{1}(y) }^{\varphi _{2}(y)}f(x,y)dxdy.$$
+\[ \iint_{R}f(x,y)dA=\int_{c}^{d}\int_{\varphi _{1}(y) }^{\varphi _{2}(y)}f(x,y)dxdy.\]
 
-%\vskip0.2cm
+%
 
 \begin{ejemplo}
 Consideremos la función $f(x,y)=8+2x-x^3-4y$ y algunas aproximaciones para diferentes valores de $n$ y $m$;
-con $x\in [0,2]$, $y \in [0,1].$
-
-%\captionsetup{hypcap=false}
-%\captionof{figure}{\small Aproximaciones al volumen bajo $f(x,y)$}
-\vspace{4mm}
-\noindent % Evita sangrías no deseadas
-\begin{minipage}{\textwidth}
-	\centering
-	% Usamos \captionof porque estamos fuera de un entorno figure
-	\captionof{figure}{Aproximaciones para el volumen bajo $f(x,y) = 8+2x-x^3-4y$.}
-	\label{fig:aproximaciones_volumen}
-	
-	\vspace{0.3cm} % Espacio entre título e imágenes
-	
-	\begin{tabular}{ccc}
-		% PRIMERA FILA: Las imágenes con escalas homogeneizadas
-		\includegraphics[height=4.5cm]{Img/T_51a.pdf} & 
-		\includegraphics[height=4.5cm]{Img/T_51b.pdf} &
-		\includegraphics[height=4.5cm]{Img/T_51c.pdf} \\
-		\small $n=5, m=9$ & \small $n=6, m=11$ & \small $n=17, m=29$
-	\end{tabular}
-	
-	\vskip0.2cm
-	\fuente{elaboración propia.} 
-\end{minipage}
-\vspace{3em} % Espacio para separar la minipage del siguiente párrafo
-
+con $x\in [0,2]$, $y \in [0,1]$.
 \end{ejemplo}
 
-%Los gráficos anteriores se obtienen con las siguientes instrucciones. 
-%\begin{Verbatim}[fontsize=\letraverbatim]
-%DiscretePlot3D[8+2*x-x^3-4*y,{x,0,2,0.05},{y,0,1,0.05},
-%ExtentSize->Left,BoxRatios->{1,1,1}] \end{Verbatim} 
-\vspace{-8mm}
+\begin{figure}[H]
+	\centering
+	\caption{Aproximaciones para el volumen bajo $f(x,y) = 8+2x-x^3-4y$.}
+	\label{fig:aproximaciones_volumen}
+	\begin{minipage}[b]{0.48\linewidth}
+	\includegraphics[width=\linewidth]{Img/T_51a.png}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\linewidth}
+	\includegraphics[width=\linewidth]{Img/T_51b.png}
+	\end{minipage}
+	
+	\begin{minipage}[b]{0.48\linewidth}
+	\includegraphics[width=\linewidth]{Img/T_51c.png}
+	\end{minipage}
+	\fuentepropia
+\end{figure}
+
 El volumen bajo la figura de $f(x,y)$ sobre el rectángulo $R$ puede verse también como la integral de $A(x),$ 
 la cual representa el área de las secciones transversales del sólido;
 por tanto el volumen está dado por {\small $\ds \int_a ^b A(x) dx= \int_a ^b \int_c ^d f(x,y) dy dx $.} O de manera similar
 {\small $\ds \int_c ^d A(y) dy= \int_c ^d \int_a ^b  f(x,y) dx dy.$}
 
-\vskip0.4cm
+
 
 Ejemplo de lo anterior es la siguiente integral
 que representa el volumen del sólido en mención $$\ds \int_0^2\int_0^1 (8+2x-x^3-4y) dydx = \int_0^1 \int_0^2(8+2x-x^3-4y) dxdy.$$
@@ -901,19 +848,22 @@ que representa el volumen del sólido en mención $$\ds \int_0^2\int_0^1 (8+2x-x
 	\centering
 	\caption{Secciones transversales bajo $z = 8+2x - x^3 - 4y$, con $x \in [0,2]$, $y \in [0,1]$.}
 	\label{fig:secciones_transversales_bajo}
-	\begin{minipage}[b]{0.22\linewidth}
+	\begin{minipage}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Img/T_52a.pdf}
-	\end{minipage}%
-	\begin{minipage}[b]{0.22\linewidth}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Img/T_52b.pdf}
 	\end{minipage}%
-	\begin{minipage}[b]{0.22\linewidth}
+
+	\begin{minipage}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Img/T_52c.pdf}
-	\end{minipage}%
-	\begin{minipage}[b]{0.22\linewidth}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Img/T_52d.pdf}
 	\end{minipage}
@@ -955,7 +905,7 @@ $\Delta V_{ijk}=\Delta x_{i}\Delta y_{j}\Delta z_{k}$.
 La norma de la partición se denota por $\left\Vert P\right\Vert $ y es
 el máximo sobre todos los valores $i,$ $j$ y $k$ de todas las
 dimensiones de las cajas en que se divide la región $E.$ 
-\vskip0.2cm
+
 Una suma de Riemann de $f(x,y,z) $ sobre la caja rectangular $E$ se consigue al considerar un punto cualquiera 
 $\left( x_{i}^{\ast},y_{j}^{\ast },z_{k}^{\ast }\right) ,$ en la $ijk$-ésima caja
 rectangular, esto es $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast}\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{j-1},y_{j}]\times \lbrack z_{k-1},z_{k}],$ lo cual equivale a que $x_{i-1}<x_{i}^{\ast }<x_{i},$ 
@@ -986,7 +936,7 @@ cuando este l\'{\i}mite existe.
 Ilustremos lo anterior con dos integrales triples.
 \begin{ejemplo}
 Evaluar {\small $\ds \int_{-1}^1\int_0^1\int_0^1  yz^2 e^{x} dzdydx$} mediante sumas de Riemann.
-\vskip0.2cm
+
 Al hacer una partición de la región de integración en $nml$ cajas rectangulares se sigue que 
 $\Delta x= \frac{2}{n}$ $\Delta y= \frac{1}{m}$ y $\Delta z= \frac{1}{l}$. Además
 $x_i= -1+\frac{2i}{n},$ $y_j=\frac{j}{m}$ y $z_k=\frac{k}{l}.$
@@ -1015,7 +965,7 @@ Integrate[f[x,y,z],{x,-1,1},{y,0,1},{z,0,1}]
 Para $f(x,y,z)= \cos (x) \sin (y)+z^2 \cos^2 (2 y)$ y $E$ el \mbox{paralelepípedo} determinado por 
 $[-\frac{\pi}{2},\frac{\pi}{2}]\times [0,\frac{\pi}{4}]\times[0,1]$; evaluar 
 {\footnotesize $\ds \iiint_Ef(x,y,z) dzdydx.$}
-\vskip0.2cm
+
 Al hacer una partición de $E$ en $nml$ cajas rectangulares es posible establecer que
 $\Delta x= \frac{\frac{\pi}{2}-\left(\frac{-\pi}{2}\right)}{n}=\frac{\pi}{2n}$
 $\Delta y= \frac{\frac{\pi}{4}-0}{m}=\frac{\pi}{4m}$ y $\Delta z= \frac{1}{l}$. Además
@@ -1046,7 +996,7 @@ Integrate[f[x,y,z],{x,-Pi/2,Pi/2},{y,0,Pi/4},{z,0,1}]
 \end{comment}
 Utilizando \verb"Mathematica" es posible simplificar y evaluar las integrales anteriores. 
 Su uso se explicará en detalle en los próximos capítulos.
-\vskip0.1cm 
+ 
 %
 
 Para una región acotada sólida $E$ en el espacio, se sigue un proceso análogo al utilizado en las 
@@ -1054,28 +1004,19 @@ integrales dobles. Nótese que $z$ recorre los puntos entre las superficies $z=u
 $z=u_2(x,y)$. La proyección de $E$ en el plano $xy$ muestra que $y$ recorre los puntos que están incluidos entre las curvas $y=h_1(x)$ y $y=h_2(x),$ con $x\in [a,b].$ 
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Integración en el espacio}
-	\begin{minipage}{0.39\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/9.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
+\begin{figure}[H]
+\centering
+\caption{Integración en el espacio}
+\includegraphics[width=0.7\textwidth]{Fig/9.pdf}
+\fuentepropia
+\end{figure}
 
 Es por esto que la integral respectiva se escribe en la forma
 $$\int_a^b\int_{h_1(x)}^{h_2(x)} \int_{u_1(x,y)} ^{u_2(x,y)} f(x,y,z) dz dydx.$$ 
 
 Se debe observar que en algunos casos la proyección del sólido en el plano $xy$ puede corresponder a regiones del tipo I,
 tipo II, las cuales fueron descritas anteriormente, o también combinaciones de estas.
-\vskip0.2cm
+
 En estos apuntes se consideran otras posibilidades e intercambios en el orden de integración, que dependiendo de la naturaleza de cada problema harán más o menos complicado el tratamiento a estas integrales.
 
 \subsection*{Integrales múltiples sobre regiones parametrizadas}
@@ -1104,21 +1045,22 @@ $[a,b] \times [c,d] \times [p,q].$
 	\centering
 	\caption{Transformación de una región en el espacio}
 	\label{fig:transform-region}
-	\begin{minipage}[b]{0.30\linewidth}
+	\begin{minipage}[b]{0.47\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Fig/10.pdf}
 	\end{minipage}
-	\begin{minipage}[b]{0.30\linewidth}
+	\hfill
+	\begin{minipage}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Fig/11.pdf}
 	\end{minipage}
-	\begin{minipage}[b]{0.30\linewidth}
+	
+	\begin{minipage}[b]{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{Fig/12.pdf}
 	\end{minipage}
 	\fuentepropia
 \end{figure}
-\vskip0.2cm
 
 Es posible realizar una partición de $E$ en la forma
 \[E_{ijk}= \{ P_{ijk}^\ast\,|\, u_{i-1} \leq u_i^\ast \leq u_{i}, v_{j-1} \leq v_{j}^\ast \leq v_{j}, w_{k-1} \leq w_{k}^\ast \leq w_{k}\};\]
@@ -1177,7 +1119,7 @@ La integración de una campo vectorial ${\bf f}$ sobre $S,$ está dada por
 u,v\right) \right) \cdot \left( {\bf T}_{u}\times {\bf T}_{v}\right) dudv
 \end{equation}
 Una exposición más detallada de esta formulación puede encontrarse en \cite{marsden_calculo_2013}.
-\vskip0.2cm
+
 Si en la expresión (\ref{areasup1}) $f(x,y,z)=1,$ esta integral se reduce al área $A$ de la superficie $D,$ es decir
 \begin{equation} \label{areasup}
 A=\iint_{D} \left\| {\bf T}_{u}\times {\bf T}_{v}\right\| dudv
@@ -1186,12 +1128,12 @@ Al término $\left\| {\bf T}_{u}\times {\bf T}_{v}\right\|dudv$ lo denominaremos
 \index{Elemento diferencial!de área}
 
 \subsection*{Cambio de variables en integrales dobles} \label{cambioidobles}
-\vskip0.2cm
+
 Con el propósito de evaluar la integral $\ds \iint\limits_{R}f(x,y) dA$
 se hace el cambio $(x,y) ={\bf r}(u,v)$ para transformar la región $R$ en el sistema 
 $(x,y) $ en una región $R^{\ast }$ en el sistema coordenado  $(u,v).$
 Un rectángulo en el sistema $uv$ con lados de longitud $\Delta u$ de largo y $\Delta v$ de ancho se transforma mediante la función ${\bf r}.$
-\vskip0.2cm
+
 Asumiendo que ${\bf r}$ es diferenciable, si $(u,v) $ son las coordenadas del rectángulo, los vértices
 adyacentes son $( u+\Delta u,v) $ y $(u,v+\Delta v)$; mediante la aplicación ${\bf r},$ el rectángulo
 se transforma en una región cuya área se puede aproximar mediante el área de un paralelogramo. Además, 
@@ -1230,7 +1172,7 @@ Con el propósito de evaluar la integral
 $$\iiint\limits_{R}f(x,y,z) dV$$
 se puede hacer el cambio $(x,y,z) ={\bf r}(u,v,w)$ para transformar la región $R$ en el sistema 
 de coordenadas $(x,y,z) $ en una region $R^{\ast }$ en el sistema coordenado  $(u,v,w) .$
-Consideremos un cubo en el sistema $uvw,$ con aristas de longitud $\Delta u$ de largo, $\Delta v$ de ancho y $\Delta w$ de altura, que se transforma mediante la función ${\bf r}$. \vskip0.2cm 
+Consideremos un cubo en el sistema $uvw,$ con aristas de longitud $\Delta u$ de largo, $\Delta v$ de ancho y $\Delta w$ de altura, que se transforma mediante la función ${\bf r}$.  
 Asumiendo que ${\bf r}$ es diferenciable,
 si $(u,v,w) $ son las coordenadas de un vértice del cubo, entonces los vértices
 adyacentes son $\left( u+\Delta u,v,w\right) ,$ $\left( u,v+\Delta v,w\right)$ y $\left( u,v,w+\Delta w\right) ;$ mediante la aplicación ${\bf r},$ el cubo se transforma en una región cuyo volumen se puede aproximar mediante un \mbox{paralelep\'{\i}pedo}.
@@ -1289,27 +1231,16 @@ circulares de radio $r_i$ y $r_{i+1}$ (con $r_i<r_{i+1}$) está dada por
     %\caption{Transformación a coordenadas polares}
     %\label{fig:polar-transform}
 %\end{figure}
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Transformación a coordenadas polares}
-	\label{fig:falta_título}
-	\begin{minipage}{0.28\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/13.pdf}
-	\end{minipage}
-	\hspace{1em}
-	\begin{minipage}{0.28\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/14.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
 
 
-
+\begin{figure}[H]
+\centering
+\caption{Transformación a coordenadas polares}
+\label{fig:falta_título}
+\includegraphics[width=0.4\textwidth]{Fig/13.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Fig/14.pdf}
+\fuentepropia
+\end{figure}
 
 Teniendo en cuenta las relaciones anteriores y el teorema de cambio de variables se puede establecer que en el sistema de coordenadas polares, $x=r \cos \theta$, $y=r \sin \theta$,  la transformación de una integral doble es
 {\small
@@ -1317,8 +1248,6 @@ Teniendo en cuenta las relaciones anteriores y el teorema de cambio de variables
 \iint_R f(x,y) dydx = \iint_S f(r \cos \theta,r \sin \theta) r drd\theta.
 \end{equation*}
 }
-\vspace{-7.9mm}
-
 
 Utilizando el sistema de coordenadas cilíndricas $x=r\cos \theta ,$ 
 $y=r\sin \theta ,$ $z=z;$ o el sistema de coordenadas esféricas,
@@ -1326,21 +1255,12 @@ $x=\rho \cos \theta \sin \phi ,$ $y=\rho \sin \theta \sin \phi ,$ $z=\rho\cos \p
 con los siguientes gráficos se ilustra la obtención del elemento diferencial de volumen en estos casos.
 
 
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\captionof{figure}{Vectores ${\bf F}(x,y,z),$ ${\bf T}$ y ${\bf n}$}
-	\begin{minipage}{0.31\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/15.pdf}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
+\begin{figure}[H]
+\centering
+\caption{Vectores ${\bf F}(x,y,z),$ ${\bf T}$ y ${\bf n}$}
+\includegraphics[width=0.5\textwidth]{Fig/15.pdf}
+\fuentepropia
+\end{figure}
 
 El jacobiano de la transformación a coordenadas cilíndricas se obtiene a partir de la relación
 $$\left\vert \begin{array}{ccc}
@@ -1353,29 +1273,14 @@ por lo tanto, la fórmula \ref{math1} se escribe como
 $$\iiint_{E}f(x,y,z)dV=\iiint_{E^{\ast }}f(r\cos \theta ,r\sin \theta,z)r\, dzdrd\theta .$$
 
 
-\vspace{-6mm}
-\vskip0.2cm
-\noindent
-\begin{minipage}{\textwidth}
-	\centering
-	\vskip0.2cm
-	\captionof{figure}{Elemento diferencial de volumen en coordenadas esféricas}
-	\label{fig:volumen-esfericas}
-	\begin{minipage}{0.31\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/16.pdf}
-	\end{minipage}%
-	\begin{minipage}{0.31\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/17.pdf}
-		\label{fig:esfericas}
-	\end{minipage}
-	
-	\vspace{0.3em}
-	\fuentepropia
-\end{minipage}
-\vskip0.2cm
-
+\begin{figure}[H]
+\centering
+\caption{Elemento diferencial de volumen en coordenadas esféricas}
+\label{fig:volumen-esfericas}
+\includegraphics[width=0.4\textwidth]{Fig/16.pdf} \hspace{5mm}
+\includegraphics[width=0.4\textwidth]{Fig/17.pdf}
+\fuentepropia
+\end{figure}
 
 El jacobiano en el caso de las coordenadas esféricas corresponde a 
 $$\left\vert \begin{array}{ccc}
@@ -1397,7 +1302,7 @@ Si $E$ es el sólido acotado por los paraboloides $z=2-x^2-y^2$ y $z=x^2+y^2.$
 Evaluar la integral $\displaystyle \iiint_E y^2 dV.$ La intersección de los paraboloides está dada por $x^2+y^2=1,$ que corresponde a un círculo unitario 
 en el plano $xy;$ con estos elementos se plantea y evalúa esta integral:
 
-\vspace{-4mm}
+
 
 \begin{multline*}
 \int_{-1}^{1}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}\int_{x^{2}+y^{2}}^{2-x^{2}-y^{2}}y^{2}dzdydx = \int_{-1}^{1}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}\bigg[ y^{3}\bigg]_{z=x^{2}+y^{2}}^{z=2-x^{2}-y^{2}} dydx \\

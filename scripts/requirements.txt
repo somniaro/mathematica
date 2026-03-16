@@ -1,0 +1,3 @@
+# For minipage_to_figure.py (aspect-ratio image sizing)
+pymupdf>=1.23.0
+pillow>=10.0.0
