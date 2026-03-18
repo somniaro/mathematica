@@ -4,13 +4,15 @@
 \documentclass[12pt,twoside,spanish]{book}
 \input{preambulo}
 
-% 2. DEFINICIONES OBLIGATORIAS PARA CORNISAS Y PORTADAS (¡DESCOMENTADAS Y CORREGIDAS!)
-%Estos comandos DEBEN estar aquí, antes de \begin{document}.
-
+% 2. DEFINICIONES OBLIGATORIAS PARA CORNISAS Y PORTADAS
 \def\texttitulo{Problemas resueltos de integración múltiple}
 \def\textsubtitulo{Con aplicaciones en Wolfram Mathematica}
 \def\loauthors{Juan Nepomuceno Zambrano Caviedes, Efrén~Ricardo~Baquero~Torres}
-\def\texttitulocorto{Problemas resueltos de integración múltiple con aplicaciones en Wolfram Mathematica}
+
+\makeatletter
+\def\firstlower#1#2\@nil{\lowercase{#1}#2}
+\def\texttitulocorto{\texttitulo\space\expandafter\firstlower\textsubtitulo\@nil}
+\makeatother
 
 % 3. COMIENZO DEL DOCUMENTO
 \begin{document}
@@ -43,9 +45,11 @@
 \include{Originales/stokes}
 
 \clearpage
-\pagestyle{plain}
 
+\pagestyle{plain}
 \printbibliography[title={Referencias},heading=bibintoc]
+
+\clearpage
 
 \pagestyle{esstyle}
 

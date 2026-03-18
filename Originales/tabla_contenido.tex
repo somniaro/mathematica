@@ -1,48 +1,15 @@
 % --- tabla_contenido.tex ---
 
-% 1. Configuración local: FUENTES, SIN PUNTOS y NUMERACIÓN OPCIONAL
-% El segundo bloque de llaves {} maneja la numeración.
-
-% PARTES: Si quieres número, cambia el {} por {Parte \thecontentslabel\quad}
-\titlecontents{part}[-1.1em]
-{\bfseries\sbseries\normalsize}
-{\thecontentslabel\quad} % <--- Aquí aparece el número si existe
-{}
-{\hfill\small\lhseries\contentspage\vspace{1.0mm}}[]
-
-% CAPÍTULOS: formato "Capítulo 1. Título"
-\titlecontents{chapter}[0em]
-{\vspace{1.5mm}\medseries\normalsize}
-{Capítulo~\thecontentslabel.\enspace}
-{}
-{\hfill\small\lhseries\contentspage\vspace{2.5mm}}[]
-
-% SECCIONES: Cambia {\thecontentslabel\quad} por {} si quieres ocultar el número
-\titlecontents{section}[1.5em]
-{\lhseries}%{\thecontentslabel\quad} % <--- Muestra "1.1 "
-{}
-{}
-{\hfill\small\lhseries\contentspage\vspace{0.5mm}}[]
-
-% SUBSECCIONES
-\titlecontents{subsection}[3em]
-{\lhseries}
-{\thecontentslabel\quad}
-{}
-{\hfill\small\lhseries\contentspage\vspace{0.5mm}}[]
-
-% 2. Ocultar numeración de página física del índice
 \cleardoublepage
 \pagestyle{empty}
 \assignpagestyle{\chapter}{empty}
 
-% 3. Título del índice
 \renewcommand\contentsname{\lhseries Contenido}
 
-% 4. Generación del índice
+\setcounter{tocdepth}{1}
 \tableofcontents
 
-% 5. Restauración para el resto del libro (plain = pie con folio en primera página de capítulo)
+% Restauración para el resto del libro (plain = pie con folio en primera página de capítulo)
 \cleardoublepage
 \pagestyle{esstyle}
 \assignpagestyle{\chapter}{plain}

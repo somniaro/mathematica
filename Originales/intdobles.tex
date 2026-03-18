@@ -20,7 +20,7 @@ Se ilustrará la manera de plantear sumas de Riemann, el intercambio en el orden
 
   \begin{figure}[H]
     \centering
-    \caption{$f(x,y)=6-\frac{1}{4}x^{3}-y^{2}$.}
+    \caption{$f(x,y)=6-\frac{1}{4}x^{3}-y^{2}$}
     \includegraphics[width=0.4\textwidth]{Img/T_69c.pdf} \hspace{5mm}
     \includegraphics[width=0.4\textwidth]{Img/T_69b.pdf}
 
@@ -178,9 +178,9 @@ Uno de los procedimientos que se utilizan con frecuencia para evaluar integrales
 
 \section{Cambio en el orden de integración}
 
-\begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[series=ordenint]
 \item Evaluar la integral de la función $f(x,y)=xy$, sobre la región $D$ en el primer cuadrante del plano $xy$ acotada por las figuras de las expresiones $y=x,\,\,\,x^{2}+y^{2}=4$ y $x=2$. La intersección de la recta inclinada y la circunferencia corresponden en el primer cuadrante a $x=\sqrt{2}$.
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{figure}[H]
 \centering
@@ -215,7 +215,7 @@ La integral, usando la fórmula \ref{integraldoblepolares}, se evalúa de la sig
 
 \begin{figure}[H]
 \centering
-\caption{$2 \leq r \leq 2 \sec \theta$.}
+\caption{$2 \leq r \leq 2 \sec \theta$}
 \includegraphics[width=0.5\textwidth]{Fig/86.pdf}
 \fuentepropia
 \end{figure}
@@ -255,13 +255,13 @@ $\int_{0}^{1}\int_{0}^{\pi /4}16\left|\cos u((1-v)\sin u+v\cos u)(\sin u-\cos u)
 \end{center}
 \end{tcolorbox}
 
-\begin{enumerate}[start=2,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[resume=ordenint]
 \item Invertir el orden de integración y evaluar la siguiente integral:
 {\footnotesize \[\displaystyle\int_{0}^{1}\int_{\sqrt{y}}^{2-y}xy\, dxdy.\]}
 
 La región de integración corresponde a la figura limitada en el primer cuadrante, por las figuras de las expresiones
 $y=0$, $y=x^2$ y $y=2-x$.
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{figure}[H]
 \centering
@@ -311,10 +311,10 @@ Con la definición de la función se observa que $xy=(\left(u-1\right) \left( t-
 $}
 \end{tcolorbox}
 
-\begin{enumerate}[start=3,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[resume=ordenint]
 \item Determinar el centro de masa de una lámina delgada cuya densidad de área está dada por
 $\delta (x,y)=x$ $kg/m^2$ y posee la forma de la región en el primer cuadrante interior a la circunferencia con ecuación $x^{2}+y^{2}=4$ y exterior a la circunferencia $x^{2}+y^{2}=2x$.
-\end{enumerate}
+\end{parrafonumerado}
 
 Para plantear las integrales dobles utilizando coordenadas rectangulares, se debe tener en cuenta que en el orden $dxdy$, el área considerada se divide en tres porciones. En una de ellas $x$ toma valores desde el eje $y$ hasta la circunferencia de radio $1$.
 
@@ -372,12 +372,11 @@ Integrate[r^2*Cos[t],{t,0,Pi/2},{r,2*Cos[t],2}]
 
 %\clearpage
 
-\begin{enumerate}[start=4,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-
+\begin{parrafonumerado}[resume=ordenint]
 \item
 Determinar las coordenadas $(\overline{x},\overline{y})$ del centro de masa de una lámina determinada por la región en el primer cuadrante acotada por las figuras de las ecuaciones $x^2+y^2=4$ y $x^2+y^2=2y$,
 cuya densidad de masa en cualquier punto $(x,y)$ es $\delta (x,y)=xy^2$. La forma de la lámina se presenta en la figura \ref{fig510}.
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{figure}[H]
 \centering
@@ -437,11 +436,11 @@ Integrate[r^4*Sin[t]^2*Cos[t],{t,0,Pi/2},
 \end{Verbatim}
 \end{tcolorbox}
 
-\begin{enumerate}[start=5,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[resume=ordenint]
 \item
 Si $f$ es continua en $R$, plantear la integral $\ds\iint_R f(x,y)dA$, siendo $R$ la región en el primer cuadrante acotada por las figuras de las ecuaciones $x^2+y^2=4$, $y= \sqrt{3}\,x$ y $y=1$.
 En coordenadas polares $y=1$ se transforma en $r= \csc \theta$, $y= \sqrt{3}\,x$ equivale a $\theta = \pi /3 $ y la ecuación $x=\sqrt{4-y^2}$ corresponde a un arco de circunferencia de radio $2$ con centro en el origen.
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{figure}[H]
 \centering
@@ -494,10 +493,10 @@ $}
 \]
 
 %\vspace*{1.2em}
-\begin{enumerate}[start=6,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[resume=ordenint]
 \item
 Escribe en coordenadas rectangulares la siguiente integral: \[\ds\int_{0}^{\pi/4}\int_{0}^{2\sqrt{2}}r^2drd\theta.\]
-\end{enumerate}
+\end{parrafonumerado}
 
 Los límites de integración son $r=0$, $r=2\sqrt{2}$, $\theta=0$, $\theta= \pi/4$,
 esto determina una región en el primer cuadrante limitada por las rectas $y=0$,
@@ -506,7 +505,7 @@ Se usó un cambio a coordenadas polares $x= r \cos \theta$  y $y= r \cos \theta$
 
 \begin{figure}[H]
 \centering
-\caption{$0 \leq r \leq 2\sqrt{2}$.}
+\caption{$0 \leq r \leq 2\sqrt{2}$}
 \includegraphics[width=0.8\textwidth]{Fig/99.pdf}
 \fuentepropia
 \end{figure}
@@ -519,7 +518,7 @@ Al integrar en  orden $dxdy$, el $x$ recorre (horizontalmente) los puntos desde 
 
 \begin{figure}[H]
 \centering
-\caption{$y \leq x \leq \sqrt{8 - x^2}$.}
+\caption{$y \leq x \leq \sqrt{8 - x^2}$}
 \includegraphics[width=0.3\linewidth]{Fig/100.pdf}
 \includegraphics[width=0.3\linewidth]{Fig/101.pdf}
 \includegraphics[width=0.3\linewidth]{Fig/102.pdf}
@@ -544,7 +543,7 @@ Integrate[r^2,{\[Theta],0,Pi/4},{r,0,2*Sqrt[2]}]
 \end{Verbatim}
 \end{tcolorbox}
 
-\begin{enumerate}[start=7,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[resume=ordenint]
 \item
 Evaluar la integral $\ds \iint_{R} |y-x|dA$, donde $R$ es la región acotada por las figuras de las ecuaciones $y=2-x^{2}$ y $y=x^{2}+2x-2$.
 
@@ -553,7 +552,7 @@ La función $|y-x|$ se expresa como
 \[|y-x|= \left \{
 \begin{array}{cc} y-x & \text{si\,\,} y\geq x \\ x-y & \text{si\,\,} y<x
 \end{array} \right.\]
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{figure}[H]
 \centering
@@ -610,14 +609,14 @@ Integrate[y-x,{y,-2,1},{x,-Sqrt[2-y],y}]+Integrate[x-y,
 \end{Verbatim}
 \end{tcolorbox}
 
-\begin{enumerate}[start=8,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[resume=ordenint]
 \item
 Evaluar $\ds \iint R x dA$, donde $R$ es la región acotada por las figuras de las ecuaciones $x^2+y^2=4$
 y $y=1-(1+\sqrt{3})x$ con  $x \geq 0$. \\[0.1cm]
 
 De la ecuación de la recta se sigue que
 $x=\frac{1}{2}\left(1-\sqrt{3}\right)(y-1)$, un punto de corte de esta línea con la circunferencia es $(1,-\sqrt{3})$.
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{figure}[H]
 \centering
@@ -677,10 +676,10 @@ Integrate[r^2*Cos[t],{t,-Pi/3,Pi/2},
 \end{tcolorbox}
 
 %\vspace*{1.2em}
-\begin{enumerate}[start=9,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}[resume=ordenint]
 \item
 Hallar el área de la región encerrada por la curva determinada por las ecuaciones paramétricas $x=2a\cos t-a\sin (2t)$, $y=b\sin t$, $t\in \lbrack 0,2\pi ]$.
-\end{enumerate}
+\end{parrafonumerado}
 
 De acuerdo al teorema de Green, véase sección \secref{teoremadegreen}, el área $A$, de la región $R$ encerrada por la curva $C$, puede hallarse por medio de la expresión
 \[A=\iint_{R}dA=\int_{C}-\frac{1}{2}ydx+\frac{1}{2}xdy,\]
@@ -726,7 +725,7 @@ Cambio de variables en integrales dobles
 \index{Cambio de variables}
 Presentamos algunos ejemplos de aplicación del teorema de cambio de variables en integrales dobles.
 
-\begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}
 \item Evaluar $\ds \iint_{R}y^{2}dA$, siendo $R$ la región del plano $xy$ acotada por las figuras de las ecuaciones.
 $x=4-y^{2}$ y $x=4y^{2}-1$.
 
@@ -932,12 +931,13 @@ $J=\det \left(
 $I=\ds \int_{2}^{4}\ds\int_{0}^2\frac{-v}{u}\left( \frac{1}{2}\right) dvdu= -\ln \left( 2\right) $.
 
 \item Evaluar $\ds \iint_R \sqrt{xy}\ln \left( \frac{y}{x}\right) dA$, en donde $R$ es la región en el plano $xy$ determinada por el cambio de variables
-$u^{2}=xy$, $v=\ln \left( y/x\right) $, con $u\in \lbrack 1,2]$, $v\in \lbrack 0,2]$. \\[0.2cm]
+$u^{2}=xy$, $v=\ln \left( y/x\right) $, con $u\in \lbrack 1,2]$, $v\in \lbrack 0,2]$.
 
-Con el cambio de variable se sigue que $e^{v}=y/x$,: es decir, $y=xe^{v}$,
+Con el cambio de variable se sigue que $e^{v}=y/x$: es decir, $y=xe^{v}$,
 que, al reemplazar en la primera ecuación, se obtiene que
 $u^{2}=x^{2}e^{v}$, entonces $x=ue^{-v/2}$, y $y=ue^{v/2}$.
 Para determinar las ecuaciones de las curvas que acotan la región, lo haremos por casos.
+
 \begin{itemize}[label=$\bullet$\,\,]
 \item Si $u=1$ y $0\leq v\leq 2$,
 entonces, $x=e^{-v/2}$ y $y=e^{v/2}$, por tanto $xy=1$.
@@ -1046,15 +1046,13 @@ Por ello, la integral se transforma en
 
 Estas integrales se pueden evaluar con ayuda de las siguientes sentencias.
 
-\vspace{3pt}
-
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[Sqrt[y/x]*Exp[Sqrt[x*y]],{y,1,4},{x,1/y,y}]
 Integrate[2*u*Exp[u],{u,1,4},{v,1,4/u}]
 \end{Verbatim}
 \end{tcolorbox}
 
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{ejer}
 Use el teorema de cambio de variable para resolver los siguientes problemas
@@ -1213,7 +1211,7 @@ con $t \in [0, 2\pi]$, $u \in [0, 1]$, la cual parametriza la porción de la esf
 
 Los anteriores gráficos se obtienen ejecutando las siguientes instrucciones:
 
-\begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
+\begin{parrafonumerado}
 \item La esfera y los cilindros
 
 Región sobre la esfera acotada por los cilindros, se definen tres objetos nombrados \verb"a,b,c", luego se muestran en un solo gráfico.
@@ -1254,7 +1252,8 @@ Para tal fin, se hallan las siguientes funciones vectoriales:
 {\bf r}_{u}(t,u)&=& \la\cos t,\sin t,-\frac{u+\cos t}{\sqrt{3-u^2-2u\cos t}}\ra \\
 {\bf r}_{t}\times{\bf r}_{u}&=&\la-\frac{u^2 \cos t+u}{\sqrt{3-u^2 -2u\cos t}},\frac{-u^2 \sin t}{\sqrt{3-u^2 -2u\cos t}},-u,\ra,
 \end{eqnarray*}
-\end{enumerate}
+\end{parrafonumerado}
+
 entonces
 $\left\Vert {\bf r}_{t}\times{\bf r}_{u} \right\Vert =\frac{2u}{\sqrt{3-u^{2}-2u\cos t}}$.
 Por lo anterior, el área $A$ de la superficie es cuatro veces la integral del término anterior; es decir,

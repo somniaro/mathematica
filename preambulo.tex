@@ -1,20 +1,5 @@
 % --- PREÁMBULO FINAL OPTIMIZADO PARA LA EDITORIAL UD ---
-% CONFIGURACIÓN DEL LENGUAJE Y TIPOGRAFÍA UD
-
-\usepackage{fontspec} % Necesario para LuaLaTeX y la tipografía UD
-\input{esConfigDir/esConfigFonts} % Definición de fuentes (lhseries, medseries, etc.)
-
-\usepackage{geometry}
-\geometry{
-  paperheight=24.0cm,
-  paperwidth=17.0cm,
-  tmargin=2.5cm,
-  bmargin=2.5cm,
-  left=2.5cm,
-  right=2.0cm
-}
-
-% Estos son necesarios para las portadillas y las cornisas especiales.
+% Estilo editorial
 \input{esConfigDir/esEstilo}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,6 +8,16 @@
 \usepackage[backend=biber,style=ieee,sorting=none,isbn=false,doi=true]{biblatex}
 \addbibresource{Referencias/references.bib}
 \setlength{\bibitemsep}{1.5ex}
+
+\usepackage{csquotes} % Carga el paquete csquotes aquí para cambiar el estilo de las comillas
+\DeclareQuoteStyle{spanish}{``}{''}{`}{'} % Reemplaza las comillas angulares por comillas dobles normales
+
+\DefineBibliographyStrings{spanish}{
+  url = {[En línea]. Disponible en},
+  translator = {trad\adddot},
+  bytranslator = {trad\adddot},
+  version = {versión},
+}
 
 %\usepackage{showframe}% Similar al calderon, apagar al terminar de maquetar.
 \usepackage[cam, width=215truemm, height=275truemm, lualatex, center]{crop} % Descomentar solo en producción final
@@ -108,18 +103,12 @@
 \usepackage{array}
 \usepackage{fancyvrb}
 \usepackage[absolute,overlay]{textpos}
+\usepackage{listings}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CONFIGURACIONES Y COMANDOS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% CONFIGURACIÓN DE LEYENDAS (CAPTIONS)
-\captionsetup[figure]{name=Figura, labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
-%\captionsetup[table]{name=Tabla, labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
-\usepackage{enumitem}
-\usepackage{listings}
-%\usepackage{needspace} % no se usa \needspace
 
 % COMANDOS PERSONALIZADOS Y ENTORNOS
 \newcommand{\letraverbatim}{\fontsize{9pt}{11.5pt}\selectfont}
@@ -163,7 +152,7 @@
 % AJUSTES DE ÍNDICE Y PROFUNDIDAD DE SECCIONES
 \counterwithout{footnote}{chapter}
 \setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{0} %-----> PONER NUMERO 3 O MÁS PARA CONTAR O NUMERAR
+\setcounter{secnumdepth}{1}
 \renewcommand*\contentsname{Contenido}
 \renewcommand{\cfttoctitlefont}{\hfill\Huge}
 \renewcommand{\cftdot}{}

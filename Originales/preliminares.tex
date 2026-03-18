@@ -11,8 +11,9 @@ En estos apuntes consideraremos funciones cuyo dominio es el espacio el espacio 
 o un subconjunto de este.
 
 \section{Vectores}
-En \cite{marsden_calculo_2013} se define "vector como un segmento de recta dirigido que comienza en el origen,
-esto es, un segmento de recta con magnitud y dirección específicos con punto inicial en el origen".\\
+En \cite{marsden_calculo_2013}, p. 5, se define ``vector como un segmento de recta dirigido que comienza en el origen,
+esto es, un segmento de recta con magnitud y dirección específicos con punto inicial en el origen''.
+
 Los puntos en $\mathbb{R}^n$ se presentan en la forma $P=(a_1,a_2,\cdots, a_n)$
 y el vector que va desde el origen hasta el punto $P$ se denotará por $\langle a_1,a_2,\cdots, a_n\rangle$.
 Particularmente a los vectores $\vi=\langle 1,0,0 \rangle$, $\vj=\langle 0,1,0 \rangle$, $\vk=\langle 0,0,1 \rangle$ los denominaremos \emph{vectores coordenados} en $\mathbb{R}^3$.
@@ -135,7 +136,7 @@ De manera general abordaremos funciones de la forma
 \end{equation}
 El conjunto de puntos para los cuales la función $f$ está definida se denomina \emph{dominio} de $f$
 y el conjunto de puntos de $\mathbb{R}^m$ que son imagen de algún punto del dominio se denomina \emph{rango}
-de $f$. De acuerdo con \textcite{apostol_calculus_1999}, a las funciones definidas cuando $n=m=1$, se denominan \emph{funciones reales,} las cuales se estudian en los cursos de \emph{cálculo diferencial} y \emph{cálculo integral.}
+de $f$. De acuerdo con \cite{apostol_calculus_1999}, a las funciones definidas cuando $n=m=1$, se denominan \emph{funciones reales,} las cuales se estudian en los cursos de \emph{cálculo diferencial} y \emph{cálculo integral.}
 Si $n>1$ y $m=1$ obtendremos \emph{campos escalares};  \index{Campos escalares} \index{Campos vectoriales}
 llamaremos \emph{funciones vectoriales} a las obtenidas cuando $n=1$ y $m>1$; mientras que los \emph{campos vectoriales} son funciones obtenidas cuando $n>1$ y $m>1$. \index{Funciones vectoriales}
 
@@ -318,18 +319,18 @@ Al considerar esta notación se presenta el siguiente resultado.
   (\mathbf{x}) =\mathbf{b,}$ y $\lim_{\mathbf{x\to x}%
   _{0}}h(\mathbf{x}) =k;$ entonces
 
-\begin{enumerate}[leftmargin=0cm,itemindent=0.4cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+  \begin{parrafonumerado}
 
-    \item $\ds \lim_{\mathbf{x\to x}_{0}}\left( \ve{F}\left( \mathbf{x}%
-      \right) \pm \ve{G}(\mathbf{x}) \right) =\mathbf{a\pm b}$
+  \item $\ds \lim_{\mathbf{x\to x}_{0}}\left( \ve{F}\left( \mathbf{x}%
+    \right) \pm \ve{G}(\mathbf{x}) \right) =\mathbf{a\pm b}$
 
-    \item $\ds\lim_{\mathbf{x\to x}_{0}}\left( h(\mathbf{x})
-      \ve{F}(\mathbf{x}) \right) =k\mathbf{a}$
+  \item $\ds\lim_{\mathbf{x\to x}_{0}}\left( h(\mathbf{x})
+    \ve{F}(\mathbf{x}) \right) =k\mathbf{a}$
 
-    \item $\ds\lim_{\mathbf{x\to x}_{0}}\left( \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) \right) =\mathbf{a\cdot b}$
+  \item $\ds\lim_{\mathbf{x\to x}_{0}}\left( \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) \right) =\mathbf{a\cdot b}$
 
-    \item $\ds\lim_{\mathbf{x\to x}_{0}}\left\Vert \ve{F}(\mathbf{x}) \right\Vert =\left\Vert \mathbf{a}\right\Vert $
-  \end{enumerate}
+  \item $\ds\lim_{\mathbf{x\to x}_{0}}\left\Vert \ve{F}(\mathbf{x}) \right\Vert =\left\Vert \mathbf{a}\right\Vert $
+  \end{parrafonumerado}
 \end{teorema}
 
 \begin{proof}
@@ -805,7 +806,7 @@ con $x\in [0,2]$, $y \in [0,1]$.
 
 \begin{figure}[H]
 \centering
-\caption{Aproximaciones para el volumen bajo $f(x,y) = 8+2x-x^3-4y$.}
+\caption{Aproximaciones para el volumen bajo $f(x,y) = 8+2x-x^3-4y$}
 \label{fig:aproximaciones_volumen}
 \begin{minipage}[b]{0.48\linewidth}
 \includegraphics[width=\linewidth]{Img/T_51a.png}
@@ -831,7 +832,7 @@ que representa el volumen del sólido en mención $$\ds \int_0^2\int_0^1 (8+2x-x
 
 \begin{figure}[H]
 \centering
-\caption{Secciones transversales bajo $z = 8+2x - x^3 - 4y$, con $x \in [0,2]$, $y \in [0,1]$.}
+\caption{Secciones transversales bajo $z = 8+2x - x^3 - 4y$, con $x \in [0,2]$, $y \in [0,1]$}
 \label{fig:secciones_transversales_bajo}
 \begin{minipage}[b]{0.48\linewidth}
 \centering

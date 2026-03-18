@@ -2,6 +2,18 @@
 %% Autores: Editores UDFJC
 %% Versión:  v0.1 30MAR2024
 %% Compilar con LuaLaTeX, i.e: lualatex main.tex
+\input{esConfigDir/esConfigFonts} % Definición de fuentes (lhseries, medseries, etc.)
+
+\usepackage{geometry}
+\geometry{
+  paperheight=24.0cm,
+  paperwidth=17.0cm,
+  tmargin=2.5cm,
+  bmargin=2.5cm,
+  left=2.5cm,
+  right=2.0cm
+}
+
 \usepackage[spanish,es-noquoting,es-tabla,es-lcroman]{babel}
 \usepackage{caption}
 \usepackage{titlesec}
@@ -11,9 +23,7 @@
 
 \usepackage{fvextra}   % extiende fancyvrb y añade breaklines, breakanywhere
 \fvset{breaklines=true, breakanywhere=true}
-
 \usepackage{csquotes}
-\usepackage[all]{nowidow}
 
 %\setlength{\parindent}{1.25cm}
 %\setlength\parindent{0pt}
@@ -49,21 +59,27 @@
 
 \titleformat{\part}[display]{\fontstit\chapterbaseformat}{\thepart}{12pt}{\raggedright}
 \titleformat{\chapter}[block]{\fontschap\chapterbaseformat}{\chapterlabel}{0.3em}{\raggedright}
-\titleformat{name=\chapter,numberless}[block]{\fontschapstar\chapterbaseformat}{}{0pt}{\raggedright}
-\titleformat{\section}[block]{\fontssec\sectionbaseformat}{\thesection}{0.5em}{\raggedright}
-\titleformat{\subsection}[block]{\fontssubsec\subsectionbaseformat}{\thesubsection}{0.5em}{\raggedright}
-\titleformat{\subsubsection}[block]{\fontssubsubsec\subsubsectionbaseformat}{\thesubsubsection}{0.5em}{\raggedright}
-\titleformat{\paragraph}[block]{\fontsparagraph\paragraphbaseformat}{\theparagraph}{0.5em}{\raggedright}
+\titleformat{\section}[block]{\fontssec\sectionbaseformat}{}{0pt}{\raggedright}
+\titleformat{\subsection}[block]{\fontssubsec\subsectionbaseformat}{}{0pt}{\raggedright}
+\titleformat{\subsubsection}[block]{\fontssubsubsec\subsubsectionbaseformat}{}{0pt}{\raggedright}
+\titleformat{\paragraph}[block]{\fontsparagraph\paragraphbaseformat}{}{0pt}{\raggedright}
+
+% Comando alternativo para capítulo sin numerar usando fontschap
+\newcommand{\chapteralt}[1]{%
+  \titleformat{name=\chapter,numberless}[block]{\fontschapstar\chapterbaseformat}{}{0pt}{\raggedright}%
+  \chapter*{#1}%
+  \titleformat{name=\chapter,numberless}[block]{\fontschap\chapterbaseformat}{}{0pt}{\raggedright}%
+}
 
 %Espacios para titulos
 %\titlespacing{<command>}{<left>}{<before-sep>}{<after-sep>}[<right-sep>]
 
 \titlespacing{\part}{0cm}{10cm}{2.8cm}
 \titlespacing{\chapter}{0cm}{1cm}{2.8cm}
-\titlespacing{\section}{0cm}{7mm}{2mm}
-\titlespacing{\subsection}{0cm}{5mm}{2mm}
-\titlespacing{\subsubsection}{0cm}{5mm}{0mm}
-\titlespacing{\paragraph}{0cm}{5mm}{0mm}
+\titlespacing{\section}{0cm}{20pt plus 4pt minus 2pt}{8pt plus 2pt minus 1pt}
+\titlespacing{\subsection}{0cm}{20pt plus 4pt minus 2pt}{8pt plus 2pt minus 1pt}
+\titlespacing{\subsubsection}{0cm}{20pt plus 4pt minus 2pt}{8pt plus 2pt minus 1pt}
+\titlespacing{\paragraph}{0cm}{20pt plus 4pt minus 2pt}{8pt plus 2pt minus 1pt}
 
 %configuracion tabla de contenido
 \titlecontents{part}[0em]
@@ -103,140 +119,162 @@
 }
 \makeatother
 
+% Listas
+\usepackage{enumitem}
+
+%listas numeradas
+\setlist[enumerate,1]{label={\normalfont\arabic*)}}
+\setlist[enumerate,2]{label={\normalfont\alph*)}}
+\setlist[enumerate,3]{label={\normalfont\smallcaps{\roman}*)}}
+
+%Listas en párrafos (sin indentado)
+\newlist{parrafonumerado}{enumerate}{1}
+\setlist[parrafonumerado,1]{leftmargin=0pt,itemindent=2em,labelwidth=\itemindent,labelsep=0pt,align=left,label={\arabic*)}}
+
+% Funciones de ejemplos
+\newlist{funciones}{enumerate}{1}
+\setlist[funciones]{leftmargin=0.5cm, labelsep=0.2cm, labelwidth=0.3cm, align=left, label={\arabic*)}}
+
 \usepackage{setspace}
 \linespread{1.1}
 \usepackage[skip=3.5pt, indent=20pt]{parskip}
+\usepackage[all]{nowidow}
 
 \usepackage{fancyvrb}
 \usepackage{fancyhdr}
 
 \fancypagestyle{esstyle}{%
-  \fancyhead{}
-  \fancyfoot{}
-  \renewcommand{\headrulewidth}{0pt}
-  \fancyhf[HLE]{\lhseries\scriptsize \loauthors}
-  \fancyhf[HRO]{\fontsparagraph \scriptsize \texttitulocorto}
-  \fancyfoot[LE]{{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\lhseries\scriptsize\thepage}}
-  \fancyfoot[RO]{{\lhseries\scriptsize\thepage}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}}
-  \fancyfoot[C]{}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf[HLE]{\lhseries\scriptsize \loauthors}
+\fancyhf[HRO]{\fontsparagraph \scriptsize \texttitulocorto}
+\fancyfoot[LE]{{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\lhseries\scriptsize\thepage}}
+\fancyfoot[RO]{{\lhseries\scriptsize\thepage}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}}
+\fancyfoot[C]{}
 }
 
 % https://www.latex-project.org/help/documentation/fntguide.pdf
 
 \fancypagestyle{plain}{%
-  \fancyhead{}
-  \fancyfoot{}
-  \renewcommand{\headrulewidth}{0pt}
-  \fancyfoot[LE]{{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\lhseries\scriptsize\thepage}}
-
-  \fancyfoot[RO]{{\lhseries\scriptsize\thepage}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}}
-  \fancyfoot[C]{}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[LE]{{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\lhseries\scriptsize\thepage}}
+\fancyfoot[RO]{{\lhseries\scriptsize\thepage}{\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{\thinspace|\thinspace}}{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{n}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{n}\selectfont{\reflectbox{S}}}}
+\fancyfoot[C]{}
 }
 
 \assignpagestyle{\chapter}{plain}
 
-\counterwithout{table}{chapter}
+%\counterwithout{table}{chapter}
 \counterwithout{figure}{chapter}
 \counterwithout{equation}{chapter}
 
-\captionsetup[figure]{labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
-%\captionsetup[table]{labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
+% CONFIGURACIÓN DE LEYENDAS (CAPTIONS)
+\captionsetup[figure]{name=Figura, labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth, skip=14pt}
+%\captionsetup[table]{name=Tabla, labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
+
+% Ajustes de espacio entre la figura completa y los párrafos
+\setlength{\intextsep}{20pt plus 10pt minus 5pt} % Para figuras [h]
+\setlength{\textfloatsep}{20pt plus 10pt minus 5pt} % Para figuras [t] o [b]
+\setlength{\floatsep}{20pt plus 10pt minus 5pt} % Entre dos figuras
 
 %footnote format
 \makeatletter
 \renewcommand{\@makefntext}[1]{%
-  \begin{list}{}{%
-      \setlength{\labelwidth}{1.5em}%
-      \setlength{\leftmargin}{\labelwidth}%
-      \setlength{\labelsep}{3pt}%
-      \setlength{\itemsep}{0pt}%
-      \setlength{\partopsep}{0pt}%
-      \setlength{\topsep}{0pt}%
-    \footnotesize}%
-  \item[\@makefnmark\hfil]#1%
-  \end{list}%
+\begin{list}{}{%
+\setlength{\labelwidth}{1.5em}%
+\setlength{\leftmargin}{\labelwidth}%
+\setlength{\labelsep}{3pt}%
+\setlength{\itemsep}{0pt}%
+\setlength{\partopsep}{0pt}%
+\setlength{\topsep}{0pt}%
+\footnotesize}%
+\item[\@makefnmark\hfil]#1%
+\end{list}%
 }
 \makeatother
 
 \newcommand{\pieimagen}[2]{\par\vspace{0.5em}
-  \begin{minipage}{0.8\textwidth}\centering\color{MSBlack}\footnotesize\textbf{#1:}~{#2}
+\begin{minipage}{0.8\textwidth}\centering\color{MSBlack}\fontsize{8pt}{10pt}\selectfont\textbf{#1:}~{#2}
 \end{minipage}\par}
 \newcommand{\nota}[1]{\pieimagen{Nota}{#1}}
 \newcommand{\fuente}[1]{\pieimagen{Fuente}{#1}}
 \newcommand{\fuentepropia}{\fuente{elaboración propia.}}
 
 \newcommand{\espart}[6]{\part[Parte #1]{\protect\thispagestyle{empty}
-    \vspace{-14.0cm}
-    \begin{figure}[ht!]\hspace{-2.9cm}\includegraphics[width=1.045\paperwidth, height=0.5\paperheight]{#2}
-    \end{figure}
-    \flushleft
-    \medseries{\Large\noindent Parte {#3}.}
-    ~\\
-    ~\\
-    ~\\
-    ~\\
-    \lhseries{#4}
-    ~\\
-    ~\\
-    ~\\
-    ~\\
-    \lhseries{\Large #5}
-    ~\\
-    ~\\
-    ~\\
-    ~\\
-    \lhseries{\normalsize #6}
+\vspace{-14.0cm}
+\begin{figure}[ht!]\hspace{-2.9cm}\includegraphics[width=1.045\paperwidth, height=0.5\paperheight]{#2}
+\end{figure}
+\flushleft
+\medseries{\Large\noindent Parte {#3}.}
+~\\
+~\\
+~\\
+~\\
+\lhseries{#4}
+~\\
+~\\
+~\\
+~\\
+\lhseries{\Large #5}
+~\\
+~\\
+~\\
+~\\
+\lhseries{\normalsize #6}
 }}
 
 %%%%%%%%%% PORTADILLA 1 %%%%%%%%%%%%%%%
 \newcommand{\portadillauno}[2]{
-  \vspace*{6.5cm}
-  \begin{raggedright}
-    \linespread{3}
-    \color{MSBlack}\lsstyle
-    \fontsize{22pt}{3.0mm} \lhseries
-    \leftskip=2mm
-    \rightskip=40mm
-    #1
-    \vspace{2mm}
-    \leftskip=-5mm
+\vspace*{6.5cm}
+\begin{raggedright}
+\linespread{3}
+\color{MSBlack}\lsstyle
+\fontsize{22pt}{3.0mm} \lhseries
+\leftskip=2mm
+\rightskip=40mm
+#1
+\vspace{2mm}
+\leftskip=-5mm
 
-    {\color{white}\colorbox{MSCustomGray}
-      {\parbox[][1.5cm][c]{15.2cm}{
-          \parbox{12.5cm}{
-            \leftskip=7mm
-            \fontsize{17pt}{2mm}\selectfont \lhseries
-            \vspace{1mm}
-            #2
-          }
-        }
-      }
-    }
+{\color{white}\colorbox{MSCustomGray}
+{\parbox[][1.5cm][c]{15.2cm}{
+\parbox{12.5cm}{
+  \leftskip=7mm
+  \fontsize{17pt}{2mm}\selectfont \lhseries
+  \vspace{1mm}
+  #2
+}
+}
+}
+}
 
 \end{raggedright}}
 %%%%%%%%%% FIN PORTADILLA 1 %%%%%%%%%%%%%%%
 
 %%%%%%%%%% PORTADILLA 2 %%%%%%%%%%%%%%%
 \newcommand{\portadillados}[2]{
-  \vspace*{6.5cm}
-  \begin{flushleft}
-    \linespread{3}
-    \color{MSBlack}\lsstyle
-    \fontsize{22pt}{3.0mm} \lhseries
+\vspace*{6.5cm}
+\begin{flushleft}
+\linespread{3}
+\color{MSBlack}\lsstyle
+\fontsize{22pt}{3.0mm} \lhseries
 
-    \leftskip=2mm
-    #1
+\leftskip=2mm
+#1
 
-    \vspace{2mm}
-    \leftskip=-5mm
+\vspace{2mm}
+\leftskip=-5mm
 
-    {\parbox[][1.5cm][c]{15.2cm}{
-        \parbox{12.5cm}{\leftskip=7mm \fontsize{17pt}{2.5mm} \lhseries \vspace{1.0mm}
-          %          Consed ut escimos num sequid ut aut mos {\break} excerro et et, tempos quam, optat fuga.\vspace{0.5mm}
-          #2 \vspace{0.5mm}
-        }
-      }
-    }
+{\parbox[][1.5cm][c]{15.2cm}{
+\parbox{12.5cm}{\leftskip=7mm \fontsize{17pt}{2.5mm} \lhseries \vspace{1.0mm}
+%          Consed ut escimos num sequid ut aut mos {\break} excerro et et, tempos quam, optat fuga.\vspace{0.5mm}
+#2 \vspace{0.5mm}
+}
+}
+}
 \end{flushleft}}
 %%%%%%%%%% PORTADILLA 2 %%%%%%%%%%%%%%%
 
@@ -250,34 +288,34 @@
 
 %\usepackage{libertine}
 \DeclareRobustCommand\myLaTeX{%
-  L\kern-.3em%
-  \raisebox{.4ex}{\scshape a}\kern-.13em%
-  T\kern-.2em%
-  \raisebox{-.5ex}{E}\kern-.13em%
-  X%
+L\kern-.3em%
+\raisebox{.4ex}{\scshape a}\kern-.13em%
+T\kern-.2em%
+\raisebox{-.5ex}{E}\kern-.13em%
+X%
 }
 
 \newcommand{\escolofon}[2]{
-  \thispagestyle{empty}
-  \vspace*{10.0cm}
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[text=gray,rotate=0,anchor=east, yshift=5mm] at (15.5,11.5){
-      \includegraphics[width=5.0cm, height=4.0cm]{esIcons/logoESColofon_corner.png}
-    };
-  \end{tikzpicture}
+\thispagestyle{empty}
+\vspace*{10.0cm}
+\begin{tikzpicture}[remember picture,overlay]
+\node[text=gray,rotate=0,anchor=east, yshift=5mm] at (15.5,11.5){
+\includegraphics[width=5.0cm, height=4.0cm]{esIcons/logoESColofon_corner.png}
+};
+\end{tikzpicture}
 
-  \vspace{-4.5cm}
-  \begin{center}
-    {\fontsize{7pt}{7pt}\selectfont
-      \color{MSGreyCOLOFON}
-    Este libro fue editado y diagramado en} {\fontsize{13pt}{13pt}\selectfont\color{MSGreyLATEX}{\myLaTeX}}
-    \vspace{3.5cm}
+\vspace{-4.5cm}
+\begin{center}
+{\fontsize{7pt}{7pt}\selectfont
+\color{MSGreyCOLOFON}
+Este libro fue editado y diagramado en} {\fontsize{13pt}{13pt}\selectfont\color{MSGreyLATEX}{\myLaTeX}}
+\vspace{3.5cm}
 
-    \includegraphics[scale=0.05]{esIcons/logoESColofon.png}
+\includegraphics[scale=0.05]{esIcons/logoESColofon.png}
 
-    \vspace{0.5cm}
-    {\scriptsize
-    \color{MSGreyCOLOFON}Este libro se término de imprimir en #1 de #2\\ en la Editorial UD. Bogotá, Colombia.}
-  \end{center}
+\vspace{0.5cm}
+{\scriptsize
+\color{MSGreyCOLOFON}Este libro se término de imprimir en #1 de #2\\ en la Editorial UD. Bogotá, Colombia.}
+\end{center}
 }
 %%%%%%%%%%%%%%%%%%
