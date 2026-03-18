@@ -1,657 +1,645 @@
 \chapter{Elementos básicos de cálculo multivariado}
 
-Presentamos en este capítulo algunos de los elementos teóricos básicos que se requieren para abordar 
+Presentamos en este capítulo algunos de los elementos teóricos básicos que se requieren para abordar
 los problemas planteados en los capítulos posteriores.
 
-Usaremos el término \emph{conjunto} para referirnos a una colección bien definida de objetos. 
-Una \emph{función} $f$ de un conjunto $A$ 
-en un conjunto $B$, es una regla que asigna a cada elemento de $A$ un único elemento de $B.$
-Seguramente el lector está familiarizado con el conjunto de números reales $\mathbb{R}.$
-En estos apuntes consideraremos funciones cuyo dominio es el espacio el espacio $n-$dimensional $\mathbb{R}^n,$
+Usaremos el término \emph{conjunto} para referirnos a una colección bien definida de objetos.
+Una \emph{función} $f$ de un conjunto $A$
+en un conjunto $B$, es una regla que asigna a cada elemento de $A$ un único elemento de $B$.
+Seguramente el lector está familiarizado con el conjunto de números reales $\mathbb{R}$.
+En estos apuntes consideraremos funciones cuyo dominio es el espacio el espacio $n-$dimensional $\mathbb{R}^n$,
 o un subconjunto de este.
 
 \section{Vectores}
 En \cite{marsden_calculo_2013} se define "vector como un segmento de recta dirigido que comienza en el origen,
 esto es, un segmento de recta con magnitud y dirección específicos con punto inicial en el origen".\\
-Los puntos en $\mathbb{R}^n$ se presentan en la forma $P=(a_1,a_2,\cdots, a_n)$ 
-y el vector que va desde el origen hasta el punto $P$ se denotará por $\langle a_1,a_2,\cdots, a_n\rangle.$ 
-Particularmente a los vectores $\vi=\langle 1,0,0 \rangle,$ $\vj=\langle 0,1,0 \rangle,$ $\vk=\langle 0,0,1 \rangle$ los denominaremos \emph{vectores coordenados} en $\mathbb{R}^3.$ 
+Los puntos en $\mathbb{R}^n$ se presentan en la forma $P=(a_1,a_2,\cdots, a_n)$
+y el vector que va desde el origen hasta el punto $P$ se denotará por $\langle a_1,a_2,\cdots, a_n\rangle$.
+Particularmente a los vectores $\vi=\langle 1,0,0 \rangle$, $\vj=\langle 0,1,0 \rangle$, $\vk=\langle 0,0,1 \rangle$ los denominaremos \emph{vectores coordenados} en $\mathbb{R}^3$.
 
 Para dos vectores $\ve{u}=\langle a_1,a_2,\cdots, a_n\ra$ y $\ve{v}=\langle b_1,b_2,\cdots, b_n\ra$
-el \emph{producto punto} se denota por $\ve{u}\cdot \ve{v} = a_1b_1+a_2b_2+\cdots+a_nb_n$; 
+el \emph{producto punto} se denota por $\ve{u}\cdot \ve{v} = a_1b_1+a_2b_2+\cdots+a_nb_n$;
 la \emph{norma} $\ve{u}$ se denota por $\Vert \ve{u} \Vert$ y se define
 por  $\Vert \ve{u}\Vert=\sqrt{a_1^2+a_2^2+\cdots+a_n^2};$ nótese que
-$\ve{u}\cdot \ve{u}=\Vert \ve{u}\Vert^2.$
+$\ve{u}\cdot \ve{u}=\Vert \ve{u}\Vert^2$.
 El ángulo $\theta $ entre los vectores $\ve{u}$ y $\ve{v}$ satisface la relación
-$\ve{u} \cdot \ve{v}= \left\|\ve{u}\right\| \left\| \ve{v}\right\| \cos \theta .$
+$\ve{u} \cdot \ve{v}= \left\|\ve{u}\right\| \left\| \ve{v}\right\| \cos \theta $.
 
-El \emph{producto cruz} entre dos vectores  $\ve{u}=\langle a_{1},a_{2},a_{3}\ra$ y 
-$\ve{v}=\langle b_{1},b_{2},b_{3}\ra$ en $\mathbb{R}^3$ es el vector 
+El \emph{producto cruz} entre dos vectores  $\ve{u}=\langle a_{1},a_{2},a_{3}\ra$ y
+$\ve{v}=\langle b_{1},b_{2},b_{3}\ra$ en $\mathbb{R}^3$ es el vector
 $$\ve{u}\times \ve{v}=\langle a_{2}b_{3}-a_{3}b_{2},a_{3}b_{1}-a_{1}b_{3},a_{1}b_{2}-a_{2}b_{1}\ra,$$
-que es ortogonal tanto a $\ve{u}$ como a $\ve{v}.$ 
+que es ortogonal tanto a $\ve{u}$ como a $\ve{v}$.
 Además $\left\Vert \ve{u}\times \ve{v}\right\Vert =\left\Vert \ve{u}\right\Vert\left\Vert \ve{v}\right\Vert\sin\theta;$ estos resultados se pueden consultar en detalle en \textcite{apostol_calculus_1999}.
 
 La siguiente es una conocida forma de evaluar este producto,
-$$\ve{u}\times \ve{v}=\left| \begin{array}{ccc} \vi & \vj & \vk \\ a_1 &a_2&a_3 \\b_1 &b_2&b_3 \\ \end{array} \right|  $$
+$$\ve{u}\times \ve{v}=\left|
+\begin{array}{ccc} \vi & \vj & \vk \\ a_1 &a_2&a_3 \\b_1 &b_2&b_3 \\
+\end{array} \right|  $$
 El producto cruz es útil en el desarrollo de algunos de los siguientes resultados.
-\subsection*{Proyección ortogonal}
+\subsection{Proyección ortogonal}
 %
-La proyección ortogonal del vector $\ve{v}$ sobre el vector 
-$\ve{u},$ se denota por ${\rm Proy}_{\ve{u}}\ve{v}$
-y es un múltiplo escalar del vector $\ve{u}.$ Es decir 
-${\rm Proy}_{\ve{u}}\ve{v}=k\ve{u}.$
-De la figura se observa que 
+La proyección ortogonal del vector $\ve{v}$ sobre el vector
+$\ve{u}$, se denota por ${\rm Proy}_{\ve{u}}\ve{v}$
+y es un múltiplo escalar del vector $\ve{u}$. Es decir
+${\rm Proy}_{\ve{u}}\ve{v}=k\ve{u}$.
+De la figura se observa que
 $$\cos \theta =\frac{\left\| k\ve{u}\right\|}{\left\|
 \ve{v}\right\|}=\frac{\left| k\right| \left\| \ve{u} \right\|}{\left\|\ve{v}\right\|}.$$
 
-
-El valor $\left| k\right| $ será positivo si 
-${\rm Proy}_{\ve{u}}\ve{v}$ posee el mismo sentido de $\ve{u},$ de lo
-contrario, será negativo. Al igualar las expresiones para $\cos \theta $ y considerando el caso $k>0,$
-se concluye que $k=\frac{\ve{u}\cdot \ve{v}}{\left\| \ve{u}\right\| ^{2}},$ entonces 
+El valor $\left| k\right| $ será positivo si
+${\rm Proy}_{\ve{u}}\ve{v}$ posee el mismo sentido de $\ve{u}$, de lo
+contrario, será negativo. Al igualar las expresiones para $\cos \theta $ y considerando el caso $k>0$,
+se concluye que $k=\frac{\ve{u}\cdot \ve{v}}{\left\| \ve{u}\right\| ^{2}}$, entonces
 la proyección del vector $\ve{v}$ sobre $\ve{u}$ está dada por
 $${\rm Proy}_{\ve{u}}\ve{v}=\frac{\ve{u}\cdot\ve{v}}{\left\| \ve{u}\right\|^{2}}\ve{u}$$
-En el gráfico la línea discontinua corresponde al vector 
-$\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$. Aunque nos apoyamos en un gráfico bidimensional, este resultado se puede presentar en espacios 
+En el gráfico la línea discontinua corresponde al vector
+$\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$. Aunque nos apoyamos en un gráfico bidimensional, este resultado se puede presentar en espacios
 de dimensión superior.
 
-
 \begin{figure}[H]
-\centering
-\caption{Proyección ortogonal}
-\label{fig:proy-ortogonal}
-\includegraphics[width=0.5\textwidth]{Fig/1.pdf}
-\fuentepropia
+  \centering
+  \caption{Proyección ortogonal}
+  \label{fig:proy-ortogonal}
+  \includegraphics[width=0.5\textwidth]{Fig/1.pdf}
+  \fuentepropia
 \end{figure}
 
 \begin{prop}
-Para todo $\ve{v}\in \mathbb{R}^n$, el vector $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$ es ortogonal
-tanto a $\ve{u}$ como a ${\rm Proy}_{\ve{u}}\ve{v}.$
+  Para todo $\ve{v}\in \mathbb{R}^n$, el vector $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$ es ortogonal
+  tanto a $\ve{u}$ como a ${\rm Proy}_{\ve{u}}\ve{v}$.
 \end{prop}
 \begin{proof}
-Veamos que $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$ es ortogonal a $\ve{u}$
-\begin{eqnarray*}
-\ve{u} \cdot \left(\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}\right) &=& \ve{u} \cdot \left(\ve{v} - \frac{\ve{u}\cdot \ve{v}}{\Vert\ve{u}\Vert^2}\ve{u}\right) \\ 
-&=& \ve{u}\cdot\ve{v}-\left (\frac{\ve{u}\cdot\ve{v}}{\Vert\ve{u}\Vert^2}\right)\ve{u}\cdot\ve{u} \\
-&=& \ve{u}\cdot\ve{v}-\left (\frac{\ve{u}\cdot\ve{v}}{\Vert\ve{u}\Vert^2}\right) \Vert\ve{u}\Vert^2 \\
-&=& \ve{u}\cdot\ve{v}-\ve{u}\cdot\ve{v}=0.
-\end{eqnarray*}
+  Veamos que $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$ es ortogonal a $\ve{u}$
+  \begin{eqnarray*}
+    \ve{u} \cdot \left(\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}\right) &=& \ve{u} \cdot \left(\ve{v} - \frac{\ve{u}\cdot \ve{v}}{\Vert\ve{u}\Vert^2}\ve{u}\right) \\
+    &=& \ve{u}\cdot\ve{v}-\left (\frac{\ve{u}\cdot\ve{v}}{\Vert\ve{u}\Vert^2}\right)\ve{u}\cdot\ve{u} \\
+    &=& \ve{u}\cdot\ve{v}-\left (\frac{\ve{u}\cdot\ve{v}}{\Vert\ve{u}\Vert^2}\right) \Vert\ve{u}\Vert^2 \\
+    &=& \ve{u}\cdot\ve{v}-\ve{u}\cdot\ve{v}=0.
+  \end{eqnarray*}
 
-Como ${\rm Proy}_{\ve{u}}\ve{v}$ es múltiplo escalar de $\ve{u},$ con el resultado anterior se sigue que
-$\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$ es ortogonal a ${\rm Proy}_{\ve{u}}\ve{v}.$
+  Como ${\rm Proy}_{\ve{u}}\ve{v}$ es múltiplo escalar de $\ve{u}$, con el resultado anterior se sigue que
+  $\ve{v}-{\rm Proy}_{\ve{u}}\ve{v}$ es ortogonal a ${\rm Proy}_{\ve{u}}\ve{v}$.
 \end{proof}
-\subsection*{Área de paralelogramo}
+\subsection{Área de paralelogramo}
 El área $A$, del paralelogramo cuyas aristas son los vectores $\ve{u}$ y $\ve{v}$
 está dada por $\Vert \ve{u} \Vert h = \Vert \ve{u} \Vert \Vert \ve{v} \Vert \sin \theta . $
 De la relación $\Vert \ve{u} \times \ve{v} \Vert =\Vert \ve{u} \Vert \Vert \ve{v} \Vert \sin \theta$
 se sigue que el área del paralelogramo es
-$A=\Vert \ve{u} \times \ve{v} \Vert.$
-
+$A=\Vert \ve{u} \times \ve{v} \Vert$.
 
 \begin{figure}
-    \centering
-    \caption{Área de un paralelogramo y volumen de un paralelepípedo}
-    \label{paralelogramo_paralelipedo}
-    \includegraphics[width=0.3\linewidth]{Fig/2.pdf} \hspace{5mm}
-    \includegraphics[width=0.5\linewidth]{Fig/3.pdf}  
-    \fuentepropia
+  \centering
+  \caption{Área de un paralelogramo y volumen de un paralelepípedo}
+  \label{paralelogramo_paralelipedo}
+  \includegraphics[width=0.3\linewidth]{Fig/2.pdf} \hspace{5mm}
+  \includegraphics[width=0.5\linewidth]{Fig/3.pdf}
+  \fuentepropia
 \end{figure}
 
-\subsection*{Volumen de un paralelepípedo}
-El volumen del paralelepípedo cuyas aristas son los vectores $\ve{u},$ $\ve{v}$ y $\ve{w},$
-se determina con el siguiente procedimiento: 
+\subsection{Volumen de un paralelepípedo}
+El volumen del paralelepípedo cuyas aristas son los vectores $\ve{u}$, $\ve{v}$ y $\ve{w}$,
+se determina con el siguiente procedimiento:
 el área de la base del paralelepípedo está dada por $\Vert \ve{u} \times \ve{v}  \Vert$,
 la altura $h$ del paralelepípedo corresponde a la norma de la proyección del vector $\ve{w}$
-sobre el vector $\ve{u} \times \ve{v}.$
+sobre el vector $\ve{u} \times \ve{v}$.
 Es decir,
-$ h  = \Vert {\rm Proy}_{\ve{u} \times \ve{v}} \ve{w} \Vert =\left\Vert \frac{\ve{w} \cdot (\ve{u} \times \ve{v})}{\Vert\ve{u} \times \ve{v} \Vert^2 }\,(\ve{u} \times \ve{v} )\right \Vert = \frac{|\ve{w} \cdot (\ve{u} \times \ve{v})|}{\Vert\ve{u} \times \ve{v} \Vert }$. 
+$ h  = \Vert {\rm Proy}_{\ve{u} \times \ve{v}} \ve{w} \Vert =\left\Vert \frac{\ve{w} \cdot (\ve{u} \times \ve{v})}{\Vert\ve{u} \times \ve{v} \Vert^2 }\,(\ve{u} \times \ve{v} )\right \Vert = \frac{|\ve{w} \cdot (\ve{u} \times \ve{v})|}{\Vert\ve{u} \times \ve{v} \Vert }$.
 Por lo anterior, el volumen $V$ del paralelepípedo es $h \Vert\ve{u} \times \ve{v} \Vert$
-entonces, 
+entonces,
 \begin{equation} \label{preliminares4}
-V= |\ve{w} \cdot (\ve{u} \times \ve{v}) |
+  V= |\ve{w} \cdot (\ve{u} \times \ve{v}) |
 \end{equation}
 
 \section{Funciones en el espacio} \label{funcionesenelespacio}
-Para $a\in \mathbb{R}^{n},$ al conjunto $B_{r}\left(a\right) =\{x\in \mathbb{R}^{n}|\left\Vert x-a\right\Vert <r\}$ 
-lo denominaremos la bola con centro en $a$ y radio $r>0.$ \index{Bola} 
-Diremos que un conjunto $U\subseteq \mathbb{R}^{n}$ es \emph{abierto} si para todo $u\in U$ 
-existe $r>0,$ tal que, $B_{r}(u) \subset U.$  \index{Conjunto!abierto}
-Un sinónimo de conjunto abierto es región abierta. \index{Región abierta} 
+Para $a\in \mathbb{R}^{n}$, al conjunto $B_{r}\left(a\right) =\{x\in \mathbb{R}^{n}|\left\Vert x-a\right\Vert <r\}$
+lo denominaremos la bola con centro en $a$ y radio $r>0$. \index{Bola}
+Diremos que un conjunto $U\subseteq \mathbb{R}^{n}$ es \emph{abierto} si para todo $u\in U$
+existe $r>0$, tal que, $B_{r}(u) \subset U$.  \index{Conjunto!abierto}
+Un sinónimo de conjunto abierto es región abierta. \index{Región abierta}
 Un conjunto $B$ se dice \emph{cerrado} si su complemento es un conjunto abierto. \index{Conjunto!cerrado}
 \begin{teorema}
-$B_{r}(a)$ es un conjunto abierto.
+  $B_{r}(a)$ es un conjunto abierto.
 \end{teorema}
 La demostración de este resultado se encuentra en \textcite{marsden_calculo_2013}.
 \begin{ejemplo}
-El conjunto $A=\{(x,y) \in \mathbb{R}^{2}|x>0\}$ es abierto pues
-para todo $a \in A$ se satisface la definición dada.
+  El conjunto $A=\{(x,y) \in \mathbb{R}^{2}|x>0\}$ es abierto pues
+  para todo $a \in A$ se satisface la definición dada.
 
-El conjunto $B=\{(x,y) \in \mathbb{R}^{2}|xy\geq 0\}$ no es abierto pues
-para $\left( 0,0\right) \in B$ no es posible determinar
-$r>0$ tal que $B_{r}\left( \left( 0,0\right) \right) \subset B.$
+  El conjunto $B=\{(x,y) \in \mathbb{R}^{2}|xy\geq 0\}$ no es abierto pues
+  para $\left( 0,0\right) \in B$ no es posible determinar
+  $r>0$ tal que $B_{r}\left( \left( 0,0\right) \right) \subset B$.
 \end{ejemplo}
 De manera general abordaremos funciones de la forma
 \begin{equation}
-f: A\subseteq \mathbb{R}^n \to B\subseteq \mathbb{R}^m
+  f: A\subseteq \mathbb{R}^n \to B\subseteq \mathbb{R}^m
 \end{equation}
-El conjunto de puntos para los cuales la función $f$ está definida se denomina \emph{dominio} de $f$ 
+El conjunto de puntos para los cuales la función $f$ está definida se denomina \emph{dominio} de $f$
 y el conjunto de puntos de $\mathbb{R}^m$ que son imagen de algún punto del dominio se denomina \emph{rango}
-de $f$. De acuerdo con \textcite{apostol_calculus_1999}, a las funciones definidas cuando $n=m=1,$ se denominan \emph{funciones reales,} las cuales se estudian en los cursos de \emph{cálculo diferencial} y \emph{cálculo integral.}
+de $f$. De acuerdo con \textcite{apostol_calculus_1999}, a las funciones definidas cuando $n=m=1$, se denominan \emph{funciones reales,} las cuales se estudian en los cursos de \emph{cálculo diferencial} y \emph{cálculo integral.}
 Si $n>1$ y $m=1$ obtendremos \emph{campos escalares};  \index{Campos escalares} \index{Campos vectoriales}
-llamaremos \emph{funciones vectoriales} a las obtenidas cuando $n=1$ y $m>1$; mientras que los \emph{campos vectoriales} son funciones obtenidas cuando $n>1$ y $m>1.$ \index{Funciones vectoriales}
- 
-Para presentar funciones vectoriales, campos vectoriales y en general para vectores, usaremos la notación $\ve{r}(t),$ ${\bf r}(t)$ o ${\bf F}(x,y,z)$ indistintamente y según el caso. 
+llamaremos \emph{funciones vectoriales} a las obtenidas cuando $n=1$ y $m>1$; mientras que los \emph{campos vectoriales} son funciones obtenidas cuando $n>1$ y $m>1$. \index{Funciones vectoriales}
+
+Para presentar funciones vectoriales, campos vectoriales y en general para vectores, usaremos la notación $\ve{r}(t)$, ${\bf r}(t)$ o ${\bf F}(x,y,z)$ indistintamente y según el caso.
 Por ejemplo:
 
 \begin{itemize}
-\item $\overrightarrow{r}(t) =\left\langle \ln t,\frac{1}{t},t^{2}\right\rangle ,$ es 
-una función vectorial en $\mathbb{R}^{3}$ con dominio $(0,\infty ).$ 
-% El rango es el conjunto $B={\rm Rango}f=\{(x,y,z)\in\mathbb{R}^{3}/ y\neq 0, z \geq 0\}.$
-\item El campo escalar definido en $\mathbb{R}^{2}$ por $f(x,y) =\sqrt{9-x^{2}}+\sqrt{y^{2}-4}$ posee
-dominio, ${\rm dom}f=\{(x,y) \in \mathbb{R}^{2}/\left\vert x\right\vert \leq 3,\left\vert y\right\vert \geq 2\}$ y el rango de $f$ es el conjunto $[0,\infty).$
-\item $\overrightarrow{F}(x,y,z) =\left\langle y,\frac{x}{x-y},e^{-xz}\right\rangle$ 
-es un campo vectorial definido en $\mathbb{R}^{3},$ su dominio es el conjunto 
-${\rm dom}f=\{(x,y,z) \in \mathbb{R}^{3}/x\neq y\}.$
+  \item $\overrightarrow{r}(t) =\left\langle \ln t,\frac{1}{t},t^{2}\right\rangle $, es
+    una función vectorial en $\mathbb{R}^{3}$ con dominio $(0,\infty )$.
+    % El rango es el conjunto $B={\rm Rango}f=\{(x,y,z)\in\mathbb{R}^{3}/ y\neq 0, z \geq 0\}.$
+  \item El campo escalar definido en $\mathbb{R}^{2}$ por $f(x,y) =\sqrt{9-x^{2}}+\sqrt{y^{2}-4}$ posee
+    dominio, ${\rm dom}f=\{(x,y) \in \mathbb{R}^{2}/\left\vert x\right\vert \leq 3,\left\vert y\right\vert \geq 2\}$ y el rango de $f$ es el conjunto $[0,\infty)$.
+  \item $\overrightarrow{F}(x,y,z) =\left\langle y,\frac{x}{x-y},e^{-xz}\right\rangle$
+    es un campo vectorial definido en $\mathbb{R}^{3}$, su dominio es el conjunto
+    ${\rm dom}f=\{(x,y,z) \in \mathbb{R}^{3}/x\neq y\}$.
 \end{itemize}
 Supondremos que el lector ha estudiado los conceptos de límite, continuidad, diferenciabilidad e integrabilidad
-en funciones reles, de tal manera que extenderemos estos elementos a los otros tipos de funciones. 
- 
-En cuanto al dominio de la función $f(x,y) =\frac{x^{4}-y^{4}}{x^{2}+y^{2}},$
+en funciones reles, de tal manera que extenderemos estos elementos a los otros tipos de funciones.
+
+En cuanto al dominio de la función $f(x,y) =\frac{x^{4}-y^{4}}{x^{2}+y^{2}}$,
 ${\rm Dom}f=\{(x,y) \in \mathbb{R}^{2}/(x,y) \neq \left( 0,0\right)\}$
-a pesar que $\left( 0,0\right) $ no es un punto del dominio de $f,$
-es natural preguntarnos: ¿qué sucede si nos acercamos al origen ? En la siguiente sección podremos 
+a pesar que $\left( 0,0\right) $ no es un punto del dominio de $f$,
+es natural preguntarnos: ¿qué sucede si nos acercamos al origen ? En la siguiente sección podremos
 responder a este interrogante.
 
-\subsection*{Límites}
+\subsection{Límites}
 
 \begin{defi} \label{preliminares5}
-Si {\small $\ve{F}: A \subseteq\mathbb{R}^n \to  \mathbb{R}^m$} es una función con dominio $A,$
-se dice que $\ve{L}$ es el límite de $\ve{F}(x_{1},x_{2},\cdots ,x_{n})$ cuando 
-${\bf x}=\left(x_{1},x_{2},\cdots ,x_{n}\right)$ tiende a ${\bf a}= \left( a_{1},a_{2},\cdots,a_{n}\right) ,$ 
-lo cual se denota como {\small $ \lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})=\ve{L}=\langle l_{1},l_{2},\cdots ,l_{m}\ra,$}
-si para todo {\small $\varepsilon >0$} existe $\delta >0$ tal que {\small $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon,$}
-siempre que $\left\Vert {\bf x}- {\bf a} \right\Vert <\delta .$
-\end{defi} 
+  Si {\small $\ve{F}: A \subseteq\mathbb{R}^n \to  \mathbb{R}^m$} es una función con dominio $A$,
+  se dice que $\ve{L}$ es el límite de $\ve{F}(x_{1},x_{2},\cdots ,x_{n})$ cuando
+  ${\bf x}=\left(x_{1},x_{2},\cdots ,x_{n}\right)$ tiende a ${\bf a}= \left( a_{1},a_{2},\cdots,a_{n}\right) $,
+  lo cual se denota como {\small $ \lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})=\ve{L}=\langle l_{1},l_{2},\cdots ,l_{m}\ra$},
+  si para todo {\small $\varepsilon >0$} existe $\delta >0$ tal que {\small $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon$,}
+  siempre que $\left\Vert {\bf x}- {\bf a} \right\Vert <\delta $.
+\end{defi}
 
 \begin{itemize}[leftmargin=0cm,itemindent=0.4cm,labelwidth=\itemindent,labelsep=0cm,align=left]
-\item Usando la definición, demostrar que $\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left\langle
-x^{2},x+y\right\rangle =\left\langle 1,2\right\rangle .$
+  \item Usando la definición, demostrar que $\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left\langle
+    x^{2},x+y\right\rangle =\left\langle 1,2\right\rangle $.
 
+    Observemos que  para todo $\varepsilon >0$ existe $\delta >0$ tal que si
+    $\left\Vert(x,y) -\left( 1,1\right) \right\Vert <\delta $
+    entonces $\left\Vert \left( x^{2},x+y\right) -\left( 1,2\right) \right\Vert<\varepsilon ;$ esto se evidencia verificando las siguientes desigualdades:
+    \begin{eqnarray}\label{preliminares}
+      \left\vert x-1\right\vert &=&\sqrt{(x-1) ^{2}}\leq \sqrt{\left(
+      x-1\right) ^{2}+(y-1) ^{2}} \nonumber \\ &=&\left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
+    \end{eqnarray}
+    De esta relación se obtiene
+    \begin{multline}\label{preliminares1}
+      |x-1|<\delta \rightarrow -\delta <x-1<\delta
+      \rightarrow 2-\delta <x+1<\delta  \\
+      \Rightarrow \left\vert x+1\right\vert<2-\delta
+    \end{multline}
+    De manera análoga,
+    \begin{eqnarray}\label{preliminares2}
+      \left\vert y-1\right\vert &=& \sqrt{(y-1) ^{2}}\leq \sqrt{\left(x-1\right) ^{2}+(y-1)  ^{2}} \nonumber \\ &=& \left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
+    \end{eqnarray}
+    Utilizando los resultados (\ref{preliminares}), (\ref{preliminares1}) y (\ref{preliminares2}), se sigue que
+    \begin{eqnarray*}
+      \left\Vert \langle x^{2},x+y\rangle -\langle 1,2\rangle \right\Vert &=& \sqrt{\left( x^{2}-1\right) ^{2}+\left( x+y-2\right) ^{2}} \\
+      &\leq & \sqrt{\left( x^{2}-1\right) ^{2}} +\sqrt{\left(x+y-2\right) ^{2}} \\
+      &=& \left\vert x^{2}-1\right\vert  +\left\vert x+y-2\right\vert \\
+      &=& \left\vert x-1\right\vert  \left\vert x+1\right\vert +\left\vert (x-1) +(y-1) \right\vert \\
+      &<& \delta (2-\delta) +2\delta = \delta (4-\delta).
+    \end{eqnarray*}
+    Tomando $\varepsilon =\delta \left( 4-\delta \right) $, se obtiene que
+    $\delta =2-\sqrt{4-\varepsilon };$ con $0<\varepsilon < 4$ la definición se satisface.
 
-Observemos que  para todo $\varepsilon >0$ existe $\delta >0$ tal que si 
-$\left\Vert(x,y) -\left( 1,1\right) \right\Vert <\delta $
-entonces $\left\Vert \left( x^{2},x+y\right) -\left( 1,2\right) \right\Vert<\varepsilon ;$ esto se evidencia verificando las siguientes desigualdades:
-\begin{eqnarray}\label{preliminares}
-\left\vert x-1\right\vert &=&\sqrt{(x-1) ^{2}}\leq \sqrt{\left(
-x-1\right) ^{2}+(y-1) ^{2}} \nonumber \\ &=&\left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
-\end{eqnarray}
-De esta relación se obtiene
-\begin{multline}\label{preliminares1}
-|x-1|<\delta \rightarrow -\delta <x-1<\delta
-\rightarrow 2-\delta <x+1<\delta  \\
-\Rightarrow \left\vert x+1\right\vert<2-\delta 
-\end{multline}
-De manera análoga,
-\begin{eqnarray}\label{preliminares2}
-\left\vert y-1\right\vert &=& \sqrt{(y-1) ^{2}}\leq \sqrt{\left(x-1\right) ^{2}+(y-1)  ^{2}} \nonumber \\ &=& \left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta 
-\end{eqnarray}
-Utilizando los resultados (\ref{preliminares}), (\ref{preliminares1}) y (\ref{preliminares2}), se sigue que
-\begin{eqnarray*}
-\left\Vert \langle x^{2},x+y\rangle -\langle 1,2\rangle \right\Vert &=& \sqrt{\left( x^{2}-1\right) ^{2}+\left( x+y-2\right) ^{2}} \\
-&\leq & \sqrt{\left( x^{2}-1\right) ^{2}} +\sqrt{\left(x+y-2\right) ^{2}} \\
-&=& \left\vert x^{2}-1\right\vert  +\left\vert x+y-2\right\vert \\
-&=& \left\vert x-1\right\vert  \left\vert x+1\right\vert +\left\vert (x-1) +(y-1) \right\vert \\
-&<& \delta (2-\delta) +2\delta = \delta (4-\delta). 
-\end{eqnarray*}
-Tomando $\varepsilon =\delta \left( 4-\delta \right) $, se obtiene que 
-$\delta =2-\sqrt{4-\varepsilon };$ con $0<\varepsilon < 4$ la definición se satisface.
+  \item Mostrar que $\lim\limits_{t\rightarrow 1}\left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle =\left\langle 2,2,1\right\rangle $. Veamos que para todo $\varepsilon >0$ existe
+    $\delta >0$ tal que si $\left\vert t-1\right\vert <\delta, $
+    entonces $\left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert<\varepsilon $.
+    De la relación
+    \begin{eqnarray*}
+      \left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t}%
+      ,t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert  &=&
+      \sqrt{\left( t-1\right) ^{2}\left( t^{2}+2t+3\right) } \\
+      &=&\left\vert t-1\right\vert \sqrt{\left( t+1\right) ^{2}+2} \\
+      &\leq& \left\vert t-1\right\vert \left( \left\vert t-1\right\vert +\sqrt{2}
+      \right)  \\ &<& \delta \left( \delta +\sqrt{2}\right)
+    \end{eqnarray*}
 
-
-
-\item Mostrar que $\lim\limits_{t\rightarrow 1}\left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle =\left\langle 2,2,1\right\rangle .$ Veamos que para todo $\varepsilon >0$ existe 
-$\delta >0$ tal que si $\left\vert t-1\right\vert <\delta, $ 
-entonces $\left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert<\varepsilon .$
-De la relación
-\begin{eqnarray*}
-\left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t}%
-,t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert  &=&
-\sqrt{\left( t-1\right) ^{2}\left( t^{2}+2t+3\right) } \\ 
-&=&\left\vert t-1\right\vert \sqrt{\left( t+1\right) ^{2}+2} \\
-&\leq& \left\vert t-1\right\vert \left( \left\vert t-1\right\vert +\sqrt{2}
-\right)  \\ &<& \delta \left( \delta +\sqrt{2}\right) 
-\end{eqnarray*}
-
-si $\delta \left( \delta +\sqrt{2}\right) =\varepsilon $. Entonces 
-$\delta =\frac{\sqrt{2}}{2}\left( \sqrt{2\varepsilon +1}-1\right) ;$ lo cual hace que
-la definición se satisfaga.
+    si $\delta \left( \delta +\sqrt{2}\right) =\varepsilon $. Entonces
+    $\delta =\frac{\sqrt{2}}{2}\left( \sqrt{2\varepsilon +1}-1\right) ;$ lo cual hace que
+    la definición se satisfaga.
 \end{itemize}
 Una consecuencia de la definición (\ref{preliminares5}) es la siguiente.
 \begin{teorema}\label{preliminares3}
-Para  $\ve{F}: A \subseteq\mathbb{R}^n \to  \mathbb{R}^m,$ 
-$$ \lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})=\ve{L}=\langle l_{1},l_{2},\cdots ,l_{m}\rangle $$ existe si y solo si 
-cada uno de los límites de la funciones coordenadas existe.
+  Para  $\ve{F}: A \subseteq\mathbb{R}^n \to  \mathbb{R}^m$,
+  $$ \lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})=\ve{L}=\langle l_{1},l_{2},\cdots ,l_{m}\rangle $$ existe si y solo si
+  cada uno de los límites de la funciones coordenadas existe.
 \end{teorema}
 
-
-\begin{proof} 
-La función $\ve{F}$ tiene la forma
-$$\ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) =\left\langle f_{1}\left( x_{1},x_{2},\cdots ,x_{n}\right) ,\cdots ,f_{m}\left( x_{1},x_{2},\cdots ,x_{n}\right)\right\rangle $$
+\begin{proof}
+  La función $\ve{F}$ tiene la forma
+  $$\ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) =\left\langle f_{1}\left( x_{1},x_{2},\cdots ,x_{n}\right) ,\cdots ,f_{m}\left( x_{1},x_{2},\cdots ,x_{n}\right)\right\rangle $$
 \end{proof}
 \begin{itemize}[leftmargin=0cm,itemindent=.2cm,labelwidth=\itemindent,labelsep=0cm,align=left]
-	
-\item $(\to)$ Supongamos que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})= \ve{L}$, 
-esto significa que para todo $\varepsilon >0$ existe $\delta >0$  tal que si 
-$\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta $
-entonces $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon .$ Por lo tanto:
 
+  \item $(\to)$ Supongamos que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})= \ve{L}$,
+    esto significa que para todo $\varepsilon >0$ existe $\delta >0$  tal que si
+    $\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta $
+    entonces $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon $. Por lo tanto:
 
-\begin{eqnarray*}
-\left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right\vert &=&
-\sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
-&\leq& \sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
-&=& \left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon
-\end{eqnarray*}
-lo cual implica que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i, $
-para $i=1,2, \cdots, m. $
+    \begin{eqnarray*}
+      \left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right\vert &=&
+      \sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
+      &\leq& \sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
+      &=& \left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon
+    \end{eqnarray*}
+    lo cual implica que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i, $
+    para $i=1,2, \cdots, m. $
 
+  \item $(\leftarrow)$ Ahora supongamos que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i$,
+    esto significa que para todo $\frac{\varepsilon}{m}>0$ existe $\delta>0$ tal que
+    $|f_i( x_{1},x_{2},\cdots ,x_{n}) -l_i| <\varepsilon/m $, siempre que
+    $\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta $.
+    Por lo tanto:
+    {\small
+      \begin{eqnarray*}
+        \left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) - \ve{L}\right\Vert &=&
+        \sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
+        &\leq & \sum_{i=1}^{m}\sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i}\right) ^{2}}\\
+        &\leq& \sum_{i=1}^{m}\left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i} \right\vert\\ & <& \sum_{i=1}^{m}\frac{\varepsilon }{m}=\varepsilon.
+      \end{eqnarray*}
+    }
 
-\item $(\leftarrow)$ Ahora supongamos que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i,$ 
-esto significa que para todo $\frac{\varepsilon}{m}>0$ existe $\delta>0$ tal que
-$|f_i( x_{1},x_{2},\cdots ,x_{n}) -l_i| <\varepsilon/m ,$ siempre que
-$\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta .$
-Por lo tanto:
-{\small
-\begin{eqnarray*}
-\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) - \ve{L}\right\Vert &=& 
-\sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\ 
-&\leq & \sum_{i=1}^{m}\sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i}\right) ^{2}}\\
-&\leq& \sum_{i=1}^{m}\left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i} \right\vert\\ & <& \sum_{i=1}^{m}\frac{\varepsilon }{m}=\varepsilon.
-\end{eqnarray*}
-}
-
-es decir $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon ,$
-lo cual implica que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})$ existe y es igual a $\ve{L}.$
+    es decir $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon $,
+    lo cual implica que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})$ existe y es igual a $\ve{L}$.
 \end{itemize}
-
 
 Este resultado permite hacer cálculos directos como se ilustra a continuación.
 
-
 \begin{itemize}[leftmargin=*]
-\item {\small $\ds\lim_{t\rightarrow 0}\left\langle \frac{\sin t}{t},\sqrt{t},\frac{e^{t}-1}{t}\right\rangle= \langle \lim_{t\rightarrow 0}\frac{\sin t}{t} , \lim_{t\rightarrow 0}\sqrt{1+t} ,
-\lim_{t\rightarrow 0}\frac{e^{t}-1}{t}\rangle=\langle 1 ,1,1 \ra$}
-\item Un límite con un campo vectorial.
-{\small
-\begin{multline*} \hskip-0.2cm 
-\lim\limits_{(x,y) \rightarrow \left( 1,1\right)
-}\left\langle \frac{x-y}{\sqrt{x}-\sqrt{y}}, \frac{x^{3}-y^{3}}{x-y}\right\rangle 
-=\lim\limits_{(x,y) \rightarrow (1,1) } \left\langle \sqrt{x}+\sqrt{y},x^{2}+xy+y^{2}\right\rangle \\
-=\left\langle \lim\limits_{(x,y)
-\rightarrow \left( 1,1\right) }\left( \sqrt{x}+\sqrt{y}\right)
-,\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left(
-x^{2}+xy+y^{2}\right) \right\rangle = \left\langle 2,3\right\rangle 
-\end{multline*}
-}
-{\small $$
-\lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{x^{2}-y^{2}}=\lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{\left( x-y\right) \left( x+y\right) }=\lim_{(x,y)\rightarrow\left(1,1\right) }\frac{1}{\left( x+y\right) }=\frac{1}{2}
-$$}
+  \item {\small $\ds\lim_{t\rightarrow 0}\left\langle \frac{\sin t}{t},\sqrt{t},\frac{e^{t}-1}{t}\right\rangle= \langle \lim_{t\rightarrow 0}\frac{\sin t}{t} , \lim_{t\rightarrow 0}\sqrt{1+t} ,
+    \lim_{t\rightarrow 0}\frac{e^{t}-1}{t}\rangle=\langle 1 ,1,1 \ra$}
+  \item Un límite con un campo vectorial.
+    {\small
+      \begin{multline*} \hskip-0.2cm
+        \lim\limits_{(x,y) \rightarrow \left( 1,1\right)
+        }\left\langle \frac{x-y}{\sqrt{x}-\sqrt{y}}, \frac{x^{3}-y^{3}}{x-y}\right\rangle
+        =\lim\limits_{(x,y) \rightarrow (1,1) } \left\langle \sqrt{x}+\sqrt{y},x^{2}+xy+y^{2}\right\rangle \\
+        =\left\langle \lim\limits_{(x,y)
+        \rightarrow \left( 1,1\right) }\left( \sqrt{x}+\sqrt{y}\right)
+        ,\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left(
+        x^{2}+xy+y^{2}\right) \right\rangle = \left\langle 2,3\right\rangle
+      \end{multline*}
+    }
+    {\small $$
+      \lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{x^{2}-y^{2}}=\lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{\left( x-y\right) \left( x+y\right) }=\lim_{(x,y)\rightarrow\left(1,1\right) }\frac{1}{\left( x+y\right) }=\frac{1}{2}
+    $$}
 \end{itemize}
 
-La imagen del conjunto $A$ por medio de la función $\ve{F}$, se denota por $\ve{F}(A)$, es decir 
-$\ve{F}(A)=\{\ve{F}(\mathbf{x})/\mathbf{x}\in A\}.$
+La imagen del conjunto $A$ por medio de la función $\ve{F}$, se denota por $\ve{F}(A)$, es decir
+$\ve{F}(A)=\{\ve{F}(\mathbf{x})/\mathbf{x}\in A\}$.
 Para funciones $\ve{F},\ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$
-y $h:\mathbb{R}^n \to \mathbb{R}$ usaremos las siguientes abreviaturas: 
+y $h:\mathbb{R}^n \to \mathbb{R}$ usaremos las siguientes abreviaturas:
 \begin{eqnarray*}
-\left( \ve{F}\pm \ve{G}\right) \left( \mathbf{x} \right) &=& \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x})\\
- &=& \left\langle f_{1}(\mathbf{x}) \pm g_{1}(\mathbf{x}) ,f_{2}(\mathbf{x}) \pm g_{2}\left( 
-\mathbf{x}\right) ,\cdots ,f_{m}(\mathbf{x}) \pm g_{m}\left(  \mathbf{x}\right) \right\rangle 
+  \left( \ve{F}\pm \ve{G}\right) \left( \mathbf{x} \right) &=& \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x})\\
+  &=& \left\langle f_{1}(\mathbf{x}) \pm g_{1}(\mathbf{x}) ,f_{2}(\mathbf{x}) \pm g_{2}\left(
+  \mathbf{x}\right) ,\cdots ,f_{m}(\mathbf{x}) \pm g_{m}\left(  \mathbf{x}\right) \right\rangle
 \end{eqnarray*}
 
 \begin{eqnarray*}
-\left( \ve{F}\cdot \ve{G}\right) \left( \mathbf{x} \right) &=&\ve{F}(\mathbf{x}) \cdot \ve{G}%
-(\mathbf{x}) \\ &=& f_{1}(\mathbf{x}) g_{1}\left( \mathbf{x}\right) +f_{2}(\mathbf{x}) g_{2}(\mathbf{x})
-+\cdots +f_{m}(\mathbf{x}) g_{m}(\mathbf{x}) \\
-&=& \sum_{k=1}^{m}f_{k}(\mathbf{x}) g_{k}(\mathbf{x}) \\[0.1cm]
-\left\Vert \ve{F}(\mathbf{x}) \right\Vert &=& \left( f_{1}^{2}(\mathbf{x}) +f_{2}^{2}(\mathbf{x}) +\cdots
-+f_{m}^{2}(\mathbf{x}) \right) ^{1/2}=\sqrt{\sum_{k=1}^{m}f_{k}^{2}(\mathbf{x}) }\\[0.1cm]
-h\ve{F}(\mathbf{x}) &=& h(\mathbf{x}) \ve{F}(\mathbf{x}) =\left\langle h\left( \mathbf{x} \right) f_{1}(\mathbf{x}) ,h(\mathbf{x}) f_{2}\left( \mathbf{x}\right) ,\cdots ,h(\mathbf{x}) f_{m}\left( \mathbf{x}\right) \right\rangle 
+  \left( \ve{F}\cdot \ve{G}\right) \left( \mathbf{x} \right) &=&\ve{F}(\mathbf{x}) \cdot \ve{G}%
+  (\mathbf{x}) \\ &=& f_{1}(\mathbf{x}) g_{1}\left( \mathbf{x}\right) +f_{2}(\mathbf{x}) g_{2}(\mathbf{x})
+  +\cdots +f_{m}(\mathbf{x}) g_{m}(\mathbf{x}) \\
+  &=& \sum_{k=1}^{m}f_{k}(\mathbf{x}) g_{k}(\mathbf{x}) \\[0.1cm]
+  \left\Vert \ve{F}(\mathbf{x}) \right\Vert &=& \left( f_{1}^{2}(\mathbf{x}) +f_{2}^{2}(\mathbf{x}) +\cdots
+  +f_{m}^{2}(\mathbf{x}) \right) ^{1/2}=\sqrt{\sum_{k=1}^{m}f_{k}^{2}(\mathbf{x}) }\\[0.1cm]
+  h\ve{F}(\mathbf{x}) &=& h(\mathbf{x}) \ve{F}(\mathbf{x}) =\left\langle h\left( \mathbf{x} \right) f_{1}(\mathbf{x}) ,h(\mathbf{x}) f_{2}\left( \mathbf{x}\right) ,\cdots ,h(\mathbf{x}) f_{m}\left( \mathbf{x}\right) \right\rangle
 \end{eqnarray*}
 
 Al considerar esta notación se presenta el siguiente resultado.
 
 \begin{teorema}\label{teo1}
-Sean $\ve{F},\ve{G}$ y $h$ funciones que satisfacen que 
-$\ve{F},\ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ y $h:A\subseteq \mathbb{R}^n\to \mathbb{R}$ tal que
-$\lim_{\mathbf{x\to x}_{0}}\ve{F}\left( \mathbf{x}%
-\right) =\mathbf{a,}$ $\lim_{\mathbf{x\to x}_{0}}\ve{G}%
-(\mathbf{x}) =\mathbf{b,}$ y $\lim_{\mathbf{x\to x}%
-_{0}}h(\mathbf{x}) =k;$ entonces 
+  Sean $\ve{F},\ve{G}$ y $h$ funciones que satisfacen que
+  $\ve{F},\ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ y $h:A\subseteq \mathbb{R}^n\to \mathbb{R}$ tal que
+  $\lim_{\mathbf{x\to x}_{0}}\ve{F}\left( \mathbf{x}%
+  \right) =\mathbf{a,}$ $\lim_{\mathbf{x\to x}_{0}}\ve{G}%
+  (\mathbf{x}) =\mathbf{b,}$ y $\lim_{\mathbf{x\to x}%
+  _{0}}h(\mathbf{x}) =k;$ entonces
 
 \begin{enumerate}[leftmargin=0cm,itemindent=0.4cm,labelwidth=\itemindent,labelsep=0cm,align=left]
 
-\item $\ds \lim_{\mathbf{x\to x}_{0}}\left( \ve{F}\left( \mathbf{x}%
-\right) \pm \ve{G}(\mathbf{x}) \right) =\mathbf{a\pm b}$
+    \item $\ds \lim_{\mathbf{x\to x}_{0}}\left( \ve{F}\left( \mathbf{x}%
+      \right) \pm \ve{G}(\mathbf{x}) \right) =\mathbf{a\pm b}$
 
-\item $\ds\lim_{\mathbf{x\to x}_{0}}\left( h(\mathbf{x})
-\ve{F}(\mathbf{x}) \right) =k\mathbf{a}$
+    \item $\ds\lim_{\mathbf{x\to x}_{0}}\left( h(\mathbf{x})
+      \ve{F}(\mathbf{x}) \right) =k\mathbf{a}$
 
-\item $\ds\lim_{\mathbf{x\to x}_{0}}\left( \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) \right) =\mathbf{a\cdot b}$
+    \item $\ds\lim_{\mathbf{x\to x}_{0}}\left( \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) \right) =\mathbf{a\cdot b}$
 
-\item $\ds\lim_{\mathbf{x\to x}_{0}}\left\Vert \ve{F}(\mathbf{x}) \right\Vert =\left\Vert \mathbf{a}\right\Vert $
-\end{enumerate}
+    \item $\ds\lim_{\mathbf{x\to x}_{0}}\left\Vert \ve{F}(\mathbf{x}) \right\Vert =\left\Vert \mathbf{a}\right\Vert $
+  \end{enumerate}
 \end{teorema}
 
 \begin{proof}
-Con la definición obtenemos las siguientes afirmaciones
+  Con la definición obtenemos las siguientes afirmaciones
 \begin{enumerate}[leftmargin=0cm,itemindent=0.4cm,labelwidth=\itemindent,labelsep=0cm,align=left]
-\item $\lim_{\mathbf{x\to x}_{0}}\ve{F}(\mathbf{x}) =\mathbf{a,}$
-significa que para todo $\varepsilon >0$ existe $\delta >0,$ 
-es decir, si $\left\Vert \mathbf{x-x}_{0}\right\Vert <\delta $ entonces 
-$\left\Vert \ve{F}(\mathbf{x}) \mathbf{-a}\right\Vert <\frac{\varepsilon }{2}.$ 
-Por la misma razón 
-$\left\Vert \ve{G}(\mathbf{x}) \mathbf{-b}\right\Vert <\frac{\varepsilon }{2},$
-entonces
-\begin{multline*}
-\left\Vert \left( \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x}) \right) -\left( \mathbf{a\pm b}
-\right) \right\Vert = \left\Vert \left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right) \pm \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \right\Vert \\
-\leq \left\Vert \ve{F} (\mathbf{x}) -\mathbf{a}\right\Vert +\left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert <\frac{\varepsilon }{2}+\frac{\varepsilon }{2}= \varepsilon 
-\end{multline*}
+    \item $\lim_{\mathbf{x\to x}_{0}}\ve{F}(\mathbf{x}) =\mathbf{a,}$
+      significa que para todo $\varepsilon >0$ existe $\delta >0$,
+      es decir, si $\left\Vert \mathbf{x-x}_{0}\right\Vert <\delta $ entonces
+      $\left\Vert \ve{F}(\mathbf{x}) \mathbf{-a}\right\Vert <\frac{\varepsilon }{2}$.
+      Por la misma razón
+      $\left\Vert \ve{G}(\mathbf{x}) \mathbf{-b}\right\Vert <\frac{\varepsilon }{2}$,
+      entonces
+      \begin{multline*}
+        \left\Vert \left( \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x}) \right) -\left( \mathbf{a\pm b}
+        \right) \right\Vert = \left\Vert \left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right) \pm \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \right\Vert \\
+        \leq \left\Vert \ve{F} (\mathbf{x}) -\mathbf{a}\right\Vert +\left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert <\frac{\varepsilon }{2}+\frac{\varepsilon }{2}= \varepsilon
+      \end{multline*}
 
-\item Es consecuencia de la siguiente igualdad
-$$h(\mathbf{x}) \ve{F}(\mathbf{x}) -k \mathbf{a=}\left( h(\mathbf{x}) -k\right) \left( \ve{%
-F}(\mathbf{x}) -\mathbf{a}\right) +\left( h\left( \mathbf{x} \right) -k\right) \mathbf{a}+k\left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right),$$
-por lo tanto,
-\begin{multline*}
-\left\Vert h(\mathbf{x}) \ve{F}\left( \mathbf{x}\right) -k\mathbf{a}\right\Vert \mathbf{\leq }\left\vert h\left( \mathbf{x} \right) -k\right\vert \left\Vert \ve{F}(\mathbf{x}) - \mathbf{a}\right\Vert \\ +\left\vert h(\mathbf{x}) -k\right\vert \left\Vert \mathbf{a}\right\Vert +\left\vert k\right\vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert 
-\end{multline*}
-Los términos de la derecha tienden a cero cuando $\mathbf{x}\to \mathbf{x}_{0}.$
+    \item Es consecuencia de la siguiente igualdad
+      $$h(\mathbf{x}) \ve{F}(\mathbf{x}) -k \mathbf{a=}\left( h(\mathbf{x}) -k\right) \left( \ve{%
+      F}(\mathbf{x}) -\mathbf{a}\right) +\left( h\left( \mathbf{x} \right) -k\right) \mathbf{a}+k\left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right),$$
+      por lo tanto,
+      \begin{multline*}
+        \left\Vert h(\mathbf{x}) \ve{F}\left( \mathbf{x}\right) -k\mathbf{a}\right\Vert \mathbf{\leq }\left\vert h\left( \mathbf{x} \right) -k\right\vert \left\Vert \ve{F}(\mathbf{x}) - \mathbf{a}\right\Vert \\ +\left\vert h(\mathbf{x}) -k\right\vert \left\Vert \mathbf{a}\right\Vert +\left\vert k\right\vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert
+      \end{multline*}
+      Los términos de la derecha tienden a cero cuando $\mathbf{x}\to \mathbf{x}_{0}$.
 
-\item Utilizando la desigualdad de Cauchy-Schwarz, 
-$0\leq \left\vert \ve{u}\cdot \ve{v}\right\vert \leq \left\Vert 
-\ve{u}\right\Vert \cdot \left\Vert \ve{v}\right\Vert $
-y la siguiente identidad
-\begin{multline*}
-\ve{F}(\mathbf{x}) \cdot \ve{G}\left( \mathbf{x}\right) -\mathbf{a\cdot b=}\left( \ve{F}\left( \mathbf{x}\right) -\mathbf{a}\right) \cdot \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \\ 
-+\mathbf{a\cdot }\left( \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right) +\mathbf{b\cdot }\left( \ve{F}(\mathbf{x}) -\mathbf{a}\right), 
-\end{multline*}
-se sigue que 
-\begin{multline*}
-\left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \mathbf{\leq }%
-\left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert \left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert \\
-+\left\Vert \mathbf{a}\right\Vert \left\Vert \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right\Vert +\left\Vert \mathbf{b}\right\Vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert.
-\end{multline*}
-De las hipótesis se puede establecer que cuando $\mathbf{x\to x }_{0},$
-$\left\Vert \ve{F}(\mathbf{x}) -\mathbf{a} \right\Vert \to 0,$
-y $\left\Vert \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right\Vert \to 0;$ 
-por lo tanto
-$\left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \to 0,$ 
-cuando $\mathbf{x\to x}_{0}.$
-\item El resultado es consecuencia de la siguiente desigualdad
-$$\left\vert \left\Vert \ve{F}(\mathbf{x})\right\Vert -\left\Vert \mathbf{a}\right\Vert \right\vert \leq \left\Vert 
-\ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert $$
-\end{enumerate}
+    \item Utilizando la desigualdad de Cauchy-Schwarz,
+      $0\leq \left\vert \ve{u}\cdot \ve{v}\right\vert \leq \left\Vert
+      \ve{u}\right\Vert \cdot \left\Vert \ve{v}\right\Vert $
+      y la siguiente identidad
+      \begin{multline*}
+        \ve{F}(\mathbf{x}) \cdot \ve{G}\left( \mathbf{x}\right) -\mathbf{a\cdot b=}\left( \ve{F}\left( \mathbf{x}\right) -\mathbf{a}\right) \cdot \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \\
+        +\mathbf{a\cdot }\left( \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right) +\mathbf{b\cdot }\left( \ve{F}(\mathbf{x}) -\mathbf{a}\right),
+      \end{multline*}
+      se sigue que
+      \begin{multline*}
+        \left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \mathbf{\leq }%
+        \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert \left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert \\
+        +\left\Vert \mathbf{a}\right\Vert \left\Vert \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right\Vert +\left\Vert \mathbf{b}\right\Vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert.
+      \end{multline*}
+      De las hipótesis se puede establecer que cuando $\mathbf{x\to x }_{0}$,
+      $\left\Vert \ve{F}(\mathbf{x}) -\mathbf{a} \right\Vert \to 0$,
+      y $\left\Vert \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right\Vert \to 0;$
+      por lo tanto
+      $\left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \to 0$,
+      cuando $\mathbf{x\to x}_{0}$.
+    \item El resultado es consecuencia de la siguiente desigualdad
+      $$\left\vert \left\Vert \ve{F}(\mathbf{x})\right\Vert -\left\Vert \mathbf{a}\right\Vert \right\vert \leq \left\Vert
+      \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert $$
+  \end{enumerate}
 \end{proof}
 
 La siguiente es una característica especial que deseamos estudiar en la mayoría de las funciones que se consideran
 en estas notas.
 
-\subsection*{Funciones continuas}
+\subsection{Funciones continuas}
 \begin{defi} \index{Función!continua}
-Se dice que una función $\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ es continua en un punto 
-$\mathbf{a}\in A$, si para todo $\varepsilon >0$ existe $\delta >0$ tal que si 
-$\left\Vert \mathbf{x}-\mathbf{a}\right\Vert <\delta, $ entonces 
-$\left\Vert \ve{F}(\mathbf{x}) -\ve{F}\left( \mathbf{a}\right) \right\Vert <\varepsilon .$
+  Se dice que una función $\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ es continua en un punto
+  $\mathbf{a}\in A$, si para todo $\varepsilon >0$ existe $\delta >0$ tal que si
+  $\left\Vert \mathbf{x}-\mathbf{a}\right\Vert <\delta, $ entonces
+  $\left\Vert \ve{F}(\mathbf{x}) -\ve{F}\left( \mathbf{a}\right) \right\Vert <\varepsilon $.
 
-Diremos que $\ve{F}$ es continua en $A$, cuando $\ve{F}$ es continua en todo punto de $A.$
+  Diremos que $\ve{F}$ es continua en $A$, cuando $\ve{F}$ es continua en todo punto de $A$.
 \end{defi}
 Los siguientes teoremas son consecuencias de los teoremas de límites y de la definición anterior.
 
-\begin{teorema}\label{preliminares6} Para $\ve{F}:A \subseteq\mathbb{R}^{n}\rightarrow \mathbb{R}^{m},$
-$\ve{F}$ es continua si y solo si cada una sus funciones componentes es continua.
+\begin{teorema}\label{preliminares6} Para $\ve{F}:A \subseteq\mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$,
+  $\ve{F}$ es continua si y solo si cada una sus funciones componentes es continua.
 \end{teorema}
 
 \begin{proof}
-Las funciones componentes de $\ve{F}$ son campos escalares, es decir
-{\small $\ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) =\left\langle f_{1}\left(x_{1},x_{2},\cdots ,x_{n}\right) ,\cdots ,f_{m}\left( x_{1},x_{2},\cdots ,x_{n}\right)\right\rangle.$} \\
-El resultado es consecuencia de aplicar el teorema (\ref{preliminares3}).
-\end{proof} 
+  Las funciones componentes de $\ve{F}$ son campos escalares, es decir
+  {\small $\ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) =\left\langle f_{1}\left(x_{1},x_{2},\cdots ,x_{n}\right) ,\cdots ,f_{m}\left( x_{1},x_{2},\cdots ,x_{n}\right)\right\rangle$.} \\
+  El resultado es consecuencia de aplicar el teorema (\ref{preliminares3}).
+\end{proof}
 
-En el siguiente resultado $\ve{G}\circ \ve{F}$ denota la composición de las funciones $\ve{G}$ y $\ve{F}.$
+En el siguiente resultado $\ve{G}\circ \ve{F}$ denota la composición de las funciones $\ve{G}$ y $\ve{F}$.
 
 \begin{teorema}
-\normalfont Sea $\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ y 
-$\ve{G}:B\subseteq \mathbb{R}^m\to \mathbb{R}^p$, con 
-$\ve{F}\left( \mathbf{a}\right) \in B$. Si $\ve{F}$ es continua en 
-$\mathbf{a}\in A$ y $\ve{G}$ es continua en $\ve{F}\left( \mathbf{a}\right) $ 
-entonces $\ve{G}\circ \ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^p$ es continua en $\mathbf{a}$.
+  \normalfont Sea $\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ y
+  $\ve{G}:B\subseteq \mathbb{R}^m\to \mathbb{R}^p$, con
+  $\ve{F}\left( \mathbf{a}\right) \in B$. Si $\ve{F}$ es continua en
+  $\mathbf{a}\in A$ y $\ve{G}$ es continua en $\ve{F}\left( \mathbf{a}\right) $
+  entonces $\ve{G}\circ \ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^p$ es continua en $\mathbf{a}$.
 \end{teorema}
 
 \begin{proof}
-Por ser $\ve{G}$ continua en $\ve{F}\left( \mathbf{a}\right) \in B,$ dado $\varepsilon >0$ 
-existe $\lambda >0,$ para $\mathbf{y} \in B,$ si $\left\Vert \mathbf{y-}\ve{F}\left( \mathbf{a}\right)
-\right\Vert <\lambda $ entonces $\left\Vert \ve{G}(\mathbf{y})-\ve{G}\left( \ve{F}\left( \mathbf{a}\right) \right) \right\Vert <\varepsilon .$
- 
-Como $\ve{F}$ continua en $\mathbf{a}\in A,$ esto implica que dado 
-$\delta >0,$ existe $\lambda >0,$  si $\left\Vert \mathbf{x-a}\right\Vert <\delta ,$ para $\mathbf{x}\in A,$
-entonces $\left\Vert \ve{F}(\mathbf{x}) -\ve{F}\left( \mathbf{a}\right) \right\Vert <\lambda ,$ 
-lo anterior implica que 
-$\left\Vert \ve{G}\left( \ve{F}\left( \mathbf{x} \right) \right) -\ve{G}\left( \ve{F}\left( 
-\mathbf{a}\right) \right) \right\Vert <\varepsilon .$
-En síntesis, dado $\varepsilon >0,$ existe $\delta >0$ tal que si 
-$\left\Vert \mathbf{x-a}\right\Vert <\delta $ entonces 
-$\left\Vert \ve{G} \left( \ve{F}(\mathbf{x}) \right) -\ve{G}\left( \ve{F}\left( \mathbf{a}\right) \right)
-\right\Vert <\varepsilon ;$ es decir, $\ve{G}\circ \ve{F}$ es continua en $\mathbf{a.}$
-\end{proof} 
+  Por ser $\ve{G}$ continua en $\ve{F}\left( \mathbf{a}\right) \in B$, dado $\varepsilon >0$
+  existe $\lambda >0$, para $\mathbf{y} \in B$, si $\left\Vert \mathbf{y-}\ve{F}\left( \mathbf{a}\right)
+  \right\Vert <\lambda $ entonces $\left\Vert \ve{G}(\mathbf{y})-\ve{G}\left( \ve{F}\left( \mathbf{a}\right) \right) \right\Vert <\varepsilon $.
+
+  Como $\ve{F}$ continua en $\mathbf{a}\in A$, esto implica que dado
+  $\delta >0$, existe $\lambda >0$,  si $\left\Vert \mathbf{x-a}\right\Vert <\delta $, para $\mathbf{x}\in A$,
+  entonces $\left\Vert \ve{F}(\mathbf{x}) -\ve{F}\left( \mathbf{a}\right) \right\Vert <\lambda $,
+  lo anterior implica que
+  $\left\Vert \ve{G}\left( \ve{F}\left( \mathbf{x} \right) \right) -\ve{G}\left( \ve{F}\left(
+  \mathbf{a}\right) \right) \right\Vert <\varepsilon $.
+  En síntesis, dado $\varepsilon >0$, existe $\delta >0$ tal que si
+  $\left\Vert \mathbf{x-a}\right\Vert <\delta $ entonces
+  $\left\Vert \ve{G} \left( \ve{F}(\mathbf{x}) \right) -\ve{G}\left( \ve{F}\left( \mathbf{a}\right) \right)
+  \right\Vert <\varepsilon ;$ es decir, $\ve{G}\circ \ve{F}$ es continua en $\mathbf{a.}$
+\end{proof}
 
 \begin{teorema}
-Sea $\ve{F},\ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ y $h:A\subseteq \mathbb{R}^n\to \mathbb{R}$, 
-funciones continuas en $\mathbf{a}\in A,$ entonces las siguientes funciones son continuas en $\mathbf{a}$ 
-%
-$\ve{F}\pm \ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m,$ \\
-$ \ve{F}\cdot \ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R},$\\
-$\left\Vert  \ve{F}\right\Vert :A\subseteq \mathbb{R}^n\to \mathbb{R},$\\
-$h\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m.$ 
-%
+  Sea $\ve{F},\ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$ y $h:A\subseteq \mathbb{R}^n\to \mathbb{R}$,
+  funciones continuas en $\mathbf{a}\in A$, entonces las siguientes funciones son continuas en $\mathbf{a}$
+  %
+  $\ve{F}\pm \ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$, \\
+  $ \ve{F}\cdot \ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}$,\\
+  $\left\Vert  \ve{F}\right\Vert :A\subseteq \mathbb{R}^n\to \mathbb{R}$,\\
+  $h\ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$.
+  %
 \end{teorema}
 La prueba es consecuencia de aplicar los teoremas (\ref{preliminares5}) y (\ref{teo1}).
-En particular, el lector puede verificar la continuidad de la función ${\bf u}(t) \times {\bf v}(t)$ para dos funciones vectoriales continuas 
-${\bf u}, {\bf v}: \mathbb{R}\to \mathbb{R}^3.$
+En particular, el lector puede verificar la continuidad de la función ${\bf u}(t) \times {\bf v}(t)$ para dos funciones vectoriales continuas
+${\bf u}, {\bf v}: \mathbb{R}\to \mathbb{R}^3$.
 
 \section{Diferenciabilidad} \label{diferencibilidad}
 Para funciones reales $f:\mathbb{R}\rightarrow \mathbb{R}$, el lector seguramente
 estará familiarizado con la definición de la derivada en un punto $a$,
 $$f^{\prime}(a) =\lim_{h\rightarrow 0}\frac{f(a+h)-f(a) }{h}.$$
-Al considerar la transformación lineal $A(h)=f^{\prime}(a)\cdot h.$
-Entonces, la expresión anterior se reescribe como 
+Al considerar la transformación lineal $A(h)=f^{\prime}(a)\cdot h$.
+Entonces, la expresión anterior se reescribe como
 $$\lim_{h\rightarrow 0}\frac{f\left( a+h\right) -f\left( a\right) -A\left( h\right) }{h}=0.$$
 
 En el caso general una función ${\bf F}:\mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$ se dice
 diferenciable en $a\in \mathbb{R}^{n}$
-si existe una transformación lineal $\lambda :\mathbb{R}^{n}\rightarrow \mathbb{R}^{m},$ tal que 
+si existe una transformación lineal $\lambda :\mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$, tal que
 $$\lim_{h\rightarrow 0}\frac{\left\Vert {\bf F}(a+h)-{\bf F}(a)-\lambda(h)\right\Vert }{\left\Vert h\right\Vert }=0.$$
-Es de anotar que $\left\Vert {\bf F}\left( a+h\right) -{\bf F}(a) -\lambda(h) \right\Vert$ representan la norma en 
-$\mathbb{R}^{m}$ y $\left\Vert h\right\Vert $ es la norma en $\mathbb{R}^{n}.$ \index{Función!diferenciable}
-Se dice que ${\bf F}$ es diferenciable en $A$, si es diferenciable para todo $a\in A.$
+Es de anotar que $\left\Vert {\bf F}\left( a+h\right) -{\bf F}(a) -\lambda(h) \right\Vert$ representan la norma en
+$\mathbb{R}^{m}$ y $\left\Vert h\right\Vert $ es la norma en $\mathbb{R}^{n}$. \index{Función!diferenciable}
+Se dice que ${\bf F}$ es diferenciable en $A$, si es diferenciable para todo $a\in A$.
 La mencionada transformación lineal es la denominada \emph{matriz jacobiana} de ${\bf F}$ en $a$,
 que se denota por $D({\bf F})(a)$. Para ${\bf F}:\mathbb{R}^n\to {\mathbb R}^m$ y $a=(a_1,a_2,\cdots, a_n)$, es claro que
 ${\bf F}(a)=\langle f_1(a),f_2(a), \cdots, f_m(a) \rangle. $
 La entrada $ij$ de la matriz jacobiana está dada por
 $$\frac{\partial f_i}{\partial x_j}(a)=\lim_{h\rightarrow 0}\frac{f_i(a_1,a_2,\cdots,a_j+h,\cdots,a_n)-f_i(a_1,a_2,\cdots,a_j,\cdots, a_n)}{h}.$$
 que la denominaremos la derivada parcial de $f_i$ con respecto a $x_j$. \index{Derivada parcial}
-La matriz jacobiana de ${\bf F}$, $D{\bf F}(a)$ es 
-$$D{\bf F}(a)=\left(\begin{array}{cccc}
-\frac{\partial f_1}{\partial x_1}(a)&\frac{\partial f_1}{\partial x_2}(a)&\cdots & \frac{\partial f_1}{\partial x_n}(a)\\[0.2cm]
-\frac{\partial f_2}{\partial x_1}(a)&\frac{\partial f_2}{\partial x_2}(a)&\cdots & \frac{\partial f_2}{\partial x_n}(a)\\[0.2cm]
-\vdots \\[0.2cm]
-\frac{\partial f_m}{\partial x_1}(a)&\frac{\partial f_m}{\partial x_2}(a)&\cdots & \frac{\partial f_m}{\partial x_n}(a)
+La matriz jacobiana de ${\bf F}$, $D{\bf F}(a)$ es
+$$D{\bf F}(a)=\left(
+  \begin{array}{cccc}
+    \frac{\partial f_1}{\partial x_1}(a)&\frac{\partial f_1}{\partial x_2}(a)&\cdots & \frac{\partial f_1}{\partial x_n}(a)\\[0.2cm]
+    \frac{\partial f_2}{\partial x_1}(a)&\frac{\partial f_2}{\partial x_2}(a)&\cdots & \frac{\partial f_2}{\partial x_n}(a)\\[0.2cm]
+    \vdots \\[0.2cm]
+    \frac{\partial f_m}{\partial x_1}(a)&\frac{\partial f_m}{\partial x_2}(a)&\cdots & \frac{\partial f_m}{\partial x_n}(a)
 \end{array} \right)$$
 \begin{teorema}
-Si ${\bf F}:\mathbb{R}^n \to \mathbb{R}^m$ es diferenciable en $a$ y 
-${\bf G}:\mathbb{R}^m \to \mathbb{R}^p$ es diferenciable en ${\bf F}(a)$ entonces la función compuesta
-${\bf G}\circ {\bf F}:\mathbb{R}^n \to \mathbb{R}^p$ es diferenciable en $a$. Además
-$D({\bf G}\circ {\bf F})(a)=D({\bf G}( {\bf F}(a))\cdot D{\bf F}(a). $
-\end{teorema}
-La prueba de este resultado puede consultarse en \textcite{spivak_calculus_2018}. 
-En el caso de campos escalares $f:\mathbb{R}^n \to \mathbb{R}$ a $Df(a)$ se denota también por 
-$\nabla f(a)$ y se denomina el \emph{vector gradiente} de $f$. \index{Gradiente}
+  Si ${\bf F}:\mathbb{R}^n \to \mathbb{R}^m$ es diferenciable en $a$ y
+  ${\bf G}:\mathbb{R}^m \to \mathbb{R}^p$ es diferenciable en ${\bf F}(a)$ entonces la función compuesta
+  ${\bf G}\circ {\bf F}:\mathbb{R}^n \to \mathbb{R}^p$ es diferenciable en $a$. Además
+  $D({\bf G}\circ {\bf F})(a)=D({\bf G}( {\bf F}(a))\cdot D{\bf F}(a). $
+  \end{teorema}
+  La prueba de este resultado puede consultarse en \textcite{spivak_calculus_2018}.
+  En el caso de campos escalares $f:\mathbb{R}^n \to \mathbb{R}$ a $Df(a)$ se denota también por
+  $\nabla f(a)$ y se denomina el \emph{vector gradiente} de $f$. \index{Gradiente}
 
-Un campo vectorial ${\bf F}(x,y,z)$ con dominio $D \subseteq \mathbb{R}^3$ 
-se denomina \emph{conservativo} si existe un campo escalar
-$\phi(x,y,z)$ que se denomina \emph{función potencial} con dominio $D$ y satisface que $\nabla \phi ={\bf F}.$ \index{Campo vectorial!conservativo} \index{Función!potencial}
-En \cite{thomas_calculo_2015} se presenta el siguiente criterio, el cual es útil para determinar si un campo vectorial cumple esta condición.
-\begin{prop}
-Sea ${\bf F} = P(x, y,z)\vi +Q(x,y,z)\vj +P(x,y,z)\vk$ un campo en un dominio abierto simplemente
-conexo, cuyas funciones componentes tienen sus primeras derivadas parciales continuas. 
-De esta forma, ${\bf F}$ es conservativo si y sólo se satisfacen la siguientes condiciones:
-$$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x},\hspace{1.5cm}
-\frac{\partial P}{\partial z}=\frac{\partial R}{\partial x},\hspace{1.5cm}
-\frac{\partial Q}{\partial z}=\frac{\partial R}{\partial y}.$$
-\end{prop}
-\section{Funciones vectoriales} \index{Funciones vectoriales}
-De manera general, una aplicación que asigna a cada número real un vector en $\mathbb{R}^n$
-se denomina función vectorial, esto es ${\bf r}(t)= \langle r_1(t),r_2(t),\cdots, r_n(t)\ra$.
+  Un campo vectorial ${\bf F}(x,y,z)$ con dominio $D \subseteq \mathbb{R}^3$
+  se denomina \emph{conservativo} si existe un campo escalar
+  $\phi(x,y,z)$ que se denomina \emph{función potencial} con dominio $D$ y satisface que $\nabla \phi ={\bf F}$. \index{Campo vectorial!conservativo} \index{Función!potencial}
+  En \cite{thomas_calculo_2015} se presenta el siguiente criterio, el cual es útil para determinar si un campo vectorial cumple esta condición.
+  \begin{prop}
+    Sea ${\bf F} = P(x, y,z)\vi +Q(x,y,z)\vj +P(x,y,z)\vk$ un campo en un dominio abierto simplemente
+    conexo, cuyas funciones componentes tienen sus primeras derivadas parciales continuas.
+    De esta forma, ${\bf F}$ es conservativo si y sólo se satisfacen la siguientes condiciones:
+    $$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x},\hspace{1.5cm}
+    \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x},\hspace{1.5cm}
+    \frac{\partial Q}{\partial z}=\frac{\partial R}{\partial y}.$$
+  \end{prop}
+  \section{Funciones vectoriales} \index{Funciones vectoriales}
+  De manera general, una aplicación que asigna a cada número real un vector en $\mathbb{R}^n$
+  se denomina función vectorial, esto es ${\bf r}(t)= \langle r_1(t),r_2(t),\cdots, r_n(t)\ra$.
 
-Por ejemplo, la función ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$ está definida para $t\in [0,2\pi]$ su 
-gráfico en $\mathbb{R}^3$ se representa a continuación.
+  Por ejemplo, la función ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$ está definida para $t\in [0,2\pi]$ su
+  gráfico en $\mathbb{R}^3$ se representa a continuación.
 
+  \begin{figure}[H]
+    \centering
+    \caption{Curva determinada por ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$}
+    \includegraphics[width=0.44\textwidth]{Fig/4.pdf} \hspace{5mm}
+    \includegraphics[width=0.48\textwidth]{Fig/5.pdf}
+    \fuentepropia
+  \end{figure}
 
-\begin{figure}[H]
-\centering
-\caption{Curva determinada por ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$}
-\includegraphics[width=0.44\textwidth]{Fig/4.pdf} \hspace{5mm}
-\includegraphics[width=0.48\textwidth]{Fig/5.pdf}
-\fuentepropia
-\end{figure}
+  Para una función vectorial ${\bf r}(t)=\langle r_1(t),r_2(t),\cdots, r_m(t) \rangle $,
+  los dos primeros de los siguientes resultados se obtienen
+  como caso particular de los teoremas (\ref{preliminares3}) y
+  (\ref{preliminares6}), con $n=1$.
 
-Para una función vectorial ${\bf r}(t)=\langle r_1(t),r_2(t),\cdots, r_m(t) \rangle ,$
-los dos primeros de los siguientes resultados se obtienen 
-como caso particular de los teoremas (\ref{preliminares3}) y 
-(\ref{preliminares6}), con $n=1.$ 
+  \begin{itemize}
+    \item $\lim_{t\to a}{\bf r}(t)$ existe si y solo si $\lim_{t\to a}r_i(t)$ para toda $i=1,2,\cdots ,m$.
+    \item ${\bf r}(t)$ es continua en $a$ si y solo si cada una de las funciones componentes $r_i(t)$ es continua en $a$, para toda $i=1,2,\cdots ,m$.
+    \item ${\bf r}(t)$ es diferenciable en $a$ si y solo si cada una de las funciones componentes $r_i(t)$ es diferenciable en $a$, para toda $i=1,2,\cdots ,m$; además ${\bf r}^\prime(t)= \langle r^\prime_1(t),r^\prime_2(t),\cdots, r^\prime_m(t)\ra$.
+  \end{itemize}
 
-\begin{itemize}
-\item $\lim_{t\to a}{\bf r}(t)$ existe si y solo si $\lim_{t\to a}r_i(t)$ para toda $i=1,2,\cdots ,m$.
-\item ${\bf r}(t)$ es continua en $a$ si y solo si cada una de las funciones componentes $r_i(t)$ es continua en $a$, para toda $i=1,2,\cdots ,m$.
-\item ${\bf r}(t)$ es diferenciable en $a$ si y solo si cada una de las funciones componentes $r_i(t)$ es diferenciable en $a$, para toda $i=1,2,\cdots ,m$; además ${\bf r}^\prime(t)= \langle r^\prime_1(t),r^\prime_2(t),\cdots, r^\prime_m(t)\ra.$
-\end{itemize}
+  Presentamos la demostración del último de estos resultados.
+  \begin{eqnarray*}
+    \mathbf{r}^{\prime}(t) &=& \lim_{h\rightarrow 0}\frac{1}{h}\left( \mathbf{r}\left( t+h\right) -\mathbf{r}(t) \right) \\
+    &=& \lim_{h\rightarrow 0}\frac{1}{h}\left\langle r_{1}\left(t+h\right) -r_{1}(t) ,\cdots ,r_{m}\left( t+h\right) -r_{m}(t) \right\rangle \\
+    &=&\left\langle \lim_{h\rightarrow 0}\frac{r_{1}\left( t+h\right) -r_{1}(t) }{h},\cdots ,\lim_{h\rightarrow 0}\frac{r_{m}\left( t+h\right) -r_{m}(t) }{h}\right\rangle \\
+    &=& \left\langle r_{1}^{\prime}(t),r_{2}^{\prime}(t) ,\cdots ,r_{m}^{\prime}\left(t\right) \right\rangle
+  \end{eqnarray*}
 
-Presentamos la demostración del último de estos resultados.
-\begin{eqnarray*}
-\mathbf{r}^{\prime}(t) &=& \lim_{h\rightarrow 0}\frac{1}{h}\left( \mathbf{r}\left( t+h\right) -\mathbf{r}(t) \right) \\
-&=& \lim_{h\rightarrow 0}\frac{1}{h}\left\langle r_{1}\left(t+h\right) -r_{1}(t) ,\cdots ,r_{m}\left( t+h\right) -r_{m}(t) \right\rangle \\
-&=&\left\langle \lim_{h\rightarrow 0}\frac{r_{1}\left( t+h\right) -r_{1}(t) }{h},\cdots ,\lim_{h\rightarrow 0}\frac{r_{m}\left( t+h\right) -r_{m}(t) }{h}\right\rangle \\
-&=& \left\langle r_{1}^{\prime}(t),r_{2}^{\prime}(t) ,\cdots ,r_{m}^{\prime}\left(t\right) \right\rangle 
-\end{eqnarray*}
+  Si $\mathbf{u}(t) =\left\langle u_{1}(t),u_{2}(t) ,\cdots ,u_{n}(t) \right\rangle $ y
+  $\mathbf{v}(t) =\left\langle v_{1}(t) ,v_{2}\left(t\right) ,\cdots ,v_{n}(t) \right\rangle $
+  son dos funciones vectoriales entonces el producto punto entre funciones vectoriales está dado por
+  $\mathbf{u}(t) \cdot \mathbf{v}(t) =u_{1}\left(t\right) v_{1}(t) +u_{2}(t) v_{2}(t)+\cdots +u_{n}(t) v_{n}(t) $.
+  Derivando se obtiene las siguientes igualdades
+  \begin{eqnarray*}
+    \left( \mathbf{u}(t) \cdot \mathbf{v}(t) \right)^{\prime}
+    %&=& u_{1}^{\prime(t) v_{1}(t) +u_{1}(t) v_{1}^{\prime }(t) +u_{2}^{\prime }(t)v_{2}(t) +u_{2}(t) v_{2}^{\prime }(t)+ \cdots + u_{n}^{\prime }(t) v_{n}(t) +u_{n}\left(t\right) v_{n}^{\prime }(t) \\
+    &=& \big( u_{1}^{\prime }(t) v_{1}(t) +u_{2}^{\prime}(t) v_{2}(t) +\cdots +u_{n}^{\prime }(t) v_{n}(t) \big) + \\
+    && \big( u_{1}(t)v_{1}^{\prime }(t) +  u_{2}(t) v_{2}^{\prime }(t) +\cdots +u_{n}(t) v_{n}^{\prime }(t)\big) \\
+    &=& \mathbf{u}^{\prime }(t) \cdot \mathbf{v}(t) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }(t)
+  \end{eqnarray*}
+  Lo cual se resume en la siguiente fórmula
+  \begin{equation}
+    \left( \mathbf{u}(t) \cdot \mathbf{v}(t) \right)^{\prime }=\mathbf{u}^{\prime }(t) \cdot \mathbf{v}\left(
+    t\right) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }\left(t\right).
+  \end{equation}
+  Otras fórmulas útiles, son las siguientes
+  \begin{eqnarray*}
+    (\left\Vert \mathbf{u}(t) \right\Vert)^{\prime } &=& \frac{d}{dt}\left( \left( \mathbf{u}(t) \cdot \mathbf{u}(t)
+    \right) ^{1/2}\right) \\
+    &=& \frac{1}{2}\left( \mathbf{u}(t) \cdot \mathbf{u}(t) \right) ^{-1/2}\left( \mathbf{u}^{\prime }(t) \cdot
+    \mathbf{u}(t) +\mathbf{u}(t) \cdot \mathbf{u}^{\prime }(t) \right) = \frac{\mathbf{u}^{\prime }(t)\cdot \mathbf{u}(t) }{\left\Vert \mathbf{u}(t)\right\Vert }
+  \end{eqnarray*}
 
-Si $\mathbf{u}(t) =\left\langle u_{1}(t),u_{2}(t) ,\cdots ,u_{n}(t) \right\rangle $ y 
-$\mathbf{v}(t) =\left\langle v_{1}(t) ,v_{2}\left(t\right) ,\cdots ,v_{n}(t) \right\rangle $
-son dos funciones vectoriales entonces el producto punto entre funciones vectoriales está dado por
-$\mathbf{u}(t) \cdot \mathbf{v}(t) =u_{1}\left(t\right) v_{1}(t) +u_{2}(t) v_{2}(t)+\cdots +u_{n}(t) v_{n}(t) .$
-Derivando se obtiene las siguientes igualdades
-\begin{eqnarray*}
-\left( \mathbf{u}(t) \cdot \mathbf{v}(t) \right)^{\prime} 
-%&=& u_{1}^{\prime(t) v_{1}(t) +u_{1}(t) v_{1}^{\prime }(t) +u_{2}^{\prime }(t)v_{2}(t) +u_{2}(t) v_{2}^{\prime }(t)+ \cdots + u_{n}^{\prime }(t) v_{n}(t) +u_{n}\left(t\right) v_{n}^{\prime }(t) \\
-&=& \big( u_{1}^{\prime }(t) v_{1}(t) +u_{2}^{\prime}(t) v_{2}(t) +\cdots +u_{n}^{\prime }(t) v_{n}(t) \big) + \\ 
-&& \big( u_{1}(t)v_{1}^{\prime }(t) +  u_{2}(t) v_{2}^{\prime }(t) +\cdots +u_{n}(t) v_{n}^{\prime }(t)\big) \\
-&=& \mathbf{u}^{\prime }(t) \cdot \mathbf{v}(t) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }(t) 
-\end{eqnarray*}
-Lo cual se resume en la siguiente fórmula
-\begin{equation}
-\left( \mathbf{u}(t) \cdot \mathbf{v}(t) \right)^{\prime }=\mathbf{u}^{\prime }(t) \cdot \mathbf{v}\left(
-t\right) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }\left(t\right).
-\end{equation}
-Otras fórmulas útiles, son las siguientes
-\begin{eqnarray*}
-(\left\Vert \mathbf{u}(t) \right\Vert)^{\prime } &=& \frac{d}{dt}\left( \left( \mathbf{u}(t) \cdot \mathbf{u}(t)
-\right) ^{1/2}\right) \\
-&=& \frac{1}{2}\left( \mathbf{u}(t) \cdot \mathbf{u}(t) \right) ^{-1/2}\left( \mathbf{u}^{\prime }(t) \cdot 
-\mathbf{u}(t) +\mathbf{u}(t) \cdot \mathbf{u}^{\prime }(t) \right) = \frac{\mathbf{u}^{\prime }(t)\cdot \mathbf{u}(t) }{\left\Vert \mathbf{u}(t)\right\Vert }
-\end{eqnarray*}
+  La derivada del producto cruz entre dos funciones vectoriales se evalua como sigue
+  \begin{prop}
+    Si $\mathbf{u}(t)$ y $\mathbf{v}(t)$ son funciones vectoriales definidas en $\mathbb{R}^3$ entonces
+    $\left(\mathbf{u}(t)\times\mathbf{v}(t)\right)^{\prime}= \mathbf{u}^{\prime}(t)\times\mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)$.
+  \end{prop}
 
-La derivada del producto cruz entre dos funciones vectoriales se evalua como sigue
-\begin{prop}
-Si $\mathbf{u}(t)$ y $\mathbf{v}(t)$ son funciones vectoriales definidas en $\mathbb{R}^3$ entonces
-$\left(\mathbf{u}(t)\times\mathbf{v}(t)\right)^{\prime}= \mathbf{u}^{\prime}(t)\times\mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)$.
-\end{prop}
+  \begin{proof}
+    Si $\mathbf{u}(t)=\left\langle u_{1}(t),u_{2}(t),u_{3}(t) \right\rangle $ y
+    $\mathbf{v}(t)=\left\langle v_{1}(t),v_{2}(t),v_{3}(t)\right\rangle $,
+    obviaremos el uso de la variable $t$ para hacer menos extensa la escritura, es decir
+    \begin{eqnarray*}
+      \frac{d}{dt}\left( \mathbf{u}(t)\times \mathbf{v}(t)\right) &=& \frac{d}{dt} \langle u_{2} v_{3} -u_{3} v_{2} ,u_{3} v_{1} -u_{1} v_{3} ,u_{1} v_{2} -u_{2} v_{1} \rangle \\
+      &=& \big\langle u_{2}^{\prime} v_{3}+u_{2} v_{3}^{\prime} -u_{3}^{\prime} v_{2} -u_{3} v_{2}^{\prime},u_{3}^{\prime} v_{1} +u_{3}v_{1}^{\prime} \\
+      && -u_{1}^{\prime}v_{3} -u_{1} v_{3}^{\prime},   u_{1}^{\prime}v_{2}+u_{1}v_{2}^{\prime}  -u_{2}^{\prime} v_{1} -u_{2} v_{1}^{\prime} \big\rangle \\
+      &=& \left\langle u_{2}^{\prime} v_{3}-u_{3}^{\prime} v_{2} ,u_{3}^{\prime}(t) v_{1} -u_{1}^{\prime} v_{3},u_{1}^{\prime} v_{2} -u_{2}^{\prime} v_{1} \right\rangle  \\
+      && +\left\langle u_{2} v_{3}^{\prime} -u_{3}v_{2}^{\prime} ,u_{3} v_{1}^{\prime}(t) -u_{1} v_{3}^{\prime} ,u_{1} v_{2}^{\prime} -u_{2} v_{1}^{\prime} \right\rangle \\
+      &=& \mathbf{u}^{\prime}(t)\times \mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)
+    \end{eqnarray*}
+  \end{proof}
+  La siguiente expresión es producto de aplicar los resultados anteriores
+  \begin{multline}\left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}(t)\right)^{\prime} \\ = \left( \left( \mathbf{u}^{\prime}(t)\times \mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)\right) \cdot \mathbf{w}(t)\right) +\left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}^{\prime}(t)\right)
+  \end{multline}
 
-\begin{proof}
-Si $\mathbf{u}(t)=\left\langle u_{1}(t),u_{2}(t),u_{3}(t) \right\rangle $ y 
-$\mathbf{v}(t)=\left\langle v_{1}(t),v_{2}(t),v_{3}(t)\right\rangle ,$
-obviaremos el uso de la variable $t$ para hacer menos extensa la escritura, es decir
-\begin{eqnarray*}
-\frac{d}{dt}\left( \mathbf{u}(t)\times \mathbf{v}(t)\right) &=& \frac{d}{dt} \langle u_{2} v_{3} -u_{3} v_{2} ,u_{3} v_{1} -u_{1} v_{3} ,u_{1} v_{2} -u_{2} v_{1} \rangle \\
-&=& \big\langle u_{2}^{\prime} v_{3}+u_{2} v_{3}^{\prime} -u_{3}^{\prime} v_{2} -u_{3} v_{2}^{\prime},u_{3}^{\prime} v_{1} +u_{3}v_{1}^{\prime} \\
-&& -u_{1}^{\prime}v_{3} -u_{1} v_{3}^{\prime},   u_{1}^{\prime}v_{2}+u_{1}v_{2}^{\prime}  -u_{2}^{\prime} v_{1} -u_{2} v_{1}^{\prime} \big\rangle \\
-&=& \left\langle u_{2}^{\prime} v_{3}-u_{3}^{\prime} v_{2} ,u_{3}^{\prime}(t) v_{1} -u_{1}^{\prime} v_{3},u_{1}^{\prime} v_{2} -u_{2}^{\prime} v_{1} \right\rangle  \\
-&& +\left\langle u_{2} v_{3}^{\prime} -u_{3}v_{2}^{\prime} ,u_{3} v_{1}^{\prime}(t) -u_{1} v_{3}^{\prime} ,u_{1} v_{2}^{\prime} -u_{2} v_{1}^{\prime} \right\rangle \\
-&=& \mathbf{u}^{\prime}(t)\times \mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t) 
-\end{eqnarray*}
-\end{proof}
-La siguiente expresión es producto de aplicar los resultados anteriores
-\begin{multline}\left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}(t)\right)^{\prime} \\ = \left( \left( \mathbf{u}^{\prime}(t)\times \mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)\right) \cdot \mathbf{w}(t)\right) +\left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}^{\prime}(t)\right) 
-\end{multline}
+  \section{Regiones parametrizadas} \label{regionesparametrizadas}
+  En estas notas trabajaremos básicamente sobre tres tipos de objetos en el espacio: curvas, superficies y sólidos.
+  En esta sección presentaremos una manera de representar dichos objetos, la idea consiste en \emph{parametrizar} la región en mención. Para este propósito se utiliza, según el caso, uno, dos o tres parámetros, respectivamente.
+  \index{Parametrizar}
 
-\section{Regiones parametrizadas} \label{regionesparametrizadas}
-En estas notas trabajaremos básicamente sobre tres tipos de objetos en el espacio: curvas, superficies y sólidos.
-En esta sección presentaremos una manera de representar dichos objetos, la idea consiste en \emph{parametrizar} la región en mención. Para este propósito se utiliza, según el caso, uno, dos o tres parámetros, respectivamente.  
-\index{Parametrizar}
+  \begin{tcolorbox}[title=\bf Curva parametrizada]
+    La funci\'on $\ve{r}(t)$ se denomina una \emph{parametrizaci\'on} de una curva $C$ si
+    al variar el parametro $t\in [a,b]$ la imagen $\ve{r}(t)$ describe los puntos de la curva $C$.
+    Si $\ve{r}(a)=\ve{r}(b)$ la curva se denomina cerrada y la curva se denomina simple si $\ve{r}(t)\neq \ve{r}(s)$,
+    para $a\neq t<s\neq b$.
+  \end{tcolorbox}
 
+  Las funciones vectoriales son un ejemplo de parametrización de curvas.
+  El concepto de curva simple hace referencia a que la curva no se autointerseca, posiblemente solo en los puntos extremos.
+  La curva se denomina \emph{suave} si $\ve{r}^\prime(t) \neq \ve{0}$, para todo $t$. \index{Curva!suave}
 
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Curva parametrizada]
-La funci\'on $\ve{r}(t)$ se denomina una \emph{parametrizaci\'on} de una curva $C$ si 
-al variar el parametro $t\in [a,b]$ la imagen $\ve{r}(t)$ describe los puntos de la curva $C$. 
-Si $\ve{r}(a)=\ve{r}(b)$ la curva se denomina cerrada y la curva se denomina simple si $\ve{r}(t)\neq \ve{r}(s),$
-para $a\neq t<s\neq b$.
-\end{tcolorbox}
-
-Las funciones vectoriales son un ejemplo de parametrización de curvas.
-El concepto de curva simple hace referencia a que la curva no se autointerseca, posiblemente solo en los puntos extremos.
-La curva se denomina \emph{suave} si $\ve{r}^\prime(t) \neq \ve{0},$ para todo $t.$ \index{Curva!suave}
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Superficie parametrizada]
-Una \emph{parametrización} de una superficie $\sigma $
-es una aplicación $$\ve{r}:[a,b]\times \lbrack c,d]\rightarrow \mathbb{R}^{3}$$
+  \begin{tcolorbox}[title=\bf Superficie parametrizada]
+    Una \emph{parametrización} de una superficie $\sigma $
+  es una aplicación $$\ve{r}:[a,b]\times \lbrack c,d]\rightarrow \mathbb{R}^{3}$$
 tal que al variar los parámetros $u\in \lbrack a,b]$ y $v\in \lbrack c,d]$
 su imagen $\ve{r}(u,v)$ va describiendo los puntos de la superficie $\sigma $.
 \end{tcolorbox}
-La superficie se denomina \emph{suave} si $\frac{\partial \ve{r}}{\partial u}$ y 
-$\frac{\partial \ve{r}}{\partial v} $ son continuas y 
-$\frac{\partial \ve{r}}{\partial u} \times \frac{\partial \ve{r}}{\partial u} \neq \ve{0}.$ 
+La superficie se denomina \emph{suave} si $\frac{\partial \ve{r}}{\partial u}$ y
+$\frac{\partial \ve{r}}{\partial v} $ son continuas y
+$\frac{\partial \ve{r}}{\partial u} \times \frac{\partial \ve{r}}{\partial u} \neq \ve{0}$.
 \index{Superficie!suave}
 %
 Con los elementos anteriormente descritos es posible construir funciones
-que describan un sólido en el espacio tridimensional. 
-\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrización de un sólido]
-Se dice que la función $${\bf r}(u,v,w)= \langle x(u,v,w), y(u,v,w),z(u,v,w) \rangle $$  
-parametriza el sólido $E$ si al variar los parámetros se recorre completamente a $E$,  
-con $a \leq u \leq b$, $c \leq v \leq d$ y $p \leq u \leq q$.  
+que describan un sólido en el espacio tridimensional.
+\begin{tcolorbox}[title=\bf Parametrización de un sólido]
+Se dice que la función $${\bf r}(u,v,w)= \langle x(u,v,w), y(u,v,w),z(u,v,w) \rangle $$
+parametriza el sólido $E$ si al variar los parámetros se recorre completamente a $E$,
+con $a \leq u \leq b$, $c \leq v \leq d$ y $p \leq u \leq q$.
 \end{tcolorbox}
-
 
 Una ventaja de usar este tipo de representación es el hecho de que al usar límites constantes el planteamiento de integrales
 resulta, en algunos casos, bastante sencillo.
 
 \section{Elementos básicos de integración}
 
-Presentamos en esta sección algunos de los elementos teóricos propios de un curso de 
-Cálculo Vectorial que serán usados en los capítulos posteriores. La exposición teórica completa puede ser consultada 
+Presentamos en esta sección algunos de los elementos teóricos propios de un curso de
+Cálculo Vectorial que serán usados en los capítulos posteriores. La exposición teórica completa puede ser consultada
 por el lector con más detalle en \cite{apostol_alisis_1981}, \cite{marsden_calculo_2013}, \cite{stewart_calculo_2018} o \cite{thomas_calculo_2015}.
 
-Posteriormente se utilizan estos elementos en algunas aplicaciones de la integración principalmente en 
-el cálculo de longitud de curvas, áreas, volumenes y centros de masa. 
+Posteriormente se utilizan estos elementos en algunas aplicaciones de la integración principalmente en
+el cálculo de longitud de curvas, áreas, volumenes y centros de masa.
 Se estudiará también el teorema de cambio de variables,
-particularmente cuando se utilizan coordenadas polares, cilindricas o esféricas, pero se hará enfasis en 
+particularmente cuando se utilizan coordenadas polares, cilindricas o esféricas, pero se hará enfasis en
 parametrizar la región de integración.
 
 Una función $g:\mathbb{R}\to\mathbb{R}$ se dice \emph{integrable} en $[a,b]$ en el sentido señalado en \textcite{apostol_calculus_1999};
-utilizaremos esta idea en los siguientes resultados. 
+utilizaremos esta idea en los siguientes resultados.
 
-\subsection*{Integrales de línea en campos escalares}
+\subsection{Integrales de línea en campos escalares}
 
 \enlargethispage{\baselineskip}
 
-Consideremos una curva $\alpha$ parametrizada por una función 
-${\bf r}:\mathbb{R}\to\mathbb{R}^3$ continua, inyectiva y derivable en $(a,b)$, con ${\bf r}(t)=\langle x(t),y(t),z(t) \rangle .$ 
+Consideremos una curva $\alpha$ parametrizada por una función
+${\bf r}:\mathbb{R}\to\mathbb{R}^3$ continua, inyectiva y derivable en $(a,b)$, con ${\bf r}(t)=\langle x(t),y(t),z(t) \rangle $.
 % \index{Partición}
 
 \begin{figure}[H]
@@ -662,93 +650,95 @@ ${\bf r}:\mathbb{R}\to\mathbb{R}^3$ continua, inyectiva y derivable en $(a,b)$, 
 \fuentepropia
 \end{figure}
 
-Una \emph{partición} $P$ del intervalo $[a,b]$ es un conjunto finito de puntos 
-$P=\{ t_0, t_1, t_2, \cdots , t_{n-1},t_n \}$ que satisface 
+Una \emph{partición} $P$ del intervalo $[a,b]$ es un conjunto finito de puntos
+$P=\{ t_0, t_1, t_2, \cdots , t_{n-1},t_n \}$ que satisface
 $$a = t_0< t_1<  t_2< \cdots < t_{n-1}< t_n=b;$$
 la cual determina una partición de la curva $\alpha$ en $n$ puntos de la forma
-$Q_i(x(t_{i-1}), x(y_{i-1}),z(t_{i-1})),$ para $i=1,2, \cdots , n.$
+$Q_i(x(t_{i-1}), x(y_{i-1}),z(t_{i-1}))$, para $i=1,2, \cdots , n$.
 %
 
-Denotaremos por $$\Delta\alpha_i=\int_{t_i}^{t_{i+1}}\Vert {\bf r}^\prime(t)\Vert dt $$ 
+Denotaremos por $$\Delta\alpha_i=\int_{t_i}^{t_{i+1}}\Vert {\bf r}^\prime(t)\Vert dt $$
 a la longitud de la curva $\alpha$ desde el punto $Q_i$ hasta $Q_{i+1}$.
-Para una función continua $f: \alpha \to \mathbb{R}$ consideremos la suma 
+Para una función continua $f: \alpha \to \mathbb{R}$ consideremos la suma
 $$\sum_{i=1}^n f({\bf r}(t_i^*))\Delta \alpha_i=\sum_{i=1}^n f(x(t_i^*),y(t_i^*),z(t_i^*))\Delta \alpha_i$$
-en donde $t_i^* \in [t_{i-1},t_i],$ con los elementos anteriores se define la integral de una campo escalar sobre una curva.
+en donde $t_i^* \in [t_{i-1},t_i]$, con los elementos anteriores se define la integral de una campo escalar sobre una curva.
 \begin{defi}
-Consideremos $f:\mathbb{R}^3\to \mathbb{R}$ continua. 
-La integral de $f$ sobre la curva suave $\alpha$ con respecto a la parametrización 
+Consideremos $f:\mathbb{R}^3\to \mathbb{R}$ continua.
+La integral de $f$ sobre la curva suave $\alpha$ con respecto a la parametrización
 ${\bf r}(t)$ está dada por
 \begin{equation} \label{intdelinea}
-\int_a^b f({\bf r}(t))\Vert{\bf r}^\prime(t)\Vert dt=\lim_{n\to\infty}\left(\sum_{i=1}^n f({\bf r}(t_i^*))\Delta \alpha_i\right) \end{equation} \index{Integrales!de línea}
+\int_a^b f({\bf r}(t))\Vert{\bf r}^\prime(t)\Vert dt=\lim_{n\to\infty}\left(\sum_{i=1}^n f({\bf r}(t_i^*))\Delta \alpha_i\right)
+\end{equation} \index{Integrales!de línea}
 \end{defi}
-En particular, si la función $f$ de la integral (\ref{intdelinea}) es $1,$ obtendremos la fórmula para la longitud de la 
-curva (35) y si $f$ es la densidad $\delta(x,y,z)$ de un alambre o varilla delgada cuya forma está determinada por la curva $\alpha$ en el punto $(x,y,z),$ entonces la masa $M$ de la varilla está dada por
-\begin{equation} 
-M=\int_a^b \delta({\bf r}(t))\Vert{\bf r}^\prime(t)\Vert dt \end{equation}
+En particular, si la función $f$ de la integral (\ref{intdelinea}) es $1$, obtendremos la fórmula para la longitud de la
+curva (35) y si $f$ es la densidad $\delta(x,y,z)$ de un alambre o varilla delgada cuya forma está determinada por la curva $\alpha$ en el punto $(x,y,z)$, entonces la masa $M$ de la varilla está dada por
+\begin{equation}
+M=\int_a^b \delta({\bf r}(t))\Vert{\bf r}^\prime(t)\Vert dt
+\end{equation}
 Los momentos con respecto a los planos coordenados se definen como
-\begin{eqnarray*} 
+\begin{eqnarray*}
 \mu_{xy}&=&\int_a^b z(t)\,\delta({\bf r}(t))\Vert{\bf r}^\prime(t)\Vert dt,\\
 \mu_{yz}&=&\int_a^b x(t)\,\delta({\bf r}(t))\Vert{\bf r}^\prime(t)\Vert dt,\\
 \mu_{xz}&=&\int_a^b y(t)\,\delta({\bf r}(t))\Vert{\bf r}^\prime(t)\Vert dt.
 \end{eqnarray*}
-Las coordenadas del centro de masa de la varilla son 
-\index{Centro de masa} 
+Las coordenadas del centro de masa de la varilla son
+\index{Centro de masa}
 $$(\overline{x},\overline{y},\overline{z})= (\frac{\mu_{yz}}{M},\frac{\mu_{xz}}{M},\frac{\mu_{xy}}{M}).$$
 
-\subsection*{Integración de funciones vectoriales} \index{Función!integrable}
-Para funciones vectoriales ${\bf f}(t)=\langle f_1(t),f_2(t),\cdots,f_n(t)\ra,$ se dice que $f$ es integrable en $[a,b]$ 
-si y solo si cada una de las funciones componentes $f_i(t)$ es integrable en $[a,b]$, para toda $i=1,2,\cdots ,n$.  
+\subsection{Integración de funciones vectoriales} \index{Función!integrable}
+Para funciones vectoriales ${\bf f}(t)=\langle f_1(t),f_2(t),\cdots,f_n(t)\ra$, se dice que $f$ es integrable en $[a,b]$
+si y solo si cada una de las funciones componentes $f_i(t)$ es integrable en $[a,b]$, para toda $i=1,2,\cdots ,n$.
 Además $$\int_a^b{\bf f}(t)dt= \langle \int_a^b f_1(t)dt,\int_a^b f_2(t)dt,\cdots, \int_a^b f_n(t)dt\ra.$$
 
-\subsection*{Integrales dobles} \label{integralesdobles}  \index{Integrales!dobles}
+\subsection{Integrales dobles} \label{integralesdobles}  \index{Integrales!dobles}
 Presentaremos ahora la integral doble de una función de
-dos variables $f(x,y)$ definida sobre una región del plano como el 
+dos variables $f(x,y)$ definida sobre una región del plano como el
 l\'{\i}mite de las aproximaciones a través de sumas de Riemann, posteriormente
-se presentarán de manera similar las integrales triples. 
+se presentarán de manera similar las integrales triples.
 La evaluación de las integrales dobles o triples se puede obtener
 utilizando el teorema fundamental de cálculo; véase \cite{apostol_calculus_1999}.
 
-En el plano $xy$ consideraremos un rectángulo $R=[a,b]\times \lbrack c,d],$ es decir
+En el plano $xy$ consideraremos un rectángulo $R=[a,b]\times \lbrack c,d]$, es decir
 $$R=\{(x,y) \in \mathbb{R}^{2}\, | \,a\leq x\leq b,c\leq y\leq d\}.$$
-Si $f(x,y)$ es una función continua definida sobre el rectángulo $R,$ 
+Si $f(x,y)$ es una función continua definida sobre el rectángulo $R$,
 subdividiremos a $R$ en $nm$ rectángulos más peque\~{n}os a partir
-de rectas paralelas a los ejes coordenados. Esto es, para el intervalo $[a,b],$ consideremos
+de rectas paralelas a los ejes coordenados. Esto es, para el intervalo $[a,b]$, consideremos
 $$a=x_{0}<x_{1}<x_{2}<\cdots <x_{i}<\cdots <x_{n-1}<x_{n}=b,$$ mientras que
-para el intervalo $[c,d],$ consideremos
+para el intervalo $[c,d]$, consideremos
 $$c=y_{0}<y_{1}<y_{2}<\cdots <y_{k}<\cdots <y_{m-1}<y_{m}=d.$$ A esta división de $R$, lo denominaremos una partición de $R$.
 \index{Partición}
 Si $n$ y $m$ crece entonces el ancho y el largo de estos subintervalos decrecen.
 
 Denotaremos $\Delta x_{i}$ al ancho del $i-$ésimo subintervalo
-sobre el eje $x,$ y $\Delta y_{k}$ es el alto $k-$ésimo subintervalo sobre el eje $y$, 
-es decir $\Delta x_{i}=x_{i+1}-x_{i},$ de la misma forma $\Delta
-y_{k}=y_{k+1}-y_{k}.$ El área de uno de estos subintervalos de ancho $\Delta x_{i}$ y altura $\Delta y_{k}$ es
+sobre el eje $x$, y $\Delta y_{k}$ es el alto $k-$ésimo subintervalo sobre el eje $y$,
+es decir $\Delta x_{i}=x_{i+1}-x_{i}$, de la misma forma $\Delta
+y_{k}=y_{k+1}-y_{k}$. El área de uno de estos subintervalos de ancho $\Delta x_{i}$ y altura $\Delta y_{k}$ es
 $\Delta A_{ik}=\Delta x_{i}\Delta y_{k}$.
-La norma de la partición se denota por $\left\Vert P\right\Vert$ y es el máximo sobre todos los valores 
-$i$ y $k$, de todas las dimensiones de los rectángulos en que se divide la región $R.$
+La norma de la partición se denota por $\left\Vert P\right\Vert$ y es el máximo sobre todos los valores
+$i$ y $k$, de todas las dimensiones de los rectángulos en que se divide la región $R$.
 
-Cuando todos estos subintervalos son de igual longitud, los denotaremos por $\Delta x=\frac{b-a}{n}$ y $\Delta y=\frac{d-c}{m}.$
- \index{Suma doble de Riemann}
-Una suma de Riemann de $f(x,y) $ sobre el rectángulo $R$ se obtiene al considerar un punto cualquiera 
-$\left( x_{i}^{\ast },y_{k}^{\ast}\right) ,$ en $ik$-ésimo subrectángulo, esto 
-$\left( x_{i}^{\ast},y_{k}^{\ast }\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{k-1},y_{k}],$ 
-o de manera similar $x_{i-1}<x_{i}^{\ast }<x_{i},$ y $y_{k-1}<y_{k}^{\ast }<y_{k};$  
-El valor de la función es este punto es $f\left( x_{i}^{\ast},y_{k}^{\ast }\right) $ y este valor se 
+Cuando todos estos subintervalos son de igual longitud, los denotaremos por $\Delta x=\frac{b-a}{n}$ y $\Delta y=\frac{d-c}{m}$.
+\index{Suma doble de Riemann}
+Una suma de Riemann de $f(x,y) $ sobre el rectángulo $R$ se obtiene al considerar un punto cualquiera
+$\left( x_{i}^{\ast },y_{k}^{\ast}\right) $, en $ik$-ésimo subrectángulo, esto
+$\left( x_{i}^{\ast},y_{k}^{\ast }\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{k-1},y_{k}]$,
+o de manera similar $x_{i-1}<x_{i}^{\ast }<x_{i}$, y $y_{k-1}<y_{k}^{\ast }<y_{k};$
+El valor de la función es este punto es $f\left( x_{i}^{\ast},y_{k}^{\ast }\right) $ y este valor se
 multiplica por el área del $ik$-ésimo rectángulos; se suman todos estos productos para obtener una
 expresión de la forma
 $$S_{nm}=\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \Delta x_{i}\Delta y_{k}.$$
 
-Dependiendo de la selección $\left( x_{i}^{\ast },y_{k}^{\ast }\right) ,$
-es posible obtener diversos valores de $S_{nm}.$
+Dependiendo de la selección $\left( x_{i}^{\ast },y_{k}^{\ast }\right) $,
+es posible obtener diversos valores de $S_{nm}$.
 
 Es de especial interés el conocer el comportamiento de las sumas de
 Riemann cuando la norma de la partición tiende a cero, que equivale a
 que el ancho y la altura de cada subrectángulo de $R$ tienden a cero.
 Si el l\'{\i}mite de las sumas $S_{nm}$ existe sin importar la selección
-que se haga de $\left( x_{i}^{\ast },y_{k}^{\ast }\right) ,$ entonces
-diremos que la función $f(x,y) $ es integrable sobre el rectángulo $R$ 
-y este valor se denota por 
-$\ds \iint\limits_{R}f\left(x,y\right) dA$ o también $\ds \iint\limits_{R}f(x,y) dydx.$
+que se haga de $\left( x_{i}^{\ast },y_{k}^{\ast }\right) $, entonces
+diremos que la función $f(x,y) $ es integrable sobre el rectángulo $R$
+y este valor se denota por
+$\ds \iint\limits_{R}f\left(x,y\right) dA$ o también $\ds \iint\limits_{R}f(x,y) dydx$.
 Lo anterior nos motiva a precisar este concepto.
 
 \begin{defi}
@@ -759,21 +749,21 @@ La integral doble de una función continua $f(x,y)$ sobre el rectángulo $R$ se 
 cuando este límite existe.
 \end{defi}
 
-\subsection*{Aplicaciones de las integrales dobles}
+\subsection{Aplicaciones de las integrales dobles}
 
 Si la función $f(x,y)$ es positiva sobre el rectángulo $R$ del plano $xy$ la integral doble de $f$ sobre $R$ puede
-interpretarse como el volumen del sólido $E$ acotado en la base por $R,$
-por la parte superior la superficie $z=f(x,y),$ y en los lados regiones contenidas en
-los planos $x=a,$ $x=b$, $y=c$, $y=d.$ Nótese que el término
+interpretarse como el volumen del sólido $E$ acotado en la base por $R$,
+por la parte superior la superficie $z=f(x,y)$, y en los lados regiones contenidas en
+los planos $x=a$, $x=b$, $y=c$, $y=d$. Nótese que el término
 $f(x_{i}^{\ast },y_{k}^{\ast })\Delta x_{i}\Delta y_{k}$ corresponde al
 volumen del paralelep\'{\i}pedo con área de la base $\Delta x_{i}\Delta y_{k}$ y altura $f(x_{i}^{\ast },y_{k}^{\ast });$
-la suma $S_{nm}$ es una aproximación al volumen del sólido $E.$
-Es por lo anterior que el volumen de $E$ se define como 
+la suma $S_{nm}$ es una aproximación al volumen del sólido $E$.
+Es por lo anterior que el volumen de $E$ se define como
 $$\text{volumen:}\lim _{n,m \to \infty}\left(\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \Delta x_{i}\Delta y_{k}\right)= \ds \iint\limits_{R}f(x,y) dA.$$ \index{Masa de una región}
 
 Si la función $f(x,y)$ determina la densidad en el punto $(x,y)$ entonces la integral de la fórmula (\ref{integralesdobles1})
 representa la masa ($M$) de la región $R$. Los momentos con respecto al eje $x$ y al eje $y$ están dados  por
-{\small $\mu_{x}=\ds \iint_R y f(x,y)dA$} y {\small $\mu_{y}=\ds \iint_R x f(x,y)dA$,} los cuales determinan las coordenadas del 
+{\small $\mu_{x}=\ds \iint_R y f(x,y)dA$} y {\small $\mu_{y}=\ds \iint_R x f(x,y)dA$,} los cuales determinan las coordenadas del
 centro de masa de la región $R$, esto es $$(\overline{x},\overline{y})= \left(\frac{\mu_y}{M},\frac{\mu_x}{M}\right).$$
 \index{Centro de masa}
 
@@ -781,27 +771,24 @@ Si la región de integración en la fórmula (\ref{integralesdobles1}) es un rec
 $$\ds \iint\limits_{R}f(x,y) dA= \int_c^d \left (\int_a^b f(x,y) dx \right )dy.$$
 
 El teorema de Fubini, cuya demostración puede consultarse en \cite{marsden_calculo_2013} o \cite{apostol_alisis_1981},
-es el resultado que permite intercambiar el orden de integración incluso en regiones más generales. 
+es el resultado que permite intercambiar el orden de integración incluso en regiones más generales.
 
-Si la región de integración no es un rectángulo, 
-la integral doble de una función $f(x,y)$ sobre una región $R$ puede evaluarse mediante la aplicación del Teorema de 
+Si la región de integración no es un rectángulo,
+la integral doble de una función $f(x,y)$ sobre una región $R$ puede evaluarse mediante la aplicación del Teorema de
 Fubini por alguna de las siguientes expresiones, dependiendo de la forma de la región $R$.
 
-Si la región del plano en mención, se describe en la forma $\phi_{1}(x) \leq y \leq \phi_{2}(x)$ con $a \leq x \leq b$, 
+Si la región del plano en mención, se describe en la forma $\phi_{1}(x) \leq y \leq \phi_{2}(x)$ con $a \leq x \leq b$,
 diremos que la región es de tipo I; mientras que la región del tipo II es aquella que puede ser descrita como
-$\varphi_{1}(y) \leq x \leq \varphi_{2}(y)$ con $c \leq y \leq d.$ 
-
-
+$\varphi_{1}(y) \leq x \leq \varphi_{2}(y)$ con $c \leq y \leq d$.
 
 De acuerdo con lo anterior, el planteamiento de la integral doble es, según el caso, el siguiente:
-
 
 \begin{figure}[H]
 \centering
 \caption{Regiones de integración en el plano}
 \label{Regiones_integracion_plano}
-\includegraphics[width=0.55\textwidth]{Fig/7.pdf} \\
-\includegraphics[width=0.55\textwidth]{Fig/8.pdf}
+\includegraphics[width=0.4\textwidth]{Fig/7.pdf} \hfill
+\includegraphics[width=0.4\textwidth]{Fig/8.pdf}
 \fuentepropia
 \end{figure}
 
@@ -817,119 +804,117 @@ con $x\in [0,2]$, $y \in [0,1]$.
 \end{ejemplo}
 
 \begin{figure}[H]
-	\centering
-	\caption{Aproximaciones para el volumen bajo $f(x,y) = 8+2x-x^3-4y$.}
-	\label{fig:aproximaciones_volumen}
-	\begin{minipage}[b]{0.48\linewidth}
-	\includegraphics[width=\linewidth]{Img/T_51a.png}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[b]{0.48\linewidth}
-	\includegraphics[width=\linewidth]{Img/T_51b.png}
-	\end{minipage}
-	
-	\begin{minipage}[b]{0.48\linewidth}
-	\includegraphics[width=\linewidth]{Img/T_51c.png}
-	\end{minipage}
-	\fuentepropia
+\centering
+\caption{Aproximaciones para el volumen bajo $f(x,y) = 8+2x-x^3-4y$.}
+\label{fig:aproximaciones_volumen}
+\begin{minipage}[b]{0.48\linewidth}
+\includegraphics[width=\linewidth]{Img/T_51a.png}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+\includegraphics[width=\linewidth]{Img/T_51b.png}
+\end{minipage}
+
+\begin{minipage}[b]{0.48\linewidth}
+\includegraphics[width=\linewidth]{Img/T_51c.png}
+\end{minipage}
+\fuentepropia
 \end{figure}
 
-El volumen bajo la figura de $f(x,y)$ sobre el rectángulo $R$ puede verse también como la integral de $A(x),$ 
+El volumen bajo la figura de $f(x,y)$ sobre el rectángulo $R$ puede verse también como la integral de $A(x)$,
 la cual representa el área de las secciones transversales del sólido;
 por tanto el volumen está dado por {\small $\ds \int_a ^b A(x) dx= \int_a ^b \int_c ^d f(x,y) dy dx $.} O de manera similar
-{\small $\ds \int_c ^d A(y) dy= \int_c ^d \int_a ^b  f(x,y) dx dy.$}
-
-
+{\small $\ds \int_c ^d A(y) dy= \int_c ^d \int_a ^b  f(x,y) dx dy$.}
 
 Ejemplo de lo anterior es la siguiente integral
 que representa el volumen del sólido en mención $$\ds \int_0^2\int_0^1 (8+2x-x^3-4y) dydx = \int_0^1 \int_0^2(8+2x-x^3-4y) dxdy.$$
 
-\begin{figure}[H] 
-	\centering
-	\caption{Secciones transversales bajo $z = 8+2x - x^3 - 4y$, con $x \in [0,2]$, $y \in [0,1]$.}
-	\label{fig:secciones_transversales_bajo}
-	\begin{minipage}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/T_52a.pdf}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/T_52b.pdf}
-	\end{minipage}%
+\begin{figure}[H]
+\centering
+\caption{Secciones transversales bajo $z = 8+2x - x^3 - 4y$, con $x \in [0,2]$, $y \in [0,1]$.}
+\label{fig:secciones_transversales_bajo}
+\begin{minipage}[b]{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Img/T_52a.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Img/T_52b.pdf}
+\end{minipage}%
 
-	\begin{minipage}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/T_52c.pdf}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/T_52d.pdf}
-	\end{minipage}
-	\fuente{elaboración propia.} 
+\begin{minipage}[b]{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Img/T_52c.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.48\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Img/T_52d.pdf}
+\end{minipage}
+\fuente{elaboración propia.}
 \end{figure}
 
-\subsection*{Integrales triples} \index{Integrales!triples}
+\subsection{Integrales triples} \index{Integrales!triples}
 
 Consideraremos una caja rectangular cerrada y acotada $E$ en el espacio con
 caras paralelas a los planos coordenados $E=[a,b]\times \lbrack c,d]\times
-\lbrack r,s];$ es decir, 
+\lbrack r,s];$ es decir,
 \begin{equation*}
 E=\{(x,y,z) \in \mathbb{R}^{3}\,|\,a\leq x\leq b,c\leq y\leq
 d,r\leq z\leq s\}.
 \end{equation*}
-Si $f(x,y,z)$ es una función continua definida sobre la caja rectangular $E,$
+Si $f(x,y,z)$ es una función continua definida sobre la caja rectangular $E$,
 subdividiremos a $E$ en $lnm$ cajas rectangulares más peque\~{n}as a
 partir de planos paralelos a los planos coordenados. Esto es, para el
-intervalo $[a,b],$ consideremos 
+intervalo $[a,b]$, consideremos
 \begin{equation*}
 x_{0}=a<x_{1}<x_{2}<\cdots <x_{i}<\cdots <x_{n-1}<x_{n}=b,
 \end{equation*}
-para el intervalo $[c,d],$ 
+para el intervalo $[c,d]$,
 \begin{equation*}
 y_{0}=c<y_{1}<y_{2}<\cdots <y_{j}<\cdots <y_{m-1}<y_{m}=d,
 \end{equation*}
-y para el intervalo $[r,s],$ consideremos 
+y para el intervalo $[r,s]$, consideremos
 \begin{equation*}
 z_{0}=r<z_{1}<z_{2}<\cdots <z_{k}<\cdots <y_{l-1}<y_{l}=s.
 \end{equation*}
 
-Si $n,$ $l$ y $m$ crecen entonces el ancho, el largo y el alto de estas
+Si $n$, $l$ y $m$ crecen entonces el ancho, el largo y el alto de estas
 cajas rectangulares decrecen.
 Denotaremos $\Delta x_{i}$ al ancho del $i$-ésimo subintervalo sobre el
-eje $x,$ $\Delta y_{j}$ es el largo $j$-ésimo subintervalo sobre el eje $y$, y $\Delta z_{k}$ es el alto $k$-ésimo subintervalo sobre el eje $z$, es decir $\Delta x_{i}=x_{i+1}-x_{i},\Delta y_{j}=x_{j+1}-x_{j},$ $\Delta
-z_{k}=z_{k+1}-z_{k}.$ 
-El volumen de cada una de estas cajas de ancho $\Delta x_{i}$, largo $\Delta y_{j}$ y alto $\Delta z_{k}$ es 
-$\Delta V_{ijk}=\Delta x_{i}\Delta y_{j}\Delta z_{k}$. 
+eje $x$, $\Delta y_{j}$ es el largo $j$-ésimo subintervalo sobre el eje $y$, y $\Delta z_{k}$ es el alto $k$-ésimo subintervalo sobre el eje $z$, es decir $\Delta x_{i}=x_{i+1}-x_{i},\Delta y_{j}=x_{j+1}-x_{j}$, $\Delta
+z_{k}=z_{k+1}-z_{k}$.
+El volumen de cada una de estas cajas de ancho $\Delta x_{i}$, largo $\Delta y_{j}$ y alto $\Delta z_{k}$ es
+$\Delta V_{ijk}=\Delta x_{i}\Delta y_{j}\Delta z_{k}$.
 La norma de la partición se denota por $\left\Vert P\right\Vert $ y es
-el máximo sobre todos los valores $i,$ $j$ y $k$ de todas las
-dimensiones de las cajas en que se divide la región $E.$ 
+el máximo sobre todos los valores $i$, $j$ y $k$ de todas las
+dimensiones de las cajas en que se divide la región $E$.
 
-Una suma de Riemann de $f(x,y,z) $ sobre la caja rectangular $E$ se consigue al considerar un punto cualquiera 
-$\left( x_{i}^{\ast},y_{j}^{\ast },z_{k}^{\ast }\right) ,$ en la $ijk$-ésima caja
-rectangular, esto es $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast}\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{j-1},y_{j}]\times \lbrack z_{k-1},z_{k}],$ lo cual equivale a que $x_{i-1}<x_{i}^{\ast }<x_{i},$ 
-$y_{j-1}<y_{j}^{\ast }<y_{j}$ y $z_{k-1}<z_{k}^{\ast }<z_{k}.$ El valor de la
-función es este punto es $f\left( x_{i}^{\ast },y_{j}^{\ast},z_{k}^{\ast }\right) $ 
+Una suma de Riemann de $f(x,y,z) $ sobre la caja rectangular $E$ se consigue al considerar un punto cualquiera
+$\left( x_{i}^{\ast},y_{j}^{\ast },z_{k}^{\ast }\right) $, en la $ijk$-ésima caja
+rectangular, esto es $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast}\right) \in \lbrack x_{i-1},x_{i}]\times \lbrack y_{j-1},y_{j}]\times \lbrack z_{k-1},z_{k}]$, lo cual equivale a que $x_{i-1}<x_{i}^{\ast }<x_{i}$,
+$y_{j-1}<y_{j}^{\ast }<y_{j}$ y $z_{k-1}<z_{k}^{\ast }<z_{k}$. El valor de la
+función es este punto es $f\left( x_{i}^{\ast },y_{j}^{\ast},z_{k}^{\ast }\right) $
 y este valor se multiplica por el volumen de la $ijk$-ésima caja rectangular; se suman todos estos productos para obtener
-una expresión de la forma 
+una expresión de la forma
 \begin{equation*}
 S_{nml}=\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{k=1}^{l}f\left( x_{i}^{\ast},y_{j}^{\ast },z_{k}^{\ast }\right) \Delta x_{i}\Delta y_{j}\Delta z_{k}.
 \end{equation*}
 Dependiendo de la elección de $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right)$
-es posible obtener diversos valores de $S_{nml}.$ 
+es posible obtener diversos valores de $S_{nml}$.
 De manera similar a como se definió la integral doble, si el l\'{\i}mite de
-las sumas $S_{nml}$ existe para toda elección que se haga de 
-$\left(x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right),$ entonces se dice que la
-función $f(x,y,z) $ es integrable sobre la caja rectangular $E,$ y este valor se denota por 
-$\ds\iiint\limits_{E}f(x,y,z) dV$ o también $\ds \iiint\limits_{E}f(x,y,z) dzdydx.$ Lo anterior nos
+las sumas $S_{nml}$ existe para toda elección que se haga de
+$\left(x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right)$, entonces se dice que la
+función $f(x,y,z) $ es integrable sobre la caja rectangular $E$, y este valor se denota por
+$\ds\iiint\limits_{E}f(x,y,z) dV$ o también $\ds \iiint\limits_{E}f(x,y,z) dzdydx$. Lo anterior nos
 motiva a precisar este concepto.
 
 \begin{defi}
-La integral triple de una función continua $f(x,y,z)$ 
-sobre la caja rectangular $E$ se define como 
+La integral triple de una función continua $f(x,y,z)$
+sobre la caja rectangular $E$ se define como
 \begin{eqnarray}
-\lim_{\left\Vert P\right\Vert \rightarrow 0}S_{nml} &=& \lim_{l,m,n \to\infty}\left(\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{k=1}^{l}f\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast}\right) \Delta x_{i}\Delta y_{j}\Delta z_{k} \right)\nonumber \\ &=&\iiint\limits_{E}f\left(x,y,z\right) dV 
+\lim_{\left\Vert P\right\Vert \rightarrow 0}S_{nml} &=& \lim_{l,m,n \to\infty}\left(\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{k=1}^{l}f\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast}\right) \Delta x_{i}\Delta y_{j}\Delta z_{k} \right)\nonumber \\ &=&\iiint\limits_{E}f\left(x,y,z\right) dV
 \end{eqnarray}
 cuando este l\'{\i}mite existe.
 \end{defi}
@@ -937,14 +922,15 @@ Ilustremos lo anterior con dos integrales triples.
 \begin{ejemplo}
 Evaluar {\small $\ds \int_{-1}^1\int_0^1\int_0^1  yz^2 e^{x} dzdydx$} mediante sumas de Riemann.
 
-Al hacer una partición de la región de integración en $nml$ cajas rectangulares se sigue que 
+Al hacer una partición de la región de integración en $nml$ cajas rectangulares se sigue que
 $\Delta x= \frac{2}{n}$ $\Delta y= \frac{1}{m}$ y $\Delta z= \frac{1}{l}$. Además
-$x_i= -1+\frac{2i}{n},$ $y_j=\frac{j}{m}$ y $z_k=\frac{k}{l}.$
-Por lo tanto 
+$x_i= -1+\frac{2i}{n}$, $y_j=\frac{j}{m}$ y $z_k=\frac{k}{l}$.
+Por lo tanto
 $$f(x_i,y_j,z_k)\Delta x \Delta y\Delta z=\frac{2 j k^2 e^{\frac{2 i}{n}-1}}{l^3 m^2 n}$$
-Con lo cual 
-$$\sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z=\frac{\left(e^2-1\right) (l+1)(2l+1)(m+1)}{6nml^2 \left(1-e^{-2/n}\right)e}$$ entonces 
-\begin{multline*} \int_{-1}^1\int_0^1\int_0^1  yz^2 e^{x} dzdydx= \lim_{n,m,l \to \infty}\sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z \\ =\frac{1}{6} \left(e-\frac{1}{e}\right)\end{multline*}
+Con lo cual
+$$\sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z=\frac{\left(e^2-1\right) (l+1)(2l+1)(m+1)}{6nml^2 \left(1-e^{-2/n}\right)e}$$ entonces
+\begin{multline*} \int_{-1}^1\int_0^1\int_0^1  yz^2 e^{x} dzdydx= \lim_{n,m,l \to \infty}\sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z \\ =\frac{1}{6} \left(e-\frac{1}{e}\right)
+\end{multline*}
 \end{ejemplo}
 
 \begin{comment}
@@ -962,18 +948,18 @@ Integrate[f[x,y,z],{x,-1,1},{y,0,1},{z,0,1}]
 
 \begin{ejemplo}
 \begin{sloppypar}
-Para $f(x,y,z)= \cos (x) \sin (y)+z^2 \cos^2 (2 y)$ y $E$ el \mbox{paralelepípedo} determinado por 
-$[-\frac{\pi}{2},\frac{\pi}{2}]\times [0,\frac{\pi}{4}]\times[0,1]$; evaluar 
-{\footnotesize $\ds \iiint_Ef(x,y,z) dzdydx.$}
+Para $f(x,y,z)= \cos (x) \sin (y)+z^2 \cos^2 (2 y)$ y $E$ el \mbox{paralelepípedo} determinado por
+$[-\frac{\pi}{2},\frac{\pi}{2}]\times [0,\frac{\pi}{4}]\times[0,1]$; evaluar
+{\footnotesize $\ds \iiint_Ef(x,y,z) dzdydx$.}
 
 Al hacer una partición de $E$ en $nml$ cajas rectangulares es posible establecer que
 $\Delta x= \frac{\frac{\pi}{2}-\left(\frac{-\pi}{2}\right)}{n}=\frac{\pi}{2n}$
 $\Delta y= \frac{\frac{\pi}{4}-0}{m}=\frac{\pi}{4m}$ y $\Delta z= \frac{1}{l}$. Además
-$x_i= -\frac{\pi}{2}+\frac{\pi i}{2n},$ $y_j=\frac{\pi j}{4m}$ y $z_k=\frac{k}{l}.$
-Por lo tanto: 
+$x_i= -\frac{\pi}{2}+\frac{\pi i}{2n}$, $y_j=\frac{\pi j}{4m}$ y $z_k=\frac{k}{l}$.
+Por lo tanto:
 $$f(x_i,y_j,z_k)=\sin\left(\frac{\pi i}{n}\right)\sin\left(\frac{\pi j}{4m}\right)+\frac{k^2}{l^2}\cos^2\left(\frac{\pi j}{2m}\right).$$
-Con lo anterior, se establece que $S_{nml}=\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z,$ es
-{\small 
+Con lo anterior, se establece que $S_{nml}=\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z$, es
+{\small
 $$\frac{\pi ^2}{48 m}\left(\frac{(l+1) (2 l+1) (m-1)}{l^2}+\frac{12 \sin \left(\frac{\pi}{8}\right) \sin \left(\frac{\pi  (m+1)}{8 m}\right) \csc \left(\frac{\pi }{8 m}\right)\cot \left(\frac{\pi }{2 n}\right)}{n}\right).$$
 }
 De modo que $\lim_{n,m,l \to \infty}S_{nml}$ es
@@ -992,17 +978,16 @@ suma=Simplify[
 Sum[f[xi,yj,zk]*dx*dy*dz,{i,1,n},{j,1,m},{k,1,l}]];
 Limit[suma,{n,m,l}->{Infinity,Infinity,Infinity}]
 Integrate[f[x,y,z],{x,-Pi/2,Pi/2},{y,0,Pi/4},{z,0,1}]
-\end{Verbatim} 
+\end{Verbatim}
 \end{comment}
-Utilizando \verb"Mathematica" es posible simplificar y evaluar las integrales anteriores. 
+Utilizando \verb"Mathematica" es posible simplificar y evaluar las integrales anteriores.
 Su uso se explicará en detalle en los próximos capítulos.
- 
+
 %
 
-Para una región acotada sólida $E$ en el espacio, se sigue un proceso análogo al utilizado en las 
+Para una región acotada sólida $E$ en el espacio, se sigue un proceso análogo al utilizado en las
 integrales dobles. Nótese que $z$ recorre los puntos entre las superficies $z=u_1(x,y)$ y
-$z=u_2(x,y)$. La proyección de $E$ en el plano $xy$ muestra que $y$ recorre los puntos que están incluidos entre las curvas $y=h_1(x)$ y $y=h_2(x),$ con $x\in [a,b].$ 
-
+$z=u_2(x,y)$. La proyección de $E$ en el plano $xy$ muestra que $y$ recorre los puntos que están incluidos entre las curvas $y=h_1(x)$ y $y=h_2(x)$, con $x\in [a,b]$.
 
 \begin{figure}[H]
 \centering
@@ -1012,97 +997,97 @@ $z=u_2(x,y)$. La proyección de $E$ en el plano $xy$ muestra que $y$ recorre los
 \end{figure}
 
 Es por esto que la integral respectiva se escribe en la forma
-$$\int_a^b\int_{h_1(x)}^{h_2(x)} \int_{u_1(x,y)} ^{u_2(x,y)} f(x,y,z) dz dydx.$$ 
+$$\int_a^b\int_{h_1(x)}^{h_2(x)} \int_{u_1(x,y)} ^{u_2(x,y)} f(x,y,z) dz dydx.$$
 
 Se debe observar que en algunos casos la proyección del sólido en el plano $xy$ puede corresponder a regiones del tipo I,
 tipo II, las cuales fueron descritas anteriormente, o también combinaciones de estas.
 
 En estos apuntes se consideran otras posibilidades e intercambios en el orden de integración, que dependiendo de la naturaleza de cada problema harán más o menos complicado el tratamiento a estas integrales.
 
-\subsection*{Integrales múltiples sobre regiones parametrizadas}
+\subsection{Integrales múltiples sobre regiones parametrizadas}
 
 En \cite{acosta_gempeler_doce_2020}, se considera una función continua $f(x,y,z)$ y una superficie $\sigma$
-parametrizada en la forma ${\bf r}(u,v)= \langle x(u,v), y(u,v), z(u,v) \ra,$
-con $u \in [a,b]$ y $v \in [c,d];$ cuyas funciones componentes poseen derivadas parciales continuas en 
-$[a,b] \times [c,d].$ Al realizar una partición de $\sigma$ en la forma
+parametrizada en la forma ${\bf r}(u,v)= \langle x(u,v), y(u,v), z(u,v) \ra$,
+con $u \in [a,b]$ y $v \in [c,d];$ cuyas funciones componentes poseen derivadas parciales continuas en
+$[a,b] \times [c,d]$. Al realizar una partición de $\sigma$ en la forma
 $$\sigma_{ij}= \{ (x(u_i^\ast,v_j^\ast),y(u_i^\ast,v_j^\ast),z(u_i^\ast,v_j^\ast) )\,|\, u_{i-1} \leq u_i^\ast \leq u_{i}, v_{j-1} \leq v_{j}^\ast \leq v_{j}\} ;$$
 considerando el punto $P_{ij}(x(u_i^\ast,v_j^\ast),y(u_i^\ast,v_j^\ast),z(u_i^\ast,v_j^\ast) )$ en cada trozo $\sigma_{ij}$
 de la superficie, se obtiene la suma de Riemann de $f$ sobre la superficie $\sigma$ parametrizada por ${\bf r}(u,v)$ y con la partición de $\sigma$,
 $$ S_{nm}=\sum_{i=1}^n \sum_{j=1}^m f(x(u_i^\ast,v_j^\ast),y(u_i^\ast,v_j^\ast),z(u_i^\ast,v_j^\ast) ) \Vert {\bf r}_u \times {\bf r}_v \Vert \Delta u_i \Delta v_j .$$
 El término $\Vert {\bf r}_u \times {\bf r}_v \Vert $ es el área del paralelogramo determinado por
-los vectores ${\bf r}_u$ y ${\bf r}_v.$
-Con un procedimiento como el utilizado cuando presentamos integrales dobles, se sigue que en este caso la integral de $f$ 
+los vectores ${\bf r}_u$ y ${\bf r}_v$.
+Con un procedimiento como el utilizado cuando presentamos integrales dobles, se sigue que en este caso la integral de $f$
 sobre la superficie $\sigma$ con la parametrización ${\bf r}(u,v)$ está dada por
 \begin{multline}
 \iint_\sigma f dA = \lim_{n,m \to \infty} S_{nm}  = \int_a^b\int_c^d f({\bf r}(u,v)) \Vert {\bf r}_u \times {\bf r}_v \Vert dudv  \label{integralesdobles2}
 \end{multline}
-Si la parametrización ${\bf r}(u,v,w)= \langle x(u,v,w), y(u,v,w), z(u,v,w) \ra,$
-de un sólido $E$, con $u \in [a,b],$ $v \in [c,d]$ y $w \in [p,q]$;
-con funciones componentes que poseen derivadas parciales continuas en 
-$[a,b] \times [c,d] \times [p,q].$
+Si la parametrización ${\bf r}(u,v,w)= \langle x(u,v,w), y(u,v,w), z(u,v,w) \ra$,
+de un sólido $E$, con $u \in [a,b]$, $v \in [c,d]$ y $w \in [p,q]$;
+con funciones componentes que poseen derivadas parciales continuas en
+$[a,b] \times [c,d] \times [p,q]$.
 
 \begin{figure}[H]
-	\centering
-	\caption{Transformación de una región en el espacio}
-	\label{fig:transform-region}
-	\begin{minipage}[b]{0.47\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/10.pdf}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/11.pdf}
-	\end{minipage}
-	
-	\begin{minipage}[b]{0.48\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/12.pdf}
-	\end{minipage}
-	\fuentepropia
+\centering
+\caption{Transformación de una región en el espacio}
+\label{fig:transform-region}
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/10.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.35\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/11.pdf}
+\end{minipage}
+\\[2em]
+\begin{minipage}[b]{0.4\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/12.pdf}
+\end{minipage}
+\fuentepropia
 \end{figure}
 
 Es posible realizar una partición de $E$ en la forma
 \[E_{ijk}= \{ P_{ijk}^\ast\,|\, u_{i-1} \leq u_i^\ast \leq u_{i}, v_{j-1} \leq v_{j}^\ast \leq v_{j}, w_{k-1} \leq w_{k}^\ast \leq w_{k}\};\]
 En donde $P_{ijk}^\ast=(x(u_i^\ast,v_j^\ast,w_k^\ast),y(u_i^\ast,v_j^\ast,w_k^\ast),z(u_i^\ast,v_j^\ast,w_k^\ast) );$
 al considerar el punto $P_{ijk}(x(u_i^\ast,v_j^\ast,w_k^\ast),y(u_i^\ast,v_j^\ast,w_k^\ast),z(u_i^\ast,v_j^\ast,w_k^\ast) )$
-en cada trozo $E_{ijk}$ del sólido, se obtiene la suma de Riemann de $f$ sobre el sólido $E$ parametrizado por 
+en cada trozo $E_{ijk}$ del sólido, se obtiene la suma de Riemann de $f$ sobre el sólido $E$ parametrizado por
 ${\bf r}(u,v,w)$ y con la partición de $E$,
 $$ S_{nml}=\sum_{i=1}^l \sum_{i=1}^n \sum_{j=1}^m f(P_{ijk}^\ast) | {\bf r}_u \cdot ({\bf r}_v \times {\bf r}_w) | \Delta u_i \Delta v_j \Delta w_k.$$
 El término $| {\bf r}_u \cdot ({\bf r}_v \times {\bf r}_w) |$ es el volumen del paralelepípedo determinado por
-los vectores ${\bf r}_u,$ ${\bf r}_v$ y ${\bf r}_w$. 
-De manera análoga al procedimiento utilizado cuando presentamos integrales triples, se sigue que la integral de $f$ 
+los vectores ${\bf r}_u$, ${\bf r}_v$ y ${\bf r}_w$.
+De manera análoga al procedimiento utilizado cuando presentamos integrales triples, se sigue que la integral de $f$
 sobre $E$ con la parametrización ${\bf r}(u,v,w)$ está dada por
 \begin{multline} \label{math1}
-\ds \iiint_E f dV = \lim_{l,m,n \to \infty} S_{nml}  \\ 
-=\int_a^b\int_c^d \int_p^q f({\bf r}(u,v,w)) | {\bf r}_u \cdot ({\bf r}_v \times {\bf r}_w) | dudvdw 
+\ds \iiint_E f dV = \lim_{l,m,n \to \infty} S_{nml}  \\
+=\int_a^b\int_c^d \int_p^q f({\bf r}(u,v,w)) | {\bf r}_u \cdot ({\bf r}_v \times {\bf r}_w) | dudvdw
 \end{multline}
 Al término $|{\bf r}_u \cdot ({\bf r}_v \times {\bf r}_w) |dudvdw$ lo denominaremos elemento diferencial de volumen.
 \index{Elemento diferencial!de volumen}
 Esta última expresión puede verse como la integral de la función $f$ si el sólido $E^*$ es
-parametrizado por la función ${\bf r}(u,v,w).$ Si en la expresión (\ref{math1}) $f(x,y,z)=1$ esta integral determina 
+parametrizado por la función ${\bf r}(u,v,w)$. Si en la expresión (\ref{math1}) $f(x,y,z)=1$ esta integral determina
 el volumen $V$ del sólido $E$, es decir
 \begin{eqnarray} \label{math2}
 V=\iiint_{E}|{\bf r}_u \cdot ({\bf r}_v \times {\bf r}_w) | dudvdw
 \end{eqnarray}
 
-\subsection*{Aplicaciones de las integrales triples}
+\subsection{Aplicaciones de las integrales triples}
 
-De manera similar al caso bidimensional la masa $M,$ de un sólido $E$ con densidad $\rho (x,y,z)$ se determina por 
-$$M=\ds \iiint_E \rho (x,y,z) dV$$ y los momentos con respecto a los planos coordenados se determinan por 
+De manera similar al caso bidimensional la masa $M$, de un sólido $E$ con densidad $\rho (x,y,z)$ se determina por
+$$M=\ds \iiint_E \rho (x,y,z) dV$$ y los momentos con respecto a los planos coordenados se determinan por
 $$\ds \mu_{xy}=\iiint_E z\rho(x,y,z) dV,\,\,\, \mu_{xz}=\iiint_E y\rho(x,y,z) dV,$$
 $$\ds  \mu_{yz}=\iiint_E x\rho(x,y,z)dV.$$
 De tal forma que el centro de masa de $E$ es
-$(\overline{x},\overline{y},\overline{z})= (\frac{\mu_{yz}}{M}, \frac{\mu_{xz}}{M},\frac{\mu_{xy}}{M}) .$
+$(\overline{x},\overline{y},\overline{z})= (\frac{\mu_{yz}}{M}, \frac{\mu_{xz}}{M},\frac{\mu_{xy}}{M}) $.
 Una exposición más detalladas de estos elementos y otros usos de las integrales múltiples puede consultarse en \cite{thomas_calculo_2015}.
 \index{Centro de masa}
-\subsection*{Integrales de superficie}
-Una parametrización de una superficie es una función 
-$\phi:D\subseteq \mathbb{R}^{2}\rightarrow \mathbb{R}^{3}.$
+\subsection{Integrales de superficie}
+Una parametrización de una superficie es una función
+$\phi:D\subseteq \mathbb{R}^{2}\rightarrow \mathbb{R}^{3}$.
 La superficie $S$ correspondiente a la
-función $\phi $ es su imagen $\phi \left( D\right) =S$ se escribe 
-$\phi(u,v)=\left\langle x\left( u,v\right) ,y\left( u,v\right),z\left( u,v\right) \right\rangle .$
-La integral de un campo escalar $f$ sobre una superficie $S,$  está dada por
+función $\phi $ es su imagen $\phi \left( D\right) =S$ se escribe
+$\phi(u,v)=\left\langle x\left( u,v\right) ,y\left( u,v\right),z\left( u,v\right) \right\rangle $.
+La integral de un campo escalar $f$ sobre una superficie $S$,  está dada por
 
 \begin{equation} \label{areasup1}
 \iint_{S}f(x,y,z) dS=\iint_{D}f\left( \phi \left( u,v\right)
@@ -1113,73 +1098,75 @@ siendo
 $${\bf T}_{u}=\frac{\partial \phi }{\partial u}=\frac{\partial x}{\partial u}\vi+\frac{\partial x}{\partial u}\vj+\frac{\partial x}{\partial u}\vk$$
 y $${\bf T}_{v}=\frac{\partial \phi }{\partial v}=\frac{\partial x}{\partial v}\vi+\frac{\partial x}{\partial v}\vj+\frac{\partial x}{\partial v}\vk.$$
 
-La integración de una campo vectorial ${\bf f}$ sobre $S,$ está dada por
+La integración de una campo vectorial ${\bf f}$ sobre $S$, está dada por
 \begin{equation}
 \iint_{S} {\bf f}(x,y,z) \cdot dS=\iint_{D} {\bf f} \left( \phi \left(
 u,v\right) \right) \cdot \left( {\bf T}_{u}\times {\bf T}_{v}\right) dudv
 \end{equation}
 Una exposición más detallada de esta formulación puede encontrarse en \cite{marsden_calculo_2013}.
 
-Si en la expresión (\ref{areasup1}) $f(x,y,z)=1,$ esta integral se reduce al área $A$ de la superficie $D,$ es decir
+Si en la expresión (\ref{areasup1}) $f(x,y,z)=1$, esta integral se reduce al área $A$ de la superficie $D$, es decir
 \begin{equation} \label{areasup}
 A=\iint_{D} \left\| {\bf T}_{u}\times {\bf T}_{v}\right\| dudv
 \end{equation}
 Al término $\left\| {\bf T}_{u}\times {\bf T}_{v}\right\|dudv$ lo denominaremos elemento diferencial de área.
 \index{Elemento diferencial!de área}
 
-\subsection*{Cambio de variables en integrales dobles} \label{cambioidobles}
+\subsection{Cambio de variables en integrales dobles} \label{cambioidobles}
 
 Con el propósito de evaluar la integral $\ds \iint\limits_{R}f(x,y) dA$
-se hace el cambio $(x,y) ={\bf r}(u,v)$ para transformar la región $R$ en el sistema 
-$(x,y) $ en una región $R^{\ast }$ en el sistema coordenado  $(u,v).$
-Un rectángulo en el sistema $uv$ con lados de longitud $\Delta u$ de largo y $\Delta v$ de ancho se transforma mediante la función ${\bf r}.$
+se hace el cambio $(x,y) ={\bf r}(u,v)$ para transformar la región $R$ en el sistema
+$(x,y) $ en una región $R^{\ast }$ en el sistema coordenado  $(u,v)$.
+Un rectángulo en el sistema $uv$ con lados de longitud $\Delta u$ de largo y $\Delta v$ de ancho se transforma mediante la función ${\bf r}$.
 
 Asumiendo que ${\bf r}$ es diferenciable, si $(u,v) $ son las coordenadas del rectángulo, los vértices
-adyacentes son $( u+\Delta u,v) $ y $(u,v+\Delta v)$; mediante la aplicación ${\bf r},$ el rectángulo
-se transforma en una región cuya área se puede aproximar mediante el área de un paralelogramo. Además, 
+adyacentes son $( u+\Delta u,v) $ y $(u,v+\Delta v)$; mediante la aplicación ${\bf r}$, el rectángulo
+se transforma en una región cuya área se puede aproximar mediante el área de un paralelogramo. Además,
 aplicando el teorema del valor medio, se sigue que
 
 \begin{eqnarray*}
-{\bf r}(u+\Delta u,v) -{\bf r}(u,v) &=& \frac{{\bf r}( u+\Delta u,v)-{\bf r}(u,v)}{\Delta u}\Delta u 
+{\bf r}(u+\Delta u,v) -{\bf r}(u,v) &=& \frac{{\bf r}( u+\Delta u,v)-{\bf r}(u,v)}{\Delta u}\Delta u
 \approx \frac{\partial {\bf r}}{\partial u}\left( u^{\ast},v\right)\Delta u \\
-{\bf r}(u,v+\Delta v) -{\bf r}(u,v) &=& \frac{{\bf r}(u,v+\Delta v)-{\bf r}(u,v)}{\Delta v}\Delta v 
+{\bf r}(u,v+\Delta v) -{\bf r}(u,v) &=& \frac{{\bf r}(u,v+\Delta v)-{\bf r}(u,v)}{\Delta v}\Delta v
 \approx \frac{\partial{\bf r}}{\partial u}( u,v^{\ast})\Delta v.
 \end{eqnarray*}
 
-El área de esta pequeña región está dada por 
+El área de esta pequeña región está dada por
 \begin{equation}
-\Delta A=\left\Vert \frac{\partial {\bf r}}{\partial u}\Delta u\times 
+\Delta A=\left\Vert \frac{\partial {\bf r}}{\partial u}\Delta u\times
 \frac{\partial {\bf r}}{\partial v}\Delta v\right\Vert =\left\Vert \frac{\partial {\bf r}}{\partial u}\times \frac{\partial {\bf r}}{\partial v}\right\Vert \Delta u\Delta v
 \end{equation}
 que se puede abreviar en la forma
-$\Delta A=\left\vert \frac{\partial (x,y)}{\partial (u,v)}\right \vert \Delta u\Delta v.$
+$\Delta A=\left\vert \frac{\partial (x,y)}{\partial (u,v)}\right \vert \Delta u\Delta v$.
 Por simplicidad $x=x(u,v)$ y $y=y(u,v)$, entonces
 \begin{equation}
 \left\vert \frac{\partial (x,y) }{\partial(u,v)}\right\vert =\left\Vert\frac{\partial{\bf r}}{\partial u}\times \frac{\partial{\bf r}}{\partial v}\right\Vert =
-\left\vert \begin{array}{cc}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\[.1cm]  
+\left\vert
+\begin{array}{cc}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}\\[.1cm]
 \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
 \end{array} \right\vert
 \end{equation}
 
-En algunos libros como \cite{stewart_calculo_2018}, el término $\left\vert \frac{\partial\left(x,y\right)}{\partial(u,v)}\right\vert$ 
+En algunos libros como \cite{stewart_calculo_2018}, el término $\left\vert \frac{\partial\left(x,y\right)}{\partial(u,v)}\right\vert$
 se denomina el jacobiano de la transformación ${\bf r}$. \index{Jacobiano}
 Con los elementos anteriores se establece la siguiente igualdad.
 \begin{equation}
-\iint\limits_{R}f(x,y) dA=\iint\limits_{R^{\ast }}f\left({\bf r}(u,v) \right) \left\vert \frac{\partial (x,y) }{\partial (u,v)}\right\vert dudv \end{equation}
+\iint\limits_{R}f(x,y) dA=\iint\limits_{R^{\ast }}f\left({\bf r}(u,v) \right) \left\vert \frac{\partial (x,y) }{\partial (u,v)}\right\vert dudv
+\end{equation}
 
-\subsection*{Cambio de variables en integrales triples}
-Con el propósito de evaluar la integral 
+\subsection{Cambio de variables en integrales triples}
+Con el propósito de evaluar la integral
 $$\iiint\limits_{R}f(x,y,z) dV$$
-se puede hacer el cambio $(x,y,z) ={\bf r}(u,v,w)$ para transformar la región $R$ en el sistema 
-de coordenadas $(x,y,z) $ en una region $R^{\ast }$ en el sistema coordenado  $(u,v,w) .$
-Consideremos un cubo en el sistema $uvw,$ con aristas de longitud $\Delta u$ de largo, $\Delta v$ de ancho y $\Delta w$ de altura, que se transforma mediante la función ${\bf r}$.  
+se puede hacer el cambio $(x,y,z) ={\bf r}(u,v,w)$ para transformar la región $R$ en el sistema
+de coordenadas $(x,y,z) $ en una region $R^{\ast }$ en el sistema coordenado  $(u,v,w) $.
+Consideremos un cubo en el sistema $uvw$, con aristas de longitud $\Delta u$ de largo, $\Delta v$ de ancho y $\Delta w$ de altura, que se transforma mediante la función ${\bf r}$.
 Asumiendo que ${\bf r}$ es diferenciable,
 si $(u,v,w) $ son las coordenadas de un vértice del cubo, entonces los vértices
-adyacentes son $\left( u+\Delta u,v,w\right) ,$ $\left( u,v+\Delta v,w\right)$ y $\left( u,v,w+\Delta w\right) ;$ mediante la aplicación ${\bf r},$ el cubo se transforma en una región cuyo volumen se puede aproximar mediante un \mbox{paralelep\'{\i}pedo}.
+adyacentes son $\left( u+\Delta u,v,w\right) $, $\left( u,v+\Delta v,w\right)$ y $\left( u,v,w+\Delta w\right) ;$ mediante la aplicación ${\bf r}$, el cubo se transforma en una región cuyo volumen se puede aproximar mediante un \mbox{paralelep\'{\i}pedo}.
 Aplicando el teorema del valor medio, se sigue que
 
 \begin{eqnarray*}
-{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) }{\Delta u}\Delta u \\[0.1cm] 
+{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) }{\Delta u}\Delta u \\[0.1cm]
 &\approx &   \frac{\partial {\bf r}}{\partial u}\left( u^{\ast},v,w\right) \Delta u \\
 {\bf r}\left( u,v+\Delta v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}(u,v+\Delta v,w)-{\bf r}(u,v,w)}{\Delta v}\Delta v \\[0.1cm]
 &\approx& \frac{\partial{\bf r}}{\partial v}\left( u,v^{\ast},w\right)\Delta v\\
@@ -1188,57 +1175,50 @@ u,v,w+\Delta w\right) -{\bf r}(u,v,w)}{\Delta w}\Delta w \\[0.1cm]
 &\approx & \frac{\partial {\bf r}}{\partial w}\left( u,v,w^{\ast}\right) \Delta w,
 \end{eqnarray*}
 
-El volumen de esta región, $\Delta V$, está dada por 
+El volumen de esta región, $\Delta V$, está dada por
 \begin{equation}
-\left\vert \left( \frac{\partial {\bf r}}{\partial u}\Delta u\times 
+\left\vert \left( \frac{\partial {\bf r}}{\partial u}\Delta u\times
 \frac{\partial {\bf r}}{\partial v}\Delta v\right) \cdot \frac{\partial {\bf r}}{\partial w}\Delta w\right\vert =\left\vert \left( \frac{\partial {\bf r}}{\partial u}\times \frac{\partial {\bf r}}{\partial v}\right) \cdot \frac{\partial {\bf r}}{\partial w}\right\vert \Delta u\Delta v\Delta w
 \end{equation}
 que se puede abreviar en la forma
 $\Delta V=\left\vert \frac{\partial (x,y,z) }{\partial \left(
-u,v,w\right) }\right\vert \Delta u\Delta v\Delta w.$
-Por simplicidad, si $x=x(u,v,w) ,$ $y=y(u,v,w) $ y $z=z(u,v,w) $ entonces
+u,v,w\right) }\right\vert \Delta u\Delta v\Delta w$.
+Por simplicidad, si $x=x(u,v,w) $, $y=y(u,v,w) $ y $z=z(u,v,w) $ entonces
 \begin{equation}
 \left\vert \frac{\partial (x,y,z) }{\partial(u,v,w)}\right\vert =\left\vert\left(\frac{\partial{\bf r}}{\partial u}\times \frac{\partial{\bf r}}{\partial v}\right) \cdot \frac{\partial{\bf r}}{\partial v}\right\vert =
-\left\vert 
-\begin{array}{ccc}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}&\frac{\partial x}{\partial w}\\[.1cm]  
-\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}&\frac{\partial y}{\partial w} \\[0.1cm] 
-\frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}&\frac{\partial z}{\partial w}\end{array}\right\vert 
+\left\vert
+\begin{array}{ccc}\frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}&\frac{\partial x}{\partial w}\\[.1cm]
+\frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}&\frac{\partial y}{\partial w} \\[0.1cm]
+\frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}&\frac{\partial z}{\partial w}
+\end{array}\right\vert
 \end{equation}
 
-En algunos libros el término $\left\vert \frac{\partial\left(x,y,z\right)}{\partial(u,v,w)}\right\vert$ 
+En algunos libros el término $\left\vert \frac{\partial\left(x,y,z\right)}{\partial(u,v,w)}\right\vert$
 se denomina el jacobiano de la transformación ${\bf r}$. \index{Jacobiano}
 Esto muestra la siguiente igualdad.
 \begin{equation}
 \iiint\limits_{R}f(x,y,z) dV=\iiint\limits_{R^{\ast}}f\left({\bf r}(u,v,w) \right)\left\vert\frac{\partial (x,y,z)}{\partial (u,v,w) }\right\vert dudvdw
 \end{equation}
 
-Los siguientes casos particulares de cambio de variables en integrales dobles y triples son utilizados 
+Los siguientes casos particulares de cambio de variables en integrales dobles y triples son utilizados
 de manera frecuente.
-\subsection*{Coordenadas polares, cilíndricas y esféricas} \label{esfericas}
+\subsection{Coordenadas polares, cilíndricas y esféricas} \label{esfericas}
 \index{Coordenadas!polares} \index{Coordenadas!cilíndricas} \index{Coordenadas!esféricas}
-Para una circunferencia de radio $r,$ la longitud $s$, de un arco de $\theta$ radianes es $r\theta$.
-El área de un sector circular de arco $\Delta \theta$ y radio $r$ está dado por 
-$\frac{1}{2}r^2 \Delta \theta$ y el área $\Delta A,$ de la región acotada por dos sectores 
+Para una circunferencia de radio $r$, la longitud $s$, de un arco de $\theta$ radianes es $r\theta$.
+El área de un sector circular de arco $\Delta \theta$ y radio $r$ está dado por
+$\frac{1}{2}r^2 \Delta \theta$ y el área $\Delta A$, de la región acotada por dos sectores
 circulares de radio $r_i$ y $r_{i+1}$ (con $r_i<r_{i+1}$) está dada por
 \begin{eqnarray*}
-\Delta A &=& \frac{1}{2}r_{i+1}^2 \Delta \theta-\frac{1}{2}r_{i}^2 \Delta \theta 
-= \frac{r_{i+1}+r_i}{2}(r_{i+1}-r_i)\Delta \theta  = r_i^*\Delta r \Delta \theta 
+\Delta A &=& \frac{1}{2}r_{i+1}^2 \Delta \theta-\frac{1}{2}r_{i}^2 \Delta \theta
+= \frac{r_{i+1}+r_i}{2}(r_{i+1}-r_i)\Delta \theta  = r_i^*\Delta r \Delta \theta
 \end{eqnarray*}
-
-%\begin{figure}
-    %\centering
-    %\includegraphics[width=0.5\linewidth]{Fig/12.pdf}
-    %\caption{Transformación a coordenadas polares}
-    %\label{fig:polar-transform}
-%\end{figure}
-
 
 \begin{figure}[H]
 \centering
 \caption{Transformación a coordenadas polares}
 \label{fig:falta_título}
-\includegraphics[width=0.4\textwidth]{Fig/13.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Fig/14.pdf}
+\includegraphics[width=0.3\textwidth]{Fig/13.pdf} \hfill
+\includegraphics[width=0.3\textwidth]{Fig/14.pdf}
 \fuentepropia
 \end{figure}
 
@@ -1249,29 +1229,29 @@ Teniendo en cuenta las relaciones anteriores y el teorema de cambio de variables
 \end{equation*}
 }
 
-Utilizando el sistema de coordenadas cilíndricas $x=r\cos \theta ,$ 
-$y=r\sin \theta ,$ $z=z;$ o el sistema de coordenadas esféricas,
-$x=\rho \cos \theta \sin \phi ,$ $y=\rho \sin \theta \sin \phi ,$ $z=\rho\cos \phi ,$ 
+Utilizando el sistema de coordenadas cilíndricas $x=r\cos \theta $,
+$y=r\sin \theta $, $z=z;$ o el sistema de coordenadas esféricas,
+$x=\rho \cos \theta \sin \phi $, $y=\rho \sin \theta \sin \phi $, $z=\rho\cos \phi $,
 con los siguientes gráficos se ilustra la obtención del elemento diferencial de volumen en estos casos.
-
 
 \begin{figure}[H]
 \centering
-\caption{Vectores ${\bf F}(x,y,z),$ ${\bf T}$ y ${\bf n}$}
+\caption{Vectores ${\bf F}(x,y,z)$, ${\bf T}$ y ${\bf n}$}
 \includegraphics[width=0.5\textwidth]{Fig/15.pdf}
 \fuentepropia
 \end{figure}
 
 El jacobiano de la transformación a coordenadas cilíndricas se obtiene a partir de la relación
-$$\left\vert \begin{array}{ccc}
-\cos \theta  & \sin \theta  & 0 \\ 
--r\sin \theta  & r\cos \theta  & 0 \\ 
-0 & 0 & 1\end{array}\right\vert = r\cos ^{2}\theta +r\sin ^{2}\theta = r,$$
-y el elemento diferencial de Volumen es $dV= r \, dr d\theta dz,$ 
+$$\left\vert
+\begin{array}{ccc}
+\cos \theta  & \sin \theta  & 0 \\
+-r\sin \theta  & r\cos \theta  & 0 \\
+0 & 0 & 1
+\end{array}\right\vert = r\cos ^{2}\theta +r\sin ^{2}\theta = r,$$
+y el elemento diferencial de Volumen es $dV= r \, dr d\theta dz$,
 por lo tanto, la fórmula \ref{math1} se escribe como
-\index{Integrales triples!en coordenadas cilíndricas} 
+\index{Integrales triples!en coordenadas cilíndricas}
 $$\iiint_{E}f(x,y,z)dV=\iiint_{E^{\ast }}f(r\cos \theta ,r\sin \theta,z)r\, dzdrd\theta .$$
-
 
 \begin{figure}[H]
 \centering
@@ -1282,27 +1262,26 @@ $$\iiint_{E}f(x,y,z)dV=\iiint_{E^{\ast }}f(r\cos \theta ,r\sin \theta,z)r\, dzdr
 \fuentepropia
 \end{figure}
 
-El jacobiano en el caso de las coordenadas esféricas corresponde a 
-$$\left\vert \begin{array}{ccc}
-\cos \theta \sin \phi  & \sin \theta \sin \phi  & \cos \phi  \\ 
--\rho \sin \theta \sin \phi  & \rho \cos \theta \sin \phi  & 0 \\ 
-\rho \cos \theta \cos \phi  & \rho \sin \theta \cos \phi  & -\rho \sin \phi 
+El jacobiano en el caso de las coordenadas esféricas corresponde a
+$$\left\vert
+\begin{array}{ccc}
+\cos \theta \sin \phi  & \sin \theta \sin \phi  & \cos \phi  \\
+-\rho \sin \theta \sin \phi  & \rho \cos \theta \sin \phi  & 0 \\
+\rho \cos \theta \cos \phi  & \rho \sin \theta \cos \phi  & -\rho \sin \phi
 \end{array}\right\vert = -\rho ^{2}\sin \phi,$$
 que determina el elemento diferencial de volumen $dV= \rho ^2 \sin \phi d\rho d\theta d\phi$
 y permite obtener la siguiente igualdad:
 \begin{multline}
 \iiint_{E}f(x,y,z)dV \\ =\iiint_{E^{\ast }}f(\rho \cos \theta \sin \phi ,\rho
-\sin \theta \sin \phi ,\rho \cos \phi )\rho ^{2}\sin \phi\, d\rho d\theta d\phi 
+\sin \theta \sin \phi ,\rho \cos \phi )\rho ^{2}\sin \phi\, d\rho d\theta d\phi
 \end{multline}
 En el apéndice {B} el lector puede consultar las generalidades de otros sistemas de coordenadas.
 \index{Integrales triples!en coordenadas Esféricas}
 
 \begin{ejemplo}
-Si $E$ es el sólido acotado por los paraboloides $z=2-x^2-y^2$ y $z=x^2+y^2.$
-Evaluar la integral $\displaystyle \iiint_E y^2 dV.$ La intersección de los paraboloides está dada por $x^2+y^2=1,$ que corresponde a un círculo unitario 
+Si $E$ es el sólido acotado por los paraboloides $z=2-x^2-y^2$ y $z=x^2+y^2$.
+Evaluar la integral $\displaystyle \iiint_E y^2 dV$. La intersección de los paraboloides está dada por $x^2+y^2=1$, que corresponde a un círculo unitario
 en el plano $xy;$ con estos elementos se plantea y evalúa esta integral:
-
-
 
 \begin{multline*}
 \int_{-1}^{1}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}\int_{x^{2}+y^{2}}^{2-x^{2}-y^{2}}y^{2}dzdydx = \int_{-1}^{1}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}\bigg[ y^{3}\bigg]_{z=x^{2}+y^{2}}^{z=2-x^{2}-y^{2}} dydx \\
@@ -1313,31 +1292,33 @@ en el plano $xy;$ con estos elementos se plantea y evalúa esta integral:
 Aplicando un cambio a coordenadas cilíndricas se obtiene
 \begin{multline*}
 \int_{0}^{2\pi }\int_{0}^{1}\int_{r^{2}}^{2-r^{2}}r\left( r\sin \theta\right) ^{2}dzdrd\theta \\
-= \int_{0}^{2\pi}\int_{0}^{1}2r^{3}\left( 1-r^{2}\right) \sin ^{2}\theta drd\theta 
-= \int_{0}^{2\pi }\frac{1}{6}\sin ^{2}\theta d\theta = \frac{\pi}{6} 
+= \int_{0}^{2\pi}\int_{0}^{1}2r^{3}\left( 1-r^{2}\right) \sin ^{2}\theta drd\theta
+= \int_{0}^{2\pi }\frac{1}{6}\sin ^{2}\theta d\theta = \frac{\pi}{6}
 \end{multline*}
 cuyos valores son iguales, como se había establecido teóricamente.
 \end{ejemplo}
 \section{Divergencia y rotacional} \label{divergenciayrotacional}
-Para un campo vectorial 
-${\bf F}(x,y,z)= \langle P(x,y,z),Q(x,y,z),R(x,y,z) \ra,$ definido en $\mathbb{R}^3,$ cuyas funciones componentes poseen derivadas parciales continuas,
-se define el rotacional y la divergencia de ${\bf F}$ que se denotan por $\rot{F}$ y ${\rm div\,}{\bf F},$ y 
-están dados, respectivamente, por 
-\index{Divergencia} \index{Rotacional} 
+Para un campo vectorial
+${\bf F}(x,y,z)= \langle P(x,y,z),Q(x,y,z),R(x,y,z) \ra$, definido en $\mathbb{R}^3$, cuyas funciones componentes poseen derivadas parciales continuas,
+se define el rotacional y la divergencia de ${\bf F}$ que se denotan por $\rot{F}$ y ${\rm div\,}{\bf F}$, y
+están dados, respectivamente, por
+\index{Divergencia} \index{Rotacional}
 $$\rot{F}(x,y,z)= \langle  \frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \rangle $$
 y $${\rm div\,}{\bf F}(x,y,z)= \frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}.$$
-Nótese que $\rot{F}(x,y,z)$ es un campo vectorial y ${\rm div\,}{\bf F}(x,y,z)$ es un campo escalar. 
+Nótese que $\rot{F}(x,y,z)$ es un campo vectorial y ${\rm div\,}{\bf F}(x,y,z)$ es un campo escalar.
 Existe una manera de recordar brevemente dichos cálculos, en términos del operador $\nabla$, que se presentó en la sección 3.3.
 \begin{eqnarray*}
-{\rm rot}{\bf F} &=& \nabla \times{\bf F}  = \left\vert \begin{array}{ccc}
+{\rm rot}{\bf F} &=& \nabla \times{\bf F}  = \left\vert
+\begin{array}{ccc}
 \vi & \vj &  \vk \\  \frac{\partial }{\partial x}  & \frac{\partial }{\partial y}
-  & \frac{\partial }{\partial y}  \\ P & Q & R \end{array}\right\vert\\
+& \frac{\partial }{\partial y}  \\ P & Q & R
+\end{array}\right\vert\\
 {\rm div}{\bf F} &=& \nabla \cdot{\bf F}.
 \end{eqnarray*}
 
 \begin{ejemplo}
-Para el campo vectorial ${\bf F}(x,y,z) =\left\langle xye^{z},z\cos (xy) ,\sin (xy) \right\rangle,$
-es claro que 
+Para el campo vectorial ${\bf F}(x,y,z) =\left\langle xye^{z},z\cos (xy) ,\sin (xy) \right\rangle$,
+es claro que
 $${\rm div}{\bf F}=\frac{\partial }{\partial x} \left( xye^{z}\right) +\frac{\partial }{\partial y} \left( z\cos (xy) \right) +\frac{\partial }{\partial z}(\sin(xy))= ye^{z}-xz\sin xy,$$ y también
 $${\rm rot}{\bf F} = \left\langle (x-1) \cos(xy),y(xe^{z}-\cos(xy)) ,-xe^{z}-yz\sin xy \right\rangle.$$
 \end{ejemplo}

@@ -1,36 +1,24 @@
 % --- PREÁMBULO FINAL OPTIMIZADO PARA LA EDITORIAL UD ---
-
-\usepackage{csquotes}
-
-% 2. CONFIGURACIÓN DEL LENGUAJE Y TIPOGRAFÍA UD (PRIORIDAD AL DISEÑO)
+% CONFIGURACIÓN DEL LENGUAJE Y TIPOGRAFÍA UD
 
 \usepackage{fontspec} % Necesario para LuaLaTeX y la tipografía UD
 \input{esConfigDir/esConfigFonts} % Definición de fuentes (lhseries, medseries, etc.)
 
 \usepackage{geometry}
 \geometry{
-	paperheight=24.0cm,
-	paperwidth=17.0cm,
-	tmargin=2.5cm,
-	bmargin=2.5cm,
-	left=2.5cm,
-	right=2.0cm
-	%   bindingoffset=1.1cm % Usar si se desea ajuste al encuadernar
+  paperheight=24.0cm,
+  paperwidth=17.0cm,
+  tmargin=2.5cm,
+  bmargin=2.5cm,
+  left=2.5cm,
+  right=2.0cm
 }
-
-% 4. ESTILOS GRÁFICOS Y COMANDOS UD (\portadillauno, \espart, \nota, \fuente, 'esstyle')
-
-%%% Editar %%%
-\def\texttitulocorto{Título corto del libro}
-%Lista de autores
-\def\loauthors{Nombre o nombres de los autores del libro separados por comas}
-%%%%%%%%%%%%%%
 
 % Estos son necesarios para las portadillas y las cornisas especiales.
 \input{esConfigDir/esEstilo}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 6. BIBLIOGRAFÍA (biblatex + biber, como Analisis-2-pautado: babel antes, opciones mínimas)
+%%% BIBLIOGRAFÍA (biblatex + biber, como Analisis-2-pautado: babel antes, opciones mínimas)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[backend=biber,style=ieee,sorting=none,isbn=false,doi=true]{biblatex}
 \addbibresource{Referencias/references.bib}
@@ -42,15 +30,11 @@
 % 5. AJUSTES FINALES DE FORMATO DEL PÁRRAFO
 \usepackage[final,nopatch=footnote]{microtype} % Microtipografía avanzada
 \usepackage{ragged2e} % Para control de alineación
-%\usepackage{authblk} % Manejo de autores (no se usa \author/\affil en el proyecto)
 \decimalpoint % Para usar la coma como separador decimal.
 \setlength\parindent{0pt} % Sin sangría al inicio de párrafos, como pide la UD.
-%\newcommand{\normalfonts}{\fontsize{12pt}{14.4pt}\selectfont}
-%\let\normalsize\normalfonts
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 6. HYPERREF (después de biblatex para que los enlaces de citas funcionen)
+%%% HYPERREF (después de biblatex para que los enlaces de citas funcionen)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[hidelinks,unicode,naturalnames,bookmarksopen,bookmarksdepth=2,breaklinks=true,hyperfootnotes=false]{hyperref}
 \urlstyle{same}
@@ -61,41 +45,22 @@
 %\usepackage{subfiles}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 7. CORNISAS Y ESTILO DE PÁGINA (PRIORIDAD DE LA PLANTILLA Y TUS REQUERIMIENTOS)
+%%% CORNISAS Y ESTILO DE PÁGINA (PRIORIDAD DE LA PLANTILLA)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[bottom]{footmisc}
 \usepackage{emptypage}
 
-% Definición del estilo 'plain' para páginas de inicio de capítulo (sin cornisas)
-%\fancypagestyle{plain}{
-	%\fancyhf{} % Limpiar todo
-%\renewcommand{\headrulewidth}{0pt} % Quitar la línea
-%\fancyfoot[C]{\thepage} % Número de página centrado en el pie (estándar)
-%}
-% Definición del estilo 'plain' - AHORA COINCIDE CON EL PIE DE esstyle
-\fancypagestyle{plain}{%
-	\fancyhf{} % Limpiar todo (incluyendo el número centrado anterior)
-\renewcommand{\headrulewidth}{0pt} % Quitar la línea
-	% Pie de página izquierdo (Páginas Pares, E.S. | #)
-\fancyfoot[LE]{{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{}\selectfont{\reflectbox{S}}}{\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{\thinspace|\thinspace}}{\lhseries\scriptsize\thepage}}
-% Pie de página derecho (Páginas Impares, # | E.S.)
-\fancyfoot[RO]{{\lhseries\scriptsize\thepage}{\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{\thinspace|\thinspace}}{\fontsize{10.5}{1}\usefont{T1}{Roboto-TLF}{thin}{}\selectfont{E}}\hspace{-0.5mm}{\footnotesize\usefont{T1}{Inter-Sup}{thin}{}\selectfont{\reflectbox{S}}}}
-\fancyfoot[C]{} % Dejar esto vacío para asegurar que el centro está limpio
-}
-
-
-
 %Esto asegura que la página izquierda de un capítulo nuevo esté vacía (sin cornisas)
 \renewcommand{\cleardoublepage}{%
-\clearpage\ifodd\value{page}\else\hbox{}\thispagestyle{empty}\newpage\fi%
+  \clearpage\ifodd\value{page}\else\hbox{}\thispagestyle{empty}\newpage\fi%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 8. PAQUETES FUNCIONALES Y DE CONTENIDO (MANTENIDOS)
+%%% PAQUETES FUNCIONALES Y DE CONTENIDO (MANTENIDOS)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% PAQUETES DE MATEMÁTICAS Y FÍSICA (TUS PAQUETES ORIGINALES)
+% PAQUETES DE MATEMÁTICAS Y FÍSICA
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -107,72 +72,62 @@
 \usepackage{mathtools}
 \usepackage{bigints}
 
-% PAQUETES DE GRÁFICOS E IMÁGENES (TUS PAQUETES ORIGINALES)
+% PAQUETES DE GRÁFICOS E IMÁGENES
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \graphicspath{{./Fig}{./Img}{./Imgn}}
 
-\usepackage[all]{nowidow}
-
-% COLOR Y LAYOUT (MANTENIDOS)
+% COLOR Y LAYOUT
 \usepackage{xcolor}
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 \usepackage{academicons}
-\usepackage{tcolorbox}
-\tcbuselibrary{breakable,skins}
 \usepackage{multicol}
-%\usepackage{esvect} % no se usa \vv en el proyecto
-%\usepackage{relsize} % no se usa \relsize, \larger, \smaller
 \usepackage{pifont}
 \usepackage{etoolbox}
-\newtcolorbox{graybox}{
-	enhanced,
-	boxrule=0pt,
-	colback=gray!60!white,
-	colupper=white,
-	sharp corners,
-	boxsep=5pt,
-	left=1em, right=0.5em, top=0.5em, bottom=0.5em,
-	nobeforeafter,
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+% Default options for tcolorbox (Instrucción Mathematica and similar)
+\tcbset{
+  breakable,
+  enhanced,
+  before skip=1em,
+  after skip=1em,
 }
 
-% FLOATS Y CAPTIONS (MANTENIDOS)
+\newtcolorbox{graybox}[1][]{
+  enhanced,
+  colback=gray!5,
+  colframe=gray!80,
+  title=#1
+}
+
+% FLOATS Y CAPTIONS
 \usepackage{float}
-%\usepackage{placeins} % no se usa \FloatBarrier
 \usepackage{caption}
-%\usepackage{wrapfig} % no se usa wrapfigure; esEstilo también lo carga si se necesita
 \usepackage{array}
-%\usepackage{subcaption} % no se usa subfigure/subcaption en el proyecto
 \usepackage{fancyvrb}
 \usepackage[absolute,overlay]{textpos}
 
-\captionsetup[table]{hypcap=false}
-\captionsetup[figure]{hypcap=false}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 9. CONFIGURACIONES Y COMANDOS (MANTENIDOS Y AJUSTADOS)
+%%% CONFIGURACIONES Y COMANDOS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % CONFIGURACIÓN DE LEYENDAS (CAPTIONS)
 \captionsetup[figure]{name=Figura, labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
-\captionsetup[table]{name=Tabla, labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
+%\captionsetup[table]{name=Tabla, labelfont=bf, labelsep=period, font=footnotesize, justification=centering, width = 0.8\textwidth}
 \usepackage{enumitem}
 \usepackage{listings}
 %\usepackage{needspace} % no se usa \needspace
 
-
 % COMANDOS PERSONALIZADOS Y ENTORNOS
-
 \newcommand{\letraverbatim}{\fontsize{9pt}{11.5pt}\selectfont}
 \newcommand{\ds}{\displaystyle}
 \newcommand{\bi}{\int}
 \newcommand{\la}{\langle}
 \newcommand{\ra}{\rangle}
 \newcommand{\ei}[1]{\mathbf{e}_{#1}}
-\newcommand{\ptc}{\tcbset{colback=gray!10!white,colframe=black!85!blue}\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando el sólido]}
-\newcommand{\ptr}{\tcbset{colback=gray!10!white,colframe=black!85!blue}\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando la región de Integración]}
-\newcommand{\tc}{\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en Mathematica]}
-\newcommand{\etc}{\end{tcolorbox}}
 \newcommand{\ve}[1]{\mathbf{#1}}
 \DeclareMathOperator{\arcsinh}{arcsinh}
 \DeclareMathOperator{\arccosh}{arccosh}
@@ -181,13 +136,11 @@
 \DeclareMathOperator{\arcsech}{arcsech}
 \DeclareMathOperator{\arccsch}{arccsch}
 \DeclareMathOperator{\rot}{rot}
-\newcommand{\fig}{\begin{figure}}
-\newcommand{\ef}[1]{\caption{#1}\end{figure}}
 \newcommand{\vi}{\mathbf{i}}
 \newcommand{\vj}{\mathbf{j}}
 \newcommand{\vk}{\mathbf{k}}
-\newcommand{\brake}{\\[4pt]} % Se ha corregido la sintaxis de este comando también% Comando auxiliar para saltos
-		
+\newcommand{\brake}{\\[4pt]}
+
 % ENTORNOS DE TEOREMA Y REDEFINICIONES
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{prop}{Proposición}[section]
@@ -201,47 +154,22 @@
 \newcommand{\findemostracion}{\hfill$\square$}
 
 \renewenvironment{proof}
-{\vspace{0.5em}\iniciodemostracion\normalfont\ignorespaces} 
-{\findemostracion\vspace{0.5em}\par} % 
+{\vspace{0.5em}\iniciodemostracion\normalfont\ignorespaces}
+{\findemostracion\vspace{0.5em}\par} %
 
 \renewcommand*{\tablename}{\bf Tabla} % Estilo UD
 \renewcommand*{\figurename}{\bf Figura} % Estilo UD
-		
+
 % AJUSTES DE ÍNDICE Y PROFUNDIDAD DE SECCIONES
 \counterwithout{footnote}{chapter}
 \setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{2} %-----> PONER NUMERO 3 O MÁS PARA CONTAR O NUMERAR
-\renewcommand*\contentsname{\lhseries Contenido} % Estilo UD para Contenido
+\setcounter{secnumdepth}{0} %-----> PONER NUMERO 3 O MÁS PARA CONTAR O NUMERAR
+\renewcommand*\contentsname{Contenido}
 \renewcommand{\cfttoctitlefont}{\hfill\Huge}
 \renewcommand{\cftdot}{}
 
 % SOLUCIÓN DE CONFLICTOS
 \AtBeginDocument{\RenewCommandCopy\qty\SI} % Solución de conflicto physics
 \makeindex
-
-\usepackage{fvextra}   % extiende fancyvrb y añade breaklines, breakanywhere
-\fvset{breaklines=true, breakanywhere=true}
-
-\titlespacing{\section}{0.75cm}{5mm}{2mm}
-\titlespacing{\subsection}{0cm}{5mm}{2mm} 
-\titlespacing{\subsubsection}{0pt}{5mm}{2mm}
-
-\titleformat{\section}[block]{\color{MSBlack}\fontsize{16pt}{19pt} \fontssec}
-{\thesection.\quad}{0pt}{\raggedright}
-
-\titleformat{\subsection}{\color{MSBlack}\fontsize{13pt}{16pt}\fontssubsec}
-{\thesubsection.\quad}{12pt}{}
-
-%\titleformat{\subsubsection}[block]{\normalfont\fontsize{13pt}{2.0mm}}{}{0pt}{\thesubsubsection\quad} DESCOMENTAR EN CASO DE NUMERAR
-
-\titleformat{\subsubsection}[block]
-{\bfseries\fontsize{12pt}{14.5pt}\selectfont} % Negrita (estándar UD para sub-títulos)
-{} % Sin etiqueta numérica
-{0pt}
-{\raggedright}
-
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 
 \raggedbottom

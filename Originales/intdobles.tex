@@ -3,64 +3,58 @@
 Presentamos algunos problemas relativos a las integrales dobles, cuyos principales elementos teóricos se presentaron en la sección \secref{integralesdobles}.
 Se ilustrará la manera de plantear sumas de Riemann, el intercambio en el orden de integración y se parametrizará la región. Esto se hará básicamente, aplicando las fórmulas \ref{integralesdobles1} y \ref{integralesdobles2}.
 \section{
-Sumas de Riemmann
+  Sumas de Riemmann
 }
 \begin{ejemplo}\normalfont
-Evaluar mediante una suma de Riemann el volumen del sólido bajo la superficie $f(x,y)=6-\frac{1}{4}x^{3}-y^{2}$ sobre el plano $xy$ con $-1\leq x\leq 2,$ $0\leq y\leq 2.$
+  Evaluar mediante una suma de Riemann el volumen del sólido bajo la superficie $f(x,y)=6-\frac{1}{4}x^{3}-y^{2}$ sobre el plano $xy$ con $-1\leq x\leq 2$, $0\leq y\leq 2$.
 
-El rectángulo $R=\left[ -1,2\right] \times \left[ 0,2\right] $ se dividirá en $nm$ subrectángulos, $n$ para el intervalo $\left[ -1,2\right] $ y  $m$ para el intervalo $\left[0,2\right] .$ Asumiremos que los rectángulos en $x$ e $y,$ son iguales, respectivamente; esto es
-$\Delta x=\frac{2-(-1) }{n}= \frac{3}{n},\,\,\Delta y=\frac{2-0}{m}= \frac{2}{m}.$
-Por otra parte,
+  El rectángulo $R=\left[ -1,2\right] \times \left[ 0,2\right] $ se dividirá en $nm$ subrectángulos, $n$ para el intervalo $\left[ -1,2\right] $ y  $m$ para el intervalo $\left[0,2\right] $. Asumiremos que los rectángulos en $x$ e $y$, son iguales, respectivamente; esto es
+  $\Delta x=\frac{2-(-1) }{n}= \frac{3}{n},\,\,\Delta y=\frac{2-0}{m}= \frac{2}{m}$.
+  Por otra parte,
 
+  \begin{multline*}
+    x_{0}=-1,x_{1}=-1+\Delta x,x_{2}=-1+2\Delta x,\,\cdots, \\
+    x_{i}=-1+i\Delta x,\cdots,  x_{n}=-1+n\Delta x \\[0.1cm]
+    y_{0}=0,y_{1}=0+\Delta y,y_2=2\Delta y,\,\cdots ,y_{j}=j\Delta y,\,\cdots , \\ y_{m}=m\Delta y=m\left(\frac{2}{m}\right) = 2.
+  \end{multline*}
 
-\begin{multline*}
-x_{0}=-1,x_{1}=-1+\Delta x,x_{2}=-1+2\Delta x,\,\cdots, \\
-x_{i}=-1+i\Delta x,\cdots,  x_{n}=-1+n\Delta x \\[0.1cm]
-y_{0}=0,y_{1}=0+\Delta y,y_2=2\Delta y,\,\cdots ,y_{j}=j\Delta y,\,\cdots , \\ y_{m}=m\Delta y=m\left(\frac{2}{m}\right) = 2.
-\end{multline*}
+  \begin{figure}[H]
+    \centering
+    \caption{$f(x,y)=6-\frac{1}{4}x^{3}-y^{2}$.}
+    \includegraphics[width=0.4\textwidth]{Img/T_69c.pdf} \hspace{5mm}
+    \includegraphics[width=0.4\textwidth]{Img/T_69b.pdf}
 
+    \includegraphics[width=0.4\textwidth]{Img/T_69a.pdf}
+  \end{figure}
 
+  En resumen $x_{i}=-1+\frac{3i}{n}$, $y_{j}=\frac{2j}{m}$.
+  Si $( x_{i}^{\ast },y_{j}^{\ast}) $ es un punto cualquiera en el rectángulo
+  $\left[ x_{i},x_{i+1}\right] \times \left[ y_{j},y_{j+1}\right]$,
+  en particular consideraremos $\left( x_{i},y_{j}\right) $, entonces el volumen aproximado de paralelepípedo está dado por
+  \begin{eqnarray*}
+    f\left( x_{i},y_{j}\right) \Delta x\Delta y &=&\left( 6-\frac{1}{4}\left( -1+ \frac{3i}{n}\right) ^{3}-\left( \frac{2j}{m}\right) ^{2}\right) \frac{3}{n} \frac{2}{m} \\
+    &=& \frac{75}{2mn}-\frac{24j^{2}}{m^{3}n}+\frac{81i^{2}}{2mn^{3}}-\frac{81i^{3}}{2mn^{4}}-\frac{27i}{2mn^{2}}
+  \end{eqnarray*}
+  Sumando todos estos términos, obtendremos el volumen aproximado del sólido mencionado.
+  \begin{multline*}
+    \sum_{j=1}^m\sum_{i=1}^n f(x_i,y_j) \Delta x\Delta y
+    % = \sum_{j=1}^{m} \sum_{i=1}^{n}\left(\frac{75}{2mn}-\frac{24j^{2}}{m^{3}n}+\frac{81i^{2}}{2mn^{3}}-\frac{81i^{3}}{2mn^{4}}-\frac{27i}{2mn^{2}}\right)  \\
+    = \frac{209}{8}-\frac{4}{m^{2}}-\frac{27}{4n}-\frac{27}{8n^{2}}-\frac{12}{m}
+  \end{multline*}
 
-\begin{figure}[H]
-\centering
-\caption{$f(x,y)=6-\frac{1}{4}x^{3}-y^{2}.$}
-\includegraphics[width=0.4\textwidth]{Img/T_69c.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Img/T_69b.pdf}
-
-\includegraphics[width=0.4\textwidth]{Img/T_69a.pdf}
-\end{figure}
-
-En resumen $x_{i}=-1+\frac{3i}{n},$ $y_{j}=\frac{2j}{m}.$
-Si $( x_{i}^{\ast },y_{j}^{\ast}) $ es un punto cualquiera en el rectángulo
-$\left[ x_{i},x_{i+1}\right] \times \left[ y_{j},y_{j+1}\right],$
-en particular consideraremos $\left( x_{i},y_{j}\right) ,$ entonces el volumen aproximado de paralelepípedo está dado por
-\begin{eqnarray*}
-f\left( x_{i},y_{j}\right) \Delta x\Delta y &=&\left( 6-\frac{1}{4}\left( -1+ \frac{3i}{n}\right) ^{3}-\left( \frac{2j}{m}\right) ^{2}\right) \frac{3}{n} \frac{2}{m} \\
-&=& \frac{75}{2mn}-\frac{24j^{2}}{m^{3}n}+\frac{81i^{2}}{2mn^{3}}-\frac{81i^{3}}{2mn^{4}}-\frac{27i}{2mn^{2}}
-\end{eqnarray*}
-Sumando todos estos términos, obtendremos el volumen aproximado del sólido mencionado.
-\begin{multline*}
-\sum_{j=1}^m\sum_{i=1}^n f(x_i,y_j) \Delta x\Delta y
-% = \sum_{j=1}^{m} \sum_{i=1}^{n}\left(\frac{75}{2mn}-\frac{24j^{2}}{m^{3}n}+\frac{81i^{2}}{2mn^{3}}-\frac{81i^{3}}{2mn^{4}}-\frac{27i}{2mn^{2}}\right)  \\
-= \frac{209}{8}-\frac{4}{m^{2}}-\frac{27}{4n}-\frac{27}{8n^{2}}-\frac{12}{m}
-\end{multline*}
-
-La aproximación mejora si el número de rectángulos en que se divide $R$ es muy grande; de manera alternativa, si el ancho y el largo de dichos rectángulos tienden a cero; es por este motivo que se considera el siguiente límite:
-\[
-\lim_{n,m\to \infty }\left(\sum_{j=1}^{m}\sum_{i=1}^{n}f\left( x_{i},y_{j}\right) \Delta x\Delta y\right) = \frac{209}{8}.
-\]
-Evaluando la integral doble, se obtiene el mismo valor:
-\[
-\int_{-1}^{2}\int_{0}^{2}\left( 6-\frac{1}{4}x^{3}-y^{2}\right) \,dy\,dx
-=\int_{-1}^{2}\left( \frac{28}{3}-\frac{1}{2}x^{3}\right) dx= \frac{209}{8}.
-\]
-Los gráficos, la suma de Riemann con su correspondiente límite y la integral doble se evalúan en \verb"Mathematica" con ayuda de las siguientes instrucciones:
+  La aproximación mejora si el número de rectángulos en que se divide $R$ es muy grande; de manera alternativa, si el ancho y el largo de dichos rectángulos tienden a cero; es por este motivo que se considera el siguiente límite:
+  \[
+    \lim_{n,m\to \infty }\left(\sum_{j=1}^{m}\sum_{i=1}^{n}f\left( x_{i},y_{j}\right) \Delta x\Delta y\right) = \frac{209}{8}.
+  \]
+  Evaluando la integral doble, se obtiene el mismo valor:
+  \[
+    \int_{-1}^{2}\int_{0}^{2}\left( 6-\frac{1}{4}x^{3}-y^{2}\right) \,dy\,dx
+    =\int_{-1}^{2}\left( \frac{28}{3}-\frac{1}{2}x^{3}\right) dx= \frac{209}{8}.
+  \]
+  Los gráficos, la suma de Riemann con su correspondiente límite y la integral doble se evalúan en \verb"Mathematica" con ayuda de las siguientes instrucciones:
 \end{ejemplo}
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 f[x_,y_]:=6-x^3/4-y^2
 Plot3D[f[x,y],{x,-1,2},{y,0,2}]
 DiscretePlot3D[f[x,y],{x,-1,2,1/6},{y,0,2,1/8},
@@ -72,58 +66,50 @@ Integrate[f[x,y],{x,-1,2},{y,0,2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 \begin{ejemplo}\normalfont
-Usando sumas de Riemann, hallar el volumen del sólido bajo la superficie $f(x,y) =3-x^{2}y$ sobre el plano $xy,$ con $-3/2\leq x\leq 3/2,$
-$0\leq y\leq 5/4.$
+Usando sumas de Riemann, hallar el volumen del sólido bajo la superficie $f(x,y) =3-x^{2}y$ sobre el plano $xy$, con $-3/2\leq x\leq 3/2$,
+$0\leq y\leq 5/4$.
 
 El rectángulo $\left[ -3/2,3/2\right] \times \left[ 0,5/4\right] $ se dividirá en $nm$ subrectángulos.
 $n$ para el intervalo $\left[ -3/2,3/2\right] $ y $m$ para el intervalo $\left[ 0,5/4\right] $.
 
-
-
-
 \begin{figure}[H]
-\centering
-\caption{$f(x,y)=3-x^{2}y$}
-\includegraphics[width=0.4\textwidth]{Img/T_70a.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Img/T_70b.pdf}
+  \centering
+  \caption{$f(x,y)=3-x^{2}y$}
+  \includegraphics[width=0.4\textwidth]{Img/T_70a.pdf} \hspace{5mm}
+  \includegraphics[width=0.4\textwidth]{Img/T_70b.pdf}
 
-\includegraphics[width=0.4\textwidth]{Img/T_70c.pdf}
+  \includegraphics[width=0.4\textwidth]{Img/T_70c.pdf}
 \end{figure}
 
 En este caso, la partición de los intervalos está dada por:
 \[
-\Delta x=\frac{\frac{3}{2}-\left(-\frac{3}{2}\right) }{n}= \frac{3}{n}\qquad \text{y}\qquad \Delta y=\frac{5/4-0}{m}= \frac{5}{4m}\text{.}
+  \Delta x=\frac{\frac{3}{2}-\left(-\frac{3}{2}\right) }{n}= \frac{3}{n}\qquad \text{y}\qquad \Delta y=\frac{5/4-0}{m}= \frac{5}{4m}\text{.}
 \]
 Entonces, los puntos de partición son:
 \[
-x_{i}=-\frac{3}{2}+i\Delta x = -\frac{3}{2}+\frac{3i}{n}\qquad \text{y}\qquad y_{j}=j\Delta y = \frac{5j}{4m}\text{.}
+  x_{i}=-\frac{3}{2}+i\Delta x = -\frac{3}{2}+\frac{3i}{n}\qquad \text{y}\qquad y_{j}=j\Delta y = \frac{5j}{4m}\text{.}
 \]
 Evaluando la función $f(x, y)$ en estos puntos, se obtiene:
 \[
-f\left( x_{i},y_{j}\right) =3-x_{i}^{2}y_{j}=3-\left(\frac{3i}{n}-\frac{3}{2}\right)^{2}\left(\frac{5j}{4m}\right) = 3-\frac{45 j i^2}{4 m n^2}+\frac{45 j i}{4 m n}-\frac{45 j}{16 m}.
+  f\left( x_{i},y_{j}\right) =3-x_{i}^{2}y_{j}=3-\left(\frac{3i}{n}-\frac{3}{2}\right)^{2}\left(\frac{5j}{4m}\right) = 3-\frac{45 j i^2}{4 m n^2}+\frac{45 j i}{4 m n}-\frac{45 j}{16 m}.
 \]
 Aplicando la suma de Riemann, el resultado es:
 \begin{equation*}
-	\sum_{i=1}^{n}\sum_{j=1}^{m}f\left( x_{i},y_{j}\right) \Delta x\Delta y = \frac{1215}{128}-\frac{225}{64 m n^2}-\frac{225}{128 m}-\frac{225}{64 n^2}.
+  \sum_{i=1}^{n}\sum_{j=1}^{m}f\left( x_{i},y_{j}\right) \Delta x\Delta y = \frac{1215}{128}-\frac{225}{64 m n^2}-\frac{225}{128 m}-\frac{225}{64 n^2}.
 \end{equation*}
 Al tomar el límite de la suma de Riemann, se obtiene:
 \[
-\lim_{n,m\rightarrow \infty }\left( \sum_{i=1}^{n}\sum_{j=1}^{m}f(x_{i},y_{j}) \Delta x\Delta y\right) = \frac{1215}{128}
+  \lim_{n,m\rightarrow \infty }\left( \sum_{i=1}^{n}\sum_{j=1}^{m}f(x_{i},y_{j}) \Delta x\Delta y\right) = \frac{1215}{128}
 \]
 Por otro lado, al evaluar la integral doble se obtiene el mismo valor:
 \[
-\int_{-\frac{3}{2}}^{\frac{3}{2}}\int_{0}^{\frac{5}{4}}\left( 3-x^{2}y\right) dydx=\int_{-\frac{3}{2}}^{\frac{3}{2}}\left[ 3y-\frac{1}{2}x^{2}y^{2}\right] _{y=0}^{y=\frac{5}{4}}dx=\frac{1215}{128}\text{.}
+  \int_{-\frac{3}{2}}^{\frac{3}{2}}\int_{0}^{\frac{5}{4}}\left( 3-x^{2}y\right) dydx=\int_{-\frac{3}{2}}^{\frac{3}{2}}\left[ 3y-\frac{1}{2}x^{2}y^{2}\right] _{y=0}^{y=\frac{5}{4}}dx=\frac{1215}{128}\text{.}
 \]
 Esta suma de Riemann, su correspondiente límite y la integral doble, se evalúan en \verb"Mathematica" con ayuda de las siguientes instrucciones:
 \end{ejemplo}
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 f[x_,y_]:=3-x^2*y
 Plot3D[f[x,y],{x,-3/2,3/2},{y,0,5/4}]
 DiscretePlot3D[f[x,y],{x,-3/2,3/2,1/10,
@@ -135,14 +121,10 @@ Integrate[f[x,y],{x,-3/2,3/2},{y,0,5/4}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \begin{ejemplo}\normalfont
-Utilizando una suma de Riemann, evaluar la integral doble de $f(x,y)=x^2 \sin (2y)+y^2 \cos (x)$ sobre el rectángulo $[0,\pi/2]\times[0,\pi/2].$
+Utilizando una suma de Riemann, evaluar la integral doble de $f(x,y)=x^2 \sin (2y)+y^2 \cos (x)$ sobre el rectángulo $[0,\pi/2]\times[0,\pi/2]$.
 
 \vskip1cm
-
 
 \begin{figure}[H]
 \centering
@@ -159,31 +141,28 @@ $x_i=\frac{\pi i}{2n}$ y $y_j=\frac{\pi j}{2m}$. Por otra parte,
 \[f(x_i,y_j)\Delta x\Delta y=\frac{\pi^4i^2\sin\left(\frac{\pi j}{m}\right)}{4mn^3}+\frac{\pi^4j^2\cos\left(\frac{\pi i}{2n}\right)}{4m^3n}\]
 y
 \begin{equation*}
-	\resizebox{\linewidth}{!}{$
-		\displaystyle
-		\sum_{i=1}^n\sum_{j=1}^m f(x_i,y_j)\,\Delta x\,\Delta y
-		=\frac{\pi^4(2m^2+3m+1)}{192m^2n}\left(\cot\frac{\pi}{4n}-1\right)
-		+\frac{\pi^4(2n^2+3n+1)}{96mn^2}\cot\frac{\pi}{2m}.
-		$}
+\resizebox{\linewidth}{!}{$
+  \displaystyle
+  \sum_{i=1}^n\sum_{j=1}^m f(x_i,y_j)\,\Delta x\,\Delta y
+  =\frac{\pi^4(2m^2+3m+1)}{192m^2n}\left(\cot\frac{\pi}{4n}-1\right)
+  +\frac{\pi^4(2n^2+3n+1)}{96mn^2}\cot\frac{\pi}{2m}.
+$}
 \end{equation*}
 
 entonces
 \begin{equation*}
-	\resizebox{\linewidth}{!}{$
-		\displaystyle
-		\int_0^{\frac{\pi}{2}}\!\int_0^{\frac{\pi}{2}}\big(x^2\sin(2y)+y^2\cos x\big)\,dy\,dx
-		= \lim_{n,m\to\infty}\Big(\sum_{i=1}^n\sum_{j=1}^m f(x_i,y_j)\,\Delta x\,\Delta y\Big)
-		= \frac{\pi^3}{12}.
-		$}
+\resizebox{\linewidth}{!}{$
+  \displaystyle
+  \int_0^{\frac{\pi}{2}}\!\int_0^{\frac{\pi}{2}}\big(x^2\sin(2y)+y^2\cos x\big)\,dy\,dx
+  = \lim_{n,m\to\infty}\Big(\sum_{i=1}^n\sum_{j=1}^m f(x_i,y_j)\,\Delta x\,\Delta y\Big)
+  = \frac{\pi^3}{12}.
+$}
 \end{equation*}
 
 Las figuras y cálculos anteriores se hicieron en \verb"Mathematica" ejecutando las siguientes instrucciones.
 \end{ejemplo}
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 f[x_,y_]:=y^2*Cos[x]+x^2*Sin[2*y]
 DiscretePlot3D[f[x,y],{x,0,Pi/2,Pi/35},
 {y,0,Pi/2,Pi/35},ExtentSize->Full,PlotStyle->Gray]
@@ -195,22 +174,17 @@ Integrate[f[x,y],{y,0,Pi/2},{x,0,Pi/2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Uno de los procedimientos que se utilizan con frecuencia para evaluar integrales dobles se ilustra a continuación.
 
 \section{Cambio en el orden de integración}
 
-
-
 \begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-\item Evaluar la integral de la función $f(x,y)=xy$, sobre la región $D$ en el primer cuadrante del plano $xy$ acotada por las figuras de las expresiones $y=x,\,\,\,x^{2}+y^{2}=4$ y $x=2.$La intersección de la recta inclinada y la circunferencia corresponden en el primer cuadrante a $x=\sqrt{2}.$
+\item Evaluar la integral de la función $f(x,y)=xy$, sobre la región $D$ en el primer cuadrante del plano $xy$ acotada por las figuras de las expresiones $y=x,\,\,\,x^{2}+y^{2}=4$ y $x=2$. La intersección de la recta inclinada y la circunferencia corresponden en el primer cuadrante a $x=\sqrt{2}$.
 \end{enumerate}
-
 
 \begin{figure}[H]
 \centering
-\caption{$y=x,$ $x^{2}+y^{2}=4$}
+\caption{$y=x$, $x^{2}+y^{2}=4$}
 \includegraphics[width=0.8\textwidth]{Fig/83.pdf}
 \fuentepropia
 \end{figure}
@@ -218,13 +192,10 @@ Uno de los procedimientos que se utilizan con frecuencia para evaluar integrales
 Para integrar en el orden $dxdy$, hay que tener en cuenta que hay una parte de la región donde $x$
 recorre los puntos (de manera horizontal) desde la circunferencia hasta la recta $x=2$, con
 $y \in [0,\sqrt{2}]$ y hay otra región de la región en la cual $x$ recorre los puntos desde la recta $y=x$
-hasta la recta $x=2,$ con $y \in [\sqrt{2},2].$ 
-
+hasta la recta $x=2$, con $y \in [\sqrt{2},2]$.
 
 En el orden $dydx$ se observa del gráfico que $y$ recorre los puntos (de manera vertical)
-desde la circunferencia hasta la recta $y=x$, con $x\in[\sqrt{2},2].$
-
-
+desde la circunferencia hasta la recta $y=x$, con $x\in[\sqrt{2},2]$.
 
 \begin{figure}[H]
 \centering
@@ -237,42 +208,30 @@ desde la circunferencia hasta la recta $y=x$, con $x\in[\sqrt{2},2].$
 Apoyándonos en el gráfico, la integral $\displaystyle\iint_{D}xydA$ se puede evaluar como sigue
 \[\int_{0}^{\sqrt{2}}\int_{\sqrt{4-y^{2}}}^{2}xydxdy+\int_{\sqrt{2}}^{2}\int_{y}^{2}xydxdy=\int_{\sqrt{2}}^{2}\int_{\sqrt{4-x^{2}}}^{x}xydydx=1.\]
 
-
-
 En coordenadas polares, la ecuación $x^2+y^2=4$ corresponde a $r=2$ y la recta $x=2$ se escribe como $r=2\sec \theta$.
 Del gráfico se observa que $r$ recorre los puntos desde la circunferencia $r=2$ hasta la recta $r=2\sec \theta$.
 La integral, usando la fórmula \ref{integraldoblepolares}, se evalúa de la siguiente manera:
 \[\int_{0}^{\pi /4}\int_{2}^{2\sec \theta }r^{3}\sin \theta \cos\theta drd\theta =1.\]
 
-
 \begin{figure}[H]
 \centering
-\caption{$2 \leq r \leq 2 \sec \theta.$}
+\caption{$2 \leq r \leq 2 \sec \theta$.}
 \includegraphics[width=0.5\textwidth]{Fig/86.pdf}
 \fuentepropia
 \end{figure}
 
 Estos cálculos se hicieron ejecutando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x*y,{x,Sqrt[2],2},{y,Sqrt[4-x^2],x}]
 Integrate[x*y,{y,0,Sqrt[2]},{x,Sqrt[4-y^2],2}]+
 Integrate[x*y,{y,Sqrt[2],2},{x,y,2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 El mismo valor se obtiene de la siguiente manera.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando la región de integración, top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-Un punto sobre la circunferencia tiene la forma {\small $P\left( 2\cos u, 2\sin u\right)$}, con {\small $u\in\left[0,\frac{\pi}{4}\right]$} y un punto sobre la recta $y=x$, fijando la primera coordenada, es de forma {\small $Q\left( 2\cos u, 2\cos u\right)$}. Por lo tanto, una combinación convexa de estos puntos parametriza la región de integración, es decir,
+\begin{tcolorbox}[title=\bf Parametrizando la región de integración]Un punto sobre la circunferencia tiene la forma {\small $P\left( 2\cos u, 2\sin u\right)$}, con {\small $u\in\left[0,\frac{\pi}{4}\right]$} y un punto sobre la recta $y=x$, fijando la primera coordenada, es de forma {\small $Q\left( 2\cos u, 2\cos u\right)$}. Por lo tanto, una combinación convexa de estos puntos parametriza la región de integración, es decir,
 
 {\footnotesize \[
 \mathbf{r}(u,v) = (1-v)P + vQ = \left\langle 2\cos u,2(1-v)\sin u+2v\cos u,0\right\rangle.\]}
@@ -287,16 +246,14 @@ Derivando parcialmente se obtienen los siguientes vectores:
 \end{align*}
 }
 Además, {\small \[xy = 4\left((1-v)\sin u+v\cos u\right)\cos u\]} y
-{\small $\left\Vert \mathbf{r}_{u}\times \mathbf{r}_{v}\right\Vert =\left\vert 4( \sin u- \cos u) \sin u\right\vert,$}
+{\small $\left\Vert \mathbf{r}_{u}\times \mathbf{r}_{v}\right\Vert =\left\vert 4( \sin u- \cos u) \sin u\right\vert$,}
 de modo que la integral $\iint_D xy dA$ se convierte en
 \\[0.1em]
 \begin{center}
-\small 
-$\int_{0}^{1}\int_{0}^{\pi /4}16\left|\cos u((1-v)\sin u+v\cos u)(\sin u-\cos u)\sin u\right| dv du= 1.$
+\small
+$\int_{0}^{1}\int_{0}^{\pi /4}16\left|\cos u((1-v)\sin u+v\cos u)(\sin u-\cos u)\sin u\right| dv du= 1$.
 \end{center}
 \end{tcolorbox}
-
-
 
 \begin{enumerate}[start=2,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
 \item Invertir el orden de integración y evaluar la siguiente integral:
@@ -307,14 +264,14 @@ $y=0$, $y=x^2$ y $y=2-x$.
 \end{enumerate}
 
 \begin{figure}[H]
-	\centering
-	\caption{$\sqrt{y}\leq x \leq 2-y $}
-	
-	\includegraphics[width=0.28\linewidth]{Fig/80.pdf}
-	\includegraphics[width=0.28\linewidth]{Fig/81.pdf}
-	\includegraphics[width=0.25\linewidth]{Fig/82.pdf}
-	
-	\fuentepropia
+\centering
+\caption{$\sqrt{y}\leq x \leq 2-y $}
+
+\includegraphics[width=0.28\linewidth]{Fig/80.pdf}
+\includegraphics[width=0.28\linewidth]{Fig/81.pdf}
+\includegraphics[width=0.25\linewidth]{Fig/82.pdf}
+
+\fuentepropia
 \end{figure}
 %
 
@@ -326,53 +283,40 @@ Se puede observar que en el orden $dydx$, $y$ recorre (verticalmente) los puntos
 }
 Estas integrales se evalúan con la ayuda de las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x*y,{y,0,1},{x,Sqrt[y],2-y}]
 Integrate[x*y,{x,0,1},{y,0,x^2}]+Integrate[x*y,
 {x,1,2},{y,0,2-x}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Otra manera de evaluar la misma integral es la siguiente:
 
+\begin{tcolorbox}[title=\bf Parametrizando la región de integración]
+La porción de parábola se parametriza por $\la \sqrt{t},t\ra$, mientras que la recta se representa por $\la 2-t,t\ra $, para $t\in \lbrack 0,1]$.
+Una combinación convexa de estas parametriza la región de interés, esto es
+{\small
+\[{\bf r}(t,u)=(1-u)\la 2-t,t\ra +u\la \sqrt{t},t\ra = \la (u-1)(t-2)+u\sqrt{t},t\ra\]}
+con $u\in \lbrack 0,1]$. De esta función se obtienen los siguientes vectores:
+{\small
+\[{\bf r}_{u} =\la t+\sqrt{t}-2,0\ra,{\bf r}_{t} =\la u+\frac{u}{2\sqrt{t}}-1,1\ra.\]}
 
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Parametrizando la región de integración, top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-	
-	La porción de parábola se parametriza por $\la \sqrt{t},t\ra,$ mientras que la recta se representa por $\la 2-t,t\ra ,$ para $t\in \lbrack 0,1].$
-	Una combinación convexa de estas parametriza la región de interés, esto es
-	{\small
-	\[{\bf r}(t,u)=(1-u)\la 2-t,t\ra +u\la \sqrt{t},t\ra = \la (u-1)(t-2)+u\sqrt{t},t\ra\]}
-	con $u\in \lbrack 0,1].$ De esta función se obtienen los siguientes vectores:
-	{\small
-	\[{\bf r}_{u} =\la t+\sqrt{t}-2,0\ra,{\bf r}_{t} =\la u+\frac{u}{2\sqrt{t}}-1,1\ra.\]}
-	
-	Los extendemos a $\mathbb{R}^{3},$ para obtener
-	${\bf r}_{u}\times {\bf r}_{t}= \la 0,0,t+\sqrt{t}-2\ra.$
-	De lo cual se sigue que $\left\Vert{\bf r}_{u}\times{\bf r}_{t}\right\Vert=\left\vert t+\sqrt{t}-2\right\vert.$
-	Con la definición de la función se observa que $xy=(\left(u-1\right) \left( t-2\right) +\sqrt{t}u) t,$ entonces:
-	\\[0.6em]
-	\resizebox{\linewidth}{!}{$
-		\iint_{R}xydA=\int_{0}^{1}\int_{0}^{1}\left((u-1)(t-2)+u\sqrt{t}\right)t\left|t+\sqrt{t}-2\right|\,du\,dt=\frac{7}{24}
-		$}
+Los extendemos a $\mathbb{R}^{3}$, para obtener
+${\bf r}_{u}\times {\bf r}_{t}= \la 0,0,t+\sqrt{t}-2\ra$.
+De lo cual se sigue que $\left\Vert{\bf r}_{u}\times{\bf r}_{t}\right\Vert=\left\vert t+\sqrt{t}-2\right\vert$.
+Con la definición de la función se observa que $xy=(\left(u-1\right) \left( t-2\right) +\sqrt{t}u) t$, entonces:
+\\[0.6em]
+\resizebox{\linewidth}{!}{$
+\iint_{R}xydA=\int_{0}^{1}\int_{0}^{1}\left((u-1)(t-2)+u\sqrt{t}\right)t\left|t+\sqrt{t}-2\right|\,du\,dt=\frac{7}{24}
+$}
 \end{tcolorbox}
 
-
-
 \begin{enumerate}[start=3,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-	\item Determinar el centro de masa de una lámina delgada cuya densidad de área está dada por
-$\delta (x,y)=x$ $kg/m^2$ y posee la forma de la región en el primer cuadrante interior a la circunferencia con ecuación $x^{2}+y^{2}=4$ y exterior a la circunferencia $x^{2}+y^{2}=2x.$
+\item Determinar el centro de masa de una lámina delgada cuya densidad de área está dada por
+$\delta (x,y)=x$ $kg/m^2$ y posee la forma de la región en el primer cuadrante interior a la circunferencia con ecuación $x^{2}+y^{2}=4$ y exterior a la circunferencia $x^{2}+y^{2}=2x$.
 \end{enumerate}
 
-
-
 Para plantear las integrales dobles utilizando coordenadas rectangulares, se debe tener en cuenta que en el orden $dxdy$, el área considerada se divide en tres porciones. En una de ellas $x$ toma valores desde el eje $y$ hasta la circunferencia de radio $1$.
-
 
 \begin{figure}[H]
 \centering
@@ -381,14 +325,12 @@ Para plantear las integrales dobles utilizando coordenadas rectangulares, se deb
 \fuentepropia
 \end{figure}
 
-En una segunda región $x$ toma valores desde la circunferencia de radio $1$ hasta la circunferencia mayor y en una tercera región $x$ recorre los puntos desde el eje $y$ hasta la circunferencia de radio $2$. En el orden $dydx$, $y$ recorre los puntos desde la circunferencia de radio $1$ hasta la circunferencia de radio $2$ con $x\in [0,2].$
+En una segunda región $x$ toma valores desde la circunferencia de radio $1$ hasta la circunferencia mayor y en una tercera región $x$ recorre los puntos desde el eje $y$ hasta la circunferencia de radio $2$. En el orden $dydx$, $y$ recorre los puntos desde la circunferencia de radio $1$ hasta la circunferencia de radio $2$ con $x\in [0,2]$.
 
 En coordenadas polares la ecuación de la circunferencia $x^2+y^2=4$ se reescribe como $r=2$
-y la ecuación $x^2+y^2=2x$ corresponde a $r^2=2r\cos \theta,$ es decir, $r=2 \cos \theta.$ Es por esto que $r$
+y la ecuación $x^2+y^2=2x$ corresponde a $r^2=2r\cos \theta$, es decir, $r=2 \cos \theta$. Es por esto que $r$
 recorre los puntos desde la circunferencia $r=2 \cos \theta$ hasta $r=2;$
 es decir, la región de interés se describe con $2\cos \theta \leq r \leq 2$ y $0\leq  \theta \leq \pi/2$.
-
-
 
 \begin{figure}[H]
 \centering
@@ -420,10 +362,7 @@ Por lo tanto, el centro de masa de la lámina es
 
 Los cálculos para obtener los momentos y la masa se hacen usando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x,{x,0,2},{y,Sqrt[2*x-x^2],Sqrt[4-x^2]}]
 Integrate[x*y,{x,0,2},{y,Sqrt[2*x-x^2],Sqrt[4-x^2]}]
 Integrate[x^2,{x,0,2},{y,Sqrt[2*x-x^2],Sqrt[4-x^2]}]
@@ -431,17 +370,14 @@ Integrate[r^2*Cos[t],{t,0,Pi/2},{r,2*Cos[t],2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 %\clearpage
 
 \begin{enumerate}[start=4,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-	
+
 \item
-Determinar las coordenadas $(\overline{x},\overline{y})$ del centro de masa de una lámina determinada por la región en el primer cuadrante acotada por las figuras de las ecuaciones $x^2+y^2=4$ y $x^2+y^2=2y,$
+Determinar las coordenadas $(\overline{x},\overline{y})$ del centro de masa de una lámina determinada por la región en el primer cuadrante acotada por las figuras de las ecuaciones $x^2+y^2=4$ y $x^2+y^2=2y$,
 cuya densidad de masa en cualquier punto $(x,y)$ es $\delta (x,y)=xy^2$. La forma de la lámina se presenta en la figura \ref{fig510}.
 \end{enumerate}
-
 
 \begin{figure}[H]
 \centering
@@ -453,9 +389,7 @@ cuya densidad de masa en cualquier punto $(x,y)$ es $\delta (x,y)=xy^2$. La form
 
 Con el propósito de plantear las integrales dobles que determinan la masa y los demás elementos requeridos, observemos en  los siguientes gráficos la manera como se recorre la región de integración.
 
-
-En el orden $dxdy$, $x$ recorre los puntos desde la circunferencia menor hasta la mayor, para $y \in [0,2]$. En el orden $dydx$, la región se divide en tres porciones. En una parte $y$ recorre los puntos desde el eje $x$ hasta la circunferencia menor con $y \in [0,1]$; en una segunda parte $y$ recorre los puntos desde la circunferencia menor hasta la circunferencia mayor, con $y \in [1,2]$, y en la tercera parte $y$ recorre los puntos desde el eje $x$ hasta la circunferencia mayor con $y \in [0,\sqrt{3}]$. También se debe observar que de la ecuación $x^2+y^2=2y$ se desprende $y=1 \pm \sqrt{1-x^2}.$
-
+En el orden $dxdy$, $x$ recorre los puntos desde la circunferencia menor hasta la mayor, para $y \in [0,2]$. En el orden $dydx$, la región se divide en tres porciones. En una parte $y$ recorre los puntos desde el eje $x$ hasta la circunferencia menor con $y \in [0,1]$; en una segunda parte $y$ recorre los puntos desde la circunferencia menor hasta la circunferencia mayor, con $y \in [1,2]$, y en la tercera parte $y$ recorre los puntos desde el eje $x$ hasta la circunferencia mayor con $y \in [0,\sqrt{3}]$. También se debe observar que de la ecuación $x^2+y^2=2y$ se desprende $y=1 \pm \sqrt{1-x^2}$.
 
 \begin{figure}[H]
 \centering
@@ -472,11 +406,11 @@ En coordenadas polares se satisface que $2\sin \theta \leq r \leq 2$ para $0 \le
 \[
 \resizebox{\textwidth}{!}{$
 \begin{aligned}
-M &= \int_{0}^{1} \int_{0}^{1-\sqrt{1-x^{2}}}xy^{2} \,dy\,dx 
-+ \int_{0}^{1} \int_{1+\sqrt{1-x^{2}}}^{\sqrt{4-x^{2}}} xy^{2} \,dy\,dx 
+M &= \int_{0}^{1} \int_{0}^{1-\sqrt{1-x^{2}}}xy^{2} \,dy\,dx
++ \int_{0}^{1} \int_{1+\sqrt{1-x^{2}}}^{\sqrt{4-x^{2}}} xy^{2} \,dy\,dx
 + \int_{1}^{2} \int_{0}^{\sqrt{4-x^{2}}} xy^{2} \,dy\,dx \\
-&= \int_{0}^{2} \int_{\sqrt{2y - y^{2}}}^{\sqrt{4 - y^{2}}} xy^{2} \,dx\,dy 
-= \int_{0}^{\frac{\pi}{2}} \int_{2\sin\theta}^{2} r^{4} \sin^{2}\theta \cos\theta \,dr\,d\theta 
+&= \int_{0}^{2} \int_{\sqrt{2y - y^{2}}}^{\sqrt{4 - y^{2}}} xy^{2} \,dx\,dy
+= \int_{0}^{\frac{\pi}{2}} \int_{2\sin\theta}^{2} r^{4} \sin^{2}\theta \cos\theta \,dr\,d\theta
 = \frac{4}{3}
 \end{aligned}
 $}
@@ -488,19 +422,14 @@ se pueden determinar de la siguiente manera:
 
 $\mu_{x}=\int_{0}^{2}\int_{\sqrt{2y-y^{2}}}^{\sqrt{4-y^{2}}}xy^{3}dxdy=\int_{0}^{\frac{\pi }{2}}\int_{2\sin \theta }^2r^{5}\cos \theta \sin^{3}\theta drd\theta=\frac{8}{5}$
 
-$\mu_{y}= \int_{0}^{2}\int_{\sqrt{2y-y^{2}}}^{\sqrt{4-y^{2}}}x^{2}y^{2}dxdy=\int_{0}^{\pi /2}\int_{2\sin \theta }^{2} r^5 \cos^2 \theta\sin^2 \theta drd\theta =\frac{25}{48}\pi .$
-
+$\mu_{y}= \int_{0}^{2}\int_{\sqrt{2y-y^{2}}}^{\sqrt{4-y^{2}}}x^{2}y^{2}dxdy=\int_{0}^{\pi /2}\int_{2\sin \theta }^{2} r^5 \cos^2 \theta\sin^2 \theta drd\theta =\frac{25}{48}\pi $.
 
 Con lo anterior, se concluye que el centro de masa está dado por
 \[(\overline{x},\overline{y})= \left( \frac{\frac{25}{48}\pi }{\frac{4}{3}},\frac{\frac{8}{5}}{\frac{4}{3}}\right) = \left( \frac{25\pi }{64},\frac{6}{5}\right).\]
 
-
 El cálculo de la masa se puede evaluar mediante el uso de las siguientes indicaciones.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x*y^2,{y,0,2},{x,Sqrt[2*y-y^2],
 Sqrt[4-y^2]}]
 Integrate[r^4*Sin[t]^2*Cos[t],{t,0,Pi/2},
@@ -508,100 +437,93 @@ Integrate[r^4*Sin[t]^2*Cos[t],{t,0,Pi/2},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 \begin{enumerate}[start=5,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
 \item
-Si $f$ es continua en $R$, plantear la integral $\ds\iint_R f(x,y)dA$, siendo $R$ la región en el primer cuadrante acotada por las figuras de las ecuaciones $x^2+y^2=4,$ $y= \sqrt{3}\,x$ y $y=1.$
+Si $f$ es continua en $R$, plantear la integral $\ds\iint_R f(x,y)dA$, siendo $R$ la región en el primer cuadrante acotada por las figuras de las ecuaciones $x^2+y^2=4$, $y= \sqrt{3}\,x$ y $y=1$.
 En coordenadas polares $y=1$ se transforma en $r= \csc \theta$, $y= \sqrt{3}\,x$ equivale a $\theta = \pi /3 $ y la ecuación $x=\sqrt{4-y^2}$ corresponde a un arco de circunferencia de radio $2$ con centro en el origen.
 \end{enumerate}
 
-
 \begin{figure}[H]
 \centering
-\caption{$\csc \theta \leq r \leq 2,$ $\frac{\pi}{6} \leq\theta \leq \frac{\pi}{3}$}
+\caption{$\csc \theta \leq r \leq 2$, $\frac{\pi}{6} \leq\theta \leq \frac{\pi}{3}$}
 \includegraphics[width=0.5\textwidth]{Fig/95.pdf}
 \fuentepropia
 \end{figure}
 
-En los siguientes gráficos se muestran las diversas maneras de recorrer la región $R$. Para integrar en el orden $dxdy$ se debe tener en cuenta que $x$ recorre los puntos desde la recta $y=\sqrt{3}\, x$ hasta la circunferencia. Para el orden $dydx$, en una parte $y$ recorre puntos desde la recta $y=1$ hasta la recta $y=\sqrt{3}\, x,$ y en otra parte $y$ recorre los puntos desde $y=1$ hasta la circunferencia.
+En los siguientes gráficos se muestran las diversas maneras de recorrer la región $R$. Para integrar en el orden $dxdy$ se debe tener en cuenta que $x$ recorre los puntos desde la recta $y=\sqrt{3}\, x$ hasta la circunferencia. Para el orden $dydx$, en una parte $y$ recorre puntos desde la recta $y=1$ hasta la recta $y=\sqrt{3}\, x$, y en otra parte $y$ recorre los puntos desde $y=1$ hasta la circunferencia.
 
 % REDUCCIÓN DEL ESPACIO VERTICAL SUPERIOR
-\vspace*{1.0em} 
-\begin{center} 
-	% Usamos un parbox principal para contener y alinear todo el bloque
-	\parbox{\linewidth}{
-		\centering
-		
-		% LEYENDA (encima de la figura)
-		\footnotesize
-		\textbf{Figura 13.} $\csc \theta \leq r \leq 2,\quad \frac{\pi}{6} \leq \theta \leq \frac{\pi}{3}.$
-		 % Espacio mínimo entre leyenda e imágenes
-		
-		% LAS TRES IMÁGENES
-		\includegraphics[width=0.28\linewidth]{Fig/96.pdf}
-		\includegraphics[width=0.28\linewidth]{Fig/97.pdf}
-		\includegraphics[width=0.28\linewidth]{Fig/98.pdf}
-		
-		% NOTA DE ELABORACIÓN
-		\fuentepropia
-	}
+\vspace*{1.0em}
+\begin{center}
+% Usamos un parbox principal para contener y alinear todo el bloque
+\parbox{\linewidth}{
+\centering
+
+% LEYENDA (encima de la figura)
+\footnotesize
+\textbf{Figura 13.} $\csc \theta \leq r \leq 2,\quad \frac{\pi}{6} \leq \theta \leq \frac{\pi}{3}$.
+% Espacio mínimo entre leyenda e imágenes
+
+% LAS TRES IMÁGENES
+\includegraphics[width=0.28\linewidth]{Fig/96.pdf}
+\includegraphics[width=0.28\linewidth]{Fig/97.pdf}
+\includegraphics[width=0.28\linewidth]{Fig/98.pdf}
+
+% NOTA DE ELABORACIÓN
+\fuentepropia
+}
 \end{center}
 % REDUCCIÓN DEL ESPACIO VERTICAL INFERIOR (antes del siguiente párrafo)
-\vspace*{1.2em} 
+\vspace*{1.2em}
 
-En coordenadas polares, $r$ toma valores desde la recta horizontal hasta la circunferencia con $\theta \in [\frac{\pi}{6},\frac{\pi}{3}].$
+En coordenadas polares, $r$ toma valores desde la recta horizontal hasta la circunferencia con $\theta \in [\frac{\pi}{6},\frac{\pi}{3}]$.
 De acuerdo con lo anterior, se pueden plantear las integrales, como se muestra a continuación:
 
-
 % REDUCCIÓN DEL ESPACIO DE LA ECUACIÓN
-%\setlength{\abovedisplayskip}{3pt} 
+%\setlength{\abovedisplayskip}{3pt}
 %\setlength{\belowdisplayskip}{3pt}
 \[
-\large
 \resizebox{\textwidth}{!}{$
-	\begin{array}{rcl}
-		\ds\iint_R f(x,y)\,dA &=& \int_{\frac{1}{\sqrt{3}}}^{1}\int_{1}^{\sqrt{3}x}f(x,y)\,dy\,dx 
-		+ \int_{1}^{\sqrt{3}}\int_{y}^{\sqrt{4-x^{2}}}f(x,y)\,dy\,dx \\[10pt]
-		&=& \int_{1}^{\sqrt{3}}\int_{y/\sqrt{3}}^{\sqrt{4-x^{2}}}f(x,y)\,dx\,dy 
-		= \int_{\pi/6}^{\pi/3}\int_{\csc\theta}^{2}f(r,\theta)\,r\,dr\,d\theta
-	\end{array}
-	$}
+\begin{array}{rcl}
+\ds\iint_R f(x,y)\,dA &=& \int_{\frac{1}{\sqrt{3}}}^{1}\int_{1}^{\sqrt{3}x}f(x,y)\,dy\,dx 
++ \int_{1}^{\sqrt{3}}\int_{y}^{\sqrt{4-x^{2}}}f(x,y)\,dy\,dx \\[10pt]
+&=& \int_{1}^{\sqrt{3}}\int_{y/\sqrt{3}}^{\sqrt{4-x^{2}}}f(x,y)\,dx\,dy 
+= \int_{\pi/6}^{\pi/3}\int_{\csc\theta}^{2}f(r,\theta)\,r\,dr\,d\theta
+\end{array}
+$}
 \]
 
-%\vspace*{1.2em} 
+%\vspace*{1.2em}
 \begin{enumerate}[start=6,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-	\item
+\item
 Escribe en coordenadas rectangulares la siguiente integral: \[\ds\int_{0}^{\pi/4}\int_{0}^{2\sqrt{2}}r^2drd\theta.\]
 \end{enumerate}
 
-
-Los límites de integración son $r=0,$ $r=2\sqrt{2},$ $\theta=0,$ $\theta= \pi/4,$
-esto determina una región en el primer cuadrante limitada por las rectas $y=0,$
-$y=x,$ y la circunferencia con ecuación \[x^2+y^2=\left(2\sqrt{2}\right)^2=8.\]
+Los límites de integración son $r=0$, $r=2\sqrt{2}$, $\theta=0$, $\theta= \pi/4$,
+esto determina una región en el primer cuadrante limitada por las rectas $y=0$,
+$y=x$, y la circunferencia con ecuación \[x^2+y^2=\left(2\sqrt{2}\right)^2=8.\]
 Se usó un cambio a coordenadas polares $x= r \cos \theta$  y $y= r \cos \theta$.
-
 
 \begin{figure}[H]
 \centering
-\caption{$0 \leq r \leq 2\sqrt{2}.$}
+\caption{$0 \leq r \leq 2\sqrt{2}$.}
 \includegraphics[width=0.8\textwidth]{Fig/99.pdf}
 \fuentepropia
 \end{figure}
 
-Al evaluar la integral en el orden $dydx,$
+Al evaluar la integral en el orden $dydx$,
 la región de integración se divide en dos, en una parte $y$ varía desde el eje $x$
-hasta la recta $y=x$ con $x \in[0,2],$ en la otra parte $y$ varía desde el eje $x$
-hasta la circunferencia, con $x \in[2,2\sqrt{2}].$
+hasta la recta $y=x$ con $x \in[0,2]$, en la otra parte $y$ varía desde el eje $x$
+hasta la circunferencia, con $x \in[2,2\sqrt{2}]$.
 Al integrar en  orden $dxdy$, el $x$ recorre (horizontalmente) los puntos desde la recta hasta la circunferencia, con $y\in[0,2]$.
 
-\begin{figure}[h!]
-	\centering
-	\caption{$y \leq x \leq \sqrt{8 - x^2}.$}
-	\includegraphics[width=0.3\linewidth]{Fig/100.pdf}
-	\includegraphics[width=0.3\linewidth]{Fig/101.pdf}
-	\includegraphics[width=0.3\linewidth]{Fig/102.pdf}
-	\fuentepropia
+\begin{figure}[H]
+\centering
+\caption{$y \leq x \leq \sqrt{8 - x^2}$.}
+\includegraphics[width=0.3\linewidth]{Fig/100.pdf}
+\includegraphics[width=0.3\linewidth]{Fig/101.pdf}
+\includegraphics[width=0.3\linewidth]{Fig/102.pdf}
+\fuentepropia
 \end{figure}
 
 Por lo señalado antes, la integral en mención se reescribe como
@@ -613,8 +535,7 @@ Estas integrales se evaluaron por medio de las siguientes instrucciones:
 
 %
 
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[Sqrt[x^2+y^2],{y,0,2},{x,y,Sqrt[8-y^2]}]
 Integrate[Sqrt[x^2+y^2],{x,0,2},{y,0,x}]+
 Integrate[Sqrt[x^2+y^2],{x,2,2*Sqrt[2]},
@@ -623,19 +544,16 @@ Integrate[r^2,{\[Theta],0,Pi/4},{r,0,2*Sqrt[2]}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \begin{enumerate}[start=7,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-\item 
-Evaluar la integral $\ds \iint_{R} |y-x|dA,$ donde $R$ es la región acotada por las figuras de las ecuaciones $y=2-x^{2}$ y $y=x^{2}+2x-2.$
-
+\item
+Evaluar la integral $\ds \iint_{R} |y-x|dA$, donde $R$ es la región acotada por las figuras de las ecuaciones $y=2-x^{2}$ y $y=x^{2}+2x-2$.
 
 La función $|y-x|$ se expresa como
 
-\[|y-x|= \left \{\begin{array}{cc} y-x & \text{si\,\,} y\geq x \\ x-y & \text{si\,\,} y<x\end{array} \right.\]
+\[|y-x|= \left \{
+\begin{array}{cc} y-x & \text{si\,\,} y\geq x \\ x-y & \text{si\,\,} y<x
+\end{array} \right.\]
 \end{enumerate}
-
 
 \begin{figure}[H]
 \centering
@@ -644,42 +562,37 @@ La función $|y-x|$ se expresa como
 \fuentepropia
 \end{figure}
 
-El planteamiento de la integral doble en coordenadas rectangulares requiere hacer algunas consideraciones. De la expresión $y=2-x^2$ se obtiene $x= \pm \sqrt{2-y},$ mientras que de la ecuación  $y=x^2+2x-2$ se obtiene que $x=-1\pm \sqrt{y+3}$. Ahora se ilustra gráficamente la región de integración.
+El planteamiento de la integral doble en coordenadas rectangulares requiere hacer algunas consideraciones. De la expresión $y=2-x^2$ se obtiene $x= \pm \sqrt{2-y}$, mientras que de la ecuación  $y=x^2+2x-2$ se obtiene que $x=-1\pm \sqrt{y+3}$. Ahora se ilustra gráficamente la región de integración.
 
-\begin{figure}[h!]
-	\centering
-	\caption{$x^2 + 2x - 2 \leq y \leq 2 - x^2$}
-	\includegraphics[width=0.48\linewidth]{Fig/104.pdf}
-	\includegraphics[width=0.38\linewidth]{Fig/105.pdf}
-	\fuentepropia
+\begin{figure}[H]
+\centering
+\caption{$x^2 + 2x - 2 \leq y \leq 2 - x^2$}
+\includegraphics[width=0.48\linewidth]{Fig/104.pdf}
+\includegraphics[width=0.38\linewidth]{Fig/105.pdf}
+\fuentepropia
 \end{figure}
 
-En el orden $dydx$ la región $R$ se divide en dos partes, en una de ellas $y$ recorre los puntos desde la recta $y=x$ hasta la curva $y=2-x^2,$ para $x\in [-2,1].$
+En el orden $dydx$ la región $R$ se divide en dos partes, en una de ellas $y$ recorre los puntos desde la recta $y=x$ hasta la curva $y=2-x^2$, para $x\in [-2,1]$.
 En la otra región $y$ recorre los puntos desde la curva
-$y=x^2+2x-1$ hasta la recta $y=x$, con $x\in [-2,1].$ En este caso, la integral es
+$y=x^2+2x-1$ hasta la recta $y=x$, con $x\in [-2,1]$. En este caso, la integral es
 \[\ds \int_{-2}^{1}\int_{x}^{2-x^{2}}\left( y-x\right)
 dydx+\int_{-2}^{1}\int_{x^{2}+2x-2}^{x}\left( x-y\right) dyd = \frac{81}{10}\]
 
 Con las siguientes instrucciones se evalúa esta integral.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[y-x,{x,-2,1},{y,x,2-x^2}]+Integrate[x-y,
 {x,-2,1},{y,x^2+2*x-2,x}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Para el orden $dxdy$, $R$ queda dividida en cuatro regiones de acuerdo con el recorrido horizontal que hace $x$.
 
 \begin{itemize}[label=$\bullet$\,\,]
-\item  $y\in[1,2]$ se satisface que $-\sqrt{2-y} \leq x \leq \sqrt{2-y}.$
-\item Para $y\in[-2,1],$ hay dos regiones: en una parte, $-\sqrt{2-y} \leq x \leq y,$
-mientras que en la otra región $y \leq x \leq 1+\sqrt{3+y}.$
-\item Para $y\in[-3,-2]$ se cumple que $-1-\sqrt{1+y} \leq x \leq -1+\sqrt{1+y}.$
+\item  $y\in[1,2]$ se satisface que $-\sqrt{2-y} \leq x \leq \sqrt{2-y}$.
+\item Para $y\in[-2,1]$, hay dos regiones: en una parte, $-\sqrt{2-y} \leq x \leq y$,
+mientras que en la otra región $y \leq x \leq 1+\sqrt{3+y}$.
+\item Para $y\in[-3,-2]$ se cumple que $-1-\sqrt{1+y} \leq x \leq -1+\sqrt{1+y}$.
 \end{itemize}
 Por lo señalado antes, la integral en este caso es la siguiente:
 \begin{multline*}
@@ -689,10 +602,7 @@ Por lo señalado antes, la integral en este caso es la siguiente:
 \end{multline*}
 Las integrales anteriores se evalúan con las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[y-x,{y,1,2},{x,-Sqrt[2-y],Sqrt[2-y]}]+
 Integrate[y-x,{y,-2,1},{x,-Sqrt[2-y],y}]+Integrate[x-y,
 {y,-2,1},{x,y,-1+Sqrt[3+y]}]+Integrate[x-y,{y,-3,-2},
@@ -700,17 +610,14 @@ Integrate[y-x,{y,-2,1},{x,-Sqrt[2-y],y}]+Integrate[x-y,
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 \begin{enumerate}[start=8,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-	\item 
-Evaluar $\ds \iint R x dA,$ donde $R$ es la región acotada por las figuras de las ecuaciones $x^2+y^2=4$
-y $y=1-(1+\sqrt{3})x$ con  $x \geq 0.$ \\[0.1cm]
+\item
+Evaluar $\ds \iint R x dA$, donde $R$ es la región acotada por las figuras de las ecuaciones $x^2+y^2=4$
+y $y=1-(1+\sqrt{3})x$ con  $x \geq 0$. \\[0.1cm]
 
 De la ecuación de la recta se sigue que
-$x=\frac{1}{2}\left(1-\sqrt{3}\right)(y-1),$ un punto de corte de esta línea con la circunferencia es $(1,-\sqrt{3}).$
+$x=\frac{1}{2}\left(1-\sqrt{3}\right)(y-1)$, un punto de corte de esta línea con la circunferencia es $(1,-\sqrt{3})$.
 \end{enumerate}
-
 
 \begin{figure}[H]
 \centering
@@ -719,57 +626,47 @@ $x=\frac{1}{2}\left(1-\sqrt{3}\right)(y-1),$ un punto de corte de esta línea co
 \fuentepropia
 \end{figure}
 
-Para evaluar la integral en el orden $dydx$ se debe tener en cuenta dos regiones: en una de estas $y$ recorre los puntos desde la recta inclinada hasta la circunferencia, con $x \in [0,1],$ en la otra región $y$ recorre puntos desde la parte negativa de la circunferencia hasta la parte positiva de la misma, con $x \in [1,2].$
+Para evaluar la integral en el orden $dydx$ se debe tener en cuenta dos regiones: en una de estas $y$ recorre los puntos desde la recta inclinada hasta la circunferencia, con $x \in [0,1]$, en la otra región $y$ recorre puntos desde la parte negativa de la circunferencia hasta la parte positiva de la misma, con $x \in [1,2]$.
 Al considerar el orden  $dxdy$ tendremos dos regiones, en una de ellas $x$ recorre los puntos desde el eje $y$ hasta la circunferencia,  con $y \in [1,2]$; en la otra región $x$ recorre los puntos desde la recta inclinada hasta la circunferencia, con $y \in [-\sqrt{3},1]$.
 
-
 \begin{center}
-	{\small\textbf{Figura:} $x^2+y^2\leq 4,\quad 1-(1+\sqrt{3})x \geq y$}
-	
-	
-	
-	\begin{minipage}{0.29\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/107.pdf}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.29\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/108.pdf}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.29\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/109.pdf}
-	\end{minipage}
-	
-	
-	
-	\fuentepropia
+{\small\textbf{Figura:} $x^2+y^2\leq 4,\quad 1-(1+\sqrt{3})x \geq y$}
+
+\begin{minipage}{0.29\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/107.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.29\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/108.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.29\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/109.pdf}
+\end{minipage}
+
+\fuentepropia
 \end{center}
 
 Por lo señalado antes, la integral se puede evaluar como sigue.
 {\small
 \begin{align*}
-	\ds \iint R x dA &= \int_{-\sqrt{3}}^{1}\int_{\frac{1}{2}\left(1-\sqrt{3}\right)(y-1)}^{\sqrt{4-y^{2}}}\!\!xdxdy + \int_1^2\int_{0}^{\sqrt{4-y^{2}}}\!\!xdxdy \\
-	&= \int_{0}^{1}\int_{1-\left( 1+\sqrt{3}\right)x}^{\sqrt{4-x^{2}}}\!\!xdydx + \int_{1}^{2}\int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}}\!\!xdydx = \frac{4}{3}\sqrt{3}+\frac{5}{2}.
+\ds \iint R x dA &= \int_{-\sqrt{3}}^{1}\int_{\frac{1}{2}\left(1-\sqrt{3}\right)(y-1)}^{\sqrt{4-y^{2}}}\!\!xdxdy + \int_1^2\int_{0}^{\sqrt{4-y^{2}}}\!\!xdxdy \\
+&= \int_{0}^{1}\int_{1-\left( 1+\sqrt{3}\right)x}^{\sqrt{4-x^{2}}}\!\!xdydx + \int_{1}^{2}\int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}}\!\!xdydx = \frac{4}{3}\sqrt{3}+\frac{5}{2}.
 \end{align*}
 }
 
-
 Para considerar las coordenadas polares, se halla el ángulo de corte entre la recta inclinada y la circunferencia en el cuarto cuadrante; para ello, usaremos el punto
-$(1,-\sqrt{3})$, entonces $\theta=\arctan \left(-\sqrt{3}\right)= -\frac{1}{3}\pi.$ La ecuación de la recta se reescribe como sigue:
+$(1,-\sqrt{3})$, entonces $\theta=\arctan \left(-\sqrt{3}\right)= -\frac{1}{3}\pi$. La ecuación de la recta se reescribe como sigue:
 $ r\sin \theta =1-\left( 1+\sqrt{3}\right)  r\cos \theta $,
-de donde $r=\frac{1}{\sin(\theta)+\left(1+\sqrt{3}\right)\cos(\theta)}.$
+de donde $r=\frac{1}{\sin(\theta)+\left(1+\sqrt{3}\right)\cos(\theta)}$.
 Por lo tanto,
 \[\ds \iint _R x dA=\int_{-\pi/3}^{\pi /2}\int_{\frac{1}{\sin(\theta)+\left( 1+\sqrt{3}\right) \cos (\theta) }}^{2}\left( r^{2}\cos \theta \right) drd\theta =\frac{5}{2}+\frac{4}{3}\sqrt{3}.\]
 Las integrales anteriores se evalúan en \verb"Mathematica" mediante la ejecución de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x,{y,-Sqrt[3],1},{x,(1-Sqrt[3])*(y-1)/2,
 Sqrt[4-y^2]}]+Integrate[x,{y,1,2},{x,0,Sqrt[4-y^2]}]
 Integrate[x,{x,0,1},{y,1-(1+Sqrt[3])*x,Sqrt[4-x^2]}]+
@@ -779,59 +676,46 @@ Integrate[r^2*Cos[t],{t,-Pi/3,Pi/2},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-%\vspace*{1.2em} 
+%\vspace*{1.2em}
 \begin{enumerate}[start=9,leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-	\item 
-Hallar el área de la región encerrada por la curva determinada por las ecuaciones paramétricas $x=2a\cos t-a\sin (2t),$ $y=b\sin t,$ $t\in \lbrack 0,2\pi ].$
+\item
+Hallar el área de la región encerrada por la curva determinada por las ecuaciones paramétricas $x=2a\cos t-a\sin (2t)$, $y=b\sin t$, $t\in \lbrack 0,2\pi ]$.
 \end{enumerate}
 
-
-De acuerdo al teorema de Green, véase sección \secref{teoremadegreen}, el área $A$, de la región $R$ encerrada por la curva $C,$ puede hallarse por medio de la expresión
+De acuerdo al teorema de Green, véase sección \secref{teoremadegreen}, el área $A$, de la región $R$ encerrada por la curva $C$, puede hallarse por medio de la expresión
 \[A=\iint_{R}dA=\int_{C}-\frac{1}{2}ydx+\frac{1}{2}xdy,\]
-en este caso $x=2a\cos t-a\sin (2t),$ $y=b\sin (t).$ De estas ecuaciones se obtiene
-$dx= -2a\sin t-2a\cos (2t),\,\,\, dy= b\cos t,$
+en este caso $x=2a\cos t-a\sin (2t)$, $y=b\sin (t)$. De estas ecuaciones se obtiene
+$dx= -2a\sin t-2a\cos (2t),\,\,\, dy= b\cos t$,
 entonces
 \begin{multline*}
 A=\frac{1}{2}\int_{0}^{2\pi}\bigg((2a\sin(t)+a\cos(2t))(b\sin(t))\\ +(2a\cos(t)-a\sin(2t))(b\cos t) \bigg) dt  = 2\pi ab.
 \end{multline*}
 
-
-
 \begin{figure}[H]
 \centering
-\caption{${\bf r}(t)=\langle 2a\cos t-a\sin (2t),b\sin t\rangle,$ $t\in [0,2\pi ]$}
+\caption{${\bf r}(t)=\langle 2a\cos t-a\sin (2t),b\sin t\rangle$, $t\in [0,2\pi ]$}
 \includegraphics[width=0.8\textwidth]{Fig/110.pdf}
 \end{figure}
 
 Otra posibilidad es la parametrización de la región interior a la curva.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción Mathematica, top=2pt,bottom=2pt,boxsep=0pt,
-before skip=2pt,after skip=0pt]
-Para $u\in [0,1]$, al multiplicar por $u$ las ecuaciones que determinan la curva, se define la siguiente función en $\mathbb{R}^3,$
-${\bf r}(t,u)=\left\langle \left( 2a\cos t-\sin (2t) \right) u,ub\sin t,0\right\rangle.$
+\begin{tcolorbox}[title=\bf Instrucción Mathematica]Para $u\in [0,1]$, al multiplicar por $u$ las ecuaciones que determinan la curva, se define la siguiente función en $\mathbb{R}^3$,
+${\bf r}(t,u)=\left\langle \left( 2a\cos t-\sin (2t) \right) u,ub\sin t,0\right\rangle$.
 Con esta función se obtienen los siguientes vectores.
 \begin{eqnarray*}
 {\bf r}_{t} &=& \left\langle \left( -2a\sin (t)-2\cos(2t)
 \right) u,ub\cos(t) ,0\right\rangle \\
 {\bf r}_{u} &=& \left\langle 2a\cos (t) -\sin(2t) ,b\sin (t),0\right\rangle,
 \end{eqnarray*}
-luego, ${\bf r}_{t}\times {\bf r}_{u}= \left\langle 0,0,-ub\left( 2a+2\sin \left(t\right) \cos (2t) -\cos \left( t\right) \sin (2t)\right)  \right\rangle ,$
+luego, ${\bf r}_{t}\times {\bf r}_{u}= \left\langle 0,0,-ub\left( 2a+2\sin \left(t\right) \cos (2t) -\cos \left( t\right) \sin (2t)\right)  \right\rangle $,
 entonces
 $\left\| {\bf r}_{t}\times {\bf r}_{u}\right\| =\left| bu\left( 2a+2\sin \left( t\right)
-\cos (2t) -\cos \left( t\right) \sin (2t) \right)\right| ,$
+\cos (2t) -\cos \left( t\right) \sin (2t) \right)\right| $,
 cuya integral nos provee el área de la región en mención
 \[\int_{0}^{2\pi }\int_{0}^{1}\left| bu\left( 2a+2\sin \left( t\right) \cos
 (2t) -\cos \left( t\right) \sin (2t) \right) \right|
 dudt= 2ab\pi.\]
 \end{tcolorbox}
-
-
 
 %
 Para evaluar integrales dobles, es posible plantear un cambio de variable; la fundamentación teórica de este proceso se presentó en la sección \secref{cambioidobles}.
@@ -843,48 +727,48 @@ Cambio de variables en integrales dobles
 Presentamos algunos ejemplos de aplicación del teorema de cambio de variables en integrales dobles.
 
 \begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
-\item Evaluar $\ds \iint_{R}y^{2}dA,$ siendo $R$ la región del plano $xy$ acotada por las figuras de las ecuaciones.
-$x=4-y^{2}$ y $x=4y^{2}-1.$
-
+\item Evaluar $\ds \iint_{R}y^{2}dA$, siendo $R$ la región del plano $xy$ acotada por las figuras de las ecuaciones.
+$x=4-y^{2}$ y $x=4y^{2}-1$.
 
 \begin{figure}[H]
-	\centering	
-	\caption{\small ${\bf T}(u,v)= (4u^2 - v^2, uv)$}
-	\label{transformacion_uv}
-	\begin{minipage}[b]{0.40\linewidth}
-		\centering
-		
-		\includegraphics[width=\linewidth]{Fig/111.pdf}
-	\end{minipage}
-	\hspace{0.5cm} 
-	\begin{minipage}[b]{0.35\linewidth}
-		\centering
-		
-		\includegraphics[width=\linewidth]{Fig/112.pdf}
-	\end{minipage}
-	
-	
-	
-	\fuentepropia
+\centering
+\caption{${\bf T}(u,v)= (4u^2 - v^2, uv)$}
+\label{transformacion_uv}
+\begin{minipage}[b]{0.40\linewidth}
+\centering
+
+\includegraphics[width=\linewidth]{Fig/111.pdf}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.35\linewidth}
+\centering
+
+\includegraphics[width=\linewidth]{Fig/112.pdf}
+\end{minipage}
+
+\fuentepropia
 \end{figure}
 
-Haremos la sustitución $x=4u^{2}-v^{2},\,\, y=uv.$
-En la expresión $x=4-y^{2},$ se hace el cambio y se sigue que
+Haremos la sustitución $x=4u^{2}-v^{2},\,\, y=uv$.
+En la expresión $x=4-y^{2}$, se hace el cambio y se sigue que
 $4u^{2}-v^{2}=4-\left( uv\right) ^{2}$ de donde $u^{2}\left( 4+v^{2}\right)
-=4+v^{2},$ es decir,
-$4+v^{2}=1$ (lo cual no es soluble en los números reales) o $u^{2}=1,$
-entonces $u=\pm 1.$
-Sustituyéndose en la ecuación $x=4y^{2}-1,$ se obtiene
-$4u^{2}-v^{2}=4\left( uv\right) ^{2}-1,$ es decir, $4u^{2}\left(1-v^{2}\right) =v^{2}-1;$
-por lo tanto $u=0$ o $v=\pm 1.$ De lo anterior se obtienen los límites para la región en el plano $uv.$
+=4+v^{2}$, es decir,
+$4+v^{2}=1$ (lo cual no es soluble en los números reales) o $u^{2}=1$,
+entonces $u=\pm 1$.
+Sustituyéndose en la ecuación $x=4y^{2}-1$, se obtiene
+$4u^{2}-v^{2}=4\left( uv\right) ^{2}-1$, es decir, $4u^{2}\left(1-v^{2}\right) =v^{2}-1;$
+por lo tanto $u=0$ o $v=\pm 1$. De lo anterior se obtienen los límites para la región en el plano $uv$.
 
 El jacobiano de la transformación es
-\[\left| \begin{array}{cc}
+\[\left|
+\begin{array}{cc}
 \frac{\partial x}{\partial u} & \frac{\partial x}{\partial v} \\[0.2cm]
 \frac{\partial y}{\partial u} & \frac{\partial y}{\partial u}
 \end{array}
-\right| =\left| \begin{array}{cc}8u & -2v \\[0.2cm]
-v & u \end{array} \right| = 8u^{2}+2v^{2}.\]
+\right| =\left|
+\begin{array}{cc}8u & -2v \\[0.2cm]
+v & u
+\end{array} \right| = 8u^{2}+2v^{2}.\]
 Entonces,
 \begin{eqnarray*}
 \int_{-1}^{1}\int_{4y^{2}-1}^{4-y^{2}}y^{2}dxdy &=&
@@ -892,11 +776,8 @@ Entonces,
 &=& \int_{0}^{1}\left( \frac{16}{5}v^{2}+\frac{4}{3}v^{4}\right), dv = \frac{4}{3}.
 \end{eqnarray*}
 
-\item Evaluar $\ds \iint_R xy dA,$ donde $R$ es la región del primer cuadrante acotada por las figuras de las expresiones
+\item Evaluar $\ds \iint_R xy dA$, donde $R$ es la región del primer cuadrante acotada por las figuras de las expresiones
 $y=1/x$, $y=3x$, $y=x$, $y=3/x$.
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -905,12 +786,15 @@ $y=1/x$, $y=3x$, $y=x$, $y=3/x$.
 \fuentepropia
 \end{figure}
 
-Con las expresiones $y=1/x$ y $y=3/x,$ se puede hacer el cambio $xy=u,$ de esta manera $u\in \lbrack 1,3].$ Mientras que con $y=x$ y $y=3x,$ se puede hacer la sustitución $v=y/x,$ de modo que $v\in \lbrack 1,3].$
+Con las expresiones $y=1/x$ y $y=3/x$, se puede hacer el cambio $xy=u$, de esta manera $u\in \lbrack 1,3]$. Mientras que con $y=x$ y $y=3x$, se puede hacer la sustitución $v=y/x$, de modo que $v\in \lbrack 1,3]$.
 El jacobiano de la transformación es el recíproco del determinante de la matriz
-\[\left| \begin{array}{cc}
+\[\left|
+\begin{array}{cc}
 \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\[0.1cm]
 \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}
-\end{array} \right| =\left| \begin{array}{cc}y & x \\ -y/x^{2} & 1/x\end{array}
+\end{array} \right| =\left|
+\begin{array}{cc}y & x \\ -y/x^{2} & 1/x
+\end{array}
 \right| = \frac{2y}{x}=2v.\]
 Entonces, el jacobiano de la transformación es $\frac{1}{2v};$ ahora bien,
 {\footnotesize \[\iint_R xy dA=\int_{1}^{3}\int_{1}^{3}\frac{u}{2v}dudv= 2\ln 3.\]}
@@ -924,10 +808,7 @@ Esta integral también puede evaluarse en la forma
 
 Estas integrales se evalúan ejecutando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x*y,{y,1,Sqrt[3]},{x,1/y,y}]+Integrate[x*y,
 {y,Sqrt[3],3},{x,y/3,3/y}]
 Integrate[x*y,{x,1/Sqrt[3],1},{y,1/x,3*x}]+
@@ -935,12 +816,8 @@ Integrate[x*y,{x,1,Sqrt[3]},{y,x,3/x}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\item Evaluar $\ds \iint_R xy dA,$ en donde $R$ es la región en el primer cuadrante acotada por las graficas de las expresiones
-$x^{2}y=1,$ $x^{2}y=4,$ $y=x^{2}$ y $y=4x^{2}.$
-
-
+\item Evaluar $\ds \iint_R xy dA$, en donde $R$ es la región en el primer cuadrante acotada por las graficas de las expresiones
+$x^{2}y=1$, $x^{2}y=4$, $y=x^{2}$ y $y=4x^{2}$.
 
 \begin{figure}[H]
 \centering
@@ -948,7 +825,7 @@ $x^{2}y=1,$ $x^{2}y=4,$ $y=x^{2}$ y $y=4x^{2}.$
 \includegraphics[width=0.8\textwidth]{Fig/114.pdf}
 \end{figure}
 
-Los puntos de intersección de estas curvas son $\left( 1,1\right) ,$ $\left( \sqrt{2},2\right) ,$
+Los puntos de intersección de estas curvas son $\left( 1,1\right) $, $\left( \sqrt{2},2\right) $,
 $\left( \frac{1}{\sqrt{2}},2\right) $ y $\left( 1,4\right)$; con esta información, se puede evaluar esta integral en coordenadas rectangulares, es decir
 
 {\small
@@ -959,25 +836,21 @@ $\left( \frac{1}{\sqrt{2}},2\right) $ y $\left( 1,4\right)$; con esta informaci�
 }
 Estas integrales se evalúan con las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x*y,{y,2,4},{x,Sqrt[y/4],Sqrt[4/y]}]+
 Integrate[x*y,{y,1,2},{x,Sqrt[1/y],Sqrt[y]}]
-		
+
 Integrate[x*y,{x,1/Sqrt[2],1},{y,1/x^2,4*x^2}]+
 Integrate[x*y,{x,1,Sqrt[2]},{y,x^2,4/x^2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-También se puede utilizar el teorema de cambio de variable, definiendo $u=x^{2}y$ y $v=y/x^{2},$ de donde $x=\sqrt[4]{\frac{u}{v}},\,\, y=\sqrt{u}\sqrt{v}$,
+También se puede utilizar el teorema de cambio de variable, definiendo $u=x^{2}y$ y $v=y/x^{2}$, de donde $x=\sqrt[4]{\frac{u}{v}},\,\, y=\sqrt{u}\sqrt{v}$,
 por lo tanto, el jacobiano de la transformación es
-{\small \[\left| \begin{array}{cc} \frac{\partial }{\partial u}\left( \sqrt[4]{\frac{u}{v}}\right) & \frac{\partial }{\partial v}\left( \sqrt[4]{\frac{u}{v}}\right) \\[0.1cm]
-\frac{\partial }{\partial u}\left( \sqrt{uv}\right) & \frac{\partial }{\partial v}\left( \sqrt{uv}\right) \end{array} \right| = \frac{1}{4\sqrt[4]{uv^{3}}}.\]}
+{\small \[\left|
+\begin{array}{cc} \frac{\partial }{\partial u}\left( \sqrt[4]{\frac{u}{v}}\right) & \frac{\partial }{\partial v}\left( \sqrt[4]{\frac{u}{v}}\right) \\[0.1cm]
+\frac{\partial }{\partial u}\left( \sqrt{uv}\right) & \frac{\partial }{\partial v}\left( \sqrt{uv}\right)
+\end{array} \right| = \frac{1}{4\sqrt[4]{uv^{3}}}.\]}
 A partir de la definición, es posible establecer que $1\leq u \leq 4$ y $1\leq v \leq 4$, respectivamente.
 {\small
 \begin{multline*}
@@ -987,10 +860,8 @@ A partir de la definición, es posible establecer que $1\leq u \leq 4$ y $1\leq 
 }
 
 \item
-Evaluar la integral {\footnotesize $\ds\int_{0}^{1}\int_{2y}^{\sqrt{1+3y^2}}xy^{2}dxdy+\int_{-1}^{0}\int_{-2y}^{\sqrt{1+3y^2}}xy^{2}dxdy.$} La región de integración está limitada por las figuras de las ecuaciones $x= \pm 2y\,$ y
-$\, x^2-3y^2=1,$ con $x\geq 0$.
-
-
+Evaluar la integral {\footnotesize $\ds\int_{0}^{1}\int_{2y}^{\sqrt{1+3y^2}}xy^{2}dxdy+\int_{-1}^{0}\int_{-2y}^{\sqrt{1+3y^2}}xy^{2}dxdy$.} La región de integración está limitada por las figuras de las ecuaciones $x= \pm 2y$\, y
+$\, x^2-3y^2=1$, con $x\geq 0$.
 
 \begin{figure}[H]
 \centering
@@ -1002,19 +873,20 @@ $\, x^2-3y^2=1,$ con $x\geq 0$.
 Puede probarse que
 \[ \int_{0}^{1}\int_{2y}^{\sqrt{1+3y^{2}}}xy^{2}dxdy+\int_{-1}^{0}\int_{-2y}^{\sqrt{1+3y^{2}}}xy^{2}dxdy= \frac{2}{15}.\]
 El siguiente proceso permite evaluar las anteriores integrales de una manera distinta.
- 
-Al hacer $x=u\cosh v,$ $y=\frac{u}{\sqrt{3}}\sinh v,$ se sigue que la expresión $x^{2}-3y^{2}=1$ se transforma en
-$\left( u\cosh v\right) ^{2}-3(\frac{u}{\sqrt{3}}\sinh v)^2=1,$
-que se reduce a $u^{2}=1,$ es decir, $u=\pm 1.$
-Para la recta $y=x/2,$ se sigue que
+
+Al hacer $x=u\cosh v$, $y=\frac{u}{\sqrt{3}}\sinh v$, se sigue que la expresión $x^{2}-3y^{2}=1$ se transforma en
+$\left( u\cosh v\right) ^{2}-3(\frac{u}{\sqrt{3}}\sinh v)^2=1$,
+que se reduce a $u^{2}=1$, es decir, $u=\pm 1$.
+Para la recta $y=x/2$, se sigue que
 $2\left( \frac{u}{\sqrt{3}}\right) \sinh v=u\cosh v$, es decir $v=\ln \left(
-2+\sqrt{3}\right) ,$ mientras que para la recta $y=-x/2,$ se concluye que
+2+\sqrt{3}\right) $, mientras que para la recta $y=-x/2$, se concluye que
 $v=-\ln \left(2+\sqrt{3}\right). $
-  
+
 Con el cambio propuesto, el jacobiano de la transformación es
 %
 \begin{eqnarray*}
-\left| \begin{array}{ll}
+\left|
+\begin{array}{ll}
 \frac{\partial }{\partial u}\left( u\cosh v\right) & \frac{\partial }{\partial v}\left( u\cosh v\right)  \\[0.2cm] \frac{\partial }{\partial u}\left( \frac{u}{\sqrt{3}}\sinh v\right)  & \frac{
 \partial }{\partial v}\left( \frac{u}{\sqrt{3}}\sinh v\right)
 \end{array}\right| &=& \frac{\sqrt{3}}{3}u\cosh ^{2}\left( v\right) -\frac{\sqrt{3}}{3}u\sinh ^{2}\left( v\right) \\&=&  \frac{1}{3}u\sqrt{3}.
@@ -1030,8 +902,7 @@ Entonces, la integral en mención se transforma en
 
 %
 
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[x*y^2,{y,0,1},{x,2*y,Sqrt[1+3*y^2]}]+
 Integrate[x*y^2,{y,-1,0},{x,-2*y,Sqrt[1+3*y^2]}]
 
@@ -1040,66 +911,62 @@ Integrate[u*Cosh[v]*(u/Sqrt[3]/3*u),
 \end{Verbatim}
 \end{tcolorbox}
 
-
- 
-
-\item Sea $R$ el trapecio con vértices $\left( 0,2\right),$ $\left( 1,1\right),\left( 2,2\right),$ $\left( 1,3\right).$
+\item Sea $R$ el trapecio con vértices $\left( 0,2\right)$, $\left( 1,1\right),\left( 2,2\right)$, $\left( 1,3\right)$.
 En coordenadas rectangulares, la integral $\ds \iint _{R}\frac{x-y}{x+y}dA$ se puede evaluar como se muestra a continuación:
 \[I=\int_{0}^{1}\int_{2-x}^{2+x}\frac{x-y}{x+y}dydx+\int_{1}^2\int_{x}^{4-x}\frac{x-y}{x+y}dydx=-\ln \left( 2\right).\]
-Al hacer el cambio $u=x+y,$ $v=y-x,$ se sigue que $y=\frac{u+v}{2},$ $x=\frac{u-v}{2}$. 
-
-
+Al hacer el cambio $u=x+y$, $v=y-x$, se sigue que $y=\frac{u+v}{2}$, $x=\frac{u-v}{2}$.
 
 \begin{figure}[H]
 \centering
-\caption{\small ${\bf T}(u,v)= \left(\frac{u - v}{2},\, \frac{u + v}{2}\right)$}
+\caption{${\bf T}(u,v)= \left(\frac{u - v}{2},\, \frac{u + v}{2}\right)$}
 \includegraphics[width=0.4\textwidth]{Fig/117.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Fig/118.pdf}
 \end{figure}
 
 La figura muestra la región transformada; el jacobiano de la transformación es
-$J=\det \left( \begin{array}{cc}
+$J=\det \left(
+\begin{array}{cc}
 \frac{1}{2} & -\frac{1}{2} \\[0.2cm]
-\frac{1}{2} & \frac{1}{2} \end{array} \right) = \frac{1}{2}$; luego
-$I=\ds \int_{2}^{4}\ds\int_{0}^2\frac{-v}{u}\left( \frac{1}{2}\right) dvdu= -\ln \left( 2\right) .$
+\frac{1}{2} & \frac{1}{2}
+\end{array} \right) = \frac{1}{2}$; luego
+$I=\ds \int_{2}^{4}\ds\int_{0}^2\frac{-v}{u}\left( \frac{1}{2}\right) dvdu= -\ln \left( 2\right) $.
 
-\item Evaluar $\ds \iint_R \sqrt{xy}\ln \left( \frac{y}{x}\right) dA,$ en donde $R$ es la región en el plano $xy$ determinada por el cambio de variables
-$u^{2}=xy,$ $v=\ln \left( y/x\right) ,$ con $u\in \lbrack 1,2],$ $v\in \lbrack 0,2].$ \\[0.2cm]
+\item Evaluar $\ds \iint_R \sqrt{xy}\ln \left( \frac{y}{x}\right) dA$, en donde $R$ es la región en el plano $xy$ determinada por el cambio de variables
+$u^{2}=xy$, $v=\ln \left( y/x\right) $, con $u\in \lbrack 1,2]$, $v\in \lbrack 0,2]$. \\[0.2cm]
 
-Con el cambio de variable se sigue que $e^{v}=y/x,$: es decir, $y=xe^{v},$
+Con el cambio de variable se sigue que $e^{v}=y/x$,: es decir, $y=xe^{v}$,
 que, al reemplazar en la primera ecuación, se obtiene que
-$u^{2}=x^{2}e^{v},$ entonces $x=ue^{-v/2},$ y $y=ue^{v/2}.$
+$u^{2}=x^{2}e^{v}$, entonces $x=ue^{-v/2}$, y $y=ue^{v/2}$.
 Para determinar las ecuaciones de las curvas que acotan la región, lo haremos por casos.
 \begin{itemize}[label=$\bullet$\,\,]
-\item Si $u=1$ y $0\leq v\leq 2,$
-entonces, $x=e^{-v/2}$ y $y=e^{v/2},$ por tanto $xy=1.$
-\item Si $u=2$ y $0\leq v\leq 2,$ entonces \
-$x=2e^{-v/2}$ y $y=2e^{v/2}$ es decir $xy=4.$
-\item Si $v=0$ y $1\leq u\leq 2,$
-se sigue que $x=u$ y $y=u$ entonces $x=y.$
+\item Si $u=1$ y $0\leq v\leq 2$,
+entonces, $x=e^{-v/2}$ y $y=e^{v/2}$, por tanto $xy=1$.
+\item Si $u=2$ y $0\leq v\leq 2$, entonces \
+$x=2e^{-v/2}$ y $y=2e^{v/2}$ es decir $xy=4$.
+\item Si $v=0$ y $1\leq u\leq 2$,
+se sigue que $x=u$ y $y=u$ entonces $x=y$.
 \item Si $v=2$ y $1\leq u\leq 2$
-Entonces, $x=ue^{-1}$ y $y=ue$; por lo tanto, $y=e^{2}x.$
+Entonces, $x=ue^{-1}$ y $y=ue$; por lo tanto, $y=e^{2}x$.
 \end{itemize}
 
 El siguiente gráfico muestra la región de integración. Los puntos de corte de las expresiones que determinan dicho conjunto en el plano $xy$
-son $(e^{-1},e),$ $(1,1)$, $(2e^{-1},2e)$ y $(2,2).$ También se muestra la región en el plano $uv,$
+son $(e^{-1},e)$, $(1,1)$, $(2e^{-1},2e)$ y $(2,2)$. También se muestra la región en el plano $uv$,
 que se obtiene al aplicar la transformación.
 
 \begin{figure}[H]
-	\centering
-	\caption{${\bf T}(u,v)= (ue^{-v/2},ue^{v/2})$}
-	\begin{minipage}{0.37\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/119.pdf}
-	\end{minipage}
-	\hspace{1em}
-	\begin{minipage}{0.36\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/120.pdf}
-	\end{minipage}
-	
-	
-	\fuentepropia	
+\centering
+\caption{${\bf T}(u,v)= (ue^{-v/2},ue^{v/2})$}
+\begin{minipage}{0.37\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/119.pdf}
+\end{minipage}
+\hspace{1em}
+\begin{minipage}{0.36\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/120.pdf}
+\end{minipage}
+
+\fuentepropia
 \end{figure}
 
 La integral en mención puede evaluarse usando coordenadas rectangulares como sigue
@@ -1110,10 +977,7 @@ dydx+\int_{1}^{2e^{-1}}\int_{x}^{e^{2}x}\sqrt{xy}\ln \left( \frac{y}{x}\right) d
 \end{multline*}
 Esta integral se evalúa utilizando las siguientes instrucciones.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[Sqrt[x*y]*Log[y/x],{x,Exp[-1],1},
 {y,1/x,Exp[2]*x}]+
 Integrate[Sqrt[x*y]*Log[y/x],{x,1,2*Exp[-1]},
@@ -1122,8 +986,6 @@ Integrate[Sqrt[x*y]*Log[y/x],{x,2*Exp[-1],2},
 {y,x,4/x}]
 \end{Verbatim}
 \end{tcolorbox}
-
-
 
 Utilizando el cambio de variables, el jacobiano de la transformación es
 \[
@@ -1146,33 +1008,33 @@ e^{\frac{1}{2}v} & \frac{1}{2}ue^{\frac{1}{2}v}
 Con lo cual, la integral se reduce a
 \[\iint_R \sqrt{xy}\ln \left( \frac{y}{x}\right) dA= \int_{1}^{2}\int_{0}^{2}u^{2}vdvdu= \frac{14}{3}\]
 
-\item Aplicar el cambio de variables $u=\sqrt{xy},\,\, v=\sqrt{\frac{y}{x}},$ en la integral
+\item Aplicar el cambio de variables $u=\sqrt{xy},\,\, v=\sqrt{\frac{y}{x}}$, en la integral
 \[\int_{1}^{4} \int_{1/y}^{y}\sqrt{\frac{y}{x}}e^{\sqrt{xy}}dxdy.\]
 Del cambio se sigue que
 \[uv=\sqrt{xy}\sqrt{\frac{y}{x}}= y;\] además, \[x=\frac{u^{2}}{uv}= \frac{u}{v}.\]
 El jacobiano en este caso es
-\[\left|  \begin{array}{cc}
+\[\left|
+\begin{array}{cc}
 \frac{1}{v} & v \\[0.1cm]
 \frac{-u}{v^{2}} & u
 \end{array} \right| = \frac{2u}{v}.\]
 Las respectivas regiones en los planos $xy$ y $uv$
 se muestran enseguida.
 
-\begin{figure}[h!]
-	\centering
-	\caption{${\bf T}(u,v)= \left(\frac{u}{v},\, uv\right)$}
-	\begin{minipage}{0.35\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/121.pdf}
-	\end{minipage}
-	\hspace{1em}
-	\begin{minipage}{0.40\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/122.pdf}
-	\end{minipage}
-	
-	
-	\fuentepropia
+\begin{figure}[H]
+\centering
+\caption{${\bf T}(u,v)= \left(\frac{u}{v},\, uv\right)$}
+\begin{minipage}{0.35\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/121.pdf}
+\end{minipage}
+\hspace{1em}
+\begin{minipage}{0.40\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/122.pdf}
+\end{minipage}
+
+\fuentepropia
 \end{figure}
 
 Por ello, la integral se transforma en
@@ -1186,8 +1048,7 @@ Estas integrales se pueden evaluar con ayuda de las siguientes sentencias.
 
 \vspace{3pt}
 
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[Sqrt[y/x]*Exp[Sqrt[x*y]],{y,1,4},{x,1/y,y}]
 Integrate[2*u*Exp[u],{u,1,4},{v,1,4/u}]
 \end{Verbatim}
@@ -1200,10 +1061,8 @@ Use el teorema de cambio de variable para resolver los siguientes problemas
 
 \begin{enumerate}
 \item   Evaluar
-$\displaystyle \iint_R (x^2+y^2)dA, $ donde $R$ es la región en el primer cuadrante acotada por las figuras de las expresiones $x^{2}-y^{2}=3,$ $y^{2}-x^{2}=3,$ $xy=2,$ $xy=3\sqrt{2}.$
-Muestre también que el área de la región mencionada está dada por $ -6+9\sqrt{2}.$
-
-
+$\displaystyle \iint_R (x^2+y^2)dA, $ donde $R$ es la región en el primer cuadrante acotada por las figuras de las expresiones $x^{2}-y^{2}=3$, $y^{2}-x^{2}=3$, $xy=2$, $xy=3\sqrt{2}$.
+Muestre también que el área de la región mencionada está dada por $ -6+9\sqrt{2}$.
 
 \begin{figure}[H]
 \centering
@@ -1214,14 +1073,12 @@ Muestre también que el área de la región mencionada está dada por $ -6+9\sqr
 \begin{comment}
 $ \int_{1}^{\sqrt{3}}\int_{2/x}^{\sqrt{3+x^{2}}}(x^2+y^2)dydx+\int_{\sqrt{3}}^{2}\int_{2/x}^{3\sqrt{2}/x}(x^2+y^2)dydx+\int_{2}^{\sqrt{6}}\int_{\sqrt{x^{2}-3}}^{3\sqrt{2}/x}(x^2+y^2)dydx=-6+9\sqrt{2}$
 
-Es claro que $J= \frac{1}{2(x^2+y^2)}.$
+Es claro que $J= \frac{1}{2(x^2+y^2)}$.
 Con lo cual $\int_{-3}^{3}\int_{2}^{3\sqrt{2}} \frac{1}{2} dudv= -6+9\sqrt{2} $
 \end{comment}
 
 \item Determine el área de la región $R$ acotada en el primer cuadrante para las curvas
-$x^2+y^2=2$, $x^2+y^2=4,$ $x^2-y^2=2$, $x^2+y^2=4$.
-
-
+$x^2+y^2=2$, $x^2+y^2=4$, $x^2-y^2=2$, $x^2+y^2=4$.
 
 \begin{figure}[H]
 \centering
@@ -1235,11 +1092,10 @@ $x^2+y^2=2$, $x^2+y^2=4,$ $x^2-y^2=2$, $x^2+y^2=4$.
 \section{Áreas de superficies parametrizadas} \index{Superficies parametrizadas!áreas}
 Además de parametrizar algunas superficies, hallaremos su área. Esta tarea se hará básicamente utilizando la expresión
 \ref{areasup}.
-\subsection*{Un cono truncado oblicuo}
+\subsection{Un cono truncado oblicuo}
 Las figuras de las funciones vectoriales $\overrightarrow{\alpha}(t)=\langle 1+\cos(t) ,\sin(t),2\rangle $ y
-$\overrightarrow{\beta}(t)=\langle 3\cos (t),3\sin(t),0\rangle ,$ para $t\in [0,2\pi],$ son dos circunferencias.
-Formando una combinación convexa con un punto $P$ sobre la curva $\overrightarrow{\alpha}$ y un punto $Q$ sobre la curva $\overrightarrow{\beta},$ se genera un cono truncado oblicuo.
-
+$\overrightarrow{\beta}(t)=\langle 3\cos (t),3\sin(t),0\rangle $, para $t\in [0,2\pi]$, son dos circunferencias.
+Formando una combinación convexa con un punto $P$ sobre la curva $\overrightarrow{\alpha}$ y un punto $Q$ sobre la curva $\overrightarrow{\beta}$, se genera un cono truncado oblicuo.
 
 \begin{figure}[H]
 \centering
@@ -1258,26 +1114,24 @@ Una parametrización para esta región es la siguiente.
 \end{aligned}
 $}
 \end{equation*}
-%$u\in[0,1],$ %$t\in[0,2\pi].$
+%$u\in[0,1],$ %$t\in[0,2\pi]$.
 Para calcular el área superficial, se requieren los siguientes vectores
 {\small
 \begin{eqnarray*}
 {\bf r}_{t} &=& \langle -\sin t( 1+2u) ,( 1+2u) \cos t,0\rangle \\
-{\bf r}_{u} &=& \langle -1+2\cos t,2\sin t,-2\rangle. \end{eqnarray*}
+{\bf r}_{u} &=& \langle -1+2\cos t,2\sin t,-2\rangle.
+\end{eqnarray*}
 }
 además,
-$ {\bf r}_{t}\times {\bf r}_{u}= \langle -2( 1+2u) \cos t,-2( \sin t) (1+2u) ,( \cos t-2) ( 1+2u) \rangle .$
+$ {\bf r}_{t}\times {\bf r}_{u}= \langle -2( 1+2u) \cos t,-2( \sin t) (1+2u) ,( \cos t-2) ( 1+2u) \rangle $.
 El elemento diferencial de área es
-$\| {\bf r}_{t}\times {\bf r}_{u}\| = (1+2u) \sqrt{\cos ^{2}t-4\cos t+8}.$
+$\| {\bf r}_{t}\times {\bf r}_{u}\| = (1+2u) \sqrt{\cos ^{2}t-4\cos t+8}$.
 Por último, el área superficial está dada por
 {\small
 \[\int_{0}^{1}\int_{0}^{2\pi }( 1+2u) \sqrt{\cos ^{2}t-4\cos t+8}\, dtdu\approx 36.117.\]}
 Este valor se consiguió utilizando las siguientes instrucciones.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r=(1-u)*{1+Cos[t],Sin[t],2}+u*{3*Cos[t],3*Sin[t],0};
 A=Assuming[t>=0&&u>=0,Simplify[Norm[Cross[D[r,u],
 D[r,t]]]]]
@@ -1285,13 +1139,10 @@ NIntegrate[A,{t,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 \index{Cilindro cardiodico}
-\subsection*{Una esfera y dos cilindros perpendiculares}
+\subsection{Una esfera y dos cilindros perpendiculares}
 La esfera centrada en el origen de radio $2$ y los cilindros con ecuaciones son $x^{2}+y^{2}=2x$ y $x^{2}+z^{2}=2x$
 se intersecan. Se determinará la superficie sobre la esfera acotada por los cilindros, y de esta nos interesará su área. % Los siguientes gráficos ilustran la situación mencionada.
-
 
 \begin{figure}[H]
 \centering
@@ -1305,10 +1156,10 @@ se intersecan. Se determinará la superficie sobre la esfera acotada por los cil
 
 La porción sobre la esfera interior de los cilindros se parametriza en dos casos:
 
-\newlength{\bulletindent} 
+\newlength{\bulletindent}
 \settowidth{\bulletindent}{\textcolor{black}{\scriptsize\ding{110}}\quad}
 \begin{minipage}[t]{\textwidth}
- 
+
 \begin{itemize}[
 leftmargin=\dimexpr 1.5cm - \bulletindent\relax,itemsep=0pt,parsep=0pt,labelsep=0.4em,label=\textcolor{black}{\scriptsize\ding{110}}]
 \item El cilindro $x^2+y^2=2r$ se reescribe como $(x-1)^2+y^2=1$. Para la superficie sobre la esfera se puede hacer $x=1+u\cos(t)$, $y=u\sin(t)$, donde $t\in[0,2\pi]$, lo cual parametriza la región sobre la esfera interior al cilindro proyectada el plano $xy$. Reemplazando en la ecuación de la esfera se obtiene {\small $-3+2u\cos(t)+u^2+z^2=0$}, cuya solución es {\small $z=\pm\sqrt{3-2u\cos(t)-u^2}$}. Por lo tanto la función
@@ -1318,11 +1169,10 @@ leftmargin=\dimexpr 1.5cm - \bulletindent\relax,itemsep=0pt,parsep=0pt,labelsep=
 {\footnotesize
 \[{\bf r}( u,t) =\left\langle 1+u\cos (t) ,u\sin \left(
 t\right) ,\sqrt{3-2u\cos (t) -u^{2}}\right\rangle,\]}
-con $t\in \lbrack 0,2\pi ],\,\, u\in \lbrack 0,1],$
+con $t\in \lbrack 0,2\pi ],\,\, u\in \lbrack 0,1]$,
 representa la parte de la esfera que se halla acotada por el cilindro, la otra parte se determina con la raíz negativa en la tercera componente.
 
 %\clearpage
-
 
 \begin{figure}[H]
 \centering
@@ -1334,7 +1184,6 @@ representa la parte de la esfera que se halla acotada por el cilindro, la otra p
 
 \settowidth{\bulletindent}{\textcolor{black}{\scriptsize\ding{110}}\quad}
 \begin{minipage}[t]{\textwidth}
-
 
 \begin{itemize}[
 leftmargin=\dimexpr 1.5cm - \bulletindent\relax,itemsep=0pt,parsep=0pt,labelsep=0.4em,before=\vspace{-0.4cm},label=\textcolor{black}{\scriptsize\ding{110}}]
@@ -1352,7 +1201,6 @@ con $t \in [0, 2\pi]$, $u \in [0, 1]$, la cual parametriza la porción de la esf
 
 %
 
-
 \begin{figure}[H]
 \centering
 \caption{Curva de intersección de la esfera y los cilindros}
@@ -1365,16 +1213,12 @@ con $t \in [0, 2\pi]$, $u \in [0, 1]$, la cual parametriza la porción de la esf
 
 Los anteriores gráficos se obtienen ejecutando las siguientes instrucciones:
 
-
 \begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*.\,}}]
 \item La esfera y los cilindros
 
 Región sobre la esfera acotada por los cilindros, se definen tres objetos nombrados \verb"a,b,c", luego se muestran en un solo gráfico.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 ContourPlot3D[{x^2+y^2+z^2==4,x^2+y^2==2*x,x^2+
 z^2==2*x},{x,-2,2},{y,-2,2},{z,-2,2},PlotPoints->80,
 Mesh->False]
@@ -1382,15 +1226,9 @@ ContourStyle->{Orange,Yellow,LightGreen}
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \item Región sobre la esfera acotada por los cilindros, se definen tres objetos nombrados \verb"a,b,c", luego se muestran en una sola figura usando la función \textit{show}.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Clear[x,y,z]
 a=ContourPlot3D[x^2+y^2+z^2==3.95,{x,-2,2},{y,-2,2},
 {z,-2,2},ContourStyle->{Cyan,Opacity[0.4]},Mesh->Fals
@@ -1407,10 +1245,8 @@ Show[a,b,c]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Por la simetría de la región en mención, el área de la porción sobre la esfera interior a los cilindros corresponde a cuatro veces la integral del término
-$\left\Vert {\bf r}_{t}\times {\bf r}_{u}\right\Vert,$ que es el elemento diferencial del área.
+$\left\Vert {\bf r}_{t}\times {\bf r}_{u}\right\Vert$, que es el elemento diferencial del área.
 Para tal fin, se hallan las siguientes funciones vectoriales:
 
 \begin{eqnarray*}
@@ -1420,17 +1256,14 @@ Para tal fin, se hallan las siguientes funciones vectoriales:
 \end{eqnarray*}
 \end{enumerate}
 entonces
-$\left\Vert {\bf r}_{t}\times{\bf r}_{u} \right\Vert =\frac{2u}{\sqrt{3-u^{2}-2u\cos t}}.$
+$\left\Vert {\bf r}_{t}\times{\bf r}_{u} \right\Vert =\frac{2u}{\sqrt{3-u^{2}-2u\cos t}}$.
 Por lo anterior, el área $A$ de la superficie es cuatro veces la integral del término anterior; es decir,
 
 \[4\int_{0}^{2\pi}\int_{0}^{1}\frac{2u}{\sqrt{3-u^{2}-2u\cos t}}dudt \approx 18. 265.\]
 
 Este cálculo se hace con \verb"Mathematica" ejecutando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y,z}={1+u*Cos[t],Sqrt}[3-u^2-2*u*Cos[t]]};
 r={x,y,z};
 A=Norm[Cross[D[r,t],D[r,u]]];
@@ -1438,15 +1271,12 @@ NIntegrate[4*A,{u,0,1},{t,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsection*{Un cilindro cardiogénico bajo un paraboloide}
+\subsection{Un cilindro cardiogénico bajo un paraboloide}
 
 Las ecuaciones $3z=9-(x+2)^2-(y+1)^2$ y $r=1-\cos(t)$ representan un paraboloide y un cilindro cardiodónico, respectivamente.
 Estas superficies, junto con el plano $z=0$, acotan un sólido.
 En el plano $xy$ el cilindro se proyecta como un cardioide que puede parametrizarse como
 \[\overrightarrow{s}(t)=\la(1-\cos(t))\cos(t),(1-\cos(t))\sin(t),0\ra, \,\, t \in [0,2\pi].\]
-
 
 Sobre el paraboloide, la coordenada $z$ tiene la forma
 
@@ -1457,12 +1287,9 @@ z &= \frac{1}{3}\left(9 - \left((1 - \cos(t))\cos(t) + 2\right)^2 - \left((1 - \
 \end{align*}
 }
 
-
-
-
 \begin{figure}[H]
 \centering
-\caption{\small Cilindro cardiogénico y paraboloide}
+\caption{Cilindro cardiogénico y paraboloide}
 \includegraphics[width=0.4\textwidth]{Img/40a.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Img/40b.pdf}
 \fuentepropia
@@ -1475,8 +1302,6 @@ Por tanto, la curva de intersección se parametriza por medio de la función
 \end{multline*}
 }
 
-
-
 \begin{figure}[H]
 \centering
 \caption{Superficie sobre el cilindro cardiogénico acotada por el paraboloide}
@@ -1485,8 +1310,8 @@ Por tanto, la curva de intersección se parametriza por medio de la función
 \fuentepropia
 \end{figure}
 
-Una combinación convexa de las curvas $\overrightarrow{s}$ y $\overrightarrow{r}$ de la forma $(1-u)\overrightarrow{s}(t)+u\overrightarrow{r}(t),$
-parametriza la porción del cilindro que se hallaba bajo el paraboloide y sobre el plano $xy.$
+Una combinación convexa de las curvas $\overrightarrow{s}$ y $\overrightarrow{r}$ de la forma $(1-u)\overrightarrow{s}(t)+u\overrightarrow{r}(t)$,
+parametriza la porción del cilindro que se hallaba bajo el paraboloide y sobre el plano $xy$.
 {\small
 \begin{multline*} \overrightarrow{p}(t,u)=\big\langle (1-\cos(t))\cos(t),(1-\cos(t))\sin(t), \\ \frac{1}{6}\left(u(13-4\sin(t)+2\sin(2t)+\cos(2t)) \right)\big\rangle,
 \end{multline*}
@@ -1510,11 +1335,7 @@ Los cálculos se hacen en \verb"Mathematica", para este fin se define $x$ e $y$,
 $z$, que al unir los puntos permite parametrizar el sólido mediante la expresión $r$.
 Luego se obtiene el gráfico de $r$ y se calcula el producto triple que se denomina $A$, este se integra con los límites descritos anteriormente.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t]};
 z=(9-(x+2)^2-(y+1)^2)/3;
 r=Simplify[(1-u)*{x,y,z}+u*{x,y,0}];
@@ -1524,10 +1345,7 @@ Integrate[Abs[A],{t,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsection*{Un paraboloide fuera de un cilindro cardiogénico}
+\subsection{Un paraboloide fuera de un cilindro cardiogénico}
 Consideremos el paraboloide con ecuación\ $3z=9-x^{2}-y^{2}$ y el cilindro cardiodónico $r=1-\cos(t)$.
 La proyección del paraboloide en el plano $xy$ es la circunferencia centrada en el origen del radio $3$,
 que puede parametrizarse como $\la 3\cos(t),3\sin(t)\ra $.
@@ -1540,8 +1358,6 @@ Para $t\in[0,2\pi],\, u\in[0,1]$, la región que se encuentra entre la cardioide
 \end{multline*}
 }
 
-
-
 \begin{figure}[H]
 \centering
 \caption{Superficie sobre el paraboloide $3z=9-x^{2}-y^{2}$}
@@ -1550,42 +1366,42 @@ Para $t\in[0,2\pi],\, u\in[0,1]$, la región que se encuentra entre la cardioide
 \fuentepropia
 \end{figure}
 
-\par 
+\par
 
 La coordenada $z$ se obtiene reemplazando $x$ y $z$ en la ecuación del paraboloide, esto es
 
 {\small
 \begin{align*}
-	z &= \frac{1}{3}(9-x^2-y^2) \\
-	&= \frac{1}{3}\left(9 - \left((1+2u + (u-1)\cos(t))\cos(t)\right)^2 \right. \\
-	&\quad \left. - \left((1+2u + (u-1)\cos(t))\sin(t)\right)^2\right) \\
-	&= \frac{1}{3}\left( (u-1)\cos(t)+2 \right) \left( (1-u)\cos(t) - 2u - 4 \right).
+z &= \frac{1}{3}(9-x^2-y^2) \\
+&= \frac{1}{3}\left(9 - \left((1+2u + (u-1)\cos(t))\cos(t)\right)^2 \right. \\
+&\quad \left. - \left((1+2u + (u-1)\cos(t))\sin(t)\right)^2\right) \\
+&= \frac{1}{3}\left( (u-1)\cos(t)+2 \right) \left( (1-u)\cos(t) - 2u - 4 \right).
 \end{align*}
 }
 Entonces la superficie sobre el paraboloide que se encuentra fuera del cilindro cardiogénico, y sobre el plano $xy$ se parametriza como:
 {\small
 \begin{multline*}
 {\bf r}(t,u)=\bigg \langle(1+2u+(u-1)\cos(t))\cos(t),(1+2u+(u-1)\cos(t))\sin(t) \\
-	\frac{1}{3}(u-1)(\cos(t)+2)((1-u)\cos(t)-2u-4) \bigg \rangle, u\in\lbrack0,1],t\in [0,2\pi].
+\frac{1}{3}(u-1)(\cos(t)+2)((1-u)\cos(t)-2u-4) \bigg \rangle, u\in\lbrack0,1],t\in [0,2\pi].
 \end{multline*}
 }
 %$((\cos(t))(1+2u+(u-1)\cos(t)),(1+2u+(u-1)\cos(t))\sin(t),\frac{1}{3}(u-1)(\cos(t)+2)((1-u)\cos(t)-2u-4))$
 
 \begin{figure}[H]
-	
-	\centering
-	\caption{Superficie sobre el paraboloide \( 3z = 9 - x^2 - y^2 \)}
-	\begin{minipage}[t]{0.29\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/41a.pdf}
-	\end{minipage}
-	\hspace{0.02\linewidth}
-	\begin{minipage}[t]{0.29\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/41b.pdf}
-	\end{minipage}
 
-	\fuentepropia
+\centering
+\caption{Superficie sobre el paraboloide \( 3z = 9 - x^2 - y^2 \)}
+\begin{minipage}[t]{0.29\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Img/41a.pdf}
+\end{minipage}
+\hspace{0.02\linewidth}
+\begin{minipage}[t]{0.29\textwidth}
+\centering
+\includegraphics[width=\linewidth]{Img/41b.pdf}
+\end{minipage}
+
+\fuentepropia
 \end{figure}
 
 Con la función ${\bf r}$ hallamos el siguiente vector.
@@ -1611,7 +1427,6 @@ Con la función ${\bf r}$ hallamos el siguiente vector.
 
 De modo que el elemento diferencial de área está dado por:
 
-
 {\small
 \[
 \lVert \mathbf{r}_t \times \mathbf{r}_u \rVert = \frac{1}{3}(\cos(t) + 2)(2u + (u - 1)\cos(t) + 1)f(u,t),
@@ -1620,60 +1435,45 @@ De modo que el elemento diferencial de área está dado por:
 
 en donde:
 \begin{center}
-	\resizebox{1.0\textwidth}{!}{%
-		$f(u,t) = \sqrt{4\cos(t)(u - 1)((u - 1)\cos(t) + 4u + 2) + 13 + 16u(1 + u)}$%
-	}
+\resizebox{1.0\textwidth}{!}{%
+$f(u,t) = \sqrt{4\cos(t)(u - 1)((u - 1)\cos(t) + 4u + 2) + 13 + 16u(1 + u)}$%
+}
 \end{center}
 
-
 con lo cual, el área de la superficie es
-
 
 \[\int_{0}^{1}\int_{0}^{2\pi} \|{\bf r}_{t}\times {\bf r}_{u}\|\,\, dtdu\approx 41.9822.\]
 
 Para hacer los cálculos en \verb"Mathematica" definimos $x$ e $y$, que corresponden a las expresiones para la cardioide. La región entre las curvas se parametriza como \verb"r", mientras que
 \verb"p" es la porción sobre el paraboloide cuya base está dada por \verb"r" y \verb"q", que definen la curva de intersección. El gráfico de la curva de intersección y la superficie se logran con las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t]};
 z=(9-x^2-y^2)/3;
 r=(1-u)*{x,y}+u*{3*Cos[t],3*Sin[t]};
 p={r[[1]],r[[2]],(9-r[[1]]^2-r[[2]]^2)/3};
 q={x,y,z};
 
-
 El gráfico de la curva de intersección y la superficie
 se logran con las siguientes instrucciones
-
 
 a=ParametricPlot3D[q,{t,0,2*Pi},PlotStyle->
 {Black,Thickness->0.01},PlotPoints->80];
 b=ParametricPlot3D[p,{t,0,2*Pi},{u,0,1},Mesh->False,
 PlotStyle->{Orange,PlotPoints->120}];
 
-
 Show[b,a]
 
-
-Hallamos $\|{\bf r}_{t}\times {\bf r}_{u}\|$ 
+Hallamos $\|{\bf r}_{t}\times {\bf r}_{u}\|$
 que se denomina $A$ y se integra numéricamente,
 A=Simplify[Norm[Cross[D[p,t],D[p,u]]]];
 NIntegrate[A,{t,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsection*{Un cilindro y dos planos}
+\subsection{Un cilindro y dos planos}
 Las ecuaciones $4x^{2}+z^{2}=4$, $z=3+2y$ y $z=5-x-3y$ representan un cilindro elíptico y dos planos, respectivamente.
 Estas superficies acotan un sólido como se muestra a continuación:
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -1687,12 +1487,12 @@ Estas superficies acotan un sólido como se muestra a continuación:
 
 Sobre este sólido parametrizado, las tres superficies que lo determinan y calcularemos el área de cada una.
 
-La proyección del cilindro en el plano $xz$ corresponde a la ecuación $4x^{2}+z^{2}=4,$
-que puede parametrizarse como $x=\cos(t),$ $z=2\sin (t),$ para $t\in \lbrack 0,2\pi ].$
+La proyección del cilindro en el plano $xz$ corresponde a la ecuación $4x^{2}+z^{2}=4$,
+que puede parametrizarse como $x=\cos(t)$, $z=2\sin (t)$, para $t\in \lbrack 0,2\pi ]$.
 La coordenada $y$ está determinada por las siguientes expresiones:
 
 En el plano $z=3+2y$ obtenemos $y=\sin (t)-\frac{3}{2}$ y en el plano
-$z=5-x-3y$ se sigue que $y=-\frac{2}{3}\sin (t)+\frac{5}{3}-\frac{1}{3}\cos (t).$
+$z=5-x-3y$ se sigue que $y=-\frac{2}{3}\sin (t)+\frac{5}{3}-\frac{1}{3}\cos (t)$.
 
 Definimos ahora las funciones vectoriales que determinan la intersección del cilindro con cada uno de los dos planos.
 \begin{eqnarray*}
@@ -1700,7 +1500,7 @@ Definimos ahora las funciones vectoriales que determinan la intersección del ci
 \overrightarrow{b}(t)&=& \la \cos(t) ,-\frac{2}{3}\sin (t)+\frac{5}{3}-\frac{1}{3}\cos (t),2\sin (t)\ra , \, t\in [0,2\pi]
 \end{eqnarray*}
 
-\subsubsection*{Área sobre la superficie del cilindro}
+\subsubsection{Área sobre la superficie del cilindro}
 Una combinación convexa de las funciones
 $\overrightarrow{a}(t)$ y $\overrightarrow{b}(t)$ parametriza la superficie del cilindro que se encuentra entre los dos planos. Es decir,
 
@@ -1708,7 +1508,7 @@ $\overrightarrow{a}(t)$ y $\overrightarrow{b}(t)$ parametriza la superficie del 
 {\bf r}(u,t) = ( 1-u) \overrightarrow{a}(t)+u\overrightarrow{b}(t) \\
 =\la \cos (t),\frac{1}{3}( 3-5u)\sin (t) +\frac{19}{6}u-\frac{1}{3}u\cos (t)-\frac{3}{2},2\sin (t)\ra,
 \end{multline*}
-con $t\in [0,2\pi],\,u\in [0,1].$
+con $t\in [0,2\pi],\,u\in [0,1]$.
 De aquí se obtienen las siguientes funciones.
 \begin{eqnarray*}
 {\bf r}_{t}&=& \la -\sin(t),\frac{1}{3}(3-5u)\cos(t)+\frac{1}{3}u\sin(t),2\cos(t)\ra \\
@@ -1718,8 +1518,8 @@ De aquí se obtienen las siguientes funciones.
 También se calcula
 \begin{center}
 \resizebox{1.0\textwidth}{!}{%
-$\mathbf{r}_{t}\times\mathbf{r}_{u}= \left \langle2\cos(t)\left (\frac{5}{3}\sin(t)-\frac{19}{6}+\frac{1}{3}\cos(t)\right),0,\sin(t)\left (\frac{5}{3}\sin(t)-\frac{19}{6}+\frac{1}{3}\cos(t)\right) \right \rangle,$
-	}
+$\mathbf{r}_{t}\times\mathbf{r}_{u}= \left \langle2\cos(t)\left (\frac{5}{3}\sin(t)-\frac{19}{6}+\frac{1}{3}\cos(t)\right),0,\sin(t)\left (\frac{5}{3}\sin(t)-\frac{19}{6}+\frac{1}{3}\cos(t)\right) \right \rangle$,
+}
 \end{center}
 
 cuya magnitud es
@@ -1729,10 +1529,7 @@ y con esta expresión se obtiene el área, la superficie en mención.
 Los cálculos anteriores se pueden realizar en \verb"Mathematica"
 mediante la ejecución de las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a={Cos[t],(-3+2*Sin[t])/3,2*Sin[t]};
 b={Cos[t],(5-Cos[t]-2*Sin[t])/3,2*Sin[t]};
 B=Norm[Cross[D[(1-u)*a+u*b,t],D[(1-u)*a+u*b,u]]]
@@ -1741,14 +1538,12 @@ NIntegrate[A,{t,0,2Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsubsection*{Área sobre los planos}
+\subsubsection{Área sobre los planos}
 La región interior a la elipse se parametriza como
-$x=u\cos(t),$ $z=2u\sin (t),$ para $t\in \lbrack 0,2\pi ],u\in \lbrack 0,1].$
-La coordenada $y$ se puede determinar reemplazando $x$ y $z$ en la ecuación de los planos, de esta manera para  $z=3+2y$ se sigue $y=u\sin (t)-\frac{3}{2},$
+$x=u\cos(t)$, $z=2u\sin (t)$, para $t\in \lbrack 0,2\pi ],u\in \lbrack 0,1]$.
+La coordenada $y$ se puede determinar reemplazando $x$ y $z$ en la ecuación de los planos, de esta manera para  $z=3+2y$ se sigue $y=u\sin (t)-\frac{3}{2}$,
 mientras que en $z=5-x-3y$ se obtiene que
-$y=-\frac{2}{3}u\sin (t)+\frac{5}{3}-\frac{1}{3}u\cos (t).$
+$y=-\frac{2}{3}u\sin (t)+\frac{5}{3}-\frac{1}{3}u\cos (t)$.
 
 Por lo tanto, es natural que se definan las siguientes funciones que parame- \\ trizan la región sobre cada uno de los planos que acotan el cilindro.
 \begin{eqnarray*}
@@ -1761,19 +1556,18 @@ El área sobre el plano $z=3+2y$ dentro del cilindro puede determinarse con el s
 \overrightarrow{\alpha }{t}&=& \la -u\sin (t),u\cos (t),2u\cos (t)\ra  \\
 \overrightarrow{\alpha }{u}&=& \la \cos (t),\sin (t),2\sin (t)\ra.
 \end{eqnarray*}
-Luego se calcula el elemento diferencial de área 
-
+Luego se calcula el elemento diferencial de área
 
 \begin{align*}
-	\|\mathbf{r}_t \times \mathbf{r}_u\| &= \| \langle -u\sin(t), u\cos(t), 2u\cos(t) \rangle \times \langle \cos(t), \sin(t), 2\sin(t) \rangle \| \\
-	&= \sqrt{5}u
+\|\mathbf{r}_t \times \mathbf{r}_u\| &= \| \langle -u\sin(t), u\cos(t), 2u\cos(t) \rangle \times \langle \cos(t), \sin(t), 2\sin(t) \rangle \| \\
+&= \sqrt{5}u
 \end{align*}
 
 Y, por último, este término se integra con los límites establecidos
 \[\int_{0}^{2\pi }\int_{0}^{1}\| r_{t}\times r_{u}\|
 dudt=\int_{0}^{2\pi }\int_{0}^{1}\sqrt{5}ududt= \sqrt{5}\pi.\]
 
-Para la región sobre el plano con ecuación $z=5-x-3y,$
+Para la región sobre el plano con ecuación $z=5-x-3y$,
 hallamos los mismos vectores que en el caso anterior
 \begin{eqnarray*}
 \overrightarrow{\beta}_{t}&=&  \la -u\sin (t),-\frac{1}{3}u( 2\cos (t)-\sin (t))  ,2u\cos (t) \ra  \\
@@ -1786,69 +1580,65 @@ y el área de la superficie señalada es
 \[\int_{0}^{2\pi }\int_{0}^{1}\| r_{t}\times r_{u}\|
 dudt=\int_{0}^{2\pi }\int_{0}^{1}\frac{2}{3}\sqrt{11}ududt= \frac{2}{3}\pi \sqrt{11}.\]
 
-\subsection*{Una porción de paraboloide}
+\subsection{Una porción de paraboloide}
 El paraboloide con ecuación $\frac{(z-2)^2}{4}+\frac{(y-3)^2}{9}=1-\frac{x}{4}$
 posee vértice en el punto $(4,3,2)$
 y abre hacia la parte negativa del eje $x$; consideraremos la porción donde $x \geq 0$ y presentaremos además la proyección en el plano $yz$, que es una elipse.
 
 Para rellenar el interior de la elipse se pueden usar las expresiones \linebreak
-$y=3+3u\sin t,z=2+2u\cos t,$ donde $ u\in \lbrack 0,1]$ y $t \in \lbrack 0,2\pi ].$
+$y=3+3u\sin t,z=2+2u\cos t$, donde $ u\in \lbrack 0,1]$ y $t \in \lbrack 0,2\pi ]$.
 La coordenada $x$ sobre el paraboloide se obtiene al sustituir $z$ y $y$ en dicha ecuación, es decir,
 
 \begin{figure}[H]
-	\centering
-	\caption{Paraboloide y su proyección en el plano \( yz \)}
-	\begin{minipage}[t]{0.23\textwidth}
-		\centering
-		
-		\includegraphics[width=\linewidth]{Img/32.pdf}
-	\end{minipage}
-	\hspace{0.02\linewidth}
-	\begin{minipage}[t]{0.27\textwidth}
-		\centering
-		
-		\includegraphics[width=\linewidth]{Fig/131.pdf}
-	\end{minipage}
-	\hspace{0.02\linewidth}
-	\begin{minipage}[t]{0.27\textwidth}
-		\centering
-		
-		\includegraphics[width=\linewidth]{Fig/132.pdf}
-	\end{minipage}
-	\fuentepropia
+\centering
+\caption{Paraboloide y su proyección en el plano \( yz \)}
+\begin{minipage}[t]{0.23\textwidth}
+\centering
+
+\includegraphics[width=\linewidth]{Img/32.pdf}
+\end{minipage}
+\hspace{0.02\linewidth}
+\begin{minipage}[t]{0.27\textwidth}
+\centering
+
+\includegraphics[width=\linewidth]{Fig/131.pdf}
+\end{minipage}
+\hspace{0.02\linewidth}
+\begin{minipage}[t]{0.27\textwidth}
+\centering
+
+\includegraphics[width=\linewidth]{Fig/132.pdf}
+\end{minipage}
+\fuentepropia
 \end{figure}
 
 \[x=  4\left( 1-\frac{\left( 2u\cos (t) \right) ^{2}}{4}- \frac{\left( 3u\sin (t) \right) ^{2}}{9}\right) =4-4u^{2}.\]
 
 Entonces, la función ${\bf r}(u,t)=\left\langle 4-4u^{2},3+3u\sin t,2+2u\cos
-t\right\rangle ,$ $u\in \lbrack 0,1],\,\,t\in \lbrack 0,2\pi ], $
-parametriza la superficie del paraboloide, con $x\geq 0.$
+t\right\rangle $, $u\in \lbrack 0,1],\,\,t\in \lbrack 0,2\pi ], $
+parametriza la superficie del paraboloide, con $x\geq 0$.
 Con esta función hallamos los siguientes vectores
 \begin{eqnarray*}
 {\bf r}_{u} &=& \left\langle -8u,3\sin (t) ,2\cos (t) \right\rangle\\
 {\bf r}_{t} &=& \left\langle 0,3u\cos (t) ,-2u\sin (t) \right\rangle.
 \end{eqnarray*}
 Entonces,
-${\bf r}_{t}\times{\bf r}_{u}=\left\langle 6u,16u^{2}\sin (t),24u^{2}\cos (t) \right\rangle,$
+${\bf r}_{t}\times{\bf r}_{u}=\left\langle 6u,16u^{2}\sin (t),24u^{2}\cos (t) \right\rangle$,
 por tanto,
-
 
 \[\left\| {\bf r}_{u}\times {\bf r}_{t}\right\| = 2u\sqrt{9+64u^{2}+80u^{2}\cos ^{2}(t) }.\]
 De esta manera, el área de la superficie del paraboloide está dada por
 %$\int_{0}^{1}\int_{0}^{2\pi }\left\| {\bf r}_{u}\times {\bf r}_{t}\right\| dtdu  \approx 46.979.$
 {\footnotesize
-	\begin{equation*}
-		\int_{0}^{1}\int_{0}^{2\pi} \|\mathbf{r}_{u} \times \mathbf{r}_{t}\| \, dt\,du =
-		\int_{0}^{1}\int_{0}^{2\pi}
-		2u\sqrt{9 + 64u^2 + 80u^2 \cos^2(t)} \, dt\,du \approx 46{,}979
-	\end{equation*}
+\begin{equation*}
+\int_{0}^{1}\int_{0}^{2\pi} \|\mathbf{r}_{u} \times \mathbf{r}_{t}\| \, dt\,du =
+\int_{0}^{1}\int_{0}^{2\pi}
+2u\sqrt{9 + 64u^2 + 80u^2 \cos^2(t)} \, dt\,du \approx 46{,}979
+\end{equation*}
 }
 Este cálculo se hace en \verb"Mathematica" con las siguientes instrucciones
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 y=3+3*u*Sin[t],
 z=2+2*u*Cos[t]};
 x=Simplify[4*(1-(z-2)^2/4-(y-3)^2/9)]
@@ -1858,12 +1648,9 @@ NIntegrate[A,{t,0,2Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsection*{Un cilindro cardióidico y un plano}
+\subsection{Un cilindro cardióidico y un plano}
 La superficie del cilindro cardiogénico con ecuación
 $r=2(1+\cos(t))$, acotada por los planos $z=0$ y $z=2-x/2$, se presenta a continuación. También se muestra la porción sobre el plano $z=2-x/2$ acotada por el cilindro cardiogénico. Hallaremos el área de estas dos superficies:
-
 
 \begin{figure}[H]
 \centering
@@ -1873,14 +1660,14 @@ $r=2(1+\cos(t))$, acotada por los planos $z=0$ y $z=2-x/2$, se presenta a contin
 \fuentepropia
 \end{figure}
 
-Sobre el plano $xy,$ la cardioide $r=2(1+\cos(t))$ se parametriza como
+Sobre el plano $xy$, la cardioide $r=2(1+\cos(t))$ se parametriza como
 \[\la 2\left( 1+\cos (t) \right) \cos (t) ,2\left(1+\cos (t) \right) \sin (t),0 \ra.\]
-En el plano con ecuación $z=2-x/2,$ se satisface que
+En el plano con ecuación $z=2-x/2$, se satisface que
 \[z=2-2\left( 1+\cos (t) \right) \cos(t) /2= 2-\left( 1+\cos t\right) \cos t,\]
 por tanto, la curva de intersección entre el plano y el cilindro cardiogénico se parametriza como
 \[\la 2\left(1+\cos(t)\right)\cos(t),2\left(1+\cos(t)\right)\sin(t),2-(1+\cos (t))\cos(t) \ra,\]
 con lo que forma una combinación convexa entre dos puntos cuyos primer y segundo componente son iguales, uno sobre el plano $z=0$ y el otro sobre el plano
-$z=2-x/2.$ Se parametriza la superficie lateral, esto es
+$z=2-x/2$. Se parametriza la superficie lateral, esto es
 \begin{multline*}
 {\bf r}(u,t)=\left( 1-u\right) \la 2\left( 1+\cos (t) \right) \cos \left(
 t\right) ,2\left( 1+\cos (t) \right) \sin (t) ,0\ra \\
@@ -1889,7 +1676,7 @@ t\right) ,2\left( 1+\cos (t) \right) \sin (t) ,0\ra \\
 = \la 2( \cos (t)+1) \cos (t),2\sin (t)+\sin (2t),u(2-\left( 1+\cos (t) \right) \cos (t)) \ra
 \end{multline*}
 %
-$t\in [0,2\pi],$ $u\in [0,1].$ 
+$t\in [0,2\pi]$, $u\in [0,1]$.
 \\
 
 Con esta función obtenemos los siguientes vectores:
@@ -1905,14 +1692,11 @@ Con lo cual,
 entonces el área lateral del cilindro acotada por los dos planos está dada por
 
 {\small
-\[\int_{0}^{1}\int_{0}^{2\pi}\left|2\sin(t)\left(\cos(t)+2\right)\sqrt{2-2\cos(t)}\right|dtdu= \frac{96}{5}.\] 
+\[\int_{0}^{1}\int_{0}^{2\pi}\left|2\sin(t)\left(\cos(t)+2\right)\sqrt{2-2\cos(t)}\right|dtdu= \frac{96}{5}.\]
 }
 El valor anterior se obtiene en \verb"Mathematica" con ayuda de las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 x=2*(1+Cos[t])*Cos[t);
 y=2*(1+Cos[t]*Sin[t];
 z=2-x/2;
@@ -1922,40 +1706,34 @@ Integrate[A,{u,0,1},{t,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-Hallaremos ahora el área de la región sobre el plano $z=2-x/2,$ acotada por el cilindro cardiogénico.
+Hallaremos ahora el área de la región sobre el plano $z=2-x/2$, acotada por el cilindro cardiogénico.
 El interior de la cardioide en el plano $xy$ se parametriza como
 \[\la 2u\left( 1+\cos(t)\right) \cos(t) ,2u\left( 1+\cos(t)\right) \sin(t),0\ra,\]
-con $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1].$
-Sobre el plano $z=2-x/2,$ se cumple que
+con $t\in \lbrack 0,2\pi ]$, $u\in \lbrack 0,1]$.
+Sobre el plano $z=2-x/2$, se cumple que
 \[z=2-2u\left( 1+\cos(t)\right)\cos(t)/2=2-u\left(\cos t+1\right)\cos(t).\]
 
 Entonces, la parte del plano acotada por el cilindro cardiogénico se parame- \\ triza por medio de la siguiente función
 \[
 \adjustbox{max width=\textwidth}{
-	${\bf r}(u,t)=\big\langle 2u\left( 1+\cos(t)\right) \cos(t),2u\left(1+\cos(t)\right)\sin(t),2-u(\cos(t)+1)\cos(t) \big\rangle,$
+${\bf r}(u,t)=\big\langle 2u\left( 1+\cos(t)\right) \cos(t),2u\left(1+\cos(t)\right)\sin(t),2-u(\cos(t)+1)\cos(t) \big\rangle $,
 }
-\] con $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1].$ De aquí se obtienen los siguientes vectores:
+\] con $t\in \lbrack 0,2\pi ]$, $u\in \lbrack 0,1]$. De aquí se obtienen los siguientes vectores:
 \begin{align*}
-	\mathbf{r}_t &= \left\langle -2u\sin(t)(2\cos(t) + 1), 2u\left(\cos(t) - \sin^2(t) + \cos^2(t)\right), \right. \\
-	&\quad \left. u\sin(t)(2\cos(t) + 1) \right\rangle \\
-	\mathbf{r}_u &= \left\langle 2(1 + \cos(t))\cos(t), 2(1 + \cos(t))\sin(t), -(1 + \cos(t))\cos(t) \right\rangle \\
-	\mathbf{r}_t \times \mathbf{r}_u &= \left\langle -2u(1 + \cos(t))^2, 0, -4u(1 + \cos(t))^2 \right\rangle \\
-	&= -2u(1 + \cos(t))^2 \langle 1, 0, 2 \rangle
+\mathbf{r}_t &= \left\langle -2u\sin(t)(2\cos(t) + 1), 2u\left(\cos(t) - \sin^2(t) + \cos^2(t)\right), \right. \\
+&\quad \left. u\sin(t)(2\cos(t) + 1) \right\rangle \\
+\mathbf{r}_u &= \left\langle 2(1 + \cos(t))\cos(t), 2(1 + \cos(t))\sin(t), -(1 + \cos(t))\cos(t) \right\rangle \\
+\mathbf{r}_t \times \mathbf{r}_u &= \left\langle -2u(1 + \cos(t))^2, 0, -4u(1 + \cos(t))^2 \right\rangle \\
+&= -2u(1 + \cos(t))^2 \langle 1, 0, 2 \rangle
 \end{align*}
 Estos vectores, a su vez, nos permiten obtener el elemento diferencial de área:
-$\left\|  {\bf r}_{t}\times {\bf r}_{u}\right\|= 2\sqrt{5}\left|u\left( 1+\cos(t)\right)^{2}\right| .$ Por lo tanto, el área de la superficie en mención está dada por
+$\left\|  {\bf r}_{t}\times {\bf r}_{u}\right\|= 2\sqrt{5}\left|u\left( 1+\cos(t)\right)^{2}\right| $. Por lo tanto, el área de la superficie en mención está dada por
 \[\int_{0}^{1}\int_{0}^{2\pi }2\sqrt{5}\left| u\left( 1+\cos (t) \right) ^{2}\right|
 dtdu= 3\pi \sqrt{5}.\]
 
 En \verb"Mathematica" este valor se consigue con las siguientes instrucciones.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 x=2*u*(1+Cos[t])*Cos[t;
 y=2*u*(1+Cos[t])*Sin[t];
 z=2-x/2;
@@ -1965,26 +1743,25 @@ NIntegrate[A,{u,0,1},{t,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
 %\clearpage
 
-\subsection*{Dos cilindros cardiotónicos entre dos planos}
+\subsection{Dos cilindros cardiotónicos entre dos planos}
 Las ecuaciones $r = 1-\cos(t)$ y $r = 2- 2\cos(t)$ representan, en el plano, dos cardioides, y en el espacio estas mismas ecuaciones representan dos cilindros cardiotónicos \footnote{Este término fue acuñado por el profesor Juan Zambrano de la Universidad Distrital Francisco José de Caldas.}. Estas cilíndricas se cortan por los planos $z=0$ y $z=2-x/2$.
 %
 \begin{figure}[H]
-	\centering
-	\caption{Superficie sobre el plano \( z = 2 - x/2 \) acotada por dos cilindros cardióidicos}
-	\begin{minipage}[t]{0.28\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Fig/136.pdf}
-	\end{minipage}
-	\hspace{0.5em}
-	\begin{minipage}[t]{0.28\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Img/36b.pdf}
-	\end{minipage}
-	\vspace{1ex}
-	\fuentepropia
+\centering
+\caption{Superficie sobre el plano \( z = 2 - x/2 \) acotada por dos cilindros cardióidicos}
+\begin{minipage}[t]{0.28\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Fig/136.pdf}
+\end{minipage}
+\hspace{0.5em}
+\begin{minipage}[t]{0.28\linewidth}
+\centering
+\includegraphics[width=\linewidth]{Img/36b.pdf}
+\end{minipage}
+\vspace{1ex}
+\fuentepropia
 \end{figure}
 %
 En el plano $xy$ los cilindros cardiotónicos se  parametrizan en la forma:
@@ -1997,40 +1774,38 @@ cada una de las curvas $\overrightarrow{\alpha }(t)$ y $\overrightarrow{\beta }(
 se proyecta sobre el plano $z=2-x/2$, de la siguiente forma:
 \[
 \adjustbox{max width=\textwidth}{
-$\begin{array}{rcl}
+$
+\begin{array}{rcl}
 \overrightarrow{p}(t) &=& \big\langle \left( 1-\cos(t) \right)\cos(t),\left( 1-\cos(t) \right)\sin(t), 2-\left( \left( 1-\cos(t) \right)\cos(t) \right)/2 \big\rangle \\[1ex]
 \overrightarrow{q}(t) &=& \big\langle \left( 2-2\cos(t) \right)\cos(t), \left( 2-2\cos(t) \right)\sin(t), 2-\left( 2\left( 1-\cos(t) \right)\cos(t) \right)/2 \big\rangle
 \end{array}$}
 \]
 
 \begin{figure}[H]
-	\centering
-	\caption{Cilindros cardiotónicos acotados por dos planos}
-	\begin{minipage}[t]{0.28\linewidth}
-		\centering
-		
-		\includegraphics[width=\linewidth]{Fig/137.pdf}
-	\end{minipage}
-	\hspace{1em}
-	\begin{minipage}[t]{0.28\linewidth}
-		\centering
-		
-		\includegraphics[width=\linewidth]{Fig/138.pdf}
-	\end{minipage}
-	\vspace{1ex}
-	\fuentepropia
+\centering
+\caption{Cilindros cardiotónicos acotados por dos planos}
+\begin{minipage}[t]{0.28\linewidth}
+\centering
+
+\includegraphics[width=\linewidth]{Fig/137.pdf}
+\end{minipage}
+\hspace{1em}
+\begin{minipage}[t]{0.28\linewidth}
+\centering
+
+\includegraphics[width=\linewidth]{Fig/138.pdf}
+\end{minipage}
+\vspace{1ex}
+\fuentepropia
 \end{figure}
 
 Con el propósito de parametrizar la parte sobre los cilindros entre los planos $z=0$ y $z=2-x/2$, se hará una combinación convexa entre las expresiones $\overrightarrow{p}(t)$ y $\overrightarrow{\alpha}(t)$ por un lado
 y $\overrightarrow{q}(t)$ con $\overrightarrow{\beta}(t)$ por el otro.
 
-
-
-
 \begin{figure}[H]
 \centering
 \caption{
-	Cilindros cardiotónicos
+Cilindros cardiotónicos
 }
 \includegraphics[width=0.4\textwidth]{Img/57a.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Img/57b.pdf}
@@ -2039,12 +1814,9 @@ y $\overrightarrow{q}(t)$ con $\overrightarrow{\beta}(t)$ por el otro.
 
 Estas figuras se obtienen en \verb"Mathematica" con las siguientes instrucciones
 
- % espacio entre texto y código
+% espacio entre texto y código
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 ParametricPlot3D[{{2*Cos[t]*(1-Cos[t]),
 2*Sin[t]*(1-Cos[t]),u(2-Cos[t]+Cos[t]^2)},
 {Cos[t]*(1-Cos[t]),Sin[t]*(1-Cos[t]),
@@ -2055,16 +1827,12 @@ Mesh->False,PlotPoints->80]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Ahora calcularemos el área sobre los cilindros.
 
-\subsubsection*{Cilindro menor}
+\subsubsection{Cilindro menor}
 Para $\overrightarrow{p}(t)$ y $\overrightarrow{\alpha }(t)$ se puede simplificar la expresión
-$(1-u)\overrightarrow{\alpha }(t)+u\overrightarrow{p}(t),$
+$(1-u)\overrightarrow{\alpha }(t)+u\overrightarrow{p}(t)$,
 la cual proporciona la función que describe la parte del cilindro menor y que se halla entre los planos $z=0$ y $z=2-x/2$.
-
 
 \begin{multline*}
 {\bf r}\left( u,t\right) = \left( 1-u\right) \left\langle \left( 1-\cos (t) \right) \cos
@@ -2076,9 +1844,8 @@ la cual proporciona la función que describe la parte del cilindro menor y que s
 \sin (t) \left( 1-\cos (t) \right) ,\frac{1}{2}u\left( 4-\cos (t) +\cos ^{2}(t) \right)
 \right\rangle,
 \end{multline*}
-en donde $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1].$
+en donde $t\in \lbrack 0,2\pi ]$, $u\in \lbrack 0,1]$.
 Con el fin de hallar el área superficial, se requieren los siguientes elementos.
-
 
 \begin{multline*}
 {\bf r}_{u}= \la 0,0,2-\frac{1}{2}\cos (t) +\frac{1}{2}\cos ^{2}(t) \ra \\
@@ -2096,10 +1863,7 @@ Entonces, el área superficial sobre el cilindro menor es
 \end{equation}
 Estos cálculos se hacen muy simples, ejecutando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={Cos[t]*(1-Cos[t]),Sin[t]*(1-Cos[t])};
 a={x,y,0};
 p={x,y,2-x/2};
@@ -2108,23 +1872,24 @@ Integrate[Norm[Cross[D[r,u]]],{t,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsubsection*{Cilindro mayor}
-Para $\overrightarrow{q}(t)$ y $\overrightarrow{\beta}(t)$, es necesario simplificar la expresión 
+\subsubsection{Cilindro mayor}
+Para $\overrightarrow{q}(t)$ y $\overrightarrow{\beta}(t)$, es necesario simplificar la expresión
 \[
 (1 - u)\overrightarrow{\beta}(t) + u\overrightarrow{q}(t),
 \]
 lo que nos provee de la función que parametriza la región entre los planos sobre el cilindro mayor, esto es
 
-\begin{flushleft}
+\vspace{\abovedisplayskip}
+
 \adjustbox{max width=\textwidth}{
-$\begin{array}{l}
+$
+\begin{array}{l}
 \hspace{-0.6em}\mathbf{r}(u,t) = (1 - u)(2(1 - \cos(t))\cos(t),\; 2(1 - \cos(t))\sin(t),\; 0) \\[1ex]
 \quad + u((2 - 2\cos(t))\cos(t),\; (2 - 2\cos(t))\sin(t),\; 2 - (2(1 - \cos(t))\cos(t))/2) \\[1ex]
 = \langle 2\cos(t)(1 - \cos(t)),\; 2\sin(t)(1 - \cos(t)),\; u(2 - \cos(t) + \cos^2(t)) \rangle
 \end{array}$}
-\end{flushleft}
+
+\vspace{\belowdisplayskip}
 
 Con lo anterior, se halla el elemento diferencial de área:
 \[
@@ -2138,31 +1903,22 @@ Luego, el área superficial del cilindro mayor está dada por:
 
 En \verb"Mathematica", estos cálculos se hacen con las siguientes instrucciones.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={2*Cos[t]*(1-Cos[t]),2*Sin[t]*(1-Cos[t])};
 r=(1-u)*{x,y,0}+u*{x,y,2-x/2};
 Integrate[Norm[Cross[D[r,t,[r,u]]],{t,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsection*{Cono oblicuo truncado}
+\subsection{Cono oblicuo truncado}
 Consideremos las funciones vectoriales $\overrightarrow{\alpha }(t) =\langle 1+\cos \left(
 t\right) ,\sin (t) ,0\rangle$ y $\overrightarrow{\beta }(t) =\langle 2+2\cos \left(
-t\right) ,2\sin (t) ,3 \rangle,$
+t\right) ,2\sin (t) ,3 \rangle$,
 que representan dos circunferencias en el espacio. Una combinación convexa de estas define la función r:
-
-\begin{flalign*}
-	&\mathbf{r}(t, u) = (1-u)\overrightarrow{\alpha}(t) + u\overrightarrow{\beta}(t) = \small{\left\langle (1+\cos(t))(1+u), \sin(t)(1+u), 3u\right\rangle}, &&
-\end{flalign*}
-
-con $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1].$ Esta función parametriza el cono truncado oblicuo que se muestra en la figura.
-
-
+\begin{equation*}
+\mathbf{r}(t, u) = (1-u)\overrightarrow{\alpha}(t) + u\overrightarrow{\beta}(t) = \left\langle (1+\cos(t))(1+u), \sin(t)(1+u), 3u\right\rangle\!,
+\end{equation*}
+con $t\in \lbrack 0,2\pi ]$, $u\in \lbrack 0,1]$. Esta función parametriza el cono truncado oblicuo que se muestra en la figura.
 
 \begin{figure}[H]
 \centering
@@ -2171,24 +1927,21 @@ con $t\in \lbrack 0,2\pi ],$ $u\in \lbrack 0,1].$ Esta función parametriza el c
 \fuentepropia
 \end{figure}
 
-Con la función ${\bf r}\left( t,u\right) $ hallamos${\bf r}_{t}=\left\langle -\sin (t) \left( 1+u\right) ,\cos \left(
-t\right) \left( 1+u\right) ,0\right\rangle \,$ \break
-y $\,{\bf r}_{u}=\left\langle 1+\cos (t) ,\sin (t),3\right\rangle,$
+Con la función ${\bf r}\left( t,u\right) $ hallamos ${\bf r}_{t}=\left\langle -\sin (t) \left( 1+u\right) ,\cos \left(
+t\right) \left( 1+u\right) ,0\right\rangle $\, \break
+y $\,{\bf r}_{u}=\left\langle 1+\cos (t) ,\sin (t),3\right\rangle$,
 que determinan el elemento diferencial de área
 {\small
 \begin{align*}
-	\|\mathbf{r}_t \times \mathbf{r}_u\| &= \left\| \left\langle 3\cos(t)(1+u), 3\sin(t)(1+u), -(1+\cos(t))(1+u) \right\rangle \right\| \\
-	&= (1+u)\sqrt{\cos^2(t) + 10 + 2\cos(t)},
+\|\mathbf{r}_t \times \mathbf{r}_u\| &= \left\| \left\langle 3\cos(t)(1+u), 3\sin(t)(1+u), -(1+\cos(t))(1+u) \right\rangle \right\| \\
+&= (1+u)\sqrt{\cos^2(t) + 10 + 2\cos(t)},
 \end{align*}
 }
 cuya integral proporciona el área de esta región
 \[\int_{0}^{2\pi }\int_{0}^{1}\left( 1+u\right) \sqrt{\cos ^{2}(t) +10+2\cos (t) }dudt \approx 30.4679.\]
 La figura y los cálculos se obtienen con las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 ParametricPlot3D[{(1+u)*(1+Cos[t]),(1+u)*Sin[t],3*u},
 {u,0,1},{t,0,2*Pi},PlotPoints->80,Mesh->True,
 PlotStyle->Blend[{Red,Black,Yellow}]]
@@ -2198,9 +1951,7 @@ NIntegrate[A,{t,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsection*{Superficie obtenida entre dos elipses}
+\subsection{Superficie obtenida entre dos elipses}
 
 Las funciones vectoriales
 $\overrightarrow{a}(t)= \la 2\cos(t),\sin(t),0\ra$ y $\overrightarrow{b}(t)= \big \langle \cos(t), \linebreak 3\sin(t),3\big\rangle$,
@@ -2214,7 +1965,6 @@ Con $u \in [0,1]$ y $t \in [0,2\pi]$, se parametriza la superficie que se muestr
 
 %
 
-
 \begin{figure}[H]
 \centering
 \caption{Superficie que conecta dos elipses.}
@@ -2227,16 +1977,11 @@ Con $u \in [0,1]$ y $t \in [0,2\pi]$, se parametriza la superficie que se muestr
 
 Este gráfico se obtiene con las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 ParametricPlot3D[{(2-u)*Cos[t],(1+2*u)*Sin[t],3*u},
 {u,0,1},{t,0,2*Pi},PlotPoints->80,Mesh->False]
 \end{Verbatim}
 \end{tcolorbox}
-
-
 
 Con ayuda de la función $\mathbf{r}$ se obtienen los siguientes vectores:\\
 $\mathbf{r}_{u} =\left\langle -\cos(t),\, 2\sin(t),\, 3 \right\rangle$ y $\mathbf{r}_{t} = \left\langle -\sin(t)(2 - u),\, \cos(t)(1 + 2u),\, 0 \right\rangle$, los cuales describen las direcciones tangentes de la superficie parametrizada. Además, el producto cruzado\\ $\mathbf{r}_{t} \times \mathbf{r}_{u} = \left\langle 3\cos(t)(1 + 2u),\, 3\sin(t)(2 - u),\, 5\cos^2(t) + 2u - 4 \right\rangle$ nos proporciona el vector normal y define el elemento diferencial de área.
@@ -2251,10 +1996,7 @@ La integral que proporciona el área de la superficie en mención es:
 
 Estos cálculos se hacen en \verb"Mathematica" usando las siguientes sentencias.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r=Simplify[(1-u)*{2*Cos[t],Sin[t],0}+u*{Cos[t],
 3*Sin[t],3}];
 A=Simplify[Norm[Cross[D[r,t],D[r,u]]]];
@@ -2262,11 +2004,8 @@ NIntegrate[A,{t,0,2Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \index{Cono cardioidico!oblicuo y truncado}
-\subsection*{Cono cardiogénico oblicuo y truncado} 
+\subsection{Cono cardiogénico oblicuo y truncado}
 A partir de las cardioides definidas por las funciones vectoriales
 \begin{eqnarray*}
 \overrightarrow{\alpha }(t) & \left\langle \left( 1+\cos \left(
@@ -2275,15 +2014,12 @@ t\right) \right) \cos (t) ,\left( 1+\cos (t) \right)
 \overrightarrow{b}(t) & \left\langle 2\left( 1+\cos \left(
 t\right) \right) \cos (t) ,2\left( 1+\cos (t)\right) \sin (t) ,3\right\rangle.
 \end{eqnarray*}
-Con $t \in [0,2\pi],$ se trazan segmentos rectilíneos entre estas dos curvas, lo que produce una parametrización de un cono truncado oblicuo, cuyos cortes paralelos al plano $xy$ son cardioides.
+Con $t \in [0,2\pi]$, se trazan segmentos rectilíneos entre estas dos curvas, lo que produce una parametrización de un cono truncado oblicuo, cuyos cortes paralelos al plano $xy$ son cardioides.
 La función que parametriza la superficie obtenida y su gráfico son las siguientes:
 \begin{eqnarray*}
 {\bf r}\left( t,u\right) &=& (1-u)\overrightarrow{\alpha }(t)+ u \overrightarrow{\beta}(t) \\
 && \left\langle (1+\cos(t))(1+u) \cos (t),( 1+\cos (t))(1+u) \sin (t) ,3u  \right\rangle.
 \end{eqnarray*}
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -2297,23 +2033,18 @@ La función que parametriza la superficie obtenida y su gráfico son las siguien
 
 La superficie se puede obtener ejecutando las siguientes instrucciones.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 ParametricPlot3D[{(2-u)*Cos[t]*(1+Cos[t]),
 (2-u)*Sin[t]*(1+Cos[t]),3-3*u},{u,0,1},{t,0,2*Pi},
 PlotPoints->90,Mesh->False]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Con la función ${\bf r}$, se obtienen los siguientes vectores\\
 ${\bf r}_{t}= \left\langle -\sin (t) \left( 1+2\cos (t) \right) (1+u) ,\left( 1+\cos(t) \right)
 \left( 2\cos(t) -1\right)( 1+u) ,0\right\rangle $\\
 $ {\bf r}_{u}=\left\langle \cos (t) \left( 1+\cos \left(
-t\right) \right) ,\sin (t) \left( 1+\cos (t) \right),3\right\rangle .$
+t\right) \right) ,\sin (t) \left( 1+\cos (t) \right),3\right\rangle $.
 Además,
 \begin{multline*}
 {\bf r}_{t}\times {\bf r}_{u} = (1+u) \big\langle 3\left( 1+\cos (t) \right) \left( 2\cos (t) -1\right),3\sin (t) \left( 1+2\cos (t) \right)  , \\
@@ -2329,10 +2060,7 @@ que, al integrarse, nos proporciona el área de la superficie que se considera
 
 Este valor se obtiene ejecutando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r=Simplify[(1-u)*{(1+Cos[t])*Cos[t],
 (1+Cos[t])*Sin[t],0}+u*{2*(1+Cos[t])*Cos[t],
 2*(1+Cos[t])*Sin[t],3}];
@@ -2341,12 +2069,8 @@ NIntegrate[A,{t,0,2Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsection*{Una flor sobre una esfera}
+\subsection{Una flor sobre una esfera}
 La ecuación $r=\sin(3\theta) $ representa, en coordenadas polares, una rosa de 3 pétalos; la proyectamos sobre la esfera centrada en el origen de radio $\sqrt{2}$.
-
-
 
 \begin{figure}[H]
 \centering
@@ -2356,20 +2080,17 @@ La ecuación $r=\sin(3\theta) $ representa, en coordenadas polares, una rosa de 
 \fuentepropia
 \end{figure}
 
-En el plano, la flor (con su interior) se parametriza en  forma \\ {\small $x=u\sin (3t) \cos (t) ,$} {\small $y=u\sin (3t) \sin (t)$}
+En el plano, la flor (con su interior) se parametriza en  forma \\ {\small $x=u\sin (3t) \cos (t) $,} {\small $y=u\sin (3t) \sin (t)$}
 al reemplazar en la ecuación de la esfera,
 {\small $x^{2}+y^{2}+z^{2}=2$,} se sigue que
-{\small $z=\sqrt{2-u^{2}\sin^{2}(3t)},$}
+{\small $z=\sqrt{2-u^{2}\sin^{2}(3t)}$,}
 entonces, la función
 {\small ${\bf r}\left( t,u\right) =\left\langle u\sin (3t) \cos (t) ,u\sin (3t) \sin (t) ,\sqrt{2-u^{2}\sin^{2}(3t) }\right\rangle$}
 con {\small $u \in [0,1]$, $t \in [0,2\pi]$,}
 parametriza la región sobre la esfera cuya proyección en el plano $xy$ es la flor mencionada.
 Los gráficos se obtienen ejecutando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 A=ContourPlot3D[x^2+y^2+z^2==2,{x,-1.5,1.5},
 {y,-1.5,1.5},{z,-1.5,1.5},ContourStyle->{Orange,
 Opacity[0.6]},Mesh->False];
@@ -2385,10 +2106,6 @@ PlotStyle->{Black,Thickness->0.012}];
 Show[A,c,b]
 \end{Verbatim}
 \end{tcolorbox}
-
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -2409,7 +2126,7 @@ Con la función ${\bf r}$ definida antes, hallamos los siguientes vectores:
 
 {\small
 \begin{flalign*}
-	&\mathbf{r}_t \times \mathbf{r}_u = \left\langle -\frac{u^2 \cos(t) \sin^3(3t)}{\sqrt{2 - u^2 \sin^2(3t)}}, -\frac{u^2 \sin(t) \sin^3(3t)}{\sqrt{2 - u^2 \sin^2(3t)}}, -u \sin^2(3t) \right\rangle. &
+&\mathbf{r}_t \times \mathbf{r}_u = \left\langle -\frac{u^2 \cos(t) \sin^3(3t)}{\sqrt{2 - u^2 \sin^2(3t)}}, -\frac{u^2 \sin(t) \sin^3(3t)}{\sqrt{2 - u^2 \sin^2(3t)}}, -u \sin^2(3t) \right\rangle. &
 \end{flalign*}
 }
 
@@ -2423,11 +2140,7 @@ cuya integral nos proporciona claridad sobre la región considerada.
 }
 La integral anterior se evalúa numéricamente con las siguientes sentencias.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={u*Sin[3*t]*Cos[t],u*Sin[3*t]*Sin[t]};
 p={r[[1]],r[[2]],Sqrt[2-r[[1]]^2-r[[2]]^2]};
 A=Norm[Cross[D[p,t],D[p,u]]];
@@ -2435,13 +2148,8 @@ NIntegrate[A,{t,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-\subsection*{Toros cardioidicos} \index{Toro cardioidico}
+\subsection{Toros cardioidicos} \index{Toro cardioidico}
 En esta sección consideraremos la superficie que se obtiene al hacer girar una cardioide alrededor de una recta en el mismo plano que no interseca a la figura.
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -2453,7 +2161,7 @@ En esta sección consideraremos la superficie que se obtiene al hacer girar una 
 \fuentepropia
 \end{figure}
 
-\subsubsection*{Toro cardióidico generado por \boldmath$r=1-\sin(t)$ \unboldmath}
+\subsubsection{Toro cardióidico generado por \texorpdfstring{\boldmath$r=1-\sin(t)$\unboldmath}{r=1-sin(t)}}
 En el plano, la figura de la ecuación $r=1-\sin(t)$ representa una cardioide.
 Esta figura tiene área determinada por
 \[\int_{0}^{2\pi }\int_{0}^{1-\sin \theta }rdrd\theta = \frac{3}{2}\pi\]
@@ -2466,10 +2174,9 @@ y su longitud de arco se puede hallar como sigue
 \end{eqnarray*}
 
 La figura de la ecuación $r=1-\sin(t)$ se puede parametrizar en el plano en la forma
-$\langle (1-\sin(t))\cos(t),(1-\sin(t))\sin(t) \rangle $ con $t\in [0,2\pi].$
+$\langle (1-\sin(t))\cos(t),(1-\sin(t))\sin(t) \rangle $ con $t\in [0,2\pi]$.
 Ahora, le sumaremos $3$ a la coordenada $x$, obteniendo la función $\overrightarrow{\alpha}(t)$,
-y su gráfico se hará girar dicha figura alrededor de la recta $\theta = \pi/2.$
-
+y su gráfico se hará girar dicha figura alrededor de la recta $\theta = \pi/2$.
 
 \begin{figure}[H]
 \centering
@@ -2488,7 +2195,7 @@ Si el giro se hace alrededor del eje $y$, en este caso se obtiene
 (t) \right) \sqrt{2-2\sin (t) }dt= 48\pi.\]
 
 Para hallar el centro de masa de la curva, determinada por la expresión
-$r=1-\sin (t) ,$ nótese que el término \[\sqrt{\left( \frac{dx}{dt}\right) ^{2}+\left( \frac{dy}{dt}\right) ^{2}}=\sqrt{2-2\sin (t) }.\]
+$r=1-\sin (t) $, nótese que el término \[\sqrt{\left( \frac{dx}{dt}\right) ^{2}+\left( \frac{dy}{dt}\right) ^{2}}=\sqrt{2-2\sin (t) }.\]
 De esta manera, las coordenadas del centro de masa de la curva están dadas por
 \begin{eqnarray*}
 \overline{x}&=&\frac{1}{8}\int_{0}^{2\pi }\left( 3+\left( 1-\sin \left(
@@ -2497,14 +2204,11 @@ t\right) \right) \cos (t) \right) \sqrt{2-2\sin (t) }dt= 3 \\
 \end{eqnarray*}
 
 Usando el teorema de Pappus (\ref{teoremadepappus}), ver página (\pageref{teoremadepappus}), el área de la superficie de revolución de la curva $r=1-\sin(t)$ alrededor de la recta  $\theta = \pi /2$ es.
-$2\pi \left( 3\right) \left( 8\right) = 48\pi .$ \index{Teorema de Pappus!área superficial}
+$2\pi \left( 3\right) \left( 8\right) = 48\pi $. \index{Teorema de Pappus!área superficial}
 
 Al ubicar la curva de giro en el espacio tridimensional y hacer coincidir el eje de giro con el eje $z$,
 se satisface que si un punto sobre esta curva gira alrededor del eje $z$, entonces se obtiene una circunferencia y se genera una superficie que denominaremos \emph{toro cardioidico.}
 \index{Toro cardioidico}
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -2517,14 +2221,11 @@ se satisface que si un punto sobre esta curva gira alrededor del eje $z$, entonc
 Al girar estos puntos sobre el eje $z$, todos los puntos conservan la misma coordenada en $z$,
 y la coordenada en $x$ e $y$ se le agregará una $\cos(u)$ y $\sin(u)$ respectivamente, siendo $u$ un parámetro entre $0$ y $2 \pi$. Por lo tanto, esta superficie se parametriza como
 \begin{flushleft} % Fuerza todo el bloque a la izquierda.
-	\resizebox{1.0\textwidth}{!}{%
-		$\mathbf{r}(t,u) = \left\langle (3+(1-\sin(t))\cos(t))\cos(u),(1-\sin(t))\sin(t)\sin(u),(1-\sin(t))\sin(t) \right\rangle$
-	}
+\resizebox{1.0\textwidth}{!}{%
+$\mathbf{r}(t,u) = \left\langle (3+(1-\sin(t))\cos(t))\cos(u),(1-\sin(t))\sin(t)\sin(u),(1-\sin(t))\sin(t) \right\rangle$
+}
 \end{flushleft}
-con $t \in [0,2\pi],$ $u \in [0,2\pi].$
-
-
-
+con $t \in [0,2\pi]$, $u \in [0,2\pi]$.
 
 \begin{figure}[H]
 \centering
@@ -2536,10 +2237,7 @@ con $t \in [0,2\pi],$ $u \in [0,2\pi].$
 
 Las figuras anteriores se obtienen en \verb"Mathematica" ejecutando las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={3+(1-Sin[t])*Cos[t],(1-Sin[t])*Sin[t]};
 ParametricPlot[{x,y},{t,0,2*Pi}]
 ParametricPlot3D[{x*Cos[u],x*Sin[u],y},{t,0,2*Pi},
@@ -2548,19 +2246,16 @@ MeshStyle->Gray]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Utilizando la función ${\bf r}(t,u)$  se hallan los siguientes vectores:
 
 {\small
-${\bf r}_{t} = \big \langle\cos(u)(\cos(2t)-\sin(t)),\sin(u)(\cos(2t)-\sin(t)),\cos(t)(1-2\sin(t)) \big\rangle.$}
+${\bf r}_{t} = \big \langle\cos(u)(\cos(2t)-\sin(t)),\sin(u)(\cos(2t)-\sin(t)),\cos(t)(1-2\sin(t)) \big\rangle$.}
 
 ${\bf r}_{u} = \big \langle\sin(u)(\cos(t)\sin(t)-3-\cos(t)),\cos(u)\cos(t)(1-\sin(t)),0\big\rangle$
 
 y
 
-${\bf r}_{u} = \big \langle\sin(u)(\cos(t)\sin(t)-3-\cos(t)),\cos(u)\cos(t)(1-\sin(t)),0\big\rangle.$
-
+${\bf r}_{u} = \big \langle\sin(u)(\cos(t)\sin(t)-3-\cos(t)),\cos(u)\cos(t)(1-\sin(t)),0\big\rangle$.
 
 \begin{multline*}
 {\bf r}_{t}\times {\bf r}_{u}=\bigg\langle\cos^{2}(t)(1-2\sin(t))(\sin(t)-1)\cos(u),\\
@@ -2578,14 +2273,10 @@ que se integra y nos proporciona el área superficial de la región en mención.
 +3\sin\left(\frac{3t}{2}\right)+\sin\left(\frac{5t}{2}\right)\bigg|dudt=48\pi.
 \end{multline*}
 
-
 Este procedimiento (y la figura de la curva revolucionada) puede evaluarse en \verb"Mathematica"
 mediante la ejecución de las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={3+(1-Sin[t])*Cos[t],(1-Sin[t])*Sin[t]};
 RevolutionPlot3D[{x,0,y},{t,0,2*Pi},MeshStyle->Gray,
 RevolutionAxis->{0,0,1},PlotStyle->Orange]
@@ -2596,13 +2287,9 @@ Integrate[A,{t,0,2*Pi},{u,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Toro cardioidico generado por \boldmath$r=1-\cos(t)$ \unboldmath}
+\subsubsection{Toro cardioidico generado por \texorpdfstring{\boldmath$r=1-\cos(t)$\unboldmath}{r=1-cos(t)}}
 
 El área de la figura de la ecuación $r=1-\cos(t)$ está dada por
-
 
 {\small
 \[\int_{0}^{2\pi }\int_{0}^{1-\cos \theta }rdrd\theta = \frac{3}{2}\pi\]
@@ -2611,7 +2298,6 @@ y su longitud de curva es
 {\small
 \[\int_{0}^{2\pi }\sqrt{\left( 1-\cos (t) \right) ^{2}+\left( \sin (t)\right)^{2}}dt=\int_{0}^{2\pi }\sqrt{2-2\cos (t) }dt= 8.\]
 }
-
 
 De acuerdo con la expresión (\ref{toros1}), el área superficial está determinada por
 {\small
@@ -2629,11 +2315,9 @@ El centro de masa de esta curva está dado por
 \end{eqnarray*}
 }
 
-
 De acuerdo con el teorema de Pappus, el área de la superficie de revolución es
-$2\pi \left( \frac{11}{5}\right) \left( 8\right) = \frac{176}{5}\pi .$
+$2\pi \left( \frac{11}{5}\right) \left( 8\right) = \frac{176}{5}\pi $.
 En este caso se usará la parametrización de la superficie:
-
 
 {\small
 \begin{multline*}
@@ -2645,8 +2329,6 @@ En este caso se usará la parametrización de la superficie:
 }
 
 La figura obtenida es el siguiente:
-
-
 
 \begin{figure}[H]
 \centering
@@ -2660,10 +2342,7 @@ La figura obtenida es el siguiente:
 
 Las instrucciones para conseguirlo se presentan a continuación.
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={3+(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t]};
 ParametricPlot[{x,y},{t,0,2*Pi}]
 ParametricPlot3D[{x*Cos[u],x*Sin[u],y},{t,0,2*Pi},
@@ -2671,40 +2350,35 @@ ParametricPlot3D[{x*Cos[u],x*Sin[u],y},{t,0,2*Pi},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Derivando parcialmente la función ${\bf r}$, hallamos los siguientes vectores:
-
 
 \begin{flushleft}
 \resizebox{1.0\textwidth}{!}{%
-$\mathbf{r}_{t} = \left\langle (\sin(2t) - \sin t)\cos u,\; (\sin(2t) - \sin t)\sin u,\; (1 - \cos t)(2\cos t + 1) \right\rangle,$
+$\mathbf{r}_{t} = \left\langle (\sin(2t) - \sin t)\cos u,\; (\sin(2t) - \sin t)\sin u,\; (1 - \cos t)(2\cos t + 1) \right\rangle$,
 }
 \end{flushleft}
 \[
 {\mathbf r}_{u} = \left\langle (\cos t - 1)\cos t \sin u,\; (1 - \cos t)\cos t \cos u,\; 0 \right\rangle.
 \]
 
-
 Con ellos se halla el elemento diferencial de área:
 \[
 \left\| {\\bf r}_{t} \times {\\bf r}_{u} \right\| = \frac{1}{2} \left| -8\sin\left( \frac{t}{2} \right) - 3\sin\left( \frac{3t}{2} \right) + \sin\left( \frac{5t}{2} \right) \right|.
 \]
-
 
 La integración nos proporciona el área de la superficie en mención:
 \[
 \int_{0}^{2\pi} \int_{0}^{2\pi} \frac{1}{2} \left| -8\sin\left( \frac{t}{2} \right) - 3\sin\left( \frac{3t}{2} \right) + \sin\left( \frac{5t}{2} \right) \right| \, du \, dt = \frac{176}{5}\pi.
 \]
 
-\subsubsection*{Toro cardioidico generado por \boldmath$r=1+\cos(t)$ \unboldmath}
+\subsubsection{Toro cardioidico generado por \texorpdfstring{\boldmath$r=1+\cos(t)$\unboldmath}{r=1+cos(t)}}
 Al igual que en los casos anteriores, para la cardioide con ecuación
-$r=1+\cos (t) ,$ el área está dada por
+$r=1+\cos (t) $, el área está dada por
 \[\int_{0}^{2\pi }\int_{0}^{1+\cos t}rdrdt= \frac{3}{2}\pi\]
 y la longitud del arco es
 \[\int_{0}^{2\pi }\sqrt{\left( 1+\cos t\right) ^{2}+\left( -\sin t\right) ^{2}}dt= 8\]
 Si esta curva gira alrededor de la recta $\theta= \pi/2$, usando la expresión (\ref{toros1}),
-el área superficial está dada por  
+el área superficial está dada por
 \[2\pi \int_{0}^{2\pi }\left( 3+\left( 1+\cos \left( t\right) \right) \cos
 \left( t\right) \right) \sqrt{2+2\cos \left( t\right) }dt= \frac{304}{5}\pi.\]
 
@@ -2719,7 +2393,6 @@ dt= \frac{19}{5} \\
 
 El área de la superficie de revolución, de acuerdo con el teorema de Pappus, es  $2\pi \left( \frac{19}{5}\right) \left( 8\right) = \frac{304}{5}\pi. $
 
-
 Para la superficie que se obtiene al hacer girar la figura de la curva $r=1+\cos(t)$ alrededor de la recta $\theta= \pi/2$, usaremos la parametrización.
 \begin{multline*}
 {\bf r}\left( t,u\right) =\bigg\langle(3+(1+\cos(t))\cos(t))\cos(u),(1+\cos(t))\cos(t)\sin(u),\\
@@ -2727,9 +2400,6 @@ Para la superficie que se obtiene al hacer girar la figura de la curva $r=1+\cos
 \end{multline*}
 
 La figura obtenida es la siguiente:
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -2743,10 +2413,7 @@ La figura obtenida es la siguiente:
 
 Las siguientes instrucciones permiten obtener las figuras presentadas:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 x=3+{1+Cos[t]*Cos[t];
 y=(1+Cos[t])*Sin[t];
 ParametricPlot[{x,y},{t,0,2*Pi}]
@@ -2755,16 +2422,14 @@ ParametricPlot3D[{x*Cos[u],x*Sin[u],y},{t,0,2*Pi},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Con ayuda de la función ${\bf r}$, hallamos los siguientes vectores \linebreak
 \[
 \begin{split}
-	\mathbf{r}_{t} &= \left\langle -\sin(t)\cos(u)(2\cos(t)+1), -\sin(t)\sin(u)(2\cos(t)+1), \right. \\
-	&\quad \left. (1+\cos(t))(2\cos(t)-1) \right\rangle
+\mathbf{r}_{t} &= \left\langle -\sin(t)\cos(u)(2\cos(t)+1), -\sin(t)\sin(u)(2\cos(t)+1), \right. \\
+&\quad \left. (1+\cos(t))(2\cos(t)-1) \right\rangle
 \end{split}
 \]
-y 
+y
 \[{\bf r}_{u}= \big\langle-(3+(1+\cos (t))\cos (t))\sin (u),\linebreak (1+\cos(t))\cos(t)\cos(u),0 \big\rangle,\]
 con ellos se obtiene el elemento diferencial de área
 \[\left\| {\bf r}_{t}\times {\bf r}_{u}\right\| =\frac{1}{2}\left| 16\cos \left( \frac{t}{2}\right) +3\cos \left( \frac{3t}{2}\right) +\cos \left( \frac{5t}{2}\right) \right| \]
@@ -2772,10 +2437,7 @@ que, al integrarse, proporciona el área superficial de la región en mención.
 \[\bigintss_{0}^{2\pi}\bigintss_{0}^{2\pi }\frac{1}{2}\left| 16\cos \left( \frac{t}{2}\right) +3\cos \left( \frac{3t}{2}\right) +\cos \left( \frac{5t}{2}\right) \right| dudt= \frac{304}{5}\pi.\]
 Los cálculos anteriores se pueden evaluar en \verb"Mathematica" mediante la ejecución de las siguientes instrucciones:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción en \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 x=3+(1+Cos[t])*Cos[t];
 y=(1+Cos[t])*Sin[t];
 ParametricPlot[{x,0,y},{t,0,2*Pi}];RevolutionAxis->
@@ -2791,24 +2453,18 @@ Integrate[A,{t,0,2*Pi},{u,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \begin{ejer}
 Determine una expresión que defina la superficie indicada y calcule su área.
 Además, determine una función que represente la curva de intersección de la superficie y halle su longitud.
 
-
 \begin{enumerate}
-\item La superficie sobre el paraboloide $2z=x^2+y^2$ acotada por el cilindro cardiogénico $r=1+\cos(t).$
+\item La superficie sobre el paraboloide $2z=x^2+y^2$ acotada por el cilindro cardiogénico $r=1+\cos(t)$.
 %
-
-
 
 \begin{figure}[H]
 \centering
 \caption{
-	Paraboloide acotada por el cilindro cardiogénico
+Paraboloide acotada por el cilindro cardiogénico
 }
 \includegraphics[width=0.4\textwidth]{Img/T_30a.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Img/T_30b.pdf}
@@ -2835,9 +2491,7 @@ Show[c,a,b,PlotRange->{{-2,2.05},{-2,2.05},{-0.15,2}}]
 
 \end{comment}
 
-\item La superficie sobre el paraboloide hiperbólico $2z=y^2-x^2$ acotada por el cilindro cardiogénico $r=1+\cos(t).$
-
-
+\item La superficie sobre el paraboloide hiperbólico $2z=y^2-x^2$ acotada por el cilindro cardiogénico $r=1+\cos(t)$.
 
 \begin{figure}[H]
 \centering
@@ -2866,8 +2520,7 @@ Show[b,c,a,PlotRange->{{-2.5,2.5},{-2.5,2.5},{-2.1,2.6}}]
 
 \end{comment}
 
-\item La superficie sobre la esfera con ecuación $x^2+y^2+z^2=4$ acotada por el cilindro cardiogénico $1+\cos(t)$. 
-
+\item La superficie sobre la esfera con ecuación $x^2+y^2+z^2=4$ acotada por el cilindro cardiogénico $1+\cos(t)$.
 
 \begin{figure}[H]
 \centering
@@ -2903,7 +2556,6 @@ Show[b,c,a,PlotRange->{{-2,2},{-2,2},{-2,2}}]
 
 \item Un pétalo de la flor $r=\sin(3\theta)$ gira alrededor de una recta perpendicular al eje polar, que pasa por el polo.
 Hallar el área de la superficie obtenida.
-
 
 \begin{figure}[H]
 \centering

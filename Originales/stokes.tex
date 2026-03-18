@@ -5,22 +5,19 @@ Ahora nos ocuparemos de algunos resultados relativos a la integración de estas 
 
 \section{Integrales de línea en campos vectoriales}
 
-Algunos libros como \cite{stewart_calculo_2018} o \cite{thomas_calculo_2015} motivan la definición de integrales sobre una curva mediante conceptos físicos como el trabajo. En tal sentido, una fuerza cons\-tante ${\bf F}$ mueve una partícula sobre el segmento que une al punto $A$ con el punto $B$. Si $W$ es el trabajo realizado, entonces $W={\bf F}\cdot \overrightarrow{AB}.$
+Algunos libros como \cite{stewart_calculo_2018} o \cite{thomas_calculo_2015} motivan la definición de integrales sobre una curva mediante conceptos físicos como el trabajo. En tal sentido, una fuerza cons\-tante ${\bf F}$ mueve una partícula sobre el segmento que une al punto $A$ con el punto $B$. Si $W$ es el trabajo realizado, entonces $W={\bf F}\cdot \overrightarrow{AB}$.
 
-
- 
 Abordaremos inicialmente el caso bidimensional.
 Si una fuerza no constante está determinada por ${\bf F}(x,y)= \langle P(x,y),Q(x,y)\rangle $
 y el movimiento no es rectilíneo, sino que se hace a través de una trayectoria la cual está dada
-${\bf r}(t) =\left\langle f(t),g(t) \right\rangle ,$ con $t\in [a,b],$ siendo $f$ y $g$ funciones continuas en $[a,b]$.
+${\bf r}(t) =\left\langle f(t),g(t) \right\rangle $, con $t\in [a,b]$, siendo $f$ y $g$ funciones continuas en $[a,b]$.
 En cualquier punto de la curva $C$ la fuerza está dada por ${\bf F}({\bf r}(t))$.
 
-
 \begin{figure}[H]
-\centering
-\caption{Curva en $\mathbb{R}^2$}
-\includegraphics[width=0.8\textwidth]{Fig/170.pdf}
-\fuentepropia
+  \centering
+  \caption{Curva en $\mathbb{R}^2$}
+  \includegraphics[width=0.8\textwidth]{Fig/170.pdf}
+  \fuentepropia
 \end{figure}
 
 Consideremos una partición del intervalo $[a,b]$, esto es, un conjunto finito de puntos
@@ -28,85 +25,82 @@ $\{t_0, t_1, t_2, \dots, t_{n-1}, t_n\}$, con $a = t_0 < t_1 < t_2 < \cdots < t_
 
 Entonces, el vector $\overrightarrow{A_{i-1}A_i}$ está dado por
 \[
-\overrightarrow{A_{i-1}A_i} = \mathbf{r}(t_i) - \mathbf{r}(t_{i-1}) =
-\left\langle f(t_i) - f(t_{i-1}),\; g(t_i) - g(t_{i-1}) \right\rangle.
+  \overrightarrow{A_{i-1}A_i} = \mathbf{r}(t_i) - \mathbf{r}(t_{i-1}) =
+  \left\langle f(t_i) - f(t_{i-1}),\; g(t_i) - g(t_{i-1}) \right\rangle.
 \]
 
 Por el teorema del valor medio, existen $t_i^{\ast} \in [t_{i-1}, t_i]$ y
-$t_i^{\ast\ast} \in [t_{i-1}, t_i],$ tales que
+$t_i^{\ast\ast} \in [t_{i-1}, t_i]$, tales que
 \[
-\overrightarrow{A_{i-1}A_i} =
-\left\langle f'(t_i^{\ast}),\; g'(t_i^{\ast\ast}) \right\rangle \, \Delta t_i.
+  \overrightarrow{A_{i-1}A_i} =
+  \left\langle f'(t_i^{\ast}),\; g'(t_i^{\ast\ast}) \right\rangle \, \Delta t_i.
 \]
 
 Para cada $i$, consideremos $\mathbf{F}_i$ como una aproximación al vector fuerza
 $\mathbf{F}(\mathbf{r}(t))$ sobre la curva $C$ desde el punto $A_{i-1}$ hasta $A_i$. Por tanto, el trabajo realizado por $\mathbf{F}$ para trasladar una partícula desde $A_{i-1}$ hasta $A_i$ está dado por:
 {\small
-\begin{multline*}
-\Delta W_i =
-\left\langle
-P\left( \left\langle f(t_i^{\ast}),\; g(t_i^{\ast}) \right\rangle \right),
-Q\left( \left\langle f(t_i^{\ast\ast}),\; g(t_i^{\ast\ast}) \right\rangle \right)
-\right\rangle \cdot
-\left\langle f'(t_i^{\ast}),\; g'(t_i^{\ast\ast}) \right\rangle \, \Delta t_i
-\end{multline*}
+  \begin{multline*}
+    \Delta W_i =
+    \left\langle
+    P\left( \left\langle f(t_i^{\ast}),\; g(t_i^{\ast}) \right\rangle \right),
+    Q\left( \left\langle f(t_i^{\ast\ast}),\; g(t_i^{\ast\ast}) \right\rangle \right)
+    \right\rangle \cdot
+    \left\langle f'(t_i^{\ast}),\; g'(t_i^{\ast\ast}) \right\rangle \, \Delta t_i
+  \end{multline*}
 }
 
 Una aproximación al trabajo total para desplazar una partícula sobre la curva $C$ desde $\mathbf{r}(a)$ hasta $\mathbf{r}(b)$ está dada por:
 \[
-W \approx \sum_{i=1}^{n} \Delta W_i.
+  W \approx \sum_{i=1}^{n} \Delta W_i.
 \]
 
 Si $n \to \infty$, entonces $\Delta t_i \to 0$, por lo tanto:
 \begin{eqnarray}
-W &=& \lim_{n\rightarrow\infty}\sum_{i=1}^{n}\Delta W_{i} \nonumber \\
-&=& \int_{a}^{b}\left\langle P\left( \left\langle f(t) ,g\left(t\right) \right\rangle \right) ,Q\left( \left\langle f(t)
-,g(t) \right\rangle \right) \right\rangle \cdot \left\langle f^{\prime }(t) ,g^{\prime }(t) \right\rangle dt \label{integraldelinea2}
+  W &=& \lim_{n\rightarrow\infty}\sum_{i=1}^{n}\Delta W_{i} \nonumber \\
+  &=& \int_{a}^{b}\left\langle P\left( \left\langle f(t) ,g\left(t\right) \right\rangle \right) ,Q\left( \left\langle f(t)
+  ,g(t) \right\rangle \right) \right\rangle \cdot \left\langle f^{\prime }(t) ,g^{\prime }(t) \right\rangle dt \label{integraldelinea2}
 \end{eqnarray}
 Simplificando la ecuación \ref{integraldelinea2} se precisa la expresión que determina el siguiente concepto.
 
 \begin{defi}
-Si $C$ es una curva suave en el plano parametrizada por la función ${\bf r}(t)=\langle f(t),g(t)\rangle,$ con $t \in [a,b]$
-y ${\bf F}(x,y)= \langle P(x,y),Q(x,y)\rangle $ es un campo vectorial con funciones componentes continuas, se define la integral del campo vectorial ${\bf F}$ sobre la curva $C$ como
-\begin{equation} \label{integraldelinea3}
-\int_C {\bf F} \cdot d {\bf r} =\int_{a}^{b}{\bf F}({\bf r}(t)) \cdot {\bf r}^{\prime }(t) dt
-\end{equation} \index{Integrales de línea}
+  Si $C$ es una curva suave en el plano parametrizada por la función ${\bf r}(t)=\langle f(t),g(t)\rangle$, con $t \in [a,b]$
+  y ${\bf F}(x,y)= \langle P(x,y),Q(x,y)\rangle $ es un campo vectorial con funciones componentes continuas, se define la integral del campo vectorial ${\bf F}$ sobre la curva $C$ como
+  \begin{equation} \label{integraldelinea3}
+    \int_C {\bf F} \cdot d {\bf r} =\int_{a}^{b}{\bf F}({\bf r}(t)) \cdot {\bf r}^{\prime }(t) dt
+  \end{equation} \index{Integrales de línea}
 \end{defi}
 
 Este concepto se puede extender a campos vectoriales tridimensionales. Para una función vectorial
-{\small ${\bf r}(t)=\langle f(t),g(t),h(t)\rangle,$} con {\small $t \in [a,b]$;}
+{\small ${\bf r}(t)=\langle f(t),g(t),h(t)\rangle$,} con {\small $t \in [a,b]$;}
 que parametriza a una curva suave $C$ y {\footnotesize ${\bf F}(x,y,z)= \langle P(x,y,z),Q(x,y,z), R(x,y,z)\rangle$} es un campo vectorial con funciones componentes continuas, entonces la integral del campo vectorial ${\bf F}$ sobre la curva $C$ está dada por
 \begin{equation}\label{integraldelinea7}
-	\scalebox{0.82}{%
-		$\displaystyle \int_C {\bf F} \cdot d {\bf r} =\int_{a}^{b}{\bf F}(\langle f(t),g(t),h(t)\rangle) \cdot \langle f'(t),g'(t),h'(t)\rangle dt =\int_{a}^{b}{\bf F}({\bf r}(t)) \cdot {\bf r}^{\prime }(t)$
-	}
+  \scalebox{0.82}{%
+    $\displaystyle \int_C {\bf F} \cdot d {\bf r} =\int_{a}^{b}{\bf F}(\langle f(t),g(t),h(t)\rangle) \cdot \langle f'(t),g'(t),h'(t)\rangle dt =\int_{a}^{b}{\bf F}({\bf r}(t)) \cdot {\bf r}^{\prime }(t)$
+  }
 \end{equation}
 
 \begin{ejemplo} \label{integraldelinea}
-Evaluar la integral de línea de ${\bf F}\left( x,y,z\right) =\left\langle xy,yz,-x^{2}\right\rangle $ sobre la curva que une los puntos $\left(-1,1,3\right) $ con
-$\left( 1,1,1\right),$, considerando las siguientes parametrizaciones:
+  Evaluar la integral de línea de ${\bf F}\left( x,y,z\right) =\left\langle xy,yz,-x^{2}\right\rangle $ sobre la curva que une los puntos $\left(-1,1,3\right) $ con
+  $\left( 1,1,1\right)$, considerando las siguientes parametrizaciones:
 
-\begin{itemize}
-\item ${\bf r}(t) =\left\langle t^{2},t,2-t\right\rangle ,$ con $t\in[-1,1].$ En este caso,\\ ${\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t)= \left\langle t^{3},t\left( 2-t\right) ,-t^{4}\right\rangle \cdot \left\langle 2t,1,-1\right\rangle = 3t^{4}-t^{2}+2t.$
-\begin{eqnarray*}
-\int_{C}{\bf F}\cdot d{\bf r} &=&\int_{-1}^{1}{\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t) 
-= \int_{-1}^{1}(3t^{4}-t^{2}+2t) dt= \frac{8}{15}
-\end{eqnarray*}
+  \begin{itemize}
+    \item ${\bf r}(t) =\left\langle t^{2},t,2-t\right\rangle $, con $t\in[-1,1]$. En este caso,\\ ${\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t)= \left\langle t^{3},t\left( 2-t\right) ,-t^{4}\right\rangle \cdot \left\langle 2t,1,-1\right\rangle = 3t^{4}-t^{2}+2t$.
+      \begin{eqnarray*}
+        \int_{C}{\bf F}\cdot d{\bf r} &=&\int_{-1}^{1}{\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t)
+        = \int_{-1}^{1}(3t^{4}-t^{2}+2t) dt= \frac{8}{15}
+      \end{eqnarray*}
 
-\item ${\bf r}\left( r\right) =\left\langle 2t-1,1,3-2t\right\rangle ,$ con $t\in [0,1];$ Para este caso ${\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t)= \left\langle 2t-1,3-2t,-\left( 2t-1\right) ^{2}\right\rangle \cdot \left\langle 2,0,-2\right\rangle = 8t^{2}-4t$
-\begin{eqnarray*}
-\int_{C}{\bf F}\cdot d{\bf r}&=& \int_{0}^{1}{\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t) dt = \int_{0}^{1} (8t^{2}-4t) dt = \frac{2}{3}
-\end{eqnarray*}
-\end{itemize}
-Nótese que, para el mismo campo vectorial, la curva une los mismos puntos y el valor de la integral es distinto.
+    \item ${\bf r}\left( r\right) =\left\langle 2t-1,1,3-2t\right\rangle $, con $t\in [0,1];$ Para este caso ${\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t)= \left\langle 2t-1,3-2t,-\left( 2t-1\right) ^{2}\right\rangle \cdot \left\langle 2,0,-2\right\rangle = 8t^{2}-4t$
+      \begin{eqnarray*}
+        \int_{C}{\bf F}\cdot d{\bf r}&=& \int_{0}^{1}{\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t) dt = \int_{0}^{1} (8t^{2}-4t) dt = \frac{2}{3}
+      \end{eqnarray*}
+  \end{itemize}
+  Nótese que, para el mismo campo vectorial, la curva une los mismos puntos y el valor de la integral es distinto.
 \end{ejemplo}
 
 Los cálculos anteriores se evalúan en \verb"Mathematica" ejecutando los siguien\-tes comandos:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={t^2,t,2-t}
 Integrate[Dot[{x*y,y*z,-x^2},D[r,t]],{t,-1,1}]
 r={x,y,z}={2*t-1,1,3-2*t}
@@ -114,10 +108,7 @@ Integrate[Dot[{x*y,y*z,-x^2},D[r,t]],{t,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsection*{Teorema fundamental para integrales de línea}
+\subsection{Teorema fundamental para integrales de línea}
 De acuerdo con \cite{acosta_gempeler_doce_2020},
 para un campo escalar $\phi$ con dominio $D \subseteq \mathbb{R}^3$ y $C$ una curva en
 $D$ que se parametriza mediante una función vectorial continua ${\bf r} : [a, b]\to D$. Para calcular la circulación del campo vectorial ${\bf F}=\nabla \phi$ a lo largo de $C$, se sigue que
@@ -129,37 +120,33 @@ Por tanto, si ${\bf F}$ es un campo gradiente, entonces la circulación de ${\bf
 
 \begin{ejemplo}
 Evaluar la integral de línea de {\small ${\bf F}\left( x,y,z\right) =\left\langle y^{2}-2xz,2xy,-x^{2}\right\rangle $}
-sobre la curva que une los puntos $\left( -1,1,3\right) $ con $\left( 1,1,1\right),$
+sobre la curva que une los puntos $\left( -1,1,3\right) $ con $\left( 1,1,1\right)$,
 considerando las siguien\-tes parametrizaciones.
 
 \begin{itemize}
-\item ${\bf r}(t) =\left\langle t,t^{2},2-t\right\rangle ,$ con $t\in [-1,1]$
-\begin{eqnarray*}
-\int_{C}{\bf F}\cdot dr &=& \int_{-1}^{1}{\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t) dt\\
-&=& \int_{-1}^{1}\left\langle t^{4}-2t\left( 2-t\right) ,2t^{3},-t^{2}\right\rangle \cdot \left\langle 1,2t,-1\right\rangle dt \\
-&=&\int_{-1}^{1}\left(5t^{4}+3t^{2}-4t\right) dt= 4
-\end{eqnarray*}
+  \item ${\bf r}(t) =\left\langle t,t^{2},2-t\right\rangle $, con $t\in [-1,1]$
+    \begin{eqnarray*}
+      \int_{C}{\bf F}\cdot dr &=& \int_{-1}^{1}{\bf F}\left({\bf r}(t) \right) \cdot {\bf r}^{\prime }(t) dt\\
+      &=& \int_{-1}^{1}\left\langle t^{4}-2t\left( 2-t\right) ,2t^{3},-t^{2}\right\rangle \cdot \left\langle 1,2t,-1\right\rangle dt \\
+      &=&\int_{-1}^{1}\left(5t^{4}+3t^{2}-4t\right) dt= 4
+    \end{eqnarray*}
 
-\item ${\bf r}(t) =\left\langle 2t-1,1,3-2t\right\rangle ,$ con $t\in [0,1]$
-\begin{eqnarray*}
-\int_{C}{\bf F}\cdot d{\bf r}&=&\int_{0}^{1}{\bf F}\left({\bf r}(t) \right) \cdot{\bf r}^{\prime }(t) dt \\
-%&=& \int_{0}^{1}\left\langle 1-2\left( 2t-1\right) \left( 3-2t\right) ,2\left(2t-1\right) ,-\left( 2t-1\right) ^{2}\right\rangle \cdot \left\langle 2,0,-2\right\rangle dt \\
-&=& \int_{0}^{1}\left( 24t^{2}-40t+16\right)dt= 4.
-\end{eqnarray*}
+  \item ${\bf r}(t) =\left\langle 2t-1,1,3-2t\right\rangle $, con $t\in [0,1]$
+    \begin{eqnarray*}
+      \int_{C}{\bf F}\cdot d{\bf r}&=&\int_{0}^{1}{\bf F}\left({\bf r}(t) \right) \cdot{\bf r}^{\prime }(t) dt \\
+      %&=& \int_{0}^{1}\left\langle 1-2\left( 2t-1\right) \left( 3-2t\right) ,2\left(2t-1\right) ,-\left( 2t-1\right) ^{2}\right\rangle \cdot \left\langle 2,0,-2\right\rangle dt \\
+      &=& \int_{0}^{1}\left( 24t^{2}-40t+16\right)dt= 4.
+    \end{eqnarray*}
 \end{itemize}
 
-Nótese que ${\bf F}$ es conservativo con función potencial $\phi(x,y,z)=xy^2-x^2z,$ con lo cual
-$\int_{C}{\bf F}\cdot d{\bf r}= \phi(1,1,1)-\phi(-1,1,3)=4.$
+Nótese que ${\bf F}$ es conservativo con función potencial $\phi(x,y,z)=xy^2-x^2z$, con lo cual
+$\int_{C}{\bf F}\cdot d{\bf r}= \phi(1,1,1)-\phi(-1,1,3)=4$.
 Compárese con los resultados del ejemplo (\ref{integraldelinea}).
 \end{ejemplo}
 
 En \verb"Mathematica" se pueden evaluar los cálculos anteriores ejecutando los siguientes comandos:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={t,t^2,2-t}
 Integrate[Dot[{y^2-2*x*z,2*x*y,-x^2},D[r,t]],{t,-1,1}]
 r={x,y,z}={2*t-1,1,3-2*t}
@@ -167,41 +154,26 @@ Integrate[Dot[{y^2-2*x*z,2*x*y,-x^2},D[r,t]],{t,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La función potencial se obtiene en \verb"Mathematica" con el siguiente proceso.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {P,Q,R}={y^2-2*x*z,2*x*y,-x^2};
 DSolve[{D[u[x,y,z],x]==P,D[u[x,y,z],y]==Q,
 D[u[x,y,z],z]==R},u[x,y,z],x,y,z]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \begin{ejemplo}
 Evaluar la integral de línea de {\small ${\bf F}\left( x,y,z\right) =\left\langle 4 x^3 y,x^4+3 y^2 z,y^3 \right\rangle$}
-sobre la curva $\alpha$ parametrizada por ${\bf r}(t)=\langle 2 t-1,t+2,9 t^2 \rangle$ con $t \in [-1,2].$ 
+sobre la curva $\alpha$ parametrizada por ${\bf r}(t)=\langle 2 t-1,t+2,9 t^2 \rangle$ con $t \in [-1,2]$.
 
-El campo es conservativo, la función potencial es $\phi(x,y,z)=x^4 y+y^3z+C,$ con lo cual
+El campo es conservativo, la función potencial es $\phi(x,y,z)=x^4 y+y^3z+C$, con lo cual
 \[\int_\alpha{\bf F} \cdot d{\bf r}=\phi({\bf r}(2))-\phi({\bf r}(-1))=\phi(3,4,36)-\phi(-3,1,9)=2538.\]
 \end{ejemplo}
 
-
 Con las siguientes instrucciones se evalúa la integral de línea.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 F={4x^3y,x^4+3y^2z,y^3};
 r[t_]:={2t-1,2+t,3*3*t^2}
 {x,y,z}=r[t];
@@ -209,16 +181,9 @@ Integrate[Dot[F,D[r[t],t]],{t,-1,2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Con los siguientes comandos se halla la función potencial y se utiliza el teorema fundamental para integrales de línea.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Clear[x,y,z,r,t]
 {P,Q,R}={4x^3y,x^4+3y^2z,y^3};
 \[Phi][x_,y_,z_]=u[x,y,z]/.First@DSolve[{D[u[x,y,z],
@@ -228,16 +193,12 @@ u[x,y,z],x,y,z]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-En la ecuación \ref{integraldelinea3} al considerar el vector tangente unitario y $s$ es la longitud de la curva, haciendo el cambio ${\bf T}(t)= \frac{{\bf r}^\prime(t)}{\Vert {\bf r}^\prime(t) \Vert} = \frac{d{\bf r}}{ds}ds,$
+En la ecuación \ref{integraldelinea3} al considerar el vector tangente unitario y $s$ es la longitud de la curva, haciendo el cambio ${\bf T}(t)= \frac{{\bf r}^\prime(t)}{\Vert {\bf r}^\prime(t) \Vert} = \frac{d{\bf r}}{ds}ds$,
 se obtiene una expresión equivalente a la fórmula \ref{integraldelinea7} en términos del vector tangente unitario.
-
 
 \begin{figure}[H]
 \centering
-\caption{Vectores ${\bf F}(x,y,z),$ ${\bf T}$ y ${\bf n}$}
+\caption{Vectores ${\bf F}(x,y,z)$, ${\bf T}$ y ${\bf n}$}
 \includegraphics[width=0.8\textwidth]{Fig/171.png}
 \fuentepropia
 \end{figure}
@@ -249,9 +210,7 @@ se obtiene una expresión equivalente a la fórmula \ref{integraldelinea7} en t�
 \end{equation}
 }
 
-
-
-\subsection*{Integrales de flujo y de circulación para campos de velocidad}
+\subsection{Integrales de flujo y de circulación para campos de velocidad}
 
 En la ecuación \ref{integraldelinea4}, según \cite{thomas_calculo_2015},
 si ${\bf F}$ representa el campo de velocidad de un fluido que fluye a través de una región en el espacio, la integral de ${\bf F}\cdot {\bf T}$ a lo largo de una curva $C$ nos proporciona el \emph{flujo} del fluido a lo largo de la curva, o la \emph{circulación} alrededor de $C$.
@@ -264,7 +223,7 @@ es \[\int_C{\bf F} \cdot {\bf T} ds.\] \index{Circulación}
 En el plano $xy$ consideremos una curva cerrada simple $C$, la razón con que un fluido entra o sale de una región acotada por $C$ se determina de la siguiente manera.
 
 \begin{defi}
-Si $C$ es una curva cerrada, simple y suave en el dominio de un campo vectorial ${\bf F}(x,y) = P(x, y)\vi + Q(x, y)\vj,$ cuyas funciones componentes son continuas, el flujo de {\bf F} a través de $C$ es \[\text{Flujo de ${\bf F}$ a través de $C$:}\int_C{\bf F} \cdot {\bf n} ds\]
+Si $C$ es una curva cerrada, simple y suave en el dominio de un campo vectorial ${\bf F}(x,y) = P(x, y)\vi + Q(x, y)\vj$, cuyas funciones componentes son continuas, el flujo de {\bf F} a través de $C$ es \[\text{Flujo de ${\bf F}$ a través de $C$:}\int_C{\bf F} \cdot {\bf n} ds\]
 En donde {\bf n} denota el vector normal unitario a la curva $C$ que apunta hacia afuera.
 \end{defi}
 
@@ -278,14 +237,12 @@ De modo que integrando la densidad de circulación sobre la curva se obtiene la 
 Si ${\bf T}$ y ${\bf n}$ denotan los vectores tangente y normal unitario a la curva $\alpha$
 en el punto $(x(t),y(t))$ entonces,
 ${\bf T}(x,y)= \frac{1}{\sqrt{(x^\prime(t))^2+y^\prime(t))^2}}\la x^\prime(t), y^\prime(t)\ra$ y
-${\bf n}(x,y)= \frac{1}{\sqrt{(x^\prime(t))^2+y^\prime(t))^2}}\la -y^\prime(t), x^\prime(t)\ra.$
+${\bf n}(x,y)= \frac{1}{\sqrt{(x^\prime(t))^2+y^\prime(t))^2}}\la -y^\prime(t), x^\prime(t)\ra$.
 
-\subsection*{Densidad rotacional y densidad de expansión}
+\subsection{Densidad rotacional y densidad de expansión}
 En \cite{acosta_gempeler_doce_2020}se define la densidad rotacional como la circulación por unidad de área, y la densidad de expansión es el flujo por unidad de área. Analizaremos estos conceptos en campos vectoriales bidimensionales. Posteriormente, se extienden a campos tridimensionales.
 
-Consideremos ${\bf F} (x,y)=P(x,y)\vi+Q(x,y)\vj$ un campo de velocidad del flujo de un fluido en el plano tal que las primeras derivadas parciales de $P(x,y) $ y $Q(x,y) $ son continuas en cada punto del rectángulo $R.$
-
-
+Consideremos ${\bf F} (x,y)=P(x,y)\vi+Q(x,y)\vj$ un campo de velocidad del flujo de un fluido en el plano tal que las primeras derivadas parciales de $P(x,y) $ y $Q(x,y) $ son continuas en cada punto del rectángulo $R$.
 
 \begin{figure}[H]
 \centering
@@ -300,22 +257,19 @@ Supongamos un rectángulo $R$ con lados paralelos a los ejes coordenados y con l
 $P(x,y) $ y $Q(x,y) $ preservan el signo en una pequeña región del plano que contiene al rectángulo $R$.
 Para este procedimiento supondremos que los componentes de ${\bf F} $ son positivas.
 La razón de circulación de ${\bf F} $ alrededor de la frontera de $R$ es la suma de las razones de flujo a lo largo de los lados en dirección tangencial. Para la orilla inferior, la razón de flujo es aproximadamente el producto de la densidad de circulación de ${\bf F}$ en el punto medio para la longitud del segmento, es decir,
-${\bf F} (x,y)\cdot\vi\Delta x=P(x,y)\Delta x.$
+${\bf F} (x,y)\cdot\vi\Delta x=P(x,y)\Delta x$.
 
 Las razones de flujo son positivas o negativas, dependiendo de las componentes de
 ${\bf F} $. Aproximamos la razón de circulación neta alrededor de la frontera rectangular de $R$ sumando las razones de flujo a lo largo de los cuatro lados, como lo indican los siguientes productos punto.
-
 
 \begin{tabular}{rl}
 Arriba &  ${\bf F} \left( x,y+\Delta y\right) \cdot (-\vi) \Delta x=-P\left( x,y+\Delta y\right) \Delta x$ \\
 Abajo & ${\bf F} (x,y) \cdot \vi\Delta x=P(x,y) \Delta x$ \\
 Lado derecho & ${\bf F} ( x+\Delta x,y) \cdot \vj\Delta y=Q\left(x+\Delta x,y\right) \Delta y$ \\
-Lado izquierdo & ${\bf F} (x,y) \cdot \left( -\vj\right) \Delta y=-Q(x,y) \Delta y.$
+Lado izquierdo & ${\bf F} (x,y) \cdot \left( -\vj\right) \Delta y=-Q(x,y) \Delta y$.
 \end{tabular}
 
-
 Al sumar estos elementos y aplicar el teorema del valor medio, se sigue que
-
 
 \begin{multline}
 Q( x+\Delta x,y) \Delta y-Q(x,y) \Delta y-P\left(x,y+\Delta y\right) \Delta x+P(x,y) \Delta x \\
@@ -327,11 +281,9 @@ Es por esto que la razón de circulación alrededor del rectángulo $R$ es
 
 \[\left( \frac{\partial Q}{\partial x}(x^{\ast },y) \Delta x\right) \Delta y-\left( \frac{\partial P}{\partial y}\left( x,y^{\ast }\right) \Delta y\right) \Delta x\]
 
-
 Al dividir  el área de $R$ se obtiene una estimación de la razón de circulación por unidad de área o densidad rotacional para el rectángulo
 
 \[\frac{\left( \frac{\partial Q}{\partial x}(x^{\ast },y) \Delta x\right) \Delta y-\left( \frac{\partial P}{\partial y}\left( x,y^{\ast}\right) \Delta y\right) \Delta x}{\Delta x\Delta y}=\frac{\partial Q}{\partial x}(x^{\ast },y) -\frac{\partial P}{\partial y}\left(x,y^{\ast }\right). \]
-
 
 Lo anterior motiva la siguiente definición.
 
@@ -342,13 +294,11 @@ Sea ${\bf F} (x,y)=P(x,y) \vi+Q(x,y) \vj$ un campo vectorial cuyas funciones com
 \frac{\partial Q}{\partial x}(x,y) -\frac{\partial P}{\partial y}(x,y)
 \end{equation}
 Este término se denomina la componente $\vk$ del rotacional y se denota
-$({\rm rot}{\bf F} )\cdot \vk.$
+$({\rm rot}{\bf F} )\cdot \vk$.
 \index{Densidad!rotacional}
 \end{defi}
 
 De manera similar al caso anterior, supongamos que las componentes del campo preservan el signo en toda la pequeña del rectángulo $R$; se desea determinar la razón con la que el fluido sale de $R$.
-
-
 
 \begin{figure}[H]
 \centering
@@ -358,7 +308,7 @@ De manera similar al caso anterior, supongamos que las componentes del campo pre
 \end{figure}
 
 De manera aproximada, la razón del flujo neto a través de la frontera del rectángulo $R$ corresponde a la suma de las razones de flujo a través de los cuatro lados de $R$. En el lado inferior, el flujo es aproximadamente el producto de la densidad de flujo de ${\bf F}$ en el punto medio por la longitud del segmento, es decir
-${\bf F} (x,y) \cdot \left( -\vj\right) \Delta x.$
+${\bf F} (x,y) \cdot \left( -\vj\right) \Delta x$.
 Por lo anterior, se consideran los siguientes productos punto para el flujo de salida
 
 \begin{tabular}{rl}
@@ -378,18 +328,18 @@ P( x+\Delta x,y) \Delta y-P(x,y) \Delta y+Q\left(x,y+\Delta y\right) \Delta x-Q(
 Para algún $x^* \in (x,x+\Delta x)$ y $y^* \in (y,y+\Delta y)$.
 Por tanto, el flujo a través de la frontera del rectángulo $R$ es aproximadamente
 \[\frac{\partial P}{\partial x}(x^*,y) \Delta x\Delta y+\frac{\partial Q}{\partial y}(x,y^*) \Delta y\Delta x.\]
-Al dividir  el área del rectángulo $R,$ se establece una estimación del flujo total por unidad de área o densidad de flujo para el rectángulo $R$. Lo anterior motiva la siguiente definición.
+Al dividir  el área del rectángulo $R$, se establece una estimación del flujo total por unidad de área o densidad de flujo para el rectángulo $R$. Lo anterior motiva la siguiente definición.
 
 \begin{defi}
 Si ${\bf F} (x,y)=P(x,y) \vi+Q(x,y) \vj$ es un campo vectorial cuyas funciones componentes poseen primeras derivadas parciales continuas.
-La divergencia o \textit{densidad de expansión} del campo vectorial ${\bf F}$ en el punto $(x,y).$ 
+La divergencia o \textit{densidad de expansión} del campo vectorial ${\bf F}$ en el punto $(x,y)$.
 \begin{equation} \label{integraldelinea6}
 {\rm div}{\bf F} =\frac{\partial P}{\partial x}(x,y) +\frac{\partial Q}{\partial y}(x,y) .
 \end{equation}
 \index{Densidad!de expansión} \index{Divergencia}
 \end{defi}
 
-La densidad rotacional y la densidad de expansión para campos vectoriales tridimensionales ${\bf F}(x,y,z) =P(x,y,z)\vi +Q(x,y,z)\vj+R(x,y,z)\vk,$
+La densidad rotacional y la densidad de expansión para campos vectoriales tridimensionales ${\bf F}(x,y,z) =P(x,y,z)\vi +Q(x,y,z)\vj+R(x,y,z)\vk$,
 se pueden generalizar a partir de las ecuaciones (\ref{integraldelinea5})  y (\ref{integraldelinea6});
 estos elementos corresponden al rotacional y la divergencia, respectivamente.
 Estos elementos se presentaron en la sección \secref{divergenciayrotacional}.
@@ -401,7 +351,7 @@ denotan los vectores tangente unitario y normal unitario a la curva $C$.
 Una exposición completa se puede consultar en \cite{acosta_gempeler_doce_2020}.
 \begin{teorema}[\bfseries Teorema de Green $-$ circulación rotacional o forma tangencial]
 Sea $C$ una curva suave por tramos, cerrada y simple que encierra una región $R$ en el plano. Sea ${\bf F} (x,y)=P(x,y)\vi+Q(x,y)\vj$ un campo vectorial donde $P(x,y)$ y $Q(x,y)$ tienen primeras derivadas parciales continuas en una región abierta que contiene a $R$. Entonces, la circulación en contra de las manecillas del reloj de ${\bf F}$ alrededor de $C$ es la doble integral de $({\rm rot}{\bf F})\cdot \vk$
-sobre la región $R.$ \index{Región abierta} \index{Teorema!de Green}
+sobre la región $R$. \index{Región abierta} \index{Teorema!de Green}
 \begin{equation}
 \int_C {\bf F}\cdot{\bf T}ds=\int_C Pdx+Qdy=\iint_R \left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy
 \end{equation}
@@ -409,7 +359,7 @@ sobre la región $R.$ \index{Región abierta} \index{Teorema!de Green}
 
 \begin{teorema}[\bfseries Teorema de Green $-$ divergencia de flujo o forma normal]
 Sea $C$ una curva suave por tramos, cerrada y simple que encierra una región R en el plano.
-Sea ${\bf F} (x,y)=P(x,y)\vi+Q(x,y)\vj$ un campo vectorial donde $P(x,y)$ y $Q(x,y)$ tienen primeras derivadas parciales continuas en una región abierta que contiene a $R$. Entonces, el flujo hacia fuera de ${\bf F}$ a través de $C$ es igual a la doble integral de ${\rm div}{\bf F}$ sobre la región $R$ encerrada por $C.$ \index{Región abierta}
+Sea ${\bf F} (x,y)=P(x,y)\vi+Q(x,y)\vj$ un campo vectorial donde $P(x,y)$ y $Q(x,y)$ tienen primeras derivadas parciales continuas en una región abierta que contiene a $R$. Entonces, el flujo hacia fuera de ${\bf F}$ a través de $C$ es igual a la doble integral de ${\rm div}{\bf F}$ sobre la región $R$ encerrada por $C$. \index{Región abierta}
 \begin{equation}
 \int_C{\bf F}\cdot{\bf n}ds=\int_C Pdy-Qdx=\iint_R \left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}\right)dxdy
 \end{equation}
@@ -429,27 +379,20 @@ ${\bf F}(x,y)=(x^{2}y+3x)\vi+(2x^{3}-y)\vj$ y la curva $C:$ $x^{2}+2y^{2}=2$.
 por tanto
 \[\iint\limits_{R}\left( \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right) dA=\int_{-1}^{1}\int_{-\sqrt{2-2y^{2}} }^{\sqrt{2-2y^{2}} }5x^{2}dxdy= \frac{5}{2}\sqrt{2}\pi\]
 \item Cálculo de la circulación a través de la integral de línea. En este caso, la curva se parametriza como
-${\bf r}(t) =\left\langle \sqrt{2}\cos t,\sin t\right\rangle ,$ $t\in \lbrack 0,2\pi ].$
-Por tanto ${\bf F}({\bf r}(t))=\left\langle \left( \sin 2t+3\sqrt{2}\right) \cos t,4\sqrt{2}\cos ^{3}t-\sin t\right\rangle,$ además
+${\bf r}(t) =\left\langle \sqrt{2}\cos t,\sin t\right\rangle $, $t\in \lbrack 0,2\pi ]$.
+Por tanto ${\bf F}({\bf r}(t))=\left\langle \left( \sin 2t+3\sqrt{2}\right) \cos t,4\sqrt{2}\cos ^{3}t-\sin t\right\rangle$, además
 \[{\bf F}({\bf r}(t))\cdot{\bf r}^{\prime}(t)=2\sqrt{2}\cos(2t)-\frac{7}{2}\sin(2t)+\frac{3}{4}\sqrt{2}\cos(4t)+\frac{5}{4}\sqrt{2}.\] Entonces la circulación está dada por
 \begin{multline*} \int_{0}^{2\pi}{\bf F}\left({\bf r}(t)\right)\cdot{\bf r}^{\prime}(t) dt = \\ \int_{0}^{2\pi}\left( 2\sqrt{2}\cos 2t-\frac{7}{2}\sin 2t+\frac{3}{4}\sqrt{2}\cos 4t+\frac{5}{4}\sqrt{2}\right) dt
-= \frac{5}{2}\sqrt{2}\pi  \end{multline*}
+= \frac{5}{2}\sqrt{2}\pi
+\end{multline*}
 Este cálculo se efectúa en \verb"Mathematica" con los siguientes comandos:
 
- 
- 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y}={Sqrt[2]*Cos[t],Sin[t]};
 F={x^2*y+3*x,2*x^3-y};
 Integrate[Dot[F,D[r,t]],{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
-
-
-   
 
 \item Para el flujo hacia afuera a través de la integral doble
 \[\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}=\frac{\partial }{\partial x}\left( x^{2}y+3x\right) +\frac{\partial }{\partial y}\left(2x^{3}-y\right) = 2xy+2.\]
@@ -479,10 +422,7 @@ por lo tanto, el flujo está dado por
 \end{ejemplo}
 Este cálculo se efectúa en \verb"Mathematica" con los siguientes comandos:
 
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {P,Q}={x^2-x/(y^2+1),Exp[x]+ArcTan[y]};
 A=D[P,x]+D[Q,y];
 {x,y}={r*Cos[\[Theta]],r*Sin[\[Theta]]};
@@ -491,28 +431,24 @@ Integrate[A*r,{\[Theta],0,2*Pi},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \section{Superficies orientadas}
 
-Según \textcite{marsden_calculo_2013}, una superficie parametrizada es una función ${\bf r}:D\subset \mathbb{R}^{2}\rightarrow \mathbb{R}^{3},$ en donde $D$ es algún dominio en $\mathbb{R}^{2};$ la superficie $\sigma $ correspondiente a la función ${\bf r}$ es su imagen $\sigma ={\bf r}\left( D\right) ,$ que se escribe como  
+Según \textcite{marsden_calculo_2013}, una superficie parametrizada es una función ${\bf r}:D\subset \mathbb{R}^{2}\rightarrow \mathbb{R}^{3}$, en donde $D$ es algún dominio en $\mathbb{R}^{2};$ la superficie $\sigma $ correspondiente a la función ${\bf r}$ es su imagen $\sigma ={\bf r}\left( D\right) $, que se escribe como
 \[{\bf r}\left( u,v\right) =\left\langle x\left( u,v\right) ,y\left( u,v\right),z\left( u,v\right) \right\rangle.\]
-Si las funciones $x(u,v) ,$ $y(u,v) $ y $z(u,v)$ son diferenciables, se dice que ${\bf r}$ es diferenciable. Si ${\bf r}$ es diferenciable en $\left( u_{0},v_{0}\right) ,$ al fijar $u,$ se obtiene que la función ${\bf r}\left( u_{0},v\right) $ posee como imagen una curva en $\mathbb{R}^{3}.$
+Si las funciones $x(u,v) $, $y(u,v) $ y $z(u,v)$ son diferenciables, se dice que ${\bf r}$ es diferenciable. Si ${\bf r}$ es diferenciable en $\left( u_{0},v_{0}\right) $, al fijar $u$, se obtiene que la función ${\bf r}\left( u_{0},v\right) $ posee como imagen una curva en $\mathbb{R}^{3}$.
 Los vectores ${\bf r}_{u}$ y ${\bf r}_{v}$ son tangentes a esta curva en $\left(u_{0},v_{0}\right) ;$
-de modo que ${\bf r}_{u}\times {\bf r}_{v}$ es normal a la superficie en $\left( u_{0},v_{0}\right) .$
-Se dice que la superficie es \emph{suave} \index{Superficie!suave} si ${\bf r}_{u}\times {\bf r}_{v}\neq {\bf 0},$ en todo punto de $S$ (esto puede depender de la parametrización elegida).
+de modo que ${\bf r}_{u}\times {\bf r}_{v}$ es normal a la superficie en $\left( u_{0},v_{0}\right) $.
+Se dice que la superficie es \emph{suave} \index{Superficie!suave} si ${\bf r}_{u}\times {\bf r}_{v}\neq {\bf 0}$, en todo punto de $S$ (esto puede depender de la parametrización elegida).
 
-La superficie $S$ se dice \emph{orientada} \index{Superficie!orientada} si consta de dos lados (uno exterior o positivo y el otro interior o negativo) y en todo punto, hay dos vectores normales unitarios ${\bf N}_{1}$ y ${\bf N}_{2},$ con ${\bf N}_{2}=-{\bf N}_{1}.$
+La superficie $S$ se dice \emph{orientada} \index{Superficie!orientada} si consta de dos lados (uno exterior o positivo y el otro interior o negativo) y en todo punto, hay dos vectores normales unitarios ${\bf N}_{1}$ y ${\bf N}_{2}$, con ${\bf N}_{2}=-{\bf N}_{1}$.
 
 Ilustraremos lo anterior con unos ejemplos. En estos casos se presentan algunas superficies con una parametrización determinada (${\bf r}(u,v)$) y unos vectores del campo vectorial ${\bf r}_{u}\times {\bf r}_{v}$
 (no necesariamente normalizados), se muestran pocos de ellos para diferenciarlos entre sí.
 
 \begin{itemize}[leftmargin=1.2em, itemindent=0pt,       labelwidth=\labelwidth,labelsep=0.5em,]
-	
+
 \item La función ${\bf r}(u,t)= \langle \cos(t)\sin(u),\sin(t)\sin(u),\cos(u) \rangle $, para $t \in [0,2\pi]$ y $u \in [0,\pi]$, parametriza la esfera unitaria, que es una superficie suave y orientada.
 %
-
 
 \begin{figure}[H]
 \centering
@@ -524,7 +460,6 @@ Ilustraremos lo anterior con unos ejemplos. En estos casos se presentan algunas 
 \item En las siguientes figuras se ilustra la superficie $z=xy/4$ y el campo vectorial $\langle y/4,x/4,1 \rangle$
 en algunos puntos.
 
-
 \begin{figure}[H]
 \centering
 \caption{Campo vectorial ${\bf r}_u \times {\bf r}_v$ sobre la superficie $4z=xy$}
@@ -533,8 +468,7 @@ en algunos puntos.
 \end{figure}
 
 Usando la parametrización ${\bf r}(x,y)=\langle x,y,xy/4\rangle$, $x \in [-2,2]$,
-$y \in [-2,2].$
-
+$y \in [-2,2]$.
 
 \begin{figure}[H]
 \centering
@@ -543,18 +477,15 @@ $y \in [-2,2].$
 \fuentepropia
 \end{figure}
 
-Es sencillo ver que ${\bf r}_x \times {\bf r}_y \neq \langle 0,0,0\rangle,$ para todo $x,y,$
+Es sencillo ver que ${\bf r}_x \times {\bf r}_y \neq \langle 0,0,0\rangle$, para todo $x,y$,
 es decir que dicha superficie es suave, también puede probarse que esta superficie es orientada.
-
-
 
 \item La \emph{cinta de Mobius} \index{Cinta de Mobius} es un ejemplo de una superficie no orientada.
 \index{Superficie!no orientada}
-Para $t \in [0,2\pi]$ y $u\in[-1,1],$ esta región se puede parametrizar en la forma
+Para $t \in [0,2\pi]$ y $u\in[-1,1]$, esta región se puede parametrizar en la forma
 {\small
 \[{\bf r}(u,t)= \langle \cos(t)(2+u\cos(t/2)/2),\sin(t)(2+u\cos(t/2)),u\sin(t/2)/2 \rangle.\]
 }
-
 
 \begin{figure}[H]
 \centering
@@ -564,9 +495,8 @@ Para $t \in [0,2\pi]$ y $u\in[-1,1],$ esta región se puede parametrizar en la f
 \end{figure}
 
 \item El hiperboloide de un manto con ecuación $x^2-y^2=1+z^2$ se parametriza en la forma
-${\bf r}(u,v) = \langle \cosh(u)\cos(t), \cosh(u)\sin(t),\sinh(u) \rangle$, con $t \in [0,2\pi]$, $u \in \mathbb{R}.$
+${\bf r}(u,v) = \langle \cosh(u)\cos(t), \cosh(u)\sin(t),\sinh(u) \rangle$, con $t \in [0,2\pi]$, $u \in \mathbb{R}$.
 Puede comprobarse que esta superficie es orientada y suave. Se muestran algunos vectores del campo vectorial ${\bf r}_t \times {\bf r}_u$ que son ortogonales a la superficie. \index{Hiperboloide}
-
 
 \begin{figure}[H]
 \centering
@@ -575,10 +505,9 @@ Puede comprobarse que esta superficie es orientada y suave. Se muestran algunos 
 \fuentepropia
 \end{figure}
 
-\item La ecuación $z= \frac{-1}{10}(x^2+y^2) \cos(2 \sqrt{x^2+y^2})$, representa una superficie que se parametriza por $x=u\cos(t)$, $y=u\sin(t)$ y $z=-\frac{u^2}{10}\cos(2u),$ en donde $t\in [0,2\pi]$ y
-$u\in [0,\infty)$. Esta superficie está orientada y es suave para $(x,y,z) \neq (0,0,0).$
+\item La ecuación $z= \frac{-1}{10}(x^2+y^2) \cos(2 \sqrt{x^2+y^2})$, representa una superficie que se parametriza por $x=u\cos(t)$, $y=u\sin(t)$ y $z=-\frac{u^2}{10}\cos(2u)$, en donde $t\in [0,2\pi]$ y
+$u\in [0,\infty)$. Esta superficie está orientada y es suave para $(x,y,z) \neq (0,0,0)$.
 %\clearpage
-
 
 \begin{figure}[H]
 \centering
@@ -588,14 +517,13 @@ $u\in [0,\infty)$. Esta superficie está orientada y es suave para $(x,y,z) \neq
 \end{figure}
 
 \item \emph{La botella de Klein}, \index{Botella de Klein}: esta región es un ejemplo de superficie no orientada. \index{Superficie!no orientada}
-Para $u\in [0, 2\pi]$ y $v\in [0, \pi].$ La siguiente función vectorial determina dicha región:
+Para $u\in [0, 2\pi]$ y $v\in [0, \pi]$. La siguiente función vectorial determina dicha región:
 {\small
 \begin{multline*}
 \overrightarrow{r} (u,v)= \big \langle 6\cos(v)(1+\sin(v))-4(1-\cos(v)/2)\cos(u),\\
 16\sin(v), 4(1-\cos(v)/2)\sin(u) \big \rangle.
 \end{multline*}
 }
-
 
 \begin{figure}[H]
 \centering
@@ -605,8 +533,7 @@ Para $u\in [0, 2\pi]$ y $v\in [0, \pi].$ La siguiente función vectorial determi
 \end{figure}
 
 \item La porción del paraboloide con ecuación $z=1-\frac{x^2+y^2}{4} $, $z\geq 0$
-se parametriza como  ${\bf r}(t,u) = \langle u\cos(t),u\sin(t),1-\frac{u^2}{4}\rangle $, $t\in [0,2\pi]$ y $u \in [0,2].$
-
+se parametriza como  ${\bf r}(t,u) = \langle u\cos(t),u\sin(t),1-\frac{u^2}{4}\rangle $, $t\in [0,2\pi]$ y $u \in [0,2]$.
 
 \begin{figure}[H]
 \centering
@@ -615,9 +542,8 @@ se parametriza como  ${\bf r}(t,u) = \langle u\cos(t),u\sin(t),1-\frac{u^2}{4}\r
 \fuentepropia
 \end{figure}
 
-\item La función ${\bf r}(u,t)=\langle (3+\sin(t))\cos(u),(3+\sin(t))\sin(u),\cos(t) \rangle ,$ con $u,t \in [0,2\pi],$
+\item La función ${\bf r}(u,t)=\langle (3+\sin(t))\cos(u),(3+\sin(t))\sin(u),\cos(t) \rangle $, con $u,t \in [0,2\pi]$,
 parametriza un toro; puede probarse que esta es una superficie suave y orientada.
-
 
 \begin{figure}[H]
 \centering
@@ -646,14 +572,13 @@ La prueba se puede conseguir en \cite{apostol_calculus_1999} o \cite{marsden_cal
 
 \section{Ejercicios que usan el teorema de Stokes}
 Ilustraremos el uso de estos resultados en algunas situaciones particulares; en ellas se comprueba el cálculo señalado de más de una forma.
-\subsection*{Superficie sobre un paraboloide}
+\subsection{Superficie sobre un paraboloide}
 
-Para el campo vectorial ${\bf F}(x,y,z)=\la y^3,z^3,x^3 \ra,$
+Para el campo vectorial ${\bf F}(x,y,z)=\la y^3,z^3,x^3 \ra$,
 evaluar {\footnotesize $\ds \iint_S {\rm rot\,}{\bf F}\cdot d{\bf S}$} sobre la superficie del paraboloide
 $x=3-\left( y-2\right) ^{2}-\left(z-1\right) ^{2}$
 acotada por el cilindro $\left( y-2\right) ^{2}+\left(
-z-2\right) ^{2}=4.$ Esta región se consideró en la página \pageref{curvas2}.
-
+z-2\right) ^{2}=4$. Esta región se consideró en la página \pageref{curvas2}.
 
 \begin{figure}[H]
 \centering
@@ -667,11 +592,7 @@ z-2\right) ^{2}=4.$ Esta región se consideró en la página \pageref{curvas2}.
 
 La figura se obtiene con las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {y,z,x}={2+2*u*Cos[v],2+2*u*Sin[v],(y-2)^2+(z-1)^2-3};
 a=ParametricPlot3D[{x,y,z},{u,0,1},{v,0,2Pi}];
 b=SliceVectorPlot3D[{1,-4+2y,-2+2z},x==-3+(y-2)^2+
@@ -686,14 +607,11 @@ Show[b,a,c]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Con el campo vectorial ${\bf F}$ se verifica que
-${\rm rot\,}{\bf F}(x,y,z)=\la -3z^2,-3 x^2,-3 y^2\ra.$
+${\rm rot\,}{\bf F}(x,y,z)=\la -3z^2,-3 x^2,-3 y^2\ra$.
 La proyección de la superficie en el plano $yz$ se parametriza mediante las expresiones
-$y = 2+2u \cos (v)$, $z = 2+2u \sin (v).$ Reemplazando en la expresión que define el paraboloide se sigue que $x = -3+ (y-2)^2+(z-1)^2=-2+4u^2+4u\sin(v).$
-En resumen, para $u\in [0,1],\, v\in [0,2\pi],$ la siguiente función parametriza la superficie sobre el paraboloide con la restricción mencionada.
+$y = 2+2u \cos (v)$, $z = 2+2u \sin (v)$. Reemplazando en la expresión que define el paraboloide se sigue que $x = -3+ (y-2)^2+(z-1)^2=-2+4u^2+4u\sin(v)$.
+En resumen, para $u\in [0,1],\, v\in [0,2\pi]$, la siguiente función parametriza la superficie sobre el paraboloide con la restricción mencionada.
 \[{\bf r}(u,v)=\la -2+4u^2+4u\sin(v),2+2u\cos(v),2+2u\sin(v)\ra.\]
 
 De esta función se obtiene
@@ -708,11 +626,7 @@ Con lo cual,
 \end{equation}
 Este cálculo puede efectuarse de manera simplificada mediante la ejecución de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 G=Curl[{y^3,z^3,x^3},{x,y,z}];
 {y,z,x}={2+2*u*Cos[v],2+2*u*Sin[v],y^2-4*y+z^2-2*z+2};
 r={x,y,z};
@@ -721,11 +635,8 @@ Integrate[Dot[G,Cross[D[r,u],D[r,v]]],
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La curva de intersección del paraboloide y el cilindro se determina reduciendo las ecuaciones originales a
-$x = 2z - 2.$ Con las expresiones $y = 2 + 2\cos(t),$ $z = 2 + 2\sin(t),$ se sigue que la función vectorial que describe dicha curva es
+$x = 2z - 2$. Con las expresiones $y = 2 + 2\cos(t)$, $z = 2 + 2\sin(t)$, se sigue que la función vectorial que describe dicha curva es
 
 {\small
 \[{\bf r}(t) = \left\langle 2 + 4\sin(t),\, 2 + 2\cos(t),\, 2 + 2\sin(t) \right\rangle,\; t \in [0, 2\pi].\]}
@@ -757,24 +668,15 @@ Por tanto
 De acuerdo con el teorema de Stokes, los resultados obtenidos en \ref{stokes1} y \ref{stokes2} son iguales.
 Este valor se obtiene con la ayuda de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={y,z,x}={2+2*Cos[t],2+2*Sin[t],2z-2};
 Integrate[Dot[{y^3,z^3,x^3},D[r,t]],{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
+\subsection{Superficie de un paraboloide}
 
-
-
-
-\subsection*{Superficie de un paraboloide}
-
-Evaluar $\ds \iint {\rm rot\,}{\bf F}\cdot d{\bf S},$ si ${\bf F\,}(x,y,z)= \la y-xz,y^2,z \ra $ y $S$ es la superficie sobre el paraboloide $2z=x^2+y^2$ acotada por el plano $-x+y+z=1.$
-
+Evaluar $\ds \iint {\rm rot\,}{\bf F}\cdot d{\bf S}$, si ${\bf F\,}(x,y,z)= \la y-xz,y^2,z \ra $ y $S$ es la superficie sobre el paraboloide $2z=x^2+y^2$ acotada por el plano $-x+y+z=1$.
 
 \begin{figure}[H]
 \centering
@@ -788,11 +690,7 @@ Evaluar $\ds \iint {\rm rot\,}{\bf F}\cdot d{\bf S},$ si ${\bf F\,}(x,y,z)= \la 
 
 Con las siguientes instrucciones se obtiene la figura en \verb"Mathematica":
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=SliceVectorPlot3D[{2*x,2*y,-2},{2*z==x^2+y^2},
 {x,-1,3},{y,-3,1},{z,0,6},RegionFunction->Function[{x,
 y,z},(x-1)^2+(y+1)^2<=4],VectorStyle->Black,
@@ -804,27 +702,24 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Las superficies mencionadas se trabajaron en la página \pageref{curvas1}.
 La curva de intersección se parametrizó por medio de la función
 
 \[{\bf r}(t)= \la 1+ 2\cos(t), -1+ 2\sin(t), 3+2\cos(t)-2\sin(t) \ra, \, t \in [0,2 \pi].\]
-Entonces, ${\bf F}({\bf r}(t))\cdot{\bf r}'(t)= 2(2\cos(t)+\cos^2(t)-\sin(t))(2\sin(t)-1),$
+Entonces, ${\bf F}({\bf r}(t))\cdot{\bf r}'(t)= 2(2\cos(t)+\cos^2(t)-\sin(t))(2\sin(t)-1)$,
 por lo tanto,
 
 \begin{equation}\label{stokes3}
 \int_C {\bf F} \cdot d{\bf r}=\int_0^{2\pi}2(2\cos(t)+\cos^2(t)-\sin(t))(2\sin(t)-1) dt = -8\pi.
 \end{equation}
-Del campo ${\bf F}(x,y,z)$ se sigue que ${\rm rot\,}{\bf F}(x,y,z)= \la 0,-x,-1\ra.$
+Del campo ${\bf F}(x,y,z)$ se sigue que ${\rm rot\,}{\bf F}(x,y,z)= \la 0,-x,-1\ra$.
 
-La región sobre el paraboloide acotada por la curva $C,$ se puede parametrizar mediante las expresiones
-$x=1+2u\cos(t),$  $y =-1+2u\sin(t).$
+La región sobre el paraboloide acotada por la curva $C$, se puede parametrizar mediante las expresiones
+$x=1+2u\cos(t)$,  $y =-1+2u\sin(t)$.
 La expresión para $z$ se obtiene de la ecuación del paraboloide, es decir,
 
-\[z = (x^2 + y^2)/2=1+2u^2+2u\cos(t)-2u\sin(t);\] en donde $u\in [0,1],$
-$t\in [0,2\pi].$
+\[z = (x^2 + y^2)/2=1+2u^2+2u\cos(t)-2u\sin(t);\] en donde $u\in [0,1]$,
+$t\in [0,2\pi]$.
 Con la función
 
 \[{\bf r}(u,t)= \la 1+2u\cos(t),-1+2u\sin(t), 1+2u^2+2u\cos(t)-2u\sin(t) \ra,\]
@@ -838,8 +733,8 @@ se sigue que
 \end{eqnarray*}
 }
 
-De modo que 
-${\rm rot\,}{\bf F} \cdot ({\bf r}_u \times {\bf r}_t) = 8u(-1-u\cos(t)+u\sin(t)+u^2\sin(2t)) ,$ entonces
+De modo que
+${\rm rot\,}{\bf F} \cdot ({\bf r}_u \times {\bf r}_t) = 8u(-1-u\cos(t)+u\sin(t)+u^2\sin(2t)) $, entonces
 
 {\small
 \begin{multline*}
@@ -850,11 +745,7 @@ ${\rm rot\,}{\bf F} \cdot ({\bf r}_u \times {\bf r}_t) = 8u(-1-u\cos(t)+u\sin(t)
 
 Este cálculo se obtiene como sigue, y es el mismo valor obtenido en \ref{stokes3}.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 G=Curl[{y-x*z,y^2,z};,{x,y,z}]
 r={x,y,z}={1+2*u*Cos[t],-1+2*u*Sin[t],(x^2+y^2)/2};
 Integrate[Dot[G,Cross[D[r,u],D[r,t]]],
@@ -862,15 +753,11 @@ Integrate[Dot[G,Cross[D[r,u],D[r,t]]],
 \end{Verbatim}
 \end{tcolorbox}
 
+\subsection{Superficie sobre una esfera}
 
-
-
-\subsection*{Superficie sobre una esfera}
-
-Sea $S$ la superficie sobre la esfera con ecuación $x^{2}+y^{2}+z^{2}=2x,$ con
-$x\leq \frac{3}{2}.$
+Sea $S$ la superficie sobre la esfera con ecuación $x^{2}+y^{2}+z^{2}=2x$, con
+$x\leq \frac{3}{2}$.
 %\clearpage
-
 
 \begin{figure}[H]
 \centering
@@ -880,31 +767,31 @@ $x\leq \frac{3}{2}.$
 \fuentepropia
 \end{figure}
 
-Consideremos ${\bf F}\left(x,y,z\right)=\left\langle -y,y-z,-x\right\rangle .$ Evaluar
+Consideremos ${\bf F}\left(x,y,z\right)=\left\langle -y,y-z,-x\right\rangle $. Evaluar
 {\small
 \[\displaystyle \iint_{S}{\rm rot}\,{\bf F}\cdot dS.\]}
 
-La superficie $S$ es una parte de la esfera de radio $1$ con centro en el punto  $(1,0,0),$ por tanto, usaremos coordenadas esféricas en la forma $x=\rho \cos \phi ,$ $y=\rho \cos \theta \sin \phi ,$
-$z=\rho \sin \theta \sin \phi $ para construir una parame- \\ trización de $S$. Tendremos en cuenta que la ecuación $x^{2}+y^{2}+z^{2}=2x$ se reescribe como $\rho =2\cos \phi ,$
+La superficie $S$ es una parte de la esfera de radio $1$ con centro en el punto  $(1,0,0)$, por tanto, usaremos coordenadas esféricas en la forma $x=\rho \cos \phi $, $y=\rho \cos \theta \sin \phi $,
+$z=\rho \sin \theta \sin \phi $ para construir una parame- \\ trización de $S$. Tendremos en cuenta que la ecuación $x^{2}+y^{2}+z^{2}=2x$ se reescribe como $\rho =2\cos \phi $,
 de modo que esta superficie $S$ se parametriza como
-$x=2\cos ^{2}\phi ,$ $y=2\cos \theta \cos \phi \sin \phi ,$ $z=2\cos \phi
-\sin \theta \sin \phi .$ O de manera más simple:
+$x=2\cos ^{2}\phi $, $y=2\cos \theta \cos \phi \sin \phi $, $z=2\cos \phi
+\sin \theta \sin \phi $. O de manera más simple:
 
 {\small
 \begin{align*}
-	\mathbf{u}(\theta, \phi) &= \left \langle 2 \cos^2 \phi, 2 \cos \theta \cos \phi \sin \phi, 2 \cos \phi \sin \theta \sin \phi \right \rangle \\
-	&= \left \langle 1 + \cos (2\phi), \cos \theta \sin (2\phi), \sin \theta \sin (2\phi) \right \rangle,
+\mathbf{u}(\theta, \phi) &= \left \langle 2 \cos^2 \phi, 2 \cos \theta \cos \phi \sin \phi, 2 \cos \phi \sin \theta \sin \phi \right \rangle \\
+&= \left \langle 1 + \cos (2\phi), \cos \theta \sin (2\phi), \sin \theta \sin (2\phi) \right \rangle,
 \end{align*}
 }
-con $\theta \in \lbrack 0,2\pi ],$ $\phi \in \lbrack \pi /6,\pi /2].$
+con $\theta \in \lbrack 0,2\pi ]$, $\phi \in \lbrack \pi /6,\pi /2]$.
 De esta función se obtiene
 
 {\small
 \begin{align*}
-	\mathbf{u}_{\theta} &= \left \langle 0, -\sin 2\phi \sin \theta, \sin 2\phi \cos \theta \right \rangle \\
-	\mathbf{u}_{\phi} &= \left \langle -2 \sin 2\phi, 2 \cos 2\phi \cos \theta, 2 \cos 2\phi \sin \theta \right \rangle \\
-	\mathbf{u}_{\theta} \times \mathbf{u}_{\phi} &= \left \langle -2 \cos 2\phi \sin 2\phi, -2 \sin^2 (2\phi) \cos \theta, -2 \sin^2 (2\phi) \sin \theta \right \rangle \\
-	&= \left \langle -\sin (4\phi), -2 \sin^2 (2\phi) \cos \theta, -2 \sin^2 (2\phi) \sin \theta \right \rangle.
+\mathbf{u}_{\theta} &= \left \langle 0, -\sin 2\phi \sin \theta, \sin 2\phi \cos \theta \right \rangle \\
+\mathbf{u}_{\phi} &= \left \langle -2 \sin 2\phi, 2 \cos 2\phi \cos \theta, 2 \cos 2\phi \sin \theta \right \rangle \\
+\mathbf{u}_{\theta} \times \mathbf{u}_{\phi} &= \left \langle -2 \cos 2\phi \sin 2\phi, -2 \sin^2 (2\phi) \cos \theta, -2 \sin^2 (2\phi) \sin \theta \right \rangle \\
+&= \left \langle -\sin (4\phi), -2 \sin^2 (2\phi) \cos \theta, -2 \sin^2 (2\phi) \sin \theta \right \rangle.
 \end{align*}
 }
 
@@ -921,17 +808,13 @@ Con lo anterior, podemos evaluar la integral
 {\small
 \begin{multline*}
 \iint_S {\rm rot}\, {\bf F} \cdot d{\bf S} = -\int_{\pi /6}^{\pi /2}\int_{0}^{2\pi }\left( \sin 4\phi +2\left( \cos
-\theta +\sin \theta \right) \sin ^{2}\left( 2\phi \right) \right) d\theta d\phi = \frac{3\pi}{4}. 
+\theta +\sin \theta \right) \sin ^{2}\left( 2\phi \right) \right) d\theta d\phi = \frac{3\pi}{4}.
 \end{multline*}
 }
 
 En \Verb"Mathematica" este proceso se hace con las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r[\[Theta]_,\[Phi]_]:={1+Cos[2\[Phi]],
 Cos[\[Theta]]*Sin[2\[Phi]],Sin[\[Theta]]*Sin[2\[Phi]]}
 ParametricPlot3D[r[\[Theta],\[Phi]],{\[Theta],0,2*Pi},
@@ -945,12 +828,7 @@ Integrate[A,{\[Theta],0,2*Pi},{\[Phi],Pi/6,Pi/2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La figura de la mencionada superficie y el campo vectorial ${\rm rot}\, {\bf F}$ se muestran a continuación:
-
-
 
 \begin{figure}[H]
 \centering
@@ -962,11 +840,7 @@ La figura de la mencionada superficie y el campo vectorial ${\rm rot}\, {\bf F}$
 
 Las figuras anteriores se obtienen ejecutando las siguientes instrucciones.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=SliceVectorPlot3D[{1,1,1},{x^2+y^2+z^2==2*x},
 {x,0,3/2},{y,-1,1},{z,-1,1},VectorPoints->12,
 VectorStyle->Black,VectorScale->{0.12,Scaled[0.2],
@@ -982,11 +856,8 @@ Show[a,b,c]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La frontera de la superficie $S$ es la circunferencia $C$ determinada por la ecuación
-$\vec{\alpha}(t) =\left\langle \frac{3}{2},\frac{\sqrt{3}}{2}\cos t,\frac{\sqrt{3}}{2}\sin t\right\rangle ,$
+$\vec{\alpha}(t) =\left\langle \frac{3}{2},\frac{\sqrt{3}}{2}\cos t,\frac{\sqrt{3}}{2}\sin t\right\rangle $,
 $t\in \lbrack 0,2\pi ];$ entonces,
 \begin{eqnarray*}
 {\bf F}(\ve{\alpha}(t))\cdot d\ve{\alpha}
@@ -998,7 +869,7 @@ El cálculo anterior se obtiene al ejecutar las siguientes instrucciones:
 
 %
 
-\begin{tcolorbox}[breakable,enhanced]
+\begin{tcolorbox}
 \begin{Verbatim}[formatcom=\letraverbatim]
 {x,y,z}={3/2,Sqrt[3]/2*Cos[t],Sqrt[3]/2*Sin[t]};
 F[x_,y_,z_]:={-y,y-z,-x}
@@ -1007,12 +878,11 @@ Integrate[Dot[F[x,y,z],D[{x,y,z},t]],{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-\subsection*{Superficie sobre un elipsoide} \index{Elipsoide}
+\subsection{Superficie sobre un elipsoide} \index{Elipsoide}
 
-Evaluar $\ds \iint_{S}{\rm rot}\,{\bf F}\cdot d{\bf S},$ en donde $S$ es la parte del elipsoide
+Evaluar $\ds \iint_{S}{\rm rot}\,{\bf F}\cdot d{\bf S}$, en donde $S$ es la parte del elipsoide
 $x^{2}+4y^{2}+z^{2}=16$ con $z \geq 0$ y ${\bf F}\left(x,y,z\right) =e^{x}\vi+\cos \left( yz\right)\vj+z\vk$.
 %\clearpage
-
 
 \begin{figure}[H]
 \centering
@@ -1023,8 +893,8 @@ $x^{2}+4y^{2}+z^{2}=16$ con $z \geq 0$ y ${\bf F}\left(x,y,z\right) =e^{x}\vi+\c
 
 Utilizaremos la parametrización
 {\small
-${\bf r}\left( u,v\right) =\left\langle 4\cos u\sin v,2\sin u\sin v,4\cos v\right\rangle ,$} con
-{\small $u\in \lbrack 0,2\pi ],$ $v\in \lbrack 0,\pi/2].$}
+${\bf r}\left( u,v\right) =\left\langle 4\cos u\sin v,2\sin u\sin v,4\cos v\right\rangle $,} con
+{\small $u\in \lbrack 0,2\pi ]$, $v\in \lbrack 0,\pi/2]$.}
 
 Entonces,
 \begin{eqnarray*}
@@ -1032,7 +902,7 @@ Entonces,
 {\bf r}_{v}\left( u,v\right) &=&\left\langle 4\cos u\cos v,2\cos v\sin u,-4\sin v\right\rangle \\
 {\bf r}_{u}\times {\bf r}_{v}&=&\left\langle -8\cos u\sin ^{2}v,-16\sin u\sin ^{2}v,-8\cos v\sin v\right\rangle.
 \end{eqnarray*}
-Con los elementos anteriores es sencillo ver que ${\rm rot}\,{\bf F}= \left\langle y\sin yz,0,0\right\rangle,$ además
+Con los elementos anteriores es sencillo ver que ${\rm rot}\,{\bf F}= \left\langle y\sin yz,0,0\right\rangle$, además
 ${\rm rot}\,{\bf F}({\bf r}(u,v)) \cdot ({\bf r}_{u}\times {\bf F}_{v})= -8\sin(2u)\sin^3(v)\sin(4\sin(u)\sin(2v)), $
 por lo tanto,
 {\footnotesize
@@ -1044,11 +914,7 @@ por lo tanto,
 
 Con las siguientes instrucciones se obtienen, además de la figura, los cálculos anteriores.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Clear[x,y,z,F,G,r]
 F[x_,y_,z_]:={Exp[x],Cos[y*z],z}
 G=Curl[F[x,y,z],{x,y,z}]
@@ -1060,40 +926,29 @@ NIntegrate[A,{u,0,2*Pi},{v,0,Pi/2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La frontera de $S$ es la curva $C$ determinada por la función vectorial
-$\ve{\alpha}(t) =\left\langle 4\cos t,2\sin t,0\right\rangle,$ $t\in \lbrack 0,2\pi ].$
+$\ve{\alpha}(t) =\left\langle 4\cos t,2\sin t,0\right\rangle$, $t\in \lbrack 0,2\pi ]$.
 El mismo cálculo se puede evaluar usando una integral de línea, en este caso
-${\bf F}(\ve{\alpha}(t))\cdot \ve{\alpha}^{\prime}(t)=\la e^{4\cos t},\cos(0),0\ra\cdot\la -4\sin t,2\cos t,0\ra,$
+${\bf F}(\ve{\alpha}(t))\cdot \ve{\alpha}^{\prime}(t)=\la e^{4\cos t},\cos(0),0\ra\cdot\la -4\sin t,2\cos t,0\ra$,
 por tanto,
 
 {\small
 \[\int_{C}{\bf F}\cdot d\ve{\alpha} = \int_{0}^{2\pi}{\bf F}(\ve{\alpha}(t))\cdot
 \ve{\alpha}^{\prime }\left( t\right) dt = \int_{0}^{2\pi}\left( 2\cos t-4e^{4\cos t}\sin t\right) dt= 0.\]}
 
-
 %
 
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y,z}={4*Cos[t],2*Sin[t],0};
 F[x_,y_,z_]:={Exp[x],Cos[y*z],z}
 Integrate[Dot[F[x,y,z],D[{x,y,z},t]],{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsection*{Flujo sobre una superficie}
+\subsection{Flujo sobre una superficie}
 
 Calcular el flujo del campo vectorial ${\bf F}(x,y,z)= \la 2x,2y,z\ra$ sobre la superficie $S$
 determinada por la ecuación $z=3-x^2-y^4+2y^2$.
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -1105,11 +960,7 @@ determinada por la ecuación $z=3-x^2-y^4+2y^2$.
 
 Las siguientes instrucciones permiten obtener la figura que se muestra:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=ContourPlot3D[3-x^2-y^4+2*y^2==z,{x,-2,2},
 {y,-2,2},{z,0,4.2},Mesh->False,PlotPoints->60];
 Show[a,SliceVectorPlot3D[{2*x,2*y,z},{3-x^2-y^4+
@@ -1119,13 +970,9 @@ Automatic},VectorPoints->12,PlotStyle->Opacity[0]]]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La ecuación $z=3-x^{2}-y^{4}+2y^{2}$ determina la superficie $S$
-que intersecta al plano $xy,$ en una curva caracterizada por la expresión
-$4=x^{2}+\left( y^{2}-1\right) ^{2}.$ Esta región se muestra enseguida:
-
+que intersecta al plano $xy$, en una curva caracterizada por la expresión
+$4=x^{2}+\left( y^{2}-1\right) ^{2}$. Esta región se muestra enseguida:
 
 \begin{figure}[H]
 \centering
@@ -1135,14 +982,14 @@ $4=x^{2}+\left( y^{2}-1\right) ^{2}.$ Esta región se muestra enseguida:
 \fuentepropia
 \end{figure}
 
-Es claro que si $x=0$ entonces {\footnotesize $y=\pm \sqrt{3},$} esta región se puede parametrizar formando segmentos rectilíneos entre dos puntos de la forma $A$ y $B,$ que son de forma {\footnotesize $A=\left( -\sqrt{3-t^{4}+2t^{2}},t\right),$} {\footnotesize $B=\left( \sqrt{3-t^{4}+2t^{2}},t\right).$}
-Una combinación convexa entre $A$ y $B$, permite parametrizar la proyección de la superficie sobre el plano $xy,$
-esto es {\footnotesize $\left( 1-u\right)A+uB=\left(\left(2u-1\right)\sqrt{2t^{2}-t^{4}+3},t\right).$}
+Es claro que si $x=0$ entonces {\footnotesize $y=\pm \sqrt{3}$,} esta región se puede parametrizar formando segmentos rectilíneos entre dos puntos de la forma $A$ y $B$, que son de forma {\footnotesize $A=\left( -\sqrt{3-t^{4}+2t^{2}},t\right)$,} {\footnotesize $B=\left( \sqrt{3-t^{4}+2t^{2}},t\right)$.}
+Una combinación convexa entre $A$ y $B$, permite parametrizar la proyección de la superficie sobre el plano $xy$,
+esto es {\footnotesize $\left( 1-u\right)A+uB=\left(\left(2u-1\right)\sqrt{2t^{2}-t^{4}+3},t\right)$.}
 La coordenada $z$ sobre la superficie, se obtiene al reemplazar $x=(2u-1)\sqrt{2t^{2}-t^{4}+3}$ y $y=t$, en
-$z=3-x^{2}-y^{4}+2y^{2}$ obteniendo $z=4u(1-u)(3-t^{4}+2t^{2}).$
+$z=3-x^{2}-y^{4}+2y^{2}$ obteniendo $z=4u(1-u)(3-t^{4}+2t^{2})$.
 Por lo anterior, la superficie se describe por medio de la función
 \[{\bf r}(t,u) =\la (2u-1) \sqrt{2t^{2}-t^{4}+3},t,4u(1-u)\left(3-t^{4}+2t^{2}\right)\ra,\]
-con $t\in \lbrack -\sqrt{3},\sqrt{3}],$ $u\in \lbrack 0,1].$
+con $t\in \lbrack -\sqrt{3},\sqrt{3}]$, $u\in \lbrack 0,1]$.
 Con lo cual,
 \[{\bf F}\left({\bf r}\left(t,u\right) \right) =\left\langle 2\left( 2u-1\right) \sqrt{2t^{2}-t^{4}+3},2t,4u\left( 1-u\right) \left( 3-t^{4}+2t^{2}\right)\right\rangle.\]
 De la función $\bf  {r}$ obtenemos los siguientes vectores:
@@ -1184,11 +1031,7 @@ de modo que el flujo de ${\bf F}$ sobre $S$ está dado por:
 
 Los cálculos anteriores se pueden obtener en \verb|Mathematica| con las siguientes instrucciones; con estos, además de hallar la expresión que define la proyección en el plano $xy$, se construye la parametrización mostrada antes.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Solve[3-x^2-y^4+2y^2==0,x]
 {x1,x2,y}={-Sqrt[3+2t^2-t^4],Sqrt[3+2t^2-t^4],t};
 x=(1-u)*x1+u*x2;
@@ -1199,17 +1042,13 @@ NIntegrate[A,{u,0,1},{t,-Sqrt[3],Sqrt[3]}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsection*{Una región acotada por dos cilindros parabólicos}
+\subsection{Una región acotada por dos cilindros parabólicos}
 
 Evalúe $\ds \iint_S \rot{F} \cdot d{\bf S}$ en donde ${\bf F}(x,y,z)=\left\langle y^{2},yz-x,xz-y\right\rangle $ y %% $
-$S$ es la superficie acotada por las figuras de las expresiones $x=z^2$ y $x=4y-y^2.$
+$S$ es la superficie acotada por las figuras de las expresiones $x=z^2$ y $x=4y-y^2$.
 Esta superficie se presenta en la página \pageref{curvas3}.
 
-Se muestra a continuación el gráfico del sólido y la representación de los campos vectoriales $\la -1,0,-2z\ra$ y  $\la 1,-4+2y,0\ra,$ que determinan la orientación hacia afuera de la superficie.
-
+Se muestra a continuación el gráfico del sólido y la representación de los campos vectoriales $\la -1,0,-2z\ra$ y  $\la 1,-4+2y,0\ra$, que determinan la orientación hacia afuera de la superficie.
 
 \begin{figure}[H]
 \centering
@@ -1223,11 +1062,7 @@ Se muestra a continuación el gráfico del sólido y la representación de los c
 
 Estas figuras se consiguen ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=ParametricPlot3D[{4*Sin[t]^2,2+2*Cos[t],2*Sin[t]},
 {t,0,2*Pi},PlotStyle->{Black,Thickness[0.01]}];
 b=SliceVectorPlot3D[{-1,0,2*z},{x==z^2},{x,0,4.5},
@@ -1246,35 +1081,28 @@ Show[d,c]
 \end{Verbatim}
 \end{tcolorbox}
 
+Las ecuaciones $x=z^{2}$ y $x=4y-y^{2}$ representan dos cilindros parabólicos, su intersección proyectada en el plano $yz$ está dada por la ecuación $\left( y-2\right) ^{2}+z^{2}=4$, la cual se parametriza en la forma $y=2+2u\cos v$, $z=2u\sin v$, con $u\in \lbrack 0,1]$, $v\in \lbrack 0,2\pi ]$. Haremos el cálculo sobre cada región por separado.
 
+\subsubsection{Integración sobre el cilindro \texorpdfstring{$x=z^{2}$}{x=z^2}}
 
-
-Las ecuaciones $x=z^{2}$ y $x=4y-y^{2}$ representan dos cilindros parabólicos, su intersección proyectada en el plano $yz$ está dada por la ecuación $\left( y-2\right) ^{2}+z^{2}=4,$ la cual se parametriza en la forma $y=2+2u\cos v,$ $z=2u\sin v,$ con $u\in \lbrack 0,1],$ $v\in \lbrack 0,2\pi ].$ Haremos el cálculo sobre cada región por separado.
-
-\subsubsection*{Integración sobre el cilindro $x=z^{2}$}
-
-Del campo vectorial se  sigue que $\rot{F}= \left\langle -y-1,-z,-2y-1\right\rangle .$
+Del campo vectorial se  sigue que $\rot{F}= \left\langle -y-1,-z,-2y-1\right\rangle $.
 Además, la superficie en mención se parametriza por medio de la función
 \[{\bf r}\left( u,v\right) =\left\langle 4u^{2}\sin ^{2}v,2+2u\cos v,2u\sin v\right\rangle,\, u\in \lbrack 0,1],\,v\in \lbrack 0,2\pi ].\] Por lo tanto,
-$\rot{F}\left({\bf r}\left(u,v\right)\right) = \left\langle -2u\cos v-3,-2u\sin v,-4u\cos v-5\right\rangle .$
+$\rot{F}\left({\bf r}\left(u,v\right)\right) = \left\langle -2u\cos v-3,-2u\sin v,-4u\cos v-5\right\rangle $.
 De la función ${\bf r}$ se obtienen los siguientes vectores
 
 \begin{align*}
-	{\bf r}_{u} &= \left\langle 8u\sin ^{2}v,2\cos v,2\sin v\right\rangle \\
-	{\bf r}_{v} &=\left\langle 8u^{2}\cos v\sin v,-2u\sin v,2u\cos v\right\rangle \\
-	{\bf r}_{u}\times {\bf r}_{v} &=\left\langle 4u,0,-16u^{2}\sin v\right\rangle.
+{\bf r}_{u} &= \left\langle 8u\sin ^{2}v,2\cos v,2\sin v\right\rangle \\
+{\bf r}_{v} &=\left\langle 8u^{2}\cos v\sin v,-2u\sin v,2u\cos v\right\rangle \\
+{\bf r}_{u}\times {\bf r}_{v} &=\left\langle 4u,0,-16u^{2}\sin v\right\rangle.
 \end{align*}
-Además, $\rot{F}\left({\bf r}(u,v)\right)\cdot\left({\bf r}_{u}\times{\bf r}_{v}\right)=-4 u(4u^2\cos(2v)-4u^2+4 u \cos (v)+5),$ entonces,
+Además, $\rot{F}\left({\bf r}(u,v)\right)\cdot\left({\bf r}_{u}\times{\bf r}_{v}\right)=-4 u(4u^2\cos(2v)-4u^2+4 u \cos (v)+5)$, entonces,
 \begin{equation}\label{stokes6}
 \int_{0}^{2\pi }\int_{0}^{1}\left( -4 u(4u^2\cos(2v)-4u^2+4 u \cos (v)+5)\right) dudv= -12\pi
 \end{equation}
 Las instrucciones requeridas en \verb"Mathematica" se presentan a continuación:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 G=Curl[{y^2,y*z-x,x*z-y},{x,y,z}]
 r={y,z,x}={2+2*u*Cos[v],2*u*Sin[v],z^2}
 Integrate[Dot[G,Cross[D[r,u],D[r,v]]],
@@ -1282,17 +1110,14 @@ Integrate[Dot[G,Cross[D[r,u],D[r,v]]],
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Integración sobre el cilindro $x=4y-y^{2}$}
+\subsubsection{Integración sobre el cilindro \texorpdfstring{$x=4y-y^{2}$}{x=4y-y^2}}
 
 Sobre esta región se satisface que
 $y= (2+2u\cos v)$ y $z=2u\sin v$ por tanto $x=4-2u^{2}\left( 1+\cos 2v\right);$
 por tanto, la superficie se parametriza utilizando la función
 \[{\bf r}\left( u,v\right) =\left\langle 4-2u^{2}\left( 1+\cos 2v\right) ,2+2u\cos v,2u\sin v\right\rangle,\]
-con $u\in[0,1],\, v\in [0,2\pi].$
-Por tanto, $\rot{F}\left({\bf r}\left( u,v\right)\right) =\big \langle -2u\cos v-3,-2u\sin v,-4u\cos v-5\big \rangle.$
+con $u\in[0,1],\, v\in [0,2\pi]$.
+Por tanto, $\rot{F}\left({\bf r}\left( u,v\right)\right) =\big \langle -2u\cos v-3,-2u\sin v,-4u\cos v-5\big \rangle$.
 De la función ${\bf r}$ se sigue que
 \begin{eqnarray*}
 {\bf r}_{u} &=& \left\langle -4u\left( \cos 2v+1\right) ,2\cos v,2\sin v\right\rangle \\
@@ -1306,11 +1131,7 @@ entonces,
 \end{equation}
 Se presentan las instrucciones que se requieren en \verb"Mathematica".
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 F={y^2,y*z-x,x*z-y};
 G=Curl[{y^2,y*z-x,x*z-y},{x,y,z}];
 {y,z,x}={2+2*u*Cos[v],2*u*Sin[v],4*y-y^2}
@@ -1319,20 +1140,17 @@ Integrate[Dot[G,Cross[D[{x,y,z},u],D[{x,y,z},v]]],
 \end{Verbatim}
 \end{tcolorbox}
 
+\subsubsection{Integración sobre la curva de intersección}
 
-
-
-\subsubsection*{Integración sobre la curva de intersección}
-
-En la página \pageref{curvas3}, la curva de intersección se parametrizó  por medio de la función ${\bf r}(t)=\left\langle 4\sin ^{2}t,2+2\cos t,2\sin t\right\rangle,$ $t \in [0,2\pi].$
+En la página \pageref{curvas3}, la curva de intersección se parametrizó  por medio de la función ${\bf r}(t)=\left\langle 4\sin ^{2}t,2+2\cos t,2\sin t\right\rangle$, $t \in [0,2\pi]$.
 De esta expresión se sigue que
-${\bf r}^{\prime}(t)  = \left\langle 8\cos t\sin t,-2\sin t,2\cos t\right\rangle.$ Además,
+${\bf r}^{\prime}(t)  = \left\langle 8\cos t\sin t,-2\sin t,2\cos t\right\rangle$. Además,
 {\small
 \[{\bf F}\left({\bf r}(t) \right) =  \big \langle 4(\cos t+1) ^{2},4(\cos t+1)(\cos t+\sin t-1), 2(3\sin t-\cos t-\sin 3t-1) \big \rangle.\]
 }
 
 Por tanto,
-{\small 
+{\small
 \[{\bf F}\left({\bf r}\left(t\right) \right) \cdot {\bf r}^{\prime}(t) = -8\cos ^{2}\left( \frac{t}{2}\right) (1+\cos(t)-\cos(2t)-3\sin(t)-5\sin(2t)-\sin(3t));\]
 }
 entonces,
@@ -1340,33 +1158,25 @@ entonces,
 \int_{0}^{2\pi}{\bf F}\left({\bf r}\left(t\right) \right) \cdot {\bf r}^{\prime}(t)dt
 = -12\pi
 \end{equation}
-De acuerdo con el teorema de Stokes, se buscará la igualdad de los planteamientos que conducen a los resultados obtenidos en \ref{stokes6}, \ref{stokes7} y \ref{stokes8}. 
+De acuerdo con el teorema de Stokes, se buscará la igualdad de los planteamientos que conducen a los resultados obtenidos en \ref{stokes6}, \ref{stokes7} y \ref{stokes8}.
 En \verb"Mathematica" esta integral se evalúa usando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 F={y^2,y*z-x,x*z-y};
 {y,z,x}={2+2*Cos[t],2*Sin[t],z^2};
 Integrate[Simplify[Dot[F,D[{x,y,z},t]]],{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
- \index{Flujo}
+\index{Flujo}
 En las siguientes secciones se calcula el flujo de un campo vectorial sobre ciertas superficies.
 Este valor se halla por diversos métodos.
 
-\subsection*{Una superficie de tipo exponencial}
+\subsection{Una superficie de tipo exponencial}
 
-Consideremos el campo vectorial ${\bf F}(x,y,z) = \la x-y,x+y,2z \ra,$ comprobar el teorema de Stokes sobre la superficie con ecuación $z=(x+y^2)e^{1-x^2-y^2}$ para $x^2+y^2\leq 4.$
+Consideremos el campo vectorial ${\bf F}(x,y,z) = \la x-y,x+y,2z \ra$, comprobar el teorema de Stokes sobre la superficie con ecuación $z=(x+y^2)e^{1-x^2-y^2}$ para $x^2+y^2\leq 4$.
 %\clearpage
 %\vspace*{-1.6em}
-
 
 \begin{figure}[H]
 \centering
@@ -1381,11 +1191,7 @@ Consideremos el campo vectorial ${\bf F}(x,y,z) = \la x-y,x+y,2z \ra,$ comprobar
 Con las siguientes orientaciones se consiguen estas figuras; en ellos se hace uso de la instrucción:
 \verb"ListSliceVectorPlot3D". \index{ListSliceVectorPlot3D}
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 datos=Table[{x-y,x+y,2*z},{z,-2,2},{y,-2,2},{x,-2,2}];
 a=ContourPlot3D[z==(x+y^2)*Exp[1-x^2-y^2],{x,-2,2},
 {y,-2,2},{z,-4/3,4/3},MeshStyle->Gray,
@@ -1401,14 +1207,11 @@ Show[a,b,PlotRange->{{-2,2},{-2,2},{-4/3,3/2}}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-En el plano $xy,$ la región determinada por la desigualdad $x^2+y^2\leq 4$ se describe por medio de las expresiones
-$x=2u\cos(t),$ $y=2u\sin(t),$ con lo cual \[z=(x+y^2)e^{1-x^2-y^2}=2ue^{1-4u^2}(\cos(t)+2u\sin^2(t)).\]
+En el plano $xy$, la región determinada por la desigualdad $x^2+y^2\leq 4$ se describe por medio de las expresiones
+$x=2u\cos(t)$, $y=2u\sin(t)$, con lo cual \[z=(x+y^2)e^{1-x^2-y^2}=2ue^{1-4u^2}(\cos(t)+2u\sin^2(t)).\]
 Por lo tanto, la función
 \[{\bf r}(t,u) = \la 2u\cos(t),2u\sin(t) ,2ue^{1-4u^2}(\cos(t)+2u\sin^2(t)))\ra,\]
-con $t\in [0,2\pi]$, $u\in [0,1],$  parametriza la superficie en mención.
+con $t\in [0,2\pi]$, $u\in [0,1]$,  parametriza la superficie en mención.
 Puede verse que
 \begin{multline*}
 {\bf r}_u \times {\bf r}_t = \bigg \langle 4 e^{1-4 u^2} u \left(4 u^3 \cos (t)-4 u^3
@@ -1422,11 +1225,7 @@ $\rot{F}\cdot ({\bf r}_u \times {\bf r}_t)= 8u$, entonces
 \end{equation}
 Este cálculo se hace en \verb"Mathematica" con las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 G=Curl[{x-y,x+y,2*z},{x,y,z}]
 r={x,y,z}={2*u*Cos[t],2*u*Sin[t],
 (x+y^2)*Exp[1-x^2-y^2]};
@@ -1435,45 +1234,34 @@ Integrate[Dot[G,Cross[D[r,u],D[r,t]]],{u,0,1},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Para evaluar la integral de línea sobre la frontera de la superficie en mención, se puede usar la función
 \[{\bf r}(t) = \la 2\cos(t),2\sin(t) ,2e^{-3}(\cos(t)+2\sin^2(t)))\ra,\]
 con $t\in [0,2\pi]$ como parametrización de dicha curva. Es claro que
 \[{\bf F}({\bf r}(t))= \la 2\cos(t)-2\sin(t),2\sin (t)+2\cos(t),4e^{-3}\left(2\sin ^2(t)+\cos(t)\right)\ra;\]
 además,
-${\bf F}({\bf r}(t)) \cdot {\bf r}^\prime (t)= 4 + 4e^{-6}(3\sin(2t)-\sin(t)+3\sin(3t)-2\sin(4t)).$
+${\bf F}({\bf r}(t)) \cdot {\bf r}^\prime (t)= 4 + 4e^{-6}(3\sin(2t)-\sin(t)+3\sin(3t)-2\sin(4t))$.
 
 Por tanto,
 \begin{equation} \label{stokes10}
-	\scalebox{0.85}{%
-		$\displaystyle \int_C {\bf F} \cdot d{\bf r} = \int_0^{2\pi}(4 + 4e^{-6}(3\sin(2t)-\sin(t)+3\sin(3t)-2\sin(4t))) dt = 8\pi$
-	}
+\scalebox{0.85}{%
+$\displaystyle \int_C {\bf F} \cdot d{\bf r} = \int_0^{2\pi}(4 + 4e^{-6}(3\sin(2t)-\sin(t)+3\sin(3t)-2\sin(4t))) dt = 8\pi$
+}
 \end{equation}
 
 Es evidente la igualdad de los resultados obtenidos en \ref{stokes9} y \ref{stokes10}.
 Las siguientes instrucciones permiten realizar este procedimiento:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={2*Cos[t],2*Sin[t]};
 {x,y,z}={2*Cos[t],2*Sin[t],(x+y^2)*Exp[1-x^2-y^2]};
 Integrate[Dot[{x-y,x+y,2*z},D[{x,y,z},t]],{t,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsection*{Flujo sobre la superficie \texorpdfstring{$\bm{\mathsf{z=\ln(x^2+y^2)}}$}{z=ln(x²+y²)}}
+\subsection{Flujo sobre la superficie \texorpdfstring{$\bm{\mathsf{z=\ln(x^2+y^2)}}$}{z=ln(x²+y²)}}
 
 Calcular el flujo del campo vectorial ${\bf F}(x,y,z)= \la yz,-xz,-xy \ra$ sobre la superficie determinada por las expresiones.
 $z=\ln(x^2+y^2)$, con $\frac{1}{9} \leq x^2+y^2 \leq 9$.
-
 
 \begin{figure}[H]
 \centering
@@ -1485,11 +1273,7 @@ $z=\ln(x^2+y^2)$, con $\frac{1}{9} \leq x^2+y^2 \leq 9$.
 
 La figura se consigue ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 SliceVectorPlot3D[{y*z,-x*z,-x*y},{z==Log[x^2+y^2]},
 {x,-3,3},{y,-3,3},{z,-1,2},VectorPoints->14,
 RegionFunction->Function[{x,y,z},0.1<x^2+y^2<9],
@@ -1498,16 +1282,13 @@ Automatic}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La superficie en mención se parametriza mediante la función
 \[{\bf r}\left( u,v\right) =\left\langle u\cos v,u\sin v,\ln u^{2}\right\rangle,\,\, v\in [0,2\pi], \,\, u\in \left[1/3,3\right ].\] Con esta función se hallan los siguientes vectores
 {\small
 \begin{align*}
-	{\bf r}_{u} &= \frac{\partial}{\partial u}\left \langle u\cos v, u\sin v, \ln u^2 \right \rangle = \left \langle \cos v, \sin v, \frac{2}{u} \right \rangle \\
-	{\bf r}_{v} &= \frac{\partial}{\partial v}\left \langle u\cos v, u\sin v, \ln u^2 \right \rangle = \left \langle -u\sin v, u\cos v, 0 \right \rangle \\
-	{\bf r}_{u} \times {\bf r}_{v} &= \left \langle \cos v, \sin v, \frac{2}{u} \right \rangle \times \left \langle -u\sin v, u\cos v, 0 \right \rangle = \left \langle -2\cos v, -2\sin v, u \right \rangle.
+{\bf r}_{u} &= \frac{\partial}{\partial u}\left \langle u\cos v, u\sin v, \ln u^2 \right \rangle = \left \langle \cos v, \sin v, \frac{2}{u} \right \rangle \\
+{\bf r}_{v} &= \frac{\partial}{\partial v}\left \langle u\cos v, u\sin v, \ln u^2 \right \rangle = \left \langle -u\sin v, u\cos v, 0 \right \rangle \\
+{\bf r}_{u} \times {\bf r}_{v} &= \left \langle \cos v, \sin v, \frac{2}{u} \right \rangle \times \left \langle -u\sin v, u\cos v, 0 \right \rangle = \left \langle -2\cos v, -2\sin v, u \right \rangle.
 \end{align*}
 }
 Además, del campo vectorial considerado se obtiene
@@ -1516,16 +1297,13 @@ Además, del campo vectorial considerado se obtiene
 {\bf F}({\bf r}(u,v)) %&=&\left\langle (u\sin v) \ln u^{2},-(u\cos v) \ln u^{2},-(u\cos v)(u\sin v)\right\rangle \\
 &=& \left\langle u\sin v\ln u^{2},-u\cos v\ln u^{2},-u^{2}\cos v\sin v \right\rangle
 \end{eqnarray*}
-y también ${\bf F}\left({\bf r}\left( u,v\right) \right) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) = -u^{3}\cos v\sin v,$
+y también ${\bf F}\left({\bf r}\left( u,v\right) \right) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) = -u^{3}\cos v\sin v$,
 por lo tanto, el flujo de ${\bf F}$ sobre la superficie en mención es
 \[\int_{0}^{2\pi }\int_{1/3}^{3}-u^{3}\cos v\sin vdudv= 0.\]
 
-\subsection*{Flujo sobre la superficie \texorpdfstring{$z=xe^{1-x^2-y^2}$}{z=xe^{1-x2-y2}}}
+\subsection{Flujo sobre la superficie \texorpdfstring{$z=xe^{1-x^2-y^2}$}{z=xe a la potencia de 1-x2-y2}}
 
-Calcular el flujo del campo ${\bf F}(x,y,z) =\la x^{2},-y,1+z\ra $ sobre la superficie $S$ determinada por la expresión $z=xe^{1-x^2-y^2},$ $|x|\leq 2,$ $|y|\leq 2.$
-
-
-
+Calcular el flujo del campo ${\bf F}(x,y,z) =\la x^{2},-y,1+z\ra $ sobre la superficie $S$ determinada por la expresión $z=xe^{1-x^2-y^2}$, $|x|\leq 2$, $|y|\leq 2$.
 
 \begin{figure}[H]
 \centering
@@ -1537,11 +1315,7 @@ Calcular el flujo del campo ${\bf F}(x,y,z) =\la x^{2},-y,1+z\ra $ sobre la supe
 
 Con las siguientes instrucciones se obtiene la figura de la superficie en mención:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=ContourPlot3D[z==x*Exp[1-x^2-y^2],{x,-2,2},{y,-2,2},
 {z,-1.2,1.2},Mesh->False,ContourStyle->Orange];
 Show[a,SliceVectorPlot3D[{x^2,-y,1+z},
@@ -1552,11 +1326,8 @@ Automatic},VectorStyle->Black],BoxRatios->{1,1,0.5}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La superficie que se considera se puede parametrizar de la siguiente mane\-ra
-${\bf u}\left(x,y\right) =\la x,y,xe^{1-x^{2}-y^{2}}\ra ,$ con $x\in[-2,2],$ $y\in[-2,2].$
+${\bf u}\left(x,y\right) =\la x,y,xe^{1-x^{2}-y^{2}}\ra $, con $x\in[-2,2]$, $y\in[-2,2]$.
 De esta función se obtienen los siguientes vectores:
 \begin{eqnarray*}
 {\bf u}_{x} &=& = \la 1,0,\left( 1-2x^{2}\right) e^{-x^{2}-y^{2}+1}\ra \\
@@ -1575,29 +1346,20 @@ Entonces, el flujo de ${\bf F}$ a través de $S$ está dado por
 
 El cálculo anterior es posible realizarlo en \verb"Mathamatica" ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 u={x,y,x*Exp[1-x^2-y^2]};
 NIntegrate[Dot[{x^2,-y,1+x*Exp[1-x^2-y^2]},
 Cross[D[u,x],D[u,y]]],{x,-2,2},{y,-2,2}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \section{Cálculo de flujo utilizando el teorema de la divergencia}
 
 Presentamos ejemplos en los que se utiliza el teorema de la divergencia y se compara con la integración sobre la superficie.
 
-\subsection*{Flujo sobre la superficie de un elipsoide} \index{Elipsoide}
-Hallar el flujo del campo vectorial ${\bf F}(x,y,z)= \la xz,y,x \ra$ sobre la superficie del elipsoide con ecuación $x^2+4y^2+4z^2=4.$ La siguiente figura ilustra esta situación.
+\subsection{Flujo sobre la superficie de un elipsoide} \index{Elipsoide}
+Hallar el flujo del campo vectorial ${\bf F}(x,y,z)= \la xz,y,x \ra$ sobre la superficie del elipsoide con ecuación $x^2+4y^2+4z^2=4$. La siguiente figura ilustra esta situación.
 \vskip2cm
-
-
 
 \begin{figure}[H]
 \centering
@@ -1609,11 +1371,7 @@ Hallar el flujo del campo vectorial ${\bf F}(x,y,z)= \la xz,y,x \ra$ sobre la su
 
 Para obtener esta figura, es necesario compilar las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 SliceVectorPlot3D[{x*z,y,x},{x^2+4*y^2+4*z^2==4},
 {x,-2,2},{y,-1,1},{z,-1,1},VectorPoints->12,
 VectorStyle->Black,VectorScale->{0.15,
@@ -1622,10 +1380,7 @@ Ticks->{{-2,0,2},{-2,0,2},{-1,0,1}}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-La ecuación del elipsoide se reescribe en la forma $\frac{x^{2}}{4}+y^{2}+z^{2}=1,$
+La ecuación del elipsoide se reescribe en la forma $\frac{x^{2}}{4}+y^{2}+z^{2}=1$,
 y se puede parametrizar multiplicando por $2$ la componente $x$ de la expresión correspondiente a las ecuaciones en coordenadas esféricas, que describen la esfera unitaria. Es por lo anterior que utilizaremos la función
 \[{\bf r}\left( u,v\right) =\left\langle 2\cos u\sin v,\sin u\sin v,\cos
 v\right\rangle,\,u\in \lbrack 0,2\pi ],\, v\in \lbrack 0,\pi ].\]
@@ -1662,22 +1417,15 @@ Entonces, el flujo de ${\bf F}$ a través de $S$ está dado por:
 
 Los cálculos anteriores se pueden hacer en \verb|Mathematica| ejecutando las siguientes sentencias:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={2*Cos[u]*Sin[v],Sin[u]*Sin[v],Cos[v]};
 A=Simplify[Dot[{x*z,y,x},Cross[D[r,v],D[r,u]]]]
 Integrate[A,{u,0,2*Pi},{v,0,Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Otra posibilidad de hacer este cálculo es mediante el uso del teorema de la divergencia.
-Para este propósito se necesita calcular la divergencia del campo vectorial ${\bf F},$ esto es
+Para este propósito se necesita calcular la divergencia del campo vectorial ${\bf F}$, esto es
 \[{\rm div}{\bf F}=\nabla \cdot \langle xz,y,x\rangle = z+1.\]
 En este caso, el flujo está dado por
 {\small
@@ -1686,25 +1434,17 @@ En este caso, el flujo está dado por
 
 Este cálculo se evaluó en \verb"Mathematica" con la siguiente instrucción:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[z+1,{x,-2,2},{y,-Sqrt[1-x^2/4],
 Sqrt[1-x^2/4]},{z,-Sqrt[1-x^2/4-y^2],
 Sqrt[1-x^2/4-y^2]}]
 \end{Verbatim}
 \end{tcolorbox}
 
+\subsection{Flujo sobre la superficie de un paraboloide}
 
-
-
-\subsection*{Flujo sobre la superficie de un paraboloide}
-
-Calcular el flujo del campo vectorial ${\bf F}\left( x,y,z\right) =\left\langle xz,x(y+1),z(y+1)\right\rangle,$
-sobre la superficie del paraboloide $z=4-x^{2}-y^{2}$ y el disco sobre el plano $z=0,$ que resulta de proyectar esta región sobre dicho plano.
-
+Calcular el flujo del campo vectorial ${\bf F}\left( x,y,z\right) =\left\langle xz,x(y+1),z(y+1)\right\rangle$,
+sobre la superficie del paraboloide $z=4-x^{2}-y^{2}$ y el disco sobre el plano $z=0$, que resulta de proyectar esta región sobre dicho plano.
 
 \begin{figure}[H]
 \centering
@@ -1716,20 +1456,13 @@ sobre la superficie del paraboloide $z=4-x^{2}-y^{2}$ y el disco sobre el plano 
 
 La figura anterior se consigue con la ayuda de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 SliceVectorPlot3D[{x*z,x*(y+1),z*(y+1)},{4-x^2-
 y^2==z},{x,-2,2},{y,-2,2},{z,0,4},VectorPoints->12,
 VectorStyle->Black,VectorScale->{0.16,Scaled[0.22],
 Automatic},Ticks->{{-2,0,2},{-2,0,2},{0,2,4}}]
 \end{Verbatim}
 \end{tcolorbox}
-
-
-
 
 La proyección en el plano $xy$ del paraboloide corresponde a un círculo centrado en el origen del radio $2$.
 Para calcular el flujo sobre el disco que forma la base del sólido, se parametriza esta superficie en la forma
@@ -1757,7 +1490,7 @@ por tanto, el flujo sobre la superficie en mención es
 \end{equation}
 
 La superficie sobre el paraboloide se puede parametrizar en la forma
-${\bf r}\left(u,v\right) =\left\langle u\cos v,u\sin v,4-u^{2}\right\rangle,\, u\in \lbrack 0,2],\, v\in \lbrack 0,2\pi ].$
+${\bf r}\left(u,v\right) =\left\langle u\cos v,u\sin v,4-u^{2}\right\rangle,\, u\in \lbrack 0,2],\, v\in \lbrack 0,2\pi ]$.
 Con esta función hallamos los siguientes vectores:
 \begin{eqnarray*}
 {\bf r}_{u}&=& \left\langle \cos v,\sin v,-2u\right\rangle \\
@@ -1772,49 +1505,34 @@ Integrando esta expresión obtendremos el flujo de ${\bf F}$ a través de $S$,
 \end{equation}
 Los procedimientos que conducen a la integral (\ref{stokes5}) se logran con la ejecución de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={u*Cos[v],u*Sin[v],4-u^2};
 Integrate[Dot[{x*z,x*(y+1),z*(y+1)},Cross[D[r,v],
 D[r,u]]],{u,0,2*Pi},{v,0,Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-La otra alternativa para calcular el flujo es usar el teorema de la divergencia, como ${\rm div}{\bf F}=\nabla \cdot \left\langle xz,x\left( y+1\right) ,z\left( y+1\right) \right\rangle = x+y+z+1.$
+La otra alternativa para calcular el flujo es usar el teorema de la divergencia, como ${\rm div}{\bf F}=\nabla \cdot \left\langle xz,x\left( y+1\right) ,z\left( y+1\right) \right\rangle = x+y+z+1$.
 Entonces, el flujo de ${\bf F}$ sobre la superficie de $S$ está dado por
 \[\int_{-2}^{2}\int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}}\int_{0}^{4-x^{2}-y^{2}}\left( x+y+z+1\right) dzdydx= \frac{56}{3}\pi.\]
 Este valor es el producto de sumar los resultados obtenidos en \ref{stokes4} y \ref{stokes5}.
 Usando \verb"Mathematica" las siguientes sentencias realizan este cálculo.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 F={x*z,x*(y+1),z*(y+1)};
 Integrate[Div[F,{x,y,z}],{x,-2,2},{y,-Sqrt[4-x^2],
 Sqrt[4-x^2]},{z,0,4-x^2-y^2}]
 \end{Verbatim}
 \end{tcolorbox}
 
+\subsection{Flujo sobre la superficie de un paraboloide y un plano}
 
-
-
-\subsection*{Flujo sobre la superficie de un paraboloide y un plano}
-
-Consideremos el sólido $E$ determinado por el paraboloide con ecuación $9y=3-9x^{2}-4z^{2}+4z$ y el plano $4z-9y=9.$ Calcular el flujo neto del campo vectorial
-{\small ${\bf F}\left( x,y,z\right) =\la xz,x(y+1),z(y+1) \ra,$} a través de la superficie de $E.$ La proyección de esta región en el plano $xz$ está dada por la ecuación  $9x^{2}+4z^{2}=12.$ Esta región se puede parametrizar en la forma
-$x=\frac{2}{\sqrt{3}}u\cos v,$ $z=\sqrt{3}u\sin v,$ en donde  $u \in [0,1],$ $v \in [0,2\pi].$
+Consideremos el sólido $E$ determinado por el paraboloide con ecuación $9y=3-9x^{2}-4z^{2}+4z$ y el plano $4z-9y=9$. Calcular el flujo neto del campo vectorial
+{\small ${\bf F}\left( x,y,z\right) =\la xz,x(y+1),z(y+1) \ra$,} a través de la superficie de $E$. La proyección de esta región en el plano $xz$ está dada por la ecuación  $9x^{2}+4z^{2}=12$. Esta región se puede parametrizar en la forma
+$x=\frac{2}{\sqrt{3}}u\cos v$, $z=\sqrt{3}u\sin v$, en donde  $u \in [0,1]$, $v \in [0,2\pi]$.
 Las siguientes figuras muestran el sólido.
 %\clearpage
 %
-
 
 \begin{figure}[H]
 \centering
@@ -1826,11 +1544,7 @@ Las siguientes figuras muestran el sólido.
 
 Las siguientes son las instrucciones para obtener las figuras.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 ContourPlot3D[{9*y==3-9*x^2-4*z^2+4*z,4z-9y==9},
 {x,-2,2},{y,-2,1},{z,-2.5,3},Mesh->False,
 ContourStyle->{Cyan,Orange}]
@@ -1843,12 +1557,7 @@ Show[a,b,BoxRatios->{1,1,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-
 La siguiente es una representación del campo vectorial que actúa sobre $E$.
-
 
 \begin{figure}[H]
 \centering
@@ -1862,11 +1571,7 @@ La siguiente es una representación del campo vectorial que actúa sobre $E$.
 
 Esta figura se consigue con la ayuda de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[(4*z-9)/9<=y<=(3-9*x^2-4*z^2+4*z)/9
 &&9*x^2+4*z^2<=12,{x,-2,2},{y,-2,1},{z,-2,2},
 PlotPoints->90,Mesh->False];
@@ -1880,17 +1585,14 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
+\subsubsection{Integral sobre la porción del plano}
 
-
-
-\subsubsection*{Integral sobre la porción del plano}
-
-Sobre el plano la coordenada $y$ está dada por  
-$y=\frac{4}{9}z-1=\frac{4}{9}\sqrt{3}u\sin v-1,$
+Sobre el plano la coordenada $y$ está dada por
+$y=\frac{4}{9}z-1=\frac{4}{9}\sqrt{3}u\sin v-1$,
 de modo que una parametrización de la región sobre la porción del plano acotada por el paraboloide es la siguiente:
 
-${\bf r}\left( u,v\right) =\left\langle \frac{2}{\sqrt{3}}u\cos v,\frac{4}{9}\sqrt{3}u\sin v-1,\sqrt{3}u\sin v\right\rangle,$
-$u\in \lbrack 0,1],$ $v\in\lbrack 0,2\pi ];$
+${\bf r}\left( u,v\right) =\left\langle \frac{2}{\sqrt{3}}u\cos v,\frac{4}{9}\sqrt{3}u\sin v-1,\sqrt{3}u\sin v\right\rangle$,
+$u\in \lbrack 0,1]$, $v\in\lbrack 0,2\pi ];$
 
 con esta función hallamos los siguientes vectores:
 
@@ -1915,19 +1617,15 @@ También pueden comprobarse las siguientes igualdades,
 
 De tal modo que el flujo sobre la porción del plano es
 \begin{equation} \label{T1}
-	\scalebox{0.88}{%
-		$\displaystyle \iint_{S_1} {\bf F} \cdot d\boldsymbol{\sigma} = \int_{0}^{2\pi }\int_{0}^{1}\left(\frac{32}{27}u^{3}\sin ^{2}v-\frac{16}{9}u^{3}\sin v\cos v \right) dudv = \frac{8}{27}\pi$
-	}
+\scalebox{0.88}{%
+$\displaystyle \iint_{S_1} {\bf F} \cdot d\boldsymbol{\sigma} = \int_{0}^{2\pi }\int_{0}^{1}\left(\frac{32}{27}u^{3}\sin ^{2}v-\frac{16}{9}u^{3}\sin v\cos v \right) dudv = \frac{8}{27}\pi$
+}
 \end{equation}
 
 El procedimiento mostrado antes se puede efectuar en \verb"Mathematica"
 ejecutando las siguientes sentencias:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={2/Sqrt[3]*u*Cos[v],4/9*Sqrt[3]*u*Sin[v]-1}
 z=Sqrt[3]*u*Sin[v];
 F={x*z,x*(y+1),z*(y+1)};
@@ -1936,15 +1634,11 @@ Integrate[A,{u,0,1},{v,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Integral sobre la porción del paraboloide}
+\subsubsection{Integral sobre la porción del paraboloide}
 
 Con los elementos anteriores, la coordenada $y$ sobre el paraboloide está dada por
-$y = \frac{1}{9}\left( 3-9x^{2}-4z^{2}+4z\right)= \frac{4}{9}\sqrt{3}u\sin v+\frac{1}{3}-\frac{4}{3}u^{2},$
+$y = \frac{1}{9}\left( 3-9x^{2}-4z^{2}+4z\right)= \frac{4}{9}\sqrt{3}u\sin v+\frac{1}{3}-\frac{4}{3}u^{2}$,
 de modo que una parametrización de la región sobre el paraboloide acotada por la intersección con el plano, es la siguiente
-
 
 {\footnotesize
 \[{\bf r}\left( u,v\right) =\left\langle \frac{2}{\sqrt{3}}u\cos v,\frac{4}{9}\sqrt{3}u\sin v+\frac{1}{3}-\frac{4}{3}u^{2},\sqrt{3}u\sin v\right\rangle,u\in \lbrack 0,1],\, v\in \lbrack 0,2\pi ].\]
@@ -1978,11 +1672,7 @@ De lo anterior se sigue que
 \end{equation}
 El procedimiento anterior se puede hacer en \verb"Mathematica" con ayuda de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,z}={2/Sqrt[3]*u*Cos[v],Sqrt[3]*u*Sin[v]};
 y=Simplify[(3-9x^2-4*z^2+4z)/9]
 {r,F}={{x,y,z},{x*z,x*(y+1),z*(y+1)}};
@@ -1991,21 +1681,14 @@ Integrate[A,{u,0,1},{v,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Usando el teorema de la divergencia}
+\subsubsection{Usando el teorema de la divergencia}
 
 Es claro que ${\rm div}{\bf F}=z+x+y+1$, por lo tanto, el flujo de ${\bf F}$ a través de $S$ está dado por
 \[\bigintsss_{-\frac{2}{\sqrt{3}}}^{\frac{2}{\sqrt{3}}}\bigintsss_{-\frac{1}{2}\sqrt{12-9x^{2}}}^{\frac{1}{2}\sqrt{12-9x^{2}}}\bigintsss_{\frac{4}{9}z-1}^{\frac{4}{9}z+ \frac{1}{3}-x^{2}-\frac{4}{9}z^{2}}\left( z+x+y+1\right) dydzdx=\frac{16}{27}\pi,\]
 que coincide con la suma de las expresiones \ref{T1} y \ref{T2}.
 Este cálculo se consigue ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 F={x*z,x*(y+1),z*(y+1)}
 Integrate[Div[F,{x,y,z}],{x,-2/Sqrt[3],2/Sqrt[3]},
 {z,-Sqrt[12-9*x^2]/2,Sqrt[12-9*x^2]/2},{y,4z/9-1,
@@ -2013,26 +1696,18 @@ Integrate[Div[F,{x,y,z}],{x,-2/Sqrt[3],2/Sqrt[3]},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsection*{Flujo sobre una esfera}
+\subsection{Flujo sobre una esfera}
 
 Se calcula el flujo del campo vectorial ${\bf F}(x,y,z)= \la y^2,-xy,z \ra$ sobre la esfera con ecuación $x^2+y^2+z^2=4$.
 El gráfico se obtiene con las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 SliceVectorPlot3D[{y^2,-x*y,z},{4==x^2+y^2+z^2},
 {x,-2,2},{y,-2,2},{z,-2,2},VectorPoints->10,
 VectorPoints->12,VectorStyle->Black,
 VectorScale->{0.2,Scaled[0.2],Automatic}]
 \end{Verbatim}
 \end{tcolorbox}
-
 
 \begin{figure}[H]
 \centering
@@ -2068,11 +1743,7 @@ Por lo tanto, el flujo de \(\mathbf{F}\) a través de la superficie de la esfera
 
 El proceso anterior se puede hacer en \verb"Mathematica" utilizando las siguien\-tes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 F={y^2,-x*y,z};
 r={x,y,z}={2*Cos[u]*Sin[v],2*Sin[u]*Sin[v],2*Cos[v]};
 Integrate[Dot[Cross[D[r,v],D[r,u]],F],{u,0,2*Pi},
@@ -2080,27 +1751,17 @@ Integrate[Dot[Cross[D[r,v],D[r,u]],F],{u,0,2*Pi},
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 El flujo también se puede hallar usando el teorema de la divergencia; en ese caso, el cálculo es el siguiente
 {\small
 \[\iiint_E {\rm div} \,{\bf F} dV= \int _0^{\pi}\int _0^{2\pi}\int _0^{2} (1-\rho \sin (\phi))\rho^2\sin(\phi)d\rho d\theta d\phi = \frac{32}{3} \pi.\]}
 Esta integral se evaluó en \verb"Mathematica" usando la siguiente instrucción:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 Integrate[(1-\[Rho]*Sin[\[Phi]]*Cos[\[Theta]])*
 \[Rho]^2*Sin[\[Phi]],{\[Rho],0,2},{\[Phi],0,Pi},
 {\[Theta],0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
-
-
-
 
 \section{Cálculo de flujo sobre superficies cerradas}
 
@@ -2108,16 +1769,13 @@ En esta sección se presentan algunos ejemplos en que se calcula el flujo sobre 
 \begin{enumerate}[leftmargin=0cm,itemindent=.75cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf(\arabic*)}}]
 \item Hallar el flujo neto del campo vectorial.
 
-
- 
 ${\bf F}(x,y,z) = \la y^2,x^2,z \ra $ sobre la superficie cerrada del sólido acotado por los paraboloides con ecuaciones:
 
 %$z+3=x^2+y^2$ y $2z=6-2x^2-y^2.$
 
 \begin{gather*}
-	z + 3 = x^2 + y^2 \quad \text{y} \quad 2z = 6 - 2x^2 - y^2
+z + 3 = x^2 + y^2 \quad \text{y} \quad 2z = 6 - 2x^2 - y^2
 \end{gather*}
-
 
 \begin{figure}[H]
 \centering
@@ -2129,11 +1787,7 @@ ${\bf F}(x,y,z) = \la y^2,x^2,z \ra $ sobre la superficie cerrada del sólido ac
 
 Esta representación del campo vectorial se obtiene ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[z<(6-2*x^2-y^2)/2&&z>x^2+y^2-3,
 {x,-2,2},{y,-2,2},{z,-3,3},PlotPoints->90,
 Mesh->False];
@@ -2146,16 +1800,13 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-De acuerdo con el ejercicio \ref{ejercicio1} de la página \pageref{ejercicio1}, la curva de intersección corresponde a la ecuación $4x^{2}+3y^{2}=12,$ que representa una elipse.
+De acuerdo con el ejercicio \ref{ejercicio1} de la página \pageref{ejercicio1}, la curva de intersección corresponde a la ecuación $4x^{2}+3y^{2}=12$, que representa una elipse.
 Esta región y su interior se pueden representar en el plano $xy$ por medio de las ecuaciones
-$x=\sqrt{3}u\cos v$, $y=2u\sin v,$ con $u\in \lbrack 0,1],$
-$v\in \lbrack 0,2\pi ].$
+$x=\sqrt{3}u\cos v$, $y=2u\sin v$, con $u\in \lbrack 0,1]$,
+$v\in \lbrack 0,2\pi ]$.
 Calcularemos el flujo sobre las dos superficies que limitan el sólido.
 
-\subsubsection*{Flujo sobre el paraboloide $\bm{\mathsf{2z=6-2x^2-y^2}}$}
+\subsubsection{Flujo sobre el paraboloide \texorpdfstring{$\bm{\mathsf{2z=6-2x^2-y^2}}$}{2z=6-2x^2-y^2}}
 
 En este caso, una función que parametriza esta región es:
 {\small
@@ -2177,20 +1828,16 @@ Con esta función se obtienen los siguientes vectores:
 {\bm\alpha}_{v}&=&\left\langle -\sqrt{3}u\sin v,2u\cos v,u^{2}\sin 2v\right\rangle \\
 {\bm\alpha}_{u}\times {\bm\alpha}_{v}&=&\left\langle 12u^{2}\cos v,4\sqrt{3}u^{2}\sin v,2\sqrt{3}u\right\rangle
 \end{eqnarray*}
-${\bf F}\left({\bm \alpha}(u,v)\right)=\left\langle 4u^2\sin^2 v,3u^2\cos^2 v,3-\frac{1}{2}u^{2}\left(5+\cos 2v\right)\right\rangle ,$ entonces \\
+${\bf F}\left({\bm \alpha}(u,v)\right)=\left\langle 4u^2\sin^2 v,3u^2\cos^2 v,3-\frac{1}{2}u^{2}\left(5+\cos 2v\right)\right\rangle $, entonces \\
 ${\bf F}\left({\bm\alpha}(u,v)\right) \cdot \left({\bm\alpha}_{u}\times {\bm\alpha} _{v}\right)
-=48u^4\sin^2v\cos v+ \sqrt{3}u(6-u^2(\cos 2v+5)+12u^3\cos^2 v \sin v).$
+=48u^4\sin^2v\cos v+ \sqrt{3}u(6-u^2(\cos 2v+5)+12u^3\cos^2 v \sin v)$.
 Con lo cual, el flujo sobre la superficie está dado por
 \begin{equation}\label{flujo1}
 \int_{0}^{1}\int_{0}^{2\pi}{\bf F}\left({\bm\alpha}(u,v)\right) \cdot \left({\bm\alpha}_{u}\times {\bm\alpha} _{v}\right)dvdu=\frac{7}{2}\sqrt{3}\pi
 \end{equation}
 El proceso descrito antes se obtiene con las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[3]*u*Cos[v],2*u*Sin[v],
 (6-2x^2-y^2)/2};
 Integrate[Dot[Cross[D[r,u],D[r,v]],{y^2,x^2,z}],
@@ -2198,10 +1845,7 @@ Integrate[Dot[Cross[D[r,u],D[r,v]],{y^2,x^2,z}],
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Flujo sobre el paraboloide $\bm{\mathsf{z+3=x^2+y^2}}$}
+\subsubsection{Flujo sobre el paraboloide \texorpdfstring{$\bm{\mathsf{z+3=x^2+y^2}}$}{z+3=x^2+y^2}}
 
 Esta superficie se puede parametrizar mediante la siguiente función:
 {\small
@@ -2236,28 +1880,19 @@ Con lo cual, el flujo sobre esta región está dado por
 }
 
 El flujo sobre la superficie del sólido se determina sumando las expresiones \ref{flujo1} y \ref{flujo2}.
-Dado que la ${\rm div}{\bf F}=1,$ aplicando el teorema de la divergencia, el valor obtenido coincide con el volumen del sólido en la fórmula \ref{ejercicio1} de la página \pageref{ejercicio1}.
+Dado que la ${\rm div}{\bf F}=1$, aplicando el teorema de la divergencia, el valor obtenido coincide con el volumen del sólido en la fórmula \ref{ejercicio1} de la página \pageref{ejercicio1}.
 
 Con las siguientes instrucciones se obtiene el cálculo anterior:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[3]*u*Cos[v],2*u*Sin[v],x^2+y^2-3};
 Integrate[Dot[Cross[D[r,v],D[r,u]],{y^2,x^2,z}],
 {u,0,1},{v,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 \item Hallar el flujo neto sobre el campo vectorial
-${\bf F}(x,y,z) = \la y,-x,z \ra $ sobre la superficie frontera del sólido acotado por el cilindro $x^2+y^2=4$ y la esfera $x^2+y^2+z^2=9.$
-
-
+${\bf F}(x,y,z) = \la y,-x,z \ra $ sobre la superficie frontera del sólido acotado por el cilindro $x^2+y^2=4$ y la esfera $x^2+y^2+z^2=9$.
 
 \begin{figure}[H]
 \centering
@@ -2269,11 +1904,7 @@ ${\bf F}(x,y,z) = \la y,-x,z \ra $ sobre la superficie frontera del sólido acot
 
 La figura presentada se obtiene ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[x^2+y^2<4&&x^2+y^2+z^2<=9,{x,-2,2},
 {y,-2,2},{z,-3.5,3.5},PlotPoints->90,Mesh->False]
 b=SliceVectorPlot3D[{y,-x,z},{x^2+y^2==4,x^2+y^2
@@ -2286,16 +1917,13 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
+La intersección de las superficies satisface la relación $z=\pm \sqrt{5}$.
+El interior del cilindro se parametriza mediante las expresiones $x=2u\cos v$, $y=2u\sin v$,
+para $u\in \lbrack 0,1]$, $v\in \lbrack 0,2\pi ]$. Para este sólido se consideran los siguientes dos casos.
 
-
-
-La intersección de las superficies satisface la relación $z=\pm \sqrt{5}.$
-El interior del cilindro se parametriza mediante las expresiones $x=2u\cos v$, $y=2u\sin v,$
-para $u\in \lbrack 0,1],$ $v\in \lbrack 0,2\pi ].$ Para este sólido se consideran los siguientes dos casos.
-
-\subsubsection*{Flujo sobre la superficie de la esfera}
+\subsubsection{Flujo sobre la superficie de la esfera}
 Utilizaremos la función
-${\bf r}\left( u,v\right) =\langle 2u\cos v,2u\sin v,\sqrt{9-4u^{2}}\rangle ,$
+${\bf r}\left( u,v\right) =\langle 2u\cos v,2u\sin v,\sqrt{9-4u^{2}}\rangle $,
 como parametrización de la esfera, con lo cual ${\bf F}({\bf r}(u,v))=\langle 2u\sin v,-2u\cos v, \linebreak \sqrt{9-4u^{2}}\rangle $.
 Derivando parcialmente se obtienen los siguientes vectores:
 
@@ -2305,36 +1933,26 @@ Derivando parcialmente se obtienen los siguientes vectores:
 {\bf r}_{u}\times {\bf r}_{v}&=&\left\langle \frac{8u^{2}\cos v}{\sqrt{9-4u^{2}}},\frac{8u^{2}\sin v}{\sqrt{9-4u^{2}}},4u\right\rangle.
 \end{eqnarray*}
 
-
-Con lo cual, {\small ${\bf F}\left({\bf r}\left(u,v\right)\right) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right)= 4u\sqrt{9-4u^{2}}.$}
+Con lo cual, {\small ${\bf F}\left({\bf r}\left(u,v\right)\right) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right)= 4u\sqrt{9-4u^{2}}$.}
 Al ser dos regiones iguales (sobre la esfera) multiplicamos por 2 y haremos un solo cálculo, es decir, el flujo sobre la porción de la esfera que limita el sólido está dado por
-
 
 \begin{equation}\label{flujo3}
 2\int_{0}^{1}\int_{0}^{2\pi }4u\sqrt{9-4u^{2}}dvdu= \frac{4}{3}\pi \left( 27-5\sqrt{5}\right)
 \end{equation}
 
-
 El cálculo anterior se obtiene en \verb"Mathematica" con las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={2*u*Cos[v],2*u*Sin[v],Sqrt[9-x^2-y^2]};
 Integrate[Dot[Cross[D[r,u],D[r,v]],{y,-x,z}],
 {u,0,1},{v,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Flujo sobre la superficie del cilindro}
+\subsubsection{Flujo sobre la superficie del cilindro}
 
 En este caso la parametrización escogida es
-${\bf w}\left( u,v\right) =\left\langle 2\cos u,2\sin u,v\right\rangle ,$ para $ u\in \lbrack 0,2\pi ],$ $v\in \lbrack -\sqrt{5},\sqrt{5}].$
+${\bf w}\left( u,v\right) =\left\langle 2\cos u,2\sin u,v\right\rangle $, para $ u\in \lbrack 0,2\pi ]$, $v\in \lbrack -\sqrt{5},\sqrt{5}]$.
 Con esta función hallamos los siguientes vectores:
 \begin{eqnarray*}
 {\bf w}_{u}&=&\left\langle -2\sin u,2\cos u,0\right\rangle \\
@@ -2342,7 +1960,7 @@ Con esta función hallamos los siguientes vectores:
 {\bf w}_{u}\times {\bf w}_{v}&=&\left\langle 2\cos u,2\sin u,0\right\rangle.
 \end{eqnarray*}
 Además, ${\bf F}\left( {\bf w}\left( u,v\right) \right) =\left\langle 2\sin u,-2\cos u,v\right\rangle $
-y ${\bf F}\left({\bf w}\left( u,v\right) \right) \cdot \left({\bf w}_{u}\times {\bf w}_{v}\right)= 0,$
+y ${\bf F}\left({\bf w}\left( u,v\right) \right) \cdot \left({\bf w}_{u}\times {\bf w}_{v}\right)= 0$,
 
 con lo cual el flujo sobre la superficie del cilindro esta dado por
 \begin{equation}\label{flujo4}
@@ -2351,16 +1969,11 @@ con lo cual el flujo sobre la superficie del cilindro esta dado por
 
 El flujo neto es la suma de los resultados \ref{flujo3} y \ref{flujo4}. Como ${\rm div}\,{\bf F}=1$ en este caso, el valor hallado coincide con el volumen del sólido encontrado en la expresión \ref{ejercicio4} de la página \pageref{ejercicio4}.
 
-
-
 \item Hallar el flujo neto sobre el campo vectorial ${\bf F}(x,y,z) = \la z,y,x \ra $
 sobre la superficie frontera del sólido acotada por el hiperboloide de un manto con ecuaciones
 $2x^2+3y^2=z^2+7$ y el elipsoide $2x^2+y^2+z^2=9$.
 
-
-
 \label{elipsoidehiperboloide}
-
 
 \begin{figure}[H]
 \centering
@@ -2372,11 +1985,7 @@ $2x^2+3y^2=z^2+7$ y el elipsoide $2x^2+y^2+z^2=9$.
 
 Con las siguientes instrucciones se consigue esta figura.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[2*x^2+3*y^2<z^2+7&&2*x^2+y^2+z^2<9,
 {x,-2,2},{y,-2,2},{z,-3,3},PlotPoints->90,Mesh->False];
 b=SliceVectorPlot3D[{z,y,x},{2*x^2+3*y^2==z^2+7,
@@ -2389,19 +1998,16 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Calcularemos el flujo sobre la superficie que acota el sólido, es decir, la porción del elipsoide y, posteriormente, la parte del hiperboloide.
 
-\subsubsection*{Flujo sobre la porción del elipsoide}
+\subsubsection{Flujo sobre la porción del elipsoide}
 
 Con las ecuaciones que definen el elipsoide y el hiperboloide de un manto se elimina $z$ y se obtiene la expresión
 $x^2+y^2=4;$ la región que esta ecuación representa se parametriza mediante el uso de las expresiones
-$x=2u\cos v$ y $y=2u \sin v,$ con $u \in [0,2\pi]$ y $u\in [0,1].$
+$x=2u\cos v$ y $y=2u \sin v$, con $u \in [0,2\pi]$ y $u\in [0,1]$.
 El término que define a $z$ está dado por
 \[z =\sqrt{9-2x^2-y^2} = \sqrt{9-6u^2-2u^2 \cos(2v)}.\]
-Entonces; la función 
+Entonces; la función
 \[{\bf r}(u,v) = \left \langle 2u\cos v,2u \sin v ,\sqrt{9-6u^2-2u^2 \cos(2v)} \right\rangle\]
 parametriza la región de interés sobre el elipsoide. Con esta función se obtienen los siguientes vectores:
 {\small
@@ -2413,7 +2019,7 @@ parametriza la región de interés sobre el elipsoide. Con esta función se obti
 }
 
 Además
-${\bf F}({\bf r}(u,v) ) = \left \langle \sqrt{9-6u^2-2u^2 \cos(2v)},2u \sin v , 2u\cos v \right\rangle \!,$
+${\bf F}({\bf r}(u,v) ) = \left \langle \sqrt{9-6u^2-2u^2 \cos(2v)},2u \sin v , 2u\cos v \right\rangle \!$,
 con lo cual
 {\small
 \[{\bf F}({\bf r}(u,v) ) \cdot ({\bf r}_u \times {\bf r}_v)=\frac{ 8u \left (u-u \cos (2v) +3 \cos v \, \sqrt{9-2u^2(3+\cos(2v))}\right )}{\sqrt{9-6u^2-2u^2 \cos(2v)}};\]
@@ -2426,33 +2032,26 @@ por lo tanto, el flujo sobre la porción del elipsoide está dado por
 \end{equation}
 Este cálculo se hizo en \verb"Mathematica" ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={2*u*Cos[v],2*u*Sin[v],Sqrt[9-2*x^2-y^2]};
 NIntegrate[2*Dot[{z,y,x},Cross[D[r,u],D[r,v]]],
 {v,0,2*Pi},{u,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-Antes de presentar el siguiente procedimiento, nótese que la función $f(u)= (b-a)u+a$ satisface que $f(0)=a$ y $f(1)=b.$
-De esta manera $f$ aplica el intervalo $[0,1]$ en el intervalo $[a,b].$ A su vez la función inversa
-$g(v)= \frac{v-a}{b-a}$ aplica el intervalo $[a,b]$ en el intervalo $[0,1].$
+Antes de presentar el siguiente procedimiento, nótese que la función $f(u)= (b-a)u+a$ satisface que $f(0)=a$ y $f(1)=b$.
+De esta manera $f$ aplica el intervalo $[0,1]$ en el intervalo $[a,b]$. A su vez la función inversa
+$g(v)= \frac{v-a}{b-a}$ aplica el intervalo $[a,b]$ en el intervalo $[0,1]$.
 Usaremos estas ideas para parametrizar la región acotada por la porción de la circunferencia y la hipérbola que se des\-cribe a continuación.
 
-\subsubsection*{Parametrizando la región sobre el hiperboloide}
+\subsubsection{Parametrizando la región sobre el hiperboloide}
 
-Al eliminar $y$ de las ecuaciones originales se obtiene $x^2+z^2=5,$
+Al eliminar $y$ de las ecuaciones originales se obtiene $x^2+z^2=5$,
 esta expresión representa, en el plano $xz$, una circunferencia de radio $\sqrt{5}$ que se parametriza como
-$x=\sqrt{5}\cos t,$ $z=\sqrt{5}\sin t.$
-El hiperboloide proyectado en el plano $xz$ corresponde a un una hipérbola con ecuación $2x^2-z^2=7.$
-Esta región se puede describir definiendo $x=\sqrt{\frac{7}{2}}\cosh (t),\,\, z=\sqrt{7}\sinh (t).$
-Las anteriores dos curvas se intersectan en los puntos $(\pm 2, \pm 1).$
+$x=\sqrt{5}\cos t$, $z=\sqrt{5}\sin t$.
+El hiperboloide proyectado en el plano $xz$ corresponde a un una hipérbola con ecuación $2x^2-z^2=7$.
+Esta región se puede describir definiendo $x=\sqrt{\frac{7}{2}}\cosh (t),\,\, z=\sqrt{7}\sinh (t)$.
+Las anteriores dos curvas se intersectan en los puntos $(\pm 2, \pm 1)$.
 
 Entonces la región sobre la circunferencia para $x\in [-2,2]$ se describe por medio de la función
 \[\overrightarrow{\alpha}(t)=\langle \sqrt{5}\cos t, \sqrt{5}\sin t \rangle, \,\,
@@ -2460,24 +2059,23 @@ t \in \left[ \arccos \left( \frac{2}{\sqrt{5}}\right),\pi -\arccos \left( \frac{
 
 La región sobre la hipérbola desde el punto $(2,-1)$ al punto $(2,1)$ se describe por medio de la función
 \[\overrightarrow{\beta}(t) = \left \langle \sqrt{\frac{7}{2}}\cosh (t), \sqrt{7}\sinh (t) \right \rangle, \,t \in \left[ -t_0 ,t_0 \right].\]
-Se usó la abreviatura $t_0={\rm arccosh}\left( \sqrt{\frac{2}{7}}\right).$
+Se usó la abreviatura $t_0={\rm arccosh}\left( \sqrt{\frac{2}{7}}\right)$.
 Estas curvas se muestran a continuación:
 
 \begin{figure}[H]
 \centering
 \caption{Parametrización de la proyección del sólido en plano $xz$}
 \begin{minipage}[c]{0.39\linewidth}
-    \centering
-    
-    \includegraphics[width=\linewidth]{Fig/188.pdf}
+\centering
+
+\includegraphics[width=\linewidth]{Fig/188.pdf}
 \end{minipage}
 \hspace{1em}
 \begin{minipage}[c]{0.32\linewidth}
-    \centering
-    
-    \includegraphics[width=\linewidth]{Fig/189.pdf}
-\end{minipage}
+\centering
 
+\includegraphics[width=\linewidth]{Fig/189.pdf}
+\end{minipage}
 
 \fuentepropia
 \end{figure}
@@ -2487,7 +2085,7 @@ Para abreviar la escritura, usaremos las siguientes constantes:
 \[a= \arccos \left( \frac{2}{\sqrt{5}}\right),\,\, b=\pi -\arccos \left( \frac{2}{\sqrt{5}}\right)\]
 \[c= -{\rm arccosh}\left( \frac{2\sqrt{2}}{\sqrt{7}}\right) ,\, d={\rm arccosh}\left( \frac{2\sqrt{2}}{\sqrt{7}}\right).\]}
 
-Al redefinir las funciones que describen las curvas en mención con el sentido deseado y unificar el intervalo de definición a $t \in [0,1],$
+Al redefinir las funciones que describen las curvas en mención con el sentido deseado y unificar el intervalo de definición a $t \in [0,1]$,
 
 {\small
 \begin{eqnarray*}
@@ -2499,11 +2097,7 @@ Al redefinir las funciones que describen las curvas en mención con el sentido d
 Formando una combinación convexa de estas expresiones se parametriza la región sombreada en el gráfico.
 Con las siguientes instrucciones se dibujan las curvas mencionadas y se consigue una animación en \verb"Mathematica" que permite ver el recorrido de la región que se considera.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {a,b}={ArcCos[2/Sqrt[5]],Pi-a};
 {c,d}={-ArcCosh[2*Sqrt[2/7]],c};
 R[w_]:={Sqrt[5]*Cos[(b-a)*(1-w)+a],
@@ -2516,19 +2110,14 @@ Black,Red}],{t,0,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 La función obtenida al hacer esta construcción es la siguiente:
 
 \begin{multline}
 {\bf r}(t,u)=(1-u)\left(\sqrt{7/2}\cosh((d-c)t+c),\sqrt{7}\sinh((d-c)t+c)\right )+ \\
 u\left (\sqrt{5}\cos((b-a)(1-t)+a),\sqrt{5}\sin((b-a)(1-t)+a)\right) \label{ejercicio6ec}
 \end{multline}
-En donde $t \in [0,1],\,\, u \in [0,1].$ La expresión correspondiente a $y$ se consigue al sustituir $x$ y $z$
+En donde $t \in [0,1],\,\, u \in [0,1]$. La expresión correspondiente a $y$ se consigue al sustituir $x$ y $z$
 de la función anterior en la expresión que define el hiperboloide de un manto. La región obtenida corresponde a la cuarta parte de la superficie mencionada.
-
-
 
 \begin{figure}[H]
 \centering
@@ -2538,9 +2127,7 @@ de la función anterior en la expresión que define el hiperboloide de un manto.
 \fuentepropia
 \end{figure}
 
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={2*u*Cos[v],2*u*Sin[v],Sqrt[9-2*x^2-y^2]}
 A1=ParametricPlot3D[{{x,y,z},{x,y,-z}},{u,0,1},
 {v,0,2*Pi},PlotStyle->{RGBColor[0.8,0.2,0.2]},
@@ -2558,9 +2145,6 @@ Show[A2,A1,BoxRatios->{1,1,1}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Utilizando la expresión \ref{ejercicio6ec}, se establece que el flujo sobre la superficie del hiperboloide $H$,
 está dado por la expresión
 \begin{equation} \label{ejercicio6h}
@@ -2568,11 +2152,7 @@ está dado por la expresión
 \end{equation}
 Este valor se obtuvo con \verb"Mathematica" con estas instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {a,b,d,c}={ArcCos[2/Sqrt[5]],Pi-a,
 ArcCosh[2*Sqrt[2/7]],-d};
 R=(1-u)*{Sqrt[7/2]*Cosh[(d-c)*t+c],
@@ -2584,19 +2164,12 @@ NIntegrate[4*Dot[{z,y,x},Cross[D[r,u],D[r,t]]],
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
- 
 El flujo sobre la superficie del sólido es la suma de las expresiones
 \ref{ejercicio6h} y \ref{ejercicio6e}.
-Como ${\rm div}\, {\rm F} =1,$ el valor del flujo neto de ${\bf F}$ coincide con el volumen del sólido que se halló en la página \pageref{ejercicio6}, con la expresión \ref{ejercicio6}.
-
-
+Como ${\rm div}\, {\rm F} =1$, el valor del flujo neto de ${\bf F}$ coincide con el volumen del sólido que se halló en la página \pageref{ejercicio6}, con la expresión \ref{ejercicio6}.
 
 \item Hallar el flujo neto sobre el campo vectorial
-${\bf F}(x,y,z) = \la 3x,y,3z \ra $ sobre la superficie frontera del sólido acotado por el paraboloide $x^2+y^2=3-z$ y el paraboloide hiperbólico $x^2-y^2=3z+6.$ \index{Paraboloide!hiperbólico}
-
-
+${\bf F}(x,y,z) = \la 3x,y,3z \ra $ sobre la superficie frontera del sólido acotado por el paraboloide $x^2+y^2=3-z$ y el paraboloide hiperbólico $x^2-y^2=3z+6$. \index{Paraboloide!hiperbólico}
 
 \begin{figure}[H]
 \centering
@@ -2608,11 +2181,7 @@ ${\bf F}(x,y,z) = \la 3x,y,3z \ra $ sobre la superficie frontera del sólido aco
 
 Esta figura es el producto de ejecutar las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[x^2+y^2<3-z&&x^2-y^2<3*z+6,{x,-2,2},
 {y,-3,3},{z,-5,3},PlotPoints->90,Mesh->False]
 b=SliceVectorPlot3D[{3*x,y,3*z},{x^2+y^2==3-z,x^2-
@@ -2625,23 +2194,20 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 En la página \pageref{ejercicio4a} se trata esta región.
-La expresión $4x^{2}+2y^{2}=15$ describe la curva de intersección en el plano $xy.$ Esta región puede representarse mediante las expresiones
-$x=\frac{\sqrt{15}}{2}u\cos v,$ $y=\sqrt{\frac{15}{2}}u\sin v,$ con $u\in \lbrack 0,1],$
-$v\in \lbrack 0,2\pi ].$ 
+La expresión $4x^{2}+2y^{2}=15$ describe la curva de intersección en el plano $xy$. Esta región puede representarse mediante las expresiones
+$x=\frac{\sqrt{15}}{2}u\cos v$, $y=\sqrt{\frac{15}{2}}u\sin v$, con $u\in \lbrack 0,1]$,
+$v\in \lbrack 0,2\pi ]$.
 Calcularemos el flujo neto sobre la superficie del sólido en dos partes: primero sobre la superficie del paraboloide y luego sobre el paraboloide hiperbólico.
 
-\subsubsection*{Flujo sobre el paraboloide}
+\subsubsection{Flujo sobre el paraboloide}
 
 Al reemplazar las expresiones anteriores en la ecuación $x^2+y^2=3-z$, se obtiene que
 $z=\frac{15}{8}u^{2}\cos 2v-\frac{45}{8}u^{2}+3;$
 por lo tanto, una parametrización de la superficie en mención es
 \[{\bf r}\left( u,v\right) =\left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,
 \frac{15}{8}u^{2}\cos 2v-\frac{45}{8}u^{2}+3\right\rangle,\]
-en donde $u\in \lbrack 0,1],$ $v\in \lbrack 0,2\pi ].$
+en donde $u\in \lbrack 0,1]$, $v\in \lbrack 0,2\pi ]$.
 Con la función ${\bf r}$, al evaluarla en el campo vectorial se sigue que
 \[{\bf F}\left({\bf r}\left( u,v\right) \right) =\left\langle \frac{3\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,\frac{45}{8}u^{2}\cos 2v-\frac{135}{8}u^{2}+9\right\rangle.\]
 % ${\bf F}\left({\bf r}\left( u,v\right) \right) =\left\langle \frac{3\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,\frac{45}{8}u^{2}\cos 2v-\frac{135}{8}u^{2}+9\right\rangle ,$
@@ -2660,11 +2226,7 @@ Por lo expuesto antes, el flujo sobre esta región está dado por
 \end{equation}
 Este valor también se obtiene como producto de ejecutar las siguientes instrucciones.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[15]/2*u*Cos[v],Sqrt[15/2]*u*Sin[v],
 3-x^2-y^2};
 Integrate[Dot[Cross[D[r,u],D[r,v]],{3x,y,3z}],
@@ -2672,12 +2234,9 @@ Integrate[Dot[Cross[D[r,u],D[r,v]],{3x,y,3z}],
 \end{Verbatim}
 \end{tcolorbox}
 
+\subsubsection{Flujo sobre el paraboloide hiperbólico}
 
-
-
-\subsubsection*{Flujo sobre el paraboloide hiperbólico}
-
-Con las mismas ecuaciones que describen el conjunto de puntos que satisfacen la condición $4x^{2}+2y^{2} \leq 15,$
+Con las mismas ecuaciones que describen el conjunto de puntos que satisfacen la condición $4x^{2}+2y^{2} \leq 15$,
 la coordenada $z$ sobre esta superficie satisface que
 \[z=\frac{x^2-y^2-6}{6}=\frac{15}{8}u^{2}\cos 2v-\frac{5}{8}u^{2}-2,\]
 por lo tanto, utilizaremos la siguiente parametrización, para describir la porción del paraboloide hiperbólico:
@@ -2685,16 +2244,16 @@ por lo tanto, utilizaremos la siguiente parametrización, para describir la porc
 {\small
 \[{\bf r}\left( u,v\right) =\left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,\frac{15}{8}u^{2}\cos 2v-\frac{5}{8}u^{2}-2\right\rangle,\]}
 
-en donde $u\in \lbrack 0,1],$ $v\in \lbrack 0,2\pi ].$
+en donde $u\in \lbrack 0,1]$, $v\in \lbrack 0,2\pi ]$.
 
 Con ella se consiguen los siguientes vectores:
 
 {\small
 \begin{align*}
-	{\bf r}_{u}&=\left\langle \frac{1}{2}\sqrt{15}\cos v,\frac{1}{2}\sqrt{2}\sqrt{15}\sin v,\frac{15}{4}u\cos 2v-\frac{5}{4}u\right\rangle \\
-	{\bf r}_{v}&= \left\langle -\frac{1}{2}\sqrt{15}u\sin v,\frac{1}{2}
-	\sqrt{2}\sqrt{15}u\cos v,-\frac{15}{4}u^{2}\sin 2v \right\rangle \\
-	{\bf r}_{v}\times {\bf r}_{u}&=\left\langle \frac{5}{4}\sqrt{2}\sqrt{15}u^{2}\cos v,-\frac{5}{2}\sqrt{3}\sqrt{5}u^{2}\sin v,-\frac{15}{4}\sqrt{2}u\right\rangle.
+{\bf r}_{u}&=\left\langle \frac{1}{2}\sqrt{15}\cos v,\frac{1}{2}\sqrt{2}\sqrt{15}\sin v,\frac{15}{4}u\cos 2v-\frac{5}{4}u\right\rangle \\
+{\bf r}_{v}&= \left\langle -\frac{1}{2}\sqrt{15}u\sin v,\frac{1}{2}
+\sqrt{2}\sqrt{15}u\cos v,-\frac{15}{4}u^{2}\sin 2v \right\rangle \\
+{\bf r}_{v}\times {\bf r}_{u}&=\left\langle \frac{5}{4}\sqrt{2}\sqrt{15}u^{2}\cos v,-\frac{5}{2}\sqrt{3}\sqrt{5}u^{2}\sin v,-\frac{15}{4}\sqrt{2}u\right\rangle.
 \end{align*}
 }
 
@@ -2719,11 +2278,7 @@ Por lo señalado antes, el flujo sobre esta superficie está dado por
 
 Con las siguientes instrucciones se hace el cálculo anterior:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[15]/2*u*Cos[v],
 Sqrt[15/2]*u*Sin[v],(x^2-y^2-6)/6};
 Integrate[Dot[Cross[D[r,v],D[r,u]],{3x,y,3z}],
@@ -2731,19 +2286,13 @@ Integrate[Dot[Cross[D[r,v],D[r,u]],{3x,y,3z}],
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 El flujo neto sobre toda la superficie del sólido es la suma de los resultados hallados en \ref{flujo5} y
 \ref{flujo6}, esto es \[\frac{2385}{64}\sqrt{2}\pi +\frac{1815}{64}\sqrt{2}\pi = \frac{525}{8}\sqrt{2}\pi.\]
-Dado que ${\rm div}{\bf F}=7,$ evidentemente, el valor obtenido es $7$ veces el volumen del sólido que se obtuvo en la expresión \ref{ejercicio3} de la página \pageref{ejercicio3}
-
+Dado que ${\rm div}{\bf F}=7$, evidentemente, el valor obtenido es $7$ veces el volumen del sólido que se obtuvo en la expresión \ref{ejercicio3} de la página \pageref{ejercicio3}
 
 \item Hallar el flujo neto del campo vectorial ${\bf F}(x,y,z) = \la y,-x,z \ra $
 sobre la superficie del sólido interior a la esfera con ecuacion $x^2+y^2+z^2=9 $ y al cilindro cardioidico
-$r=1+\cos \theta.$
-
-
+$r=1+\cos \theta$.
 
 \begin{figure}[H]
 \centering
@@ -2755,11 +2304,7 @@ $r=1+\cos \theta.$
 
 Las instrucciones que permiten obtener este gráfico son las siguientes.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[(x^2+y^2-x)^2<(x^2+y^2)&&
 x^2+y^2+z^2<9,{x,-1,2.2},{y,-2,2},{z,-3,3.2},
 PlotPoints->90,Mesh->False,BoxRatios->{1,1,1}];
@@ -2772,9 +2317,6 @@ Automatic},PlotStyle->Opacity[0]];
 Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
-
-
-
 
 A partir de la ecuación $r = 1 + \cos \theta$, se puede construir en el plano $xy$ la parametrización de la región que rellena esta cardioide. Usaremos las ecuaciones:
 \[
@@ -2832,11 +2374,7 @@ Por lo tanto, el flujo sobre la superficie de la esfera e interior al cilindro c
 Se ha multiplicado por $2$ debido a que la región considerada es similar al hemisferio opuesto de la esfera.
 El cálculo anterior se hizo en \verb"Mathematica" utilizando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y}={u*(1+Cos[t])*Cos[t],u*(1+Cos[t])*Sin[t]};
 r={x,y,Sqrt[9-x^2-y^2]};
 A=Dot[{y,-x,z},TrigExpand[Cross[D[r,u],D[r,t]]]];
@@ -2844,12 +2382,9 @@ A=Dot[{y,-x,z},TrigExpand[Cross[D[r,u],D[r,t]]]];
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Para calcular el flujo sobre el cilindro cardióidico, se debe parametrizar dicha región.
 Al proyectar el cilindro sobre el plano $xy$, la curva resultante puede parametrizarse en la forma
-$x=\left( 1+\cos \theta \right) \cos \theta ,$ $y=\left( 1+\cos \theta\right) \sin \theta ,$ $\theta \in [0,2\pi].$
+$x=\left( 1+\cos \theta \right) \cos \theta $, $y=\left( 1+\cos \theta\right) \sin \theta $, $\theta \in [0,2\pi]$.
 Sobre la esfera, la coordenada $z$ puede ser de dos formas
 \[y = \pm \frac{\sqrt{15-4\cos(\theta)-\cos(2\theta)}}{\sqrt{2}}.\]
 Con dos puntos de la forma;
@@ -2893,11 +2428,7 @@ d\theta du=0.
 \end{equation}
 Estos cálculos se obtienen ejecutando las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {x,y,z}={(1+Cos[t])*Cos[t],(1+Cos[t])*Sin[t],
 Sqrt[9-x^2-y^2]};
 r=Simplify[(1-u)*{x,y,z}+u*{x,y,-z}];
@@ -2906,22 +2437,14 @@ Integrate[A,{u,0,1},{t,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 El flujo neto sobre la superficie del sólido considerado es la suma de las expresiones \ref{flujo7}
 y \ref{flujo8}.
-Dado que ${\rm div} {\bf F}=1,$ este valor coincide con el volumen del sólido que se halló con la expresión \ref{ejercicio3}, página \pageref{ejercicio3}.
-
-
+Dado que ${\rm div} {\bf F}=1$, este valor coincide con el volumen del sólido que se halló con la expresión \ref{ejercicio3}, página \pageref{ejercicio3}.
 
 \item Hallar el flujo neto sobre el campo vectorial ${\bf F}(x,y,z) = \la x,1,y+z \ra $
-sobre la superficie sólido acotado por el semicono $y=\sqrt{x^2+z^2}$ y la esfera $x^2+y^2+z^2=9.$
+sobre la superficie sólido acotado por el semicono $y=\sqrt{x^2+z^2}$ y la esfera $x^2+y^2+z^2=9$.
 
 La siguiente figura ilustra esta situación.
-
-
-
 
 \begin{figure}[H]
 \centering
@@ -2933,11 +2456,7 @@ La siguiente figura ilustra esta situación.
 
 La figura se consigue ejecutando las siguientes instrucciones.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[y>Sqrt[x^2+z^2]&&x^2+y^2+z^2<9,
 {x,-3,3},{y,0,3},{z,-3,3},PlotPoints->90,Mesh->False];
 b=SliceVectorPlot3D[{x,1,y+z},{x^2+y^2+z^2==9,
@@ -2949,28 +2468,25 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 Las superficies mencionadas se trataron en la página \pageref{ejercicio7a}.
 Su intersección se caracteriza por la ecuación
-$x^{2}+z^{2}=\frac{9}{2}.$ Por tanto, la porción del cono se parametriza como
+$x^{2}+z^{2}=\frac{9}{2}$. Por tanto, la porción del cono se parametriza como
 ${\bf r}\left( u,v\right) =\left\langle u\cos v,u,u\sin v\right\rangle $
 y la porción de la esfera se parametriza en la forma
-${\bf r}\left(u,v\right) =\left\langle u\cos v,\sqrt{9-u^{2}},u\sin v\right\rangle ,$ en donde $u\in \lbrack 0,\frac{3}{\sqrt{2}}]$, $v\in \lbrack 0,2\pi ].$
+${\bf r}\left(u,v\right) =\left\langle u\cos v,\sqrt{9-u^{2}},u\sin v\right\rangle $, en donde $u\in \lbrack 0,\frac{3}{\sqrt{2}}]$, $v\in \lbrack 0,2\pi ]$.
 Calcularemos el flujo en cada región por separado.
 
-\subsubsection*{Flujo sobre la superficie del cono}
+\subsubsection{Flujo sobre la superficie del cono}
 
 En este caso ${\bf F}\left( {\bf r}\left( u,v\right) \right) =\left\langle u\cos v,1,u+u\sin v\right\rangle $
 y también
 \begin{align*}
-	{\bf r}_{u} &= \left\langle \cos v, 1, \sin v \right\rangle \\
-	{\bf r}_{v} &=\left\langle -u\sin v,0,u\cos v\right\rangle \\
-	{\bf r}_{u}\times {\bf r}_{v}&= \left\langle u\cos v,-u,u\sin v\right\rangle,
+{\bf r}_{u} &= \left\langle \cos v, 1, \sin v \right\rangle \\
+{\bf r}_{v} &=\left\langle -u\sin v,0,u\cos v\right\rangle \\
+{\bf r}_{u}\times {\bf r}_{v}&= \left\langle u\cos v,-u,u\sin v\right\rangle,
 \end{align*}
 con lo cual,
-${\bf F}\left({\bf r}\left(u,v\right)\right)\cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) = u^{2}\sin v-u+u^{2}.$
+${\bf F}\left({\bf r}\left(u,v\right)\right)\cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) = u^{2}\sin v-u+u^{2}$.
 Entonces, el flujo de ${\bf F}$ sobre la superficie del cono está dado por
 
 \begin{equation}
@@ -2978,17 +2494,17 @@ Entonces, el flujo de ${\bf F}$ sobre la superficie del cono está dado por
 \int_{0}^{2\pi}\int_0^{\frac{3}{\sqrt{2}}}\left(u^{2}\sin v-u+u^{2}\right)dudv= \frac{9}{2}\pi \left( \sqrt{2}-1\right)
 \end{equation}
 
-\subsubsection*{Flujo sobre la superficie de la esfera}
+\subsubsection{Flujo sobre la superficie de la esfera}
 
 En este sentido,
-${\bf F}\left( {\bf r}\left( u,v\right) \right) =\left\langle u\cos v,1,\sqrt{9-u^{2}}+u\sin v\right\rangle \!,$ y con la parametrización escogida se obtienen los siguientes vectores:
+${\bf F}\left( {\bf r}\left( u,v\right) \right) =\left\langle u\cos v,1,\sqrt{9-u^{2}}+u\sin v\right\rangle \!$, y con la parametrización escogida se obtienen los siguientes vectores:
 \begin{align*}
-	{\bf r}_{u} &= \left\langle \cos v,-\frac{u}{\sqrt{9-u^{2}}},\sin v\right\rangle \\
-	{\bf r}_{v} &= \left\langle -u\sin v,0,u\cos v\right\rangle \\
-	{\bf r}_{v}\times {\bf r}_{u}&= \left\langle\frac{u^{2}\cos v}{\sqrt{9-u^{2}}},u,\frac{u^{2}\sin v}{\sqrt{9 -u^{2}}}\right\rangle.
+{\bf r}_{u} &= \left\langle \cos v,-\frac{u}{\sqrt{9-u^{2}}},\sin v\right\rangle \\
+{\bf r}_{v} &= \left\langle -u\sin v,0,u\cos v\right\rangle \\
+{\bf r}_{v}\times {\bf r}_{u}&= \left\langle\frac{u^{2}\cos v}{\sqrt{9-u^{2}}},u,\frac{u^{2}\sin v}{\sqrt{9 -u^{2}}}\right\rangle.
 \end{align*}
 De lo anterior, se obtiene
-${\bf F}\left( {\bf r}\left( u,v\right) \right) \cdot \left( {\bf r}_{u}\times {\bf r}_{v}\right) =\frac{u^{3}}{\sqrt{9-u^{2}}}+u+u^{2}\sin v,$
+${\bf F}\left( {\bf r}\left( u,v\right) \right) \cdot \left( {\bf r}_{u}\times {\bf r}_{v}\right) =\frac{u^{3}}{\sqrt{9-u^{2}}}+u+u^{2}\sin v$,
 cuya integración con los límites establecidos proporciona el flujo de ${\bf F}$ sobre la porción de la esfera.
 \begin{equation}\label{flujo10}
 \int_{0}^{2\pi }\int_{0}^{\frac{3}{\sqrt{2}}}\left( \frac{u^{3}}{\sqrt{9-u^{2}}}+u+u^{2}\sin v\right) dudv= \frac{9}{2}\pi \left( 9-5\sqrt{2}\right)
@@ -2997,13 +2513,8 @@ cuya integración con los límites establecidos proporciona el flujo de ${\bf F}
 El flujo sobre toda la superficie es la suma de los valores obtenidos en \ref{flujo9}
 y \ref{flujo10}. Como ${\rm div\,}{\bf F}=2$, es claro que este valor corresponde a dos veces el volumen del sólido el cual se obtuvo con la expresión \ref{ejercicio7}.
 
-
-
-
 \item Hallar el flujo neto del campo vectorial ${\bf F}(x,y,z) = \la x,y,2z \ra $
-sobre la superficie del sólido determinado por la expresión $\rho =1+\cos \phi.$
-
-
+sobre la superficie del sólido determinado por la expresión $\rho =1+\cos \phi$.
 
 \begin{figure}[H]
 \centering
@@ -3015,11 +2526,7 @@ sobre la superficie del sólido determinado por la expresión $\rho =1+\cos \phi
 
 La figura anterior se obtiene al ejecutar las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[(x^2+y^2+z^2-x)^2<x^2+y^2+z^2,
 {x,-0.5,2.2},{y,-1.5,1.5},{z,-1.5,1.5},PlotPoints->90,
 Mesh->False,BoxRatios->{1,1,1}];
@@ -3031,14 +2538,12 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
 Con la ecuación \(\rho = 1 + \cos \phi\) y las expresiones que definen las coordenadas esféricas, se propone la siguiente función:
 \[
 \mathbf{r}(\theta,\phi) =
 \left\langle
-(1 + \cos \phi)\sin \phi \cos \theta,\ 
-(1 + \cos \phi)\sin \phi \sin \theta,\ 
+(1 + \cos \phi)\sin \phi \cos \theta,\
+(1 + \cos \phi)\sin \phi \sin \theta,\
 (1 + \cos \phi)\cos \phi
 \right\rangle
 \]
@@ -3081,24 +2586,18 @@ Entonces, el flujo de \(\mathbf{F}\) sobre la superficie en mención es:
 \]
 }
 
-
 Como ${\rm div\,}{\bf F} =4$, es claro que el flujo corresponde a cuatro veces el volumen de la región, el cual se obtuvo en la fórmula \ref{ejercicio5}.
 
 %\clearpage
 
 \item Hallar el flujo neto del campo vectorial ${\bf F}(x,y,z) = \la x,y,z \ra $
-sobre la superficie del sólido acotado por el paraboloide $4y=x^2+z^2$ y la esfera $x^2+y^2+z^2=12.$
-
+sobre la superficie del sólido acotado por el paraboloide $4y=x^2+z^2$ y la esfera $x^2+y^2+z^2=12$.
 
 Este sólido se consideró en la página \pageref{ejercicio8a}, la intersección de las superficies mencionadas y proyectada en el plano $xz$ se determina por la ecuación $x^2+z^2=8$.
 
 La figura se obtiene mediante la ejecución de las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[4*y>x^2+z^2&&x^2+y^2+z^2<12,{x,-3,3},
 {y,0,4},{z,-3,3},PlotPoints->90,Mesh->False];
 b=SliceVectorPlot3D[{x,y,z},{x^2+y^2+z^2==12,
@@ -3111,12 +2610,6 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-
-
-
 \begin{figure}[H]
 \centering
 \caption{Campo vectorial ${\bf F}(x,y,z)=\la x,y,z\ra$ sobre $4y=x^2+z^2$ \& $x^2+y^2+z^2=12$}
@@ -3126,13 +2619,13 @@ Show[a,b]
 \end{figure}
 
 Con el propósito de parametrizar la superficie mencionada antes, es posible asignar
-$x=\sqrt{8}u\cos v$, $z=\sqrt{8}u\sin v$, en donde $u\in [0,1]$ y $v \in [0,2\pi].$
+$x=\sqrt{8}u\cos v$, $z=\sqrt{8}u\sin v$, en donde $u\in [0,1]$ y $v \in [0,2\pi]$.
 Es por esta razón que al sustituir en las ecuaciones respectivas utilizaremos las funciones
-${\bf r}(u,v) = \langle\sqrt{8}u \cos v ,2u^2 ,\sqrt{8}u\sin v \rangle ,$ como parametrización del paraboloide y 
+${\bf r}(u,v) = \langle\sqrt{8}u \cos v ,2u^2 ,\sqrt{8}u\sin v \rangle $, como parametrización del paraboloide y
 ${\bf r}(u,v) = \langle  \sqrt{8}u \cos v ,\sqrt{12-8u^2} ,\sqrt{8}u\sin v \rangle$, en el caso de la esfera.
 Los cálculos se harán por separado.
 
-\subsubsection*{Flujo sobre la superficie de la esfera}
+\subsubsection{Flujo sobre la superficie de la esfera}
 
 En este caso, con la parametrización escogida se obtiene
 \begin{eqnarray*}
@@ -3142,7 +2635,7 @@ En este caso, con la parametrización escogida se obtiene
 \end{eqnarray*}
 
 Por tanto, ${\bf F}({\bf r}(u,v)) = \langle \sqrt{8}u \cos v ,\sqrt{12-8u^2} ,\sqrt{8}u\sin v \rangle$ y
-${\bf F}({\bf r}(u,v))\cdot({\bf r}_v \times {\bf r}_u)=\dfrac{48u}{\sqrt{3-2u^2}}.$
+${\bf F}({\bf r}(u,v))\cdot({\bf r}_v \times {\bf r}_u)=\dfrac{48u}{\sqrt{3-2u^2}}$.
 El flujo de ${\bf F}$ sobre la esfera está dado por
 \begin{equation}\label{flujo12}
 \int_0^1\int_0^{2\pi}\frac{48u}{\sqrt{3-2u^2}} dvdu= 48\pi (\sqrt{3}-1)
@@ -3150,11 +2643,7 @@ El flujo de ${\bf F}$ sobre la esfera está dado por
 
 Este resultado también se obtiene ejecutando  las siguientes instrucciones.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[8]*u*Cos[v],Sqrt[12-8*u^2],
 Sqrt[8]*u*Sin[v]};
 A=Simplify[Dot[{x,y,z},Cross[D[r,v],D[r,u]]]]
@@ -3162,10 +2651,7 @@ Integrate[A,{u,0,1},{v,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Flujo sobre la superficie del paraboloide}
+\subsubsection{Flujo sobre la superficie del paraboloide}
 
 Con la función que parametriza el paraboloide, se obtiene
 
@@ -3175,40 +2661,27 @@ Con la función que parametriza el paraboloide, se obtiene
 {\bf r}_u \times {\bf r}_v &=& \left \langle 2\sqrt{2}u^2 \cos(v),-8u,2\sqrt{2}u^2 \sin(v) \right\rangle
 \end{eqnarray*}
 
-
 Luego, ${\bf F}({\bf r}(u,v)) = \langle \sqrt{8}u \cos v ,2u^2 ,\sqrt{8}u\sin v \rangle$ y
-${\bf F}({\bf r}(u,v))\cdot({\bf r}_u \times {\bf r}_v)=16u^3 .$
+${\bf F}({\bf r}(u,v))\cdot({\bf r}_u \times {\bf r}_v)=16u^3 $.
 El flujo de ${\bf F}$ sobre el paraboloide está determinado por
 \begin{equation}\label{flujo11}
 \int_0^1\int_0^{2\pi } 16 u^3 dvdu= 8\pi.
 \end{equation}
 El cálculo anterior se obtiene ejecutando las siguientes instrucciones.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[8]*u*Cos[v],2*u^2,Sqrt[8]*u*Sin[v]};
 Integrate[Dot[{x,y,z},Cross[D[r,u],D[r,v]]],{u,0,1},
 {v,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
 El flujo neto sobre la superficie del sólido es la suma de los valores obtenidos en \ref{flujo11}
-y \ref{flujo12}. En este caso ${\rm div\,}{\bf F} =3,$ el valor obtenido es tres veces el volumen obtenido en la expresión \ref{ejercicio8}.
-
-
+y \ref{flujo12}. En este caso ${\rm div\,}{\bf F} =3$, el valor obtenido es tres veces el volumen obtenido en la expresión \ref{ejercicio8}.
 
 \item Hallar el flujo neto del campo vectorial ${\bf F}(x,y,z)=\la x-2,z,-y \ra $
 sobre la superficie del sólido acotado por el semicono
-$x=\sqrt{y^2+z^2}$ y la esfera con ecuación $y^2+z^2+4x=12.$
-
-
-
+$x=\sqrt{y^2+z^2}$ y la esfera con ecuación $y^2+z^2+4x=12$.
 
 \begin{figure}[H]
 \centering
@@ -3222,11 +2695,7 @@ $x=\sqrt{y^2+z^2}$ y la esfera con ecuación $y^2+z^2+4x=12.$
 
 Las figuras se obtienen al ejecutar las siguientes instrucciones.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[x>Sqrt[y^2+z^2]&&y^2+z^2+4*x<12,
 {x,0,4},{y,-3,3},{z,-3,3},PlotPoints->90,
 Mesh->False];
@@ -3239,14 +2708,11 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-La intersección de estas dos superficies se consigue eliminando $y^{2}+z^{2}$ de las dos ecuaciones, lo que se reduce a $x^{2}+4x=12$ e implica que $x=2.$
-La proyección en el plano $yz$ se determina por la ecuación $y^{2}+z^{2}=4.$ Esta región con su interior se describe asignando $y=u\cos v$, $z=u\sin v,$
-en donde $u\in \lbrack 0,2],$ $v\in \lbrack 0,2\pi ].$
+La intersección de estas dos superficies se consigue eliminando $y^{2}+z^{2}$ de las dos ecuaciones, lo que se reduce a $x^{2}+4x=12$ e implica que $x=2$.
+La proyección en el plano $yz$ se determina por la ecuación $y^{2}+z^{2}=4$. Esta región con su interior se describe asignando $y=u\cos v$, $z=u\sin v$,
+en donde $u\in \lbrack 0,2]$, $v\in \lbrack 0,2\pi ]$.
 Sobre el cono se satis\-face que $x=\sqrt{y^{2}+z^{2}}=u$ y sobre el paraboloide se cumple que
-$x=\frac{1}{4}\left( 12-y^{2}-z^{2}\right) =\frac{1}{4}\left(12-u^{2}\right) = 3-\frac{1}{4}u^{2},$
+$x=\frac{1}{4}\left( 12-y^{2}-z^{2}\right) =\frac{1}{4}\left(12-u^{2}\right) = 3-\frac{1}{4}u^{2}$,
 
 Por lo descrito anteriormente, resulta apropiado escoger como parametrizaciones de la porción del paraboloide y del cono a las siguientes funciones, respectivamente.
 
@@ -3254,9 +2720,9 @@ Por lo descrito anteriormente, resulta apropiado escoger como parametrizaciones 
 {\bf r}\left( u,v\right) &=&\left\langle 3-\frac{1}{4}u^{2},\cos v,u\sin v\right\rangle\\
 {\bf r}( u,v) &=&\left\langle u,\cos v,u\sin v\right\rangle.
 \end{eqnarray*}
-con $u\in [0,2],$ $v\in [0,2\pi ].$
+con $u\in [0,2]$, $v\in [0,2\pi ]$.
 Calcularemos el flujo sobre cada una de las regiones componentes.
-\subsubsection*{Flujo sobre la porción del cono}
+\subsubsection{Flujo sobre la porción del cono}
 
 Es claro que \[{\bf F}({\bf r}(u,v))=\left\langle 1-\frac{1}{4}u^{2},u\sin v, -\cos v\right\rangle\] y con la parametrización escogida se sigue que
 \begin{eqnarray*}
@@ -3264,41 +2730,35 @@ Es claro que \[{\bf F}({\bf r}(u,v))=\left\langle 1-\frac{1}{4}u^{2},u\sin v, -\
 {\bf r}_{v}&=&\left\langle 0,-\sin v,u\cos v\right\rangle \\
 {\bf r}_{u}\times {\bf r}_{v}&=& \left\langle \sin ^{2}v,-u\cos v,-\sin v\right\rangle.
 \end{eqnarray*}
-Entonces, ${\bf F}({\bf r}(u,v)) \cdot ({\bf r}_{u}\times {\bf r}_{v}) = u(2-u).$
+Entonces, ${\bf F}({\bf r}(u,v)) \cdot ({\bf r}_{u}\times {\bf r}_{v}) = u(2-u)$.
 Con lo cual, el flujo está dado por
 \begin{equation}\label{flujo15}
 \int_0^2\int_0^{2\pi} u(2-u) du dv = \frac{8\pi}{3}
 \end{equation}
 
-\subsubsection*{Flujo sobre la porción del paraboloide}
+\subsubsection{Flujo sobre la porción del paraboloide}
 
 Con la parametrización escogida se sigue que
-\[{\bf F}({\bf r}(u,v))=\left\langle u-2,u\sin v,-\cos v \right\rangle\] y de la función ${\bf r},$
+\[{\bf F}({\bf r}(u,v))=\left\langle u-2,u\sin v,-\cos v \right\rangle\] y de la función ${\bf r}$,
 se obtienen los siguientes vectores.
 \begin{eqnarray*}
 {\bf r}_{u}&=&\left\langle -\frac{1}{2}u,0,\sin v\right\rangle \\
 {\bf r}_{v}&=&\left\langle 0,-\sin v,u\cos v\right\rangle \\
 {\bf r}_{u}\times {\bf r}_{v}&=&\left\langle \sin ^{2}v,\frac{1}{2}u^{2}\cos v,\frac{1}{2}u\sin v\right\rangle.
 \end{eqnarray*}
-Entonces, ${\bf F}({\bf r}(u,v)) \cdot ({\bf r}_{u}\times {\bf r}_{v}) = \frac{1}{4}u(u^2-4),$ por lo tanto, el flujo está dado por
+Entonces, ${\bf F}({\bf r}(u,v)) \cdot ({\bf r}_{u}\times {\bf r}_{v}) = \frac{1}{4}u(u^2-4)$, por lo tanto, el flujo está dado por
 \begin{equation}\label{flujo16}
 \int_0^2\int_0^{2\pi}\frac{1}{4}\left (u-\frac{u^3}{4} \right ) du dv = 2\pi
 \end{equation}
-Sumando los resultados obtenidos en \ref{flujo15} y \ref{flujo16}, se obtiene el flujo neto sobre el sólido que se considera. Este valor coincide con el volumen hallado en la página \pageref{ejercicio10}, pues en este caso ${\rm div}\,{\bf F}=1.$
-
+Sumando los resultados obtenidos en \ref{flujo15} y \ref{flujo16}, se obtiene el flujo neto sobre el sólido que se considera. Este valor coincide con el volumen hallado en la página \pageref{ejercicio10}, pues en este caso ${\rm div}\,{\bf F}=1$.
 
 \item Hallar el flujo neto del campo vectorial ${\bf F}(x,y,z) = \left\langle yz,y-xz,xy\right\rangle $
 sobre la superficie del sólido acotado por el paraboloide $x+3=y^2+z^2$
-y el paraboloide hiperbólico $y^2-z^2=9x-3.$
-
+y el paraboloide hiperbólico $y^2-z^2=9x-3$.
 
 La figura de esta región se produce con las siguientes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[x+3>y^2+z^2&&y^2-z^2>9*x-3,{x,-3,2},
 {y,-2,2},{z,-2,2},PlotPoints->90,Mesh->False,
 BoxRatios->{1,1,1}];
@@ -3312,11 +2772,6 @@ Show[a,b]
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-
-
 \begin{figure}[H]
 \centering
 \caption{${\bf F}(x,y,z)=\la yz,y-xz,xy\ra $ sobre $x+3=y^2+z^2$ \& $y^2-z^2=9x-3$}
@@ -3327,9 +2782,9 @@ Show[a,b]
 \fuentepropia
 \end{figure}
 
-El paraboloide y el paraboloide hiperbólico se intersecan en una curva cuya proyección en el plano $yz,$ está dada por
-$4y^{2}+5z^{2}=15,$ esta ecuación representa una elipse.
-Haciendo $y=\frac{\sqrt{15}}{2}u\cos v,$ $z=\sqrt{3}u\sin v$ se des\-cribe esta región. También se cumplen las siguientes relaciones para el paraboloide.
+El paraboloide y el paraboloide hiperbólico se intersecan en una curva cuya proyección en el plano $yz$, está dada por
+$4y^{2}+5z^{2}=15$, esta ecuación representa una elipse.
+Haciendo $y=\frac{\sqrt{15}}{2}u\cos v$, $z=\sqrt{3}u\sin v$ se des\-cribe esta región. También se cumplen las siguientes relaciones para el paraboloide.
 
 \begin{eqnarray*}
 x&=&\left( \frac{\sqrt{15}}{2}u\cos v\right)^{2}+\left(\sqrt{3}u\sin v\right)^{2}-3 =\frac{3}{8}u^{2}\cos 2v
@@ -3345,13 +2800,13 @@ x&=&\frac{1}{9}\left( \left( \frac{\sqrt{15}}{2}u\cos v\right) ^{2}-\left( \sqrt
 
 El flujo neto se hará por separado sobre las dos regiones que acotan el sólido.
 
-\subsubsection*{Flujo sobre la porción del paraboloide}
+\subsubsection{Flujo sobre la porción del paraboloide}
 Por lo mencionado antes, resulta natural escoger la siguiente parametri\-zación para el paraboloide.
 
 {\small
 \[{\bf r}\left( u,v\right) = \langle \frac{3}{8}u^{2}\cos 2v+\frac{27}{8}u^{2}-3, \sqrt{\frac{15}{4}}u\cos v,\sqrt{3}u\sin v \rangle,\]}
 
-con $u \in [0,1],$ $v \in [0,2\pi]$. De esta función se obtienen los siguientes vectores:
+con $u \in [0,1]$, $v \in [0,2\pi]$. De esta función se obtienen los siguientes vectores:
 
 {\small
 \begin{eqnarray*}
@@ -3368,18 +2823,14 @@ Asimismo
 3u^2\sin(3v)), \frac{3}{16}\sqrt{15}u\cos(v)(u^2(9+\cos(2v))-8)\bigg \rangle,
 \end{multline*}
 con lo cual
-${\bf F}({\bf r}(u,v)) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right)=\frac{45}{4} u^3\cos(v)(\sqrt{5}\cos(v)-\sin(v)).$
+${\bf F}({\bf r}(u,v)) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right)=\frac{45}{4} u^3\cos(v)(\sqrt{5}\cos(v)-\sin(v))$.
 Por lo tanto, el flujo sobre la porción del paraboloide que se considera es:
 \begin{equation} \label{flujo13}
 \int_{0}^{1}\int_{0}^{2\pi}\frac{45}{4} u^3\cos(v)(\sqrt{5}\cos(v)-\sin(v)) dvdu = \frac{45 \sqrt{5}}{16} \pi
 \end{equation}
 El cálculo anterior se puede hacer en \verb"Mathematica" ejecutando las siguien\-tes instrucciones:
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {y,z,x}={Sqrt[15]/2*u*Cos[v],Sqrt[3]*u*Sin[v],
 y^2+z^2-3};
 F=TrigFactor[{y*z,y-x*z,x*y}]
@@ -3388,10 +2839,7 @@ Integrate[Dot[F,Cross[D[{x,y,z},v],D[{x,y,z},u]]],
 \end{Verbatim}
 \end{tcolorbox}
 
-
-
-
-\subsubsection*{Flujo sobre el paraboloide hiperbólico}
+\subsubsection{Flujo sobre el paraboloide hiperbólico}
 
 En este caso, la parametrización escogida es la siguiente:
 \[
@@ -3406,8 +2854,8 @@ en donde \( u \in [0,1],\; v \in [0,2\pi] \). También se puede ver que
 \[
 \mathbf{F}(\mathbf{r}(u,v)) =
 \left\langle
-\frac{3}{2}\sqrt{5}\,u,\ 
--\frac{5u^2\cos(v)}{2\sqrt{3}},\ 
+\frac{3}{2}\sqrt{5}\,u,\
+-\frac{5u^2\cos(v)}{2\sqrt{3}},\
 \sqrt{\frac{5}{3}}\, u^2 \sin(v)
 \right\rangle.
 \]
@@ -3427,20 +2875,13 @@ Por lo tanto, sobre la porción del paraboloide hiperbólico el flujo de ${\bf F
 \end{equation}
 Con la ayuda de las siguientes instrucciones, se puede obtener el cálculo anterior.
 
-
-
-
-\begin{tcolorbox}[breakable,enhanced,title=\bf Instrucción \verb"Mathematica", top=2pt,bottom=2pt,boxsep=0pt,before skip=2pt,after skip=0pt]
-\begin{Verbatim}[formatcom=\letraverbatim]
+\begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 {y,z,x}={Sqrt[15]/2*u*Cos[v],Sqrt[3]*u*Sin[v],
 (y^2-z^2+3)/9};
 Integrate[Dot[{y*z,y-x*z,x*y},Cross[D[{x,y,z},u],
 D[{x,y,z},v]]],{u,0,1},{v,0,2*Pi}]
 \end{Verbatim}
 \end{tcolorbox}
-
-
-
 
 El flujo neto sobre la superficie del sólido es la suma de los valores obtenidos en \ref{flujo13} y
 \ref{flujo14}, es decir $\frac{5 \sqrt{5}}{16} \pi$ . Como ${\rm div\,}{\bf F}=1$,
@@ -3451,11 +2892,7 @@ este valor coincide con el volumen del sólido hallado con la expresión \ref{ej
 Resuelva los siguientes problemas.
 \begin{enumerate}[font=\normalfont,leftmargin=1.2em, itemindent=0pt,      labelwidth=\labelwidth,labelsep=0.5em,]
 
-
-\item Calcule el flujo del campo vectorial ${\bf F}(x,y,z)= \la x-2y,3x+y,z+1\ra $ sobre la superficie del hiperboloide de un manto $x^2 + y^2 - z^2 = 1,$ con $-2 \leq z \leq 2.$
-
-
-
+\item Calcule el flujo del campo vectorial ${\bf F}(x,y,z)= \la x-2y,3x+y,z+1\ra $ sobre la superficie del hiperboloide de un manto $x^2 + y^2 - z^2 = 1$, con $-2 \leq z \leq 2$.
 
 \begin{figure}[H]
 \centering
@@ -3473,10 +2910,7 @@ VectorStyle->{Thickness->0.006,Black,Thickness->0.005}]
 \clearpage
 %
 
-\item Considere la superficie sobre el paraboloide  $z=x^2-2x+y^2$ interior al cilindro cardioidico $r=1+\cos t.$
-
-
-
+\item Considere la superficie sobre el paraboloide  $z=x^2-2x+y^2$ interior al cilindro cardioidico $r=1+\cos t$.
 
 \begin{figure}[H]
 \centering
@@ -3486,10 +2920,9 @@ VectorStyle->{Thickness->0.006,Black,Thickness->0.005}]
 \end{figure}
 
 Calcule el flujo del campo vectorial ${\bf F}(x,y,z)= \la x-2,y,2z\ra $ sobre la superficie del paraboloide.
-$z=x^2-2x+y^2$, interior al cilindro cardioidico $r=1+\cos t.$
+$z=x^2-2x+y^2$, interior al cilindro cardioidico $r=1+\cos t$.
 
 %
-
 
 \begin{figure}[H]
 \centering
@@ -3513,9 +2946,7 @@ Show[SliceVectorPlot3D[{x-2,y,2z},{z==x^2-2*x+y^2},{x,-1/4,2},{y,-3/2,3/2},
 \end{comment}
 
 \clearpage
-\item Calcule el flujo del campo vectorial ${\bf F}(x,y,z)= \la z-y,y,z^2 \ra $ sobre la superficie del paraboloide hiperbólico $9z=x^2-y^2$, interior al cilindro $x^2+y^2 \leq 16$ y exterior al cilindro cardioidico $r=1+\cos t.$
-
-
+\item Calcule el flujo del campo vectorial ${\bf F}(x,y,z)= \la z-y,y,z^2 \ra $ sobre la superficie del paraboloide hiperbólico $9z=x^2-y^2$, interior al cilindro $x^2+y^2 \leq 16$ y exterior al cilindro cardioidico $r=1+\cos t$.
 
 \begin{figure}[H]
 \centering

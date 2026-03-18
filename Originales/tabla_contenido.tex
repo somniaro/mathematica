@@ -1,7 +1,7 @@
 % --- tabla_contenido.tex ---
 
 % 1. Configuración local: FUENTES, SIN PUNTOS y NUMERACIÓN OPCIONAL
-% El segundo bloque de llaves {} maneja la numeración. 
+% El segundo bloque de llaves {} maneja la numeración.
 
 % PARTES: Si quieres número, cambia el {} por {Parte \thecontentslabel\quad}
 \titlecontents{part}[-1.1em]
@@ -20,7 +20,7 @@
 % SECCIONES: Cambia {\thecontentslabel\quad} por {} si quieres ocultar el número
 \titlecontents{section}[1.5em]
 {\lhseries}%{\thecontentslabel\quad} % <--- Muestra "1.1 "
-{} 
+{}
 {}
 {\hfill\small\lhseries\contentspage\vspace{0.5mm}}[]
 
@@ -33,11 +33,11 @@
 
 % 2. Ocultar numeración de página física del índice
 \cleardoublepage
-\pagestyle{empty} 
-\assignpagestyle{\chapter}{empty} 
+\pagestyle{empty}
+\assignpagestyle{\chapter}{empty}
 
 % 3. Título del índice
-\renewcommand*\contentsname{\lhseries Contenido}
+\renewcommand\contentsname{\lhseries Contenido}
 
 % 4. Generación del índice
 \tableofcontents
