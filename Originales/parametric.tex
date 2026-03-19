@@ -1,4 +1,4 @@
-\chapter{Parametrizaciónes básicas}
+\chapter{Parametrizaciones básicas}
 
 En este capítulo se presentan algunos ejemplos sencillos sobre la manera de representar curvas,
 superficies o sólidos cuyas generalidades se presentaron en la sección \secref{regionesparametrizadas}. \index{Parametrización}
@@ -202,7 +202,7 @@ Luego, la intersección de las superficies está dada por $\ve{r}(t)=\la 2\cos t
 Para dos puntos $P$ y $Q$ en $\mathbb{R}^n$, si $f$ y $g$ son dos funciones contínuas en $[a,b]$ tales que
 $f(a)=1$, $g(a)=0$ y $f(b)=0$, $g(b)=1$, entonces la función
 \begin{equation}
-\ve{r}(t)=f(t)P+g(t)Q,\,\, t \in[a,b].
+\ve{r}(t)=f(t)P+g(t)Q,\,\, t \in[a,b]
 \end{equation}
 parametriza la curva que une a $P$ con $Q$.
 %Además $\ve{r}(t)$ satisface que $\ve{r}(a)=P$ y $ \ve{r}(b)=Q;$
@@ -272,7 +272,7 @@ que permite unir los puntos $A(1,1)$ y $B(3,2)$.
 Esta expresión se consigue, al simplificar la expresión
 $$\cos\left( \frac{\pi t}{2}\right)\left(1,1\right) +\sin \left( \frac{\pi t}{2}\right) \left( 3,2\right)$$
 para $\,\,0\leq t\leq 1$.
-Por tanto, la parametrización escogida es $\ve{r}(t)$.
+Por lo tanto, la parametrización escogida es $\ve{r}(t)$.
 
 \begin{figure}[H]
 \centering
@@ -318,16 +318,15 @@ con $r\in [0,1]$, $\theta \in [0,2\pi]$.
 El triángulo con vértices $A$, $B$ y $C$, se parametriza a través de segmentos rectilíneos.
 Se construye una combinación convexa entre un punto del segmento $\overline{AB}$ con el punto $C$.
 Una función que describe esta región, con $u \in [0,1]$, $v \in [0,1]$, se obtiene simplificando la expresión
+$$(1-v)C+v\left((1-u)A+uB \right)\!.$$
 
 \begin{figure}[H]
 \centering
-\caption{Triángul parametrizado $(1-v)C+v\left((1-u)A+uB \right)$}
+\caption{Triángulo parametrizado $(1-v)C+v\left((1-u)A+uB \right)$}
 \label{fig:161}
 \includegraphics[width=0.8\textwidth]{Fig/161.pdf}
 \fuentepropia
 \end{figure}
-
-$$(1-v)C+v\left((1-u)A+uB \right)\!.$$
 
 El cuadrilátero con vértices $A(-2,-1)$, $B(-1,4)$, $C(3,1)$, $D(4,3)$,
 se parametriza formando dos combinaciones convexas adecuadamente elegidas (evitar crear un \emph{corbatín})
@@ -359,8 +358,8 @@ ParametricPlot[(1-u)*((1-t)*{-2,-1}+t*{-1,4})
 \end{tcolorbox}
 
 La región $R$ acotada por las figuras de las funciones $y=f(x)$ y $y=g(x)$,
-con $x\in [a,b];$ se parametriza formando una combinación convexa entre dos puntos
-$P(x,f(x))$ y $Q(x,g(x))$. Por tanto,
+con $x\in [a,b]$, se parametriza formando una combinación convexa entre dos puntos
+$P(x,f(x))$ y $Q(x,g(x))$. Por lo tanto,
 una función que describe a $R$ es
 $\ve{r}(x,u)= (1-u)(x,f(x))+u(x,g(x))$,
 con $u \in [0,1]$, $x \in [a,b]$.
@@ -630,7 +629,7 @@ La expresión que permite describir la región acotada por las dos circunferenci
 \fuentepropia
 \end{figure}
 
-Por tanto, la función que parametriza la región sobre el plano $xy$ acotada por las dos
+Por lo tanto, la función que parametriza la región sobre el plano $xy$ acotada por las dos
 circunferencias presentadas antes es
 \begin{equation}
 \ve{v}(u,t)=\left( 2\left( 2u+1\right) \sin t,2\left( 2u+1\right) \cos t-3u+3,0\right) \label{sup5}
@@ -1080,7 +1079,7 @@ mientras que la superficie sobre el paraboloide hiperbólico acotada por el para
 \[
 \mathbf{b}(t,u) = \left\langle \sqrt{2}u\cos(t),\,
 \frac{9}{32}u^{2} - \frac{13}{32}u^{2}\cos^{2}(t),\,
-\frac{3\sqrt{2}}{4}u\sin(t) \right\rangle.
+\frac{3\sqrt{2}}{4}u\sin(t) \right\rangle\!.
 \]
 En ambos casos, $t \in [0, 2\pi]$ y $u \in [0, 1]$.
 Los gráficos se obtienen al ejecutar las siguientes instrucciones. Al ingresar el código se usó la identidad $2\cos^2(t) = 1 + \cos(2t)$.

@@ -153,7 +153,7 @@ Integrate[1,{x,0,1},{z,0,1-x},{y,x+z,1}]
 \end{tcolorbox}
 % tex-fmt: on
 
-El volumen también se puede hallar con el siguiente procedimiento. En el plano $xy$, el segmento que une los puntos $(0,0)$ con $(0,1)$ se parametrizan como $(0,t)$; y el segmento que une cualquiera de estos puntos con $(1,1)$ es de la forma $(u, t - tu + u)$. En el espacio, el sólido se recorre mediante segmentos que unen los puntos $(u, t - tu + u, 0)$ con $(1, 1, 1)$, esto es $(1-w)(u, t - tu + u, 0) + w(1, 1, 1)$. Por tanto, la función $\mathbf{r}(t, u, w) = \left\langle (u + w(1-u)), t + (t-1)(uw - w - u), w \right\rangle$, con $t \in [0,1]$, $u \in [0,1]$, $w \in [0,1]$, parametriza el sólido. Con esta función hallamos los siguientes vectores.
+El volumen también se puede hallar con el siguiente procedimiento. En el plano $xy$, el segmento que une los puntos $(0,0)$ con $(0,1)$ se parametrizan como $(0,t)$; y el segmento que une cualquiera de estos puntos con $(1,1)$ es de la forma $(u, t - tu + u)$. En el espacio, el sólido se recorre mediante segmentos que unen los puntos $(u, t - tu + u, 0)$ con $(1, 1, 1)$, esto es $(1-w)(u, t - tu + u, 0) + w(1, 1, 1)$. Por lo tanto, la función $\mathbf{r}(t, u, w) = \left\langle (u + w(1-u)), t + (t-1)(uw - w - u), w \right\rangle$, con $t \in [0,1]$, $u \in [0,1]$, $w \in [0,1]$, parametriza el sólido. Con esta función hallamos los siguientes vectores.
 
 \begin{align*}
   \mathbf{r}_{t} &= \langle 0, 1 - w + uw - u, 0 \rangle \\
@@ -405,7 +405,7 @@ con $t\in [0,1]$, $u\in [0,1]$ y $w\in [0,1]$. Además,
   \begin{align*}
     \mathbf{r}_t &= \frac{\partial}{\partial t}\left\langle t^{2}(1-u)-u(t-2),3w,t\right\rangle = \left\langle 2t(1-u)-u,0,1\right\rangle \\
     \mathbf{r}_u &= \frac{\partial}{\partial u}\left\langle t^{2}(1-u)-u(t-2),3w,t\right\rangle = \left\langle -t^{2}+2-t,0,0\right\rangle \\
-    \mathbf{r}_w &= \frac{\partial}{\partial w}\left\langle t^{2}(1-u)-u(t-2),3w,t\right\rangle = \left\langle 0,3,0\right\rangle.
+    \mathbf{r}_w &= \frac{\partial}{\partial w}\left\langle t^{2}(1-u)-u(t-2),3w,t\right\rangle = \left\langle 0,3,0\right\rangle\!.
   \end{align*}
 }
 
@@ -1021,7 +1021,7 @@ Con esta representación determinamos las integrales que nos aportan el volumen 
 
 \[\int_{-1}^{1}\int_{0}^{\sqrt{1-z^{2}}}\int_{x}^{2x}dydxdz= \int_{0}^{1}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}\int_{x}^{2x}dydzdx= \frac{2}{3}\]
 
-Al integrar con respecto a $z$, los planos $y=x$ y $y=2x$ son paralelos al eje $z$ por lo que los límites para $z$ van desde la parte negativa del cilindro a la parte positiva de este. Por tanto, la integral en este caso es:
+Al integrar con respecto a $z$, los planos $y=x$ y $y=2x$ son paralelos al eje $z$ por lo que los límites para $z$ van desde la parte negativa del cilindro a la parte positiva de este. Por lo tanto, la integral en este caso es:
 \begin{multline*} \int_{0}^{1}\int_{x}^{2x}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}dzdydx= \int_{0}^{1}\int_{\frac{y}{2}}^{y}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}dzdxdy \\ +\int_{1}^2\int_{\frac{y}{2}}^{1}\int_{-\sqrt{1-x^{2}}}^{\sqrt{1-x^{2}}}dzdxdy= \frac{2}{3}.
 \end{multline*}
 
@@ -1093,7 +1093,7 @@ Esta función nos permite hallar los siguientes vectores:
 \begin{eqnarray*}
 {\bf r}_{t} &=& \left\langle u\cos t,u\left(2-v\right) \cos t,-u\sin t\right\rangle \\
 {\bf r}_{u} &=& \left\langle \sin t,\left( 2-v\right) \sin t,\cos t\right\rangle \\
-{\bf r}_{v} &=& \left\langle 0,-u\sin t,0\right\rangle.
+{\bf r}_{v} &=& \left\langle 0,-u\sin t,0\right\rangle\!.
 \end{eqnarray*}
 }
 
@@ -1180,7 +1180,7 @@ a $x$, esta toma valores desde el plano $yz$ hasta el paraboloide, en un caso, y
 La integral en el orden $dxdydz$ requiere un poco de observación adicional.
 
 La expresión $s = 8y - 5y^2$ determina una parábola en el plano $yz$, su valor máximo se puede hallar derivando, esto es
-$z^\prime =8-10y=0$, entonces $y=\frac{4}{5}$, por tanto el valor máximo de $z$ es.
+$z^\prime =8-10y=0$, entonces $y=\frac{4}{5}$, por lo tanto el valor máximo de $z$ es.
 $8 \left( \frac{4}{5} \right)- 5\left( \frac{4}{5} \right)^2 = \frac{16}{5}$.
 
 Esta condición hace que la proyección en el plano $yz$ se divida en varias regiones que la siguiente figura ilustra.
@@ -1297,7 +1297,7 @@ Con la función ${\bf r}$ hallamos los siguientes vectores:
 \begin{eqnarray*}
 {\bf r}_{t} &=& \left\langle 2u,0,-8wu^{2}t\right\rangle \\
 {\bf r}_{u} &=& \left\langle 2t,-1,w\left( 2-2u\left( 4t^{2}+1\right) \right) \right\rangle \\
-{\bf r}_{w} &=& \left\langle 0,0,3+2u-u^{2}\left( 4t^{2}+1\right) \right\rangle.
+{\bf r}_{w} &=& \left\langle 0,0,3+2u-u^{2}\left( 4t^{2}+1\right) \right\rangle\!.
 \end{eqnarray*}
 El elemento diferencial de volumen o producto vectorial triple está dado por
 $|{\bf r}_{t} \cdot ({\bf r}_{u} \times {\bf r}_{w})| =\left| -2u\left( 3+2u-\left(4t^{2}+1\right) u^{2}\right) \right| $,
@@ -1413,7 +1413,7 @@ ${\bf r}$ hallamos los siguientes vectores:
 \begin{eqnarray*}
 {\bf r}_{t}&=&\left\langle 1,2t\left( 1-u\right) \left(1-2w\right) ,2t\left( 1-u\right) \right\rangle \\
 {\bf r}_{u} &=& \left\langle 0,\left( 1-t^2\right) \left( 1-2w\right),1-t^2\right\rangle \\
-{\bf r}_{w} &=& \left\langle 0,2\left( 1-t^2\right) \left( 1-u\right),0\right\rangle.
+{\bf r}_{w} &=& \left\langle 0,2\left( 1-t^2\right) \left( 1-u\right),0\right\rangle\!.
 \end{eqnarray*}
 El producto vectorial triple es
 $\left| {\bf r}_{t}\cdot \left({\bf r}_{u}\times {\bf r}_{w}\right) \right| =
@@ -1532,7 +1532,7 @@ En estos casos, se trazan unas líneas auxiliares (en azul) sobre el sólido, co
 \end{figure}
 
 Al reemplazar $y=2-z$, de la ecuación del plano en las ecuaciones de los cilindros se obtiene
-$x^2+\left( 2-z\right) ^2=4$, por tanto $x^2+z^2=4z$ y $x^2+\left( 2-z\right) ^2=2\left( 2-z\right)$, entonces $x^2+z^2=2z$.
+$x^2+\left( 2-z\right) ^2=4$, por lo tanto $x^2+z^2=4z$ y $x^2+\left( 2-z\right) ^2=2\left( 2-z\right)$, entonces $x^2+z^2=2z$.
 El sólido proyectado en el plano $xz$, junto con las líneas mencionadas antes, se observan en los siguientes gráficos.
 
 \begin{figure}[H]
@@ -1831,7 +1831,7 @@ Con los resultados anteriores se presentan ahora las figuras.
 Estas figuras resultan útiles al momento de plantear las integrales triples que se requiere evaluar para calcular el volumen del sólido, veámoslo
 
 A partir de la ecuación del paraboloide %$\frac{(z-2)^2}{4}+\frac{(y-3)^2}{9}=1-\frac{x}{4}$,
-se obtiene {\footnotesize $x=4\left( 1-\frac{(z-2)^2}{4}-\frac{(y-3)^2}{9}\right)$,} por tanto
+se obtiene {\footnotesize $x=4\left( 1-\frac{(z-2)^2}{4}-\frac{(y-3)^2}{9}\right)$,} por lo tanto
 
 \[
 \frac{(z-2)^2}{4} + \frac{(y-3)^2}{9} = 1 - \frac{x}{4},
@@ -1843,7 +1843,7 @@ x = 4\left( 1 - \frac{(z-2)^2}{4} - \frac{(y-3)^2}{9} \right),
 \]
 }
 
-por tanto
+por lo tanto
 \[
 \displaystyle
 \int_{0}^{6}
@@ -1865,7 +1865,7 @@ De la ecuación original, se sigue que
 (z - 2)^2 = 4\left( 1 - \frac{x}{4} - \frac{(y - 3)^2}{9} \right)
 = \frac{1}{9}\left( 24y - 9x - 4y^2 \right),
 \]
-por tanto
+por lo tanto
 \[
 z = 2 \pm \frac{1}{3}\sqrt{-9x - 4y^2 + 24y}.
 \]
@@ -1937,7 +1937,7 @@ se parametriza el sólido.
 \end{figure}
 
 Las coordenadas $x$ del punto $Q$ que está sobre el paraboloide satisfacen que
-$x=4-4u^2$. Por tanto, los puntos mencionados son
+$x=4-4u^2$. Por lo tanto, los puntos mencionados son
 \[P\left(0,3+3u\sin t,2+2u\cos t\right)\] y \[Q\left( 4-4u^2,3+3u\sin t+3,2+2u\cos t\right)\!.\]
 
 El sólido se parametriza simplificando la expresión $(1-w)Q+wP$,
@@ -2176,7 +2176,7 @@ y un punto arbitrario sobre el paraboloide es de  forma
 \[Q\left(\frac{5}{2}\cos(t),-\frac{1}{2}+\frac{5}{2}\sin(t),(\frac{5}{2}\cos(t))^2+(-\frac{1}{2}+\frac{5}{2}\sin(t))^2\right)\!.\]
 Formando segmentos rectilíneos que unan un punto del plano con un punto sobre el paraboloide se parametriza el sólido. Esto es, simplificando la expresión $(1-w)P+wQ$, se define la función:
 %
-\[{\bf r}\left(t,u,w\right)=\frac{5}{2} \left\langle u \cos (t),u\sin(t)-\frac{1}{5},\frac{5w}{2}(u^2-1)-u\sin(t)+\frac{13}{5} \right\rangle.\]
+\[{\bf r}\left(t,u,w\right)=\frac{5}{2} \left\langle u \cos (t),u\sin(t)-\frac{1}{5},\frac{5w}{2}(u^2-1)-u\sin(t)+\frac{13}{5} \right\rangle\!.\]
 %
 con $u\in [0,1]$, $t\in [0,2\pi]$, $w\in [0,1]$,
 la cual parametriza el sólido. También se hallan los vectores:
@@ -2502,7 +2502,7 @@ El sólido se proyecta en los planos coordenados como se muestra en las siguient
 
 Eliminando $z$ de las ecuaciones $z=x^2+y^2$ y $z=5-y^2$, se obtiene $x^2+2y^2=5;$
 esta expresión en el plano $xy$ representa una elipse.
-Para integrar primero con respecto a $z$ se debe tener en cuenta que $z$ recorre los puntos que se hallan entre el paraboloide y el cilindro, los límites en $y$ y $x$ se pueden obtener de la proyección en el plano $xy$. Por tanto, el volumen del sólido está dado por las siguientes integrales:
+Para integrar primero con respecto a $z$ se debe tener en cuenta que $z$ recorre los puntos que se hallan entre el paraboloide y el cilindro, los límites en $y$ y $x$ se pueden obtener de la proyección en el plano $xy$. Por lo tanto, el volumen del sólido está dado por las siguientes integrales:
 
 \begin{multline*} \int_{-\sqrt{5/2}}^{\sqrt{5/2}}\int_{-\sqrt{5-2y^2}}^{\sqrt{5-2y^2}}\int_{x^2+y^2}^{5-y^2}dzdxdy = \\ \int_{-\sqrt{5}}^{\sqrt{5}}\int_{-\frac{1}{2}\sqrt{10-2x^2}}^{\frac{1}{2}\sqrt{10-2x^2}}\int_{x^2+y^2}^{5-y^2}dzdydx= \frac{25\sqrt{2}\pi}{4}.
 \end{multline*}
@@ -2809,17 +2809,17 @@ Q &= \left( 2u\sin(t),\ \sqrt{2}u\cos(t),\ u^2(5 + \cos(2t)) \right)\!.
 
 Cada uno sobre un paraboloide. Una combinación convexa de la forma \( (1-w)P + wQ \) define la parametrización del sólido:
 \[
-\mathbf{r}(u,t,w) = \left\langle 2u\sin t,\ \sqrt{2}u\cos t,\ 8(1-w) + u^2(8w - 3 + \cos(2t)) \right\rangle.
+\mathbf{r}(u,t,w) = \left\langle 2u\sin t,\ \sqrt{2}u\cos t,\ 8(1-w) + u^2(8w - 3 + \cos(2t)) \right\rangle\!.
 \]
 
 De esta función obtenemos los siguientes vectores:
 \begin{align*}
 \mathbf{r}_t &= \left\langle 2u\cos(t),\ -\sqrt{2}u\sin(t),\ -2u^2\sin(2t) \right\rangle \\
 \mathbf{r}_u &= \left\langle 2\sin(t),\ \sqrt{2}\cos(t),\ 2u(8w - 3 + \cos(2t)) \right\rangle \\
-\mathbf{r}_w &= \left\langle 0,\ 0,\ 8(u^2 - 1) \right\rangle.
+\mathbf{r}_w &= \left\langle 0,\ 0,\ 8(u^2 - 1) \right\rangle\!.
 \end{align*}
 
-Por tanto,
+Por lo tanto,
 \[
 \left| \mathbf{r}_w \cdot (\mathbf{r}_u \times \mathbf{r}_t) \right| = 16\sqrt{2}u(1 - u^2).
 \]
@@ -3133,7 +3133,7 @@ Se define una parametrización del sólido mediante:
 u\cos v,\
 u\sin v,\
 \sqrt{1 - u^2}(w - 1) - w(u - 1)
-\right\rangle.
+\right\rangle\!.
 \]
 
 Con los parámetros en los siguientes rangos:
@@ -3446,7 +3446,7 @@ El sólido se parametriza mediante una función $\mathbf{r}$, que es combinació
 \[
 \begin{aligned}
 \mathbf{r}(t, u, w) = \left\langle (1 - 2w)(2u - 1)\sqrt{1 - \cos t}, t, 4uw(1 - u) + \right. \\
-\left. (1 - 4wu + 4wu^2) \cos t \right\rangle.
+\left. (1 - 4wu + 4wu^2) \cos t \right\rangle\!.
 \end{aligned}
 \]
 }
@@ -3584,7 +3584,7 @@ $P(2-\sqrt{4-t}, t)$ y $Q(2 + \sqrt{4-t}, t)$, obteniendo $(2+(2u-1)\sqrt{4-t}, 
 
 El sólido se parametriza simplificando una combinación convexa entre dos puntos de la forma
 $(2+(2u-1)\sqrt{4-t},2-\sqrt{4-t},t)$ y $(2+(2u-1)\sqrt{4-t},2+\sqrt{4-t},t)$.
-Por tanto, la parametrización escogida para el sólido es
+Por lo tanto, la parametrización escogida para el sólido es
 ${\bf r}(u,t,w)= \langle 2+(2u-1)\sqrt{4-t},2+(2w-1)\sqrt{4-t},t \rangle, $
 en donde $t\in [0,4]$, $u\in [0,1]$ y $w\in [0,1]$.
 De esta función se obtiene los siguientes vectores:
@@ -3592,7 +3592,7 @@ De esta función se obtiene los siguientes vectores:
 \begin{align*}
 \mathbf{r}_u &= \left\langle 2\sqrt{4-t},0,0 \right\rangle, \\
 \mathbf{r}_w &= \left\langle 0,2\sqrt{4-t},0 \right\rangle, \\
-\mathbf{r}_t &= \left\langle \frac{1-2u}{2\sqrt{4-t}}, \frac{1-2w}{2\sqrt{4-t}},1 \right\rangle.
+\mathbf{r}_t &= \left\langle \frac{1-2u}{2\sqrt{4-t}}, \frac{1-2w}{2\sqrt{4-t}},1 \right\rangle\!.
 \end{align*}
 }
 Entonces, ${\bf r}_w \cdot ({\bf r}_t \times {\bf r}_u)= 4(4-t)$, el volumen del sólido está dado por
@@ -3667,7 +3667,7 @@ El valor obtenido puede ser calculado con el siguiente método.
 La región sobre el plano $xy$ se parametriza uniendo dos puntos, uno sobre el eje $x$ que tiene la forma $(t,0) $ y el otro sobre la curva $y=4-x^2$ que posee la forma $(t,4-t^2)$, con $t\in [-2,2]$.
 Simplificando $( 1-u) ( t,0) +u( t,4-t^2)$ se sigue, por un lado, que $z=2+y/2= 2-2u+\frac{1}{2}ut^2$.
 
-Por tanto, la función ${\bf r}$ es una combinación convexa entre un punto sobre el plano $xy$
+Por lo tanto, la función ${\bf r}$ es una combinación convexa entre un punto sobre el plano $xy$
 y otros sobre el plano $z=2-y/2;$ simplificando
 $(1-w) \langle t,u( 4-t^2),0\rangle +w\langle t,u( 4-t^2) ,2-2u+\frac{1}{2}ut^2\rangle$
 se define
@@ -3749,7 +3749,7 @@ Con el siguiente procedimiento se muestra este cálculo de otra manera.
 
 %\begin{tcolorbox}[title=\bfseries Parametrizando el sólido]
 La proyección en el plano $xz$ se parametriza con $x=t$,
-$z=( 2-t^2) u$, por tanto un punto del sólido en el plano
+$z=( 2-t^2) u$, por lo tanto un punto del sólido en el plano
 $xz$ es de la forma $( t,0,2-t^2) $ y un punto sobre el plano $y=2-z$ es de la forma $( t,2-(2-t^2) u,(2-t^2) u)$.
 Simplificando la expresión $(1-w)\langle t,0,(2-t^2) u\rangle +w\langle t,2-( 2-t^2)u,( 2-t^2) u\rangle$
 se parametriza el sólido, esto es
@@ -4039,7 +4039,7 @@ A partir de esta se pueden obtener
 \mathbf{r}_{t}= \left\langle 1,4v-2vt,4w-2wt\right\rangle \\
 \mathbf{r}_{v}= \left\langle 0,4t-t^2,0\right\rangle \\
 \mathbf{r}_{w}= \left\langle 0,0,t\left( 4-t\right) \right\rangle \\
-\mathbf{r}_{v}\times \mathbf{r}_{w}= \left\langle t^2\left( t-4\right) ^2,0,0\right\rangle.
+\mathbf{r}_{v}\times \mathbf{r}_{w}= \left\langle t^2\left( t-4\right) ^2,0,0\right\rangle\!.
 \end{gather*}
 }
 %
@@ -4120,7 +4120,7 @@ El siguiente procedimiento es una alternativa al cálculo del volumen.
 En el plano $xy$, la base del sólido se parametriza formando una combinación convexa
 $\left( 1-u\right) \left( t,t^2\right) +u\left(t,2\right) = \left( t,2u-t^2u+t^2\right)$,
 entre dos puntos de la forma $\left( t,t^2\right) $ y $\left( t,2\right)$.
-Sobre el plano $z=2-y$ se satisface que $z=(t^2-2)(u-1) $. Por tanto, el sólido se parametriza con una combinación convexa de la forma
+Sobre el plano $z=2-y$ se satisface que $z=(t^2-2)(u-1) $. Por lo tanto, el sólido se parametriza con una combinación convexa de la forma
 \[\left( 1-w\right) \left\langle t,2u-t^2u+t^2,0\right\rangle +w\left\langle t,2u-t^2u+t^2,\left(t^2-2\right) \left( u-1\right) \right\rangle,\]
 que al simplificarse nos permiten definir la función
 \[{\bf r}(t,u,w)=\left\langle t,2u-t^2u+t^2,w\left( t^2-2\right) \left( u-1\right) \right\rangle,\]
@@ -4130,12 +4130,12 @@ Derivando parcialmente se obtienen los siguientes vectores
 \begin{gather*}
 \mathbf{r}_{t} = \left\langle 1,2t-2tu,2tw\left( u-1\right) \right\rangle, \\
 \mathbf{r}_{u}= \left\langle 0,2-t^2,w\left( t^2-2\right)\right\rangle, \\
-\mathbf{r}_{w} =\left\langle 0,0,\left( t^2-2\right) \left( u-1\right)\right\rangle.
+\mathbf{r}_{w} =\left\langle 0,0,\left( t^2-2\right) \left( u-1\right)\right\rangle\!.
 \end{gather*}
 
 De modo que $\left\vert {\bf r}_{w}\cdot \left({\bf r}_{t}\times {\bf r}_{u}\right) \right\vert
 =\left\vert \left( t^2-2\right) ^2\left( 1-u\right)\right\vert $.
-Por tanto, el volumen del sólido está dado por
+Por lo tanto, el volumen del sólido está dado por
 %
 \[\int_{0}^{1}\int_{0}^{1}\int_{-\sqrt{2}}^{\sqrt{2}}\left\vert
 \left( t^2-2\right) ^2\left( 1-u\right) \right\vert dtdudw= \frac{32}{15}\sqrt{2}.\]
@@ -4470,7 +4470,7 @@ Derivando parcialmente, se hallan los siguientes vectores
 \begin{align*}
 \mathbf{r}_t &= \frac{\partial}{\partial t} \left\langle \frac{1}{4}(1 - w) t^4, t + 2u - tu, t^2 \right\rangle = \left\langle (1 - w) t^3, 1 - u, 2t \right\rangle \\
 \mathbf{r}_u &= \frac{\partial}{\partial u} \left\langle \frac{1}{4}(1 - w) t^4, t + 2u - tu, t^2 \right\rangle = \left\langle 0, 2 - t, 0 \right\rangle \\
-\mathbf{r}_w &= \frac{\partial}{\partial w} \left\langle \frac{1}{4}(1 - w) t^4, t + 2u - tu, t^2 \right\rangle = \left\langle -\frac{1}{4}t^4, 0, 0 \right\rangle.
+\mathbf{r}_w &= \frac{\partial}{\partial w} \left\langle \frac{1}{4}(1 - w) t^4, t + 2u - tu, t^2 \right\rangle = \left\langle -\frac{1}{4}t^4, 0, 0 \right\rangle\!.
 \end{align*}
 }
 
@@ -4571,7 +4571,7 @@ El siguiente proceso ofrece otra posibilidad de obtener el mismo valor.
 %\setlength{\abovedisplayskip}{0pt}
 
 En el plano $xy$, un punto $M$ sobre la curva $x=3-2y^2$ tiene la forma $(3-2t^2,t)$ y sobre la recta $x=-1$, un punto $N$
-tiene la forma $(-1,t)$. Por tanto, la proyección del sólido se parametriza mediante una combinación convexa de $M$ y $N$,
+tiene la forma $(-1,t)$. Por lo tanto, la proyección del sólido se parametriza mediante una combinación convexa de $M$ y $N$,
 esto es $(1-u)N+uM=\left( 2u\left( 2-t^2\right) -1,t\right) $, $t \in [-\sqrt{2},\sqrt{2}]$, $u \in [0,1]$.
 
 \begin{figure}[H]
@@ -4589,7 +4589,7 @@ y un punto $Q$ sobre el plano $2z+x=3$, cuya coordenada $z$ satisface
 z = \frac{3 - x}{2} = \frac{3}{2} - \frac{1}{2} \left(2u \left(2 - t^2\right) - 1\right) = u\left(t^2 - 2\right) + 2.
 \]
 %
-Por tanto, $Q$ es de la forma $Q( 2u\left( 2-t^2\right) -1,t,u\left( t^2-2\right)+2)$. Formando una combinación convexa entre $P$ y $Q$, se parametriza el sólido, esto es,
+Por lo tanto, $Q$ es de la forma $Q( 2u\left( 2-t^2\right) -1,t,u\left( t^2-2\right)+2)$. Formando una combinación convexa entre $P$ y $Q$, se parametriza el sólido, esto es,
 %
 \begin{equation*}
 {\bf r}\left( t,u,w\right) = \langle 2u\left( 2-t^2\right)-1,t,t^2\left( 1-w+uw\right) -2w\left( u-1\right) \rangle.
@@ -4599,7 +4599,7 @@ Con esta función hallamos los vectores
 \begin{gather*}
 \mathbf{r}_{t} = \left\langle -4tu,1,2t\left( uw-w+1\right) \right\rangle, \\
 \mathbf{r}_{u} = \left\langle 4-2t^2,0,t^2w-2w\right\rangle, \\
-\mathbf{r}_{w} = \left\langle 0,0,\left( u-1\right) t^2-2u+2\right\rangle.
+\mathbf{r}_{w} = \left\langle 0,0,\left( u-1\right) t^2-2u+2\right\rangle\!.
 \end{gather*}
 
 El elemento diferencial de volumen está dado por
@@ -4729,7 +4729,7 @@ Con lo anterior se obtiene:
 \begin{gather*}
 \mathbf{r}_{u}=\left\langle 1,\frac{w}{2}\frac{2v-1}{\sqrt{1-u}},\frac{1-2v}{2\sqrt{1-u}} \right\rangle, \\
 \mathbf{r}_{v} = \left\langle 0,-2w\sqrt{1-u},2\sqrt{1-u}\right\rangle, \\
-\mathbf{r}_{w} = \left\langle 0,1+\left( 1-2v\right) \sqrt{1-u},0\right\rangle.
+\mathbf{r}_{w} = \left\langle 0,1+\left( 1-2v\right) \sqrt{1-u},0\right\rangle\!.
 \end{gather*}
 
 %
@@ -5034,7 +5034,7 @@ $y=\sqrt{2z^2-32\pm 8\sqrt{16-z^2}}$, entonces tenemos otra forma de hallar el m
 \end{multline*}
 
 Se debe observar que de la expresión $2( x-2) ^2+y^2=8$ se sigue que $x=2\pm \frac{1}{2}\sqrt{16-2y^2}$,
-por tanto, el volumen del sólido esta dado por
+por lo tanto, el volumen del sólido esta dado por
 
 {\small
 \[
@@ -5349,7 +5349,7 @@ parametriza la base del sólido, esto es
 }
 
 La coordenada $z$ de un punto sobre el cilindro $z=4-x^2$ está dada por $z=4-\frac{t^{4}}{16}\left( \left( t^2-4\right) u+2\right) ^2$.
-Por tanto, un punto $Q$ sobre el cilindro es de la forma
+Por lo tanto, un punto $Q$ sobre el cilindro es de la forma
 {\small $Q\left( \frac{1}{4}t^2((t^2-4)u+2),t,4-\frac{t^{4}}{16}\left( \left( t^2-4\right) u+2\right) ^2\right)\!$,}
 con un punto en la base $P\left( \frac{1}{4}t^2\left( \left( t^2-4\right) u+2\right) ,t,0\right)$,
 se forma la combinación convexa $(1-w)P+wQ$ que parametriza el sólido; esto define la siguiente función
@@ -6047,7 +6047,7 @@ También hallamos los vectores
 \begin{eqnarray*}
 {\bf r}_{u} &=& \left\langle \frac{1-v}{2\sqrt{u}}+\frac{1}{3}\frac{v}{\left(\sqrt[3]{u}\right) ^{2}},2wu,1\right\rangle \\
 {\bf r}_{v} &=& \left\langle-\sqrt{u}+\sqrt[3]{u},0,0\right\rangle \\
-{\bf r}_{w} &=& \left\langle 0,u^{2},0\right\rangle.
+{\bf r}_{w} &=& \left\langle 0,u^{2},0\right\rangle\!.
 \end{eqnarray*}
 }
 %
@@ -6191,7 +6191,7 @@ También se puede obtener el volumen usando el siguiente proceso.
 %\begin{tcolorbox}[title=\bfseries Parametrizando el sólido]
 El sólido se proyecta en el plano $xy$ como un círculo unitario; esta región se describe con las ecuaciones $x=u\cos v$, $y=u\sin v$, con $u \in [0,r]$, $v\in [0,2\pi]$.
 Sobre el cilindro $x^2+z^2=r^2$ se satisface que $z =\pm \sqrt{r^2-u^2 \cos ^2v}$.
-Por tanto, el sólido se parametriza mediante una combinación convexa de dos puntos de la forma
+Por lo tanto, el sólido se parametriza mediante una combinación convexa de dos puntos de la forma
 %
 \[P(u \cos (v),u \sin (v),-\sqrt{r^2-u^2 \cos ^2v})\] y \[Q(u \cos (v),u \sin (v),\sqrt{r^2-u^2 \cos ^2v}),\]
 esto es, $(1-w)P+wQ$.
@@ -6566,7 +6566,7 @@ Ahora obtenemos los vectores
 \mathbf{r}_{u} = \left\langle2 \sin ^2\left(\tfrac{t}{2}\right) \cos (t),-\sin(t)(\cos (t)+1),-w \sin^2\left(\tfrac{t}{2}\right) \cos (t) \right\rangle,
 \]
 \[
-\mathbf{r}_{w} = \left\langle 0,0,2-(u+1) \sin ^2\left(\tfrac{t}{2}\right) \cos(t)\right\rangle.
+\mathbf{r}_{w} = \left\langle 0,0,2-(u+1) \sin ^2\left(\tfrac{t}{2}\right) \cos(t)\right\rangle\!.
 \]
 }
 Además,
@@ -6923,7 +6923,7 @@ Esto implica que {\small
 $\left| {\bf r}_t \cdot \left( {\bf r}_{u}\times {\bf r}_{w}\right) \right| =
 \left | \frac{16}{3}u\sin^4\left(\frac{t}{2}\right)(3-2u\sin(t)+u\sin(2t)) \right|$.
 }
-Por tanto, el volumen del sólido está dado por
+Por lo tanto, el volumen del sólido está dado por
 {\small\[\int_{0}^{1}\int_{0}^{1}\int_{0}^{2\pi }\left( \frac{4}{3}u\left( \cos (t) -1\right) ^{2}\left( 2u\sin (t) \left( \cos (t) -1\right) +3\right)\right) dtdudw= 6\pi.\]
 }
 En \verb"Mathematica" el proceso anterior se ejecuta como sigue.
@@ -6952,7 +6952,7 @@ $r=1-\cos (t)$.
 Esta región se presenta en la sección \secref{cilcardiopar}.
 En dos dimensiones, para $t\in [0,2\pi], $ la cardioide se parametriza como
 {\small
-\[\vec{r}(t)=\left\langle (1-\cos(t))\cos(t),(1-\cos(t))\sin(t)\right\rangle.\]
+\[\vec{r}(t)=\left\langle (1-\cos(t))\cos(t),(1-\cos(t))\sin(t)\right\rangle\!.\]
 }
 
 \begin{figure}[H]
@@ -7693,7 +7693,7 @@ Describa y trace un sólido con las siguientes propiedades: cuando es iluminado 
 su sombra es un triángulo isósceles. Presentamos un sólido con estas características.
 
 La proyección en el plano $xy$ corresponde a una círculo, cuya frontera se parametriza en la forma
-$x= \cos(t)$, $y= \sin(t)$ para $t\in [0,2\pi]$. El diámetro en la base es $2$, por tanto consideraremos un segmento paralelo al eje $y$ que sea perpendicular y simétrico al eje $z$. Un punto en la base tendrá la forma $P(\cos(t),\sin(t),0)$, mientras que un punto en la parte superior posee la forma $Q(0,\sin(t),2)$. Formando segmentos rectilíneos entre los puntos anteriores, es decir simplificando $(1-u)P+uQ$,
+$x= \cos(t)$, $y= \sin(t)$ para $t\in [0,2\pi]$. El diámetro en la base es $2$, por lo tanto consideraremos un segmento paralelo al eje $y$ que sea perpendicular y simétrico al eje $z$. Un punto en la base tendrá la forma $P(\cos(t),\sin(t),0)$, mientras que un punto en la parte superior posee la forma $Q(0,\sin(t),2)$. Formando segmentos rectilíneos entre los puntos anteriores, es decir simplificando $(1-u)P+uQ$,
 se obtiene una función que parametriza dicha superficie:
 
 \begin{eqnarray*}
@@ -7760,7 +7760,7 @@ RegionPlot3D[z<(6-2*x^2-y^2)/2&&z>x^2+y^2-3,{x,-2,2},
 % tex-fmt: on
 
 Al despejar $z$ de las dos ecuaciones e igualar estas expresiones se obtiene $4x^{2}+3y^{2}=12$. Esta expresión corresponde a la intersección de las superficies consideradas y representa, en el plano
-$xy$, a una elipse alargada en sentido de las $y$ centrada en el origen. Por tanto, el volumen del sólido está dado por
+$xy$, a una elipse alargada en sentido de las $y$ centrada en el origen. Por lo tanto, el volumen del sólido está dado por
 {\small
 \begin{equation} \label{ejercicio1}
 \bigintss_{-\sqrt{3}}^{\sqrt{3}}\bigintss_{-\frac{2}{\sqrt{3}}\sqrt{3-x^{2}}}^{\frac{2}{\sqrt{3}}\sqrt{3-x^{2}}}\bigintss_{x^{2}+y^{2}-3}^{3-x^{2}-\frac{1}{2}y^{2}}dzdydx= 6\sqrt{3}\pi .
@@ -7791,7 +7791,7 @@ Con esta función hallamos los siguientes vectores
 {\bf r}_{u} &=& \left\langle \sqrt{3}\cos \theta ,2\sin \theta ,12uw-u\cos 2\theta -5u\right\rangle \\
 {\bf r}_{w} &=& \left\langle 0,0,6u^{2}-6\right\rangle \\
 {\bf r}_{\theta }\times {\bf r}_{u}&=& \left\langle 12u^{2}\left( 2w-1\right)
-\cos \theta ,4\sqrt{3}u^{2}\left( 3w-1\right) \sin \theta ,-2\sqrt{3}u \right\rangle.
+\cos \theta ,4\sqrt{3}u^{2}\left( 3w-1\right) \sin \theta ,-2\sqrt{3}u \right\rangle\!.
 \end{eqnarray*}
 
 El elemento diferencial de volumen es $\left\vert {\bf r}_{w}\cdot \left({\bf r}_{\theta}\times {\bf r}_{u}\right) \right\vert= 12\sqrt{3}u\left( 1-u^{2}\right) $, cuya integración con los límites establecidos nos proporciona el volumen del sólido $$\int_{0}^{1}\int_{0}^{1}\int_{0}^{2\pi }12\sqrt{3}u\left( 1-u^{2}\right)
@@ -7917,7 +7917,7 @@ con esta se hallan los siguientes vectores
 {\bf r}_{\theta } &=& \left\langle -2u\sin \theta ,2u\cos \theta ,0\right\rangle \\
 {\bf r}_{u} &=& \left\langle 2\cos \theta ,2\sin \theta ,\frac{4u\left( 2w-1\right) }{\sqrt{9-4u^{2}}}%
 \right\rangle \\
-{\bf r}_{w}&=& \left\langle 0,0,-2\sqrt{9-4u^{2}}\right\rangle.
+{\bf r}_{w}&=& \left\langle 0,0,-2\sqrt{9-4u^{2}}\right\rangle\!.
 \end{eqnarray*}
 El elemento diferencial de volumen es
 %
@@ -7984,7 +7984,7 @@ RegionPlot3D[x^2+y^2<3-z&&x^2-y^2<3*z+6,{x,-2,2},
 % tex-fmt: on
 
 La intersección de estas dos superficies se obtiene al igualar las expresiones para $z$, esto es, $$3-x^{2}-y^{2}=\frac{x^{2}-y^{2}-6}{3},$$
-la cual se simplifica como $4x^2+2y^2=15$. Esta ecuación corresponde a una elipse en el plano $xy$ centrada en el origen y alargada en sentido de las $y$. Por tanto, el volumen del sólido está dado por
+la cual se simplifica como $4x^2+2y^2=15$. Esta ecuación corresponde a una elipse en el plano $xy$ centrada en el origen y alargada en sentido de las $y$. Por lo tanto, el volumen del sólido está dado por
 
 {\small
 \begin{equation} \label{ejercicio4}
@@ -8016,7 +8016,7 @@ Con estas expresiones tendremos dos puntos de la forma
 Una combinación convexa de ellos, $(1-w)P+wQ$, determina una parametrización del sólido
 %
 {\small
-\[{\bf r}(u,\theta,w) = \left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,5w\left( u^{2}-1\right) +\frac{15}{8}u^{2}\left(\cos2v-3\right) +3 \right\rangle.\]
+\[{\bf r}(u,\theta,w) = \left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,5w\left( u^{2}-1\right) +\frac{15}{8}u^{2}\left(\cos2v-3\right) +3 \right\rangle\!.\]
 }
 
 De esta función se obtienen los siguientes vectores:
@@ -8026,7 +8026,7 @@ De esta función se obtienen los siguientes vectores:
   \sqrt{2}\sqrt{15}u\cos \theta ,-\frac{15}{4}u^{2}\sin 2\theta \right\rangle \\
   {\bf r}_{u} &= \left\langle \frac{1}{2}\sqrt{15}\cos \theta ,\frac{1}{2}\sqrt{2} \sqrt{15}\sin \theta ,\frac{15}{4}u\left( \cos 2\theta -3\right) +10uw \right\rangle \\
   {\bf r}_{w} &= \left\langle 0,0,5u^{2}-5\right\rangle \\
-  {\bf r}_{\theta }\times {\bf r}_{u} &= \left\langle \frac{5\sqrt{30}}{4} u^{2} (4w-3) \cos \theta ,\frac{5\sqrt{15}}{2}u^{2}(2w-3) \sin \theta ,-\frac{15\sqrt{2}}{4}u \right\rangle.
+  {\bf r}_{\theta }\times {\bf r}_{u} &= \left\langle \frac{5\sqrt{30}}{4} u^{2} (4w-3) \cos \theta ,\frac{5\sqrt{15}}{2}u^{2}(2w-3) \sin \theta ,-\frac{15\sqrt{2}}{4}u \right\rangle\!.
 \end{align*}
 }
 
@@ -8070,7 +8070,7 @@ En coordenadas esféricas el volumen del sólido está dado por
 
 Sustituyendo $\rho =1+\cos \phi$, en las fórmulas que definen las coordenadas esféricas, se obtienen las siguientes expresiones:
 $x=u\left( 1+\cos \phi \right) \sin \phi \sin \theta $, $y=u\left( 1+\cos \phi \right) \sin \phi \cos \theta $,  $z=u\left( 1+\cos \phi \right) \cos \phi $.
-Por tanto, se define la función
+Por lo tanto, se define la función
 %
 $${\bf r}(u,\theta,\phi)=(1+\cos \phi) \left\langle u \sin
 \phi \cos \theta ,u\sin \phi \sin \theta ,u \cos \phi \right\rangle $$
@@ -8118,7 +8118,7 @@ Mesh->False,BoxRatios->{1,1,1}]
 \end{tcolorbox}
 % tex-fmt: on
 
-  La intersección de las dos superficies está dada por la expresión $x^{2}+z^{2}=\frac{9}{2}$. Además, sobre el sólido $y$ recorre los puntos que van desde el semicono hasta la esfera. Por tanto, el volumen se determina evaluando la siguiente integral:
+  La intersección de las dos superficies está dada por la expresión $x^{2}+z^{2}=\frac{9}{2}$. Además, sobre el sólido $y$ recorre los puntos que van desde el semicono hasta la esfera. Por lo tanto, el volumen se determina evaluando la siguiente integral:
   $$\bigintsss_{-\frac{3}{\sqrt{2}}}^{\frac{3}{\sqrt{2}}}\bigintsss_{-\sqrt{\frac{9}{2}-x^{2}}}^{\sqrt{\frac{9}{2}-x^{2}}}\bigintsss_{\sqrt{x^{2}+z^{2}}}^{\sqrt{9-x^{2}-z^{2}}}dydzdx = 9 (2-\sqrt{2}) \pi.$$
   %
 
@@ -8238,7 +8238,7 @@ BoxRatios->{1,1,1}]
 % tex-fmt: on
 
 Eliminando $x^2+z^2$ de las dos ecuaciones, obtenemos que $y^{2}+4y=12$, cuya solución es $y=2$ y $y=-6;$ por la ubicación de la región en el espacio consideramos el caso $y=2$. Esto implica que en el plano $xz$, la proyección del sólido está determinada por la ecuación $x^{2}+z^{2}=8;$ esto corresponde a un círculo
-centrado en el origen de radio $4$. Por tanto, utilizando coordenadas rectangulares e integrando primero con respecto a $y$, la integral que determina el volumen es
+centrado en el origen de radio $4$. Por lo tanto, utilizando coordenadas rectangulares e integrando primero con respecto a $y$, la integral que determina el volumen es
 
 $$\int _{-\sqrt{8}}^{\sqrt{8}}\int _{-\sqrt{8-x^2}}^{\sqrt{8-x^2}}\int _{\frac{1}{4}
 \left(x^2+y^2\right)}^{\sqrt{12-x^2-y^2}}dzdydx= \frac{8}{3}\pi(6\sqrt{3}-5)$$
@@ -8276,7 +8276,7 @@ con $u \in [0,1]$, $v \in [0,2\pi]$, $w \in [0,1]$. De aquí se obtienen los sig
   \begin{eqnarray*}
     {\bf r}_{u} &=& \left\langle 2\sqrt{2}\cos v,4u-4uw-\frac{4uw}{\sqrt{3-2u^{2}}},2\sqrt{2}\sin v \right\rangle  \\
     {\bf r}_{v} &=& \left\langle  -2\sqrt{2}u\sin v,0,2\sqrt{2}u\cos v\right\rangle  \\
-    {\bf r}_{w} &=& \left\langle  0,2\sqrt{3-2u^{2}}-2u^{2},0\right\rangle.
+    {\bf r}_{w} &=& \left\langle  0,2\sqrt{3-2u^{2}}-2u^{2},0\right\rangle\!.
   \end{eqnarray*}
 }
 %
@@ -8311,7 +8311,7 @@ Mesh->False]
 
 Estas superficies se intersectan en una región del plano $yz$
 determinada por la ecuación $y^{2}+z^{2}=4$.
-Se debe tener presente que $x$ recorre los puntos desde el semicono hasta el paraboloide. También se presenta la integral correspondiente al cambio a coordenadas cilíndricas; por tanto,
+Se debe tener presente que $x$ recorre los puntos desde el semicono hasta el paraboloide. También se presenta la integral correspondiente al cambio a coordenadas cilíndricas; por lo tanto,
 el volumen del sólido está dado por
 %
 
@@ -8379,7 +8379,7 @@ Derivando parcialmente hallamos los siguientes vectores
     {\bf r}_{u} &=&\left\langle \frac{1}{12}u+\frac{3}{4}u\cos 2v+\frac{20}{3}uw,\frac{1}{2}\sqrt{15}\cos v,\sqrt{3}\sin v\right\rangle\\
     {\bf r}_{v}&=&\left\langle -\frac{3}{4}u^{2}\sin 2v,-\frac{1}{2}\sqrt{15}u\sin v,\sqrt{3}u\cos v\right\rangle  \\
     {\bf r}_{w}&=&\left\langle \frac{10}{3}u^{2}-\frac{10}{3},0,0\right\rangle  \\
-    {\bf r}_{w}\times {\bf r}_{u}&=& \frac{10}{3} \left\langle 0,-\sqrt{3}\left( u^{2}-1\right) \sin v,\frac{1}{2}\sqrt{15}\left( u^{2}-1\right) \cos v \right\rangle.
+    {\bf r}_{w}\times {\bf r}_{u}&=& \frac{10}{3} \left\langle 0,-\sqrt{3}\left( u^{2}-1\right) \sin v,\frac{1}{2}\sqrt{15}\left( u^{2}-1\right) \cos v \right\rangle\!.
   \end{eqnarray*}
 }
 

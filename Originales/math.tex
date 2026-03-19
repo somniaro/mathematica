@@ -4,7 +4,7 @@ En este capítulo presentamos algunas de las funciones y comandos
 básicos que se utilizan en el programa \verb"Wolfram Mathematica", que denominaremos simplemente
 como \verb"Mathematica". Es de anotar que toda instrucción hecha en este programa se debe \emph{ejecutar} para obtener el producto señalado. En la versión \verb"13", bajo el sistema operativo \verb"Windows 10" esto se consigue con \verb"shift+enter" o \verb"enter" con el teclado numérico.
 
-En general la sintaxis de las funciones inician con letra mayúscula
+En general, la sintaxis de las funciones inician con letra mayúscula
 y en algunos casos llevan otras letras intermedias también en mayúscula. Los argumentos de cada función se insertan entre
 corchetes \verb"[...]", los paréntesis \verb"(...)" se usan para agrupar y las llaves \verb"{...}" se utilizan para insertar \emph{listas}.
 
@@ -17,18 +17,20 @@ Las operaciones básicas: adición, sustracción, producto y cociente, entre dos
 Algunas de las constante más utilizadas son: \verb"Pi", $\pi$; \verb"E", $e \approx 2.71828$;
 \verb"I", la unidad imaginaria $i$, $i^{2}= -1;$ \verb"Infinity", $\infty$.
 
-Las funciones trigonométricas\footnote{Con argumento en radianes} se denotan como
+Las funciones trigonométricas\footnote{Con argumento en radianes.} se denotan como
 {\small
   \verb"Sin[x]," \verb"Cos[x]," \verb"Tan[x]," \verb"Cot[x],"
   \verb"Sec[x]," \verb"Csc[x]"
 }
 y sus respectivas funciones inversas
 {\small
-  \verb"ArcSin[x]," \verb"ArcCos[x]," \verb"ArcTan[x]", \verb"ArcCot[x]," \verb"ArcSec[x]," \verb"ArcCsc[x]".
-}
+  \verb"ArcSin[x]," \verb"ArcCos[x],"
+  \verb"ArcTan[x]," \verb"ArcCot[x],"
+  \verb"ArcSec[x]," \verb"ArcCsc[x]"
+}.
 
 Para un punto $(x,y) \in \mathbb{R}^2$ se puede usar  \verb"ArcTan[x,y]", esta función posee como dominio a $[-\pi,\pi]$.
-Análogamente se escriben las funciones hiperbólicas y sus inversas \verb"Sinh[y]",  \verb"Cosh[y]", \verb"Tanh[y]", \verb"ArcSinh[y]", \verb"ArcCosh[y]," \verb"ArcTanh[y]", etc.
+Análogamente se escriben las funciones hiperbólicas y sus inversas \verb"Sinh[y]",  \verb"Cosh[y]", \verb"Tanh[y]", \verb"ArcSinh[y]", \verb"ArcCosh[y]", \verb"ArcTanh[y]", etc.
 
 Existen tres tipos de igualdad, para asignación: \verb"x=2";
 prueba lógica: \verb"2+2==4", usada en ecuaciones y como una manera de probar dos expresiones son \emph{lo mismo},
@@ -123,7 +125,7 @@ Ilustremos esto con dos ejemplos sencillos.
 
     \subsection{Vectores y funciones vectoriales}
     El vector ${\bf u}= \langle a,b,c \rangle$ se define en \verb"Mathematica" como una lista \verb"u={a,b,c}".
-    El producto punto, el producto cruz y la norma de los vectores ${\bf u}$ y ${\bf v}$ se determina como sigue
+    El producto punto, el producto cruz y la norma de los vectores ${\bf u}$ y ${\bf v}$ se determina como sigue.
     \begin{tcolorbox}[title=Vectores]
       \verb"Dot[u,v]" \hskip1.75cm \verb"Cross[u,v]" \hskip1.75cm \verb"Norm[u]"
     \end{tcolorbox}
@@ -134,17 +136,16 @@ Ilustremos esto con dos ejemplos sencillos.
     \end{tcolorbox}
     La instrucción  \verb"r={Cos[t],Sin[t],Cos[2*t]}" define una función vectorial que se denomina \verb"r".
     Para extraer cada una de las tres componentes,
-    se debe usar, según el caso, las siguientes instrucciones
+    se debe usar, según el caso, las siguientes instrucciones:
 
     %\verb"r[[1]]" \\ \verb"r[[2]]" \\ \verb"r[[3]]"
     \begin{center}
       \verb"r[[1]]" \hspace{3cm} \verb"r[[2]]" \hspace{3cm} \verb"r[[3]]"
     \end{center}
 
-    Se pueden hacer algunos procedimientos asumiendo ciertas condiciones. Las funciones
-    \verb"Assuming" y \verb"Assumptions", permiten este tratamiento.
-    \index{Assumptions} \index{Assuming}
-    En los siguientes ejemplos se evidencia la diferencia de usar estas posibilidades.
+    \textls[-10]{Se pueden hacer algunos procedimientos asumiendo ciertas condiciones. Las funciones
+      \verb"Assuming"\index{Assuming} y \verb"Assumptions"\index{Assumptions}, permiten este tratamiento.
+    En los siguientes ejemplos se evidencia la diferencia de usar estas posibilidades.}
 
     \begin{tcolorbox}[title=Usos de \verb"Assuming" y \verb"Assumptions"]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -212,9 +213,9 @@ Limit[Sin[x^2+y^2]/(x^2+y^2),{x,y}->{0,0}]
     incorrecto de esta sintaxis puede llevar a conclusiones arroneas.
     Por eso es importante usar la indicación adecuada. Ilustraremos esta situación.
     \begin{itemize}
-      \item Correcta \verb"Limit[n/(n+m),{n,m}->{Infinity,Infinity}]"
-      \item Incorrecta \verb"Limit[Limit[n/(n+m),m->Infinity],n->Infinity]"
-      \item Incorrecta \verb"Limit[Limit[n/(n+m),n->Infinity],m->Infinity]"
+      \item Correcta {\small \verb"Limit[n/(n+m),{n,m}->{Infinity,Infinity}]"}
+      \item Incorrecta {\small \verb"Limit[Limit[n/(n+m),m->Infinity],n->Infinity]"}
+      \item Incorrecta {\small \verb"Limit[Limit[n/(n+m),n->Infinity],m->Infinity]"}
     \end{itemize}
 
     \subsection{Operadores básicos}
@@ -1095,7 +1096,7 @@ Integrate[f[x,y],{x,a,b},{y,c,d}]
 Integrate[x*y^2,{x,0,2},{y,-x,x^2}]
 \end{Verbatim}
         \end{tcolorbox}
-      \item La siguiente integral se evalúa numéricamente
+      \item La siguiente integral se evalúa numéricamente:
         $$\ds \int_0^2 \int_{\sqrt{y}}^{2-y} 30x^2 dxdy,$$ %se puede usar la siguiente instrucción:
         \begin{tcolorbox}
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -1112,7 +1113,7 @@ Integrate[Exp[-x^2-y^2],{x,-Infinity,Infinity},
         \end{tcolorbox}
       \end{parrafonumerado}
 
-      La integral triple $$\int_a^b \int_c^d \int_e^s f(x,y,z)\, dzdydx,$$
+      La integral triple $$\int_a^b \int_c^d \int_e^s f(x,y,z)\, dzdydx$$
       se puede evaluar mediante esta instrucción:
       \begin{tcolorbox}[title=Integrales triples]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -1172,9 +1173,10 @@ Integrate[\[Rho]^3*Cos[\[Theta]]*Sin[\[Phi]],
       aparecen algunas derivadas parciales de una función que depende de más de una variable.
       El \emph{orden} de la ecuación diferencial corresponde al orden de la mayor derivada involucrada.
       Una \emph{solución} de la ecuación diferencial es una función definida en un conjunto abierto $I$, tal que para todo $x\in I$ sus derivadas existen y al reemplazarse en la ecuación diferencial la expresión es una identidad.
+
       Una introducción a las ecuaciones diferenciales puede consultarse en \textcite{apostol_calculus_1999}.
-      \index{Ecuaciones diferenciales} \index{DSolve}
-      El comando \verb"DSolve" resuelve una o varias ecuaciones diferenciales ordinarias o parciales.
+      \index{Ecuaciones diferenciales}
+      El comando \verb"DSolve" \index{DSolve} resuelve una o varias ecuaciones diferenciales ordinarias o parciales.
       La ecuación diferencial $y'(x)=f(x)$ se resuelve en \verb"Mathematica" mediante la ejecución de la siguiente instrucción
       \verb"DSolve[y'[x]==f[x],y[x],x]". Según el caso, se debe usar agregar como una lista de ecuaciones o una ecuación con sus respectivas condiciones.
 
@@ -1249,10 +1251,9 @@ Div[F[x,y,z],{x,y,z}]
     ${\bf F}(x,y)$, para $x \in [a,b]$, $y\in [c,d]$.
     La sintaxis que se debe usar para obtener una representación del campo vectorial ${\bf F}(x,y,z)$ es
     \verb"VectorPlot3D[F[x,y,z],{x,a,b},{y,c,d},{z,p,q}]". \index{VectorPlot3D}
-    El campo vectorial ${\bf F}(x,y)= \la \frac{-x-y}{\sqrt{x^2+y^2}}, \frac{x-y}{\sqrt{x^2+y^2}} \ra$,
-    se representa para $x \in [-1,1]$, $y \in [-1,1]$. También se presentan algunas \emph{líneas de flujo}\footnote{Para un campo vectorial ${\bf F}$, una línea de flujo para ${\bf F}$ es una curva ${\bf r}(t)$ tal que
-      ${\bf r}^\prime(t) = {\bf F}({\bf r}(t))$. Esto es,
-    ${\bf F}$ corresponde al campo de velocidades de la curva ${\bf r}(t)$}, esto se logra
+    El campo vectorial ${\bf F}(x,y)= \la \frac{-x-y}{\sqrt{x^2+y^2}}, \frac{x-y}{\sqrt{x^2+y^2}} \ra$
+    se representa para $x \in [-1,1]$, $y \in [-1,1]$. También se presentan algunas \emph{líneas de flujo}\footnote{Para un campo vectorial ${\bf F}$, una línea de flujo para ${\bf F}$ es una curva ${\bf r}(t)$ tal que ${\bf r}^\prime(t) = {\bf F}({\bf r}(t))$. Esto es,
+    ${\bf F}$ corresponde al campo de velocidades de la curva ${\bf r}(t)$.}, esto se logra
     utilizando la función \verb"StreamPlot".  \index{StreamPlot} \index{StreamStyle}\index{StreamScale}
 
     \begin{figure}[H]
@@ -1323,13 +1324,10 @@ VectorPoints->16,PlotStyle->Orange]
 
     \begin{tcolorbox}[title=Instrucciones en Mathematica]
 \begin{Verbatim}[formatcom=\letraverbatim]
-SliceVectorPlot3D[{-y,x,z/2},{4*z==4-x^2-y^2},
-{x,-2,2},
+SliceVectorPlot3D[{-y,x,z/2},{4*z==4-x^2-y^2},{x,-2,2},
 {y,-2,2},{z,0,1.1},RegionFunction->Function[{x,y,z},
-x^2+y^2<=4],
-VectorScale->{0.15,Scaled[0.25],Automatic},
-VectorStyle->Black,VectorPoints->16,
-PlotStyle->Orange,
+x^2+y^2<=4],VectorScale->{0.15,Scaled[0.25],Automatic},
+VectorStyle->Black,VectorPoints->16,PlotStyle->Orange,
 Ticks->{{-2,-1,0,1,2},{-2,-1,0,1,2},{0,1}}]
 \end{Verbatim}
     \end{tcolorbox}
@@ -1403,17 +1401,16 @@ VectorPoints->12,DataRange->{{-2,2},{-2,2},
 
     %\clearpage
     \begin{ejemplo}
-      El campo vectorial
-      {\small ${\bf F}(x,y,z) = \left\langle y^{3}e^{-z},3xy^{2}e^{-z},3z^{2}-xy^{3}e^{-z}\right\rangle$,}
+      \textls[-20]{El campo vectorial {\small ${\bf F}(x,y,z) = \left\langle y^{3}e^{-z},3xy^{2}e^{-z},3z^{2}-xy^{3}e^{-z}\right\rangle$}}
       es conservativo. Las funciones $P$, $Q$ y $R$ son respectivamente las funciones componentes de ${\bf F}$.
       Para hallar la función potencial \index{Función!potencial} proceder como sigue,
-      se integra $P$ con respecto a $x$, esto es
+      se integra $P$ con respecto a $x$, esto es:
       $$\phi (x,y,z) = \int \left( y^{3}e^{-z}\right)
-      dx= xy^{3}e^{-z}+g\left( y,z\right) $$
+      dx= xy^{3}e^{-z}+g\left( y,z\right)\!.$$
       Ahora se compara $\frac{\partial \phi }{\partial y}$ con $Q\left(x,y,z\right) $, esto es
       $\frac{\partial \phi }{\partial y}= 3xy^{2}e^{-z}+\frac{\partial g}{\partial y}=3xy^{2}e^{-z}$, entonces
       $\frac{\partial g}{\partial y}=0$, es decir, $g$ no depende de $y$, por lo tanto,
-      $$\phi (x,y,z) = xy^{3}e^{-z}+g\left(z\right) .$$
+      $$\phi (x,y,z) = xy^{3}e^{-z}+g\left(z\right)\!.$$
       Luego se compara $\frac{\partial \phi }{\partial z}$ con
       $R(x,y,z)$, esto es $\frac{\partial \phi }{\partial z}= -xy^{3}e^{-z}+g^{\prime}(z) = 3z^{2}-xy^{3}e^{-z}$
       entonces $g^{\prime}\left( z\right) =3z^{2}$, de lo cual se sigue que $g\left( z\right) =z^{3}+c$. Por lo tanto,

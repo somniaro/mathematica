@@ -42,19 +42,18 @@
 %\usepackage{subfiles}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CORNISAS Y ESTILO DE PÁGINA (PRIORIDAD DE LA PLANTILLA)
+%%% CORNISAS Y ESTILO DE PÁGINA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[bottom]{footmisc}
 \usepackage{emptypage}
 
-%Esto asegura que la página izquierda de un capítulo nuevo esté vacía (sin cornisas)
+% Esto asegura que la página izquierda de un capítulo nuevo esté vacía (sin cornisas)
 \renewcommand{\cleardoublepage}{%
   \clearpage\ifodd\value{page}\else\hbox{}\thispagestyle{empty}\newpage\fi%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% PAQUETES FUNCIONALES Y DE CONTENIDO (MANTENIDOS)
+%%% PAQUETES FUNCIONALES Y DE CONTENIDO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % PAQUETES DE MATEMÁTICAS Y FÍSICA

@@ -187,18 +187,15 @@
 \setlength{\floatsep}{20pt plus 10pt minus 5pt} % Entre dos figuras
 
 %footnote format
+\usepackage[bottom]{footmisc}
+\setlength{\skip\footins}{40pt plus 5pt minus 5pt}
+
 \makeatletter
 \renewcommand{\@makefntext}[1]{%
-\begin{list}{}{%
-\setlength{\labelwidth}{1.5em}%
-\setlength{\leftmargin}{\labelwidth}%
-\setlength{\labelsep}{3pt}%
-\setlength{\itemsep}{0pt}%
-\setlength{\partopsep}{0pt}%
-\setlength{\topsep}{0pt}%
-\footnotesize}%
-\item[\@makefnmark\hfil]#1%
-\end{list}%
+\footnotesize
+\noindent
+\hangindent=1.5em\hangafter=1
+\hspace{2pt}\makebox[1.2em][l]{\@makefnmark}#1%
 }
 \makeatother
 
