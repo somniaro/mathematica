@@ -114,7 +114,7 @@ para un campo escalar $\phi$ con dominio $D \subseteq \mathbb{R}^3$ y $C$ una cu
 $D$ que se parametriza mediante una función vectorial continua ${\bf r} : [a, b]\to D$. Para calcular la circulación del campo vectorial ${\bf F}=\nabla \phi$ a lo largo de $C$, se sigue que
 \begin{eqnarray*}
 \int_{C}F\cdot d{\bf r}&=&\int_{C}\nabla\phi\cdot dr=\int_{a}^{b}\nabla \phi\left({\bf r}(t)\right)\cdot {\bf r}^{\prime}(t) dt\\
-&=& \int_{a}^{b} \frac{d}{dt} \left(\phi \left({\bf r}(t)\right) \right) dt= \phi \left({\bf r}(b)\right) -\phi\left({\bf r}\left( a\right) \right).
+&=& \int_{a}^{b} \frac{d}{dt} \left(\phi \left({\bf r}(t)\right) \right) dt= \phi \left({\bf r}(b)\right) -\phi\left({\bf r}\left( a\right) \right)\!.
 \end{eqnarray*}
 Por tanto, si ${\bf F}$ es un campo gradiente, entonces la circulación de ${\bf F}$ a lo largo de toda curva dentro del dominio de ${\bf F}$ solo depende de los puntos extremos de dicha curva.
 
@@ -283,7 +283,7 @@ Es por esto que la razón de circulación alrededor del rectángulo $R$ es
 
 Al dividir  el área de $R$ se obtiene una estimación de la razón de circulación por unidad de área o densidad rotacional para el rectángulo
 
-\[\frac{\left( \frac{\partial Q}{\partial x}(x^{\ast },y) \Delta x\right) \Delta y-\left( \frac{\partial P}{\partial y}\left( x,y^{\ast}\right) \Delta y\right) \Delta x}{\Delta x\Delta y}=\frac{\partial Q}{\partial x}(x^{\ast },y) -\frac{\partial P}{\partial y}\left(x,y^{\ast }\right). \]
+\[\frac{\left( \frac{\partial Q}{\partial x}(x^{\ast },y) \Delta x\right) \Delta y-\left( \frac{\partial P}{\partial y}\left( x,y^{\ast}\right) \Delta y\right) \Delta x}{\Delta x\Delta y}=\frac{\partial Q}{\partial x}(x^{\ast },y) -\frac{\partial P}{\partial y}\left(x,y^{\ast }\right)\!. \]
 
 Lo anterior motiva la siguiente definición.
 
@@ -794,7 +794,7 @@ ${\rm rot}\,{\bf F}=\nabla \times \left\langle -y,y-z,-x\right\rangle =
 \left\langle 1,1,1\right\rangle $
 y
 \begin{eqnarray*}
-{\bf F}({\bf u}(\theta,\phi))\cdot ({\bf u}_{\theta }\times {\bf u}_{\phi }) &=& -\sin 4\phi -2\left( \cos \theta +\sin \theta \right) \sin^{2}\left( 2\phi \right).
+{\bf F}({\bf u}(\theta,\phi))\cdot ({\bf u}_{\theta }\times {\bf u}_{\phi }) &=& -\sin 4\phi -2\left( \cos \theta +\sin \theta \right) \sin^{2}\left( 2\phi \right)\!.
 \end{eqnarray*}
 Con lo anterior, podemos evaluar la integral
 
@@ -1655,7 +1655,7 @@ Además,
 \begin{multline*}
 {\bf F}\left({\bf r}(u,v) \right) \cdot \left( {\bf r}_{v}\times {\bf r}_{u}\right) =
 \frac{16}{3}\sqrt{3}u^{4}\sin v\cos ^{2}v+ \\
-\left( \frac{16}{27}\sqrt{3}u^{2}\cos v - \frac{4}{9}\sqrt{3}u\sin v \left( \frac{8}{9}u-\frac{16}{9}\sqrt{3}u^{2}\sin v\right) \right) \left( \sqrt{3}u\sin v+3-3u^{2}\right).
+\left( \frac{16}{27}\sqrt{3}u^{2}\cos v - \frac{4}{9}\sqrt{3}u\sin v \left( \frac{8}{9}u-\frac{16}{9}\sqrt{3}u^{2}\sin v\right) \right) \left( \sqrt{3}u\sin v+3-3u^{2}\right)\!.
 \end{multline*}
 }
 
@@ -2076,7 +2076,7 @@ Estas curvas se muestran a continuación:
 Para abreviar la escritura, usaremos las siguientes constantes:
 {\small
 \[a= \arccos \left( \frac{2}{\sqrt{5}}\right),\,\, b=\pi -\arccos \left( \frac{2}{\sqrt{5}}\right)\]
-\[c= -{\rm arccosh}\left( \frac{2\sqrt{2}}{\sqrt{7}}\right) ,\, d={\rm arccosh}\left( \frac{2\sqrt{2}}{\sqrt{7}}\right).\]}
+\[c= -{\rm arccosh}\left( \frac{2\sqrt{2}}{\sqrt{7}}\right) ,\, d={\rm arccosh}\left( \frac{2\sqrt{2}}{\sqrt{7}}\right)\!.\]}
 
 Al redefinir las funciones que describen las curvas en mención con el sentido deseado y unificar el intervalo de definición a $t \in [0,1]$,
 
@@ -2212,7 +2212,7 @@ Derivando parcialmente se obtienen los siguientes vectores;
 {\bf r}_{u}\times {\bf r}_{v}&=&\left\langle \frac{15}{4}\sqrt{2}\sqrt{15}u^{2}\cos v,\frac{15}{2}\sqrt{15}u^{2}\sin v,\frac{15}{4}\sqrt{2}u\right\rangle;
 \end{eqnarray*}
 entonces,
-\[{\bf F}\left({\bf r}\left(u,v\right) \right) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) =\frac{225\sqrt{2}}{32}u\left( u^{2}+\frac{24}{5}+5u^{2}\cos 2v\right).\]
+\[{\bf F}\left({\bf r}\left(u,v\right) \right) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) =\frac{225\sqrt{2}}{32}u\left( u^{2}+\frac{24}{5}+5u^{2}\cos 2v\right)\!.\]
 Por lo expuesto antes, el flujo sobre esta región está dado por
 \begin{equation}\label{flujo5}
 \int_{0}^{1}\int_{0}^{2\pi }\left( \frac{225\sqrt{2}}{32}u\left( u^{2}+ \frac{24}{5}+5u^{2}\cos 2v\right) \right) dvdu= \frac{2385}{64}\sqrt{2}\pi
@@ -2260,7 +2260,7 @@ entonces,
 
 {\small
 \[{\bf F}\left({\bf r}\left( u,v\right) \right) \cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) =
-\frac{75\sqrt{2}}{32}u\left( 5u^{2}+\frac{48}{5}+u^{2}\cos 2v\right).\]}
+\frac{75\sqrt{2}}{32}u\left( 5u^{2}+\frac{48}{5}+u^{2}\cos 2v\right)\!.\]}
 
 Por lo señalado antes, el flujo sobre esta superficie está dado por
 {\small
@@ -2567,7 +2567,7 @@ Por lo tanto,
 
 \[
 \mathbf{F}(\mathbf{r}(\phi,\theta)) \cdot (\mathbf{r}_{u} \times \mathbf{r}_{\phi}) =
-\frac{1}{2}(\cos \phi + 1)^{3} \left( \sin 3\phi - \sin 2\phi + 3\sin \phi \right).
+\frac{1}{2}(\cos \phi + 1)^{3} \left( \sin 3\phi - \sin 2\phi + 3\sin \phi \right)\!.
 \]
 
 Entonces, el flujo de \(\mathbf{F}\) sobre la superficie en mención es:

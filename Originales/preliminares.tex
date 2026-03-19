@@ -752,7 +752,7 @@ Es por lo anterior que el volumen de $E$ se define como
 Si la función $f(x,y)$ determina la densidad en el punto $(x,y)$ entonces la integral de la fórmula (\ref{integralesdobles1})
 representa la masa ($M$) de la región $R$. Los momentos con respecto al eje $x$ y al eje $y$ están dados  por
 {\small $\mu_{x}=\ds \iint_R y f(x,y)dA$} y {\small $\mu_{y}=\ds \iint_R x f(x,y)dA$,} los cuales determinan las coordenadas del
-centro de masa de la región $R$, esto es $$(\overline{x},\overline{y})= \left(\frac{\mu_y}{M},\frac{\mu_x}{M}\right).$$
+centro de masa de la región $R$, esto es $$(\overline{x},\overline{y})= \left(\frac{\mu_y}{M},\frac{\mu_x}{M}\right)\!.$$
 \index{Centro de masa}
 
 Si la región de integración en la fórmula (\ref{integralesdobles1}) es un rectángulo está se evalúa
@@ -815,7 +815,8 @@ por tanto el volumen está dado por {\small $\ds \int_a ^b A(x) dx= \int_a ^b \i
 {\small $\ds \int_c ^d A(y) dy= \int_c ^d \int_a ^b  f(x,y) dx dy$.}
 
 Ejemplo de lo anterior es la siguiente integral
-que representa el volumen del sólido en mención $$\ds \int_0^2\int_0^1 (8+2x-x^3-4y) dydx = \int_0^1 \int_0^2(8+2x-x^3-4y) dxdy.$$
+que representa el volumen del sólido en mención:
+$$\ds \int_0^2\int_0^1 (8+2x-x^3-4y) dydx = \int_0^1 \int_0^2(8+2x-x^3-4y) dxdy.$$
 
 \begin{figure}[H]
 \centering
@@ -895,8 +896,9 @@ De manera similar a como se definió la integral doble, si el l\'{\i}mite de
 las sumas $S_{nml}$ existe para toda elección que se haga de
 $\left(x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right)$, entonces se dice que la
 función $f(x,y,z) $ es integrable sobre la caja rectangular $E$, y este valor se denota por
-$\ds\iiint\limits_{E}f(x,y,z) dV$ o también $\ds \iiint\limits_{E}f(x,y,z) dzdydx$. Lo anterior nos
-motiva a precisar este concepto.
+$\ds\iiint\limits_{E}f(x,y,z) dV$, o también
+$$\ds \iiint\limits_{E}f(x,y,z) dzdydx.$$
+Lo anterior nos motiva a precisar este concepto.
 
 \begin{defi}
 La integral triple de una función continua $f(x,y,z)$
@@ -909,69 +911,43 @@ cuando este l\'{\i}mite existe.
 Ilustremos lo anterior con dos integrales triples.
 \begin{ejemplo}
 Evaluar {\small $\ds \int_{-1}^1\int_0^1\int_0^1  yz^2 e^{x} dzdydx$} mediante sumas de Riemann.
-
+%% TODO: ESPERAR DECISIÓN PARA REVIERTIR ASPECTO DE ESTAS ECUACIONES SI AHCE FALTA
 Al hacer una partición de la región de integración en $nml$ cajas rectangulares se sigue que
 $\Delta x= \frac{2}{n}$ $\Delta y= \frac{1}{m}$ y $\Delta z= \frac{1}{l}$. Además
 $x_i= -1+\frac{2i}{n}$, $y_j=\frac{j}{m}$ y $z_k=\frac{k}{l}$.
-Por lo tanto
+Por lo tanto,
 $$f(x_i,y_j,z_k)\Delta x \Delta y\Delta z=\frac{2 j k^2 e^{\frac{2 i}{n}-1}}{l^3 m^2 n}$$
 Con lo cual
-$$\sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z=\frac{\left(e^2-1\right) (l+1)(2l+1)(m+1)}{6nml^2 \left(1-e^{-2/n}\right)e}$$ entonces
+$$\sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z=\frac{\left(e^2-1\right) (l+1)(2l+1)(m+1)}{6nml^2 \left(1-e^{-2/n}\right)e},$$ entonces,
 \begin{multline*} \int_{-1}^1\int_0^1\int_0^1  yz^2 e^{x} dzdydx= \lim_{n,m,l \to \infty}\sum_{i=1}^n\sum_{j=1}^m\sum_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z \\ =\frac{1}{6} \left(e-\frac{1}{e}\right)
 \end{multline*}
 \end{ejemplo}
 
-\begin{comment}
-Con las siguientes instrucciones se evalúan los cálculos anteriores.
- \begin{Verbatim}[fontsize=\letraverbatim]
-f[x_,y_,z_]:=z^2*y*Exp[x]
-{xi,yj,zk}={-1+2*i/n,j/m,k/l};
-{dx,dy,dz}={2/n,1/m,1/l};
-suma=Sum[f[xi,yj,zk]*dx*dy*dz,{i,1,n},{j,1,m},{k,1,l}]
-Limit[suma,{n,m,l}->{Infinity,Infinity,Infinity}]
-Integrate[f[x,y,z],{x,-1,1},{y,0,1},{z,0,1}]
-\end{Verbatim}
-
-\end{comment}
-
 \begin{ejemplo}
-\begin{sloppypar}
-Para $f(x,y,z)= \cos (x) \sin (y)+z^2 \cos^2 (2 y)$ y $E$ el \mbox{paralelepípedo} determinado por
+Para $f(x,y,z)= \cos (x) \sin (y)+z^2 \cos^2 (2 y)$ y $E$ el paralelepípedo determinado por
 $[-\frac{\pi}{2},\frac{\pi}{2}]\times [0,\frac{\pi}{4}]\times[0,1]$; evaluar
-{\footnotesize $\ds \iiint_Ef(x,y,z) dzdydx$.}
-
+$$\ds \iiint_Ef(x,y,z) dzdydx.$$
 Al hacer una partición de $E$ en $nml$ cajas rectangulares es posible establecer que
-$\Delta x= \frac{\frac{\pi}{2}-\left(\frac{-\pi}{2}\right)}{n}=\frac{\pi}{2n}$
-$\Delta y= \frac{\frac{\pi}{4}-0}{m}=\frac{\pi}{4m}$ y $\Delta z= \frac{1}{l}$. Además
+\begin{equation*}
+\Delta x= \frac{\frac{\pi}{2}-\left(\frac{-\pi}{2}\right)}{n}=\frac{\pi}{2n}\quad
+\Delta y= \frac{\frac{\pi}{4}-0}{m}=\frac{\pi}{4m}\quad \text{y}\quad \Delta z= \frac{1}{l}.
+\end{equation*}
+Además
 $x_i= -\frac{\pi}{2}+\frac{\pi i}{2n}$, $y_j=\frac{\pi j}{4m}$ y $z_k=\frac{k}{l}$.
 Por lo tanto:
-$$f(x_i,y_j,z_k)=\sin\left(\frac{\pi i}{n}\right)\sin\left(\frac{\pi j}{4m}\right)+\frac{k^2}{l^2}\cos^2\left(\frac{\pi j}{2m}\right).$$
+$$f(x_i,y_j,z_k)=\sin\left(\frac{\pi i}{n}\right)\sin\left(\frac{\pi j}{4m}\right)+\frac{k^2}{l^2}\cos^2\left(\frac{\pi j}{2m}\right)\!.$$
 Con lo anterior, se establece que $S_{nml}=\sum\limits_{i=1}^n\sum\limits_{j=1}^m\sum\limits_{k=1}^l f(x_i,y_j,z_k)\Delta x \Delta y\Delta z$, es
-{\small
-$$\frac{\pi ^2}{48 m}\left(\frac{(l+1) (2 l+1) (m-1)}{l^2}+\frac{12 \sin \left(\frac{\pi}{8}\right) \sin \left(\frac{\pi  (m+1)}{8 m}\right) \csc \left(\frac{\pi }{8 m}\right)\cot \left(\frac{\pi }{2 n}\right)}{n}\right).$$
-}
+\begin{gather*}
+\frac{\pi ^2}{48 m}\left(\frac{(l+1) (2 l+1) (m-1)}{l^2}+\frac{12 \sin \left(\frac{\pi}{8}\right) \sin \left(\frac{\pi  (m+1)}{8 m}\right) \csc \left(\frac{\pi }{8 m}\right)\cot \left(\frac{\pi }{2 n}\right)}{n}\right)\!.
+\end{gather*}
 De modo que $\lim_{n,m,l \to \infty}S_{nml}$ es
 \begin{multline*}
-\int _{-\frac{\pi }{2}}^{\frac{\pi }{2}}\int _0^{\frac{\pi }{4}}\int _0^1\left(\cos(x)\sin (y)+z^2 \cos ^2(2 y)\right)dzdydx  =2-\sqrt{2}+\frac{\pi ^2}{24}
+\int _{-\frac{\pi }{2}}^{\frac{\pi }{2}}\int _0^{\frac{\pi }{4}}\int _0^1\left(\cos(x)\sin (y)+z^2 \cos ^2(2 y)\right)dzdydx  =2-\sqrt{2}+\frac{\pi ^2}{24}.
 \end{multline*}
-\end{sloppypar}
 \end{ejemplo}
 
-\begin{comment}
- \begin{Verbatim}[fontsize=\letraverbatim]
-f[x_,y_,z_]:=Cos[x]*Sin[y]+z^2*Cos[2*y]^2
-{xi,yj,zk}={-Pi/2+Pi*i/n,Pi/4*j/m,k/l};
-{dx,dy,dz}={Pi/n,Pi/(4*m),1/l};
-suma=Simplify[
-Sum[f[xi,yj,zk]*dx*dy*dz,{i,1,n},{j,1,m},{k,1,l}]];
-Limit[suma,{n,m,l}->{Infinity,Infinity,Infinity}]
-Integrate[f[x,y,z],{x,-Pi/2,Pi/2},{y,0,Pi/4},{z,0,1}]
-\end{Verbatim}
-\end{comment}
 Utilizando \verb"Mathematica" es posible simplificar y evaluar las integrales anteriores.
 Su uso se explicará en detalle en los próximos capítulos.
-
-%
 
 Para una región acotada sólida $E$ en el espacio, se sigue un proceso análogo al utilizado en las
 integrales dobles. Nótese que $z$ recorre los puntos entre las superficies $z=u_1(x,y)$ y
@@ -994,9 +970,9 @@ En estos apuntes se consideran otras posibilidades e intercambios en el orden de
 
 \subsection{Integrales múltiples sobre regiones parametrizadas}
 
-En \cite{acosta_gempeler_doce_2020}, se considera una función continua $f(x,y,z)$ y una superficie $\sigma$
+En \cite{acosta_gempeler_doce_2020} se considera una función continua $f(x,y,z)$ y una superficie $\sigma$
 parametrizada en la forma ${\bf r}(u,v)= \langle x(u,v), y(u,v), z(u,v) \ra$,
-con $u \in [a,b]$ y $v \in [c,d];$ cuyas funciones componentes poseen derivadas parciales continuas en
+con $u \in [a,b]$ y $v \in [c,d]$, cuyas funciones componentes poseen derivadas parciales continuas en
 $[a,b] \times [c,d]$. Al realizar una partición de $\sigma$ en la forma
 $$\sigma_{ij}= \{ (x(u_i^\ast,v_j^\ast),y(u_i^\ast,v_j^\ast),z(u_i^\ast,v_j^\ast) )\,|\, u_{i-1} \leq u_i^\ast \leq u_{i}, v_{j-1} \leq v_{j}^\ast \leq v_{j}\} ;$$
 considerando el punto $P_{ij}(x(u_i^\ast,v_j^\ast),y(u_i^\ast,v_j^\ast),z(u_i^\ast,v_j^\ast) )$ en cada trozo $\sigma_{ij}$
@@ -1036,8 +1012,8 @@ $[a,b] \times [c,d] \times [p,q]$.
 \end{figure}
 
 Es posible realizar una partición de $E$ en la forma
-\[E_{ijk}= \{ P_{ijk}^\ast\,|\, u_{i-1} \leq u_i^\ast \leq u_{i}, v_{j-1} \leq v_{j}^\ast \leq v_{j}, w_{k-1} \leq w_{k}^\ast \leq w_{k}\};\]
-En donde $P_{ijk}^\ast=(x(u_i^\ast,v_j^\ast,w_k^\ast),y(u_i^\ast,v_j^\ast,w_k^\ast),z(u_i^\ast,v_j^\ast,w_k^\ast) );$
+\[E_{ijk}= \{ P_{ijk}^\ast\,|\, u_{i-1} \leq u_i^\ast \leq u_{i}, v_{j-1} \leq v_{j}^\ast \leq v_{j}, w_{k-1} \leq w_{k}^\ast \leq w_{k}\},\]
+en donde $P_{ijk}^\ast=(x(u_i^\ast,v_j^\ast,w_k^\ast),y(u_i^\ast,v_j^\ast,w_k^\ast),z(u_i^\ast,v_j^\ast,w_k^\ast) );$
 al considerar el punto $P_{ijk}(x(u_i^\ast,v_j^\ast,w_k^\ast),y(u_i^\ast,v_j^\ast,w_k^\ast),z(u_i^\ast,v_j^\ast,w_k^\ast) )$
 en cada trozo $E_{ijk}$ del sólido, se obtiene la suma de Riemann de $f$ sobre el sólido $E$ parametrizado por
 ${\bf r}(u,v,w)$ y con la partición de $E$,
@@ -1062,7 +1038,7 @@ V=\iiint_{E}|{\bf r}_u \cdot ({\bf r}_v \times {\bf r}_w) | dudvdw
 \subsection{Aplicaciones de las integrales triples}
 
 De manera similar al caso bidimensional la masa $M$, de un sólido $E$ con densidad $\rho (x,y,z)$ se determina por
-$$M=\ds \iiint_E \rho (x,y,z) dV$$ y los momentos con respecto a los planos coordenados se determinan por
+$$M=\ds \iiint_E \rho (x,y,z) dV,$$ y los momentos con respecto a los planos coordenados se determinan por
 $$\ds \mu_{xy}=\iiint_E z\rho(x,y,z) dV,\,\,\, \mu_{xz}=\iiint_E y\rho(x,y,z) dV,$$
 $$\ds  \mu_{yz}=\iiint_E x\rho(x,y,z)dV.$$
 De tal forma que el centro de masa de $E$ es
@@ -1076,16 +1052,13 @@ La superficie $S$ correspondiente a la
 función $\phi $ es su imagen $\phi \left( D\right) =S$ se escribe
 $\phi(u,v)=\left\langle x\left( u,v\right) ,y\left( u,v\right),z\left( u,v\right) \right\rangle $.
 La integral de un campo escalar $f$ sobre una superficie $S$,  está dada por
-
 \begin{equation} \label{areasup1}
 \iint_{S}f(x,y,z) dS=\iint_{D}f\left( \phi \left( u,v\right)
 \right) \left\| {\bf T}_{u}\times {\bf T}_{v}\right\| dudv
 \end{equation}
-
 siendo
 $${\bf T}_{u}=\frac{\partial \phi }{\partial u}=\frac{\partial x}{\partial u}\vi+\frac{\partial x}{\partial u}\vj+\frac{\partial x}{\partial u}\vk$$
 y $${\bf T}_{v}=\frac{\partial \phi }{\partial v}=\frac{\partial x}{\partial v}\vi+\frac{\partial x}{\partial v}\vj+\frac{\partial x}{\partial v}\vk.$$
-
 La integración de una campo vectorial ${\bf f}$ sobre $S$, está dada por
 \begin{equation}
 \iint_{S} {\bf f}(x,y,z) \cdot dS=\iint_{D} {\bf f} \left( \phi \left(
@@ -1102,7 +1075,7 @@ Al término $\left\| {\bf T}_{u}\times {\bf T}_{v}\right\|dudv$ lo denominaremos
 
 \subsection{Cambio de variables en integrales dobles} \label{cambioidobles}
 
-Con el propósito de evaluar la integral $\ds \iint\limits_{R}f(x,y) dA$
+Con el propósito de evaluar la integral $$\ds \iint\limits_{R}f(x,y) dA$$
 se hace el cambio $(x,y) ={\bf r}(u,v)$ para transformar la región $R$ en el sistema
 $(x,y) $ en una región $R^{\ast }$ en el sistema coordenado  $(u,v)$.
 Un rectángulo en el sistema $uv$ con lados de longitud $\Delta u$ de largo y $\Delta v$ de ancho se transforma mediante la función ${\bf r}$.
@@ -1111,14 +1084,12 @@ Asumiendo que ${\bf r}$ es diferenciable, si $(u,v) $ son las coordenadas del re
 adyacentes son $( u+\Delta u,v) $ y $(u,v+\Delta v)$; mediante la aplicación ${\bf r}$, el rectángulo
 se transforma en una región cuya área se puede aproximar mediante el área de un paralelogramo. Además,
 aplicando el teorema del valor medio, se sigue que
-
 \begin{eqnarray*}
 {\bf r}(u+\Delta u,v) -{\bf r}(u,v) &=& \frac{{\bf r}( u+\Delta u,v)-{\bf r}(u,v)}{\Delta u}\Delta u
 \approx \frac{\partial {\bf r}}{\partial u}\left( u^{\ast},v\right)\Delta u \\
 {\bf r}(u,v+\Delta v) -{\bf r}(u,v) &=& \frac{{\bf r}(u,v+\Delta v)-{\bf r}(u,v)}{\Delta v}\Delta v
 \approx \frac{\partial{\bf r}}{\partial u}( u,v^{\ast})\Delta v.
 \end{eqnarray*}
-
 El área de esta pequeña región está dada por
 \begin{equation}
 \Delta A=\left\Vert \frac{\partial {\bf r}}{\partial u}\Delta u\times
@@ -1126,7 +1097,7 @@ El área de esta pequeña región está dada por
 \end{equation}
 que se puede abreviar en la forma
 $\Delta A=\left\vert \frac{\partial (x,y)}{\partial (u,v)}\right \vert \Delta u\Delta v$.
-Por simplicidad $x=x(u,v)$ y $y=y(u,v)$, entonces
+Por simplicidad $x=x(u,v)$ y $y=y(u,v)$, entonces:
 \begin{equation}
 \left\vert \frac{\partial (x,y) }{\partial(u,v)}\right\vert =\left\Vert\frac{\partial{\bf r}}{\partial u}\times \frac{\partial{\bf r}}{\partial v}\right\Vert =
 \left\vert
@@ -1134,7 +1105,6 @@ Por simplicidad $x=x(u,v)$ y $y=y(u,v)$, entonces
 \frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
 \end{array} \right\vert
 \end{equation}
-
 En algunos libros como \cite{stewart_calculo_2018}, el término $\left\vert \frac{\partial\left(x,y\right)}{\partial(u,v)}\right\vert$
 se denomina el jacobiano de la transformación ${\bf r}$. \index{Jacobiano}
 Con los elementos anteriores se establece la siguiente igualdad.
@@ -1152,17 +1122,19 @@ Asumiendo que ${\bf r}$ es diferenciable,
 si $(u,v,w) $ son las coordenadas de un vértice del cubo, entonces los vértices
 adyacentes son $\left( u+\Delta u,v,w\right) $, $\left( u,v+\Delta v,w\right)$ y $\left( u,v,w+\Delta w\right) ;$ mediante la aplicación ${\bf r}$, el cubo se transforma en una región cuyo volumen se puede aproximar mediante un \mbox{paralelep\'{\i}pedo}.
 Aplicando el teorema del valor medio, se sigue que
-
 \begin{eqnarray*}
-{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) }{\Delta u}\Delta u \\[0.1cm]
-&\approx &   \frac{\partial {\bf r}}{\partial u}\left( u^{\ast},v,w\right) \Delta u \\
-{\bf r}\left( u,v+\Delta v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}(u,v+\Delta v,w)-{\bf r}(u,v,w)}{\Delta v}\Delta v \\[0.1cm]
-&\approx& \frac{\partial{\bf r}}{\partial v}\left( u,v^{\ast},w\right)\Delta v\\
-{\bf r}\left( u,v,w+\Delta w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}\left(
-u,v,w+\Delta w\right) -{\bf r}(u,v,w)}{\Delta w}\Delta w \\[0.1cm]
-&\approx & \frac{\partial {\bf r}}{\partial w}\left( u,v,w^{\ast}\right) \Delta w,
+{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) }{\Delta u}\Delta u \\
+&\approx &   \frac{\partial {\bf r}}{\partial u}\left( u^{\ast},v,w\right) \Delta u
 \end{eqnarray*}
-
+\begin{eqnarray*}
+{\bf r}\left( u,v+\Delta v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}(u,v+\Delta v,w)-{\bf r}(u,v,w)}{\Delta v}\Delta v \\
+&\approx& \frac{\partial{\bf r}}{\partial v}\left( u,v^{\ast},w\right)\Delta v
+\end{eqnarray*}
+\begin{eqnarray*}
+{\bf r}\left( u,v,w+\Delta w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}\left(
+u,v,w+\Delta w\right) -{\bf r}(u,v,w)}{\Delta w}\Delta w \\
+&\approx & \frac{\partial {\bf r}}{\partial w}\left( u,v,w^{\ast}\right) \Delta w.
+\end{eqnarray*}
 El volumen de esta región, $\Delta V$, está dada por
 \begin{equation}
 \left\vert \left( \frac{\partial {\bf r}}{\partial u}\Delta u\times
@@ -1190,15 +1162,17 @@ Esto muestra la siguiente igualdad.
 
 Los siguientes casos particulares de cambio de variables en integrales dobles y triples son utilizados
 de manera frecuente.
+
 \subsection{Coordenadas polares, cilíndricas y esféricas} \label{esfericas}
 \index{Coordenadas!polares} \index{Coordenadas!cilíndricas} \index{Coordenadas!esféricas}
+
 Para una circunferencia de radio $r$, la longitud $s$, de un arco de $\theta$ radianes es $r\theta$.
 El área de un sector circular de arco $\Delta \theta$ y radio $r$ está dado por
 $\frac{1}{2}r^2 \Delta \theta$ y el área $\Delta A$, de la región acotada por dos sectores
 circulares de radio $r_i$ y $r_{i+1}$ (con $r_i<r_{i+1}$) está dada por
 \begin{eqnarray*}
 \Delta A &=& \frac{1}{2}r_{i+1}^2 \Delta \theta-\frac{1}{2}r_{i}^2 \Delta \theta
-= \frac{r_{i+1}+r_i}{2}(r_{i+1}-r_i)\Delta \theta  = r_i^*\Delta r \Delta \theta
+= \frac{r_{i+1}+r_i}{2}(r_{i+1}-r_i)\Delta \theta  = r_i^*\Delta r \Delta \theta.
 \end{eqnarray*}
 
 \begin{figure}[H]
@@ -1263,7 +1237,7 @@ y permite obtener la siguiente igualdad:
 \iiint_{E}f(x,y,z)dV \\ =\iiint_{E^{\ast }}f(\rho \cos \theta \sin \phi ,\rho
 \sin \theta \sin \phi ,\rho \cos \phi )\rho ^{2}\sin \phi\, d\rho d\theta d\phi
 \end{multline}
-En el apéndice {B} el lector puede consultar las generalidades de otros sistemas de coordenadas.
+En el anexo~B el lector puede consultar las generalidades de otros sistemas de coordenadas.
 \index{Integrales triples!en coordenadas Esféricas}
 
 \begin{ejemplo}
@@ -1281,20 +1255,22 @@ Aplicando un cambio a coordenadas cilíndricas se obtiene
 \begin{multline*}
 \int_{0}^{2\pi }\int_{0}^{1}\int_{r^{2}}^{2-r^{2}}r\left( r\sin \theta\right) ^{2}dzdrd\theta \\
 = \int_{0}^{2\pi}\int_{0}^{1}2r^{3}\left( 1-r^{2}\right) \sin ^{2}\theta drd\theta
-= \int_{0}^{2\pi }\frac{1}{6}\sin ^{2}\theta d\theta = \frac{\pi}{6}
+= \int_{0}^{2\pi }\frac{1}{6}\sin ^{2}\theta d\theta = \frac{\pi}{6},
 \end{multline*}
 cuyos valores son iguales, como se había establecido teóricamente.
 \end{ejemplo}
+
 \section{Divergencia y rotacional} \label{divergenciayrotacional}
+
 Para un campo vectorial
 ${\bf F}(x,y,z)= \langle P(x,y,z),Q(x,y,z),R(x,y,z) \ra$, definido en $\mathbb{R}^3$, cuyas funciones componentes poseen derivadas parciales continuas,
 se define el rotacional y la divergencia de ${\bf F}$ que se denotan por $\rot{F}$ y ${\rm div\,}{\bf F}$, y
 están dados, respectivamente, por
 \index{Divergencia} \index{Rotacional}
-$$\rot{F}(x,y,z)= \langle  \frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \rangle $$
+$$\rot{\bf F}(x,y,z)= \left\langle  \frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}, \frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}, \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y} \right\rangle $$
 y $${\rm div\,}{\bf F}(x,y,z)= \frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}.$$
 Nótese que $\rot{F}(x,y,z)$ es un campo vectorial y ${\rm div\,}{\bf F}(x,y,z)$ es un campo escalar.
-Existe una manera de recordar brevemente dichos cálculos, en términos del operador $\nabla$, que se presentó en la sección 3.3.
+Existe una manera de recordar brevemente dichos cálculos, en términos del operador $\nabla$, que se presentó en la sección \secref{diferencibilidad}.
 \begin{eqnarray*}
 {\rm rot}{\bf F} &=& \nabla \times{\bf F}  = \left\vert
 \begin{array}{ccc}
