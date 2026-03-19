@@ -91,7 +91,6 @@ Se muestran los gráficos de algunas de ellas.
   \end{equation}
 \end{tcolorbox}
 
-\clearpage
 \begin{ejer} Resolver los siguientes problemas
   \begin{enumerate}
     \item \textit{Expresar en función de $x$, de manera semejante a la ecuación \ref{hiper4}
@@ -189,41 +188,40 @@ con densidad constante $\rho$ que gira alrededor un una recta.
   $2\pi r$ recorrida por su centroide durante la rotación. Si $r$ es la distancia entre el eje de rotación y
   el centroide, es decir $V=2\pi rA$.
 \end{teorema}
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
   Verificaremos el resultado dos casos particulares.
-  \begin{itemize}[leftmargin=1.2em, itemindent=0pt,     labelwidth=\labelwidth,labelsep=0.5em,]
-
-    \item Denotaremos por $(\overline{x},\overline{y})$ a las coordenadas del centroide de $R$,
-      su área está dada por \[A=\int_{a}^{b}\left(f(x)-g(x) \right) dx.\]
-      Si $R$ gira alrededor de la recta $x=c$, entonces el volumen $V$ del sólido generado está dado por
-      \[V=2\pi \int_{a}^{b}(x-c) \left( f(x) -g(x) \right) dx.\]
-      Si $\mu_y$ denota el momento con respecto al eje $y$, es conocido que $\mu_y= \overline{x}\rho A$.
-      El momento con respecto a la recta $L$, con ecuación $x=c$ está dado por
-      \[\mu _{L}=\int_{a}^{b}\rho (x-c) \left( f(x)-g(x) \right) dx=\rho \int_{a}^{b}(x-c) \left(f(x) -g(x) \right) dx.\]
-      Por otra parte,
-      \[\mu_{L}=\rho\int_{a}^{b}x\left(f(x)-g(x)\right)dx-c\rho\int_{a}^{b}\left(f(x)-g(x)\right)dx=\mu_y-c\rho A.\]
-      De las ecuaciones anteriores se sigue que $\mu_{L}=\rho \overline{x} A-c\rho A= \rho A (\overline{x}-c)$.
-      Si $r$ es la distancia que recorre el centroide, $r=\overline{x}-c$ entonces, $V= 2 \pi r A$.
-    \item Con las mismas consideraciones anteriores, si la región $R$ gira alrededor de la recta $y=c$,
-      el volumen del sólido generado es
-      \[V=\pi \int_{a}^{b}\left[ \left( f(x) -c\right) ^{2}-\left(g(x) -c\right) ^{2}\right] dx.\]
-      Si $\mu_x$ denota el momento con respecto al eje $x$ es conocido que
-      \[\mu_x= \frac{1}{2}\rho \int_{a}^{b}\left( [f(x)]^2 -[g(x)]^2\right)dx;\]
-      por tanto $\mu_x= \rho\overline{y} A$. El momento con respecto a la recta $L$ con ecuación $y=c$, está dado por
-      \begin{eqnarray*}
-        \mu _{L}&=&\rho \int_{a}^{b}\left( f(x) -g(x) \right)\left( \frac{f(x) +g(x) }{2}-c\right) dx \\
-        & =& \frac{1}{2}\rho \int_{a}^{b}\left( f(x) -g(x)\right) \left( f(x) +g(x) -2c\right) dx \\
-        &=& \frac{1}{2}\rho \int_{a}^{b}\left[ \left( f(x) -c\right) ^{2}-\left(g(x) -c\right) ^{2}\right] dx
-      \end{eqnarray*}
-      Entonces, $\rho V = 2\pi \mu_L$; además,
-      % $\mu_{L}=\frac{1}{2}\rho\int_{a}^{b} \left([f(x)]^2-[g(x)]^2\right)dx- c\rho\int_{a}^{b}\left(f(x) -g(x)\right)dx= \mu_x-c\rho A$.
-      \begin{eqnarray*}\mu_{L} &=& \frac{1}{2}\rho\int_{a}^{b}\left([f(x)]^2-[g(x)]^2\right)dx-c\rho\int_{a}^{b}\left(f(x) -g(x)\right)dx. \\&=& \mu_x-c\rho A.
-      \end{eqnarray*}
-      Con las igualdades anteriores se sigue que
-      \[\mu_{L}=\mu_x-c\rho A=\rho A \overline{y}-c\rho A= \rho A (\overline{y}-c).\]
-      Si $r=\overline{y}-c$ es la distancia que recorre el centroide del eje de giro, entonces
-      \[V=2\pi A (\overline{y}-c)=2\pi r A.\]
-  \end{itemize}
+  \begin{parrafoitemize}
+  \item Denotaremos por $(\overline{x},\overline{y})$ a las coordenadas del centroide de $R$,
+    su área está dada por \[A=\int_{a}^{b}\left(f(x)-g(x) \right) dx.\]
+    Si $R$ gira alrededor de la recta $x=c$, entonces el volumen $V$ del sólido generado está dado por
+    \[V=2\pi \int_{a}^{b}(x-c) \left( f(x) -g(x) \right) dx.\]
+    Si $\mu_y$ denota el momento con respecto al eje $y$, es conocido que $\mu_y= \overline{x}\rho A$.
+    El momento con respecto a la recta $L$, con ecuación $x=c$ está dado por
+    \[\mu _{L}=\int_{a}^{b}\rho (x-c) \left( f(x)-g(x) \right) dx=\rho \int_{a}^{b}(x-c) \left(f(x) -g(x) \right) dx.\]
+    Por otra parte,
+    \[\mu_{L}=\rho\int_{a}^{b}x\left(f(x)-g(x)\right)dx-c\rho\int_{a}^{b}\left(f(x)-g(x)\right)dx=\mu_y-c\rho A.\]
+    De las ecuaciones anteriores se sigue que $\mu_{L}=\rho \overline{x} A-c\rho A= \rho A (\overline{x}-c)$.
+    Si $r$ es la distancia que recorre el centroide, $r=\overline{x}-c$ entonces, $V= 2 \pi r A$.
+  \item Con las mismas consideraciones anteriores, si la región $R$ gira alrededor de la recta $y=c$,
+    el volumen del sólido generado es
+    \[V=\pi \int_{a}^{b}\left[ \left( f(x) -c\right) ^{2}-\left(g(x) -c\right) ^{2}\right] dx.\]
+    Si $\mu_x$ denota el momento con respecto al eje $x$ es conocido que
+    \[\mu_x= \frac{1}{2}\rho \int_{a}^{b}\left( [f(x)]^2 -[g(x)]^2\right)dx;\]
+    por tanto $\mu_x= \rho\overline{y} A$. El momento con respecto a la recta $L$ con ecuación $y=c$, está dado por
+    \begin{eqnarray*}
+      \mu _{L}&=&\rho \int_{a}^{b}\left( f(x) -g(x) \right)\left( \frac{f(x) +g(x) }{2}-c\right) dx \\
+      & =& \frac{1}{2}\rho \int_{a}^{b}\left( f(x) -g(x)\right) \left( f(x) +g(x) -2c\right) dx \\
+      &=& \frac{1}{2}\rho \int_{a}^{b}\left[ \left( f(x) -c\right) ^{2}-\left(g(x) -c\right) ^{2}\right] dx
+    \end{eqnarray*}
+    Entonces, $\rho V = 2\pi \mu_L$; además,
+    % $\mu_{L}=\frac{1}{2}\rho\int_{a}^{b} \left([f(x)]^2-[g(x)]^2\right)dx- c\rho\int_{a}^{b}\left(f(x) -g(x)\right)dx= \mu_x-c\rho A$.
+    \begin{eqnarray*}\mu_{L} &=& \frac{1}{2}\rho\int_{a}^{b}\left([f(x)]^2-[g(x)]^2\right)dx-c\rho\int_{a}^{b}\left(f(x) -g(x)\right)dx. \\&=& \mu_x-c\rho A.
+    \end{eqnarray*}
+    Con las igualdades anteriores se sigue que
+    \[\mu_{L}=\mu_x-c\rho A=\rho A \overline{y}-c\rho A= \rho A (\overline{y}-c).\]
+    Si $r=\overline{y}-c$ es la distancia que recorre el centroide del eje de giro, entonces
+    \[V=2\pi A (\overline{y}-c)=2\pi r A.\]
+  \end{parrafoitemize}
 \end{proof}
 
 \subsubsection{Longitud de una curva en coordenadas paramétricas}
@@ -298,7 +296,7 @@ Otro resultado importante es el siguiente:
 
 %\clearpage
 
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
   Para una curva en el plano $xy$ descrita en forma paramé- \\ trica
 $\left\langle f(t) ,g(t) \right\rangle$ con $t\in\lbrack a,b]$. La longitud $L$ de la curva está dada
 \[L=\int_{a}^{b}\sqrt{\left( g^{\prime }(t)\right) ^{2}+\left( f^{\prime }(t) \right) ^{2}}dt.\]
@@ -499,7 +497,7 @@ Esta afirmación es consecuencia de los siguientes resultados
 En coordenadas bipolares con valores constantes de $u$ y $v$ representan c\'{\i}rculos en el plano $xy$.
 \end{prop}
 
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
 Para tal fin mostraremos las siguientes igualdades:
 $x^2+\left( y-a\cot u\right) ^2=a^2\csc ^2u;\hskip0.2cm  \left( x-a\coth v\right) ^2+y^2=a^2{\rm csch}^2v$.
 Para la primera de estas expresiones
@@ -781,7 +779,7 @@ Ahora se mostraran las otras afirmaciones hechas al inicio.
 En coordenadas toroidales se determina un toro con valores constantes de $v$.
 \end{prop}
 
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
 De la definición se obtienen algunas identidades:
 {\small
 \begin{multline}
@@ -812,7 +810,7 @@ que representa un toro.
 En coordenadas toroidales con valores constantes de $u$ se determina una esfera.
 \end{prop}
 
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
 Con las siguientes relaciones
 {\small
 \begin{eqnarray*}
@@ -1045,7 +1043,7 @@ En donde $\eta \in \mathbb{R}$, $\theta \in [0,\pi] $, $\phi \in [0,2\pi] $.
 En coordenadas biesféricas con valores constantes de $\eta $ se describen esferas.
 \end{prop}
 
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
 A partir de la expresión $x^2+y^2+\left( z-a\coth \eta \right) ^2$, se sigue
 \begin{multline*}
 \hskip-0.3cm \left( \frac{a\sin \theta\cos \phi }{\cosh \eta -\cos \theta }\right)^2+\left(\frac{a\sin \theta
@@ -1065,7 +1063,7 @@ x^2+y^2+z^2= a^2 +2a\sqrt{x^2+y^2}\cot\theta.
 \end{equation}
 \end{prop}
 
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
 A partir de las siguientes igualdades
 \begin{eqnarray}
 \hskip-0.3cm x^2+y^2+z^2 % &=&\left(\frac{a\sin\theta\cos\phi}{\cosh\eta-\cos\theta}\right)^2+\left( \frac{a\sin \theta\sin\phi}{\cosh\eta-\cos\theta}\right)^2+\left(\frac{a\sinh\eta}{\cosh\eta-\cos\theta}\right)^2 \nonumber \\
@@ -1166,7 +1164,7 @@ se generan cardioides de revolución alrededor del eje $z$ y para valores consta
 $\theta$, las superficies generadas son semiplanos.
 \end{prop}
 %
-\begin{proof}\hspace{-0.2cm}
+\begin{proof}
 A partir de la siguiente relación
 \begin{eqnarray*}
 x^2+y^2+z^2 &=& \left( \frac{uv\cos \theta}{\left( u^2+v^2\right) ^2} \right) ^2+\left( \frac{uv\sin \theta}{\left( u^2+v^2\right) ^2} \right) ^2+\left( \frac{1}{2}\frac{u^2-v^2}{\left(

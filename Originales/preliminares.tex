@@ -173,55 +173,55 @@ responder a este interrogante.
   siempre que $\left\Vert {\bf x}- {\bf a} \right\Vert <\delta $.
 \end{defi}
 
-\begin{itemize}[leftmargin=0cm,itemindent=0.4cm,labelwidth=\itemindent,labelsep=0cm,align=left]
-  \item Usando la definición, demostrar que $\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left\langle
-    x^{2},x+y\right\rangle =\left\langle 1,2\right\rangle $.
+\begin{parrafoitemize}
+\item Usando la definición, demostrar que $\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left\langle
+  x^{2},x+y\right\rangle =\left\langle 1,2\right\rangle $.
 
-    Observemos que  para todo $\varepsilon >0$ existe $\delta >0$ tal que si
-    $\left\Vert(x,y) -\left( 1,1\right) \right\Vert <\delta $
-    entonces $\left\Vert \left( x^{2},x+y\right) -\left( 1,2\right) \right\Vert<\varepsilon ;$ esto se evidencia verificando las siguientes desigualdades:
-    \begin{eqnarray}\label{preliminares}
-      \left\vert x-1\right\vert &=&\sqrt{(x-1) ^{2}}\leq \sqrt{\left(
-      x-1\right) ^{2}+(y-1) ^{2}} \nonumber \\ &=&\left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
-    \end{eqnarray}
-    De esta relación se obtiene
-    \begin{multline}\label{preliminares1}
-      |x-1|<\delta \rightarrow -\delta <x-1<\delta
-      \rightarrow 2-\delta <x+1<\delta  \\
-      \Rightarrow \left\vert x+1\right\vert<2-\delta
-    \end{multline}
-    De manera análoga,
-    \begin{eqnarray}\label{preliminares2}
-      \left\vert y-1\right\vert &=& \sqrt{(y-1) ^{2}}\leq \sqrt{\left(x-1\right) ^{2}+(y-1)  ^{2}} \nonumber \\ &=& \left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
-    \end{eqnarray}
-    Utilizando los resultados (\ref{preliminares}), (\ref{preliminares1}) y (\ref{preliminares2}), se sigue que
-    \begin{eqnarray*}
-      \left\Vert \langle x^{2},x+y\rangle -\langle 1,2\rangle \right\Vert &=& \sqrt{\left( x^{2}-1\right) ^{2}+\left( x+y-2\right) ^{2}} \\
-      &\leq & \sqrt{\left( x^{2}-1\right) ^{2}} +\sqrt{\left(x+y-2\right) ^{2}} \\
-      &=& \left\vert x^{2}-1\right\vert  +\left\vert x+y-2\right\vert \\
-      &=& \left\vert x-1\right\vert  \left\vert x+1\right\vert +\left\vert (x-1) +(y-1) \right\vert \\
-      &<& \delta (2-\delta) +2\delta = \delta (4-\delta).
-    \end{eqnarray*}
-    Tomando $\varepsilon =\delta \left( 4-\delta \right) $, se obtiene que
-    $\delta =2-\sqrt{4-\varepsilon };$ con $0<\varepsilon < 4$ la definición se satisface.
+  Observemos que  para todo $\varepsilon >0$ existe $\delta >0$ tal que si
+  $\left\Vert(x,y) -\left( 1,1\right) \right\Vert <\delta $
+  entonces $\left\Vert \left( x^{2},x+y\right) -\left( 1,2\right) \right\Vert<\varepsilon ;$ esto se evidencia verificando las siguientes desigualdades:
+  \begin{eqnarray}\label{preliminares}
+    \left\vert x-1\right\vert &=&\sqrt{(x-1) ^{2}}\leq \sqrt{\left(
+    x-1\right) ^{2}+(y-1) ^{2}} \nonumber \\ &=&\left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
+  \end{eqnarray}
+  De esta relación se obtiene
+  \begin{multline}\label{preliminares1}
+    |x-1|<\delta \rightarrow -\delta <x-1<\delta
+    \rightarrow 2-\delta <x+1<\delta  \\
+    \Rightarrow \left\vert x+1\right\vert<2-\delta
+  \end{multline}
+  De manera análoga,
+  \begin{eqnarray}\label{preliminares2}
+    \left\vert y-1\right\vert &=& \sqrt{(y-1) ^{2}}\leq \sqrt{\left(x-1\right) ^{2}+(y-1)  ^{2}} \nonumber \\ &=& \left\Vert \left(x,y\right) -\left( 1,1\right) \right\Vert <\delta
+  \end{eqnarray}
+  Utilizando los resultados (\ref{preliminares}), (\ref{preliminares1}) y (\ref{preliminares2}), se sigue que
+  \begin{eqnarray*}
+    \left\Vert \langle x^{2},x+y\rangle -\langle 1,2\rangle \right\Vert &=& \sqrt{\left( x^{2}-1\right) ^{2}+\left( x+y-2\right) ^{2}} \\
+    &\leq & \sqrt{\left( x^{2}-1\right) ^{2}} +\sqrt{\left(x+y-2\right) ^{2}} \\
+    &=& \left\vert x^{2}-1\right\vert  +\left\vert x+y-2\right\vert \\
+    &=& \left\vert x-1\right\vert  \left\vert x+1\right\vert +\left\vert (x-1) +(y-1) \right\vert \\
+    &<& \delta (2-\delta) +2\delta = \delta (4-\delta).
+  \end{eqnarray*}
+  Tomando $\varepsilon =\delta \left( 4-\delta \right) $, se obtiene que
+  $\delta =2-\sqrt{4-\varepsilon };$ con $0<\varepsilon < 4$ la definición se satisface.
 
-  \item Mostrar que $\lim\limits_{t\rightarrow 1}\left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle =\left\langle 2,2,1\right\rangle $. Veamos que para todo $\varepsilon >0$ existe
-    $\delta >0$ tal que si $\left\vert t-1\right\vert <\delta, $
-    entonces $\left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert<\varepsilon $.
-    De la relación
-    \begin{eqnarray*}
-      \left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t}%
-      ,t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert  &=&
-      \sqrt{\left( t-1\right) ^{2}\left( t^{2}+2t+3\right) } \\
-      &=&\left\vert t-1\right\vert \sqrt{\left( t+1\right) ^{2}+2} \\
-      &\leq& \left\vert t-1\right\vert \left( \left\vert t-1\right\vert +\sqrt{2}
-      \right)  \\ &<& \delta \left( \delta +\sqrt{2}\right)
-    \end{eqnarray*}
+\item Mostrar que $\lim\limits_{t\rightarrow 1}\left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle =\left\langle 2,2,1\right\rangle $. Veamos que para todo $\varepsilon >0$ existe
+  $\delta >0$ tal que si $\left\vert t-1\right\vert <\delta, $
+  entonces $\left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t},t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert<\varepsilon $.
+  De la relación
+  \begin{eqnarray*}
+    \left\Vert \left\langle \frac{t^{2}-1}{t-1},\frac{t+1}{t}%
+    ,t^{2}\right\rangle -\left\langle 2,2,1\right\rangle \right\Vert  &=&
+    \sqrt{\left( t-1\right) ^{2}\left( t^{2}+2t+3\right) } \\
+    &=&\left\vert t-1\right\vert \sqrt{\left( t+1\right) ^{2}+2} \\
+    &\leq& \left\vert t-1\right\vert \left( \left\vert t-1\right\vert +\sqrt{2}
+    \right)  \\ &<& \delta \left( \delta +\sqrt{2}\right)
+  \end{eqnarray*}
 
-    si $\delta \left( \delta +\sqrt{2}\right) =\varepsilon $. Entonces
-    $\delta =\frac{\sqrt{2}}{2}\left( \sqrt{2\varepsilon +1}-1\right) ;$ lo cual hace que
-    la definición se satisfaga.
-\end{itemize}
+  si $\delta \left( \delta +\sqrt{2}\right) =\varepsilon $. Entonces
+  $\delta =\frac{\sqrt{2}}{2}\left( \sqrt{2\varepsilon +1}-1\right) ;$ lo cual hace que
+  la definición se satisfaga.
+\end{parrafoitemize}
 Una consecuencia de la definición (\ref{preliminares5}) es la siguiente.
 \begin{teorema}\label{preliminares3}
   Para  $\ve{F}: A \subseteq\mathbb{R}^n \to  \mathbb{R}^m$,
@@ -233,82 +233,71 @@ Una consecuencia de la definición (\ref{preliminares5}) es la siguiente.
   La función $\ve{F}$ tiene la forma
   $$\ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) =\left\langle f_{1}\left( x_{1},x_{2},\cdots ,x_{n}\right) ,\cdots ,f_{m}\left( x_{1},x_{2},\cdots ,x_{n}\right)\right\rangle $$
 \end{proof}
-\begin{itemize}[leftmargin=0cm,itemindent=.2cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+\begin{parrafoitemize}
 
-  \item $(\to)$ Supongamos que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})= \ve{L}$,
-    esto significa que para todo $\varepsilon >0$ existe $\delta >0$  tal que si
-    $\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta $
-    entonces $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon $. Por lo tanto:
+\item $(\to)$ Supongamos que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})= \ve{L}$,
+  esto significa que para todo $\varepsilon >0$ existe $\delta >0$  tal que si
+  $\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta $
+  entonces $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon $. Por lo tanto:
 
+  \begin{eqnarray*}
+    \left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right\vert &=&
+    \sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
+    &\leq& \sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
+    &=& \left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon,
+  \end{eqnarray*}
+  lo cual implica que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i, $
+  para $i=1,2, \cdots, m. $
+
+\item $(\leftarrow)$ Ahora supongamos que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i$,
+  esto significa que para todo $\frac{\varepsilon}{m}>0$ existe $\delta>0$ tal que
+  $|f_i( x_{1},x_{2},\cdots ,x_{n}) -l_i| <\varepsilon/m $, siempre que
+  $\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta $.
+  Por lo tanto:
+  {\small
     \begin{eqnarray*}
-      \left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right\vert &=&
-      \sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
-      &\leq& \sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
-      &=& \left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon
+      \left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) - \ve{L}\right\Vert &=&
+      \sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
+      &\leq & \sum_{i=1}^{m}\sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i}\right) ^{2}}\\
+      &\leq& \sum_{i=1}^{m}\left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i} \right\vert\\ & <& \sum_{i=1}^{m}\frac{\varepsilon }{m}=\varepsilon,
     \end{eqnarray*}
-    lo cual implica que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i, $
-    para $i=1,2, \cdots, m. $
+  }
+  es decir $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon $,
+  lo cual implica que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})$ existe y es igual a $\ve{L}$.
+\end{parrafoitemize}
 
-  \item $(\leftarrow)$ Ahora supongamos que $\lim_{{\bf x}\to {\bf a}} f_{i}(x_{1},x_{2},\cdots ,x_{n})=l_i$,
-    esto significa que para todo $\frac{\varepsilon}{m}>0$ existe $\delta>0$ tal que
-    $|f_i( x_{1},x_{2},\cdots ,x_{n}) -l_i| <\varepsilon/m $, siempre que
-    $\left\Vert\left( x_{1},x_{2},\cdots ,x_{n}\right) -\left( a_{1},a_{2},\cdots ,a_{n}\right) \right\Vert <\delta $.
-    Por lo tanto:
-    {\small
-      \begin{eqnarray*}
-        \left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) - \ve{L}\right\Vert &=&
-        \sqrt{\sum_{i=1}^{m}\left( f_{i}\left(x_{1},x_{2},\cdots ,x_{n}\right) -l_{i}\right) ^{2}} \\
-        &\leq & \sum_{i=1}^{m}\sqrt{\left( f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i}\right) ^{2}}\\
-        &\leq& \sum_{i=1}^{m}\left\vert f_{i}\left( x_{1},x_{2},\cdots ,x_{n}\right)-l_{i} \right\vert\\ & <& \sum_{i=1}^{m}\frac{\varepsilon }{m}=\varepsilon.
-      \end{eqnarray*}
-    }
+\textls[-20]{Este resultado permite hacer cálculos directos como se ilustra a continuación.}
 
-    es decir $\left\Vert \ve{F}\left( x_{1},x_{2},\cdots ,x_{n}\right) -\ve{L}\right\Vert <\varepsilon $,
-    lo cual implica que $\lim_{{\bf x}\to {\bf a}}\ve{F}({\bf x})$ existe y es igual a $\ve{L}$.
-\end{itemize}
-
-Este resultado permite hacer cálculos directos como se ilustra a continuación.
-
-\begin{itemize}[leftmargin=*]
-  \item {\small $\ds\lim_{t\rightarrow 0}\left\langle \frac{\sin t}{t},\sqrt{t},\frac{e^{t}-1}{t}\right\rangle= \langle \lim_{t\rightarrow 0}\frac{\sin t}{t} , \lim_{t\rightarrow 0}\sqrt{1+t} ,
-    \lim_{t\rightarrow 0}\frac{e^{t}-1}{t}\rangle=\langle 1 ,1,1 \ra$}
-  \item Un límite con un campo vectorial.
-    {\small
-      \begin{multline*} \hskip-0.2cm
-        \lim\limits_{(x,y) \rightarrow \left( 1,1\right)
-        }\left\langle \frac{x-y}{\sqrt{x}-\sqrt{y}}, \frac{x^{3}-y^{3}}{x-y}\right\rangle
-        =\lim\limits_{(x,y) \rightarrow (1,1) } \left\langle \sqrt{x}+\sqrt{y},x^{2}+xy+y^{2}\right\rangle \\
-        =\left\langle \lim\limits_{(x,y)
-        \rightarrow \left( 1,1\right) }\left( \sqrt{x}+\sqrt{y}\right)
-        ,\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left(
-        x^{2}+xy+y^{2}\right) \right\rangle = \left\langle 2,3\right\rangle
-      \end{multline*}
-    }
-    {\small $$
-      \lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{x^{2}-y^{2}}=\lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{\left( x-y\right) \left( x+y\right) }=\lim_{(x,y)\rightarrow\left(1,1\right) }\frac{1}{\left( x+y\right) }=\frac{1}{2}
-    $$}
-\end{itemize}
+\begin{parrafoitemize}
+\item \textls[-20]{$\ds\lim_{t\rightarrow 0}
+    \left\langle \frac{\sin t}{t},\sqrt{t},\frac{e^{t}-1}{t}\right\rangle=
+    \left\langle \lim_{t\rightarrow 0}\frac{\sin t}{t}, \lim_{t\rightarrow 0}\sqrt{1+t},
+  \lim_{t\rightarrow 0}\frac{e^{t}-1}{t}\right\rangle=\langle 1 ,1,1 \ra$}
+\item Un límite con un campo vectorial.
+  \begin{multline*}
+    \textls[-20]{$\displaystyle \lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left\langle \frac{x-y}{\sqrt{x}-\sqrt{y}}, \frac{x^{3}-y^{3}}{x-y}\right\rangle =\lim\limits_{(x,y) \rightarrow (1,1) } \left\langle \sqrt{x}+\sqrt{y},x^{2}+xy+y^{2}\right\rangle$} \\
+    \textls[-20]{$\displaystyle =\left\langle \lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left( \sqrt{x}+\sqrt{y}\right) ,\lim\limits_{(x,y) \rightarrow \left( 1,1\right) }\left( x^{2}+xy+y^{2}\right) \right\rangle = \left\langle 2,3\right\rangle$} \\
+    \textls[-20]{$\displaystyle \lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{x^{2}-y^{2}}=\lim_{(x,y) \rightarrow \left( 1,1\right) }\frac{x-y}{\left( x-y\right) \left( x+y\right) }=\lim_{(x,y)\rightarrow\left(1,1\right) }\frac{1}{\left( x+y\right) }=\frac{1}{2}$}
+  \end{multline*}
+\end{parrafoitemize}
 
 La imagen del conjunto $A$ por medio de la función $\ve{F}$, se denota por $\ve{F}(A)$, es decir
 $\ve{F}(A)=\{\ve{F}(\mathbf{x})/\mathbf{x}\in A\}$.
 Para funciones $\ve{F},\ve{G}:A\subseteq \mathbb{R}^n\to \mathbb{R}^m$
 y $h:\mathbb{R}^n \to \mathbb{R}$ usaremos las siguientes abreviaturas:
-\begin{eqnarray*}
-  \left( \ve{F}\pm \ve{G}\right) \left( \mathbf{x} \right) &=& \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x})\\
-  &=& \left\langle f_{1}(\mathbf{x}) \pm g_{1}(\mathbf{x}) ,f_{2}(\mathbf{x}) \pm g_{2}\left(
-  \mathbf{x}\right) ,\cdots ,f_{m}(\mathbf{x}) \pm g_{m}\left(  \mathbf{x}\right) \right\rangle
-\end{eqnarray*}
-
-\begin{eqnarray*}
-  \left( \ve{F}\cdot \ve{G}\right) \left( \mathbf{x} \right) &=&\ve{F}(\mathbf{x}) \cdot \ve{G}%
-  (\mathbf{x}) \\ &=& f_{1}(\mathbf{x}) g_{1}\left( \mathbf{x}\right) +f_{2}(\mathbf{x}) g_{2}(\mathbf{x})
+\begin{align*}
+  \left( \ve{F}\pm \ve{G}\right) \left( \mathbf{x} \right) &= \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x})\\
+  &= \left\langle f_{1}(\mathbf{x}) \pm g_{1}(\mathbf{x}) ,f_{2}(\mathbf{x}) \pm g_{2}\left(
+  \mathbf{x}\right) ,\cdots ,f_{m}(\mathbf{x}) \pm g_{m}\left(  \mathbf{x}\right) \right\rangle \\
+  \left( \ve{F}\cdot \ve{G}\right) \left( \mathbf{x} \right) &= \ve{F}(\mathbf{x}) \cdot \ve{G}%
+  (\mathbf{x}) \\
+  &= f_{1}(\bm{x}) g_{1}\left( \mathbf{x}\right) +f_{2}(\mathbf{x}) g_{2}(\mathbf{x})
   +\cdots +f_{m}(\mathbf{x}) g_{m}(\mathbf{x}) \\
-  &=& \sum_{k=1}^{m}f_{k}(\mathbf{x}) g_{k}(\mathbf{x}) \\[0.1cm]
-  \left\Vert \ve{F}(\mathbf{x}) \right\Vert &=& \left( f_{1}^{2}(\mathbf{x}) +f_{2}^{2}(\mathbf{x}) +\cdots
-  +f_{m}^{2}(\mathbf{x}) \right) ^{1/2}=\sqrt{\sum_{k=1}^{m}f_{k}^{2}(\mathbf{x}) }\\[0.1cm]
-  h\ve{F}(\mathbf{x}) &=& h(\mathbf{x}) \ve{F}(\mathbf{x}) =\left\langle h\left( \mathbf{x} \right) f_{1}(\mathbf{x}) ,h(\mathbf{x}) f_{2}\left( \mathbf{x}\right) ,\cdots ,h(\mathbf{x}) f_{m}\left( \mathbf{x}\right) \right\rangle
-\end{eqnarray*}
-
+  &= \sum_{k=1}^{m}f_{k}(\mathbf{x}) g_{k}(\mathbf{x}) \\
+  \left\Vert \ve{F}(\mathbf{x}) \right\Vert &= \left( f_{1}^{2}(\mathbf{x}) +f_{2}^{2}(\mathbf{x}) +\cdots
+  +f_{m}^{2}(\mathbf{x}) \right) ^{1/2}=\sqrt{\sum_{k=1}^{m}f_{k}^{2}(\mathbf{x}) }\\
+  h\ve{F}(\mathbf{x}) &= h(\mathbf{x}) \ve{F}(\mathbf{x}) =\left\langle h\left( \mathbf{x} \right) f_{1}(\mathbf{x}) ,h(\mathbf{x}) f_{2}\left( \mathbf{x}\right) ,\cdots ,h(\mathbf{x}) f_{m}\left( \mathbf{x}\right) \right\rangle
+\end{align*}
 Al considerar esta notación se presenta el siguiente resultado.
 
 \begin{teorema}\label{teo1}
@@ -335,53 +324,53 @@ Al considerar esta notación se presenta el siguiente resultado.
 
 \begin{proof}
   Con la definición obtenemos las siguientes afirmaciones
-\begin{enumerate}[leftmargin=0cm,itemindent=0.4cm,labelwidth=\itemindent,labelsep=0cm,align=left]
-    \item $\lim_{\mathbf{x\to x}_{0}}\ve{F}(\mathbf{x}) =\mathbf{a,}$
-      significa que para todo $\varepsilon >0$ existe $\delta >0$,
-      es decir, si $\left\Vert \mathbf{x-x}_{0}\right\Vert <\delta $ entonces
-      $\left\Vert \ve{F}(\mathbf{x}) \mathbf{-a}\right\Vert <\frac{\varepsilon }{2}$.
-      Por la misma razón
-      $\left\Vert \ve{G}(\mathbf{x}) \mathbf{-b}\right\Vert <\frac{\varepsilon }{2}$,
-      entonces
-      \begin{multline*}
-        \left\Vert \left( \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x}) \right) -\left( \mathbf{a\pm b}
-        \right) \right\Vert = \left\Vert \left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right) \pm \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \right\Vert \\
-        \leq \left\Vert \ve{F} (\mathbf{x}) -\mathbf{a}\right\Vert +\left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert <\frac{\varepsilon }{2}+\frac{\varepsilon }{2}= \varepsilon
-      \end{multline*}
+  \begin{parrafonumerado}
+  \item $\lim_{\mathbf{x\to x}_{0}}\ve{F}(\mathbf{x}) =\mathbf{a,}$
+    significa que para todo $\varepsilon >0$ existe $\delta >0$,
+    es decir, si $\left\Vert \mathbf{x-x}_{0}\right\Vert <\delta $ entonces
+    $\left\Vert \ve{F}(\mathbf{x}) \mathbf{-a}\right\Vert <\frac{\varepsilon }{2}$.
+    Por la misma razón
+    $\left\Vert \ve{G}(\mathbf{x}) \mathbf{-b}\right\Vert <\frac{\varepsilon }{2}$,
+    entonces:
+    \begin{multline*}
+      \left\Vert \left( \ve{F}(\mathbf{x}) \pm \ve{G}(\mathbf{x}) \right) -\left( \mathbf{a\pm b}
+      \right) \right\Vert = \left\Vert \left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right) \pm \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \right\Vert \\
+      \leq \left\Vert \ve{F} (\mathbf{x}) -\mathbf{a}\right\Vert +\left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert <\frac{\varepsilon }{2}+\frac{\varepsilon }{2}= \varepsilon
+    \end{multline*}
 
-    \item Es consecuencia de la siguiente igualdad
-      $$h(\mathbf{x}) \ve{F}(\mathbf{x}) -k \mathbf{a=}\left( h(\mathbf{x}) -k\right) \left( \ve{%
-      F}(\mathbf{x}) -\mathbf{a}\right) +\left( h\left( \mathbf{x} \right) -k\right) \mathbf{a}+k\left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right),$$
-      por lo tanto,
-      \begin{multline*}
-        \left\Vert h(\mathbf{x}) \ve{F}\left( \mathbf{x}\right) -k\mathbf{a}\right\Vert \mathbf{\leq }\left\vert h\left( \mathbf{x} \right) -k\right\vert \left\Vert \ve{F}(\mathbf{x}) - \mathbf{a}\right\Vert \\ +\left\vert h(\mathbf{x}) -k\right\vert \left\Vert \mathbf{a}\right\Vert +\left\vert k\right\vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert
-      \end{multline*}
-      Los términos de la derecha tienden a cero cuando $\mathbf{x}\to \mathbf{x}_{0}$.
+  \item Es consecuencia de la siguiente igualdad
+    $$h(\mathbf{x}) \ve{F}(\mathbf{x}) -k \mathbf{a=}\left( h(\mathbf{x}) -k\right) \left( \ve{%
+    F}(\mathbf{x}) -\mathbf{a}\right) +\left( h\left( \mathbf{x} \right) -k\right) \mathbf{a}+k\left( \ve{F}\left( \mathbf{x} \right) -\mathbf{a}\right),$$
+    por lo tanto,
+    \begin{multline*}
+      \left\Vert h(\mathbf{x}) \ve{F}\left( \mathbf{x}\right) -k\mathbf{a}\right\Vert \mathbf{\leq }\left\vert h\left( \mathbf{x} \right) -k\right\vert \left\Vert \ve{F}(\mathbf{x}) - \mathbf{a}\right\Vert \\ +\left\vert h(\mathbf{x}) -k\right\vert \left\Vert \mathbf{a}\right\Vert +\left\vert k\right\vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert
+    \end{multline*}
+    Los términos de la derecha tienden a cero cuando $\mathbf{x}\to \mathbf{x}_{0}$.
 
-    \item Utilizando la desigualdad de Cauchy-Schwarz,
-      $0\leq \left\vert \ve{u}\cdot \ve{v}\right\vert \leq \left\Vert
-      \ve{u}\right\Vert \cdot \left\Vert \ve{v}\right\Vert $
-      y la siguiente identidad
-      \begin{multline*}
-        \ve{F}(\mathbf{x}) \cdot \ve{G}\left( \mathbf{x}\right) -\mathbf{a\cdot b=}\left( \ve{F}\left( \mathbf{x}\right) -\mathbf{a}\right) \cdot \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \\
-        +\mathbf{a\cdot }\left( \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right) +\mathbf{b\cdot }\left( \ve{F}(\mathbf{x}) -\mathbf{a}\right),
-      \end{multline*}
-      se sigue que
-      \begin{multline*}
-        \left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \mathbf{\leq }%
-        \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert \left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert \\
-        +\left\Vert \mathbf{a}\right\Vert \left\Vert \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right\Vert +\left\Vert \mathbf{b}\right\Vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert.
-      \end{multline*}
-      De las hipótesis se puede establecer que cuando $\mathbf{x\to x }_{0}$,
-      $\left\Vert \ve{F}(\mathbf{x}) -\mathbf{a} \right\Vert \to 0$,
-      y $\left\Vert \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right\Vert \to 0;$
-      por lo tanto
-      $\left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \to 0$,
-      cuando $\mathbf{x\to x}_{0}$.
-    \item El resultado es consecuencia de la siguiente desigualdad
-      $$\left\vert \left\Vert \ve{F}(\mathbf{x})\right\Vert -\left\Vert \mathbf{a}\right\Vert \right\vert \leq \left\Vert
-      \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert $$
-  \end{enumerate}
+  \item Utilizando la desigualdad de Cauchy-Schwarz,
+    $0\leq \left\vert \ve{u}\cdot \ve{v}\right\vert \leq \left\Vert
+    \ve{u}\right\Vert \cdot \left\Vert \ve{v}\right\Vert $
+    y la siguiente identidad
+    \begin{multline*}
+      \ve{F}(\mathbf{x}) \cdot \ve{G}\left( \mathbf{x}\right) -\mathbf{a\cdot b=}\left( \ve{F}\left( \mathbf{x}\right) -\mathbf{a}\right) \cdot \left( \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right) \\
+      +\mathbf{a\cdot }\left( \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right) +\mathbf{b\cdot }\left( \ve{F}(\mathbf{x}) -\mathbf{a}\right),
+    \end{multline*}
+    se sigue que
+    \begin{multline*}
+      \left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \mathbf{\leq }%
+      \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert \left\Vert \ve{G}(\mathbf{x}) -\mathbf{b}\right\Vert \\
+      +\left\Vert \mathbf{a}\right\Vert \left\Vert \ve{G}\left( \mathbf{x}\right) -\mathbf{b}\right\Vert +\left\Vert \mathbf{b}\right\Vert \left\Vert \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert.
+    \end{multline*}
+    De las hipótesis se puede establecer que cuando $\mathbf{x\to x }_{0}$,
+    $\left\Vert \ve{F}(\mathbf{x}) -\mathbf{a} \right\Vert \to 0$,
+    y $\left\Vert \ve{G}\left( \mathbf{x} \right) -\mathbf{b}\right\Vert \to 0;$
+    por lo tanto
+    $\left\vert \ve{F}(\mathbf{x}) \cdot \ve{G}(\mathbf{x}) -\mathbf{a\cdot b}\right\vert \to 0$,
+    cuando $\mathbf{x\to x}_{0}$.
+  \item El resultado es consecuencia de la siguiente desigualdad
+    $$\left\vert \left\Vert \ve{F}(\mathbf{x})\right\Vert -\left\Vert \mathbf{a}\right\Vert \right\vert \leq \left\Vert
+    \ve{F}(\mathbf{x}) -\mathbf{a}\right\Vert $$
+  \end{parrafonumerado}
 \end{proof}
 
 La siguiente es una característica especial que deseamos estudiar en la mayoría de las funciones que se consideran
@@ -415,7 +404,7 @@ En el siguiente resultado $\ve{G}\circ \ve{F}$ denota la composición de las fun
   $\ve{G}:B\subseteq \mathbb{R}^m\to \mathbb{R}^p$, con
   $\ve{F}\left( \mathbf{a}\right) \in B$. Si $\ve{F}$ es continua en
   $\mathbf{a}\in A$ y $\ve{G}$ es continua en $\ve{F}\left( \mathbf{a}\right) $
-  entonces $\ve{G}\circ \ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^p$ es continua en $\mathbf{a}$.
+  entonces $\ve{G}\circ \ve{F}:A\subseteq \mathbb{R}^n\to \mathbb{R}^p$ es continua en $\mathbf{a}${\normalfont.}
 \end{teorema}
 
 \begin{proof}
@@ -432,7 +421,7 @@ En el siguiente resultado $\ve{G}\circ \ve{F}$ denota la composición de las fun
   En síntesis, dado $\varepsilon >0$, existe $\delta >0$ tal que si
   $\left\Vert \mathbf{x-a}\right\Vert <\delta $ entonces
   $\left\Vert \ve{G} \left( \ve{F}(\mathbf{x}) \right) -\ve{G}\left( \ve{F}\left( \mathbf{a}\right) \right)
-  \right\Vert <\varepsilon ;$ es decir, $\ve{G}\circ \ve{F}$ es continua en $\mathbf{a.}$
+  \right\Vert <\varepsilon$; es decir, $\ve{G}\circ \ve{F}$ es continua en $\mathbf{a}$.
 \end{proof}
 
 \begin{teorema}
@@ -466,18 +455,20 @@ $\mathbb{R}^{m}$ y $\left\Vert h\right\Vert $ es la norma en $\mathbb{R}^{n}$. \
 Se dice que ${\bf F}$ es diferenciable en $A$, si es diferenciable para todo $a\in A$.
 La mencionada transformación lineal es la denominada \emph{matriz jacobiana} de ${\bf F}$ en $a$,
 que se denota por $D({\bf F})(a)$. Para ${\bf F}:\mathbb{R}^n\to {\mathbb R}^m$ y $a=(a_1,a_2,\cdots, a_n)$, es claro que
-${\bf F}(a)=\langle f_1(a),f_2(a), \cdots, f_m(a) \rangle. $
-La entrada $ij$ de la matriz jacobiana está dada por
-$$\frac{\partial f_i}{\partial x_j}(a)=\lim_{h\rightarrow 0}\frac{f_i(a_1,a_2,\cdots,a_j+h,\cdots,a_n)-f_i(a_1,a_2,\cdots,a_j,\cdots, a_n)}{h}.$$
+${\bf F}(a)=\langle f_1(a),f_2(a), \cdots, f_m(a) \rangle.$
+La entrada $ij$ de la matriz jacobiana está dada por:
+\begin{gather*}
+  \frac{\partial f_i}{\partial x_j}(a)=\lim_{h\rightarrow 0}\frac{f_i(a_1,a_2,\cdots,a_j+h,\cdots,a_n)-f_i(a_1,a_2,\cdots,a_j,\cdots, a_n)}{h},
+\end{gather*}
 que la denominaremos la derivada parcial de $f_i$ con respecto a $x_j$. \index{Derivada parcial}
 La matriz jacobiana de ${\bf F}$, $D{\bf F}(a)$ es
-$$D{\bf F}(a)=\left(
-  \begin{array}{cccc}
-    \frac{\partial f_1}{\partial x_1}(a)&\frac{\partial f_1}{\partial x_2}(a)&\cdots & \frac{\partial f_1}{\partial x_n}(a)\\[0.2cm]
-    \frac{\partial f_2}{\partial x_1}(a)&\frac{\partial f_2}{\partial x_2}(a)&\cdots & \frac{\partial f_2}{\partial x_n}(a)\\[0.2cm]
-    \vdots \\[0.2cm]
-    \frac{\partial f_m}{\partial x_1}(a)&\frac{\partial f_m}{\partial x_2}(a)&\cdots & \frac{\partial f_m}{\partial x_n}(a)
-\end{array} \right)$$
+\[D{\bf F}(a)=\left(
+    \begin{array}{cccc}
+      \frac{\partial f_1}{\partial x_1}(a)&\frac{\partial f_1}{\partial x_2}(a)&\cdots & \frac{\partial f_1}{\partial x_n}(a)\\[0.2cm]
+      \frac{\partial f_2}{\partial x_1}(a)&\frac{\partial f_2}{\partial x_2}(a)&\cdots & \frac{\partial f_2}{\partial x_n}(a)\\[0.2cm]
+      \vdots \\[0.2cm]
+      \frac{\partial f_m}{\partial x_1}(a)&\frac{\partial f_m}{\partial x_2}(a)&\cdots & \frac{\partial f_m}{\partial x_n}(a)
+\end{array} \right)\]
 \begin{teorema}
   Si ${\bf F}:\mathbb{R}^n \to \mathbb{R}^m$ es diferenciable en $a$ y
   ${\bf G}:\mathbb{R}^m \to \mathbb{R}^p$ es diferenciable en ${\bf F}(a)$ entonces la función compuesta
@@ -504,8 +495,7 @@ $$D{\bf F}(a)=\left(
   De manera general, una aplicación que asigna a cada número real un vector en $\mathbb{R}^n$
   se denomina función vectorial, esto es ${\bf r}(t)= \langle r_1(t),r_2(t),\cdots, r_n(t)\ra$.
 
-  Por ejemplo, la función ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$ está definida para $t\in [0,2\pi]$ su
-  gráfico en $\mathbb{R}^3$ se representa a continuación.
+  Por ejemplo, la función ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$ está definida para $t\in [0,2\pi]$ su gráfico en $\mathbb{R}^3$ se representa a continuación.
 
   \begin{figure}[H]
     \centering
@@ -531,43 +521,42 @@ $$D{\bf F}(a)=\left(
     \mathbf{r}^{\prime}(t) &=& \lim_{h\rightarrow 0}\frac{1}{h}\left( \mathbf{r}\left( t+h\right) -\mathbf{r}(t) \right) \\
     &=& \lim_{h\rightarrow 0}\frac{1}{h}\left\langle r_{1}\left(t+h\right) -r_{1}(t) ,\cdots ,r_{m}\left( t+h\right) -r_{m}(t) \right\rangle \\
     &=&\left\langle \lim_{h\rightarrow 0}\frac{r_{1}\left( t+h\right) -r_{1}(t) }{h},\cdots ,\lim_{h\rightarrow 0}\frac{r_{m}\left( t+h\right) -r_{m}(t) }{h}\right\rangle \\
-    &=& \left\langle r_{1}^{\prime}(t),r_{2}^{\prime}(t) ,\cdots ,r_{m}^{\prime}\left(t\right) \right\rangle
+    &=& \left\langle r_{1}^{\prime}(t),r_{2}^{\prime}(t) ,\cdots ,r_{m}^{\prime}\left(t\right) \right\rangle\!.
   \end{eqnarray*}
 
   Si $\mathbf{u}(t) =\left\langle u_{1}(t),u_{2}(t) ,\cdots ,u_{n}(t) \right\rangle $ y
   $\mathbf{v}(t) =\left\langle v_{1}(t) ,v_{2}\left(t\right) ,\cdots ,v_{n}(t) \right\rangle $
   son dos funciones vectoriales entonces el producto punto entre funciones vectoriales está dado por
   $\mathbf{u}(t) \cdot \mathbf{v}(t) =u_{1}\left(t\right) v_{1}(t) +u_{2}(t) v_{2}(t)+\cdots +u_{n}(t) v_{n}(t) $.
-  Derivando se obtiene las siguientes igualdades
+  Derivando se obtiene las siguientes igualdades:
   \begin{eqnarray*}
     \left( \mathbf{u}(t) \cdot \mathbf{v}(t) \right)^{\prime}
-    %&=& u_{1}^{\prime(t) v_{1}(t) +u_{1}(t) v_{1}^{\prime }(t) +u_{2}^{\prime }(t)v_{2}(t) +u_{2}(t) v_{2}^{\prime }(t)+ \cdots + u_{n}^{\prime }(t) v_{n}(t) +u_{n}\left(t\right) v_{n}^{\prime }(t) \\
     &=& \big( u_{1}^{\prime }(t) v_{1}(t) +u_{2}^{\prime}(t) v_{2}(t) +\cdots +u_{n}^{\prime }(t) v_{n}(t) \big) + \\
     && \big( u_{1}(t)v_{1}^{\prime }(t) +  u_{2}(t) v_{2}^{\prime }(t) +\cdots +u_{n}(t) v_{n}^{\prime }(t)\big) \\
-    &=& \mathbf{u}^{\prime }(t) \cdot \mathbf{v}(t) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }(t)
+    &=& \mathbf{u}^{\prime }(t) \cdot \mathbf{v}(t) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }(t).
   \end{eqnarray*}
-  Lo cual se resume en la siguiente fórmula
+  Lo cual se resume en la siguiente fórmula:
   \begin{equation}
     \left( \mathbf{u}(t) \cdot \mathbf{v}(t) \right)^{\prime }=\mathbf{u}^{\prime }(t) \cdot \mathbf{v}\left(
-    t\right) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }\left(t\right).
+    t\right) +\mathbf{u}(t) \cdot \mathbf{v}^{\prime }\left(t\right)\!.
   \end{equation}
   Otras fórmulas útiles, son las siguientes
-  \begin{eqnarray*}
-    (\left\Vert \mathbf{u}(t) \right\Vert)^{\prime } &=& \frac{d}{dt}\left( \left( \mathbf{u}(t) \cdot \mathbf{u}(t)
+  \begin{align*}
+    (\left\Vert \mathbf{u}(t) \right\Vert)^{\prime } &= \frac{d}{dt}\left( \left( \mathbf{u}(t) \cdot \mathbf{u}(t)
     \right) ^{1/2}\right) \\
-    &=& \frac{1}{2}\left( \mathbf{u}(t) \cdot \mathbf{u}(t) \right) ^{-1/2}\left( \mathbf{u}^{\prime }(t) \cdot
-    \mathbf{u}(t) +\mathbf{u}(t) \cdot \mathbf{u}^{\prime }(t) \right) = \frac{\mathbf{u}^{\prime }(t)\cdot \mathbf{u}(t) }{\left\Vert \mathbf{u}(t)\right\Vert }
-  \end{eqnarray*}
-
-  La derivada del producto cruz entre dos funciones vectoriales se evalua como sigue
+    &= \frac{1}{2}\left( \mathbf{u}(t) \cdot \mathbf{u}(t) \right) ^{-1/2}\left( \mathbf{u}^{\prime }(t) \cdot
+    \mathbf{u}(t) +\mathbf{u}(t) \cdot \mathbf{u}^{\prime }(t) \right)
+    = \frac{\mathbf{u}^{\prime }(t)\cdot \mathbf{u}(t) }{\left\Vert \mathbf{u}(t)\right\Vert }.
+  \end{align*}
+  La derivada del producto cruz entre dos funciones vectoriales se evalua como sigue.
   \begin{prop}
     Si $\mathbf{u}(t)$ y $\mathbf{v}(t)$ son funciones vectoriales definidas en $\mathbb{R}^3$ entonces
     $\left(\mathbf{u}(t)\times\mathbf{v}(t)\right)^{\prime}= \mathbf{u}^{\prime}(t)\times\mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)$.
   \end{prop}
 
   \begin{proof}
-    Si $\mathbf{u}(t)=\left\langle u_{1}(t),u_{2}(t),u_{3}(t) \right\rangle $ y
-    $\mathbf{v}(t)=\left\langle v_{1}(t),v_{2}(t),v_{3}(t)\right\rangle $,
+    \textls[-15]{Si $\mathbf{u}(t)=\left\langle u_{1}(t),u_{2}(t),u_{3}(t) \right\rangle $ y
+    $\mathbf{v}(t)=\left\langle v_{1}(t),v_{2}(t),v_{3}(t)\right\rangle $,}
     obviaremos el uso de la variable $t$ para hacer menos extensa la escritura, es decir
     \begin{eqnarray*}
       \frac{d}{dt}\left( \mathbf{u}(t)\times \mathbf{v}(t)\right) &=& \frac{d}{dt} \langle u_{2} v_{3} -u_{3} v_{2} ,u_{3} v_{1} -u_{1} v_{3} ,u_{1} v_{2} -u_{2} v_{1} \rangle \\
@@ -647,7 +636,7 @@ ${\bf r}:\mathbb{R}\to\mathbb{R}^3$ continua, inyectiva y derivable en $(a,b)$, 
 \centering
 \caption{Curva en $\mathbb{R}^3$}
 \label{Fig/6.png}
-\includegraphics[width=0.45\textwidth]{Fig/6.png}
+\includegraphics[width=0.5\textwidth]{Fig/6.png}
 \fuentepropia
 \end{figure}
 
@@ -656,12 +645,11 @@ $P=\{ t_0, t_1, t_2, \cdots , t_{n-1},t_n \}$ que satisface
 $$a = t_0< t_1<  t_2< \cdots < t_{n-1}< t_n=b;$$
 la cual determina una partición de la curva $\alpha$ en $n$ puntos de la forma
 $Q_i(x(t_{i-1}), x(y_{i-1}),z(t_{i-1}))$, para $i=1,2, \cdots , n$.
-%
 
 Denotaremos por $$\Delta\alpha_i=\int_{t_i}^{t_{i+1}}\Vert {\bf r}^\prime(t)\Vert dt $$
 a la longitud de la curva $\alpha$ desde el punto $Q_i$ hasta $Q_{i+1}$.
 Para una función continua $f: \alpha \to \mathbb{R}$ consideremos la suma
-$$\sum_{i=1}^n f({\bf r}(t_i^*))\Delta \alpha_i=\sum_{i=1}^n f(x(t_i^*),y(t_i^*),z(t_i^*))\Delta \alpha_i$$
+\[\sum_{i=1}^n f({\bf r}(t_i^*))\Delta \alpha_i=\sum_{i=1}^n f(x(t_i^*),y(t_i^*),z(t_i^*))\Delta \alpha_i.\]
 en donde $t_i^* \in [t_{i-1},t_i]$, con los elementos anteriores se define la integral de una campo escalar sobre una curva.
 \begin{defi}
 Consideremos $f:\mathbb{R}^3\to \mathbb{R}$ continua.
@@ -689,7 +677,7 @@ $$(\overline{x},\overline{y},\overline{z})= (\frac{\mu_{yz}}{M},\frac{\mu_{xz}}{
 \subsection{Integración de funciones vectoriales} \index{Función!integrable}
 Para funciones vectoriales ${\bf f}(t)=\langle f_1(t),f_2(t),\cdots,f_n(t)\ra$, se dice que $f$ es integrable en $[a,b]$
 si y solo si cada una de las funciones componentes $f_i(t)$ es integrable en $[a,b]$, para toda $i=1,2,\cdots ,n$.
-Además $$\int_a^b{\bf f}(t)dt= \langle \int_a^b f_1(t)dt,\int_a^b f_2(t)dt,\cdots, \int_a^b f_n(t)dt\ra.$$
+Además, \[\int_a^b{\bf f}(t)dt= \langle \int_a^b f_1(t)dt,\int_a^b f_2(t)dt,\cdots, \int_a^b f_n(t)dt\ra.\]
 
 \subsection{Integrales dobles} \label{integralesdobles}  \index{Integrales!dobles}
 Presentaremos ahora la integral doble de una función de
@@ -697,7 +685,7 @@ dos variables $f(x,y)$ definida sobre una región del plano como el
 l\'{\i}mite de las aproximaciones a través de sumas de Riemann, posteriormente
 se presentarán de manera similar las integrales triples.
 La evaluación de las integrales dobles o triples se puede obtener
-utilizando el teorema fundamental de cálculo; véase \cite{apostol_calculus_1999}.
+utilizando el teorema fundamental de cálculo; ver \cite{apostol_calculus_1999}.
 
 En el plano $xy$ consideraremos un rectángulo $R=[a,b]\times \lbrack c,d]$, es decir
 $$R=\{(x,y) \in \mathbb{R}^{2}\, | \,a\leq x\leq b,c\leq y\leq d\}.$$
@@ -760,8 +748,7 @@ $f(x_{i}^{\ast },y_{k}^{\ast })\Delta x_{i}\Delta y_{k}$ corresponde al
 volumen del paralelep\'{\i}pedo con área de la base $\Delta x_{i}\Delta y_{k}$ y altura $f(x_{i}^{\ast },y_{k}^{\ast });$
 la suma $S_{nm}$ es una aproximación al volumen del sólido $E$.
 Es por lo anterior que el volumen de $E$ se define como
-$$\text{volumen:}\lim _{n,m \to \infty}\left(\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \Delta x_{i}\Delta y_{k}\right)= \ds \iint\limits_{R}f(x,y) dA.$$ \index{Masa de una región}
-
+\[\text{volumen:}\lim _{n,m \to \infty}\left(\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \Delta x_{i}\Delta y_{k}\right)= \ds \iint\limits_{R}f(x,y) dA.\] \index{Masa de una región}
 Si la función $f(x,y)$ determina la densidad en el punto $(x,y)$ entonces la integral de la fórmula (\ref{integralesdobles1})
 representa la masa ($M$) de la región $R$. Los momentos con respecto al eje $x$ y al eje $y$ están dados  por
 {\small $\mu_{x}=\ds \iint_R y f(x,y)dA$} y {\small $\mu_{y}=\ds \iint_R x f(x,y)dA$,} los cuales determinan las coordenadas del
@@ -1027,7 +1014,7 @@ de un sólido $E$, con $u \in [a,b]$, $v \in [c,d]$ y $w \in [p,q]$;
 con funciones componentes que poseen derivadas parciales continuas en
 $[a,b] \times [c,d] \times [p,q]$.
 
-\begin{figure}[H]
+\begin{figure}[t]
 \centering
 \caption{Transformación de una región en el espacio}
 \label{fig:transform-region}

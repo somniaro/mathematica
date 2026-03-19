@@ -2144,7 +2144,7 @@ V&=& \int {-3}^2\int _{-\sqrt{6-y-y^2}}^{\sqrt{6-y-y^2}} \int _{x^2+y^2}^{6-y}dz
 La proyección en  el plano $xz$ evidencia que en el orden de integración $dydxdz$ o $dydzdx$ puede ser necesario evaluar tres o cuatro integrales triples, según el caso.
 En seguida se muestra una forma simplificada de obtener el volumen.
 \begin{multline*}
-\bi _{-\frac{5}{2}}^{\frac{5}{2}}\bi_{\frac{13}{2}-\sqrt{\frac{25}{4}-x^2}}^{\frac{13}{2}+\sqrt{\frac{25}{4}-x^2}}\bi_{-\sqrt{z-x^2}}^{6-z}dydzdx \\Z +\bi_{-\sqrt{6}}^{\sqrt{6}}\bi_{x^2}^{\frac{13}{2}-\sqrt{\frac{25}{4}-x^2}}\bi_{-\sqrt{z-x^2}}^{\sqrt{z-x^2}}dydzdx = \frac{625\pi}{32}
+\bi_{-\frac{5}{2}}^{\frac{5}{2}}\bi_{\frac{13}{2}-\sqrt{\frac{25}{4}-x^2}}^{\frac{13}{2}+\sqrt{\frac{25}{4}-x^2}}\bi_{-\sqrt{z-x^2}}^{6-z}dydzdx \\Z +\bi_{-\sqrt{6}}^{\sqrt{6}}\bi_{x^2}^{\frac{13}{2}-\sqrt{\frac{25}{4}-x^2}}\bi_{-\sqrt{z-x^2}}^{\sqrt{z-x^2}}dydzdx = \frac{625\pi}{32}
 \end{multline*}
 
 En \verb"Mathematica", algunas de estas integrales pueden evaluarse mediante las siguientes instrucciones:
@@ -7686,7 +7686,7 @@ al menos una posibilidad de obtener su volumen mediante integrales múltiples.
 El lector deberá, como ejercicio, obtener el mismo valor a través del planteamiento de integrales triples en otros
 ordenes de integración o planteando cambios de variables.
 
-\begin{enumerate}[leftmargin=0cm,itemindent=0.5cm,labelwidth=\itemindent,labelsep=0cm,align=left,label={{\bf \arabic*)}}]
+\begin{parrafonumerado}
 
 \item En \cite{stewart_calculo_2018}, sección 12.1, se plantea el siguiente ejercicio:
 Describa y trace un sólido con las siguientes propiedades: cuando es iluminado por rayos paralelos al eje $z$, su sombra es un disco circular. Si los rayos son paralelos al eje $y$, su sombra es un cuadrado. Si los rayos son paralelos al eje $x$,
@@ -8500,13 +8500,13 @@ Cross[D[R2,u],D[R2,t]]],{t,Pi,2*Pi},{u,0,1},{w,0,1}]
 \end{tcolorbox}
 % tex-fmt: on
 
-\end{enumerate}
+\end{parrafonumerado}
 
 \begin{ejer}
-Determine el volumen del sólido acotado por las figuras de las expresiones señaladas.
-Hágalo de diversas maneras, incluyendo la parametrización de la región. Se agrega la figura y las instrucciones para conseguirlo.
+  Determine el volumen del sólido acotado por las figuras de las expresiones señaladas.
+  Hágalo de diversas maneras, incluyendo la parametrización de la región. Se agrega la figura y las instrucciones para conseguirlo.
 
-\begin{enumerate}[leftmargin=1.2em, itemindent=0pt,labelwidth=\labelwidth,labelsep=0.5em]
+  \begin{parrafonumerado}
   \item $x^2+y^2=4+z$, $4z=(4-x^2-y^2)e^{1-x^2-y^2}$.
 
 % tex-fmt: off
@@ -8568,5 +8568,5 @@ Mesh->False,PlotStyle->RGBColor[0.6,0.2,0.2]]
 \end{tcolorbox}
 % tex-fmt: on
 
-\end{enumerate}
+  \end{parrafonumerado}
 \end{ejer}

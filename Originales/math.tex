@@ -1,4 +1,4 @@
-\chapter{Elementos básicos en {\tt Mathematica}}
+\chapter{Elementos básicos en Mathematica}
 
 En este capítulo presentamos algunas de las funciones y comandos
 básicos que se utilizan en el programa \verb"Wolfram Mathematica", que denominaremos simplemente
@@ -211,7 +211,7 @@ Limit[Sin[x^2+y^2]/(x^2+y^2),{x,y}->{0,0}]
     Aunque es posible evaluar límites de manera iterada, es conveniente advertir que el uso
     incorrecto de esta sintaxis puede llevar a conclusiones arroneas.
     Por eso es importante usar la indicación adecuada. Ilustraremos esta situación.
-    \begin{itemize}%[leftmargin=0in]
+    \begin{itemize}
       \item Correcta \verb"Limit[n/(n+m),{n,m}->{Infinity,Infinity}]"
       \item Incorrecta \verb"Limit[Limit[n/(n+m),m->Infinity],n->Infinity]"
       \item Incorrecta \verb"Limit[Limit[n/(n+m),n->Infinity],m->Infinity]"
@@ -316,7 +316,7 @@ Manipulate[Integrate[(Sin[x])^k,x],{k,-2,10,1}]
     \enlargethispage{\baselineskip}
 
     Ahora se muestran algunos ejemplos:
-  \begin{itemize}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+    \begin{itemize}
       \item Para definir la función $f(x,y)=x^2-3y^4$ y evaluarla en el punto $(2,3)$ se ejecutan
         las instrucciones \verb"f[x_,y_]:=x^2-3*y^4", \verb"f[2,3]".
       \item La función
@@ -342,13 +342,14 @@ Manipulate[Integrate[(Sin[x])^k,x],{k,-2,10,1}]
         Se ofrece una manera de obtener la representación gráfica en el plano de objetos o funciones
         escritas en forma explícita, implícita o paramétrica.
 
-      \begin{itemize}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+        \begin{itemize}
           \item \verb"Plot[f[x],{x,a,b}]" dibuja la función $y=f(x)$ con $x \in[a,b]$. \index{Plot}
           \item \verb"PolarPlot[r[t],{t,a,b}]" grafica la función $r(t)$ escrita en coordenadas polares, con $t \in[a,b]$.
           \item \verb"ContourPlot[f[x,y]==0,{x,a,b},{y,c,d}]",\index{ContourPlot}
             dibuja la ecuación de dos variables $f(x,y)=0$, con $x \in[a,b]$ y $y \in[c,d]$,
             se debe incluir el símbolo de igualdad y no olvidar $"=="$.
-        \item \verb"ParametricPlot[{x[t],y[t]},{t,a,b}]", dibuja la curva parametri- \\ zada $\ve{r}(t)=\left\langle x(t),y(t)\right\rangle ,\,\, t\in \lbrack a,b]$.
+          \item \verb"ParametricPlot[{x[t],y[t]},{t,a,b}]", dibuja la curva parametrizada
+          $\ve{r}(t)=\left\langle x(t),y(t)\right\rangle ,\,\, t\in \lbrack a,b]$.
           \index{ParametricPlot}
       \end{itemize}
       % \end{tcolorbox}
@@ -378,39 +379,27 @@ ParametricPlot[{{2*Cos[t],2*Sin[t]},{Cos[t],Sin[t]},
       conseguir gráficos en el plano, se puede agregar la extensión \verb"3D" y unas opciones adicionales
       con el fin de obtener gráficos en el espacio.
       Presentamos unas de las funciones más utilizadas en  \verb"Mathematica".
-      \\
 
-      \begin{itemize}[leftmargin=*]
+      \begin{itemize}
         \item \verb"Plot3D[f[x,y],{x,a,b},{y,c,d}]", permite obtener el gráfico de la función
           $z=f(x,y)$, para $(x,y) \in [a,b] \times [c,d]$.
-          \\
-
         \item \texttt{Plot3D[\allowbreak\{f[x,y],\allowbreak g[x,y],\allowbreak ..., h[x,y]\},\allowbreak \{x,a,b\},\allowbreak \{y,c,d\}]} \\
           permite obtener el gráfico de varias funciones.
-          \\
-          %Mientras que con \verb"Plot3D[{f[x,y],g[x,y],...,h[x,y]},{x,a,b},{y,c,d}]",
-          %se obtiene el gráfico de varias funciones. \index{Plot3D}
         \item \Verb!ParametricPlot3D[{x[t],y[t],z[t]},{t,a,b}]!,
           dibuja la curva parametrizada $\ve{r}(t)=\langle x(t),y(t),z(t) \rangle $,
           con $t\in[a,b]$.  \index{ParametricPlot3D}
-          \\
-
         \item \verb"ParametricPlot3D[{x[u,v],y[u,v],z[u,v]},{u,a,b},{v,c,d}]",
           se utiliza para graficar superficies parametrizadas por medio de una función
           $\ve{r}(u,v)=\langle x(u,v),y(u,v),z(u,v) \rangle $, con
           $u\in[a,b]$, $v\in[c,d]$.
-          \\
         \item \verb"ContourPlot3D[f[x,y,z]==0,{x,a,b},{y,c,d},{z,p,q}]", se usa
           para graficar conjuntos de nivel (contornos).
           Este comando presenta el gráfico de una ecuación de tres variables, con $x\in[a,b]$,
           $y\in[c,d]$ y $z\in[p,q]$.  \index{ContourPlot3D}
-          \\
       \end{itemize}
 
       Los gráficos se pueden personalizar en sus atributos con el uso de algunas opciones,
       presentamos las más utilizadas:
-
-      \vspace{-2pt}
 
       \begin{tcolorbox}[title=Opciones de los gráficos]
         \begin{tabular}{rl}
@@ -439,24 +428,23 @@ ParametricPlot[{{2*Cos[t],2*Sin[t]},{Cos[t],Sin[t]},
       \end{tcolorbox}
 
       El lector puede además de ejecutar las instrucciones, modificarlas.
-      {\small
-        \begin{itemize}
-          \item \verb"Plot3D[{5-y^2,x^2+y^2},{x,-4,4},{y,-4,4},PlotPoints->60,"\\
-            \verb"PlotStyle->Opacity[0.6]]"
-          \item \verb"ContourPlot3D[{z==6-(x-1)^2-y^2,4*x^2+y^2==36,"\\
-              \verb"x^2+4*y^2==4},{x,-6,10},{y,-7,7},{z,-35,6},"\\
-            \verb"ContourStyle->{Red,Yellow,Green}]"
-          \item \verb"ParametricPlot3D[{Cos[u]*Cosh[v],Sin[u]*Cosh[v],Sinh[v]},"\\
-            \verb"{u,0,2*Pi},{v,-2,2},PlotStyle->Orange,MeshStyle->Gray]"
-          \item \verb"ContourPlot3D[z==3*x-x^3-2*y^2+y^4,{x,-3,3},{y,-2,3},"\\
-            \verb"{z,-3,3},MeshStyle->Gray]"
+      \begin{itemize}
+        \item \verb"Plot3D[{5-y^2,x^2+y^2},{x,-4,4},{y,-4,4},"\\
+          \verb"PlotPoints->60,PlotStyle->Opacity[0.6]]"
+        \item \verb"ContourPlot3D[{z==6-(x-1)^2-y^2,4*x^2+y^2==36,"\\
+            \verb"x^2+4*y^2==4},{x,-6,10},{y,-7,7},{z,-35,6},"\\
+          \verb"ContourStyle->{Red,Yellow,Green}]"
+        \item \verb"ParametricPlot3D[{Cos[u]*Cosh[v],Sin[u]*Cosh[v],"\\
+            \verb"Sinh[v]},{u,0,2*Pi},{v,-2,2},PlotStyle->Orange,"\\
+          \verb"MeshStyle->Gray]"
+        \item \verb"ContourPlot3D[z==3*x-x^3-2*y^2+y^4,{x,-3,3},{y,-2,3},"\\
+          \verb"{z,-3,3},MeshStyle->Gray]"
 \item \begin{Verbatim}
-ContourPlot3D[z==3*x-x^3-2*y^2+y^4,{x,-3,3},{y,-2,3},
-{z,-3,3},ColorFunction->Function[{x,y,z},
+ContourPlot3D[z==3*x-x^3-2*y^2+y^4,{x,-3,3},
+{y,-2,3},{z,-3,3},ColorFunction->Function[{x,y,z},
 ColorData["Rainbow"][z]],MeshStyle->Gray]
 \end{Verbatim}
-        \end{itemize}
-      }
+      \end{itemize}
 
       El siguiente gráfico se consigue utilizando las instrucciones señaladas.
 
@@ -1199,7 +1187,7 @@ Integrate[\[Rho]^3*Cos[\[Theta]]*Sin[\[Phi]],
 
       El comando \verb"NDSolve" permite resolver numéricamente una ecuación diferencial,
       una exposición más detallada de esta función puede conseguirse \textcite{sofroniou_advanced_2008}. Ilustraremos lo anterior con unos ejemplos.
-    \begin{itemize}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=0cm,align=left]
+      \begin{itemize}
         \item La ecuación diferencial ordinaria de segundo orden
           $$ y^{\prime \prime }\left( x\right) + y^{\prime }\left(x\right) =-e^{-x},$$ con las condiciones
           $y\left( 0\right) =1$, $y^{\prime }\left( 0\right) =1$, tiene por solución $y\left( x\right) =xe^{-x}+1$.

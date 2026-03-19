@@ -1,12 +1,6 @@
 {
   "latex-workshop.latex.autoBuild.run": "never", // "onSave"
   "latex-workshop.formatting.latex": "tex-fmt",
-  //"latex-workshop.formatting.latexindent.args": [
-  //  "-c",
-  //  "%DIR%/",
-  //  "%TMPFILE%",
-  //  "-y=defaultIndent: '\\t'"
-  //],
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
@@ -18,7 +12,7 @@
         "-lualatex",
         "-bibtex",
         "-outdir=%OUTDIR%",
-        "%DOC%"
+        "%DOCFILE%"
       ],
       "env": {}
     }
@@ -48,4 +42,19 @@
     "--unique",
     "%PDF%#src:%LINE%%TEX%"
   ],
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.fls": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.synctex.gz": true,
+    "**/*.toc": true,
+    "**/*.bcf": true,
+    "**/*.run.xml": true
+  },
+  "search.exclude": {
+    "**/*.aux": true,
+    "**/*.log": true
+  }
 }

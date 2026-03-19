@@ -587,7 +587,7 @@ Integrate[y-x,{x,-2,1},{y,x,2-x^2}]+Integrate[x-y,
 
 Para el orden $dxdy$, $R$ queda dividida en cuatro regiones de acuerdo con el recorrido horizontal que hace $x$.
 
-\begin{itemize}[label=$\bullet$\,\,]
+\begin{itemize}
 \item  $y\in[1,2]$ se satisface que $-\sqrt{2-y} \leq x \leq \sqrt{2-y}$.
 \item Para $y\in[-2,1]$, hay dos regiones: en una parte, $-\sqrt{2-y} \leq x \leq y$,
 mientras que en la otra región $y \leq x \leq 1+\sqrt{3+y}$.
@@ -938,7 +938,7 @@ que, al reemplazar en la primera ecuación, se obtiene que
 $u^{2}=x^{2}e^{v}$, entonces $x=ue^{-v/2}$, y $y=ue^{v/2}$.
 Para determinar las ecuaciones de las curvas que acotan la región, lo haremos por casos.
 
-\begin{itemize}[label=$\bullet$\,\,]
+\begin{itemize}
 \item Si $u=1$ y $0\leq v\leq 2$,
 entonces, $x=e^{-v/2}$ y $y=e^{v/2}$, por tanto $xy=1$.
 \item Si $u=2$ y $0\leq v\leq 2$, entonces \
@@ -1154,23 +1154,13 @@ se intersecan. Se determinará la superficie sobre la esfera acotada por los cil
 
 La porción sobre la esfera interior de los cilindros se parametriza en dos casos:
 
-\newlength{\bulletindent}
-\settowidth{\bulletindent}{\textcolor{black}{\scriptsize\ding{110}}\quad}
-\begin{minipage}[t]{\textwidth}
-
-\begin{itemize}[
-leftmargin=\dimexpr 1.5cm - \bulletindent\relax,itemsep=0pt,parsep=0pt,labelsep=0.4em,label=\textcolor{black}{\scriptsize\ding{110}}]
+\begin{itemize}
 \item El cilindro $x^2+y^2=2r$ se reescribe como $(x-1)^2+y^2=1$. Para la superficie sobre la esfera se puede hacer $x=1+u\cos(t)$, $y=u\sin(t)$, donde $t\in[0,2\pi]$, lo cual parametriza la región sobre la esfera interior al cilindro proyectada el plano $xy$. Reemplazando en la ecuación de la esfera se obtiene {\small $-3+2u\cos(t)+u^2+z^2=0$}, cuya solución es {\small $z=\pm\sqrt{3-2u\cos(t)-u^2}$}. Por lo tanto la función
-\end{itemize}
-\end{minipage}
-
-{\footnotesize
 \[{\bf r}( u,t) =\left\langle 1+u\cos (t) ,u\sin \left(
-t\right) ,\sqrt{3-2u\cos (t) -u^{2}}\right\rangle,\]}
+t\right) ,\sqrt{3-2u\cos (t) -u^{2}}\right\rangle,\]
 con $t\in \lbrack 0,2\pi ],\,\, u\in \lbrack 0,1]$,
 representa la parte de la esfera que se halla acotada por el cilindro, la otra parte se determina con la raíz negativa en la tercera componente.
-
-%\clearpage
+\end{itemize}
 
 \begin{figure}[H]
 \centering
@@ -1180,24 +1170,13 @@ representa la parte de la esfera que se halla acotada por el cilindro, la otra p
 \fuentepropia
 \end{figure}
 
-\settowidth{\bulletindent}{\textcolor{black}{\scriptsize\ding{110}}\quad}
-\begin{minipage}[t]{\textwidth}
-
-\begin{itemize}[
-leftmargin=\dimexpr 1.5cm - \bulletindent\relax,itemsep=0pt,parsep=0pt,labelsep=0.4em,before=\vspace{-0.4cm},label=\textcolor{black}{\scriptsize\ding{110}}]
+\begin{itemize}
 \item Para la expresión $x^{2}+z^{2}=2x$ (que representa el otro cilindro), el tratamiento es similar al caso anterior, obteniendo la función
-
-{\footnotesize
 \[
 {\\bf r}_1(u,t) = \left\langle 1 + u\cos(t),\, \pm \sqrt{3 - 2u\cos(t) - u^{2}},\, u\sin(t) \right\rangle
 \]
-}
-
 con $t \in [0, 2\pi]$, $u \in [0, 1]$, la cual parametriza la porción de la esfera dentro del cilindro con ecuación $x^{2}+z^{2}=2x$.
 \end{itemize}
-\end{minipage}
-
-%
 
 \begin{figure}[H]
 \centering
@@ -1246,29 +1225,25 @@ Show[a,b,c]
 Por la simetría de la región en mención, el área de la porción sobre la esfera interior a los cilindros corresponde a cuatro veces la integral del término
 $\left\Vert {\bf r}_{t}\times {\bf r}_{u}\right\Vert$, que es el elemento diferencial del área.
 Para tal fin, se hallan las siguientes funciones vectoriales:
-
 \begin{eqnarray*}
 {\bf r}_{t}(t,u) &=& \la -u\sin t,u\cos t,\frac{u\sin t}{\sqrt{3-u^2 -2u\cos t}}\ra \\
 {\bf r}_{u}(t,u)&=& \la\cos t,\sin t,-\frac{u+\cos t}{\sqrt{3-u^2-2u\cos t}}\ra \\
 {\bf r}_{t}\times{\bf r}_{u}&=&\la-\frac{u^2 \cos t+u}{\sqrt{3-u^2 -2u\cos t}},\frac{-u^2 \sin t}{\sqrt{3-u^2 -2u\cos t}},-u,\ra,
 \end{eqnarray*}
-\end{parrafonumerado}
-
 entonces
 $\left\Vert {\bf r}_{t}\times{\bf r}_{u} \right\Vert =\frac{2u}{\sqrt{3-u^{2}-2u\cos t}}$.
 Por lo anterior, el área $A$ de la superficie es cuatro veces la integral del término anterior; es decir,
-
 \[4\int_{0}^{2\pi}\int_{0}^{1}\frac{2u}{\sqrt{3-u^{2}-2u\cos t}}dudt \approx 18. 265.\]
-
 Este cálculo se hace con \verb"Mathematica" ejecutando las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
-{x,y,z}={1+u*Cos[t],Sqrt}[3-u^2-2*u*Cos[t]]};
-r={x,y,z};
-A=Norm[Cross[D[r,t],D[r,u]]];
-NIntegrate[4*A,{u,0,1},{t,0,2Pi}]
+  {x,y,z}={1+u*Cos[t],Sqrt}[3-u^2-2*u*Cos[t]]};
+  r={x,y,z};
+  A=Norm[Cross[D[r,t],D[r,u]]];
+  NIntegrate[4*A,{u,0,1},{t,0,2Pi}]
 \end{Verbatim}
 \end{tcolorbox}
+\end{parrafonumerado}
 
 \subsection{Un cilindro cardiogénico bajo un paraboloide}
 
@@ -2471,25 +2446,6 @@ Paraboloide acotada por el cilindro cardiogénico
 \includegraphics[width=0.4\textwidth]{Img/T_30c.pdf}
 \end{figure}
 
-\begin{comment}
-estos gráficos se obtienen ejecutando las siguientes instrucciones
-
-\begin{Verbatim}
-a=ParametricPlot3D[{(1+Cos[t])Cos[t],(1+Cos[t])*Sin[t],2*u},{t,0,2Pi},{u,0,2},
-Mesh->False,PlotStyle->Orange,
-PlotPoints->60];
-c=ContourPlot3D[2*z==x^2+y^2,{x,-2,2},{y,-2,2},{z,0,2},
-Mesh->False,ContourStyle->Cyan];
-x=(1+Cos[t])Cos[t];
-y=(1+Cos[t])*Sin[t];
-z=(x^2+y^2)/2;
-b=ParametricPlot3D[{x,y,z},{t,0,2Pi},
-PlotStyle->{Black,Thickness->0.015}];
-Show[c,a,b,PlotRange->{{-2,2.05},{-2,2.05},{-0.15,2}}]
-\end{Verbatim}
-
-\end{comment}
-
 \item La superficie sobre el paraboloide hiperbólico $2z=y^2-x^2$ acotada por el cilindro cardiogénico $r=1+\cos(t)$.
 
 \begin{figure}[H]
@@ -2498,26 +2454,6 @@ Show[c,a,b,PlotRange->{{-2,2.05},{-2,2.05},{-0.15,2}}]
 \includegraphics[width=0.4\textwidth]{Img/T_31a.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Img/T_31b.pdf}
 \end{figure}
-
-\begin{comment}
-estos gráficos se obtienen ejecutando las siguientes instrucciones
-
-\begin{Verbatim}
-a=ParametricPlot3D[{(1+Cos[t])Cos[t],(1+Cos[t])*Sin[t],
-2*u},{t,0,2Pi},{u,-1,1},Mesh->False,
-PlotStyle->Orange,PlotPoints->60];
-c=ContourPlot3D[
-2*z==y^2-x^2,{x,-3,3},{y,-3,3},{z,-2.5,2},
-Mesh->False,ContourStyle->Blend[{Red,Green,Blue},3/4]];
-x=(1+Cos[t])Cos[t];
-y=(1+Cos[t])*Sin[t];
-z=(y^2-x^2)/2;
-b=ParametricPlot3D[{x,y,z},{t,0,2Pi},
-PlotStyle->{Black,Thickness->0.015}];
-Show[b,c,a,PlotRange->{{-2.5,2.5},{-2.5,2.5},{-2.1,2.6}}]
-\end{Verbatim}
-
-\end{comment}
 
 \item La superficie sobre la esfera con ecuación $x^2+y^2+z^2=4$ acotada por el cilindro cardiogénico $1+\cos(t)$.
 
@@ -2530,29 +2466,6 @@ Show[b,c,a,PlotRange->{{-2.5,2.5},{-2.5,2.5},{-2.1,2.6}}]
 \includegraphics[width=0.4\textwidth]{Img/T_32c.pdf}
 \end{figure}
 
-\begin{comment}
-estos gráficos se obtienen ejecutando las siguientes instrucciones
-
-\begin{Verbatim}
-a=ParametricPlot3D[{(1+Cos[t])Cos[t],(1+Cos[t])*Sin[t],u},{t,0,2Pi},
-{u,-2,2},Mesh->False,PlotStyle->Orange,PlotPoints->80];
-c=ContourPlot3D[
-x^2+y^2+z^2==4,{x,-2.5,2.5},{y,-2.5,2.5},{z,-2.5,2},
-Mesh->False,
-ContourStyle->{Blend[{Orange,Green},1/4],Opacity[0.6]},
-PlotPoints->80];
-x=(1+Cos[t])Cos[t];
-y=(1+Cos[t])*Sin[t];
-z=Sqrt[4-y^2-x^2];
-b=ParametricPlot3D[{{x,y,z},{x,y,-z}},{t,0,2Pi},
-PlotStyle->{Directive[Black,Thickness->0.01],
-Directive[Black,Thickness->0.01]},PlotPoints->90];
-Show[b,c,a,PlotRange->{{-2,2},{-2,2},{-2,2}}]
-\end{Verbatim}
-
-\end{comment}
-%\clearpage
-
 \item Un pétalo de la flor $r=\sin(3\theta)$ gira alrededor de una recta perpendicular al eje polar, que pasa por el polo.
 Hallar el área de la superficie obtenida.
 
@@ -2564,19 +2477,5 @@ Hallar el área de la superficie obtenida.
 
 \includegraphics[width=0.4\textwidth]{Img/99c.pdf}
 \end{figure}
-
-\begin{comment}
-
-\begin{Verbatim}
-x=Sin[3t]*Cos[t]*Cos[u];
-y=Sin[3t]*Cos[t]*Sin[u];
-z=Sin[3t]*Sin[t];
-ParametricPlot3D[{x,z,y},{t,0,Pi/3},{u,0,13Pi/8},
-Boxed->False,Axes->False,PlotTheme->"ThickSurface",
-PlotStyle->Yellow,MeshStyle->Black,PlotPoints->60]
-\end{Verbatim}
-
-\end{comment}
-
 \end{enumerate}
 \end{ejer}
