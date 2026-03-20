@@ -121,9 +121,10 @@
 \usepackage{enumitem}
 
 %listas numeradas
-\setlist[enumerate,1]{label=\arabic*), font={\normalfont\upshape}}
-\setlist[enumerate,2]{label=\alph*), font={\normalfont\upshape}}
-\setlist[enumerate,3]{label=\smallcaps{\roman}*), font={\normalfont\upshape}}
+\setlist[enumerate]{font={\normalfont\upshape}}
+\setlist[enumerate,1]{label={\arabic*)}}
+\setlist[enumerate,2]{label={\alph*)}}
+\setlist[enumerate,3]{label={\smallcaps{\roman*})}}
 
 %Listas en párrafos (sin indentado)
 \newlist{parrafonumerado}{enumerate}{1}
@@ -134,9 +135,10 @@
 \setlist[funciones]{leftmargin=14pt, labelsep=7pt, labelwidth=8pt, align=left, label={\arabic*)}, font={\normalfont\upshape}}
 
 % Bullets
-\setlist[itemize,1]{label=$\bullet$, font={\normalfont\upshape}}
-\setlist[itemize,2]{label=\textendash, font={\normalfont\upshape}}
-\setlist[itemize,3]{label=\textasteriskcentered, font={\normalfont\upshape}}
+\setlist[itemize]{labelsep=7pt, font={\normalfont\upshape}}
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=\textendash}
+\setlist[itemize,3]{label=\textasteriskcentered}
 
 \newlist{parrafoitemize}{itemize}{1}
 \setlist[parrafoitemize,1]{leftmargin=0pt,itemindent=1.5em,labelwidth=\itemindent,labelsep=0pt,align=left,label=$\bullet$, font={\normalfont\upshape}}
@@ -188,7 +190,7 @@
 
 %footnote format
 \usepackage[bottom]{footmisc}
-\setlength{\skip\footins}{40pt plus 5pt minus 5pt}
+\setlength{\skip\footins}{35pt plus 5pt minus 5pt}
 
 \makeatletter
 \renewcommand{\@makefntext}[1]{%

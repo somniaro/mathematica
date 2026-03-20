@@ -35,7 +35,7 @@ Sobre los planos coordenados se determinan las siguientes regiones.
   \fuentepropia
 \end{figure}
 
-Estos gráficos nos ayudan a establecer los límites de las integrales triples que determinan su volumen.
+Los gráficos de la figura~\ref{fig:proyeccion_planos} nos ayudan a establecer los límites de las integrales triples que determinan su volumen.
 \begin{multline*}
   \ds \int_{0}^{1}\int_{0}^{4-4y}\int_{0}^{2y}dxdzdy +\int_{0}^{1}\int_{4-4y}^{4-2y}\int_{0}^{4-z-2y} dxdzdy\\
   + \int_{1}^{2}\int_{0}^{4-2y}\int_{0}^{4-z-2y}dxdzdy=
@@ -65,12 +65,12 @@ El volumen también se puede hallar de la siguiente manera.
 %\small
 Los vértices de la base son los puntos $(0,0,0)$, $(2,1,0)$ y $(0,2,0)$. Este triángulo se puede parametrizar primero, considerando un segmento entre dos puntos de estos y luego \textbf{formar segmentos rectilíneos con el tercer punto}. Es decir $(1-u)(0,0,0) + u(2,1,0) = (2u, u, 0)$ y luego $(1-v)(2u, u, 0) + v(0,2,0) = (2(1-v)u, (1-v)u + 2v, 0)$. Por tal razón la función $\mathbf{r}(u, v) = \langle 2(1-v)u, (1-v)u + 2v, 0 \rangle$, $u \in [0,1]$, $v \in [0,1]$, representa la base del sólido. El sólido completo se recorre involucrando el vértice $(0,0,4)$, es decir, se debe formar la siguiente combinación convexa: $(1-w)(0,0,4) + w(2(1-v)u, (1-v)u + 2v, 0)$ que al simplificarse, determina la función que parametriza el sólido
 
-\[ \mathbf{r}(u,v,w) = \left\langle 2wu(1-v), wu(1-v)+2wv, 4-4w \right\rangle, \]
+\[ \mathbf{r}(u,v,w) = \left\langle 2wu(1-v), wu(1-v)+2wv, 4-4w \right\rangle\!, \]
 con $u \in [0,1]$, $v \in [0,1]$, $w \in [0,1]$. Es sencillo ver que
 \begin{align*}
   \mathbf{r}_u &= \left\langle 2w(1-v), w(1-v), 0 \right\rangle \\
   \mathbf{r}_v &= \left\langle -2wu, w(-u+2), 0 \right\rangle \\
-  \mathbf{r}_w &= \left\langle 2(1-v)u, u-uv+2v, -4 \right\rangle,
+  \mathbf{r}_w &= \left\langle 2(1-v)u, u-uv+2v, -4 \right\rangle\!,
 \end{align*}
 con lo que se puede establecer $\mathbf{r}_u \times \mathbf{r}_v = \langle 4w(u-2), -8wu, -4wu \rangle;$ por lo tanto, $|\mathbf{r}_u \cdot (\mathbf{r}_v \times \mathbf{r}_w)| = 16|w^2(v-1)|$, el volumen del sólido está determinado por
 \[ \int_{0}^{1}\int_{0}^{1}\int_{0}^{1} 16|w^2(v-1)|\, dudvdw = \int_{0}^{1}\int_{0}^{1}\int_{0}^{1} 16w^2(1-v)\, dudvdw = \frac{8}{3}. \]
@@ -278,31 +278,25 @@ Sobre la superficie del cilindro parabólico, la coordenada en $z$ se puede obte
 \end{figure}
 
 Es de anotar que la curva sobre el cilindro en el plano $x=0$, se determina por medio de la expresión
-$\langle 0,t,4-t^{2}\rangle$ y sobre el plano $y=x$, se usa $\langle t,t,4-t^{2}\rangle$.\\
+$\langle 0,t,4-t^{2}\rangle$ y sobre el plano $y=x$, se usa $\langle t,t,4-t^{2}\rangle$.
 
-Para efectos del gráfico, la parte sobre el cilindro se parametriza con
-$(1-u)\langle 0,t,4-t^{2}\rangle +u\langle t,t,4-t^{2}\rangle=\langle ut,t,4-t^{2}\rangle$. \\[0.25cm]
+Para efectos de la figura~\ref{fig:solido_parabolico_y}, la parte sobre el cilindro se parametriza con
+$(1-u)\langle 0,t,4-t^{2}\rangle +u\langle t,t,4-t^{2}\rangle=\langle ut,t,4-t^{2}\rangle$.
 Con lo anterior, se puede establecer que un punto $Q$ sobre la superficie del cilindro tiene la forma
 $(2uv,2-2v+2uv,4v(1-u)(uv+2-v))$, mientras que un punto $P$ sobre la base del sólido tiene la forma $(2uv,2-2v+2uv,0)$.
 Ahora se puede parametrizar el sólido formando una combinación convexa de los puntos $P$ y $Q$,
 esto es $(1-w)Q+wP$,
-%$(1-w) \langle 2uv,2-2v+2uv,0\rangle+w\langle 2uv,2-2v+2uv,4v(1-u)(uv+2-v)\rangle$
 que al simplificarse nos permite definir la función
 ${\bf r}( u,v,w) = \langle 2uv,2-2v+2uv,4wv(1-u)(uv+2-v)\rangle$,
 para $u\in [0,1]$, $v\in [0,1]$, $w\in [0,1]$. De ella se obtienen los siguientes vectores:
-
 \begin{eqnarray*}
   {\bf r}_{u}&=& \langle 2v,2v,8wv( v-uv-1)\rangle \\
   {\bf r}_{v}&=& \langle 2u,-2+2u,-8w(u-1) ( uv-v+1) \rangle \\
   {\bf r}_{w}&=& \langle 0,0,4v( 1-u) (uv+2-v) \rangle
 \end{eqnarray*}
-\vspace{-4pt}
 Además, ${\bf r}_{v}\times {\bf r}_{w}= \big\langle -8v( u-1)^{2}(uv+2-v),8uv( u-1)(uv+2-v),0 \big \rangle$,
 entonces, $ |{\bf r}_{u}\cdot({\bf r}_{v}\times {\bf r}_{w})|=16|v^{2}(u-1)(uv+2-v)|$. Por último, el volumen del sólido está dado por
-{\small
-  \[\int_{0}^{1}\int_{0}^{1}\int_{0}^{1}16| v^{2}( u-1)(uv+2-v)|dudvdw= 4.\]
-}
-
+\[\int_{0}^{1}\int_{0}^{1}\int_{0}^{1}16| v^{2}( u-1)(uv+2-v)|dudvdw= 4.\]
 Los cálculos anteriores se pueden efectuar en \verb"Mathematica"
 definiendo una parametrización $p$ para la base del sólido, $x$ e $y$ son las coordenadas de $p$. Se determina una parametrización ${\bf r}$ del sólido y se evalúa el triple producto vectorial, que se integra para encontrar el volumen deseado.
 
@@ -398,7 +392,7 @@ En el plano $xz$, para $t \in [0,1]$, los puntos $A$ y $B$ son de la forma $(t^{
 
 El sólido se parametriza formando segmentos rectilíneos entre dos puntos $P(t^{2}(1-u)+(2-t)u,0,t)$ y $Q(t^{2}(1-u)+(2-t)u,3,t)$.
 Simplificando $(1-w)P+wQ$ se define
-\[\mathbf{r}(t,u,w) = \left\langle t^{2}(1-u)-u(t-2), 3w, t \right\rangle,\]
+\[\mathbf{r}(t,u,w) = \left\langle t^{2}(1-u)-u(t-2), 3w, t \right\rangle\!,\]
 con $t\in [0,1]$, $u\in [0,1]$ y $w\in [0,1]$. Además,
 %
 {\small
@@ -419,7 +413,7 @@ al integrarse determina el volumen del sólido
 
 \subsection{Un cilindro y dos planos}
 Considere la región en el primer octante, acotada por las figuras de las ecuaciones
-$y^2+z^2=9$, $z=x$ y $y=0$. Su gráfico se muestra a conti\-nuación:
+$y^2+z^2=9$, $z=x$ y $y=0$. Su gráfico se muestra en la figura~\ref{fig:solido_yz_xz}:
 
 \begin{figure}[H]
   \centering
@@ -597,12 +591,8 @@ NIntegrate[1,{y,-1/2,0},{z,0,-y},{x,1/2-Sqrt[1/4-y^2],
 Si la densidad del sólido está dada por $\delta(x,y,z) =xy^{2}$, entonces la masa del sólido está dada por
 \begin{multline*} \bigintsss_{0}^{1}\bigintsss_{-\sqrt{x-x^{2}}}^{0}\bigintsss_{0}^{-y}xy^{2}dzdydx \\ =\bigintsss_{-1/2}^{0}\bigintsss_{\frac{1}{2}-\sqrt{\frac{1}{4}-y^{2}}}^{\frac{1}{2}+\sqrt{\frac{1}{4}-y^{2}}}\bigintsss_{0}^{-y}xy^{2}dzdxdy= \frac{1}{240}.
 \end{multline*}
-% $\bigintsss_{0}^{1}\bigintsss_{0}^{\sqrt{x-x^{2}}}\bigintsss_{-\sqrt{x-x^{2}}}^{-z}xz^{2}dydzdx=\bigintsss_{0}^{1/2}\bigintsss_{\frac{1}{2}-\sqrt{\frac{1}{4}-z^{2}}}^{\frac{1}{2}+\sqrt{\frac{1}{4}-z^{2}}}\bigintsss_{-\sqrt{x-x^{2}}}^{-z}xz^{2}dydxdz= \frac{1}{720}$
-%$\bigintsss_{0}^{1/2}\bigintsss_{-1/2}^{-z}\bigintsss_{\frac{1}{2}-\sqrt{\frac{1}{4}-y^{2}}}^{\frac{1}{2}+\sqrt{\frac{1}{4}-y^{2}}}xz^{2}dxdydz=\bigintsss_{-1/2}^{0}\bigintsss_{0}^{-y}\bigintsss_{\frac{1}{2}-\sqrt{\frac{1}{4}-y^{2}}}^{\frac{1}{2}+\sqrt{\frac{1}{4}-y^{2}}}xz^{2}dxdzdy= \frac{1}{720}$
 El volumen y la masa del sólido también se pueden determinar con el siguiente procedimiento.
-%
 
-%\begin{tcolorbox}[title=\bfseries Parametrizando el sólido]
 A partir de la ecuación $x^{2}+y^{2}=x$, que equivale a
 $\left( x-\frac{1}{2}\right) ^{2}+y^{2}=\frac{1}{4}$, que representa una circunferencia cuyo interior se puede parametrizar como $x=\frac{1}{2}+u\cos v$, $y=u\sin v$, para concluir que un punto en la base del sólido puede parametrizarse en la forma,
 $P=\left( \frac{1}{2}+u\cos v,u\sin v,0\right) $ y un punto del sólido sobre el plano con ecuación $z=-y$, es la forma
@@ -739,7 +729,7 @@ Integrate[Dot[D[r,w],Cross[D[r,t],D[r,u]]],{u,0,1},
 % tex-fmt: on
 
 \subsection{Tres planos y un cilindro parabólico III}
-Evaluar {\small $\ds \iiint_{E}6xydV$,} en donde $E$ es el sólido acotado por las figuras de las ecuaciones $z=1+x+y,\,\, y=\sqrt{x},\, x=1,\,\,z=0,\,\, y=0$. Los siguientes gráficos muestran la región en mención.
+Evaluar {\small $\ds \iiint_{E}6xydV$,} en donde $E$ es el sólido acotado por las figuras de las ecuaciones $z=1+x+y,\,\, y=\sqrt{x},\, x=1,\,\,z=0,\,\, y=0$. La figura~\ref{fig:solido_parabolico_inclinado} muestra la región en mención.
 
 \begin{figure}[H]
 \centering
@@ -788,25 +778,18 @@ Con lo anterior, la integral triple está determinada por:
 \[\int_{0}^{1}\int_{0}^{\sqrt{x}}\int_{0}^{1+x+y}6xydzdydx=
 \int_{0}^{1}\int_{y^2}^{1}\int_{0}^{1+x+y}6xydzdxdy= \frac{65}{28}.\]
 
-En el caso de plantear las integrales en el orden $dxdydz$ y $dydxdz$ puede ser necesario presentar cuatro integrales triples, los gráficos ilustran el porqué se da esta situación.
-
-{\small
+En el caso de plantear las integrales en el orden $dxdydz$ y $dydxdz$ puede ser necesario presentar cuatro integrales triples, los gráficos de la figura~\ref{fig:volumen_solido_proyecciones} ilustran el porqué se da esta situación.
 \begin{multline*} \int_{0}^{1}\int_{0}^{1+x}\int_{0}^{\sqrt{x}}6xydydzdx+\int_{0}^{1}\int_{1+x}^{1+x+\sqrt[2]{x}}\int_{z-1-x}^{\sqrt{x}}6xydydzdx \\
 \bigintsss_{0}^{1}\bigintsss_{0}^{1}\bigintsss_{0}^{\sqrt{x}}6xydydxdz
 +\bigintsss_{1}^2\bigintsss_{\left( -\frac{1}{2}+\sqrt{z-\frac{3}{4}}\right) ^2}^{z-1}\bigintsss_{z-1-x}^{\sqrt{x}}6xydydxdz\\
 +\bigintsss_{1}^2\bigintsss_{z-1}^{1}\bigintsss_{0}^{\sqrt{x}}6xydydxdz +\bigintsss_{2}^{3}\bigintsss_{\left( -\frac{1}{2}+\sqrt{z-\frac{3}{4}}\right)
 ^2}^{1}\bigintsss_{z-1-x}^{\sqrt{x}}6xydydxdz= \frac{65}{28}.
 \end{multline*}
-}
-
 Integrando con respecto a $x$, las integrales que se deben evaluar son
-{\footnotesize
 \begin{multline*}
 \bigintsss_{0}^{1}\bigintsss_{0}^{1}\bigintsss_{y^2}^{1}6xydxdydz+\bigintsss_{1}^{3}\bigintsss_{-\frac{1}{2}+\frac{1}{2}\sqrt{4z-3}}^{1}\bigintsss_{y^2}^{1}6xydxdydz+ \\ \bigintsss_{1}^{2}\bigintsss_{0}^{-\frac{1}{2}+\frac{1}{2}\sqrt{4z-3}}\bigintsss_{z-1-y}^{1}6xydxdydz+\bigintsss_{2}^{3}\bigintsss_{z-2}^{-\frac{1}{2}+\frac{1}{2}\sqrt{4z-3}}\bigintsss_{z-1-y}^{1}6xydxdydz \\
 =\bigintsss_{0}^{1}\bigintsss_{0}^{1+y+y^2}\bigintsss_{y^2}^{1}6xydxdzdy+\bigintsss_{0}^{1}\bigintsss_{1+y+y^2}^{2+y}\bigintsss_{z-1-y}^{1}6xydxdzdy= \frac{65}{28}.
 \end{multline*}
-}
-
 Las últimas integrales se evalúan en \verb"Mathematica" mediante la ejecución de la siguiente instrucción:
 
 % tex-fmt: off
@@ -823,8 +806,6 @@ Sqrt[4*z-3]/2},{x,z-1-y,1}]+Integrate[6*x*y,
 % tex-fmt: on
 
 Ahora se muestra otra manera de evaluar la integral triple.
-
-%\begin{tcolorbox}[title=\bfseries Parametrizando el sólido]
 
 \begin{figure}[H]
 \centering
@@ -1162,21 +1143,17 @@ $z = 8y-5y^2$, entonces $y = \frac{4}{5}\pm \frac{1}{5}\sqrt{16-5z}$.
 \begin{figure}[H]
 \centering
 \caption{Proyección del sólido en dos planos coordenados}
+\label{fig:proysoldosplano}
 \includegraphics[width=0.4\textwidth]{Fig/312.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Fig/313.pdf}
 \fuentepropia
 \end{figure}
 
-Al integrar primera con respecto a $z$, esta toma valores desde el plano $xy$ hasta el paraboloide y los límites de integración con respecto a $x$ e $y$ se pueden obtener del primero de los gráficos anteriores. Mientras que al integrar primero con respecto,
-a $x$, esta toma valores desde el plano $yz$ hasta el paraboloide, en un caso, y desde el plano $yz$ hasta el plano $x=2-2y$ en el otro caso. Por lo tanto, el volumen está dado por las siguientes integrales.
-
-{\small
-\begin{multline*}
+Al integrar primera con respecto a $z$, esta toma valores desde el plano $xy$ hasta el paraboloide y los límites de integración con respecto a $x$ e $y$ se pueden obtener del primero de los gráficos de la figura~\ref{fig:proysoldosplano}. Mientras que al integrar primero con respecto a $x$, esta toma valores desde el plano $yz$ hasta el paraboloide, en un caso, y desde el plano $yz$ hasta el plano $x=2-2y$ en el otro caso. Por lo tanto, el volumen está dado por las siguientes integrales.
+\begin{gather*}
 \bigintsss_{0}^{1}\bigintsss_{0}^{2-2y}\bigintsss_{0}^{4-x^2-y^2}dzdxdy= \bigintsss_{0}^2\bigintsss_{0}^{1-x/2}\bigintsss_{0}^{4-x^2-y^2}dzdydx \\
 =\bigintsss_{0}^{1}\bigintsss_{8y-5y^2}^{4-y^2}\bigintsss_{0}^{\sqrt{4-z-y^2}}dxdzdy+\bigintsss_{0}^{1}\bigintsss_{0}^{8y-5y^2}\bigintsss_{0}^{2-2y}dxdzdy = \frac{19}{6}.
-\end{multline*}
-}
-
+\end{gather*}
 La integral en el orden $dxdydz$ requiere un poco de observación adicional.
 
 La expresión $s = 8y - 5y^2$ determina una parábola en el plano $yz$, su valor máximo se puede hallar derivando, esto es
@@ -1228,31 +1205,25 @@ $z^\prime= 1-5x/2$, que al igualar a cero nos lleva a que $x=2/5$, este valor es
 $z=3+\frac{2}{5}-\frac{5}{4}\left(\frac{2}{5}\right)^2=\frac{16}{5}$.
 
 De la expresión $z=3+x- \frac{5}{4}x^2$
-también se sigue que $x=\frac{2}{5} \pm \frac{2}{5} \sqrt{16-5z}$. En los siguientes gráficos se ilustra porque en el orden $dydzdx$ se requiere evaluar dos integrales triples mientras que en el orden $dydxdz$ son necesarias cinco integrales triples.
+también se sigue que $x=\frac{2}{5} \pm \frac{2}{5} \sqrt{16-5z}$. En los gráficos de la figura~\ref{fig:proysoldoxz} se ilustra porque en el orden $dydzdx$ se requiere evaluar dos integrales triples mientras que en el orden $dydxdz$ son necesarias cinco integrales triples.
 
 \begin{figure}[H]
 \centering
 \caption{Proyección en el plano $xz$}
+\label{fig:proysoldoxz}
 \includegraphics[width=0.4\textwidth]{Fig/315.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Fig/316.pdf}
 \fuentepropia
 \end{figure}
 
-Apoyándonos en estas figuras presentamos las integrales triples respec\-tivas:
-
-{\small
+Apoyándonos en estas figuras presentamos las integrales triples respectivas:
 \[\bigintsss_{0}^2\bigintsss_{0}^{3+x-\frac{5}{4}x^2}\bigintsss_{0}^{1-x/2}dydzdx+\bigintsss_{0}^2\bigintsss_{3+x-\frac{5}{4}x^2}^{4-x^2}\bigintsss_{0}^{\sqrt{4-x^2-z}}dydzdx= \frac{19}{6}\]
-}
-
-{\footnotesize
 \begin{multline*}
 \bigintsss_{0}^{3}\bigintsss_{0}^{\frac{2}{5}+\frac{2}{5}\sqrt{16-5z}}\bigintsss_{0}^{1-x/2}dydxdz +\bigintsss_{3}^{\frac{16}{5}}\bigintsss_{\frac{2}{5}-\frac{2}{5}\sqrt{16-5z}}^{\frac{2}{5}+\frac{2}{5}\sqrt{16-5z}}\bigintsss_{0}^{1-x/2}dydxdz \\
 +\bigintsss_{3}^{\frac{16}{5}}\bigintsss_{0}^{\frac{2}{5}-\frac{2}{5}\sqrt{16-5z}}\bigintsss_{0}^{\sqrt{4-x^2-z}}dydxdz
 +\bigintsss_{\frac{16}{5}}^{4}\bigintsss_{0}^{\sqrt{4-z}}\bigintsss_{0}^{\sqrt{4-x^2-z}}dydxdz\\
 +\bigintsss_{0}^{\frac{16}{5}}\bigintsss_{\frac{2}{5}+\frac{2}{5}\sqrt{16-5z}}^{\sqrt{4-z}}\bigintsss_{0}^{\sqrt{4-x^2-z}}dydxdz = \frac{19}{6}.
 \end{multline*}
-}
-
 Estas integrales se evalúan en \verb"Mathematica" con la siguiente instrucción:
 
 % tex-fmt: off
@@ -1273,7 +1244,7 @@ Sqrt[4-z-x^2]}]+Integrate[1,{z,0,16/5},{x,
 Con el siguiente proceso también hallamos el volumen del sólido.
 
 %\begin{tcolorbox}[title=\bfseries Parametrizando el sólido]
-Sobre el plano $xy$, el sólido se proyecta como un triángulo con vértices $(0,0)$, $(2,0)$ y $(0,1)$. El segmento que une el punto $(0,0)$ con $(2,0)$ se parametriza como $\left\langle 2t,0\right\rangle, $ con $t\in [ 0,1]$.
+Sobre el plano $xy$, el sólido se proyecta como un triángulo con vértices $(0,0)$, $(2,0)$ y $(0,1)$. El segmento que une el punto $(0,0)$ con $(2,0)$ se parametriza como $\left\langle 2t,0\right\rangle\!, $ con $t\in [ 0,1]$.
 Los segmentos que unen cualquier punto de este segmento con el punto
 $(0,1)$, se parametriza como
 $(1-u)(0,1)+u(2t,0)= \left(2ut,1-u\right) $.
@@ -1289,7 +1260,7 @@ Al formar el segmento que une estos dos puntos, se obtiene una parametrización 
 \begin{multline*}
 {\bf r}\left( t,u,w\right) = (1-w)P +wQ \\
 = \left\langle 2ut,1-u,w\left( 3+2u-u^{2}\left( 4t^{2}+1\right)
-\right) \right\rangle,
+\right) \right\rangle\!,
 \end{multline*}
 en donde $t\in [ 0,1]$, $u\in [ 0,1]$, $w\in [ 0,1]$.
 
@@ -1359,7 +1330,7 @@ se sigue que $z=1\pm y$ y también $z=x^2-1$ o $z=1-x^2$. Estas dos curvas deter
 \fuentepropia
 \end{figure}
 
-Con estos gráficos se plantean las integrales que determinan el volumen del sólido. Integrando primero con respecto a $z$, esta recorre puntos desde el cilindro parabólico $z=x^2$ hasta los planos $z=1-y$ y $z=1+y$.
+Con estos gráficos (figura~\ref{fig:proyeccion_solido_parabolico_absoluto_2}) se plantean las integrales que determinan el volumen del sólido. Integrando primero con respecto a $z$, esta recorre puntos desde el cilindro parabólico $z=x^2$ hasta los planos $z=1-y$ y $z=1+y$.
 \begin{multline*}
 \int_{-1}^{1}\int_{0}^{1-x^2}\int_{x^2}^{1-y}dzdydx+\int_{-1}^{1}\int_{x^2-1}^{0}\int_{x^2}^{1+y}dzdydx= \frac{16}{15}\\
 \int_0^1\int_{-\sqrt{1-y}}^{\sqrt{1-y}}\int_{x^2}^{1-y}dzdxdy+\int_{-1}^{0}\int_{-\sqrt{1+y}}^{\sqrt{1+y}}\int_{x^2}^{1+y}dzdxdy=\frac{16}{15}.
@@ -1403,7 +1374,7 @@ Con un punto $P(t,t^2(1-u)+u-1,t^2(1-u)+u) $ sobre el plano $y=1+z$, y otro punt
 Con estos dos puntos, definimos la parametrización del sólido, que es una combinación convexa de la forma $(1-w)P+wQ$, esto es,
 {\small
 \begin{equation*}
-{\bf r}\left( t,u,w\right) = \left\langle t,\left( t^2-1\right) \left( 1-u\right) \left( 1-2w\right),t^2\left( 1-u\right) +u\right\rangle,
+{\bf r}\left( t,u,w\right) = \left\langle t,\left( t^2-1\right) \left( 1-u\right) \left( 1-2w\right),t^2\left( 1-u\right) +u\right\rangle\!,
 \end{equation*}
 }
 
@@ -1507,12 +1478,13 @@ y^2],Sqrt[4-y^2]}]+Integrate[1,{z,0,2},{y,0,2-z},
 \begin{figure}[H]
 \centering
 \caption{Integración del sólido en el plano $xy$}
+\label{fig:integracion_solido_planoxy}
 \includegraphics[width=0.4\textwidth]{Fig/321.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Fig/322.pdf}
 \fuentepropia
 \end{figure}
 
-Este gráfico es útil para calcular el volumen mediante el planteamiento de las integrales triples necesarias, integrando primero con respecto a $z$.
+Los gráficos de la figura~\ref{fig:integracion_solido_planoxy} son útiles para calcular el volumen mediante el planteamiento de las integrales triples necesarias, integrando primero con respecto a $z$.
 
 \begin{multline*}
 \int_{0}^2\int_{-\sqrt{4-y^2}}^{-\sqrt{2y-y^2}}\int_{0}^{2-y}dzdxdy+\int_{0}^2\int_{\sqrt{2y-y^2}}^{\sqrt{4-y^2}}\int_{0}^{2-y}dzdxdy \\ +\int_{-2}^{0}\int_{-\sqrt{4-y^2}}^{\sqrt{4-y^2}}\int_{0}^{2-y}dzdxdy
@@ -1533,11 +1505,12 @@ En estos casos, se trazan unas líneas auxiliares (en azul) sobre el sólido, co
 
 Al reemplazar $y=2-z$, de la ecuación del plano en las ecuaciones de los cilindros se obtiene
 $x^2+\left( 2-z\right) ^2=4$, por lo tanto $x^2+z^2=4z$ y $x^2+\left( 2-z\right) ^2=2\left( 2-z\right)$, entonces $x^2+z^2=2z$.
-El sólido proyectado en el plano $xz$, junto con las líneas mencionadas antes, se observan en los siguientes gráficos.
+El sólido proyectado en el plano $xz$, junto con las líneas mencionadas antes, se observan en la figura~\ref{fig:cono_truncado_oblicuo}.
 
 \begin{figure}[H]
 \centering
 \caption{Cono truncado oblicuo determinado por ${\bf r}(u,t)$}
+\label{fig:cono_truncado_oblicuo}
 \includegraphics[width=0.4\textwidth]{Fig/325.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Fig/326.pdf}
 \fuentepropia
@@ -1568,12 +1541,12 @@ La base de este conjunto posee una región en la \emph{parte trasera} desde el c
 \int_{-1}^{1}\int_{0}^{1-\sqrt{1-x^2}}\int_{-\sqrt{4-x^2}}^{1-\sqrt{1-x^2}}dydzdx\approx 0.9781
 \end{equation}
 
-Desde la parte positiva del cilindro peque\~{n}o al plano, cuya proyección en el plano $xz$, corresponde a la parte en azul oscuro, tendremos la siguiente integral
+Desde la parte positiva del cilindro pequeño al plano, cuya proyección en el plano $xz$, corresponde a la parte en azul oscuro, tendremos la siguiente integral
 \begin{equation}\label{31e}
 \int_{-1}^{1}\int_{2-\sqrt{4-x^2}}^{1-\sqrt{1-x^2}}\int_{1+\sqrt{1-x^2}}^{2-z}dydzdx\approx 0.0376
 \end{equation}
 
-Desde la parte negativa del cilindro grande a la parte negativa del cilindro peque\~{n}o, cuya proyección en el plano $xz$ es la región cuadriculada:
+Desde la parte negativa del cilindro grande a la parte negativa del cilindro pequeño, cuya proyección en el plano $xz$ es la región cuadriculada:
 \begin{equation}\label{31f}
 \int_{-1}^{1}\int_{1-\sqrt{1-x^2}}^{1+\sqrt{1-x^2}}\int_{-\sqrt{4-x^2}}^{1-\sqrt{1-x^2}}dydzdx\approx 6.5551
 \end{equation}
@@ -1643,7 +1616,7 @@ Desde el cilindro de mayor radio al mismo cilindro, hay dos regiones que en el p
 = \frac{16\pi}{3}-\frac{20}{3}-4\sqrt{3} \label{31l}
 \end{eqnarray}
 
-De la parte positiva del cilindro peque\~{n}o al plano, cuya proyección en el plano $xz$, corresponde a la parte en azul oscuro.
+De la parte positiva del cilindro pequeño al plano, cuya proyección en el plano $xz$, corresponde a la parte en azul oscuro.
 
 \begin{multline}
 \int_{0}^{2-\sqrt{3}}\int_{-\sqrt{4z-z^2}}^{-\sqrt{2z-z^2}}\int_{1+\sqrt{1-x^2}}^{2-z}dydxdz + \\ \int_{2-\sqrt{3}}^{1}\int_{-1}^{-\sqrt{2z-z^2}}\int_{1+\sqrt{1-x^2}}^{2-z}dydxdz+ \int_{0}^{2-\sqrt{3}}\int_{\sqrt{2z-z^2}}^{\sqrt{4z-z^2}}\int_{1+\sqrt{1-x^2}}^{2-z}dydxdz \\
@@ -1736,11 +1709,12 @@ Para recorrer adecuadamente cada curva, iniciando en el punto $(0,2)$, se sustit
 \begin{figure}[H]
 \centering
 \caption{$2y \leq x^2 + y^2 \leq 4$}
+\label{fig:yleqx2}
 \includegraphics[height=4.5cm]{Fig/328.pdf}
 \fuentepropia
 \end{figure}
 
-Los puntos $P$ y $Q$ del gráfico, se determinan por medio de las funciones
+Los puntos $P$ y $Q$ de la figura~\ref{fig:yleqx2}, se determinan por medio de las funciones
 $\mathbf{r}_1(\theta)= \langle -\sin(2\theta), 1+\cos(2\theta) \rangle$,
 y $\mathbf{r}_2(\theta) = \langle -2 \sin(2\theta), 2\cos(2\theta)\rangle$,
 res\-pectivamente.
@@ -1749,8 +1723,8 @@ Una combinación convexa de estos parametriza la región sombreada. Es decir,
 Con un punto $A((u-2)\sin(2\theta),u-(u-2)\cos(2\theta),0)$ el plano $z=0$ y otro punto
 $B((u-2)\sin(2\theta),u-(u-2)\cos(2\theta),2-(u-(u-2)\cos(2\theta)))$,
 sobre el plano $z=2-y$ se forma la combinación convexa de la forma $(1-w)A+ wB$, que describe el sólido, esto define la función:
-\[\mathbf{r}(\theta, u, w) = \left\langle (u-2) \sin(2\theta), u - (u-2) \cos(2\theta), 2w(2-u) \sin^2(\theta) \right\rangle,\]
-en donde $\theta \in [0,\pi],\,u\in[0,1]$ y $w\in[0,1]$. 
+\[\mathbf{r}(\theta, u, w) = \left\langle (u-2) \sin(2\theta), u - (u-2) \cos(2\theta), 2w(2-u) \sin^2(\theta) \right\rangle\!,\]
+en donde $\theta \in [0,\pi],\,u\in[0,1]$ y $w\in[0,1]$.
 Derivando parcialmente se obtienen los siguientes vectores
 \begin{align*}
 {\bf r}_\theta &= \langle 2(u-1)\cos(2\theta),2(u-2)\sin(2\theta),2w(2-u)\sin(2\theta) \rangle \\
@@ -1761,7 +1735,7 @@ Derivando parcialmente se obtienen los siguientes vectores
 Con lo cual, $|{\bf r}_w \cdot ({\bf r}_{\theta} \times {\bf r}_u)|= 8(u-2)^2\sin^4(\theta)$.
 Entonces, el volumen del sólido está dado por:
 \[\int_0^1 \int_0^1 \int_0^\pi 8(u-2)^2\sin^4(\theta) d\theta du dw =7\pi\]
-Este valor se obtiene en \verb"Mathematica" usando las siguientes instrucciones.
+Este valor se obtiene en \verb"Mathematica" usando las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -1943,7 +1917,7 @@ $x=4-4u^2$. Por lo tanto, los puntos mencionados son
 El sólido se parametriza simplificando la expresión $(1-w)Q+wP$,
 esto permite definir la función
 
-\[{\bf r}(u,t,w)=\left\langle 4(1-w)(1-u^2),3+3u\sin t,2+2u\cos t\right\rangle,\]
+\[{\bf r}(u,t,w)=\left\langle 4(1-w)(1-u^2),3+3u\sin t,2+2u\cos t\right\rangle\!,\]
 
 con $\, u\in [0,1],\,t\in [0,2\pi ],\, w\in [0,1] $.
 Con esta función, hallamos los siguientes vectores
@@ -2104,7 +2078,7 @@ determinan el sólido que se presenta a continuación:
 \fuentepropia
 \end{figure}
 
-En \verb"Mathematica", este gráfico se consigue usando las siguientes instrucciones:
+En \verb"Mathematica", los gráficos de la figura~\ref{fig:solido_paraboloide_plano} se consiguen usando las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -2284,14 +2258,14 @@ Integrando primero con respecto a $y$, se puede plantear el volumen como la inte
 \begin{figure}[H]
 \centering
 \caption{$-\sqrt{4-z}\leq x \leq 2-z/2$}
+\label{fig:sqrt4z_2}
 \includegraphics[height=4.5cm]{Fig/341.pdf}
 \fuentepropia
 \end{figure}
 
-Con ayuda de este gráfico, el volumen se puede plantear mediante las siguientes integrales
+Con ayuda del gráfico de la figura~\ref{fig:sqrt4z_2}, el volumen se puede plantear mediante las siguientes integrales:
 \[\int_{0}^{4}\int_{-\sqrt{4-z}}^{\frac{4-z}{2}}\int_{-\sqrt{4-z-x^2}}^{\sqrt{4-z-x^2}}dydxdz
 -\int_{0}^{4}\int_{0}^{\frac{4-z}{2}}\int_{-\sqrt{2x-x^2}}^{\sqrt{2x-x^2}}dydxdz \approx 17.2788.\]
-
 \begin{multline*}
 \int_{-2}^{0}\int_{0}^{4-x^2}\int_{-\sqrt{4-z-x^2}}^{\sqrt{4-z-x^2}}dydzdx
 +\int_{0}^2\int_{0}^{4-2x}\int_{-\sqrt{4-z-x^2}}^{\sqrt{4-z-x^2}}dydzdx \\
@@ -2417,7 +2391,7 @@ Con la función ${\bf r}$ hallamos los siguientes vectores:
 {\bf r}_{t} &=& \left\langle -2\left( 2u+1\right) \sin (2t)
 ,2\left( 2u+1\right) \cos (2t) ,-4v(2u^2-u-1)\sin (2t) \right\rangle \\
 {\bf r}_{u} &=& \left\langle -1+2\cos (2t) ,2\sin \left(2t\right) ,v\left( -2-10u+\left( -2+8u\right) \cos (2t) \right) \right\rangle \\
-{\bf r}_{v} &=& \left\langle 0,0,7-2u-5u^2+4\cos (2t)u^2-2\cos (2t) u-2\cos (2t) \right\rangle,
+{\bf r}_{v} &=& \left\langle 0,0,7-2u-5u^2+4\cos (2t)u^2-2\cos (2t) u-2\cos (2t) \right\rangle\!,
 \end{eqnarray*}
 }
 
@@ -2647,7 +2621,7 @@ Los paraboloides con ecuaciones $z=8-x^2 -y^2 $ y $z=x^2 +3y^2$ acotan un sólid
 \fuentepropia
 \end{figure}
 
-Estos gráficos se consiguen con la ayuda de las siguientes instrucciones:
+Los gráficos de la figura~\ref{fig:solido_paraboloides_elipticos} se consiguen con la ayuda de las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -2857,7 +2831,7 @@ representan dos paraboloides. Estas superficies acotan la región en el espacio 
 \fuentepropia
 \end{figure}
 
-Con las siguientes instrucciones se obtuvieron estos gráficos.
+Con las siguientes instrucciones se obtuvieron los gráficos de la figura~\ref{fig:region_paraboloides_89}.
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -3222,7 +3196,7 @@ Mesh->None,PlotStyle->Orange]
 
 Esta figura la proyectaremos sobre planos paralelos a los planos coordenados, con el fin de hacer sencilla la determinación de los límites de integración.
 
-Integrando primero con respecto a $z$, los puntos recorridos van desde $z=0$ hasta el cilindro $z=4-y^2$ y los límites para $x$ e $y$ se pueden obtener del segundo de los siguientes gráficos. Además, integrando primero con respecto a $x$,
+Integrando primero con respecto a $z$, los puntos recorridos van desde $z=0$ hasta el cilindro $z=4-y^2$ y los límites para $x$ e $y$ se pueden obtener del segundo de los gráficos de la figura~\ref{fig:proyecciones_yz_xy}. Además, integrando primero con respecto a $x$,
 se recorren puntos desde la parte negativa del cilindro $y = 2 - x^2$
 hasta la parte positiva del mismo, pues el cilindro $z=4-y^2$ es paralelo al eje $x$.
 
@@ -3235,7 +3209,7 @@ hasta la parte positiva del mismo, pues el cilindro $z=4-y^2$ es paralelo al eje
 \fuentepropia
 \end{figure}
 
-Con la información observada en estos gráficos, las siguientes integrales triples determinan el volumen del sólido.
+Con la información observada en los gráficos de la figura~\ref{fig:proyecciones_yz_xy}, las siguientes integrales triples determinan el volumen del sólido.
 
 \begin{eqnarray*}
 \int_{-2}^2\int_{-2}^{2-x^2}\int_{0}^{4-y^2}dzdydx=
@@ -3473,7 +3447,7 @@ dtdudw= \frac{64}{9}\sqrt{2}\]
 }
 %\end{tcolorbox}
 %
-La rutina descrita antes se puede hacer en \verb"Mathematica" con ayuda de las siguientes instrucciones.
+La rutina descrita antes se puede hacer en \verb"Mathematica" con ayuda de las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -3487,7 +3461,7 @@ Integrate[A,{t,0,2*Pi},{u,0,1},{w,0,1}]
 
 \subsection{Dos cilindros parabólicos y un plano}
 Los cilindros parabólicos con ecuaciones
-$z= 4x-x^2$, $z= 4y-y^2$ y el plano $z=0$, acotan un sólido en el primer octante, su gráfico se muestra a continuación.
+$z= 4x-x^2$, $z= 4y-y^2$ y el plano $z=0$, acotan un sólido en el primer octante, su gráfico se muestra en la figura~\ref{fig:parabolas_z_2}.
 
 \begin{figure}[H]
 \centering
@@ -3590,8 +3564,8 @@ en donde $t\in [0,4]$, $u\in [0,1]$ y $w\in [0,1]$.
 De esta función se obtiene los siguientes vectores:
 {\small
 \begin{align*}
-\mathbf{r}_u &= \left\langle 2\sqrt{4-t},0,0 \right\rangle, \\
-\mathbf{r}_w &= \left\langle 0,2\sqrt{4-t},0 \right\rangle, \\
+\mathbf{r}_u &= \left\langle 2\sqrt{4-t},0,0 \right\rangle\!, \\
+\mathbf{r}_w &= \left\langle 0,2\sqrt{4-t},0 \right\rangle\!, \\
 \mathbf{r}_t &= \left\langle \frac{1-2u}{2\sqrt{4-t}}, \frac{1-2w}{2\sqrt{4-t}},1 \right\rangle\!.
 \end{align*}
 }
@@ -3614,8 +3588,7 @@ Integrate[Dot[D[r,w],Cross[D[r,t],D[r,u]]],{u,0,1},
 % tex-fmt: on
 
 \subsection{Un cilindro parabólico y un plano inclinado}
-Consideremos el sólido acotado por el gráfico de las ecuaciones $y=4-x^2$, $z=2-y/2$, $y=0$, $z=0$,
-hallaremos su volumen de varias maneras.
+Consideremos el sólido acotado por el gráfico de las ecuaciones $y=4-x^2$, $z=2-y/2$, $y=0$ y $z=0$ (figura~\ref{fig:parabolas_z}), hallaremos su volumen de varias maneras.
 
 \begin{figure}[H]
 \centering
@@ -3818,19 +3791,13 @@ Las integrales sobre el sólido se plantean a partir de las siguientes figuras:
 
 Esta representación nos ayuda a determinar las integrales triples que determinan su volumen.
 Al integrar primera con respecto a $z$, esta recorre los puntos desde el plano $z=0$
-hasta el cilindro $z=4-x^2$ y los límites de integración para $x$ e $y$ se obtienen del primero de los gráficos anteriores. Entonces, el volumen del sólido está dado por:
-{\small
+hasta el cilindro $z=4-x^2$ y los límites de integración para $x$ e $y$ se obtienen del primero de los gráficos de la figura~\ref{fig:proyeccion_xy_xz_2}. Entonces, el volumen del sólido está dado por:
 \[\int_{-2}^2\int_{x^2}^{8-x^2}\int_{0}^{4-x^2}dzdydx= \frac{1024}{15}\]
 \[\int_{0}^{4}\int_{-\sqrt{y}}^{\sqrt{y}}\int_{0}^{4-x^2}dzdxdy+
 \int_{4}^{8}\int_{-\sqrt{8-y}}^{\sqrt{8-y}}\int_{0}^{4-x^2}dzdxdy= \frac{1024}{15}.\]
-}
 Si se integra con respecto a $y$ primero, se debe tener en cuenta que esta recorre los puntos desde el cilindro $y=x^2$ hasta el cilindro $y=8-x^2$, que equivalen respectivamente a
-$x= \pm \sqrt{y}$ y $x= \pm \sqrt{8-z}$. Los límites de integración para $x$ y $z$ se obtienen del segundo de los gráficos anteriores.
-
-{\small
+$x= \pm \sqrt{y}$ y $x= \pm \sqrt{8-z}$. Los límites de integración para $x$ y $z$ se obtienen del segundo de los gráficos de la figura~\ref{fig:proyeccion_xy_xz_2}.
 \[\int_{-2}^2\int_{0}^{4-x^2}\int_{x^2}^{8-x^2}dydzdx=\int_{0}^{4}\int_{-\sqrt{4-z}}^{\sqrt{4-z}}\int_{x^2}^{8-x^2}dydxdz= \frac{1024}{15}.\]
-}
-
 En el plano $yz$ el sólido se proyecta como un rectángulo. Al sustituir en $z=4-x^2$
 las dos expresiones que involucran $x^2$, se sigue $z=4-x^2=4-y$, por una parte, y $z=4-(8-y)=y-4$,
 por la parte restante.
@@ -4031,7 +3998,7 @@ sobre esta región, un punto tiene la forma $\left( t,vt(4-t),4t-t^2\right)$.
 Formamos segmentos rectilíneos que unen dichos puntos, usaremos el parámetro $w$. Por lo tanto, al simplificar
 $\left( 1-w\right) \left( t,vt(4-t),0\right) +w\left( t,vt(4-t),4t-t^2\right)$
 obtendremos la función
-\[{\bf r}(u,v,w)=\left\langle t,vt(4-t),-wt\left(t -4\right) \right\rangle,\]
+\[{\bf r}(u,v,w)=\left\langle t,vt(4-t),-wt\left(t -4\right) \right\rangle\!,\]
 que parametriza el sólido con $t\in [0,4],\,v\in [0,1],\,w\in [0,1]. $
 A partir de esta se pueden obtener
 {\small
@@ -4067,7 +4034,7 @@ Integrate[A,{t,-2,2},{u,0,1},{w,0,1}]
 \subsection{Un cilindro parabólico y un plano inclinado III}
 
 Las expresiones $z=2-y$, $y=x^2$ y $z=0$,
-determinan una región en el espacio, su gráfico se muestra a continuación:
+determinan una región en el espacio, su gráfico se muestra en la figura~\ref{fig:solido_parabolico_2y}:
 
 \begin{figure}[H]
 \centering
@@ -4091,7 +4058,7 @@ Sobre los planos coordenados, el sólido se proyecta como sigue:
 \fuentepropia
 \end{figure}
 
-Estos gráficos nos ayudan a plantear las integrales necesarias para calcular el volumen del sólido.
+Los gráficos de la figura~\ref{fig:proyecciones_coordenadas_final} nos ayudan a plantear las integrales necesarias para calcular el volumen del sólido.
 
 \begin{multline*} \int_{-\sqrt{2}}^{\sqrt{2}}\int_{x^2}^2\int_{0}^{2-y}dzdydx=
 \int_{0}^2\int_{-\sqrt{y}}^{\sqrt{y}}\int_{0}^{2-y}dzdxdy \\
@@ -4121,15 +4088,15 @@ En el plano $xy$, la base del sólido se parametriza formando una combinación c
 $\left( 1-u\right) \left( t,t^2\right) +u\left(t,2\right) = \left( t,2u-t^2u+t^2\right)$,
 entre dos puntos de la forma $\left( t,t^2\right) $ y $\left( t,2\right)$.
 Sobre el plano $z=2-y$ se satisface que $z=(t^2-2)(u-1) $. Por lo tanto, el sólido se parametriza con una combinación convexa de la forma
-\[\left( 1-w\right) \left\langle t,2u-t^2u+t^2,0\right\rangle +w\left\langle t,2u-t^2u+t^2,\left(t^2-2\right) \left( u-1\right) \right\rangle,\]
+\[\left( 1-w\right) \left\langle t,2u-t^2u+t^2,0\right\rangle +w\left\langle t,2u-t^2u+t^2,\left(t^2-2\right) \left( u-1\right) \right\rangle\!,\]
 que al simplificarse nos permiten definir la función
-\[{\bf r}(t,u,w)=\left\langle t,2u-t^2u+t^2,w\left( t^2-2\right) \left( u-1\right) \right\rangle,\]
+\[{\bf r}(t,u,w)=\left\langle t,2u-t^2u+t^2,w\left( t^2-2\right) \left( u-1\right) \right\rangle\!,\]
 con $t\in [-\sqrt{2},\sqrt{2}]$, $u\in [0,1]$, $w\in [0,1]$.
 
 Derivando parcialmente se obtienen los siguientes vectores
 \begin{gather*}
-\mathbf{r}_{t} = \left\langle 1,2t-2tu,2tw\left( u-1\right) \right\rangle, \\
-\mathbf{r}_{u}= \left\langle 0,2-t^2,w\left( t^2-2\right)\right\rangle, \\
+\mathbf{r}_{t} = \left\langle 1,2t-2tu,2tw\left( u-1\right) \right\rangle\!, \\
+\mathbf{r}_{u}= \left\langle 0,2-t^2,w\left( t^2-2\right)\right\rangle\!, \\
 \mathbf{r}_{w} =\left\langle 0,0,\left( t^2-2\right) \left( u-1\right)\right\rangle\!.
 \end{gather*}
 
@@ -4193,7 +4160,7 @@ $z=2y-y^2$, con lo cual $y=1\pm \sqrt{1-z}$. La figura de esta ecuación divide 
 \int_{2y-y^2}^{1}\int_{1}^{1+\sqrt{1-z}}dxdzdy &=& \frac{5}{12} \\
 \int_{0}^{1}\int_{1-\sqrt{1-z}}^{1}\int_{1}^{2-y}dxdydz+\int_{0}^{1} \int_{0}^{1-\sqrt{1-z}}\int_{1}^{1+\sqrt{1-z}}dxdydz &=& \frac{5}{12}.
 \end{eqnarray*}
-En \verb"Mathematica" se pueden evaluar algunas de estas integrales ejecutando las siguientes instrucciones.
+En \verb"Mathematica" se pueden evaluar algunas de estas integrales ejecutando las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -4213,7 +4180,7 @@ esto es $(1-u)(1+t,0,0)+u(1,1,0)= ((1-u)(1+t)+u,u,0)$.
 Con lo anterior, la coordenada $z$ sobre el cilindro satisface que $z=w (t+1-ut)(tu-t+1)$.
 Es por lo anterior, que el sólido se parametriza como sigue
 %
-\[{\bf r}(t,u,w) =\left\langle t+1-ut,u,w(t+1-tu)(tu-t+1)\right\rangle,\]
+\[{\bf r}(t,u,w) =\left\langle t+1-ut,u,w(t+1-tu)(tu-t+1)\right\rangle\!,\]
 con $t\in [0,1]$, $u\in [0,1]$, $w\in [0,1]$. Con esta función se determinan los siguientes vectores:
 
 \begin{eqnarray*}
@@ -4267,7 +4234,7 @@ $x=z^2$ y $x=4y-y^2$, determinan el sólido que a continuación se presenta.
 \fuentepropia
 \end{figure}
 
-Estos gráficos se obtienen con la ayuda de las siguientes expresiones.
+Los gráficos de la figura~\ref{fig:solido_curvo} se obtienen con la ayuda de las siguientes expresiones.
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -4285,7 +4252,7 @@ PlotStyle->Directive[Orange,Specularity[White,40]]]
 Al igualar estas expresiones para determinar su proyección en el plano $yz$, obtenemos $(y-2)^2+z^2=4$,
 que corresponde a una circunferencia de radio $2$ centrada en el punto $(2,0)$.
 
-En el plano $xz$ la proyección es la porción de parábola $x=z^2$ para $x\in[0,4];$ mientras que para el plano $xy$ la región de integración es la porción de parábola $x=4y-y^2$ para $x\in[0,4]$. En los siguientes gráficos se ilustran estas regiones.
+En el plano $xz$ la proyección es la porción de parábola $x=z^2$ para $x\in[0,4];$ mientras que para el plano $xy$ la región de integración es la porción de parábola $x=4y-y^2$ para $x\in[0,4]$. En los gráficos de la figura~\ref{fig:proyecciones_curvas} se ilustran estas regiones.
 
 \begin{figure}[H]
 \centering
@@ -4298,15 +4265,13 @@ En el plano $xz$ la proyección es la porción de parábola $x=z^2$ para $x\in[0
 \fuentepropia
 \end{figure}
 
-Con ayuda de los gráficos anteriores se pueden plantear las integrales que determinan el volumen del sólido; en un caso conviene escribir la expresión $x=4y-y^2$ en la forma
+Con ayuda de los gráficos de la figura~\ref{fig:proyecciones_curvas} se pueden plantear las integrales que determinan el volumen del sólido; en un caso conviene escribir la expresión $x=4y-y^2$ en la forma
 $y=2\pm \sqrt{4-x}$.
-{\small
 \begin{eqnarray*}
 \int_{0}^{4}\int_{-\sqrt{4y-y^2}}^{\sqrt{4y-y^2}}\int_{z^2}^{4y-y^2}dxdzdy= \int_{-2}^2\int_{2-\sqrt{4-z^2}}^{2+\sqrt{4-z^2}}\int_{z^2}^{4y-y^2}dxdydz &=& 8\pi \\
 \int_{-2}^2\int_{z^2}^{4}\int_{2-\sqrt{4-x}}^{2+\sqrt{4-x}}dydxdz=\int_{0}^{4}\int_{-\sqrt{x}}^{\sqrt{x}}\int_{2-\sqrt{4-x}}^{2+\sqrt{4-x}}dydzdx &=& 8\pi \\
 \int_{0}^{4}\int_{0}^{4y-y^2}\int_{-\sqrt{x}}^{\sqrt{x}}dzdxdy= \int_{0}^{4}\int_{2-\sqrt{4-x}}^{2+\sqrt{4-x}}\int_{-\sqrt{x}}^{\sqrt{x}}dzdydx &= & 8\pi
 \end{eqnarray*}
-}
 Algunas de estas integrales se evalúan como sigue:
 
 % tex-fmt: off
@@ -4398,7 +4363,7 @@ $xy$. Es decir, $4x=z^2=(y^2)^2$ luego $4x=y^4$, con lo anterior se obtiene las 
 \fuentepropia
 \end{figure}
 
-Con ayuda de estos gráficos se pueden plantear las seis integrales triples que permiten calcular el volumen del sólido en mención.
+Con ayuda de la figura~\ref{fig:proyecciones_planes_curvas} se pueden plantear las seis integrales triples que permiten calcular el volumen del sólido en mención.
 
 \begin{multline*}
 \int_{0}^2\int_{0}^{y^{4}/4}\int_{2\sqrt{x}}^{y^2}dzdxdy=\int_{0}^{4}\int_{\sqrt[4]{4x}}^2\int_{2\sqrt{x}}^{y^2}dzdydx \\
@@ -4417,7 +4382,7 @@ Integrate[1,{y,0,2},{x,0,y^4/4},{z,2*Sqrt[x],y^2}]
 \end{tcolorbox}
 % tex-fmt: on
 
-Los siguientes gráficos ofrecen otras vistas del mismo sólido.
+La figura~\ref{fig:solido_80_xyz} ofrece otras vistas del mismo sólido.
 
 \begin{figure}[H]
 \centering
@@ -4429,7 +4394,7 @@ Los siguientes gráficos ofrecen otras vistas del mismo sólido.
 \fuentepropia
 \end{figure}
 
-Estos se consiguen ejecutando las siguientes instrucciones.
+Estos se consiguen ejecutando las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -4462,7 +4427,7 @@ en el plano $x=0$, mientras que el punto
 $\left( \frac{1}{4}t^{4},t+u\left( 2-t\right) ,t^2\right) $ yace en el cilindro $x=\frac{1}{4}z^2$. Uniendo estos dos puntos con un segmento rectilíneo se parametriza el sólido, es decir simplificando la expresión
 
 \[\left( 1-w\right) \left (t^{4}/4,t+u(2-t),t^2\right) +w\left( 0,t+u(2-t) ,t^2\right),\]
-\[{\bf r}\left( t,u,w\right) = \left\langle \frac{1}{4}\left(1-w\right) t^{4},t+2u-tu,t^2\right\rangle,\]
+\[{\bf r}\left( t,u,w\right) = \left\langle \frac{1}{4}\left(1-w\right) t^{4},t+2u-tu,t^2\right\rangle\!,\]
 en donde $t\in [0,2]$, $u\in [0,1]$, $w\in [0,1]$.
 Derivando parcialmente, se hallan los siguientes vectores
 
@@ -4487,7 +4452,7 @@ que corresponde al elemento diferencial de volumen. Integrándolo, nos proporcio
 %
 %\end{tcolorbox}
 
-Este valor se obtiene en \verb"Mathematica" ejecutando las siguientes instrucciones.
+Este valor se obtiene en \verb"Mathematica" ejecutando las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -4597,8 +4562,8 @@ Por lo tanto, $Q$ es de la forma $Q( 2u\left( 2-t^2\right) -1,t,u\left( t^2-2\ri
 %
 Con esta función hallamos los vectores
 \begin{gather*}
-\mathbf{r}_{t} = \left\langle -4tu,1,2t\left( uw-w+1\right) \right\rangle, \\
-\mathbf{r}_{u} = \left\langle 4-2t^2,0,t^2w-2w\right\rangle, \\
+\mathbf{r}_{t} = \left\langle -4tu,1,2t\left( uw-w+1\right) \right\rangle\!, \\
+\mathbf{r}_{u} = \left\langle 4-2t^2,0,t^2w-2w\right\rangle\!, \\
 \mathbf{r}_{w} = \left\langle 0,0,\left( u-1\right) t^2-2u+2\right\rangle\!.
 \end{gather*}
 
@@ -4722,13 +4687,13 @@ que al simplificarse nos permite definir la función:
 %se lleva a la forma
 %$ \left( u,w\left( 1+\sqrt{1-u}\right) -2wv\sqrt{1-u},\left( 2v-1\right) \sqrt{1-u}\right) , $
 
-\[{\bf r}(u,v,w)= \left\langle u,w\left( 1+\sqrt{1-u}\right) -2wv\sqrt{1-u},\left( 2v-1\right) \sqrt{1-u}\right\rangle,\]
+\[{\bf r}(u,v,w)= \left\langle u,w\left( 1+\sqrt{1-u}\right) -2wv\sqrt{1-u},\left( 2v-1\right) \sqrt{1-u}\right\rangle\!,\]
 %
 la cual parametriza el sólido, para $u\in [0,1],\,v\in [0,1],\,w\in [0,1]$.
 Con lo anterior se obtiene:
 \begin{gather*}
-\mathbf{r}_{u}=\left\langle 1,\frac{w}{2}\frac{2v-1}{\sqrt{1-u}},\frac{1-2v}{2\sqrt{1-u}} \right\rangle, \\
-\mathbf{r}_{v} = \left\langle 0,-2w\sqrt{1-u},2\sqrt{1-u}\right\rangle, \\
+\mathbf{r}_{u}=\left\langle 1,\frac{w}{2}\frac{2v-1}{\sqrt{1-u}},\frac{1-2v}{2\sqrt{1-u}} \right\rangle\!, \\
+\mathbf{r}_{v} = \left\langle 0,-2w\sqrt{1-u},2\sqrt{1-u}\right\rangle\!, \\
 \mathbf{r}_{w} = \left\langle 0,1+\left( 1-2v\right) \sqrt{1-u},0\right\rangle\!.
 \end{gather*}
 
@@ -4834,7 +4799,7 @@ _0^{10-\frac{y^2}{8}}\bigintsss _0^{10-z-\frac{y^2}{8}}dxdzdy = \frac{8}{15} \le
 
 %
 
-Estos cálculos se evalúan en \verb"Mathematica" con las siguientes instrucciones.
+Estos cálculos se evalúan en \verb"Mathematica" con las siguientes instrucciones:
 
 %
 
@@ -4915,7 +4880,7 @@ Con dos puntos de la forma
 se forma la combinación $(1-v) P+vQ$, que define la función
 %
 {\small
-\[{\bf r}(t,u,v)=\left\langle t,t^{3}(1-u)+u\sqrt{8(10-t) },v \,\overline{z} \right\rangle,\]}
+\[{\bf r}(t,u,v)=\left\langle t,t^{3}(1-u)+u\sqrt{8(10-t) },v \,\overline{z} \right\rangle\!,\]}
 %
 que parametriza el sólido, con $t\in [0,2],\,u\in [0,1],\,v\in [0,1]$.
 % Ahora bien, %\begin{eqnarray*}
@@ -5120,15 +5085,14 @@ NIntegrate[B,{t,0,Pi/2},{u,0,1},{w,0,1}]
 
 \subsection{Dos cilindros y un plano}
 Hallar el volumen del sólido acotado por los gráficos de las ecuaciones.
-$z=1-x^2$, $x^2+y^2=1$ y $z=0$. Las siguientes figuras ilustran esta situación.
+$z=1-x^2$, $x^2+y^2=1$ y $z=0$. La figura~\ref{fig:solido_disco_parabolico} ilustra esta situación.
 
 \begin{figure}[H]
 \centering
 \caption{Visualización del sólido definido por $x^2 + y^2 \leq 1$ \quad y \quad $0 \leq z \leq 1 - x^2$}
 \label{fig:solido_disco_parabolico}
 \includegraphics[width=0.4\textwidth]{Img/85c.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Fig/428.pdf}
-
+\includegraphics[width=0.4\textwidth]{Fig/428.pdf} \\[5mm]
 \includegraphics[width=0.4\textwidth]{Img/85b.pdf}
 \fuentepropia
 \end{figure}
@@ -5230,7 +5194,7 @@ entonces, el volumen del sólido esta dado por
 }
 %\end{tcolorbox}
 
-Este cálculo se hace en \verb"Mathematica" ejecutando las siguientes instrucciones.
+Este cálculo se hace en \verb"Mathematica" ejecutando las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -5273,7 +5237,7 @@ PlotPoints->90,Mesh->None]
 \end{tcolorbox}
 % tex-fmt: on
 
-La ecuación $z = 4-x^2$ en el plano $xz$ permite ver la proyección en dicho plano de la región de integración. Lo mismo sucede con las ecuaciones $4x = y^4 -2y^2$ y $2x = y^2$, que se dibujan en el plano $xy$. En este caso $s = 4 - x^2$ equivale a $x = \pm\sqrt{4-z}$, mientras que $2x = y^2$ equivale a $y = \pm \sqrt{2x}$. La expresión $4x =y^4- 2y^2$ nos lleva a que $y = \pm \sqrt{1\pm \sqrt{1+ 4x}}$, es decir hay cuatro funciones que determinan la curva, con $x$ como variable independiente, es por esta razón que el gráfico posee diferentes colores para enfatizar dicha situación.
+La ecuación $z = 4-x^2$ en el plano $xz$ permite ver la proyección en dicho plano de la región de integración. Lo mismo sucede con las ecuaciones $4x = y^4 -2y^2$ y $2x = y^2$, que se dibujan en el plano $xy$. En este caso $s = 4 - x^2$ equivale a $x = \pm\sqrt{4-z}$, mientras que $2x = y^2$ equivale a $y = \pm \sqrt{2x}$. La expresión $4x =y^4- 2y^2$ nos lleva a que $y = \pm \sqrt{1\pm \sqrt{1+ 4x}}$, es decir hay cuatro funciones que determinan la curva, con $x$ como variable independiente, es por esta razón que el gráfico posee diferentes colores para enfatizar dicha situación (figura~\ref{fig:proyecciones_curvas_parabolicas}).
 
 \begin{figure}[H]
 \centering
@@ -5284,16 +5248,12 @@ La ecuación $z = 4-x^2$ en el plano $xz$ permite ver la proyección en dicho pl
 \fuentepropia
 \end{figure}
 
-Con ayuda de estos gráficos, podemos plantear las integrales triples que determinan el volumen del sólido.
-
-{\small
+Con ayuda de los gráficos de la figura~\ref{fig:proyecciones_curvas_parabolicas}, podemos plantear las integrales triples que determinan el volumen del sólido.
 \begin{multline*}
 \hskip-0.4cm \bigintss_{-\frac{1}{4}}^{0}\bigintss_{\sqrt{1-\sqrt{1+4x}}}^{\sqrt{1+\sqrt{1+4x}}}\bigintss_{0}^{4-x^2}dzdydx+\bigintss_{0}^2\bigintss_{\sqrt{2x}}^{\sqrt{1+\sqrt{1+4x}}}\bigintss_{0}^{4-x^2}dzdydx \\
 \hskip-0.4cm \bigintss_{-\frac{1}{4}}^{0}\bigintss_{0}^{4-x^2}\bigintss_{\sqrt{1-\sqrt{1+4x}}}^{\sqrt{1+\sqrt{1+4x}}}dydzdx+\bigintss_{0}^2\bigintss_{0}^{4-x^2}\bigintss_{\sqrt{2x}}^{\sqrt{1+\sqrt{1+4x}}}dydzdx \\
 = \bigintss_{0}^2 \bigintss_{\frac{y^{4}-2y^2}{4}}^{\frac{y^2}{2}}\bigintss_{0}^{4-x^2}dzdxdy= \frac{169472}{45045}.
 \end{multline*}
-}
-
 En el plano $yz$ existen tres regiones en las que se divide la proyección del sólido; una de ellas es muy pequeña, está sombreada en negro y está
 acotada por la recta $z=4$ y la curva $z=4- (y^4 -2y^2)^2/16$, para $y \in [0, \sqrt{2}]$.
 
@@ -5306,13 +5266,11 @@ acotada por la recta $z=4$ y la curva $z=4- (y^4 -2y^2)^2/16$, para $y \in [0, \
 \end{figure}
 
 En este caso, el volumen está dado por:
-
 \begin{multline*}
 \bigintss_{0}^2\bigintss_{0}^{4-\frac{y^{4}}{4}}\bigintss_{\frac{y^{4}-2y^2}{4}}^{\frac{y^2}{2}}dxdzdy+\bigintss_{0}^2\bigintss_{4-\frac{y^{4}}{4}}^{4-\frac{\left(y^{4}-2y^2\right) ^2}{16}}\bigintss_{\frac{y^{4}-2y^2}{4}}^{\sqrt{4-z}}dxdzdy \\
 +\bigintss_{0}^{\sqrt{2}}\bigintss_{4-\frac{\left( y^{4}-2y^2\right) ^2}{16}}^{4}\bigintss_{-\sqrt{4-z}}^{\sqrt{4-z}}dxdzdy \approx 3.7623.
 \end{multline*}
-
-La evaluación numérica de la integral anterior se puede obtener ejecutando las siguientes instrucciones.
+La evaluación numérica de la integral anterior se puede obtener ejecutando las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -5331,7 +5289,7 @@ También se puede obtener dicho valor como se muestra enseguida.
 
 Sobre el plano $xy$, las ecuaciones $4x=y^{4}-2y^2$ y $2x=y^2$, se parametrizan como
 $\overrightarrow{\alpha}(t)=\left\langle \frac{1}{2}t^2,t\right\rangle $
-y $\overrightarrow{\beta}(t)=\left\langle \frac{1}{4}\left(t^{4}-2t^2\right),t\right\rangle, $ $t\in [0,2]$.
+y $\overrightarrow{\beta}(t)=\left\langle \frac{1}{4}\left(t^{4}-2t^2\right),t\right\rangle\!, $ $t\in [0,2]$.
 
 \begin{figure}[H]
 \centering
@@ -5343,11 +5301,7 @@ y $\overrightarrow{\beta}(t)=\left\langle \frac{1}{4}\left(t^{4}-2t^2\right),t\r
 
 Una combinación convexa de la forma $(1-u)\overrightarrow{\alpha}(t) +u\overrightarrow{\beta}(t)$
 parametriza la base del sólido, esto es
-%
-{\small
 \[\left\langle \frac{1}{4}t^2\left( \left( t^2-4\right) u+2\right) ,t\right\rangle\!.\]
-}
-
 La coordenada $z$ de un punto sobre el cilindro $z=4-x^2$ está dada por $z=4-\frac{t^{4}}{16}\left( \left( t^2-4\right) u+2\right) ^2$.
 Por lo tanto, un punto $Q$ sobre el cilindro es de la forma
 {\small $Q\left( \frac{1}{4}t^2((t^2-4)u+2),t,4-\frac{t^{4}}{16}\left( \left( t^2-4\right) u+2\right) ^2\right)\!$,}
@@ -5355,13 +5309,9 @@ con un punto en la base $P\left( \frac{1}{4}t^2\left( \left( t^2-4\right) u+2\ri
 se forma la combinación convexa $(1-w)P+wQ$ que parametriza el sólido; esto define la siguiente función
 \[
 \mathbf{r} (t,u,w) = \left\langle \tfrac{t^2}{4}((t^2-4)u+2) ,t,w\left(4-\tfrac{1}{16}t^4((t^2-4)u+2)^2\right)\right\rangle\!;
-\] \\
+\]
 con $t\in [0,2]$, $u\in [0,1]$, $w\in [0,1]$.
-% luego hallamos los siguientes vectores. \begin{eqnarray*}
-%{\bf r}_{t} &=& \langle t\left( \left( t^2-2\right) u+1\right) ,1,\frac{1}{2}wt^{3}\left( 4u-t^2u-2\right)\left(\left(t^2-2\right) u+1\right)\rangle \\
-%{\bf r}_{u} &=& \langle \frac{1}{4}t^2\left( t^2-4\right) ,0,-\frac{1}{8}wt^{4}\left( t^2-4\right) \left( \left( t^2-4\right) u+2\right)\rangle \\
-%{\bf r}_{w}&=& \langle 0,0,\frac{1}{16}\left( 4-t^2\right) \left(t^2\left( \left( t^2-4\right) u+2\right) +8\right) \left(t^2u+2\right) \rangle
-%\end{eqnarray*}
+
 El elemento diferencial de volumen $|{\bf r}_{t}\cdot ({\bf r}_{u}\times {\bf r}_{w})|$
 es $\frac{t^2}{64}\left(t^2-4\right) ^2\left( t^2u+2\right) \left( t^2\left(
 \left( t^2-4\right) u+2\right) \right)$,
@@ -5712,7 +5662,7 @@ El sólido se parametriza simplificando la expresión $(1-w)P+wQ$, que determina
 
 \begin{equation*}
 {\bf r}\left( t,u,w\right) = \left\langle \frac{1}{4}t^2\left( \left( 1-u\right)
-t^2-2+4u\right) ,t,\left( w-\frac{1}{2}\right) \sqrt{8-2t^2}\right\rangle,
+t^2-2+4u\right) ,t,\left( w-\frac{1}{2}\right) \sqrt{8-2t^2}\right\rangle\!,
 \end{equation*}
 
 en donde $t\in [0,2]$, $u\in [0,1]$ y $w\in [0,1]$. %
@@ -6038,7 +5988,7 @@ con lo cual, la función que parametriza el sólido es
 %
 
 \begin{equation} \label{32a}
-{\bf r}\left( u,v,w\right) =\left\langle \sqrt{u}-\sqrt{u}v+v\sqrt[3]{u},wu^{2},u \right\rangle,
+{\bf r}\left( u,v,w\right) =\left\langle \sqrt{u}-\sqrt{u}v+v\sqrt[3]{u},wu^{2},u \right\rangle\!,
 \end{equation}
 %
 para $u\in [0,1]$, $v\in [0,1],w\in [0,1]$.
@@ -6096,13 +6046,12 @@ $x^{2}+y^{2}=r^{2}$, con $r>0$.
 \caption{Sólido definido por $x^2 + z^2 \leq r^2$ \quad y \quad $x^2 + y^2 \leq r^2$}
 \label{fig:bicilindro}
 \includegraphics[width=0.4\textwidth]{Img/51a.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Img/51c.pdf}
-
+\includegraphics[width=0.4\textwidth]{Img/51c.pdf} \\[5mm]
 \includegraphics[width=0.4\textwidth]{Img/51d.pdf}
 \fuentepropia
 \end{figure}
 
-Estos gráficos se obtienen ejecutando las siguientes instrucciones, en ellas se consideró $r=1$.
+Los gráficos de la figura~\ref{fig:bicilindro} se obtienen ejecutando las siguientes instrucciones, en ellas se consideró $r=1$.
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -6149,7 +6098,7 @@ Por la simetría de la figura, el planteamiento en los órdenes $dxdzdy$, $dydzd
 
 Estas integrales se evaluaron en \Verb"Mathematica" usando el comando \\ \Verb"Assuming",
 debido a que el programa aporta una solución que depende de la naturaleza de $r$
-(positiva, negativa, real o compleja). Esto se logra con las siguientes instrucciones.
+(positiva, negativa, real o compleja). Esto se logra con las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -6202,24 +6151,13 @@ Simplificando esta expresión, se define la función
 %
 en donde $u\in [0,r]$, $v\in [0,2\pi]$ y $w\in [0,1]$.
 Derivando parcialmente se obtienen los siguientes vectores
-
-{\small
 \begin{eqnarray*}
 {\boldsymbol \alpha}_u &=& \langle \cos(v), \sin(v), \frac{u(1-2w)\cos^2(v)}{\sqrt{r^2-u^2 \cos^2(v)}} \rangle \\
 {\boldsymbol \alpha}_v &=& \langle-u \sin(v), u\cos(v), \frac{u^2(2w-1)\sin(v)\cos(v)}{\sqrt{r^2-u^2 \cos^2v}}\rangle \\
 {\boldsymbol \alpha}_w &=& \langle 0, 0, 2\sqrt{r^2-u^2 \cos^2v}\rangle.
 \end{eqnarray*}
-}
-%
-Entonces,
-{\small $| {\boldsymbol \alpha}_w \cdot ({\boldsymbol \alpha}_u \times {\boldsymbol \alpha}_v)| = 2u\sqrt{r^2-u^2 \cos^2(v)}$,}
-con lo cual el volumen del mencionado esta dado por
-%
-{\small
+Entonces, $|{\boldsymbol \alpha}_w \cdot ({\boldsymbol \alpha}_u \times {\boldsymbol \alpha}_v)| = 2u\sqrt{r^2-u^2 \cos^2(v)}$, con lo cual el volumen del mencionado esta dado por
 \[\int_0^1 \int_0^{2\pi} \int_0^r 2u\sqrt{r^2-u^2 \cos^2(v)} du dv dw= \frac{16}{3}r^3\]
-}
-%\end{tcolorbox}
-
 En \verb"Mathematica" el cálculo anterior se realiza con las siguientes instrucciones:
 
 % tex-fmt: off
@@ -6321,7 +6259,7 @@ representan dos esferas que se intersectan en $z=0$. Consideraremos el sólido a
 \fuentepropia
 \end{figure}
 
-Estos gráficos se obtienen con las siguientes instrucciones:
+Los gráficos de la figura~\ref{fig:region_polar_desplazada} se obtienen con las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -6527,7 +6465,7 @@ Con estas funciones formamos la combinación convexa $(1-u)\overrightarrow{\alph
 %
 {\small
 \begin{equation}\label{36a}
-\overrightarrow{r}_1(t,u)=(1+u)\left\langle 2 \sin ^2\left(\frac{t}{2}\right) \cos (t),\sin (t) (1-\cos (t)),0 \right\rangle,
+\overrightarrow{r}_1(t,u)=(1+u)\left\langle 2 \sin ^2\left(\frac{t}{2}\right) \cos (t),\sin (t) (1-\cos (t)),0 \right\rangle\!,
 \end{equation}
 }
 %
@@ -6560,10 +6498,10 @@ Ahora obtenemos los vectores
 {\small
 \[
 \mathbf{r}_{t} = (1+u)\left\langle \sin (2 t)-\sin (t),2\sin^2\left(\tfrac{t}{2}\right) (2\cos(t)+1),
-\frac{1}{2} w (\sin (t)-\sin (2 t)) \right\rangle,
+\frac{1}{2} w (\sin (t)-\sin (2 t)) \right\rangle\!,
 \]
 \[
-\mathbf{r}_{u} = \left\langle2 \sin ^2\left(\tfrac{t}{2}\right) \cos (t),-\sin(t)(\cos (t)+1),-w \sin^2\left(\tfrac{t}{2}\right) \cos (t) \right\rangle,
+\mathbf{r}_{u} = \left\langle2 \sin ^2\left(\tfrac{t}{2}\right) \cos (t),-\sin(t)(\cos (t)+1),-w \sin^2\left(\tfrac{t}{2}\right) \cos (t) \right\rangle\!,
 \]
 \[
 \mathbf{r}_{w} = \left\langle 0,0,2-(u+1) \sin ^2\left(\tfrac{t}{2}\right) \cos(t)\right\rangle\!.
@@ -6820,7 +6758,7 @@ Un punto $Q$ sobre la base del sólido tendrá coordenadas determinadas por la e
 y un punto $P$ sobre el paraboloide tendrá la forma dada por la expresión \ref{628x};
 con ellos se puede formar una combinación convexa que parametriza el sólido. Esto permite definir la función
 \begin{equation*}
-\mathbf{r}(t,u,w) = (u+1)\left\langle 2\sin^2\left(\tfrac{t}{2}\right)\cos(t),\sin(t)(1-\cos(t)),(u+1)w\sin^4\left(\tfrac{t}{2}\right)\right\rangle,
+\mathbf{r}(t,u,w) = (u+1)\left\langle 2\sin^2\left(\tfrac{t}{2}\right)\cos(t),\sin(t)(1-\cos(t)),(u+1)w\sin^4\left(\tfrac{t}{2}\right)\right\rangle\!,
 \end{equation*}
 en donde $t\in [0,2\pi]$, $u \in [0,1]$, $w \in [0,1]$.
 Con esta función se pueden obtener los siguientes vectores
@@ -7060,7 +6998,7 @@ Las superficies definidas por las ecuaciones $z=x^{2}+y^{2}$ y $z=e^{1-x^{2}-y^{
 \fuentepropia
 \end{figure}
 
-Estos gráficos se obtienen por medio de las siguientes instrucciones.
+Los gráficos de la figura~\ref{fig:paraboloide_exponencial} se obtienen por medio de las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -7198,7 +7136,7 @@ $x^2 +y^2 +z^2 \leq 9$, $ y^2 +z^2 \geq 1$, $z \leq 0$. La figura se forma cuand
 \fuentepropia
 \end{figure}
 
-Las siguientes instrucciones permiten obtener el gráfico del sólido.
+Las siguientes instrucciones permiten obtener el gráfico del sólido (figura~\ref{fig:cilindro_parabolico_superior}).
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -7280,7 +7218,7 @@ $y = r\cos \theta$, $z = r\sin \theta$, el volumen está dado por
 }
 %
 Algunos de los cálculos anteriores se pueden evaluar usando \verb"Mathematica"
-mediante la ejecución de las siguientes instrucciones.
+mediante la ejecución de las siguientes instrucciones:
 
 % tex-fmt: off
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
@@ -7780,7 +7718,7 @@ y $P(\sqrt{3}u\cos \theta,2u\sin \theta,\\ 3-\frac{5}{2}u^{2}-\frac{1}{2}u^{2}\c
 Una combinación convexa de estos puntos permite parametrizar el sólido, es decir, simplificando la expresión $(1-w)P+wQ$ se define la función
 %
 {\small
-\[{\bf r}(u,\theta ,w)=\left\langle\sqrt{3}u\cos\theta,2u\sin\theta,6u^{2}w-\frac{1}{2}u^{2}\cos2\theta -6w-\frac{5}{2}u^{2}+3 \right\rangle,\]}
+\[{\bf r}(u,\theta ,w)=\left\langle\sqrt{3}u\cos\theta,2u\sin\theta,6u^{2}w-\frac{1}{2}u^{2}\cos2\theta -6w-\frac{5}{2}u^{2}+3 \right\rangle\!,\]}
 %
 
 en donde $u \in [0,1]$, $\theta \in [0,2\pi] $, $w\in [0,1]$.
@@ -8134,7 +8072,7 @@ Mesh->False,BoxRatios->{1,1,1}]
 
   {\small
     \begin{eqnarray*}
-      {\bf r}(u,v,w) &=&(1-w) P +wQ  = \left\langle u\cos v,u+w\sqrt{9-u^{2}}-uw,u\sin v\right\rangle,
+      {\bf r}(u,v,w) &=&(1-w) P +wQ  = \left\langle u\cos v,u+w\sqrt{9-u^{2}}-uw,u\sin v\right\rangle\!,
     \end{eqnarray*}
   }
   %
@@ -8172,7 +8110,7 @@ Mesh->False];
 
 En el plano $xy$, la proyección de la parte más delgada del hiperboloide posee ecuación $2x^{2}+3y^{2}=7$. Eliminando $z$ de las ecuaciones iniciales se obtiene $x^{2}+y^{2}=4$, que corresponde a la proyección en el plano $xy$ de la intersección de las superficies.
 
-Hay una región en la cual los l\'{\i}mites de integración para $z$ van desde el elipsoide hasta el mismo elipsoide, mientras que en la región restante, los límites para $z$ van desde el hiperboloide hasta el elipsoide. Por la simetr\'{\i}a de la figura se puede establecer que el volumen está dado por
+Hay una región en la cual los límites de integración para $z$ van desde el elipsoide hasta el mismo elipsoide, mientras que en la región restante, los límites para $z$ van desde el hiperboloide hasta el elipsoide. Por la simetría de la figura se puede establecer que el volumen está dado por
 
 {\small
 \begin{multline}

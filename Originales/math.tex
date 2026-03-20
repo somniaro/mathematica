@@ -178,7 +178,7 @@ Simplify[%,Assumptions->t>0]
     \sum_{k=1}^n k^3 \hskip1.5cm
     \sum_{k=1}^\infty \frac{1}{k^2} \hskip1.5cm
     \sum_{r=0}^\infty \frac{2^r}{r!}$$
-    Para obtener su valor exacto se usan las siguientes instrucciones.
+    Para obtener su valor exacto se usan las siguientes instrucciones:
 
     \begin{tcolorbox}[title=Funciones \verb"Mathematica"]
       \begin{multicols}{2} % Activa las dos columnas
@@ -199,7 +199,7 @@ Sum[2^r/r!,{r,0,Infinity}]
       \lim_{(x,y)\to (0,0)}\frac{x^2y}{x^2+y^2} \hskip1.5cm
     \lim_{(x,y)\to(0,0)}\frac{\sin(x^2+y^2)}{x^2+y^2}$$}
 
-    Los límites anteriores se evalúan con las siguientes instrucciones.
+    Los límites anteriores se evalúan con las siguientes instrucciones:
     \begin{tcolorbox}
 \begin{Verbatim}[formatcom=\letraverbatim]
 Limit[Sin[3*x]/Sin[2x],x->0]
@@ -389,7 +389,7 @@ ParametricPlot[{{2*Cos[t],2*Sin[t]},{Cos[t],Sin[t]},
         \item \Verb!ParametricPlot3D[{x[t],y[t],z[t]},{t,a,b}]!,
           dibuja la curva parametrizada $\ve{r}(t)=\langle x(t),y(t),z(t) \rangle $,
           con $t\in[a,b]$.  \index{ParametricPlot3D}
-        \item \verb"ParametricPlot3D[{x[u,v],y[u,v],z[u,v]},{u,a,b},{v,c,d}]",
+        \item \textls[-33]{\verb"ParametricPlot3D[\{x[u,v],y[u,v],z[u,v]\},\{u,a,b\},\{v,c,d\}]"},
           se utiliza para graficar superficies parametrizadas por medio de una función
           $\ve{r}(u,v)=\langle x(u,v),y(u,v),z(u,v) \rangle $, con
           $u\in[a,b]$, $v\in[c,d]$.
@@ -447,7 +447,7 @@ ColorData["Rainbow"][z]],MeshStyle->Gray]
 \end{Verbatim}
       \end{itemize}
 
-      El siguiente gráfico se consigue utilizando las instrucciones señaladas.
+      La siguiente figura se consigue utilizando las instrucciones señaladas.
 
       \begin{figure}[H]
         \centering
@@ -654,7 +654,7 @@ RegionPlot3D[(x^2+y^2)^2-1<z<4*(1-x^2-y^2)^2&&
 \end{Verbatim}
       \end{tcolorbox}
 
-      (4) La región del espacio interior a la esfera $x^2+y^2+z^2=4$ y al hiperboloide de dos mantos $x^2+y^2=2+z^2$, exterior al cilindro $x^2+y^2=\frac{2}{5}$ se muestra en el siguiente gráfico.
+      (4) La región del espacio interior a la esfera $x^2+y^2+z^2=4$ y al hiperboloide de dos mantos $x^2+y^2=2+z^2$, exterior al cilindro $x^2+y^2=\frac{2}{5}$ se muestra en la siguiente figura.
 
       \begin{figure}[H]
         \centering
@@ -903,9 +903,7 @@ DiscretePlot3D[f[x,y],{x,a,b,r1},{y,c,d,r2}]
       \index{DiscretePlot3D}
 
       Considerando la función $f(x,y)=3+xy-x^2-y^3$ con $x \in [-1,1]$, $y \in [-1,1]$, e incrementos de $0.1$ y
-      $0.2$ respectivamente, se obtiene los siguientes gráficos.
-
-      % Asegura alineación con el margen izquierdo
+      $0.2$ respectivamente, se obtiene la siguiente figura.
 
       \begin{figure}[H]
         \centering
@@ -915,7 +913,7 @@ DiscretePlot3D[f[x,y],{x,a,b,r1},{y,c,d,r2}]
         \includegraphics[width=0.4\textwidth]{Img/T_45b.pdf}
       \end{figure}
 
-      Los gráficos anteriores se obtienen al ejecutar las siguientes sentencias.
+      La figura anterior se obtiene al ejecutar las siguientes sentencias.
 
       \begin{tcolorbox}[title=Instrucciones en Mathematica]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -941,7 +939,7 @@ ExtentSize->{0.15,0.18},FillingStyle->Opacity[0.4]]
         \fuentepropia
       \end{figure}
 
-      Este gráfico se consigue al ejecutar las siguientes instrucciones. La condición se obtiene al usar la opción \verb"RegionFunction". \index{RegionFunction}
+      La figura anterior se consigue al ejecutar las siguientes instrucciones. La condición se obtiene al usar la opción \verb"RegionFunction". \index{RegionFunction}
 
       \begin{tcolorbox}[title=Instrucciones en Mathematica]
 \begin{Verbatim}[formatcom=\letraverbatim]

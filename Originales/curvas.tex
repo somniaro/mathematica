@@ -18,7 +18,7 @@ $\overrightarrow{r}(t)=\left\langle x(t) ,y(t),z(t) \right\rangle$ para $t\in \l
 \begin{equation} \label{curvas}
 L=\int_{a}^{b} \left\| \overrightarrow{r}^{\prime }(t)\right\| \, dt.
 \end{equation}
-La expresión anterior es un caso particular de la fórmula (\ref{intdelinea}), considerando $f(x,y,z)=1$.
+La expresión anterior es un caso particular de la fórmula~\ref{intdelinea}, considerando $f(x,y,z)=1$.
 Al término $\left\| \overrightarrow{r}^{\prime }(t)\right\|dt$ lo denominaremos elemento diferencial de longitud.
 \index{Elemento diferencial!de longitud}
 \\
@@ -89,17 +89,18 @@ $x+3=(y-2)^2+(z-1)^2$ y $(z-2)^2+(y-2)^2=4$.
 
 Estas expresiones representan un paraboloide
 con vértice en el punto $(-3,2,1)$, que abre hacia la parte positiva del eje $x$ y un cilindro de
-radio $2$ cuyo eje de simetría es una recta paralela al eje $x$. \label{curvas2}
+radio~$2$ cuyo eje de simetría es una recta paralela al eje $x$. \label{curvas2}
 
 \begin{figure}[H]
 \centering
 \caption{Gráfico de $x-y^{2}+4y-z^{2}+2z=2$ y $y^{2}-4y+4+z^{2}=4z$}
-\includegraphics[width=0.4\textwidth]{Img/70a.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Img/70b.pdf}
+\label{fig:116}
+\includegraphics[height=5cm]{Img/70a.pdf} \hspace{5mm}
+\includegraphics[height=5cm]{Img/70b.pdf}
 \fuentepropia
 \end{figure}
 
-Las instrucciones para conseguir el gráfico son las siguientes:
+Las instrucciones para conseguir la figura~\ref{fig:116} son las siguientes:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -127,11 +128,11 @@ A partir de esta función, se sigue que la magnitud del vector tangente es
 \[
 \left\| {\bf r}^{\prime }(t)\right\| = 2\sqrt{4\cos ^{2}(t) +1}= 2\sqrt{3+2\cos(2t);}
 \]
-entonces, la longitud de la curva se determina por 
+entonces, la longitud de la curva se determina por
 \[
 \int_{0}^{2\pi }2\sqrt{3+2\cos(2t)}\,dt \approx 21.081.
 \]
-Este cálculo se puede obtener numéricamente con las siguientes sentencias:
+\textls[-15]{Este cálculo se puede obtener numéricamente con las siguientes sentencias:}
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -143,14 +144,14 @@ NIntegrate[A,{t,0,2*Pi}]
 
 \subsection{Un cilindro y un paraboloide hiperbólico}
 El cilindro con ecuación $x^{2}+y^{2}=4$ y el paraboloide hiperbólico con ecuación
-$z=x^{2}-y^{2}$ se intersecan en una curva como lo muestra las siguientes figuras.
+$z=x^{2}-y^{2}$ se intersecan en una curva como lo muestra la figura~\ref{fig:67}.
 
 \begin{figure}[H]
 \centering
 \caption{Gráfico de $x^{2}+y^{2}=4$ y $z=x^{2}-y^{2}$}
 \label{fig:67}
-\includegraphics[width=0.4\textwidth]{Img/67a.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Fig/301.pdf}
+\includegraphics[height=5cm]{Img/67a.pdf} \hspace{5mm}
+\includegraphics[height=5cm]{Fig/301.pdf}
 \fuentepropia
 \end{figure}
 
@@ -161,19 +162,20 @@ $$z=\left( 2\cos (t) \right)^{2}-\left(2\sin(t)\right) ^{2}= 4\cos(2t) ,$$
 es decir, la función vectorial
 $\overrightarrow{r}\left(t\right) =\left\langle 2\cos (t) ,2\sin (t) ,4\cos\left( 2t\right) \right\rangle $,
 para $t\in \left[ 0,2\pi \right] $, define
-la curva de intersección de las superficies se\~{n}aladas.
-\\
+la curva de intersección de las superficies señaladas.
+
 A partir de $\overrightarrow{r}(t) $, se obtiene
 $\overrightarrow{r}^{\prime }(t) =\left\langle -2\sin \left(
 t\right) ,2\cos (t) ,-8\sin \left( 2t\right) \right\rangle $  y
-{\small $$\left\| \overrightarrow{r}^{\prime }(t) \right\| =
-2\sqrt{64\cos ^{2}(t) +1-64\cos ^{4}(t)}= 2\sqrt{9-8\cos \left( 4t\right)}.$$
-}
+\begin{gather*}
+\left\| \overrightarrow{r}^{\prime }(t) \right\| = 2\sqrt{64\cos ^{2}(t) +1-64\cos ^{4}(t)}= 2\sqrt{9-8\cos \left( 4t\right)}.
+\end{gather*}
 Con lo cual, la longitud de esta curva está dada por
-{\small $$\int_{0}^{2\pi }2\sqrt{9-8\cos \left( 4t\right) }dt \approx 35.\, 2571.$$
-}
-El gráfico y la evaluación numérica de esta integral se obtienen en \linebreak
-\verb"Mathematica" mediante el uso se las siguientes instrucciones:
+\begin{gather*}
+\int_{0}^{2\pi }2\sqrt{9-8\cos \left( 4t\right) }dt \approx 35.2571.
+\end{gather*}
+\textls[-15]{La figura y la evaluación numérica de esta integral se obtienen en
+\verb"Mathematica" mediante el uso se las siguientes instrucciones:}
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -310,7 +312,7 @@ representan gráficamente un paraboloide y un paraboloide hiperbólico, respecti
 \fuentepropia
 \end{figure}
 
-Los gráficos se consiguen ejecutando las siguientes instrucciones:
+La figura se consigue ejecutando las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -402,7 +404,7 @@ En el espacio estas las dos curvas de intersección se pueden parametrizar como
 \overrightarrow{\alpha }(t) &=& \left\langle 3\cos (t) ,6\sin
 (t) ,-31+27\cos ^{2}(t) +6\cos (t) \right\rangle \\
 \overrightarrow{\beta }(t) &=& \left\langle 2\cos (t) ,\sin \left(
-t\right) ,4-3\cos ^{2}(t) +4\cos (t) \right\rangle,
+t\right) ,4-3\cos ^{2}(t) +4\cos (t) \right\rangle\!,
 \end{eqnarray*}
 con $t \in [0,2\pi]$.
 La longitud de dichas curvas se puede determinar con el
@@ -611,8 +613,7 @@ r={(1-Cos[t])*Cos[t],(1-Cos[t])*Sin[t],
 A=Assuming[t>=0,Simplify[Norm[D[r,t]]]]
 NIntegrate[A,{t,0,2*Pi}]
 a=ContourPlot3D[{3*z==9-(x+2)^2-(y+1)^2},{x,-5,1},
-{y,-4,2},{z,0,3},ContourStyle->{Orange},Mesh->False,
-PlotPoints->80];
+{y,-4,2},{z,0,3},ContourStyle->{Orange},Mesh->False,PlotPoints->80];
 b=ParametricPlot3D[{r[[1]],r[[2]],u},{t,0,2*Pi},
 {u,0,3},Mesh->False,PlotPoints->80,
 PlotStyle->{Opacity[0.7],RGBColor[0.1,0.5,0.3]}];
@@ -628,8 +629,6 @@ Para las siguientes funciones vectoriales se construyen dos superficies cuya int
 a la curva determinada por la función $\overrightarrow{r}(t)$. Además se halla la longitud ($L$) de la curva para
 un intervalo dado.
 
-%
-
 \begin{funciones}[series=ejercicios]
 \item \makebox[\linewidth][c]{$\overrightarrow{r}(t)=\la 3t^{3}+t,3t^{2},3t^{3}-t\ra, $ $t \in [-2,2]$.}
 \end{funciones}
@@ -640,9 +639,8 @@ Entonces, $x-z=2t;$ por lo tanto, $\left( x-z\right) ^{2}=4t^{2}=\frac{4}{3}\lef
 3t^{2}\right) =\frac{4}{3}y$. Además $x+z=6t^{3}=\left( 2t\right) \left( 3t^{2}\right) =\left(
 x-z\right) y$.
 
-Por tal razón, utilizaremos las expresiones
-$x-z=\frac{4}{3}y$ y $x+z=y\left( x-z\right) $, cuyos gráficos se
-presentan a continuación y con éstos también se muestra la curva de intersección.
+Por tal razón, utilizaremos las expresiones $x-z=\frac{4}{3}y$ y $x+z=y\left( x-z\right) $,
+cuya figura se presenta a continuación y con ésta también se muestra la curva de intersección.
 
 \begin{figure}[H]
 \centering
@@ -754,13 +752,14 @@ $$L=\int_{-1}^{1}\frac{2}{3}\sqrt{2}\left( 18t^{2}+1\right) dt= \frac{28}{3}\sqr
 Para esta función es claro que
 $x= 3t-t^{3}$, $y=3t^2$, $z=3t+t^{3}$. De modo que
 $x+z=6t$ entonces $(x+z)^2=12y$. Por otro lado, $x^2-z^2=-12t^4$, entonces, $x^2-z^2=-4y^2/3$.
-Las figuras de las dos superficies junto con la curva de intersección se muestra a continuación:
+Los gráficos de las dos superficies junto con la curva de intersección se muestran en la figura~\ref{fig:128}.
 
 \begin{figure}[H]
 \centering
 \caption{Superficies con intersección ${\bf r}(t)=\la 3t-t^{3},3t^2,3t+t^{3} \ra$}
-\includegraphics[width=0.4\textwidth]{Img/91a.pdf} \hspace{5mm}
-\includegraphics[width=0.4\textwidth]{Img/91b.pdf}
+\label{fig:128}
+\includegraphics[height=5cm]{Img/91a.pdf} \hspace{5mm}
+\includegraphics[height=5cm]{Img/91b.pdf}
 \fuentepropia
 \end{figure}
 
@@ -807,9 +806,8 @@ Las instrucciones para conseguir estas figuras son las siguientes:
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=ParametricPlot3D[{Sec[t],Log[Sec[t]+Tan[t]],Tan[t]},
 {t,-Pi/3,Pi/3},PlotStyle->{Thickness[0.017],Black}];
-b=ContourPlot3D[{1+z^2==x^2,y==Log[x+z]},{x,-2,3},
-{y,-2,2},{z,-2,2},Mesh->False,
-ContourStyle->{Directive[Orange,Opacity[0.95]],
+b=ContourPlot3D[{1+z^2==x^2,y==Log[x+z]},{x,-2,3},{y,-2,2},{z,-2,2},
+Mesh->False,ContourStyle->{Directive[Orange,Opacity[0.95]],
 Directive[Cyan,Opacity[0.9]]}];
 Show[b,a]
 \end{Verbatim}

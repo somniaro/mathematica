@@ -491,15 +491,19 @@ La matriz jacobiana de ${\bf F}$, $D{\bf F}(a)$ es
     \frac{\partial P}{\partial z}=\frac{\partial R}{\partial x},\hspace{1.5cm}
     \frac{\partial Q}{\partial z}=\frac{\partial R}{\partial y}.$$
   \end{prop}
-  \section{Funciones vectoriales} \index{Funciones vectoriales}
-  De manera general, una aplicación que asigna a cada número real un vector en $\mathbb{R}^n$
-  se denomina función vectorial, esto es ${\bf r}(t)= \langle r_1(t),r_2(t),\cdots, r_n(t)\ra$.
 
-  Por ejemplo, la función ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$ está definida para $t\in [0,2\pi]$ su gráfico en $\mathbb{R}^3$ se representa a continuación.
+  \section{Funciones vectoriales} \index{Funciones vectoriales}
+
+  \textls[-10]{De manera general, una aplicación que asigna a cada número real un vector en $\mathbb{R}^n$
+  se denomina función vectorial, esto es ${\bf r}(t)= \langle r_1(t),r_2(t),\cdots, r_n(t)\ra$.}
+
+  Por ejemplo, la función ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$ está definida para
+  $t\in [0,2\pi]$ y su gráfico en $\mathbb{R}^3$ se representa en la figura~\ref{curva_determinada}.
 
   \begin{figure}[H]
     \centering
     \caption{Curva determinada por ${\bf r}(t)= \langle 3\cos(2t),1-\cos(t),2\sin(t)\ra$}
+    \label{curva_determinada}
     \includegraphics[width=0.44\textwidth]{Fig/4.pdf} \hspace{5mm}
     \includegraphics[width=0.48\textwidth]{Fig/5.pdf}
     \fuentepropia
@@ -568,8 +572,9 @@ La matriz jacobiana de ${\bf F}$, $D{\bf F}(a)$ es
     \end{eqnarray*}
   \end{proof}
   La siguiente expresión es producto de aplicar los resultados anteriores
-  \begin{multline}\left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}(t)\right)^{\prime} \\ = \left( \left( \mathbf{u}^{\prime}(t)\times \mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)\right) \cdot \mathbf{w}(t)\right) +\left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}^{\prime}(t)\right)
-  \end{multline}
+  \begin{gather*}
+    \left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}(t)\right)^{\prime} \\ = \left( \left( \mathbf{u}^{\prime}(t)\times \mathbf{v}(t)+\mathbf{u}(t)\times \mathbf{v}^{\prime}(t)\right) \cdot \mathbf{w}(t)\right) +\left( \left( \mathbf{u}(t)\times \mathbf{v}(t)\right)\cdot \mathbf{w}^{\prime}(t)\right)
+  \end{gather*}
 
   \section{Regiones parametrizadas} \label{regionesparametrizadas}
   En estas notas trabajaremos básicamente sobre tres tipos de objetos en el espacio: curvas, superficies y sólidos.
@@ -682,7 +687,7 @@ Además, \[\int_a^b{\bf f}(t)dt= \langle \int_a^b f_1(t)dt,\int_a^b f_2(t)dt,\cd
 \subsection{Integrales dobles} \label{integralesdobles}  \index{Integrales!dobles}
 Presentaremos ahora la integral doble de una función de
 dos variables $f(x,y)$ definida sobre una región del plano como el
-l\'{\i}mite de las aproximaciones a través de sumas de Riemann, posteriormente
+límite de las aproximaciones a través de sumas de Riemann, posteriormente
 se presentarán de manera similar las integrales triples.
 La evaluación de las integrales dobles o triples se puede obtener
 utilizando el teorema fundamental de cálculo; ver \cite{apostol_calculus_1999}.
@@ -690,7 +695,7 @@ utilizando el teorema fundamental de cálculo; ver \cite{apostol_calculus_1999}.
 En el plano $xy$ consideraremos un rectángulo $R=[a,b]\times \lbrack c,d]$, es decir
 $$R=\{(x,y) \in \mathbb{R}^{2}\, | \,a\leq x\leq b,c\leq y\leq d\}.$$
 Si $f(x,y)$ es una función continua definida sobre el rectángulo $R$,
-subdividiremos a $R$ en $nm$ rectángulos más peque\~{n}os a partir
+subdividiremos a $R$ en $nm$ rectángulos más pequeños a partir
 de rectas paralelas a los ejes coordenados. Esto es, para el intervalo $[a,b]$, consideremos
 $$a=x_{0}<x_{1}<x_{2}<\cdots <x_{i}<\cdots <x_{n-1}<x_{n}=b,$$ mientras que
 para el intervalo $[c,d]$, consideremos
@@ -723,7 +728,7 @@ es posible obtener diversos valores de $S_{nm}$.
 Es de especial interés el conocer el comportamiento de las sumas de
 Riemann cuando la norma de la partición tiende a cero, que equivale a
 que el ancho y la altura de cada subrectángulo de $R$ tienden a cero.
-Si el l\'{\i}mite de las sumas $S_{nm}$ existe sin importar la selección
+Si el límite de las sumas $S_{nm}$ existe sin importar la selección
 que se haga de $\left( x_{i}^{\ast },y_{k}^{\ast }\right) $, entonces
 diremos que la función $f(x,y) $ es integrable sobre el rectángulo $R$
 y este valor se denota por
@@ -745,7 +750,7 @@ interpretarse como el volumen del sólido $E$ acotado en la base por $R$,
 por la parte superior la superficie $z=f(x,y)$, y en los lados regiones contenidas en
 los planos $x=a$, $x=b$, $y=c$, $y=d$. Nótese que el término
 $f(x_{i}^{\ast },y_{k}^{\ast })\Delta x_{i}\Delta y_{k}$ corresponde al
-volumen del paralelep\'{\i}pedo con área de la base $\Delta x_{i}\Delta y_{k}$ y altura $f(x_{i}^{\ast },y_{k}^{\ast });$
+volumen del paralelepípedo con área de la base $\Delta x_{i}\Delta y_{k}$ y altura $f(x_{i}^{\ast },y_{k}^{\ast });$
 la suma $S_{nm}$ es una aproximación al volumen del sólido $E$.
 Es por lo anterior que el volumen de $E$ se define como
 \[\text{volumen:}\lim _{n,m \to \infty}\left(\sum_{i=1}^{n}\sum_{k=1}^{m}f\left( x_{i}^{\ast },y_{k}^{\ast}\right) \Delta x_{i}\Delta y_{k}\right)= \ds \iint\limits_{R}f(x,y) dA.\] \index{Masa de una región}
@@ -854,7 +859,7 @@ E=\{(x,y,z) \in \mathbb{R}^{3}\,|\,a\leq x\leq b,c\leq y\leq
 d,r\leq z\leq s\}.
 \end{equation*}
 Si $f(x,y,z)$ es una función continua definida sobre la caja rectangular $E$,
-subdividiremos a $E$ en $lnm$ cajas rectangulares más peque\~{n}as a
+subdividiremos a $E$ en $lnm$ cajas rectangulares más pequeñas a
 partir de planos paralelos a los planos coordenados. Esto es, para el
 intervalo $[a,b]$, consideremos
 \begin{equation*}
@@ -892,7 +897,7 @@ S_{nml}=\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{k=1}^{l}f\left( x_{i}^{\ast},y_{j}^{\a
 \end{equation*}
 Dependiendo de la elección de $\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right)$
 es posible obtener diversos valores de $S_{nml}$.
-De manera similar a como se definió la integral doble, si el l\'{\i}mite de
+De manera similar a como se definió la integral doble, si el límite de
 las sumas $S_{nml}$ existe para toda elección que se haga de
 $\left(x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast }\right)$, entonces se dice que la
 función $f(x,y,z) $ es integrable sobre la caja rectangular $E$, y este valor se denota por
@@ -906,7 +911,7 @@ sobre la caja rectangular $E$ se define como
 \begin{eqnarray}
 \lim_{\left\Vert P\right\Vert \rightarrow 0}S_{nml} &=& \lim_{l,m,n \to\infty}\left(\sum_{i=1}^{n}\sum_{j=1}^{m}\sum_{k=1}^{l}f\left( x_{i}^{\ast },y_{j}^{\ast },z_{k}^{\ast}\right) \Delta x_{i}\Delta y_{j}\Delta z_{k} \right)\nonumber \\ &=&\iiint\limits_{E}f\left(x,y,z\right) dV
 \end{eqnarray}
-cuando este l\'{\i}mite existe.
+cuando este límite existe.
 \end{defi}
 Ilustremos lo anterior con dos integrales triples.
 \begin{ejemplo}
@@ -1052,7 +1057,7 @@ La superficie $S$ correspondiente a la
 función $\phi $ es su imagen $\phi \left( D\right) =S$ se escribe
 $\phi(u,v)=\left\langle x\left( u,v\right) ,y\left( u,v\right),z\left( u,v\right) \right\rangle $.
 La integral de un campo escalar $f$ sobre una superficie $S$,  está dada por
-\begin{equation} \label{areasup1}
+\begin{equation} \label{areasup}
 \iint_{S}f(x,y,z) dS=\iint_{D}f\left( \phi \left( u,v\right)
 \right) \left\| {\bf T}_{u}\times {\bf T}_{v}\right\| dudv
 \end{equation}
@@ -1066,9 +1071,9 @@ u,v\right) \right) \cdot \left( {\bf T}_{u}\times {\bf T}_{v}\right) dudv
 \end{equation}
 Una exposición más detallada de esta formulación puede encontrarse en \cite{marsden_calculo_2013}.
 
-Si en la expresión (\ref{areasup1}) $f(x,y,z)=1$, esta integral se reduce al área $A$ de la superficie $D$, es decir
-\begin{equation} \label{areasup}
-A=\iint_{D} \left\| {\bf T}_{u}\times {\bf T}_{v}\right\| dudv
+Si en la expresión (\ref{areasup}) $f(x,y,z)=1$, esta integral se reduce al área $A$ de la superficie $D$, es decir
+\begin{equation}
+A=\iint_{D} \left\| {\bf T}_{u}\times {\bf T}_{v}\right\| dudv \label{areasup2}
 \end{equation}
 Al término $\left\| {\bf T}_{u}\times {\bf T}_{v}\right\|dudv$ lo denominaremos elemento diferencial de área.
 \index{Elemento diferencial!de área}
@@ -1120,7 +1125,7 @@ de coordenadas $(x,y,z) $ en una region $R^{\ast }$ en el sistema coordenado  $(
 Consideremos un cubo en el sistema $uvw$, con aristas de longitud $\Delta u$ de largo, $\Delta v$ de ancho y $\Delta w$ de altura, que se transforma mediante la función ${\bf r}$.
 Asumiendo que ${\bf r}$ es diferenciable,
 si $(u,v,w) $ son las coordenadas de un vértice del cubo, entonces los vértices
-adyacentes son $\left( u+\Delta u,v,w\right) $, $\left( u,v+\Delta v,w\right)$ y $\left( u,v,w+\Delta w\right) ;$ mediante la aplicación ${\bf r}$, el cubo se transforma en una región cuyo volumen se puede aproximar mediante un \mbox{paralelep\'{\i}pedo}.
+adyacentes son $\left( u+\Delta u,v,w\right) $, $\left( u,v+\Delta v,w\right)$ y $\left( u,v,w+\Delta w\right) ;$ mediante la aplicación ${\bf r}$, el cubo se transforma en una región cuyo volumen se puede aproximar mediante un \mbox{paralelepípedo}.
 Aplicando el teorema del valor medio, se sigue que
 \begin{eqnarray*}
 {\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) &=& \frac{{\bf r}\left( u+\Delta u,v,w\right) -{\bf r}(u,v,w) }{\Delta u}\Delta u \\
@@ -1185,20 +1190,19 @@ circulares de radio $r_i$ y $r_{i+1}$ (con $r_i<r_{i+1}$) está dada por
 \end{figure}
 
 Teniendo en cuenta las relaciones anteriores y el teorema de cambio de variables se puede establecer que en el sistema de coordenadas polares, $x=r \cos \theta$, $y=r \sin \theta$,  la transformación de una integral doble es
-{\small
-\begin{equation*}\label{integraldoblepolares}
+\begin{equation}
 \iint_R f(x,y) dydx = \iint_S f(r \cos \theta,r \sin \theta) r drd\theta.
-\end{equation*}
-}
-
+\label{integraldoblepolares}
+\end{equation}
 Utilizando el sistema de coordenadas cilíndricas $x=r\cos \theta $,
 $y=r\sin \theta $, $z=z;$ o el sistema de coordenadas esféricas,
 $x=\rho \cos \theta \sin \phi $, $y=\rho \sin \theta \sin \phi $, $z=\rho\cos \phi $,
-con los siguientes gráficos se ilustra la obtención del elemento diferencial de volumen en estos casos.
+con la figura~\ref{vectores_F_T_n} se ilustra la obtención del elemento diferencial de volumen en estos casos.
 
 \begin{figure}[H]
 \centering
 \caption{Vectores ${\bf F}(x,y,z)$, ${\bf T}$ y ${\bf n}$}
+\label{vectores_F_T_n}
 \includegraphics[width=0.5\textwidth]{Fig/15.pdf}
 \fuentepropia
 \end{figure}

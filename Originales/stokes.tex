@@ -406,9 +406,9 @@ por lo tanto,
 
 \begin{ejemplo}
 \textls[-10]{Considere el campo vectorial
-\[{\bf F}(x,y)=\left\langle x^{2}-\frac{x}{1+y^{2}},e^{x}+\arctan y\right\rangle,\]
+\[{\bf F}(x,y)=\left\langle x^{2}-\frac{x}{1+y^{2}},e^{x}+\arctan y\right\rangle\!,\]
 calcule el flujo hacia afuera de ${\bf F}$ a través de la cardioide $r=a(1+\cos \theta )$, $a>0$.}
-% La curva se parametriza por medio de la función ${\bf r}\left( \theta \right) =\left\langle a(1+\cos\theta )\cos \theta ,a(1+\cos \theta )\sin \theta \right\rangle,$ $\theta \in [0,2\pi].$
+% La curva se parametriza por medio de la función ${\bf r}\left( \theta \right) =\left\langle a(1+\cos\theta )\cos \theta ,a(1+\cos \theta )\sin \theta \right\rangle\!,$ $\theta \in [0,2\pi].$
 En este caso,
 \[\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}=\frac{\partial }{\partial x}\left( x^{2}-\frac{x}{1+y^{2}}\right) +\frac{\partial }{\partial y}\left( e^{x}+\arctan y\right) = 2x;\]
 por lo tanto, el flujo está dado por
@@ -632,7 +632,7 @@ La curva de intersección del paraboloide y el cilindro se determina reduciendo 
 $x = 2z - 2$. Con las expresiones $y = 2 + 2\cos(t)$, $z = 2 + 2\sin(t)$, se sigue que la función vectorial que describe dicha curva es
 
 {\small
-\[{\bf r}(t) = \left\langle 2 + 4\sin(t),\, 2 + 2\cos(t),\, 2 + 2\sin(t) \right\rangle,\; t \in [0, 2\pi].\]}
+\[{\bf r}(t) = \left\langle 2 + 4\sin(t),\, 2 + 2\cos(t),\, 2 + 2\sin(t) \right\rangle\!,\; t \in [0, 2\pi].\]}
 
 Entonces,
 
@@ -831,7 +831,7 @@ La figura de la mencionada superficie y el campo vectorial ${\rm rot}\, {\bf F}$
 \fuentepropia
 \end{figure}
 
-Las figuras anteriores se obtienen ejecutando las siguientes instrucciones.
+Las figuras anteriores se obtienen ejecutando las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=SliceVectorPlot3D[{1,1,1},{x^2+y^2+z^2==2*x},
@@ -1041,11 +1041,12 @@ Evalúe $\ds \iint_S \rot{F} \cdot d{\bf S}$ en donde ${\bf F}(x,y,z)=\left\lang
 $S$ es la superficie acotada por las figuras de las expresiones $x=z^2$ y $x=4y-y^2$.
 Esta superficie se presenta en la página \pageref{curvas3}.
 
-Se muestra a continuación el gráfico del sólido y la representación de los campos vectoriales $\la -1,0,-2z\ra$ y  $\la 1,-4+2y,0\ra$, que determinan la orientación hacia afuera de la superficie.
+En la figura~\ref{curvas3} se muestra el sólido y la representación de los campos vectoriales $\la -1,0,-2z\ra$ y  $\la 1,-4+2y,0\ra$, que determinan la orientación hacia afuera de la superficie.
 
 \begin{figure}[H]
 \centering
 \caption{$x = z^2$ con $(y-2)^2+z^2 \leq 4$}
+\label{curvas3}
 \includegraphics[width=0.4\textwidth]{Img/53e.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Img/53h.pdf}
 
@@ -1080,7 +1081,7 @@ Las ecuaciones $x=z^{2}$ y $x=4y-y^{2}$ representan dos cilindros parabólicos, 
 
 Del campo vectorial se  sigue que $\rot{F}= \left\langle -y-1,-z,-2y-1\right\rangle $.
 Además, la superficie en mención se parametriza por medio de la función
-\[{\bf r}\left( u,v\right) =\left\langle 4u^{2}\sin ^{2}v,2+2u\cos v,2u\sin v\right\rangle,\, u\in \lbrack 0,1],\,v\in \lbrack 0,2\pi ].\] Por lo tanto,
+\[{\bf r}\left( u,v\right) =\left\langle 4u^{2}\sin ^{2}v,2+2u\cos v,2u\sin v\right\rangle\!,\, u\in \lbrack 0,1],\,v\in \lbrack 0,2\pi ].\] Por lo tanto,
 $\rot{F}\left({\bf r}\left(u,v\right)\right) = \left\langle -2u\cos v-3,-2u\sin v,-4u\cos v-5\right\rangle $.
 De la función ${\bf r}$ se obtienen los siguientes vectores
 
@@ -1108,7 +1109,7 @@ Integrate[Dot[G,Cross[D[r,u],D[r,v]]],
 Sobre esta región se satisface que
 $y= (2+2u\cos v)$ y $z=2u\sin v$ por lo tanto $x=4-2u^{2}\left( 1+\cos 2v\right);$
 por lo tanto, la superficie se parametriza utilizando la función
-\[{\bf r}\left( u,v\right) =\left\langle 4-2u^{2}\left( 1+\cos 2v\right) ,2+2u\cos v,2u\sin v\right\rangle,\]
+\[{\bf r}\left( u,v\right) =\left\langle 4-2u^{2}\left( 1+\cos 2v\right) ,2+2u\cos v,2u\sin v\right\rangle\!,\]
 con $u\in[0,1],\, v\in [0,2\pi]$.
 Por lo tanto, $\rot{F}\left({\bf r}\left( u,v\right)\right) =\big \langle -2u\cos v-3,-2u\sin v,-4u\cos v-5\big \rangle$.
 De la función ${\bf r}$ se sigue que
@@ -1276,7 +1277,7 @@ Automatic}]
 \end{tcolorbox}
 
 La superficie en mención se parametriza mediante la función
-\[{\bf r}\left( u,v\right) =\left\langle u\cos v,u\sin v,\ln u^{2}\right\rangle,\,\, v\in [0,2\pi], \,\, u\in \left[1/3,3\right ].\] Con esta función se hallan los siguientes vectores
+\[{\bf r}\left( u,v\right) =\left\langle u\cos v,u\sin v,\ln u^{2}\right\rangle\!,\,\, v\in [0,2\pi], \,\, u\in \left[1/3,3\right ].\] Con esta función se hallan los siguientes vectores
 {\small
 \begin{align*}
 {\bf r}_{u} &= \frac{\partial}{\partial u}\left \langle u\cos v, u\sin v, \ln u^2 \right \rangle = \left \langle \cos v, \sin v, \frac{2}{u} \right \rangle \\
@@ -1376,7 +1377,7 @@ Ticks->{{-2,0,2},{-2,0,2},{-1,0,1}}]
 La ecuación del elipsoide se reescribe en la forma $\frac{x^{2}}{4}+y^{2}+z^{2}=1$,
 y se puede parametrizar multiplicando por $2$ la componente $x$ de la expresión correspondiente a las ecuaciones en coordenadas esféricas, que describen la esfera unitaria. Es por lo anterior que utilizaremos la función
 \[{\bf r}\left( u,v\right) =\left\langle 2\cos u\sin v,\sin u\sin v,\cos
-v\right\rangle,\,u\in \lbrack 0,2\pi ],\, v\in \lbrack 0,\pi ].\]
+v\right\rangle\!,\,u\in \lbrack 0,2\pi ],\, v\in \lbrack 0,\pi ].\]
 Al derivar parcialmente, obtenemos los siguientes vectores
 
 \begin{eqnarray*}
@@ -1393,7 +1394,7 @@ Y con ellos obtenemos las siguientes expresiones:
 2\cos u \sin v \cos v,\;
 \sin u \sin v,\;
 2\cos u \sin v
-\right\rangle, \\
+\right\rangle\!, \\
 {\bf F}({\bf r}(u,v)) \cdot ({\bf r}_{u} \times {\bf r}_{v}) &=
 2\left(
 \sin^{2} u \sin v + (\cos u \cos v)(2 + \cos u \sin v)
@@ -1483,7 +1484,7 @@ por lo tanto, el flujo sobre la superficie en mención es
 \end{equation}
 
 La superficie sobre el paraboloide se puede parametrizar en la forma
-${\bf r}\left(u,v\right) =\left\langle u\cos v,u\sin v,4-u^{2}\right\rangle,\, u\in \lbrack 0,2],\, v\in \lbrack 0,2\pi ]$.
+${\bf r}\left(u,v\right) =\left\langle u\cos v,u\sin v,4-u^{2}\right\rangle\!,\, u\in \lbrack 0,2],\, v\in \lbrack 0,2\pi ]$.
 Con esta función hallamos los siguientes vectores:
 \begin{eqnarray*}
 {\bf r}_{u}&=& \left\langle \cos v,\sin v,-2u\right\rangle \\
@@ -1634,7 +1635,7 @@ $y = \frac{1}{9}\left( 3-9x^{2}-4z^{2}+4z\right)= \frac{4}{9}\sqrt{3}u\sin v+\fr
 de modo que una parametrización de la región sobre el paraboloide acotada por la intersección con el plano, es la siguiente
 
 {\footnotesize
-\[{\bf r}\left( u,v\right) =\left\langle \frac{2}{\sqrt{3}}u\cos v,\frac{4}{9}\sqrt{3}u\sin v+\frac{1}{3}-\frac{4}{3}u^{2},\sqrt{3}u\sin v\right\rangle,u\in \lbrack 0,1],\, v\in \lbrack 0,2\pi ].\]
+\[{\bf r}\left( u,v\right) =\left\langle \frac{2}{\sqrt{3}}u\cos v,\frac{4}{9}\sqrt{3}u\sin v+\frac{1}{3}-\frac{4}{3}u^{2},\sqrt{3}u\sin v\right\rangle\!,u\in \lbrack 0,1],\, v\in \lbrack 0,2\pi ].\]
 }
 
 Esta función nos permite hallar los siguientes vectores:
@@ -1809,7 +1810,7 @@ En este caso, una función que parametriza esta región es:
 \sqrt{3}u\cos v,\;
 2u\sin v,\;
 3 - \frac{1}{2}u^{2}\left(5 + \cos 2v\right)
-\right\rangle,
+\right\rangle\!,
 u \in [0,1],\; v \in [0, 2\pi].
 \]
 }
@@ -1842,7 +1843,7 @@ Integrate[Dot[Cross[D[r,u],D[r,v]],{y^2,x^2,z}],
 
 Esta superficie se puede parametrizar mediante la siguiente función:
 {\small
-\[{\bm \beta} (u,v)=\left\langle \sqrt{3}u\cos v,2u\sin v,\frac{1}{2}u^{2}\left(7-\cos 2v\right)-3\right\rangle,
+\[{\bm \beta} (u,v)=\left\langle \sqrt{3}u\cos v,2u\sin v,\frac{1}{2}u^{2}\left(7-\cos 2v\right)-3\right\rangle\!,
 u\in \lbrack 0,1],\, v\in \lbrack 0,2\pi].\]
 }
 
@@ -2199,7 +2200,7 @@ Al reemplazar las expresiones anteriores en la ecuación $x^2+y^2=3-z$, se obtie
 $z=\frac{15}{8}u^{2}\cos 2v-\frac{45}{8}u^{2}+3;$
 por lo tanto, una parametrización de la superficie en mención es
 \[{\bf r}\left( u,v\right) =\left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,
-\frac{15}{8}u^{2}\cos 2v-\frac{45}{8}u^{2}+3\right\rangle,\]
+\frac{15}{8}u^{2}\cos 2v-\frac{45}{8}u^{2}+3\right\rangle\!,\]
 en donde $u\in \lbrack 0,1]$, $v\in \lbrack 0,2\pi ]$.
 Con la función ${\bf r}$, al evaluarla en el campo vectorial se sigue que
 \[{\bf F}\left({\bf r}\left( u,v\right) \right) =\left\langle \frac{3\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,\frac{45}{8}u^{2}\cos 2v-\frac{135}{8}u^{2}+9\right\rangle\!.\]
@@ -2217,7 +2218,7 @@ Por lo expuesto antes, el flujo sobre esta región está dado por
 \begin{equation}\label{flujo5}
 \int_{0}^{1}\int_{0}^{2\pi }\left( \frac{225\sqrt{2}}{32}u\left( u^{2}+ \frac{24}{5}+5u^{2}\cos 2v\right) \right) dvdu= \frac{2385}{64}\sqrt{2}\pi
 \end{equation}
-Este valor también se obtiene como producto de ejecutar las siguientes instrucciones.
+Este valor también se obtiene como producto de ejecutar las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[15]/2*u*Cos[v],Sqrt[15/2]*u*Sin[v],
@@ -2235,7 +2236,7 @@ la coordenada $z$ sobre esta superficie satisface que
 por lo tanto, utilizaremos la siguiente parametrización, para describir la porción del paraboloide hiperbólico:
 
 {\small
-\[{\bf r}\left( u,v\right) =\left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,\frac{15}{8}u^{2}\cos 2v-\frac{5}{8}u^{2}-2\right\rangle,\]}
+\[{\bf r}\left( u,v\right) =\left\langle \frac{\sqrt{15}}{2}u\cos v,\sqrt{\frac{15}{2}}u\sin v,\frac{15}{8}u^{2}\cos 2v-\frac{5}{8}u^{2}-2\right\rangle\!,\]}
 
 en donde $u\in \lbrack 0,1]$, $v\in \lbrack 0,2\pi ]$.
 
@@ -2254,7 +2255,7 @@ Es de anotar que para conservar la orientación de la superficie se calculó ${\
 
 {\small
 \[{\bf F}\left( {\bf r}\left( u,v\right) \right) =\left\langle \frac{3\sqrt{15}}{2}u\cos
-v,\sqrt{\frac{15}{2}}u\sin v,\frac{45}{8}u^{2}\cos 2v-\frac{15}{8}u^{2}-6\right\rangle,\]}
+v,\sqrt{\frac{15}{2}}u\sin v,\frac{45}{8}u^{2}\cos 2v-\frac{15}{8}u^{2}-6\right\rangle\!,\]}
 
 entonces,
 
@@ -2290,12 +2291,13 @@ $r=1+\cos \theta$.
 \begin{figure}[H]
 \centering
 \caption{Campo vectorial ${\bf F}(x,y,z)=\la y,-x,z\ra$, sobre $x^2+y^2+z^2=9 $ \& $r=1+\cos \theta$}
+\label{cvFxyzsobrex2y2z2}
 \includegraphics[width=0.4\textwidth]{Img/T_12c.pdf} \hspace{5mm}
 \includegraphics[width=0.4\textwidth]{Img/T_12d.pdf}
 \fuentepropia
 \end{figure}
 
-Las instrucciones que permiten obtener este gráfico son las siguientes.
+Las instrucciones que permiten obtener la figura~\ref{cvFxyzsobrex2y2z2} son las siguientes.
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[(x^2+y^2-x)^2<(x^2+y^2)&&
@@ -2330,7 +2332,7 @@ Por lo tanto, la siguiente función describe la porción sobre la esfera interio
 u(1 + \cos \theta) \cos \theta,\;
 u(1 + \cos \theta) \sin \theta,\;
 \sqrt{9 - u^2(1 + \cos \theta)^2}
-\right\rangle,
+\right\rangle\!,
 \]
 en donde $u \in [0,1],\; \theta \in [0,2\pi]$. Es sencillo ver que:
 {\small
@@ -2447,7 +2449,7 @@ La siguiente figura ilustra esta situación.
 \fuentepropia
 \end{figure}
 
-La figura se consigue ejecutando las siguientes instrucciones.
+La figura se consigue ejecutando las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[y>Sqrt[x^2+z^2]&&x^2+y^2+z^2<9,
@@ -2476,7 +2478,7 @@ y también
 \begin{align*}
 {\bf r}_{u} &= \left\langle \cos v, 1, \sin v \right\rangle \\
 {\bf r}_{v} &=\left\langle -u\sin v,0,u\cos v\right\rangle \\
-{\bf r}_{u}\times {\bf r}_{v}&= \left\langle u\cos v,-u,u\sin v\right\rangle,
+{\bf r}_{u}\times {\bf r}_{v}&= \left\langle u\cos v,-u,u\sin v\right\rangle\!,
 \end{align*}
 con lo cual,
 ${\bf F}\left({\bf r}\left(u,v\right)\right)\cdot \left({\bf r}_{u}\times {\bf r}_{v}\right) = u^{2}\sin v-u+u^{2}$.
@@ -2554,7 +2556,7 @@ De esta función se obtiene
 
 Además,
 {\small
-\[{\bf F}({\bf r}(\theta,\phi))=(1+\cos\phi) \left\langle\sin\phi\cos\theta,\sin\phi\sin\theta,2\cos\phi\right\rangle,\]
+\[{\bf F}({\bf r}(\theta,\phi))=(1+\cos\phi) \left\langle\sin\phi\cos\theta,\sin\phi\sin\theta,2\cos\phi\right\rangle\!,\]
 
 \begin{multline*}
 {\bf r}_{\phi}\times {\bf r}_{\theta}=\bigg\langle\left(\cos\phi+1\right)\left(\sin2\phi+\sin\phi\right)\cos\theta\sin \phi,\\
@@ -2634,7 +2636,7 @@ El flujo de ${\bf F}$ sobre la esfera está dado por
 \int_0^1\int_0^{2\pi}\frac{48u}{\sqrt{3-2u^2}} dvdu= 48\pi (\sqrt{3}-1)
 \end{equation}
 
-Este resultado también se obtiene ejecutando  las siguientes instrucciones.
+Este resultado también se obtiene ejecutando  las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[8]*u*Cos[v],Sqrt[12-8*u^2],
@@ -2660,7 +2662,7 @@ El flujo de ${\bf F}$ sobre el paraboloide está determinado por
 \begin{equation}\label{flujo11}
 \int_0^1\int_0^{2\pi } 16 u^3 dvdu= 8\pi.
 \end{equation}
-El cálculo anterior se obtiene ejecutando las siguientes instrucciones.
+El cálculo anterior se obtiene ejecutando las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 r={x,y,z}={Sqrt[8]*u*Cos[v],2*u^2,Sqrt[8]*u*Sin[v]};
@@ -2686,7 +2688,7 @@ $x=\sqrt{y^2+z^2}$ y la esfera con ecuación $y^2+z^2+4x=12$.
 \fuentepropia
 \end{figure}
 
-Las figuras se obtienen al ejecutar las siguientes instrucciones.
+Las figuras se obtienen al ejecutar las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción \verb"Mathematica"]\begin{Verbatim}[formatcom=\letraverbatim]
 a=RegionPlot3D[x>Sqrt[y^2+z^2]&&y^2+z^2+4*x<12,
@@ -2841,7 +2843,7 @@ En este caso, la parametrización escogida es la siguiente:
 \frac{3}{8}u^{2}\cos 2v + \frac{1}{24}u^{2} + \frac{1}{3},\;
 \frac{\sqrt{15}}{2}u\cos v,\;
 \sqrt{3}u\sin v
-\right\rangle,
+\right\rangle\!,
 \]
 en donde \( u \in [0,1],\; v \in [0,2\pi] \). También se puede ver que
 \[
