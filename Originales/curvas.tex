@@ -13,7 +13,7 @@ Para la función  vectorial $\ve{r}(t)$ usaremos la notación
 $\overrightarrow{r}(t)$ o ${\bf r}(t)$, indistintamente para referirnos a
 este tipo de funciones.
 
-De acuerdo con \cite{marsden_calculo_2013}, la longitud de arco $L$ de la curva $C$ en $\mathbb{R}^3$ determinada por la función vectorial
+De acuerdo con \cite{marsden_calculo_2013}, la longitud de arco $L$ de la curva $C$ en $\mathbb{R}^3$, determinada por la función vectorial
 $\overrightarrow{r}(t)=\left\langle x(t) ,y(t),z(t) \right\rangle$ para $t\in \lbrack a,b]$, está dada por
 \begin{equation} \label{curvas}
 L=\int_{a}^{b} \left\| \overrightarrow{r}^{\prime }(t)\right\| \, dt.
@@ -232,7 +232,7 @@ $z=5-\left( \sqrt{\frac{5}{2}}\sin t\right) ^{2}= \frac{5}{2}\cos^{2}t+\frac{5}{
 por lo tanto, la curva de intersección está determinada por
 $$\overrightarrow{r}(t)=\left\langle \sqrt{5}\cos t,\sqrt{\frac{5}{2}}\sin t,%
 \frac{5}{2}\cos ^{2}t+\frac{5}{2}\right\rangle ,\,\,t\in \lbrack 0,2\pi ].$$
-Además
+Además,
 $\left\| \overrightarrow{r}^{\prime}(t)\right\| =\frac{\sqrt{10}}{4}\sqrt{11-2\cos(2t)-5\cos(4t)}$,
 entonces la longitud de la curva está dada por
 $$L=\int_{0}^{2\pi}\frac{\sqrt{10}}{4}\sqrt{11-2\cos(2t)-5\cos(4t)} \,dt \approx 16.192.$$
@@ -287,7 +287,7 @@ $${\bf r}(t)=\langle4\sin^{2}(t),2+2\cos(t),2\sin(t)\rangle, \, t \in [0,2\pi].$
 La longitud de esta curva se calcula integrando la norma de la derivada de la función vectorial, es decir
 $${\bf r}'(t)= \langle 8\sin(t)\cos(t),-2\sin (t),2\cos(t)\rangle .$$
 Su norma está dada por
-$$\|{\bf r}^{\prime}(t)\| = 2\sqrt{16\cos^{2}(t)+1-16\cos^{4}(t)}= 2\sqrt{3-2\cos(4t)},$$
+$$\|{\bf r}^{\prime}(t)\| = 2\sqrt{16\cos^{2}(t)+1-16\cos^{4}(t)}= 2\sqrt{3-2\cos(4t)};$$
 este término se integra numéricamente
 $$ \int_{0}^{2\pi}2\sqrt{3-2\cos(4t)}dt \approx 21.081.$$
 La evaluación se consigue con ayuda de las siguientes instrucciones:
@@ -356,8 +356,8 @@ NIntegrate[A,{t,0,2*Pi}]
 
 \subsection{Dos cilindros elípticos y un paraboloide}
 
-Los cilindros elipticos con
-ecuaciones $4x^2+y^2=36$ y $x^2+4y^2=4$, poseen al eje $z$ como eje de simetría.
+Los cilindros elípticos con
+ecuaciones $4x^2+y^2=36$ y $x^2+4y^2=4$ poseen al eje $z$ como eje de simetría.
 Estos se pueden proyectar en el plano $xy$, como dos elipses que se parametrizan respectivamente como
 $\overrightarrow{u}(t)=\left\langle 3\cos (t) ,6\sin (t) \right\rangle $
 y  $\overrightarrow{v}(t)=\left\langle 2\cos (t) ,\sin (t) \right\rangle $,
@@ -365,7 +365,7 @@ con  $t\in\lbrack 0,2\pi ]$.
 
 Si estos cilindros los intersecan con el paraboloide determinado por la ecuación
 $z=6-\left(x-1\right)^2-y^2$,
-se obtienen dos curvas, cuya coordenada $z$ está dada, respectivamente por
+se obtienen dos curvas, cuya coordenada $z$ está dada respectivamente por
 {\small
 \begin{eqnarray*}
 z&=&6-\left( 3\cos (t) -1\right) ^{2}-\left( 6\sin (t) \right) ^{2}= -31+27\cos ^{2}(t) +6\cos (t) \\
@@ -541,7 +541,7 @@ Mesh->False,ContourStyle->{Orange,Yellow,Gray}]
 \end{Verbatim}
 \end{tcolorbox}
 
-El cilindro $x^{2}+y^{2}=2x$, se reescribe como $\left( x-1\right)^{2}+y^{2}=1$,
+El cilindro $x^{2}+y^{2}=2x$ se reescribe como $\left( x-1\right)^{2}+y^{2}=1$,
 la curva de intersección se parametriza al hacer $x=1+\cos (t)$, $y=\sin (t)$, y para hallar $z$
 es necesario reemplazar en la ecuación de la esfera, de donde se obtiene que
 
@@ -597,7 +597,7 @@ Por lo tanto, para $t\in [0,2\pi]$, la curva de intersección del paraboloide y 
 -2\cos t+\frac{3}{2}\cos(2t)\big\rangle.
 \end{multline*}
 
-Puede verse también, que:
+Puede verse también que:
 \begin{multline*}
 \Vert \overrightarrow{r}^\prime(t)\Vert= \frac{\sqrt{2}}{3}\left|\sin\left(\frac{t}{2}\right)\right|\bigg(4(\sin(t)+\sin(2t)+3\sin(3t))+7\cos(t)\\ +6\cos(2t)+5\cos(3t)+32\bigg )^{1/2} ,
 \end{multline*}
@@ -675,7 +675,7 @@ $$L=\int_{-2}^{2}\sqrt{2}\left( 9t^{2}+1\right) dt= 52\sqrt{2}.$$
 A partir de las ecuaciones $x=\sqrt{t^{3}}$, $y=\frac{9}{16}t$, $z=t^{2}$, se sigue que $x^2=t^3$ y $t= \frac{16}{9}y;$
 entonces, dos posibles relaciones son $9x^2=16yz$ y $z= \left(\frac{16}{9}y\right)^2$.
 
-Las figuras de estas ecuaciones y la curva de intersección se presentan enseguida:
+Las figuras de estas ecuaciones y la curva de intersección se presentan enseguida.
 
 \begin{figure}[H]
 \centering
@@ -709,7 +709,7 @@ $$L=\int_0^2 \left ( \frac{9}{16}+2t \right )dt = \frac{41}{8}. $$
 A partir de las expresiones $x=4t^{3}+2t^{2}$, $y=\frac{4t}{3\sqrt{2}}$, $z=4t^{3}-2t^{2}$, se sigue que
 $t=\frac{3\sqrt{2}}{4}y$, $x-z=4t^{2}=4\left( \frac{3y}{4}\sqrt{2}\right)
 ^{2}= \frac{9}{2}y^{2}$.\\
-Además $x+z=8t^{3}=8\left( \frac{3y}{4}\sqrt{2}\right) ^{3}= \frac{27}{4}\sqrt{2}y^{3}$.
+Además, $x+z=8t^{3}=8\left( \frac{3y}{4}\sqrt{2}\right) ^{3}= \frac{27}{4}\sqrt{2}y^{3}$.
 
 Por lo tanto, las figuras de las ecuaciones $x-z= \frac{9}{2}y^{2}$ y $x+z=\frac{27}{4}\sqrt{2}y^{3}$
 se muestras a continuación junto con la curva de intersección:
@@ -791,7 +791,7 @@ por lo tanto, $$L= \int_{-1}^1 3 \sqrt{2}(t^2+1) dt = 8\sqrt{2}.$$
 A partir de las funciones componentes y de algunas identidades trigono\-métricas conocidas
 se pueden establecer relaciones entre ellas;
 dos de éstas funciones son: $x^2=1+z^2$ y $y=\ln(x+z)$.
-Los figuras de estas dos superficies junto con la curva de intersección se muestra a continuación:
+Las figuras de estas dos superficies junto con la curva de intersección se muestran a continuación.
 
 \begin{figure}[H]
 \centering
