@@ -759,7 +759,7 @@ $\left( \frac{1}{\sqrt{2}},2\right) $ y $\left( 1,4\right)$; con esta informaci�
 {\small
 \begin{eqnarray*}
 \ds \iint_R xy dA &=& \bi_{\frac{1}{\sqrt{2}}}^{1}\bi_{1/x^{2}}^{4x^{2}}xydydx+\bi_{1}^{\sqrt{2}}\bi_{x^{2}}^{4/x^{2}}xydydx \\
-&=& \bi_{1}^{2}\bi_{\sqrt{\frac{1}{y}}}^{\sqrt{y}}xydxdy+\bi_{2}^{4}\bi_{\sqrt{\frac{y}{4}}}^{\sqrt{\frac{4}{y}}}xydxdy =\frac{7}{3}
+&=& \bi_{1}^{2}\bi_{\sqrt{\frac{1}{y}}}^{\sqrt{y}}xydxdy+\bi_{2}^{4}\bi_{\sqrt{\frac{y}{4}}}^{\sqrt{\frac{4}{y}}}xydxdy =\frac{7}{3}.
 \end{eqnarray*}
 }
 Estas integrales se evalúan con las siguientes instrucciones:
@@ -1008,7 +1008,7 @@ $}
 Para calcular el área superficial, se requieren los siguientes vectores
 \begin{eqnarray*}
 {\bf r}_{t} &=& \langle -\sin t( 1+2u) ,( 1+2u) \cos t,0\rangle \\
-{\bf r}_{u} &=& \langle -1+2\cos t,2\sin t,-2\rangle.
+{\bf r}_{u} &=& \langle -1+2\cos t,2\sin t,-2\rangle,
 \end{eqnarray*}
 además,
 $ {\bf r}_{t}\times {\bf r}_{u}= \langle -2( 1+2u) \cos t,-2( \sin t) (1+2u) ,( \cos t-2) ( 1+2u) \rangle $.
@@ -1063,7 +1063,7 @@ representa la parte de la esfera que se halla acotada por el cilindro, la otra p
 \begin{itemize}
 \item Para la expresión $x^{2}+z^{2}=2x$ (que representa el otro cilindro), el tratamiento es similar al caso anterior, obteniendo la función
 \[
-{\\bf r}_1(u,t) = \left\langle 1 + u\cos(t),\, \pm \sqrt{3 - 2u\cos(t) - u^{2}},\, u\sin(t) \right\rangle
+{\\bf r}_1(u,t) = \left\langle 1 + u\cos(t),\, \pm \sqrt{3 - 2u\cos(t) - u^{2}},\, u\sin(t) \right\rangle,
 \]
 con $t \in [0, 2\pi]$, $u \in [0, 1]$, la cual parametriza la porción de la esfera dentro del cilindro con ecuación $x^{2}+z^{2}=2x$.
 \end{itemize}
@@ -1335,7 +1335,7 @@ con $t\in [0,2\pi],\,u\in [0,1]$.
 De aquí se obtienen las siguientes funciones.
 \begin{eqnarray*}
 {\bf r}_{t}&=& \la -\sin(t),\frac{1}{3}(3-5u)\cos(t)+\frac{1}{3}u\sin(t),2\cos(t)\ra \\
-{\bf r}_{u}&=& \la 0,-\frac{5}{3}\sin(t)+\frac{19}{6}-\frac{1}{3}\cos(t),0\ra
+{\bf r}_{u}&=& \la 0,-\frac{5}{3}\sin(t)+\frac{19}{6}-\frac{1}{3}\cos(t),0\ra.
 \end{eqnarray*}
 
 También se calcula
@@ -1437,10 +1437,10 @@ De esta manera, el área de la superficie del paraboloide está dada por
 \begin{equation*}
 \int_{0}^{1}\int_{0}^{2\pi} \|\mathbf{r}_{u} \times \mathbf{r}_{t}\| \, dt\,du =
 \int_{0}^{1}\int_{0}^{2\pi}
-2u\sqrt{9 + 64u^2 + 80u^2 \cos^2(t)} \, dt\,du \approx 46{,}979
+2u\sqrt{9 + 64u^2 + 80u^2 \cos^2(t)} \, dt\,du \approx 46{,}979.
 \end{equation*}
 }
-Este cálculo se hace en \verb"Mathematica" con las siguientes instrucciones
+Este cálculo se hace en \verb"Mathematica" con las siguientes instrucciones:
 
 \begin{tcolorbox}[title=\bf Instrucción en \verb"Mathematica"]
 \begin{Verbatim}[formatcom=\letraverbatim]
@@ -1455,7 +1455,7 @@ NIntegrate[A,{t,0,2Pi},{u,0,1}]
 
 \subsection{Un cilindro cardióidico y un plano}
 La superficie del cilindro cardiogénico con ecuación
-$r=2(1+\cos(t))$, acotada por los planos $z=0$ y $z=2-x/2$, se presenta a continuación. También se muestra la porción sobre el plano $z=2-x/2$ acotada por el cilindro cardiogénico. Hallaremos el área de estas dos superficies:
+$r=2(1+\cos(t))$, acotada por los planos $z=0$ y $z=2-x/2$, se presenta a continuación. También se muestra la porción sobre el plano $z=2-x/2$ acotada por el cilindro cardiogénico. Hallaremos el área de estas dos superficies.
 
 \begin{figure}[H]
 \centering
@@ -1512,7 +1512,7 @@ El interior de la cardioide en el plano $xy$ se parametriza como
 con $t\in \lbrack 0,2\pi ]$, $u\in \lbrack 0,1]$.
 Sobre el plano $z=2-x/2$, se cumple que
 \[z=2-2u\left( 1+\cos(t)\right)\cos(t)/2=2-u\left(\cos t+1\right)\cos(t).\]
-Entonces, la parte del plano acotada por el cilindro cardiogénico se parametriza por medio de la siguiente función
+Entonces, la parte del plano acotada por el cilindro cardiogénico se parametriza por medio de la siguiente función:
 \begin{gather*}
 {\bf r}(u,t)=\big\langle 2u\left( 1+\cos(t)\right) \cos(t),2u\left(1+\cos(t)\right)\sin(t),2-u(\cos(t)+1)\cos(t) \big\rangle,
 \end{gather*}
@@ -1523,7 +1523,7 @@ con $t\in \lbrack 0,2\pi ]$, $u\in \lbrack 0,1]$. De aquí se obtienen los sigui
 &\quad \left. u\sin(t)(2\cos(t) + 1) \right\rangle \\
 \mathbf{r}_u &= \left\langle 2(1 + \cos(t))\cos(t), 2(1 + \cos(t))\sin(t), -(1 + \cos(t))\cos(t) \right\rangle \\
 \mathbf{r}_t \times \mathbf{r}_u &= \left\langle -2u(1 + \cos(t))^2, 0, -4u(1 + \cos(t))^2 \right\rangle \\
-&= -2u(1 + \cos(t))^2 \langle 1, 0, 2 \rangle
+&= -2u(1 + \cos(t))^2 \langle 1, 0, 2 \rangle.
 \end{align*}
 \end{small}
 Estos vectores, a su vez, nos permiten obtener el elemento diferencial de área:
